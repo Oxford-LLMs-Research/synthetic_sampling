@@ -1,0 +1,146 @@
+{
+  "ccnthum": {
+    "description": "Climate change caused by natural processes, human activity, or both",
+    "question": "Do you think that climate change is caused by natural processes, human activity, or both?",
+    "values": {
+      "1": "Entirely by natural processes",
+      "2": "Mainly by natural processes",
+      "3": "About equally by natural processes and human activity",
+      "4": "Mainly by human activity",
+      "5": "Entirely by human activity",
+      "55": "I don't think climate change is happening",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "ccrdprs": {
+    "description": "To what extent feel personal responsibility to reduce climate change",
+    "question": "To what extent do you feel a personal responsibility to try to reduce climate change?",
+    "values": {
+      "0": "Not at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "A great deal",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "wrclmch": {
+    "description": "How worried about climate change",
+    "question": "How worried are you about climate change?",
+    "values": {
+      "1": "Not at all worried",
+      "2": "Not very worried",
+      "3": "Somewhat worried",
+      "4": "Very worried",
+      "5": "Extremely worried",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "testic34": {
+    "description": "Imagine large numbers of people limit energy use, how likely reduce climate change",
+    "question": "Now imagine that large numbers of people limited their energy use. How likely do you think it is that this would reduce climate change?",
+    "values": {
+      "0": "Not at all likely",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely likely",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "testic35": {
+    "description": "How likely, large numbers of people limit energy use",
+    "question": "How likely do you think it is that large numbers of people will actually limit their energy use to try to reduce climate change?",
+    "values": {
+      "0": "Not at all likely",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely likely",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "testic36": {
+    "description": "How likely, governments in enough countries take action to reduce climate change",
+    "question": "And how likely do you think it is that governments in enough countries will take action that reduces climate change?",
+    "values": {
+      "0": "Not at all likely",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely likely",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "vteurmmb": {
+    "description": "Would vote for [country] to remain member of European Union or leave",
+    "question": "Imagine there were a referendum in [country] tomorrow about membership of the European Union. Would you vote for [country] to remain a member of the European Union or to leave the European Union?",
+    "values": {
+      "1": "Remain member of the European Union",
+      "2": "Leave the European Union",
+      "33": "Would submit a blank ballot paper",
+      "44": "Would spoil the ballot paper",
+      "55": "Would not vote",
+      "65": "Not eligible to vote",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "vteubcmb": {
+    "description": "Would vote for [country] to become member of European Union or remain outside",
+    "question": "Imagine there were a referendum in [country] tomorrow about membership of the European Union. Would you vote for [country] to become a member of the European Union or to remain outside the European Union?",
+    "values": {
+      "1": "Become a member of the European Union",
+      "2": "Remain outside the European Union",
+      "33": "Would submit a blank ballot paper",
+      "44": "Would spoil the ballot paper",
+      "55": "Would not vote",
+      "65": "Not eligible to vote",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  }
+}

@@ -1,0 +1,245 @@
+{
+"essround": {
+    "description": "Year",
+    "question": "What year is it now?",
+    "values": {
+      "1": "2002",
+      "2": "2004",
+      "3": "2006",
+      "4": "2008",
+      "5": "2010",
+      "6": "2012",
+      "7": "2014",
+      "8": "2016",
+      "9": "2018",
+      "10": "2020",
+      "11": "2023"
+    }
+  },    
+"cntry": {
+    "description": "Country",
+    "question": "What is your country?",
+    "values": {
+      "AL": "Albania",
+      "AT": "Austria",
+      "BE": "Belgium",
+      "BG": "Bulgaria",
+      "CH": "Switzerland",
+      "CY": "Cyprus",
+      "CZ": "Czechia",
+      "DE": "Germany",
+      "DK": "Denmark",
+      "EE": "Estonia",
+      "ES": "Spain",
+      "FI": "Finland",
+      "FR": "France",
+      "GB": "United Kingdom",
+      "GE": "Georgia",
+      "GR": "Greece",
+      "HR": "Croatia",
+      "HU": "Hungary",
+      "IE": "Ireland",
+      "IS": "Iceland",
+      "IL": "Israel",
+      "IT": "Italy",
+      "LT": "Lithuania",
+      "LU": "Luxembourg",
+      "LV": "Latvia",
+      "ME": "Montenegro",
+      "MK": "North Macedonia",
+      "NL": "Netherlands",
+      "NO": "Norway",
+      "PL": "Poland",
+      "PT": "Portugal",
+      "RO": "Romania",
+      "RS": "Serbia",
+      "RU": "Russian Federation",
+      "SE": "Sweden",
+      "SI": "Slovenia",
+      "SK": "Slovakia",
+      "TR": "Turkey",
+      "UA": "Ukraine",
+      "XK": "Kosovo"
+    }
+  },
+  "hhmmb": {
+    "description": "Number of people living regularly as members of household",
+    "question": "Including yourself, how many people - including children - live here regularly as members of this household?",
+    "values": {
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "gndr": {
+    "description": "Gender",
+    "question": "What is your gender?",
+    "values": {
+      "1": "Male",
+      "2": "Female",
+      "9": "No answer"
+    }
+  },
+  "agea": {
+    "description": "Age of respondent, calculated",
+    "question": "What is your age?",
+    "values": {
+      "999": "Not available"
+    }
+  },
+  "rshpsts": {
+    "description": "Relationship with husband/wife/partner currently living with",
+    "question": "Which one of the descriptions on this card describes your relationship to your husband/wife/partner?",
+    "values": {
+      "1": "Legally married",
+      "2": "In a legally registered civil union",
+      "3": "Living with my partner - not legally recognised",
+      "4": "Living with my partner - legally recognised",
+      "5": "Legally separated",
+      "6": "Legally divorced/Civil union dissolved",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "lvgptnea": {
+    "description": "Ever lived with a partner, without being married",
+    "question": "Have you ever lived with a partner without being married to them?",
+    "values": {
+      "1": "Yes",
+      "2": "No",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "dvrcdeva": {
+    "description": "Ever been divorced/had civil union dissolved",
+    "question": "Have you ever been divorced or had a civil union dissolved?",
+    "values": {
+      "1": "Yes",
+      "2": "No",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "marsts": {
+    "description": "Legal marital status",
+    "question": "Which one of the descriptions on this card describes your legal marital status now?",
+    "values": {
+      "1": "Legally married",
+      "2": "In a legally registered civil union",
+      "3": "Legally separated",
+      "4": "Legally divorced/Civil union dissolved",
+      "5": "Widowed/Civil partner died",
+      "6": "None of these (NEVER married or in legally registered civil union)",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "chldhhe": {
+    "description": "Ever had children living in household",
+    "question": "Have you ever had any children of your own, step-children, adopted children, foster children, or a partner's children living in your household?",
+    "values": {
+      "1": "Yes",
+      "2": "No",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "domicil": {
+    "description": "Domicile, respondent's description",
+    "question": "Which category best describes the area where you live?",
+    "values": {
+      "1": "A big city",
+      "2": "Suburbs or outskirts of big city",
+      "3": "Town or small city",
+      "4": "Country village",
+      "5": "Farm or home in countryside",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "eisced": {
+    "description": "Highest level of education, harmonized ISCED 2011",
+    "question": "What is the highest level of education you have successfully completed, classified by ISCED?",
+    "values": {
+      "0": "Not completed primary education",
+      "1": "Primary education or first stage of basic education",
+      "2": "Lower secondary education",
+      "3": "Upper secondary education",
+      "4": "Post-secondary non-tertiary education",
+      "5": "Short-cycle tertiary education",
+      "6": "Bachelor’s or equivalent level",
+      "7": "Master’s or equivalent level",
+      "55": "Other",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "mainact": {
+    "description": "Main activity last 7 days",
+    "question": "What best describes your main activity in the last seven days?",
+    "values": {
+      "1": "Paid work",
+      "2": "Education",
+      "3": "Unemployed, looking for job",
+      "4": "Unemployed, not looking for job",
+      "5": "Permanently sick or disabled",
+      "6": "Retired",
+      "7": "Community or military service",
+      "8": "Housework, looking after children, others",
+      "9": "Other",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "mnactic": {
+    "description": "Main activity, last 7 days. All respondents. Post coded",
+    "question": "What best describes your main activity in the last seven days?",
+    "values": {
+      "1": "Paid work",
+      "2": "Education",
+      "3": "Unemployed, looking for job",
+      "4": "Unemployed, not looking for job",
+      "5": "Permanently sick or disabled",
+      "6": "Retired",
+      "7": "Community or military service",
+      "8": "Housework, looking after children, others",
+      "9": "Other",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "emplstatus": {
+    "description": "Employment status",
+    "question": "What is your employment status?",
+    "values": {
+      "1": "Employed full-time",
+      "2": "Employed part-time",
+      "3": "Self-employed",
+      "4": "Unemployed, looking for work",
+      "5": "Unemployed, not looking for work",
+      "6": "Permanently sick or disabled",
+      "7": "Retired",
+      "8": "Student",
+      "9": "Other",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  }
+}

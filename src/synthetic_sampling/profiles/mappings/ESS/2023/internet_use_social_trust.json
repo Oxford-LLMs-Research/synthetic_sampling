@@ -1,0 +1,324 @@
+{
+  "nwspol": {
+    "description": "News about politics and current affairs, watching, reading or listening, in minutes on a typical day",
+    "question": "On a typical day, about how much time do you spend watching, reading or listening to news about politics and current affairs?",
+    "values": {
+      "7777": "Refusal",
+      "8888": "Don't know",
+      "9999": "No answer"
+    }
+  },
+  "netusoft": {
+    "description": "Internet use, how often",
+    "question": "How often do you use the internet on these or any other devices, whether for work or personal use?",
+    "values": {
+      "1": "Never",
+      "2": "Only occasionally",
+      "3": "A few times a week",
+      "4": "Most days",
+      "5": "Every day",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "netustm": {
+    "description": "Internet use, how much time on typical day, in minutes",
+    "question": "On a typical day, about how much time do you spend using the internet on a computer, tablet, smartphone or other device, whether for work or personal use?",
+    "values": {
+      "6666": "Not applicable",
+      "7777": "Refusal",
+      "8888": "Don't know",
+      "9999": "No answer"
+    }
+  },
+  "ppltrst": {
+    "description": "Most people can be trusted or you can't be too careful",
+    "question": "Generally speaking, would you say that most people can be trusted, or that you can't be too careful in dealing with people?",
+    "values": {
+      "0": "You can't be too careful",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Most people can be trusted",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "pplfair": {
+    "description": "Most people try to take advantage of you, or try to be fair",
+    "question": "Do you think that most people would try to take advantage of you if they got the chance, or would they try to be fair?",
+    "values": {
+      "0": "Most people try to take advantage of me",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Most people try to be fair",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "pplhlp": {
+    "description": "Most of the time people helpful or mostly looking out for themselves",
+    "question": "Would you say that most of the time people try to be helpful or that they are mostly looking out for themselves?",
+    "values": {
+      "0": "People mostly look out for themselves",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "People mostly try to be helpful",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "polintr": {
+    "description": "How interested in politics",
+    "question": "How interested would you say you are in politics?",
+    "values": {
+      "1": "Very interested",
+      "2": "Quite interested",
+      "3": "Hardly interested",
+      "4": "Not at all interested",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "psppsgva": {
+    "description": "Political system allows people to have a say in what government does",
+    "question": "How much would you say the political system in [country] allows people like you to have a say in what the government does?",
+    "values": {
+      "1": "Not at all",
+      "2": "Very little",
+      "3": "Some",
+      "4": "A lot",
+      "5": "A great deal",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "actrolga": {
+    "description": "Able to take active role in political group",
+    "question": "How able do you think you are to take an active role in a group involved with political issues?",
+    "values": {
+      "1": "Not at all able",
+      "2": "A little able",
+      "3": "Quite able",
+      "4": "Very able",
+      "5": "Completely able",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "psppipla": {
+    "description": "Political system allows people to have influence on politics",
+    "question": "And how much would you say that the political system in [country] allows people like you to have an influence on politics?",
+    "values": {
+      "1": "Not at all",
+      "2": "Very little",
+      "3": "Some",
+      "4": "A lot",
+      "5": "A great deal",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "cptppola": {
+    "description": "Confident in own ability to participate in politics",
+    "question": "And how confident are you in your own ability to participate in politics?",
+    "values": {
+      "1": "Not at all confident",
+      "2": "A little confident",
+      "3": "Quite confident",
+      "4": "Very confident",
+      "5": "Completely confident",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "trstprl": {
+    "description": "Trust in country's parliament",
+    "question": "How much do you personally trust the country's parliament?",
+    "values": {
+      "0": "No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Complete trust",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "trstlgl": {
+    "description": "Trust in the legal system",
+    "question": "How much do you personally trust the legal system?",
+    "values": {
+      "0": "No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Complete trust",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "trstplc": {
+    "description": "Trust in the police",
+    "question": "How much do you personally trust the police?",
+    "values": {
+      "0": "No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Complete trust",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "trstplt": {
+    "description": "Trust in politicians",
+    "question": "How much do you personally trust politicians?",
+    "values": {
+      "0": "No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Complete trust",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "trstprt": {
+    "description": "Trust in political parties",
+    "question": "How much do you personally trust political parties?",
+    "values": {
+      "0": "No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Complete trust",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "trstep": {
+    "description": "Trust in the European Parliament",
+    "question": "How much do you personally trust the European Parliament?",
+    "values": {
+      "0": "No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Complete trust",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "trstun": {
+    "description": "Trust in the United Nations",
+    "question": "How much do you personally trust the United Nations?",
+    "values": {
+      "0": "No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Complete trust",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "trstsci": {
+    "description": "Trust in scientists",
+    "question": "How much do you personally trust scientists?",
+    "values": {
+      "0": "No trust at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Complete trust",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  }
+}

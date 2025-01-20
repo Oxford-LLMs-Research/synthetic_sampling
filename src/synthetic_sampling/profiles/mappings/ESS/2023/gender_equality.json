@@ -1,0 +1,331 @@
+{
+ "nobingnd": {
+    "description": "Non-binary gender: which option respondent says best describes them",
+    "question": "Which option best describes your gender?",
+    "values": {
+      "1": "A man",
+      "2": "A woman",
+      "3": "Other",
+      "7": "Prefer not to answer",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "mascfel": {
+    "description": "How masculine respondent feels",
+    "question": "How masculine do you feel?",
+    "values": {
+      "0": "Not at all masculine",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "Very masculine",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "femifel": {
+    "description": "How feminine respondent feels",
+    "question": "How feminine do you feel?",
+    "values": {
+      "0": "Not at all feminine",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "Very feminine",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "impbemw": {
+    "description": "Importance of being a man/woman to respondent's self-perception",
+    "question": "How important is being a man/woman to the way you think about yourself?",
+    "values": {
+      "0": "Not at all important",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "Extremely important",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "trmedmw": {
+    "description": "Unfairly treated when seeking medical treatment because of gender",
+    "question": "Have you been unfairly treated when seeking medical treatment because you are a man/woman?",
+    "values": {
+      "1": "Yes, once",
+      "2": "Yes, more than once",
+      "3": "No",
+      "4": "Have never visited doctor or sought medical treatment",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "trwrkmw": {
+    "description": "Unfairly treated in hiring, pay, or promotion because of gender",
+    "question": "Have you been unfairly treated in hiring, pay, or promotion because you are a man/woman?",
+    "values": {
+      "1": "Yes, once",
+      "2": "Yes, more than once",
+      "3": "No",
+      "4": "Have never had a job or applied for a job",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "trplcmw": {
+    "description": "Unfairly treated by the police because of gender",
+    "question": "Have you been unfairly treated by the police because you are a man/woman?",
+    "values": {
+      "1": "Yes, once",
+      "2": "Yes, more than once",
+      "3": "No",
+      "4": "Have never had any contact with the police",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "trmdcnt": {
+    "description": "Perceived fairness in medical treatment based on gender in the country",
+    "question": "How fair is medical treatment for women and men in your country?",
+    "values": {
+      "1": "Women are treated less fairly than men",
+      "2": "Men are treated less fairly than women",
+      "3": "Women and men are treated equally fairly",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "trwkcnt": {
+    "description": "Perceived fairness in hiring, pay, or promotion based on gender in the country",
+    "question": "How fair is hiring, pay, or promotion for women and men in your country?",
+    "values": {
+      "1": "Women are treated less fairly than men",
+      "2": "Men are treated less fairly than women",
+      "3": "Women and men are treated equally fairly",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "trplcnt": {
+    "description": "Perceived fairness in police treatment based on gender in the country",
+    "question": "How fair is police treatment for women and men in your country?",
+    "values": {
+      "1": "Women are treated less fairly than men",
+      "2": "Men are treated less fairly than women",
+      "3": "Women and men are treated equally fairly",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "eqwrkbg": {
+    "description": "Impact of equal participation of women and men in paid work on family life",
+    "question": "How would equal participation of women and men in paid work affect family life in your country?",
+    "values": {
+      "0": "Very bad",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "Very good",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "eqpolbg": {
+    "description": "Impact of equal political leadership between genders on politics",
+    "question": "How would equal numbers of women and men in political leadership affect politics in your country?",
+    "values": {
+      "0": "Very bad",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "Very good",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "eqmgmbg": {
+    "description": "Impact of equal participation of women and men in management on businesses",
+    "question": "How would equal numbers of women and men in high management positions affect businesses in your country?",
+    "values": {
+      "0": "Very bad",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "Very good",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "eqpaybg": {
+    "description": "Impact of equal pay for equal work on the economy",
+    "question": "How would equal pay for men and women affect the economy in your country?",
+    "values": {
+      "0": "Very bad",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "Very good",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "eqparep": {
+    "description": "Support for equal representation of women and men in parliament",
+    "question": "To what extent do you support dividing parliamentary seats equally between women and men?",
+    "values": {
+      "1": "Strongly in favour",
+      "2": "Somewhat in favour",
+      "3": "Neither in favour nor against",
+      "4": "Somewhat against",
+      "5": "Strongly against",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "eqparlv": {
+    "description": "Support for equal parental leave for both parents",
+    "question": "To what extent do you support requiring both parents to take equal periods of paid leave for child care?",
+    "values": {
+      "1": "Strongly in favour",
+      "2": "Somewhat in favour",
+      "3": "Neither in favour nor against",
+      "4": "Somewhat against",
+      "5": "Strongly against",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "fineqpy": {
+    "description": "Support for fining businesses for unequal pay",
+    "question": "To what extent do you support fining businesses that pay men more than women for the same work?",
+    "values": {
+      "1": "Strongly in favour",
+      "2": "Somewhat in favour",
+      "3": "Neither in favour nor against",
+      "4": "Somewhat against",
+      "5": "Strongly against",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+"wsekpwr": {
+    "description": "How often women seek to gain power by getting control over men",
+    "question": "How often do women seek to gain power by getting control over men?",
+    "values": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Always",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "weasoff": {
+    "description": "How often women get easily offended",
+    "question": "How often do women get easily offended?",
+    "values": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Always",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "wlespdm": {
+    "description": "How often women paid less than men for same work in [country]",
+    "question": "How often are women paid less than men for the same work in [country]?",
+    "values": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Always",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "wexashr": {
+    "description": "How often women exaggerate claims of sexual harassment in the workplace",
+    "question": "How often do women exaggerate claims of sexual harassment in the workplace?",
+    "values": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Always",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "wprtby": {
+    "description": "Women should be protected by men",
+    "question": "To what extent do you agree that women should be protected by men?",
+    "values": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "wbrgwrm": {
+    "description": "Women tend to have better sense of what is right and wrong compared with men",
+    "question": "To what extent do you agree that women tend to have a better sense of what is right and wrong compared with men?",
+    "values": {
+      "1": "Agree strongly",
+      "2": "Agree",
+      "3": "Neither agree nor disagree",
+      "4": "Disagree",
+      "5": "Disagree strongly",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  }
+}

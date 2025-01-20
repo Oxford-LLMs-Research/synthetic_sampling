@@ -1,0 +1,689 @@
+{
+  "c19mcpnt": {
+    "description": "Online/mobile communication with parent, how often compared with before COVID-19",
+    "question": "Compared with before the coronavirus pandemic, would you say that you have online or mobile communication with {him/her}...",
+    "values": {
+      "1": "Much more often now",
+      "2": "A little more often now",
+      "3": "About the same",
+      "4": "A little less often now",
+      "5": "Much less often now",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "livpnt": {
+    "description": "Parents still alive",
+    "question": "Are any of your parents still alive?",
+    "values": {
+      "1": "Yes, both parents",
+      "2": "Yes, only my mother",
+      "3": "Yes, only my father",
+      "4": "No, no parent",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "pntmofa": {
+    "description": "Parents still alive, mother or father",
+    "question": "Now please think of your parent who had his or her birthday most recently. Is this your mother or your father?",
+    "values": {
+      "1": "Mother",
+      "2": "Father",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "agepnt": {
+    "description": "Age of parent",
+    "question": "How old is your parent?",
+    "values": {
+      "666": "Not applicable",
+      "777": "Refusal",
+      "888": "Don't know",
+      "999": "No answer"
+    }
+  },
+  "hhlipnt": {
+    "description": "Parent lives in same household",
+    "question": "Does your parent live in the same household as you?",
+    "values": {
+      "1": "Yes",
+      "2": "No",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "closepnt": {
+    "description": "How close to parent",
+    "question": "Taking everything into consideration, how close do you feel to your parent?",
+    "values": {
+      "1": "Extremely close",
+      "2": "Very close",
+      "3": "Quite close",
+      "4": "Not very close",
+      "5": "Not at all close",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "ttminpnt": {
+    "description": "Travel time to parent, in minutes",
+    "question": "About how long would it take you to get to where your parent lives, on average?",
+    "values": {
+      "6666": "Not applicable",
+      "7777": "Refusal",
+      "8888": "Don't know",
+      "9999": "No answer"
+    }
+  },
+  "speakpnt": {
+    "description": "Speak with parent in person, how often",
+    "question": "How often do you speak with your parent in person?",
+    "values": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Once a month",
+      "6": "Less often",
+      "7": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "scrnpnt": {
+    "description": "Speak with parent and see each other on a screen, how often",
+    "question": "How often do you speak with your parent such that you can see each other on a screen?",
+    "values": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Once a month",
+      "6": "Less often",
+      "7": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "phonepnt": {
+    "description": "Speak with parent using a phone, how often",
+    "question": "How often do you speak with your parent using a phone or other device?",
+    "values": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Once a month",
+      "6": "Less often",
+      "7": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "compnt": {
+    "description": "Communicate with parent via text, email or messaging apps, how often",
+    "question": "How often do you and your parent communicate with each other via text, email or messaging apps?",
+    "values": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Once a month",
+      "6": "Less often",
+      "7": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "c19sppnt": {
+    "description": "Speak with parent in person, how often compared with before COVID-19",
+    "question": "Compared with before the coronavirus pandemic, would you say that you speak with your parent in person...",
+    "values": {
+      "1": "Much more often now",
+      "2": "A little more often now",
+      "3": "About the same",
+      "4": "A little less often now",
+      "5": "Much less often now",
+      "55": "We are never in the same location now due to the pandemic",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "c19mcpnt": {
+    "description": "Online/mobile communication with parent, how often compared with before COVID-19",
+    "question": "Compared with before the coronavirus pandemic, would you say that you have online or mobile communication with {him/her}...",
+    "values": {
+      "1": "Much more often now",
+      "2": "A little more often now",
+      "3": "About the same",
+      "4": "A little less often now",
+      "5": "Much less often now",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "stfmjob": {
+    "description": "How satisfied are you in your main job",
+    "question": "How satisfied are you in your main job?",
+    "values": {
+      "0": "Extremely dissatisfied",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely satisfied",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "trdawrk": {
+    "description": "Too tired after work to enjoy things like doing at home, how often",
+    "question": "How often do you feel too tired after work to enjoy the things you would like to do at home?",
+    "values": {
+      "1": "Never",
+      "2": "Hardly ever",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Always",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "jbprtfp": {
+    "description": "Job prevents you from giving time to partner/family, how often",
+    "question": "How often do you find that your job prevents you from giving the time you want to your partner or family?",
+    "values": {
+      "1": "Never",
+      "2": "Hardly ever",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Always",
+      "6": "Don't have partner/family",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "pfmfdjba": {
+    "description": "Partner/family fed up with pressure of your job, how often",
+    "question": "How often do you find that your partner or family gets fed up with the pressure of your job?",
+    "values": {
+      "1": "Never",
+      "2": "Hardly ever",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Always",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "dcsfwrka": {
+    "description": "Current job: can decide time start/finish work",
+    "question": "To what extent are you allowed to decide your own starting and finishing times at work?",
+    "values": {
+      "1": "Not at all",
+      "2": "To some extent",
+      "3": "Completely",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "wrkhome": {
+    "description": "Work from home or place of choice, how often",
+    "question": "How often do you work from home or from another place of your choice during your regular working hours?",
+    "values": {
+      "1": "Every day",
+      "2": "Several times a week",
+      "3": "Several times a month",
+      "4": "Once a month",
+      "5": "Less often",
+      "6": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "dcsfwrka": {
+    "description": "Current job: can decide time start/finish work",
+    "question": "To what extent are you allowed to decide your own starting and finishing times at work?",
+    "values": {
+      "1": "Not at all",
+      "2": "To some extent",
+      "3": "Completely",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "wrkhome": {
+    "description": "Work from home or place of choice, how often",
+    "question": "How often do you work from home or from another place of your choice during your regular working hours?",
+    "values": {
+      "1": "Every day",
+      "2": "Several times a week",
+      "3": "Several times a month",
+      "4": "Once a month",
+      "5": "Less often",
+      "6": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "c19whome": {
+    "description": "Work from home or place of choice, how often compared with before COVID-19",
+    "question": "Compared with before the coronavirus pandemic, would you say that you work from home or from another place of your choice...",
+    "values": {
+      "1": "Much more often now",
+      "2": "A little more often now",
+      "3": "About the same",
+      "4": "A little less often now",
+      "5": "Much less often now",
+      "55": "I cannot work from home or another place of my choice",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "c19wplch": {
+    "description": "Work place change occurred as a result of COVID-19",
+    "question": "Would you say that this change occurred as a result of the coronavirus pandemic?",
+    "values": {
+      "1": "Yes, entirely",
+      "2": "Yes, in part",
+      "3": "No",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "wrklong": {
+    "description": "Employees expected to work overtime, how often",
+    "question": "How often are employees in your organisation expected to work overtime, whether at the workplace or at home?",
+    "values": {
+      "1": "Every day",
+      "2": "Several times a week",
+      "3": "Several times a month",
+      "4": "Once a month",
+      "5": "Less often",
+      "6": "Never",
+      "55": "I don't work in an organisation",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "wrkresp": {
+    "description": "Employees expected to be responsive outside working hours, how often",
+    "question": "How often are employees in your organisation expected to be responsive to work communications outside working hours?",
+    "values": {
+      "1": "Every day",
+      "2": "Several times a week",
+      "3": "Several times a month",
+      "4": "Once a month",
+      "5": "Less often",
+      "6": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "c19whacc": {
+    "description": "Work from home or place of choice, how accepted compared with before COVID-19",
+    "question": "Compared with before the coronavirus pandemic, how accepted is it for employees in your organisation to choose to work regularly from home or from another place of their choice nowadays?",
+    "values": {
+      "1": "Much more accepted now",
+      "2": "A little more accepted now",
+      "3": "About the same",
+      "4": "A little less accepted now",
+      "5": "Much less accepted now",
+      "33": "Employees need to work from home due to coronavirus restrictions",
+      "44": "Employees in my organisation do not have a regular workplace",
+      "55": "Employees in my organisation do not work regularly from home or from another place of their choice",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "mansupp": {
+    "description": "Line manager supports employees in balancing work, how much",
+    "question": "If you have a line manager, how much does he or she support employees in balancing work and personal commitments?",
+    "values": {
+      "0": "Not at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Completely",
+      "55": "I don't have a line manager",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "manhlp": {
+    "description": "Line manager gives work-related help, how likely",
+    "question": "How likely would your line manager be to give you work-related help or advice, if needed?",
+    "values": {
+      "1": "Very likely",
+      "2": "Likely",
+      "3": "Not very likely",
+      "4": "Not at all likely",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "manwrkpl": {
+    "description": "Line manager and respondent are at the same workplace, how often",
+    "question": "How often are you and your line manager at the same workplace at the same time?",
+    "values": {
+      "1": "Every day",
+      "2": "Several times a week",
+      "3": "Several times a month",
+      "4": "Once a month",
+      "5": "Less often",
+      "6": "Never",
+      "44": "I don't have a regular workplace",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "manspeak": {
+    "description": "Speak with line manager about work in person, how often",
+    "question": "How often do you speak about work with your line manager in person? Please only include occasions where you are physically in the same location.",
+    "values": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Once a month",
+      "6": "Less often",
+      "7": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "manscrn": {
+    "description": "Speak with line manager about work and see each other on a screen, how often",
+    "question": "How often do you speak about work with your line manager such that you can see each other on a screen?",
+    "values": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Once a month",
+      "6": "Less often",
+      "7": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "manphone": {
+    "description": "Speak with line about work manager using a phone, how often",
+    "question": "How often do you speak about work with your line manager using a phone or other device? Please include calls you make or receive, but exclude calls where you see each other on a screen.",
+    "values": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Once a month",
+      "6": "Less often",
+      "7": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "mancom": {
+    "description": "Communicate with line manager about work via text, email or messaging apps, how often",
+    "question": "How often do you communicate about work in writing with your line manager via text, email or messaging apps?",
+    "values": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Once a month",
+      "6": "Less often",
+      "7": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "teamfeel": {
+    "description": "Feel like part of your team, how much",
+    "question": "If you work in a team, how much do you feel like part of your team?",
+    "values": {
+      "0": "Not at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Completely",
+      "55": "I don't work in a team",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "wrkextra": {
+    "description": "Take on extra responsibilities at work without being paid more",
+    "question": "If needed, how willing would you be to take on extra responsibilities at work without being paid more?",
+    "values": {
+      "0": "Not at all willing",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Completely willing",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "colprop": {
+    "description": "Proportion of colleagues based at the same location",
+    "question": "If you have colleagues, what proportion of them are based at the same physical location as you on a normal working day?",
+    "values": {
+      "1": "All",
+      "2": "Very large",
+      "3": "Over a half",
+      "4": "About half",
+      "5": "Under a half",
+      "6": "Very small",
+      "7": "None",
+      "55": "I don't have colleagues",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "colhlp": {
+    "description": "Colleagues give work-related help, how likely",
+    "question": "How likely would your colleagues be to give you work-related help or advice, if needed?",
+    "values": {
+      "1": "Very likely",
+      "2": "Likely",
+      "3": "Not very likely",
+      "4": "Not at all likely",
+      "6": "Not applicable",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "colspeak": {
+    "description": "Speak with colleagues in person, how often",
+    "question": "How often do you speak about work with your colleagues in person? Please only include occasions where you are physically in the same location.",
+    "values": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Once a month",
+      "6": "Less often",
+      "7": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "colscrn": {
+    "description": "Speak with colleagues about work and see each other on a screen, how often",
+    "question": "How often do you speak about work with your colleagues such that you can see each other on a screen?",
+    "values": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Once a month",
+      "6": "Less often",
+      "7": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "colphone": {
+    "description": "Speak with colleagues about work using a phone, how often",
+    "question": "How often do you speak about work with your colleagues using a phone or other device? Please include calls you make or receive, but exclude calls where you see each other on a screen.",
+    "values": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Once a month",
+      "6": "Less often",
+      "7": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "colcom": {
+    "description": "Communicate with colleagues about work via text, email or messaging apps, how often",
+    "question": "How often do you communicate about work in writing with your colleagues via text, email or messaging apps?",
+    "values": {
+      "1": "Several times a day",
+      "2": "Once a day",
+      "3": "Several times a week",
+      "4": "Several times a month",
+      "5": "Once a month",
+      "6": "Less often",
+      "7": "Never",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "c19spwrk": {
+    "description": "Speak with people you work with in person, how often compared with before COVID-19",
+    "question": "Compared with before the coronavirus pandemic, would you say that you speak with people you work with in person...",
+    "values": {
+      "1": "Much more often now",
+      "2": "A little more often now",
+      "3": "About the same",
+      "4": "A little less often now",
+      "5": "Much less often now",
+      "55": "We are never in the same location now due to the pandemic",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "c19mcwrk": {
+    "description": "Online/mobile communication with people you work with, how often compared with before COVID-19",
+    "question": "Compared with before the coronavirus pandemic, would you say that you have online or mobile communication with the people you work with...",
+    "values": {
+      "1": "Much more often now",
+      "2": "A little more often now",
+      "3": "About the same",
+      "4": "A little less often now",
+      "5": "Much less often now",
+      "55": "I don't have online or mobile communication with the people I work with",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  }
+}

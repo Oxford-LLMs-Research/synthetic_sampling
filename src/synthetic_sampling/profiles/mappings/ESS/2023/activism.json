@@ -1,0 +1,90 @@
+{
+  "contplt": {
+    "description": "Contacted politician or government official last 12 months",
+    "question": "During the last 12 months, have you contacted a politician, government or local government official?",
+    "values": {
+      "1": "Yes",
+      "2": "No",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "donprty": {
+    "description": "Donated to or participated in political party or pressure group last 12 months",
+    "question": "During the last 12 months, have you donated to or participated in a political party or pressure group?",
+    "values": {
+      "1": "Yes",
+      "2": "No",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "badge": {
+    "description": "Worn or displayed campaign badge/sticker last 12 months",
+    "question": "During the last 12 months, have you worn or displayed a campaign badge/sticker?",
+    "values": {
+      "1": "Yes",
+      "2": "No",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "sgnptit": {
+    "description": "Signed petition last 12 months",
+    "question": "During the last 12 months, have you signed a petition?",
+    "values": {
+      "1": "Yes",
+      "2": "No",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "pbldmna": {
+    "description": "Taken part in public demonstration last 12 months",
+    "question": "During the last 12 months, have you taken part in a public demonstration?",
+    "values": {
+      "1": "Yes",
+      "2": "No",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "bctprd": {
+    "description": "Boycotted certain products last 12 months",
+    "question": "During the last 12 months, have you boycotted certain products?",
+    "values": {
+      "1": "Yes",
+      "2": "No",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "pstplonl": {
+    "description": "Posted or shared anything about politics online last 12 months",
+    "question": "During the last 12 months, have you posted or shared anything about politics online?",
+    "values": {
+      "1": "Yes",
+      "2": "No",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "volunfp": {
+    "description": "Volunteered for not-for-profit or charitable organisation",
+    "question": "During the last 12 months, have you volunteered for a not-for-profit or charitable organisation?",
+    "values": {
+      "1": "Yes",
+      "2": "No",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  }
+}

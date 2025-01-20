@@ -1,0 +1,381 @@
+{
+  "likrisk": {
+    "description": "I like to take risks, to what extent",
+    "question": "To what extent do you like to take risks?",
+    "values": {
+      "0": "Not at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "Completely",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "liklead": {
+    "description": "I like to be a leader, to what extent",
+    "question": "To what extent do you like to be a leader?",
+    "values": {
+      "0": "Not at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "Completely",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "sothnds": {
+    "description": "I am sensitive to others’ needs",
+    "question": "To what extent are you sensitive to others' needs?",
+    "values": {
+      "0": "Not at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "Completely",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "actcomp": {
+    "description": "I act compassionately towards others, to what extent",
+    "question": "To what extent do you act compassionately towards others?",
+    "values": {
+      "0": "Not at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "Completely",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "ipcrtiv": {
+    "description": "Important to think new ideas and being creative",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. Thinking up new ideas and being creative is important to her/him. She/he likes to do things in her/his own original way.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "imprich": {
+    "description": "Important to be rich, have money and expensive things",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. It is important to her/him to be rich. She/he wants to have a lot of money and expensive things.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "ipeqopt": {
+    "description": "Important that people are treated equally and have equal opportunities",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. She/he thinks it is important that every person in the world should be treated equally. She/he believes everyone should have equal opportunities in life.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "ipshabt": {
+    "description": "Important to show abilities and be admired",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. It's important to her/him to show her/his abilities. She/he wants people to admire what she/he does.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "impsafe": {
+    "description": "Important to live in secure and safe surroundings",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. It is important to her/him to live in secure surroundings. She/he avoids anything that might endanger her/his safety.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "impdiff": {
+    "description": "Important to try new and different things in life",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. She/he likes surprises and is always looking for new things to do. She/he thinks it is important to do lots of different things in life.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "ipfrule": {
+    "description": "Important to do what is told and follow rules",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. She/he believes that people should do what they're told. She/he thinks people should follow rules at all times, even when no-one is watching.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "ipudrst": {
+    "description": "Important to understand different people",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. It is important to her/him to listen to people who are different from her/him. Even when she/he disagrees with them, she/he still wants to understand them.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "ipmodst": {
+    "description": "Important to be humble and modest, not draw attention",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. It is important to her/him to be humble and modest. She/he tries not to draw attention to herself/himself.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "ipgdtim": {
+    "description": "Important to have a good time",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. Having a good time is important to her/him. She/he likes to 'spoil' herself/himself.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "impfree": {
+    "description": "Important to make own decisions and be free",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. It is important to her/him to make her/his own decisions about what she/he does. She/he likes to be free and not depend on others.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "iphlppl": {
+    "description": "Important to help people and care for others' well-being",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. It is very important to her/him to help the people around her/him. She/he wants to care for their well-being.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "ipsuces": {
+    "description": "Important to be successful and that people recognise achievements",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. Being very successful is important to her/him. She/he hopes people will recognise her/his achievements.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "ipstrgv": {
+    "description": "Important that government is strong and ensures safety",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. It is important to her/him that the government ensures her/his safety against all threats. She/he wants the state to be strong so it can defend its citizens.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "ipadvnt": {
+    "description": "Important to seek adventures and have an exciting life",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. She/he looks for adventures and likes to take risks. She/he wants to have an exciting life.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "ipbhprp": {
+    "description": "Important to behave properly",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. It is important to her/him always to behave properly. She/he wants to avoid doing anything people would say is wrong.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "iprspot": {
+    "description": "Important to get respect from others",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. It is important to her/him to get respect from others. She/he wants people to do what she/he says.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "iplylfr": {
+    "description": "Important to be loyal to friends and devote to people close",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. It is important to her/him to be loyal to her/his friends. She/he wants to devote herself/himself to people close to her/him.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "impenv": {
+    "description": "Important to care for nature and environment",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. It is very important to her/him to care for nature. Looking after the environment is important to her/him.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "imptrad": {
+    "description": "Important to follow traditions and customs",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. Tradition is important to her/him. She/he tries to follow the customs handed down by her/his religion or her/his family.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "impfun": {
+    "description": "Important to seek fun and things that give pleasure",
+    "question": "I will briefly describe a person. Please tell me how much this person is or is not like you. She/he seeks every chance she/he can to have fun. It is important to her/him to do things that give her/him pleasure.",
+    "values": {
+      "1": "Very much like me",
+      "2": "Like me",
+      "3": "Somewhat like me",
+      "4": "A little like me",
+      "5": "Not like me",
+      "6": "Not like me at all",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  }
+}

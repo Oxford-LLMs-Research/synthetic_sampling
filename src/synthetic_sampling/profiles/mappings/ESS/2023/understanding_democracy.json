@@ -1,0 +1,598 @@
+{
+  "fairelc": {
+    "description": "National elections are free and fair",
+    "question": "How important do you think it is for democracy in general that national elections are free and fair?",
+    "values": {
+      "0": "Not at all important for democracy in general",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely important for democracy in general",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "dfprtal": {
+    "description": "Different political parties offer clear alternatives to one another",
+    "question": "How important do you think it is for democracy in general that different political parties offer clear alternatives to one another?",
+    "values": {
+      "0": "Not at all important for democracy in general",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely important for democracy in general",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "medcrgv": {
+    "description": "The media are free to criticise the government",
+    "question": "How important do you think it is for democracy in general that the media are free to criticise the government?",
+    "values": {
+      "0": "Not at all important for democracy in general",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely important for democracy in general",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "rghmgpr": {
+    "description": "The rights of minority groups are protected",
+    "question": "How important do you think it is for democracy in general that the rights of minority groups are protected?",
+    "values": {
+      "0": "Not at all important for democracy in general",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely important for democracy in general",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "votedir": {
+    "description": "Citizens have the final say on political issues by voting directly in referendums",
+    "question": "How important do you think it is for democracy in general that citizens have the final say on the most important political issues by voting on them directly in referendums?",
+    "values": {
+      "0": "Not at all important for democracy in general",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely important for democracy in general",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "cttresa": {
+    "description": "The courts treat everyone the same",
+    "question": "How important do you think it is for democracy in general that the courts treat everyone the same?",
+    "values": {
+      "0": "Not at all important for democracy in general",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely important for democracy in general",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "gptpel": {
+    "description": "Governing parties are punished in elections when they have done a bad job",
+    "question": "How important do you think it is for democracy in general that governing parties are punished in elections when they have done a bad job?",
+    "values": {
+      "0": "Not at all important for democracy in general",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely important for democracy in general",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "gvctzpv": {
+    "description": "The government protects all citizens against poverty",
+    "question": "How important do you think it is for democracy in general that the government protects all citizens against poverty?",
+    "values": {
+      "0": "Not at all important for democracy in general",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely important for democracy in general",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "grdfinc": {
+    "description": "The government takes measures to reduce differences in income levels",
+    "question": "How important do you think it is for democracy in general that the government takes measures to reduce differences in income levels?",
+    "values": {
+      "0": "Not at all important for democracy in general",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely important for democracy in general",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "viepol": {
+    "description": "The views of ordinary people prevail over the views of the political elite",
+    "question": "How important do you think it is for democracy in general that the views of ordinary people prevail over the views of the political elite?",
+    "values": {
+      "0": "Not at all important for democracy in general",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely important for democracy in general",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "wpestop": {
+    "description": "The will of the people cannot be stopped",
+    "question": "How important do you think it is for democracy in general that the will of the people cannot be stopped?",
+    "values": {
+      "0": "Not at all important for democracy in general",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely important for democracy in general",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "keydec": {
+    "description": "Key decisions are made by national governments rather than the European Union",
+    "question": "How important do you think it is for democracy in general that key decisions are made by national governments rather than the European Union?",
+    "values": {
+      "0": "Not at all important for democracy in general",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely important for democracy in general",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "fairelcc": {
+    "description": "In country national elections are free and fair",
+    "question": "How much do you think national elections in [country] are free and fair?",
+    "values": {
+      "0": "Does not apply at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Applies completely",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "dfprtalc": {
+    "description": "In country different political parties offer clear alternatives to one another",
+    "question": "How much do you think different political parties in [country] offer clear alternatives to one another?",
+    "values": {
+      "0": "Does not apply at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Applies completely",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "medcrgvc": {
+    "description": "In country the media are free to criticise the government",
+    "question": "How much do you think the media in [country] are free to criticise the government?",
+    "values": {
+      "0": "Does not apply at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Applies completely",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "rghmgprc": {
+    "description": "In country the rights of minority groups are protected",
+    "question": "How much do you think the rights of minority groups in [country] are protected?",
+    "values": {
+      "0": "Does not apply at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Applies completely",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "votedirc": {
+    "description": "In country citizens have the final say on political issues by voting directly in referendums",
+    "question": "How much do you think citizens in [country] have the final say on the most important political issues by voting on them directly in referendums?",
+    "values": {
+      "0": "Does not apply at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Applies completely",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "cttresac": {
+    "description": "In country the courts treat everyone the same",
+    "question": "How much do you think the courts in [country] treat everyone the same?",
+    "values": {
+      "0": "Does not apply at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Applies completely",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "gptpelcc": {
+    "description": "In country governing parties are punished in elections when they have done a bad job",
+    "question": "How much do you think governing parties in [country] are punished in elections when they have done a bad job?",
+    "values": {
+      "0": "Does not apply at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Applies completely",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "gvctzpvc": {
+    "description": "In country the government protects all citizens against poverty",
+    "question": "How much do you think the government in [country] protects all citizens against poverty?",
+    "values": {
+      "0": "Does not apply at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Applies completely",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "grdfincc": {
+    "description": "In country the government takes measures to reduce differences in income levels",
+    "question": "How much do you think the government in [country] takes measures to reduce differences in income levels?",
+    "values": {
+      "0": "Does not apply at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Applies completely",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "viepolc": {
+    "description": "In country the views of ordinary people prevail over the views of the political elite",
+    "question": "How much do you think the views of ordinary people in [country] prevail over the views of the political elite?",
+    "values": {
+      "0": "Does not apply at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Applies completely",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "wpestopc": {
+    "description": "In country the will of the people cannot be stopped",
+    "question": "How much do you think the will of the people in [country] cannot be stopped?",
+    "values": {
+      "0": "Does not apply at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Applies completely",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "keydecc": {
+    "description": "In country key decisions are made by national governments rather than the European Union",
+    "question": "How much do you think key decisions in [country] are made by the national government rather than the European Union?",
+    "values": {
+      "0": "Does not apply at all",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Applies completely",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "chpldm": {
+    "description": "Best for democracy: government changes policies in response to what most people think",
+    "question": "Which one of the statements describes what you think is best for democracy in general?",
+    "values": {
+      "1": "Government should change its policies",
+      "2": "Government should stick to its policies",
+      "5": "It depends on the circumstances",
+      "7": "Refusal",
+      "8": "Don't know",
+      "9": "No answer"
+    }
+  },
+  "chpldmi": {
+    "description": "Important for democracy: government changes policies in response to what most people think",
+    "question": "How important do you think it is for democracy in general that the government changes its planned policies in response to what most people think?",
+    "values": {
+      "0": "Not at all important for democracy in general",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely important for democracy in general",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "chpldmc": {
+    "description": "In country government changes policies in response to what most people think",
+    "question": "How often do you think the government in [country] today changes its planned policies in response to what most people think?",
+    "values": {
+      "0": "Never",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Always",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "stpldmi": {
+    "description": "Important for democracy: government sticks to policies regardless of what most people think",
+    "question": "How important do you think it is for democracy in general that the government sticks to its planned policies regardless of what most people think?",
+    "values": {
+      "0": "Not at all important for democracy in general",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Extremely important for democracy in general",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "stpldmc": {
+    "description": "In country government sticks to policies regardless of what most people think",
+    "question": "How often do you think the government in [country] today sticks to its planned policies regardless of what most people think?",
+    "values": {
+      "0": "Never",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Always",
+      "66": "Not applicable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  },
+  "accalaw": {
+    "description": "Acceptable for country to have a strong leader above the law",
+    "question": "How acceptable for you would it be for [country] to have a strong leader who is above the law?",
+    "values": {
+      "0": "Not at all acceptable",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "Completely acceptable",
+      "77": "Refusal",
+      "88": "Don't know",
+      "99": "No answer"
+    }
+  }
+}
