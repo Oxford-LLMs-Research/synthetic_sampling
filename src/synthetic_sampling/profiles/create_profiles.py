@@ -27,12 +27,8 @@ ess2023 = pd.read_csv(data_path)
 
 survey_mappings = {}
 
-for filename in os.listdir(mapping_directory):
-    if filename.endswith('.json'):
-        section_name = os.path.splitext(filename)[0]
-
-        with open(os.path.join(mapping_directory, filename), 'r', encoding='utf-8') as file:
-            survey_mappings[section_name] = json.load(file)
+with open(directory, 'r', encoding='utf-8') as file:
+    survey_mappings = json.load(file)
 
 
 
