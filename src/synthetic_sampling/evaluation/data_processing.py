@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import re
 from typing import Dict, List, Any, Optional
-from .config import EvaluationConfig
+
 
 class Mapper:
     """
@@ -77,13 +77,17 @@ class Mapper:
         for placeholder in placeholder_names:
             if placeholder in respondent:
                 value = respondent[placeholder]
-                mapped_value = self.map_value(placeholder, value)
-                placeholders[placeholder] = mapped_value
+                if placeholder in ['agea']:
+                    placeholders[placeholder] = str(int(value)) if pd.notnull(value) else f"unknown {placeholder}"
+                else:
+                    mapped_value = self.map_value(placeholder, value)
+                    placeholders[placeholder] = mapped_value
             else:
                 placeholders[placeholder] = "Unknown"
 
         filled_prompt = prompt_template.format(**placeholders)
         return filled_prompt
+
 
 def apply_mapping(df: pd.DataFrame, mapping: Dict[str, Dict[str, Any]]) -> pd.DataFrame:
     """
@@ -104,6 +108,7 @@ def apply_mapping(df: pd.DataFrame, mapping: Dict[str, Dict[str, Any]]) -> pd.Da
                 df[col] = mapped_column.where(mapped_column.notna(), df[col].astype(str))
     return df
 
+
 def replace_special_codes(series: pd.Series, code_map: Dict[str, Optional[str]]) -> pd.Series:
     """
     Replace or exclude special codes in a pandas Series based on a mapping.
@@ -118,9 +123,11 @@ def replace_special_codes(series: pd.Series, code_map: Dict[str, Optional[str]])
     """
     drop_codes = [code for code, replacement in code_map.items() if replacement is None]
     drop_mask = series.isin(drop_codes)
-    replaced_series = series.replace({code: replacement for code, replacement in code_map.items() if replacement is not None})
+    replaced_series = series.replace(
+        {code: replacement for code, replacement in code_map.items() if replacement is not None})
     replaced_series[drop_mask] = np.nan
     return replaced_series
+
 
 def get_question_text_from_mapping(survey_mappings: Dict[str, Dict[str, Any]], question_id: str) -> str:
     """
@@ -138,6 +145,7 @@ def get_question_text_from_mapping(survey_mappings: Dict[str, Dict[str, Any]], q
             q_info = variables[question_id]
             return q_info.get("question", f"Question text not found for {question_id}")
     return f"No text found for {question_id}"
+
 
 def build_prompt_data_batch(
     df: pd.DataFrame,
@@ -162,6 +170,9 @@ def build_prompt_data_batch(
             - 'label_options': List of possible answer labels.
             - 'true_label': The respondent's actual answer.
     """
+
+    batch_size = config.batch_size
+
     if qid not in df.columns:
         print(f"Warning: {qid} not in DataFrame columns. Skipping.")
         return []
@@ -211,5 +222,5 @@ def build_prompt_data_batch(
         })
 
     # Split results into batches
-    batched_results = [results[i:i + config.batch_size] for i in range(0, len(results), config.batch_size)]
+    batched_results = [results[i:i + batch_size] for i in range(0, len(results), batch_size)]
     return batched_results

@@ -18,23 +18,21 @@ class EvaluationConfig:
         batch_size (int): Batch size for evaluation. Defaults to 32.
     """
     question_ids: List[str]
-    special_codes: Dict[str, Optional[str]]  # Map from code -> replacement or None to drop
+    special_codes: Dict[str, Optional[str]]
     profile_prompt_template: str
     model: torch.nn.Module
-    tokenizer: Any  # Replace with the actual type if known
+    tokenizer: Any
     device: torch.device
-    batch_size: int = 32  # Increased batch size for better GPU utilization
-
+    batch_size: int = 32
 
 # Default configuration
 DEFAULT_CONFIG = EvaluationConfig(
-    question_ids=["Q17", "Q29", "Q206"],
+    question_ids=["Q206"],
     special_codes={
         "No answer": None,
         "Not asked": None,
-        "Don´t know": 'Don´t know',
         "Missing; Not available": None,
-        "Missing; Unknown": None,
+        "Don´t know": 'Don´t know',
         "Don't know": 'Don´t know',
         "-5": None
     },

@@ -3,6 +3,20 @@ from sklearn.metrics import f1_score, brier_score_loss
 from typing import List, Dict, Any
 
 def compute_metrics(all_results: List[Dict[str, Any]], label_options: List[str]) -> Dict[str, Any]:
+    """
+    Compute Brier Score, Macro F1, Weighted F1, and Per-Label F1.
+
+    Args:
+        all_results (List[Dict[str, Any]]): List of dictionaries containing 'true_label' and 'perplexities' for each example.
+        label_options (List[str]): List of possible answer labels.
+
+    Returns:
+        Dict[str, Any]: A dictionary containing:
+            - 'brier_score': The overall Brier Score.
+            - 'macro_f1': The macro-averaged F1 score.
+            - 'weighted_f1': The weighted-averaged F1 score.
+            - 'per_label_f1': A dictionary of F1 scores for each label.
+    """
     true_labels = []
     predicted_probabilities = []
     predicted_labels = []
