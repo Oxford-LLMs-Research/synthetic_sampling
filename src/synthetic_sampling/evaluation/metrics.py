@@ -1,55 +1,129 @@
-import numpy as np
-from sklearn.metrics import f1_score, brier_score_loss
 from typing import List, Dict, Any
 
-def compute_metrics(all_results: List[Dict[str, Any]], label_options: List[str]) -> Dict[str, Any]:
-    """
-    Compute Brier Score, Macro F1, Weighted F1, and Per-Label F1.
+import numpy as np
+import pandas as pd
+import torch
+from sklearn.metrics import f1_score, classification_report
+from torch.utils.data import DataLoader
+from tqdm import tqdm
 
-    Args:
-        all_results (List[Dict[str, Any]]): List of dictionaries containing 'true_label' and 'perplexities' for each example.
-        label_options (List[str]): List of possible answer labels.
+from config import EvaluationConfig
+from data_processing import Mapper, SurveyDataset, simple_collate_fn
+from evaluation import calculate_batch_perplexity
+
+
+def evaluate_single_question(
+    df: pd.DataFrame,
+    qid: str,
+    mapper: Mapper,
+    config: EvaluationConfig,
+    survey_mappings: Dict[str, Dict[str, Any]]
+) -> Dict[str, Any]:
+    """
+    Evaluate one question (identified by qid) using the full evaluation pipeline.
+
+    For the given question, build a dataset and DataLoader, run batched inference,
+    compute probability estimates from perplexities, and then calculate evaluation
+    metrics (Brier score, macro and weighted F1, and per-category F1). The returned
+    dictionary includes the question description as well as the model name.
 
     Returns:
-        Dict[str, Any]: A dictionary containing:
-            - 'brier_score': The overall Brier Score.
-            - 'macro_f1': The macro-averaged F1 score.
-            - 'weighted_f1': The weighted-averaged F1 score.
-            - 'per_label_f1': A dictionary of F1 scores for each label.
+        A dictionary of metrics for the question.
     """
-    true_labels = []
-    predicted_probabilities = []
-    predicted_labels = []
+    try:
+        # Build the dataset for this question.
+        dataset = SurveyDataset(df, qid, mapper, config, survey_mappings)
+    except ValueError as e:
+        print(f"Skipping question {qid}: {e}")
+        return {}
 
-    for result in all_results:
-        true_label = result['true_label']
-        perplexities = result['perplexities']
-        inverse_perplexities = {label: 1 / perplexity for label, perplexity in perplexities.items()}
-        total = sum(inverse_perplexities.values())
-        probabilities = {label: inv_ppl / total for label, inv_ppl in inverse_perplexities.items()}
-        true_labels.append(true_label)
-        predicted_probabilities.append([probabilities.get(label, 0.0) for label in label_options])
-        predicted_label = max(probabilities, key=probabilities.get)
-        predicted_labels.append(predicted_label)
+    dataloader = DataLoader(
+        dataset,
+        batch_size=config.batch_size,
+        collate_fn=simple_collate_fn,
+        num_workers=4,
+        shuffle=False
+    )
 
-    true_labels = np.array(true_labels)
-    predicted_probabilities = np.array(predicted_probabilities)
-    predicted_labels = np.array(predicted_labels)
+    all_true_labels = []
+    all_pred_labels = []
+    all_probabilities = []
 
-    brier_scores = []
-    for i, label in enumerate(label_options):
-        true_binary = (true_labels == label).astype(int)
-        prob_binary = predicted_probabilities[:, i]
-        brier_scores.append(brier_score_loss(true_binary, prob_binary))
-    brier_score = np.mean(brier_scores)
+    for batch in tqdm(dataloader, desc=f"Evaluating question {qid}"):
+        ppl_matrix = calculate_batch_perplexity(
+            batch,
+            dataset.label_options,
+            config.model,
+            config.tokenizer
+        )
+        # Convert perplexity to probability estimates.
+        # (Lower perplexity should mean higher probability; use the inverse and normalize.)
+        inverse_ppl = 1.0 / ppl_matrix
+        probs = inverse_ppl / inverse_ppl.sum(dim=1, keepdim=True)
 
-    macro_f1 = f1_score(true_labels, predicted_labels, average='macro')
-    weighted_f1 = f1_score(true_labels, predicted_labels, average='weighted')
-    per_label_f1 = {label: f1_score(true_labels, predicted_labels, labels=[label], average=None)[0] for label in label_options}
+        # Predicted label is the candidate with the highest probability.
+        pred_indices = torch.argmax(probs, dim=1)
+        batch_pred_labels = [dataset.label_options[idx] for idx in pred_indices.tolist()]
+        batch_true_labels = [sample["true_label"] for sample in batch]
 
-    return {
-        'brier_score': brier_score,
-        'macro_f1': macro_f1,
-        'weighted_f1': weighted_f1,
-        'per_label_f1': per_label_f1
+        all_true_labels.extend(batch_true_labels)
+        all_pred_labels.extend(batch_pred_labels)
+        all_probabilities.append(probs.cpu().numpy())
+
+    # Concatenate probability distributions.
+    all_probabilities = np.concatenate(all_probabilities, axis=0)  # Shape: (num_samples, num_label_options)
+
+    # Compute Brier score.
+    num_samples, num_labels = all_probabilities.shape
+    y_true_onehot = np.zeros_like(all_probabilities)
+    for i, true_label in enumerate(all_true_labels):
+        idx = dataset.label_options.index(true_label)
+        y_true_onehot[i, idx] = 1
+    brier_scores = np.mean((all_probabilities - y_true_onehot) ** 2, axis=1)
+    avg_brier_score = np.mean(brier_scores)
+
+    # Compute F1 scores.
+    macro_f1 = f1_score(all_true_labels, all_pred_labels, average="macro", zero_division=0)
+    weighted_f1 = f1_score(all_true_labels, all_pred_labels, average="weighted", zero_division=0)
+    class_report = classification_report(all_true_labels, all_pred_labels, output_dict=True)
+
+    # Retrieve the question description from the survey mappings.
+    question_info = survey_mappings.get(qid, {})
+    question_description = question_info.get("description", "No description available")
+
+    model_name = config.model.__class__.__name__
+
+    metrics = {
+        "question_id": qid,
+        "question_description": question_description,
+        "num_samples": num_samples,
+        "avg_brier_score": avg_brier_score,
+        "macro_f1": macro_f1,
+        "weighted_f1": weighted_f1,
+        "class_report": class_report,
+        "model_name": model_name
     }
+    return metrics
+
+
+def evaluate_questions(
+    df: pd.DataFrame,
+    question_ids: List[str],
+    mapper: Mapper,
+    config: EvaluationConfig,
+    survey_mappings: Dict[str, Dict[str, Any]]
+) -> List[Dict[str, Any]]:
+    """
+    Evaluate the model over a list of questions.
+
+    Returns:
+        A list of dictionaries, each containing evaluation metrics for one question,
+        including the question description and model name.
+    """
+    all_metrics = []
+    for qid in question_ids:
+        print(f"Evaluating question: {qid}")
+        metrics = evaluate_single_question(df, qid, mapper, config, survey_mappings)
+        if metrics:
+            all_metrics.append(metrics)
+    return all_metrics

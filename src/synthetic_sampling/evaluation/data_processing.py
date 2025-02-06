@@ -1,8 +1,11 @@
-import pandas as pd
-import numpy as np
 import re
 from typing import Dict, List, Any, Optional
 
+import numpy as np
+import pandas as pd
+from torch.utils.data import Dataset
+
+from config import EvaluationConfig
 
 class Mapper:
     """
@@ -147,80 +150,61 @@ def get_question_text_from_mapping(survey_mappings: Dict[str, Dict[str, Any]], q
     return f"No text found for {question_id}"
 
 
-def build_prompt_data_batch(
-    df: pd.DataFrame,
-    qid: str,
-    mapper,
-    config,
-    survey_mappings: Dict[str, Dict[str, Any]]
-) -> List[List[Dict[str, Any]]]:
+class SurveyDataset(Dataset):
     """
-    Prepare the data required for prompt generation and evaluation for a specific question in batches.
+    A Dataset that converts a survey DataFrame into evaluation samples.
+    Each sample is a dictionary with:
+      - "chat": A chat structure (list of dicts) for the prompt.
+      - "true_label": The respondent's answer (mapped to text).
 
-    Args:
-        df: The survey DataFrame.
-        qid: The question ID (column name) to evaluate.
-        mapper: An instance of the Mapper class for value mapping.
-        config: The EvaluationConfig instance containing configuration parameters.
-        survey_mappings: Nested dictionary containing survey sections and questions.
-
-    Returns:
-        A list of batches, where each batch is a list of dictionaries, each containing:
-            - 'chat': A chat-like structure for the respondent.
-            - 'label_options': List of possible answer labels.
-            - 'true_label': The respondent's actual answer.
+    All samples from the same question have the same candidate label options,
+    which are stored as an attribute.
     """
 
-    batch_size = config.batch_size
+    def __init__(self, df: pd.DataFrame, qid: str, mapper: Mapper,
+                 config: EvaluationConfig, survey_mappings: Dict[str, Dict[str, Any]]):
+        # Replace special codes and filter out invalid responses.
+        col_series = replace_special_codes(df[qid], config.special_codes)
+        valid_mask = col_series.notna()
+        sub_df = df[valid_mask].copy()
 
-    if qid not in df.columns:
-        print(f"Warning: {qid} not in DataFrame columns. Skipping.")
-        return []
+        # Map the target values from numeric to text using the mapper.
+        sub_df[qid] = sub_df[qid].apply(lambda x: mapper.map_value(qid, x))
 
-    # 1. Replace special codes
-    col_series = replace_special_codes(df[qid], config.special_codes)
+        if sub_df.empty:
+            raise ValueError(f"No valid responses for question {qid}.")
 
-    # 2. Filter out rows that are now NaN
-    valid_mask = col_series.notna()
-    sub_df = df[valid_mask].copy()
-    sub_df[qid] = col_series[valid_mask]
+        self.label_options = sorted(sub_df[qid].unique().tolist())
 
-    if sub_df.empty:
-        print(f"No valid responses for {qid}. Skipping.")
-        return []
+        # Construct dialog prompt
+        question_text = get_question_text_from_mapping(survey_mappings, qid)
+        question_prompt = f"Please answer the following question:\n{question_text}"
+        system_content = (
+            "You are a helpful AI assistant for public opinion research. "
+            "You are skillful at using your knowledge to make good judgment "
+            "about people's preferences when given some background information."
+        )
+        self.samples = []
+        for _, row in sub_df.iterrows():
+            filled_profile = mapper.fill_prompt(row, config.profile_prompt_template)
+            user_content = filled_profile + "\n" + question_prompt
+            chat = [
+                {"role": "system", "content": system_content},
+                {"role": "user", "content": user_content}
+            ]
+            self.samples.append({
+                "chat": chat,
+                "true_label": row[qid]
+            })
 
-    # 3. Gather label options
-    label_options = sorted(sub_df[qid].unique().tolist())
+    def __len__(self):
+        return len(self.samples)
 
-    # 4. Retrieve question text
-    question_text = get_question_text_from_mapping(survey_mappings, qid)
-    question_prompt = f"Please answer the following question:\n{question_text}"
+    def __getitem__(self, idx):
+        return self.samples[idx]
 
-    # 5. Build chat prompts
-    results = []
-    system_content = (
-        "You are a helpful AI assistant for public opinion research. "
-        "You are skillful at using your knowledge to make good judgment "
-        "about people's preferences when given some background information."
-    )
-
-    for _, row in sub_df.iterrows():
-        # Fill the profile prompt
-        filled_profile = mapper.fill_prompt(row, config.profile_prompt_template)
-        user_content = filled_profile + "\n" + question_prompt
-
-        # Construct chat format
-        chat = [
-            {"role": "system", "content": system_content},
-            {"role": "user", "content": user_content}
-        ]
-
-        results.append({
-            "chat": chat,
-            "label_options": label_options,
-            "true_label": row[qid]
-        })
-
-    # Split results into batches
-    batched_results = [results[i:i + batch_size] for i in range(0, len(results), batch_size)]
-    return batched_results
+def simple_collate_fn(batch: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """
+    A simple collate function that simply returns the batch (a list of sample dictionaries).
+    """
+    return batch

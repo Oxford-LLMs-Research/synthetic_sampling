@@ -25,7 +25,6 @@ class EvaluationConfig:
     device: torch.device
     batch_size: int = 32
 
-# Default configuration
 DEFAULT_CONFIG = EvaluationConfig(
     question_ids=["Q206"],
     special_codes={
@@ -39,8 +38,8 @@ DEFAULT_CONFIG = EvaluationConfig(
     profile_prompt_template=(
         "Imagine you are a {Q262}-year old {Q260} living in {B_COUNTRY}. Your highest education is {Q275}. "
     ),
-    model=None,  # To be initialized
-    tokenizer=None,  # To be initialized
+    model=None,
+    tokenizer=None,
     device=torch.device("cuda" if torch.cuda.is_available() else "cpu"),
     batch_size=4
 )
