@@ -50,7 +50,7 @@ def evaluate_single_question(
     all_probabilities = []
 
     for batch in tqdm(dataloader, desc=f"Evaluating question {qid}"):
-        ppl_matrix = calculate_batch_perplexity(
+        ppl_matrix, probs = calculate_batch_perplexity(
             batch,
             dataset.label_options,
             config.model,
@@ -58,8 +58,8 @@ def evaluate_single_question(
         )
         # Convert perplexity to probability estimates.
         # (Lower perplexity should mean higher probability; use the inverse and normalize.)
-        inverse_ppl = 1.0 / ppl_matrix
-        probs = inverse_ppl / inverse_ppl.sum(dim=1, keepdim=True)
+        # inverse_ppl = 1.0 / ppl_matrix
+        # probs = inverse_ppl / inverse_ppl.sum(dim=1, keepdim=True)
 
         # Predicted label is the candidate with the highest probability.
         pred_indices = torch.argmax(probs, dim=1)
