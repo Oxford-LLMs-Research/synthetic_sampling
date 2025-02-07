@@ -78,14 +78,14 @@ def calculate_perplexity(input_ids, label):
     return perplexity
 
 def calculate_batch_perplexity(batch: List[Dict[str, Any]], label_options: List[str],
-                               model: torch.nn.Module, tokenizer: Any) -> torch.Tensor:
+                               model: torch.nn.Module, tokenizer: Any) -> (torch.Tensor, torch.Tensor):
     """
-    Compute per-example perplexity for each candidate label.
+    Compute per-example perplexity  and probability for each candidate label.
     For each sample in the batch, tokenizes the prompt (using apply_chat_template) and concatenates
     it with each candidate label (via encode). Uses vectorized masking to ignore prompt/padding tokens,
     shifts logits/labels for causal LM prediction, and computes perplexity.
 
-    Returns a tensor of shape (num_examples, num_label_options).
+    Returns two tensors of shape (num_examples, num_label_options), with perplexities and probs per label per example
     """
 
     label_to_ids = {
@@ -143,6 +143,7 @@ def calculate_batch_perplexity(batch: List[Dict[str, Any]], label_options: List[
     logits_flat = shift_logits.reshape(-1, vocab_size)
     labels_flat = shift_labels.reshape(-1)
 
+    # Perplexity
     losses_flat = F.cross_entropy(logits_flat, labels_flat, reduction='none', ignore_index=-100)
     losses = losses_flat.view(total_sequences, max_seq_len - 1)
     mask = (shift_labels != -100).float()
@@ -150,4 +151,8 @@ def calculate_batch_perplexity(batch: List[Dict[str, Any]], label_options: List[
     ppl_per_sequence = torch.exp(loss_per_sequence)
     num_labels = len(label_options)
     ppl_matrix = ppl_per_sequence.view(num_examples, num_labels)
-    return ppl_matrix
+
+    # Log Probs
+    avg_log_probs = -torch.log(ppl_matrix)
+    probs = torch.softmax(avg_log_probs, dim=-1)
+    return ppl_matrix, probs
