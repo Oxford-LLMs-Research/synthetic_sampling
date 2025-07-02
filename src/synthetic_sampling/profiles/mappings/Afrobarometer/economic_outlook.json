@@ -1,0 +1,353 @@
+{
+  "Q3": {
+    "description": "Overall direction of the country",
+    "question": "Would you say that the country is going in the wrong direction or going in the right direction?",
+    "values": {
+      "1": "Going in the wrong direction",
+      "2": "Going in the right direction",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q4A": {
+    "description": "Country’s present economic condition",
+    "question": "In general, how would you describe the present economic condition of this country?",
+    "values": {
+      "1": "Very bad",
+      "2": "Fairly bad",
+      "3": "Neither good nor bad",
+      "4": "Fairly good",
+      "5": "Very good",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q4B": {
+    "description": "Your present living conditions",
+    "question": "In general, how would you describe your own present living conditions?",
+    "values": {
+      "1": "Very bad",
+      "2": "Fairly bad",
+      "3": "Neither good nor bad",
+      "4": "Fairly good",
+      "5": "Very good",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q5A": {
+    "description": "Country's economic condition compared to 12 months ago",
+    "question": "Looking back, how do you rate economic conditions in this country compared to 12 months ago?",
+    "values": {
+      "1": "Much worse",
+      "2": "Worse",
+      "3": "Same",
+      "4": "Better",
+      "5": "Much better",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q5B": {
+    "description": "Country's economic condition in 12 months’ time",
+    "question": "Looking ahead, do you expect economic conditions in this country to be better or worse in 12 months’ time?",
+    "values": {
+      "1": "Much worse",
+      "2": "Worse",
+      "3": "Same",
+      "4": "Better",
+      "5": "Much better",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q6A": {
+    "description": "How often gone without food",
+    "question": "Over the past year, how often, if ever, have you or anyone in your family gone without enough food to eat?",
+    "values": {
+      "0": "Never",
+      "1": "Just once or twice",
+      "2": "Several times",
+      "3": "Many times",
+      "4": "Always",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q6B": {
+    "description": "How often gone without water",
+    "question": "Over the past year, how often, if ever, have you or anyone in your family gone without enough clean water for home use?",
+    "values": {
+      "0": "Never",
+      "1": "Just once or twice",
+      "2": "Several times",
+      "3": "Many times",
+      "4": "Always",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q6C": {
+    "description": "How often gone without medical care",
+    "question": "Over the past year, how often, if ever, have you or anyone in your family gone without medicines or medical treatment?",
+    "values": {
+      "0": "Never",
+      "1": "Just once or twice",
+      "2": "Several times",
+      "3": "Many times",
+      "4": "Always",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q6D": {
+    "description": "How often gone without cooking fuel",
+    "question": "Over the past year, how often, if ever, have you or anyone in your family gone without enough fuel to cook your food?",
+    "values": {
+      "0": "Never",
+      "1": "Just once or twice",
+      "2": "Several times",
+      "3": "Many times",
+      "4": "Always",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q6E": {
+    "description": "How often gone without cash income",
+    "question": "Over the past year, how often, if ever, have you or anyone in your family gone without a cash income?",
+    "values": {
+      "0": "Never",
+      "1": "Just once or twice",
+      "2": "Several times",
+      "3": "Many times",
+      "4": "Always",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q7A": {
+    "description": "How often felt unsafe walking in neighbourhood",
+    "question": "Over the past year, how often, if ever, have you or anyone in your family felt unsafe walking in your neighbourhood?",
+    "values": {
+      "0": "Never",
+      "1": "Just once or twice",
+      "2": "Several times",
+      "3": "Many times",
+      "4": "Always",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q7B": {
+    "description": "How often feared crime in home",
+    "question": "Over the past year, how often, if ever, have you or anyone in your family feared crime in your own home?",
+    "values": {
+      "0": "Never",
+      "1": "Just once or twice",
+      "2": "Several times",
+      "3": "Many times",
+      "4": "Always",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q90A": {
+    "description": "Own radio",
+    "question": "Do you personally own a radio? If not, does anyone else in your household own one?",
+    "values": {
+      "0": "No one in household owns",
+      "1": "Yes, someone else in household owns",
+      "2": "Yes (personally owns)",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q90B": {
+    "description": "Own television",
+    "question": "Do you personally own a television? If not, does anyone else in your household own one?",
+    "values": {
+      "0": "No one in household owns",
+      "1": "Yes, someone else in household owns",
+      "2": "Yes (personally owns)",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q90C": {
+    "description": "Own motor vehicle, car or motorcycle",
+    "question": "Do you personally own a motor vehicle, car, or motorcycle? If not, does anyone else in your household own one?",
+    "values": {
+      "0": "No one in household owns",
+      "1": "Yes, someone else in household owns",
+      "2": "Yes (personally owns)",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q90D": {
+    "description": "Own computer",
+    "question": "Do you personally own a computer? If not, does anyone else in your household own one?",
+    "values": {
+      "0": "No one in household owns",
+      "1": "Yes, someone else in household owns",
+      "2": "Yes (personally owns)",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q90E": {
+    "description": "Own bank account",
+    "question": "Do you personally have a bank account? If not, does anyone else in your household have one?",
+    "values": {
+      "0": "No one in household owns",
+      "1": "Yes, someone else in household owns",
+      "2": "Yes (personally owns)",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q90F": {
+    "description": "Own mobile phone",
+    "question": "Do you personally own a mobile phone? If not, does anyone else in your household own one?",
+    "values": {
+      "0": "No one in household owns",
+      "1": "Yes, someone else in household owns",
+      "2": "Yes (personally owns)",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q90G": {
+    "description": "Mobile phone access to Internet",
+    "question": "Does your mobile phone have access to the Internet?",
+    "values": {
+      "0": "No (Does not have Internet access)",
+      "1": "Yes (Has Internet access)",
+      "7": "Not applicable (does not personally have a mobile phone)",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q90H": {
+    "description": "How often use a mobile phone",
+    "question": "How often do you use a mobile phone?",
+    "values": {
+      "0": "Never",
+      "1": "Less than once a month",
+      "2": "A few times a month",
+      "3": "A few times a week",
+      "4": "Every day",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q90I": {
+    "description": "How often use the Internet",
+    "question": "How often do you use the Internet?",
+    "values": {
+      "0": "Never",
+      "1": "Less than once a month",
+      "2": "A few times a month",
+      "3": "A few times a week",
+      "4": "Every day",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q91A": {
+    "description": "Source of water for household use",
+    "question": "What is your main source of water for household use?",
+    "values": {
+      "1": "Piped water into dwelling",
+      "2": "Piped water into yard, plot, or compound",
+      "3": "Public tap or standpipe",
+      "4": "Tubewell or borehole",
+      "5": "Protected dug well",
+      "6": "Unprotected dug well",
+      "7": "Protected spring",
+      "8": "Unprotected spring",
+      "9": "Rainwater collection",
+      "10": "Bottled water",
+      "11": "Purchased from a cart with a small tank or drum",
+      "12": "Purchased from a tanker truck",
+      "13": "Surface water, like a river, dam, lake, pond, stream, canal, or irrigation channel",
+      "95": "Other",
+      "98": "Refused",
+      "99": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q91B": {
+    "description": "Location of main water source",
+    "question": "Where is your main source of water for household use located?",
+    "values": {
+      "1": "Inside the house",
+      "2": "Inside the compound",
+      "3": "Outside the compound",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q91C": {
+    "description": "Location of toilet or latrine",
+    "question": "Where is your household’s toilet or latrine located?",
+    "values": {
+      "0": "No, no latrine available",
+      "1": "Inside the house",
+      "2": "Inside the compound",
+      "3": "Outside the compound",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q92A": {
+    "description": "Electric connection from mains",
+    "question": "Do you have an electric connection to your home from the national power grid?",
+    "values": {
+      "0": "No",
+      "1": "Yes",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q92B": {
+    "description": "Electricity available from mains",
+    "question": "How often is electricity actually available from your main electricity connection?",
+    "values": {
+      "1": "Never",
+      "2": "Occasionally",
+      "3": "About half of the time",
+      "4": "Most of the time",
+      "5": "All of the time",
+      "7": "Not applicable",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  }
+}

@@ -1,0 +1,219 @@
+{
+  "P13STGBS.A": {
+    "description": "Trust in the armed forces",
+    "question": "How much trust do you have in the armed forces?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know",
+      "9": "Not applicable (Panama and Costa Rica)"
+    }
+  },
+  "P13STGBS.B": {
+    "description": "Trust in the police",
+    "question": "How much trust do you have in the police?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P13ST.C": {
+    "description": "Trust in the Church",
+    "question": "How much trust do you have in the Church?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P13ST.D": {
+    "description": "Trust in the National Congress or Parliament",
+    "question": "How much trust do you have in the National Congress or Parliament?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P13ST.E": {
+    "description": "Trust in the National Government",
+    "question": "How much trust do you have in the National Government?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P13ST.F": {
+    "description": "Trust in the Judiciary",
+    "question": "How much trust do you have in the Judiciary?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P13ST.G": {
+    "description": "Trust in political parties",
+    "question": "How much trust do you have in political parties?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P13ST.H": {
+    "description": "Trust in the electoral institution",
+    "question": "How much trust do you have in the electoral institution?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P13ST.I": {
+    "description": "Trust in the President",
+    "question": "How much trust do you have in the President?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P14ST.A": {
+    "description": "Trust in firefighters",
+    "question": "How much trust do you have in firefighters?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P14ST.B": {
+    "description": "Trust in national companies",
+    "question": "How much trust do you have in national companies?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P14ST.C": {
+    "description": "Trust in trade unions",
+    "question": "How much trust do you have in trade unions?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P14ST.D": {
+    "description": "Trust in television",
+    "question": "How much trust do you have in television as a source of information?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P14ST.E": {
+    "description": "Trust in international companies",
+    "question": "How much trust do you have in international companies?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P14ST.F": {
+    "description": "Trust in banks",
+    "question": "How much trust do you have in banks?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P14ST.G": {
+    "description": "Trust in radio",
+    "question": "How much trust do you have in radio as a source of information?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P14ST.H": {
+    "description": "Trust in the printed press",
+    "question": "How much trust do you have in the printed press?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  },
+  "P14N.I": {
+    "description": "Trust in social media",
+    "question": "How much trust do you have in social media platforms?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "No trust",
+      "8": "Do not know"
+    }
+  }
+}

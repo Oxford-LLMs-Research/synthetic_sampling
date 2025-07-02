@@ -1,0 +1,206 @@
+{
+    "Q84B": {
+    "description": "Ethnic group treated unfairly by government",
+    "question": "How often, if ever, are members of your ethnic group treated unfairly by the government?",
+    "values": {
+      "0": "Never",
+      "1": "Sometimes",
+      "2": "Often",
+      "3": "Always",
+      "7": "Not applicable",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+"Q85A": {
+    "description": "Strong ties with other citizens",
+    "question": "Please tell me whether you agree or disagree with the following statement: I feel strong ties with other citizens of my country.",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q86A": {
+    "description": "Trust other citizens",
+    "question": "How much do you trust other citizens of your country?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q86B": {
+    "description": "Trust relatives",
+    "question": "How much do you trust your relatives?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q86C": {
+    "description": "Trust neighbours",
+    "question": "How much do you trust your neighbours?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q86D": {
+    "description": "Trust other people you know",
+    "question": "How much do you trust other people you know?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q86E": {
+    "description": "Trust people from other religions",
+    "question": "How much do you trust people from other religions?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q86F": {
+    "description": "Trust people from other ethnic groups",
+    "question": "How much do you trust people from other ethnic groups?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q87A": {
+    "description": "Neighbours: people of different religion",
+    "question": "Would you like having people of a different religion as neighbours?",
+    "values": {
+      "1": "Strongly dislike",
+      "2": "Somewhat dislike",
+      "3": "Would not care",
+      "4": "Somewhat like",
+      "5": "Strongly like",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q87B": {
+    "description": "Neighbours: people of different ethnicity",
+    "question": "Would you like having people from other ethnic groups as neighbours?",
+    "values": {
+      "1": "Strongly dislike",
+      "2": "Somewhat dislike",
+      "3": "Would not care",
+      "4": "Somewhat like",
+      "5": "Strongly like",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q87C": {
+    "description": "Neighbours: homosexuals",
+    "question": "Would you like having homosexuals as neighbours?",
+    "values": {
+      "1": "Strongly dislike",
+      "2": "Somewhat dislike",
+      "3": "Would not care",
+      "4": "Somewhat like",
+      "5": "Strongly like",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q87D": {
+    "description": "Neighbours: immigrants and foreign workers",
+    "question": "Would you like having immigrants or foreign workers as your neighbours, dislike it, or not care?",
+    "values": {
+      "1": "Strongly dislike",
+      "2": "Somewhat dislike",
+      "3": "Would not care",
+      "4": "Somewhat like",
+      "5": "Strongly like",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q87E": {
+    "description": "Neighbours: people who support a different political party",
+    "question": "Would you like having people who support a different political party as your neighbours, dislike it, or not care?",
+    "values": {
+      "1": "Strongly dislike",
+      "2": "Somewhat dislike",
+      "3": "Would not care",
+      "4": "Somewhat like",
+      "5": "Strongly like",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q88A": {
+    "description": "Ok for family member to marry from different ethnic group",
+    "question": "Would you be okay with a family member marrying someone from a different ethnic group?",
+    "values": {
+      "1": "Strongly dislike",
+      "2": "Somewhat dislike",
+      "3": "Would not care",
+      "4": "Somewhat like",
+      "5": "Strongly like",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q88B": {
+    "description": "Others see respondent as citizen like them",
+    "question": "Do you agree or disagree with the following statement: Other citizens think of me as a citizen just like them.",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Somewhat disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  }
+}

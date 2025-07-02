@@ -1,0 +1,299 @@
+{
+  "Q66A": {
+    "description": "Change in severity of droughts",
+    "question": "Over the past 10 years, has the severity of droughts in your area increased or decreased?",
+    "values": {
+      "1": "Much more severe",
+      "2": "Somewhat more severe",
+      "3": "Stayed the same",
+      "4": "Somewhat less severe",
+      "5": "Much less severe",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q66B": {
+    "description": "Change in severity of flooding",
+    "question": "Over the past 10 years, has the severity of flooding in your area increased or decreased?",
+    "values": {
+      "1": "Much more severe",
+      "2": "Somewhat more severe",
+      "3": "Stayed the same",
+      "4": "Somewhat less severe",
+      "5": "Much less severe",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q67A": {
+    "description": "Awareness of climate change",
+    "question": "Have you heard about climate change?",
+    "values": {
+      "0": "No",
+      "1": "Yes",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q67B": {
+    "description": "Perception of climate change impact",
+    "question": "Do you think climate change is making life in this country better or worse?",
+    "values": {
+      "1": "Much better",
+      "2": "Somewhat better",
+      "3": "Neither/No change",
+      "4": "Somewhat worse",
+      "5": "Much worse",
+      "7": "Not applicable",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q68A": {
+    "description": "Belief in citizens' role in limiting climate change",
+    "question": "Can ordinary citizens play a role in limiting climate change?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "7": "Not applicable",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q68B": {
+    "description": "Belief in government action against climate change",
+    "question": "Should the government take steps now to limit climate change, even if it is expensive or causes job losses?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "7": "Not applicable",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q69": {
+    "description": "Who is primarily responsible for limiting climate change",
+    "question": "Who should have primary responsibility for limiting climate change and reducing its impact?",
+    "values": {
+      "0": "No one/Climate change can't be stopped",
+      "1": "Ordinary citizens",
+      "2": "Business and industry",
+      "3": "The government",
+      "4": "Developed countries",
+      "5": "Traditional leaders",
+      "6": "Someone else",
+      "7": "Not applicable",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q70A": {
+    "description": "Do more to fight climate change: citizens",
+    "question": "Are ordinary citizens doing enough to limit climate change, or should they do more?",
+    "values": {
+      "1": "Doing enough",
+      "2": "Need to do somewhat more",
+      "3": "Need to do a lot more",
+      "7": "Not applicable",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q70B": {
+    "description": "Do more to fight climate change: business and industry",
+    "question": "Is business and industry doing enough to limit climate change, or should they do more?",
+    "values": {
+      "1": "Doing enough",
+      "2": "Need to do somewhat more",
+      "3": "Need to do a lot more",
+      "7": "Not applicable",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q70C": {
+    "description": "Do more to fight climate change: government",
+    "question": "Is the government doing enough to limit climate change, or should they do more?",
+    "values": {
+      "1": "Doing enough",
+      "2": "Need to do somewhat more",
+      "3": "Need to do a lot more",
+      "7": "Not applicable",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q70D": {
+    "description": "Do more to fight climate change: developed countries",
+    "question": "Are developed countries doing enough to limit climate change, or should they do more?",
+    "values": {
+      "1": "Doing enough",
+      "2": "Need to do somewhat more",
+      "3": "Need to do a lot more",
+      "7": "Not applicable",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q71": {
+    "description": "Jobs vs protecting the environment",
+    "question": "Which statement do you agree with more? (1) The government should focus on creating jobs and increasing incomes, even if that means increasing pollution. (2) The government should focus on preventing pollution and protecting the environment, even if it causes job losses or disruptions.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q72A": {
+    "description": "Perceived severity of pollution",
+    "question": "How serious of a problem is pollution, such as trash accumulation or damage to air and water quality, in your community?",
+    "values": {
+      "1": "Very serious",
+      "2": "Somewhat serious",
+      "3": "Not very serious",
+      "4": "Not at all serious",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q72B": {
+    "description": "Most important environmental issue in community",
+    "question": "What is the most important environmental issue in your community?",
+    "values": {
+      "0": "No issues",
+      "1": "Air pollution",
+      "2": "Water pollution",
+      "3": "Sanitation/waste management",
+      "4": "Trash disposal (plastics)",
+      "5": "Deforestation",
+      "6": "Other issue",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q72C": {
+    "description": "Plastic bags as a source of pollution",
+    "question": "Do you agree or disagree that plastic bags are a major source of pollution?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q72D": {
+    "description": "Who is responsible for reducing pollution",
+    "question": "Who should be primarily responsible for reducing pollution and keeping your community clean?",
+    "values": {
+      "0": "No one",
+      "1": "Ordinary citizens",
+      "2": "Business and industry",
+      "3": "National government",
+      "4": "Local government",
+      "5": "Traditional leaders",
+      "6": "Someone else",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q72E": {
+    "description": "Government action on pollution",
+    "question": "Should the government do more or less to limit pollution and protect the environment?",
+    "values": {
+      "1": "Much less",
+      "2": "Somewhat less",
+      "3": "About the same",
+      "4": "Somewhat more",
+      "5": "Much more",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q73A": {
+    "description": "Government regulation of natural resource extraction",
+    "question": "Should the government impose stricter regulations on natural resource extraction to reduce environmental damage?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q73B": {
+    "description": "Public voice in natural resource extraction decisions",
+    "question": "Do ordinary citizens have a voice in decisions about natural resource extraction near their communities?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q73C": {
+    "description": "Fair revenue distribution from natural resource extraction",
+    "question": "Do local communities receive a fair share of revenue from nearby natural resource extraction?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q73D": {
+    "description": "Cost-benefit analysis of resource extraction for communities",
+    "question": "Do the benefits of natural resource extraction, such as jobs and revenue, outweigh the environmental and social costs?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  }
+}
+

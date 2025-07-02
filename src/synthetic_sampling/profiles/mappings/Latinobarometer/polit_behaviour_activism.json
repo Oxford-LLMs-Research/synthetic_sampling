@@ -1,0 +1,144 @@
+{
+  "P42STGBS": {
+    "description": "Feeling of closeness to a political party",
+    "question": "Do you feel close to any political party?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "P43STGBS.A": {
+    "description": "Voting intention if elections were held this Sunday",
+    "question": "If elections were held this Sunday, which political party would you vote for?",
+    "values": {
+      "0": "No answer",
+      "94": "Other",
+      "95": "Void or blank vote",
+      "96": "Does not vote / none",
+      "97": "Not registered",
+      "98": "Do not know"
+    }
+  },
+  "P44ST.A": {
+    "description": "Frequency of political conversations with friends",
+    "question": "How often do you talk about politics with friends?",
+    "values": {
+      "0": "No answer",
+      "1": "Very frequently",
+      "2": "Frequently",
+      "3": "Almost never",
+      "4": "Never",
+      "8": "Do not know"
+    }
+  },
+  "P44ST.B": {
+    "description": "Frequency of working on community problems",
+    "question": "How often do you work on a problem that affects you or your community?",
+    "values": {
+      "0": "No answer",
+      "1": "Very frequently",
+      "2": "Frequently",
+      "3": "Almost never",
+      "4": "Never",
+      "8": "Do not know"
+    }
+  },
+  "P44ST.C": {
+    "description": "Frequency of trying to persuade others of political views",
+    "question": "How often do you try to convince others of your political views?",
+    "values": {
+      "0": "No answer",
+      "1": "Very frequently",
+      "2": "Frequently",
+      "3": "Almost never",
+      "4": "Never",
+      "8": "Do not know"
+    }
+  },
+  "P44ST.D": {
+    "description": "Frequency of working for a political party or candidate",
+    "question": "How often do you work for a political party or candidate?",
+    "values": {
+      "0": "No answer",
+      "1": "Very frequently",
+      "2": "Frequently",
+      "3": "Almost never",
+      "4": "Never",
+      "8": "Do not know"
+    }
+  },
+  "P45ST.A": {
+    "description": "Participation in petition signing",
+    "question": "Have you ever signed a petition, would you do it, or would you never do it?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Have done it",
+      "2": "Would do it",
+      "3": "Would never do it"
+    }
+  },
+  "P45S.B": {
+    "description": "Participation in authorized demonstrations",
+    "question": "Have you ever taken part in an authorized demonstration, would you do it, or would you never do it?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Have done it",
+      "2": "Would do it",
+      "3": "Would never do it"
+    }
+  },
+  "P45ST.C": {
+    "description": "Participation in non-authorized demonstrations",
+    "question": "Have you ever taken part in a non-authorized demonstration, would you do it, or would you never do it?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Have done it",
+      "2": "Would do it",
+      "3": "Would never do it"
+    }
+  },
+  "P45STN.D": {
+    "description": "Protesting on social media",
+    "question": "Have you ever protested on social media, would you do it, or would you never do it?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Have done it",
+      "2": "Would do it",
+      "3": "Would never do it"
+    }
+  },
+    "P50ST": {
+    "description": "Channels for expressing opinions on national problems",
+    "question": "Where do you usually express your opinions about national problems, or do you not usually express them?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "On social media",
+      "2": "At demonstrations or protests",
+      "3": "Among friends",
+      "4": "In the family",
+      "5": "I usually do not express them"
+    }
+  },
+  "P47ST": {
+    "description": "Preferred approach to political engagement",
+    "question": "What do you think one should do to help your country move forward?",
+    "values": {
+      "0": "No answer",
+      "1": "One must always vote",
+      "2": "One must vote and also protest",
+      "3": "One must only protest — voting is no good",
+      "4": "One must do nothing — neither vote nor protest",
+      "5": "I do not know what to do"
+    }
+  },
+    "P49ST": {
+    "description": "Perceived risk of expressing political opinions",
+    "question": "If you express your opinions freely and publicly about national problems, do you think it could have negative consequences for you?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "P38CSN.1": {
+    "description": "Support for various gender, family, and reproductive policies (full set)",
+    "question": "Do you agree or disagree with the following statements?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Maternity leave should be available for both mothers and fathers",
+      "2": "Women should have a reserved quota of executive jobs in private companies",
+      "3": "Women should have a reserved quota of executive jobs in the public sector",
+      "4": "Schools should provide young people with access to birth control methods",
+      "5": "Abortion should be legal in cases of rape or incest",
+      "6": "Companies should offer either subsidies or facilities to care for workers' children",
+      "7": "Women without a pension should receive a solidarity pension in old age"
+    }
+  },
+  "P38CSN.2": {
+    "description": "Support for gender, education, and family policies (subset)",
+    "question": "Do you agree or disagree with the following statements?",
+    "values": {
+      "0": "Do not know / No answer",
+      "2": "Women should have a reserved quota of executive jobs in private companies",
+      "3": "Women should have a reserved quota of executive jobs in the public sector",
+      "4": "Schools should provide young people with access to birth control methods",
+      "5": "Abortion should be legal in cases of rape or incest",
+      "6": "Companies should offer either subsidies or facilities to care for workers' children",
+      "7": "Women without a pension should receive a solidarity pension in old age"
+    }
+  },
+  "P38CSN.3": {
+    "description": "Support for public sector gender quotas and family policies",
+    "question": "Do you agree or disagree with the following statements?",
+    "values": {
+      "0": "Do not know / No answer",
+      "3": "Women should have a reserved quota of executive jobs in the public sector",
+      "4": "Schools should provide young people with access to birth control methods",
+      "5": "Abortion should be legal in cases of rape or incest",
+      "6": "Companies should offer either subsidies or facilities to care for workers' children",
+      "7": "Women without a pension should receive a solidarity pension in old age"
+    }
+  },
+  "P38CSN.4": {
+    "description": "Support for education, abortion rights, and family policies",
+    "question": "Do you agree or disagree with the following statements?",
+    "values": {
+      "0": "Do not know / No answer",
+      "4": "Schools should provide young people with access to birth control methods",
+      "5": "Abortion should be legal in cases of rape or incest",
+      "6": "Companies should offer either subsidies or facilities to care for workers' children",
+      "7": "Women without a pension should receive a solidarity pension in old age"
+    }
+  },
+  "P38CSN.5": {
+    "description": "Support for abortion rights and family care policies",
+    "question": "Do you agree or disagree with the following statements?",
+    "values": {
+      "0": "Do not know / No answer",
+      "5": "Abortion should be legal in cases of rape or incest",
+      "6": "Companies should offer either subsidies or facilities to care for workers' children",
+      "7": "Women without a pension should receive a solidarity pension in old age"
+    }
+  },
+  "P38CSN.6": {
+    "description": "Support for workplace childcare and old-age pensions for women",
+    "question": "Do you agree or disagree with the following statements?",
+    "values": {
+      "0": "Do not know / No answer",
+      "6": "Companies should offer either subsidies or facilities to care for workers' children",
+      "7": "Women without a pension should receive a solidarity pension in old age"
+    }
+  },
+  "P38CSN.7": {
+    "description": "Support for solidarity pensions for older women without a pension",
+    "question": "Do you agree or disagree that women without a pension should receive a solidarity pension in old age?",
+    "values": {
+      "0": "Do not know / No answer",
+      "7": "Women without a pension should receive a solidarity pension in old age"
+    }
+  },
+  "S24": {
+    "description": "Assessed socioeconomic level of the interviewee",
+    "question": "Based on the quality of the dwelling, furniture, and the interviewee’s general appearance, how would you rate the interviewee’s socioeconomic level?",
+    "values": {
+      "1": "Very good",
+      "2": "Good",
+      "3": "Average",
+      "4": "Bad",
+      "5": "Very bad"
+    }
+  },
+  "REEDUC.1": {
+    "description": "Recoded education level of the respondent (from S11)",
+    "question": "What is the respondent’s recoded education level?",
+    "values": {
+      "0": "No data",
+      "1": "Illiterate",
+      "2": "Incomplete basic education",
+      "3": "Complete basic education",
+      "4": "Incomplete secondary education",
+      "5": "Complete secondary education",
+      "6": "Incomplete university education",
+      "7": "Complete university education"
+    }
+  },
+  "REEDUC.2": {
+    "description": "Recoded education level of respondent’s parents (from S12)",
+    "question": "What is the recoded education level of the respondent’s parents?",
+    "values": {
+      "0": "No data",
+      "1": "Illiterate",
+      "2": "Incomplete basic education",
+      "3": "Complete basic education",
+      "4": "Incomplete secondary education",
+      "5": "Complete secondary education",
+      "6": "Incomplete university education",
+      "7": "Complete university education"
+    }
+  },
+  "REEDUC.3": {
+    "description": "Recoded education level of head of household (from S21B)",
+    "question": "What is the recoded education level of the head of household?",
+    "values": {
+      "0": "No data",
+      "1": "Illiterate",
+      "2": "Incomplete basic education",
+      "3": "Complete basic education",
+      "4": "Incomplete secondary education",
+      "5": "Complete secondary education",
+      "6": "Incomplete university education",
+      "7": "Complete university education",
+      "9": "Not applicable"
+    }
+  },
+  "REEDAD": {
+    "description": "Recoded age group",
+    "question": "Which age group do you belong to?",
+    "values": {
+      "1": "16–25 years",
+      "2": "26–40 years",
+      "3": "41–60 years",
+      "4": "61 years or older"
+    }
+  },
+  "PERPART": {
+    "description": "Type of political party supported by respondent",
+    "question": "What type of political party does the respondent support?",
+    "values": {
+      "1": "Government",
+      "2": "Opposition",
+      "3": "Other",
+      "4": "Did not mention"
+    }
+  },
+  "FAMPART": {
+    "description": "Type of political party supported by respondent’s family",
+    "question": "What type of political party does the respondent’s family support?",
+    "values": {
+      "0": "No vote / null vote / no party",
+      "10": "Green parties",
+      "20": "Communist parties",
+      "30": "Social Democratic parties",
+      "40": "Liberal parties",
+      "50": "Christian Democratic parties",
+      "60": "Conservative parties",
+      "70": "Nationalist parties",
+      "80": "Agrarian parties",
+      "90": "Ethnic and regional parties",
+      "95": "Parties with specific themes",
+      "98": "Electoral alliances (mixed origins)"
+    }
+  }
+}

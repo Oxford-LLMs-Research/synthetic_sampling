@@ -1,0 +1,434 @@
+{
+  "Q35A": {
+    "description": "Access to information: school budget",
+    "question": "How likely is it that you could get the following information: if you contacted the local school to find out what the school’s budget is and how the funds have been used?",
+    "values": {
+      "0": "Not at all likely",
+      "1": "Not very likely",
+      "2": "Somewhat likely",
+      "3": "Very likely",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard",
+      "-1": "Missing"
+    }
+  },
+  "Q35B": {
+    "description": "Access to information: local government development plan and budget",
+    "question": "How likely is it that you could get the following information: if you contacted your local government office to find out about the local development plan and budget?",
+    "values": {
+      "0": "Not at all likely",
+      "1": "Not very likely",
+      "2": "Somewhat likely",
+      "3": "Very likely",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard",
+      "-1": "Missing"
+    }
+  },
+  "Q35C": {
+    "description": "Access to information: local government contracts",
+    "question": "How likely is it that you could get the following information: if you contacted your local government office to request to see a contract for a government-funded project or purchase?",
+    "values": {
+      "0": "Not at all likely",
+      "1": "Not very likely",
+      "2": "Somewhat likely",
+      "3": "Very likely",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard",
+      "-1": "Missing"
+    }
+  },
+  "Q36A": {
+    "description": "Likelihood of response: request assistance",
+    "question": "Imagine you went to a local leader or a local government office to request assistance for a development project in your community, like an improved water supply or community clean-up activity. How likely is it that you could get someone to take action?",
+    "values": {
+      "0": "Not at all likely",
+      "1": "Not very likely",
+      "2": "Somewhat likely",
+      "3": "Very likely",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard",
+      "-1": "Missing"
+    }
+  },
+  "Q36B": {
+    "description": "Likelihood of response: reporting teacher misconduct",
+    "question": "If you went to the local school to report teacher misbehavior such as absenteeism or mistreatment of students, how likely is it that you could get someone to take action?",
+    "values": {
+      "0": "Not at all likely",
+      "1": "Not very likely",
+      "2": "Somewhat likely",
+      "3": "Very likely",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard",
+      "-1": "Missing"
+    }
+  },
+  "Q36C": {
+    "description": "Likelihood of response: reporting corruption",
+    "question": "Imagine you went to a local government office or anti-corruption authority to report corrupt behavior like misuse of funds or requests for bribes. How likely is it that you could get someone to take action?",
+    "values": {
+      "0": "Not at all likely",
+      "1": "Not very likely",
+      "2": "Somewhat likely",
+      "3": "Very likely",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard",
+      "-1": "Missing"
+    }
+  },
+  "Q40A": {
+    "description": "Contact with public schools",
+    "question": "In the past 12 months, have you had any contact with a public school?",
+    "values": {
+      "0": "No",
+      "1": "Yes",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q40B": {
+    "description": "Difficulty obtaining public school services",
+    "question": "How easy or difficult was it to obtain the services you needed from teachers or school officials?",
+    "values": {
+      "1": "Very easy",
+      "2": "Easy",
+      "3": "Difficult",
+      "4": "Very difficult",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q40C": {
+    "description": "Bribery in public schools",
+    "question": "How often, if ever, did you have to pay a bribe, give a gift, or do a favor for a teacher or school official to get the services you needed?",
+    "values": {
+      "0": "Never",
+      "1": "Once or twice",
+      "2": "A few times",
+      "3": "Often",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q40D": {
+    "description": "Respect received from school officials",
+    "question": "When dealing with teachers and school officials, how much do you feel they treated you with respect?",
+    "values": {
+      "0": "Not at all",
+      "1": "A little bit",
+      "2": "Somewhat",
+      "3": "A lot",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q41A": {
+    "description": "Contact with public clinics or hospitals",
+    "question": "In the past 12 months, have you had any contact with a public clinic or hospital?",
+    "values": {
+      "0": "No",
+      "1": "Yes",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q41B": {
+    "description": "Difficulty obtaining medical care",
+    "question": "How easy or difficult was it to obtain the medical care or services you needed?",
+    "values": {
+      "1": "Very easy",
+      "2": "Easy",
+      "3": "Difficult",
+      "4": "Very difficult",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q41C": {
+    "description": "Bribery in healthcare services",
+    "question": "How often, if ever, did you have to pay a bribe, give a gift, or do a favor for a health worker or clinic/hospital staff to get the medical care or services you needed?",
+    "values": {
+      "0": "Never",
+      "1": "Once or twice",
+      "2": "A few times",
+      "3": "Often",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q41D": {
+    "description": "Respect received from healthcare staff",
+    "question": "When dealing with health workers and clinic or hospital staff, how much do you feel they treated you with respect?",
+    "values": {
+      "0": "Not at all",
+      "1": "A little bit",
+      "2": "Somewhat",
+      "3": "A lot",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q41E": {
+    "description": "Problems with public clinics: lack of medicines or supplies",
+    "question": "In the past 12 months, have you encountered any problems in a public clinic or hospital due to a lack of medicines or other supplies?",
+    "values": {
+      "0": "Never",
+      "1": "Once or twice",
+      "2": "A few times",
+      "3": "Often",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q41F": {
+    "description": "Problems with public clinics: absence of medical personnel",
+    "question": "In the past 12 months, have you encountered any problems in a public clinic or hospital due to the absence of doctors or other medical personnel?",
+    "values": {
+      "0": "Never",
+      "1": "Once or twice",
+      "2": "A few times",
+      "3": "Often",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q41G": {
+    "description": "Problems with public clinics: long waiting times",
+    "question": "In the past 12 months, have you encountered any problems in a public clinic or hospital due to long waiting times?",
+    "values": {
+      "0": "Never",
+      "1": "Once or twice",
+      "2": "A few times",
+      "3": "Often",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q41H": {
+    "description": "Problems with public clinics: poor condition of facilities",
+    "question": "In the past 12 months, have you encountered any problems in a public clinic or hospital due to poor facility conditions?",
+    "values": {
+      "0": "Never",
+      "1": "Once or twice",
+      "2": "A few times",
+      "3": "Often",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q42A": {
+    "description": "Attempt to obtain an identity document",
+    "question": "In the past 12 months, have you tried to get an identity document such as a birth certificate, driver's license, passport, voter’s card, or permit from the government?",
+    "values": {
+      "0": "No",
+      "1": "Yes",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q42B": {
+    "description": "Difficulty obtaining an identity document",
+    "question": "How easy or difficult was it to obtain the document you needed?",
+    "values": {
+      "1": "Very easy",
+      "2": "Easy",
+      "3": "Difficult",
+      "4": "Very difficult",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q42C": {
+    "description": "Bribery to obtain an identity document",
+    "question": "How often, if ever, did you have to pay a bribe, give a gift, or do a favor for a government official to get the document you needed?",
+    "values": {
+      "0": "Never",
+      "1": "Once or twice",
+      "2": "A few times",
+      "3": "Often",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q42D": {
+    "description": "Respect received from government officials when obtaining documents",
+    "question": "When dealing with government officials to obtain documents, how much do you feel they treated you with respect?",
+    "values": {
+      "0": "Not at all",
+      "1": "A little bit",
+      "2": "Somewhat",
+      "3": "A lot",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q43A": {
+    "description": "Request for police assistance",
+    "question": "In the past 12 months, have you requested assistance from the police?",
+    "values": {
+      "0": "No",
+      "1": "Yes",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q43B": {
+    "description": "Difficulty obtaining police assistance",
+    "question": "How easy or difficult was it to obtain the assistance you needed from the police?",
+    "values": {
+      "1": "Very easy",
+      "2": "Easy",
+      "3": "Difficult",
+      "4": "Very difficult",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q43C": {
+    "description": "Bribery for police assistance",
+    "question": "How often, if ever, did you have to pay a bribe, give a gift, or do a favor for a police officer to get the assistance you needed?",
+    "values": {
+      "0": "Never",
+      "1": "Once or twice",
+      "2": "A few times",
+      "3": "Often",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q43D": {
+    "description": "Encountering police in non-assistance situations",
+    "question": "In the past 12 months, how often have you encountered the police in situations such as checkpoints, identity checks, traffic stops, or investigations?",
+    "values": {
+      "0": "Never",
+      "1": "Once or twice",
+      "2": "A few times",
+      "3": "Often",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q43E": {
+    "description": "Bribery to avoid problems with the police",
+    "question": "How often, if ever, did you have to pay a bribe, give a gift, or do a favor for a police officer to avoid a problem during one of these encounters?",
+    "values": {
+      "0": "Never",
+      "1": "Once or twice",
+      "2": "A few times",
+      "3": "Often",
+      "7": "No contact",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q44A": {
+    "description": "Police professionalism and respect for citizens' rights",
+    "question": "In your opinion, how often do the police operate in a professional manner and respect the rights of all citizens?",
+    "values": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q44B": {
+    "description": "Unjustified police stops",
+    "question": "In your opinion, how often do the police stop drivers without good reason?",
+    "values": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q44C": {
+    "description": "Excessive police force during protests",
+    "question": "In your opinion, how often do the police use excessive force in managing protests or demonstrations?",
+    "values": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q44D": {
+    "description": "Excessive police force against criminals",
+    "question": "In your opinion, how often do the police use excessive force when dealing with criminals?",
+    "values": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q44E": {
+    "description": "Police involvement in criminal activities",
+    "question": "In your opinion, how often do the police engage in criminal activities?",
+    "values": {
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "5": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  }
+}
+
+
+

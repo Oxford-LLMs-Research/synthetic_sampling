@@ -1,0 +1,421 @@
+{
+  "Q45pt1": {
+    "description": "Most important problems facing the country (1st response)",
+    "question": "In your opinion, what are the most important problems facing this country that the government should address?",
+    "values": {
+      "0": "Nothing/no problems",
+      "1": "Management of the economy",
+      "2": "Wages, incomes, and salaries",
+      "3": "Unemployment",
+      "4": "Poverty/Destitution",
+      "5": "Rates and taxes",
+      "6": "Loans/Credit",
+      "7": "Farming/Agriculture",
+      "8": "Food shortage/Famine",
+      "9": "Drought",
+      "10": "Land",
+      "11": "Transportation",
+      "12": "Communications",
+      "13": "Infrastructure/Roads",
+      "14": "Education",
+      "15": "Housing",
+      "16": "Electricity",
+      "17": "Water supply",
+      "18": "Orphans/Street children/Homeless children",
+      "19": "Services (other)",
+      "20": "Health",
+      "21": "AIDS",
+      "22": "Sickness/Disease",
+      "23": "Crime and security",
+      "24": "Corruption",
+      "25": "Political violence",
+      "26": "Political instability/Political divisions/Ethnic tensions",
+      "27": "Discrimination/Inequality",
+      "28": "Gender issues/Women's rights",
+      "29": "Democracy/Political rights",
+      "30": "War (international)",
+      "31": "Civil war",
+      "32": "Agricultural marketing",
+      "33": "Climate change",
+      "34": "COVID-19",
+      "180": "Internally displaced",
+      "1500": "Pollution",
+      "1680": "Drug abuse",
+      "9995": "Other",
+      "9998": "Refused",
+      "9999": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q45pt1OTHER": {
+    "description": "Most important problem (1st response - verbatim)",
+    "question": "In your opinion, what are the most important problems facing this country that the government should address?",
+    "values": "String variable"
+  },
+  "Q45pt2": {
+    "description": "Most important problems facing the country (2nd response)",
+    "question": "In your opinion, what are the most important problems facing this country that the government should address?",
+    "values": {
+      "0": "Nothing/no problems",
+      "1": "Management of the economy",
+      "2": "Wages, incomes, and salaries",
+      "3": "Unemployment",
+      "4": "Poverty/Destitution",
+      "5": "Rates and taxes",
+      "6": "Loans/Credit",
+      "7": "Farming/Agriculture",
+      "8": "Food shortage/Famine",
+      "9": "Drought",
+      "10": "Land",
+      "11": "Transportation",
+      "12": "Communications",
+      "13": "Infrastructure/Roads",
+      "14": "Education",
+      "15": "Housing",
+      "16": "Electricity",
+      "17": "Water supply",
+      "18": "Orphans/Street children/Homeless children",
+      "19": "Services (other)",
+      "20": "Health",
+      "21": "AIDS",
+      "22": "Sickness/Disease",
+      "23": "Crime and security",
+      "24": "Corruption",
+      "25": "Political violence",
+      "26": "Political instability/Political divisions/Ethnic tensions",
+      "27": "Discrimination/Inequality",
+      "28": "Gender issues/Women's rights",
+      "29": "Democracy/Political rights",
+      "30": "War (international)",
+      "31": "Civil war",
+      "32": "Agricultural marketing",
+      "33": "Climate change",
+      "34": "COVID-19",
+      "180": "Internally displaced",
+      "1500": "Pollution",
+      "1680": "Drug abuse",
+      "9995": "Other",
+      "9998": "Refused",
+      "9999": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q45pt2OTHER": {
+    "description": "Most important problem (2nd response - verbatim)",
+    "question": "In your opinion, what are the most important problems facing this country that the government should address?",
+    "values": "String variable"
+  },
+  "Q45pt3": {
+    "description": "Most important problems facing the country (3rd response)",
+    "question": "In your opinion, what are the most important problems facing this country that the government should address?",
+    "values": {
+      "0": "Nothing/no problems",
+      "1": "Management of the economy",
+      "2": "Wages, incomes, and salaries",
+      "3": "Unemployment",
+      "4": "Poverty/Destitution",
+      "5": "Rates and taxes",
+      "6": "Loans/Credit",
+      "7": "Farming/Agriculture",
+      "8": "Food shortage/Famine",
+      "9": "Drought",
+      "10": "Land",
+      "11": "Transportation",
+      "12": "Communications",
+      "13": "Infrastructure/Roads",
+      "14": "Education",
+      "15": "Housing",
+      "16": "Electricity",
+      "17": "Water supply",
+      "18": "Orphans/Street children/Homeless children",
+      "19": "Services (other)",
+      "20": "Health",
+      "21": "AIDS",
+      "22": "Sickness/Disease",
+      "23": "Crime and security",
+      "24": "Corruption",
+      "25": "Political violence",
+      "26": "Political instability/Political divisions/Ethnic tensions",
+      "27": "Discrimination/Inequality",
+      "28": "Gender issues/Women's rights",
+      "29": "Democracy/Political rights",
+      "30": "War (international)",
+      "31": "Civil war",
+      "32": "Agricultural marketing",
+      "33": "Climate change",
+      "34": "COVID-19",
+      "180": "Internally displaced",
+      "1500": "Pollution",
+      "1680": "Drug abuse",
+      "9995": "Other",
+      "9998": "Refused",
+      "9999": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q45pt3OTHER": {
+    "description": "Most important problem",
+    "question": "In your opinion, what are the most important problems facing this country that the government should address?",
+    "values": "String variable"
+  },
+  "Q46A": {
+    "description": "Government performance on managing the economy",
+    "question": "How well or badly would you say the current government is managing the economy?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q46B": {
+    "description": "Government performance on improving living standards of the poor",
+    "question": "How well or badly would you say the current government is improving the living standards of the poor?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q46C": {
+    "description": "Government performance on creating jobs",
+    "question": "How well or badly would you say the current government is handling creating jobs?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q46D": {
+    "description": "Government performance on keeping prices stable",
+    "question": "How well or badly would you say the current government is handling keeping prices stable?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q46E": {
+    "description": "Government performance on narrowing income gaps",
+    "question": "How well or badly would you say the current government is handling narrowing the gap between the rich and poor?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q46F": {
+    "description": "Government performance on reducing crime",
+    "question": "How well or badly would you say the current government is at reducing crime?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q46G": {
+    "description": "Government performance on improving basic health services",
+    "question": "How well or badly would you say the current government is handling improving basic health services?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q46H": {
+    "description": "Government performance on addressing educational needs",
+    "question": "How well or badly would you say the current government is at addressing educational needs?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q46I": {
+    "description": "Government performance on providing water and sanitation services",
+    "question": "How well or badly would you say the current government is at providing water and sanitation services?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q46J": {
+    "description": "Government performance on fighting corruption",
+    "question": "How well or badly would you say the current government is at fighting corruption in government?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q46K": {
+    "description": "Government performance on maintaining roads and bridges",
+    "question": "How well or badly would you say the current government is maintaining roads and bridges?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q46L": {
+    "description": "Government performance on providing reliable electricity",
+    "question": "How well or badly would you say the current government is handling providing a reliable supply of electricity?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q46M": {
+    "description": "Government performance on preventing or resolving violent conflict",
+    "question": "How well or badly would you say the current government is at preventing or resolving violent conflict?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q46N": {
+    "description": "Government performance on promoting equal rights and opportunities for women",
+    "question": "How well or badly would you say the current government is at promoting equal rights and opportunities for women?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q46O": {
+    "description": "Government performance on protecting and promoting the well-being of vulnerable children",
+    "question": "How well or badly would you say the current government is handling protecting and promoting the well-being of vulnerable children?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q46P": {
+    "description": "Government performance on addressing climate change",
+    "question": "How well or badly would you say the current government is addressing the problem of climate change?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q46Q": {
+    "description": "Government performance on reducing pollution and protecting the environment",
+    "question": "How well or badly would you say the current government is at reducing pollution and protecting the environment?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q47A": {
+    "description": "Approval of president’s performance",
+    "question": "Do you approve or disapprove of the way the president has performed his job over the past 12 months?",
+    "values": {
+      "1": "Strongly disapprove",
+      "2": "Disapprove",
+      "3": "Approve",
+      "4": "Strongly approve",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q47B": {
+    "description": "Approval of member of Parliament’s performance",
+    "question": "Do you approve or disapprove of the way your member of Parliament has performed their job over the past 12 months?",
+    "values": {
+      "1": "Strongly disapprove",
+      "2": "Disapprove",
+      "3": "Approve",
+      "4": "Strongly approve",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q47C": {
+    "description": "Approval of local government councillor’s performance",
+    "question": "Do you approve or disapprove of the way your elected local government councillor has performed their job over the past 12 months?",
+    "values": {
+      "1": "Strongly disapprove",
+      "2": "Disapprove",
+      "3": "Approve",
+      "4": "Strongly approve",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  }
+}

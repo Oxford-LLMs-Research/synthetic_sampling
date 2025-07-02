@@ -1,0 +1,133 @@
+{"P33N.A": {
+    "description": "Perception of immigrants' impact on the economy",
+    "question": "Do you agree or disagree that immigrants are good for the country’s economy?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P33ST.B": {
+    "description": "Perception of immigrants as job competitors",
+    "question": "Do you agree or disagree that immigrants come to compete for jobs?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P33N.C": {
+    "description": "Perception of immigrants and crime rates",
+    "question": "Do you agree or disagree that immigrants increase crime rates?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P33N.D": {
+    "description": "Perception of immigrants' cultural contributions",
+    "question": "Do you agree or disagree that immigrants improve our society with new ideas and culture?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P37CSN.A": {
+    "description": "Support for adoption rights for same-sex couples",
+    "question": "Do you agree or disagree that same-sex couples should be allowed to adopt children?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P37CSN.B": {
+    "description": "Support for same-sex marriage",
+    "question": "Do you agree or disagree that marriage between people of the same sex should be allowed?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P37STCS.C": {
+    "description": "Belief that women should stay at home and men should work",
+    "question": "Do you agree or disagree that it is better for women to concentrate on the home and for men to work outside?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P37WVSSTCS.D": {
+    "description": "Belief that men are better political leaders",
+    "question": "Do you agree or disagree that men are better political leaders than women?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P37STCS.E": {
+    "description": "Belief that a woman earning more than a man causes trouble",
+    "question": "Do you agree or disagree that when a woman earns more than a man, it almost certainly causes problems?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P37CSN.F": {
+    "description": "Support for legal recognition of gender change on ID documents",
+    "question": "Do you agree or disagree that a person’s gender change should be legally recognized on identity documents?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P37WVSCS.G": {
+    "description": "Belief that men should have job priority during scarcity",
+    "question": "Do you agree or disagree that when jobs are scarce, men should have more right to a job than women?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P37WVSCS.H": {
+    "description": "Belief that same-sex couples are equally good parents",
+    "question": "Do you agree or disagree that homosexual couples are just as good parents as heterosexual couples?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  }
+}

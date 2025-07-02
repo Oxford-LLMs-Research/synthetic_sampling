@@ -1,0 +1,346 @@
+{
+  "IDENPA": {
+    "description": "Country",
+    "question": "Which country are you from?",
+    "values": {
+      "1": "Argentina",
+      "2": "Bolivia",
+      "3": "Brasil",
+      "4": "Colombia",
+      "5": "Costa Rica",
+      "6": "Chile",
+      "7": "Ecuador",
+      "8": "El Salvador",
+      "9": "Guatemala",
+      "10": "Honduras",
+      "11": "México",
+      "12": "Nicaragua",
+      "13": "Panamá",
+      "14": "Paraguay",
+      "15": "Perú",
+      "16": "Uruguay",
+      "17": "Venezuela",
+      "18": "España",
+      "19": "República Dominicana"
+    }
+  },
+  "REG": {
+    "description": "Region / Province",
+    "question": "Which region do you live in?"
+  },
+  "CIUDAD": {
+    "description": "City",
+    "question": "In which city is the interview taking place?"
+  },
+  "TAMCIUD": {
+    "description": "Size of habitat",
+    "question": "What is the size of the respondent's habitat?",
+    "values": {
+      "1": "Less than 5.000",
+      "2": "5.001 - 10.000",
+      "3": "10.001 - 20.000",
+      "4": "20.001 - 40.000",
+      "5": "40.001 - 50.000",
+      "6": "50.001 - 100.000",
+      "7": "100.001 and more",
+      "8": "(Capital)"
+    }
+  },
+  "EDAD": {
+    "description": "Age",
+    "question": "How old are you?",
+    "values": {
+      "20-21": "Age input (position 20–21 on questionnaire)"
+    }
+  },
+  "SEXO": {
+    "description": "Sex of the respondent",
+    "question": "What is your sex?",
+    "values": {
+      "1": "Man",
+      "2": "Woman"
+    }
+  },
+
+"S1": {
+    "description": "Religious affiliation",
+    "question": "What is your religion, if any?",
+    "values": {
+      "0": "No answer",
+      "1": "Catholic",
+      "2": "Evangelical (no specific denomination)",
+      "3": "Evangelical Baptist",
+      "4": "Evangelical Methodist",
+      "5": "Evangelical Pentecostal",
+      "6": "Adventist",
+      "7": "Jehovah’s Witnesses",
+      "8": "Mormon",
+      "9": "Jewish",
+      "10": "Protestant",
+      "11": "African American cults / Umbanda",
+      "12": "Believer, but not affiliated with a church",
+      "13": "Agnostic",
+      "14": "Atheist",
+      "96": "Other",
+      "97": "None",
+      "98": "Do not know"
+    }
+  },
+  "S1A": {
+    "description": "Level of religious devotion",
+    "question": "How would you describe your level of religious devotion?",
+    "values": {
+      "0": "No answer",
+      "1": "Very devout",
+      "2": "Devout",
+      "3": "Not very devout",
+      "4": "Not devout at all",
+      "8": "Do not know",
+      "9": "Not applicable (no religion)"
+    }
+  },
+    "S2": {
+    "description": "Self-identified social class",
+    "question": "People sometimes describe themselves as belonging to a social class. Which class would you say you belong to?",
+    "values": {
+      "0": "No answer",
+      "1": "Upper class",
+      "2": "Upper-middle class",
+      "3": "Middle class",
+      "4": "Lower-middle class",
+      "5": "Lower class",
+      "8": "Do not know"
+    }
+  },
+      "S7": {
+    "description": "Self-identified ethnicity or race",
+    "question": "What ethnicity or race do you identify with most closely?",
+    "values": {
+      "0": "No answer",
+      "1": "Asian",
+      "2": "Black",
+      "3": "Indigenous",
+      "4": "Mestizo",
+      "5": "Mulatto",
+      "6": "White",
+      "7": "Other race",
+      "8": "Do not know"
+    }
+  },
+  "S9": {
+    "description": "Household head and main income contributor",
+    "question": "Are you the main contributor to your family's income or the head of the household?",
+    "values": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "S10": {
+    "description": "Age at which full-time education ended",
+    "question": "At what age did you complete your full-time education?",
+    "values": {
+      "0": "No answer",
+      "96": "Did not study",
+      "97": "Still studying",
+      "98": "Do not know / Don’t remember"
+    }
+  },
+  "S11": {
+    "description": "Respondent’s highest level of education completed",
+    "question": "What is the highest level of education you have completed?",
+    "values": {
+      "1": "No studies",
+      "2": "1 year",
+      "3": "2 years",
+      "4": "3 years",
+      "5": "4 years",
+      "6": "5 years",
+      "7": "6 years",
+      "8": "7 years",
+      "9": "8 years",
+      "10": "9 years",
+      "11": "10 years",
+      "12": "11 years",
+      "13": "12 years",
+      "14": "Incomplete university studies",
+      "15": "Complete university studies",
+      "16": "Incomplete technical studies at a higher institute or academy",
+      "17": "Complete technical studies at a higher institute or academy"
+    }
+  },
+  "S12": {
+    "description": "Parents’ highest level of education completed",
+    "question": "What is the highest level of education either of your parents completed?",
+    "values": {
+      "0": "No data",
+      "1": "No studies",
+      "2": "1 year",
+      "3": "2 years",
+      "4": "3 years",
+      "5": "4 years",
+      "6": "5 years",
+      "7": "6 years",
+      "8": "7 years",
+      "9": "8 years",
+      "10": "9 years",
+      "11": "10 years",
+      "12": "11 years",
+      "13": "12 years",
+      "14": "Incomplete university studies",
+      "15": "Complete university studies",
+      "16": "Incomplete technical studies at a higher institute or academy",
+      "17": "Complete technical studies at a higher institute or academy"
+    }
+  },
+"S15.A": {
+    "description": "Respondent's native language",
+    "question": "What is your native language?",
+    "values": {
+      "1": "Spanish",
+      "2": "Portuguese",
+      "3": "Indigenous language",
+      "4": "Other"
+    }
+  },
+  "S16": {
+    "description": "Citizenship status",
+    "question": "Are you a citizen of this country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "S17.C": {
+    "description": "Year of birth",
+    "question": "What year were you born?",
+    "values": {
+      "0": "No answer"
+    }
+  },
+  "S18.A": {
+    "description": "Current employment situation",
+    "question": "What is your current employment situation?",
+    "values": {
+      "1": "Self-employed",
+      "2": "Employee in a state-owned company",
+      "3": "Employee in a private company",
+      "4": "Temporarily out of work",
+      "5": "Retired / pensioner",
+      "6": "Not working – responsible for housework or shopping",
+      "7": "Student"
+    }
+  },
+  "S18.B": {
+    "description": "Previous employment situation",
+    "question": "What was your previous employment situation?",
+    "values": {
+      "1": "Professional (doctor, lawyer, accountant, architect)",
+      "2": "Business owner",
+      "3": "Farmer / fisherman",
+      "4": "Self-employed, informal",
+      "5": "Professional",
+      "6": "Senior management",
+      "7": "Middle management",
+      "8": "Other",
+      "9": "Not applicable"
+    }
+  },
+  "S19": {
+    "description": "Type of current employment",
+    "question": "What type of work do you currently do?",
+    "values": {
+      "1": "Professional (doctor, lawyer, accountant, architect)",
+      "2": "Business owner",
+      "3": "Farmer / fisherman",
+      "4": "Self-employed, informal",
+      "5": "Professional",
+      "6": "Senior management",
+      "7": "Middle management",
+      "8": "Other",
+      "9": "Not applicable"
+    }
+  },
+  "S21A": {
+    "description": "Age at which the head of household completed full-time education",
+    "question": "At what age did the head of your household complete their full-time education?",
+    "values": {
+      "0": "No answer",
+      "96": "Did not study",
+      "97": "Still studying",
+      "98": "Do not know / Don’t remember",
+      "99": "Not applicable"
+    }
+  },
+  "S21B": {
+    "description": "Head of household's highest level of education",
+    "question": "What is the highest level of education completed by the head of your household?",
+    "values": {
+      "0": "No data",
+      "1": "No studies",
+      "2": "1 year",
+      "3": "2 years",
+      "4": "3 years",
+      "5": "4 years",
+      "6": "5 years",
+      "7": "6 years",
+      "8": "7 years",
+      "9": "8 years",
+      "10": "9 years",
+      "11": "10 years",
+      "12": "11 years",
+      "13": "12 years",
+      "14": "Incomplete university studies",
+      "15": "Complete university studies",
+      "16": "Incomplete technical studies at higher institute or academy",
+      "17": "Complete technical studies at higher institute or academy",
+      "99": "Not applicable"
+    }
+  },
+  "S22.A": {
+    "description": "Current employment situation of head of household",
+    "question": "What is the current employment situation of the head of your household?",
+    "values": {
+      "1": "Self-employed",
+      "2": "Employee in a state-owned company",
+      "3": "Employee in a private company",
+      "4": "Temporarily out of work",
+      "5": "Retired / pensioner",
+      "6": "Not working – responsible for housework or shopping",
+      "7": "Student",
+      "9": "Not applicable"
+    }
+  },
+  "S22.B": {
+    "description": "Previous employment situation of head of household",
+    "question": "What was the previous employment situation of the head of your household?",
+    "values": {
+      "0": "No data / No answer",
+      "1": "Professional (doctor, lawyer, accountant, architect)",
+      "2": "Business owner",
+      "3": "Farmer / fisherman",
+      "4": "Self-employed, informal",
+      "5": "Professional",
+      "6": "Senior management",
+      "7": "Middle management",
+      "8": "Other",
+      "9": "Not applicable"
+    }
+  },
+  "S23": {
+    "description": "Type of employment of head of household",
+    "question": "What type of work does the head of your household currently do?",
+    "values": {
+      "0": "No data / No answer",
+      "1": "Professional (doctor, lawyer, accountant, architect)",
+      "2": "Business owner",
+      "3": "Farmer / fisherman",
+      "4": "Self-employed, informal",
+      "5": "Professional",
+      "6": "Senior management",
+      "7": "Middle management",
+      "8": "Other",
+      "9": "Not applicable"
+    }
+  }
+}
