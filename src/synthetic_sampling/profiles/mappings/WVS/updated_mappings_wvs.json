@@ -2,7 +2,7 @@
     "Demographic and Socioeconomic Variables": {
         "N_REGION_ISO": {
             "description": "ISO 3166-2 regional classification",
-            "question": "What is the ISO 3166-2 region code?",
+            "question": "Which region do you currently live in?",
             "values": {
                 "20002": "Escut de Canillo",
                 "20003": "Escut d'Encamp",
@@ -1463,7 +1463,7 @@
         },
         "B_COUNTRY": {
             "description": "ISO 3166-1 numeric country code",
-            "question": "Which country is the respondent located in, as defined by the ISO 3166-1 numeric country code?",
+            "question": "Which country are you currently living in?",
             "values": {
                 "8": "Albania",
                 "20": "Andorra",
@@ -1561,7 +1561,7 @@
         },
         "Q260": {
             "description": "Sex",
-            "question": "Respondent’s sex",
+            "question": "How do you identify your sex, male or female?",
             "values": {
                 "1": "Male",
                 "2": "Female",
@@ -1572,7 +1572,7 @@
         },
         "Q262": {
             "description": "Age",
-            "question": "This means you are XX years old ? Numeric variable – numbers of years",
+            "question": "How old are you?",
             "values": {
                 "-1": "Don't know",
                 "-2": "No answer",
@@ -2388,8 +2388,8 @@
                 "1": "Primary education (ISCED 1)",
                 "2": "Lower secondary education (ISCED 2)",
                 "3": "Upper secondary education (ISCED 3)",
-                "4": "Post-secondary non -tertiary education (ISCED 4)",
-                "5": "Short -cycle tertiary education (ISCED 5)",
+                "4": "Post-secondary non-tertiary education (ISCED 4)",
+                "5": "Short-cycle tertiary education (ISCED 5)",
                 "6": "Bachelor or equivalent (ISCED 6)",
                 "7": "Master or equivalent (ISCED 7)",
                 "8": "Doctoral or equivalent (ISCED 8)",
@@ -2407,8 +2407,8 @@
                 "1": "Primary education (ISCED 1)",
                 "2": "Lower secondary education (ISCED 2)",
                 "3": "Upper secondary education (ISCED 3)",
-                "4": "Post-secondary non -tertiary education (ISCED 4)",
-                "5": "Short -cycle tertiary education (ISCED 5)",
+                "4": "Post-secondary non-tertiary education (ISCED 4)",
+                "5": "Short-cycle tertiary education (ISCED 5)",
                 "6": "Bachelor or equivalent (ISCED 6)",
                 "7": "Master or equivalent (ISCED 7)",
                 "8": "Doctoral or equivalent (ISCED 8)",
@@ -2423,8 +2423,8 @@
                 "1": "Primary education (ISCED 1)",
                 "2": "Lower secondary education (ISCED 2)",
                 "3": "Upper secondary education (ISCED 3)",
-                "4": "Post-secondary non -tertiary education (ISCED 4)",
-                "5": "Short -cycle tertiary education (ISCED 5)",
+                "4": "Post-secondary non-tertiary education (ISCED 4)",
+                "5": "Short-cycle tertiary education (ISCED 5)",
                 "6": "Bachelor or equivalent (ISCED 6)",
                 "7": "Master or equivalent (ISCED 7)",
                 "8": "Doctoral or equivalent (ISCED 8)",
@@ -2442,8 +2442,8 @@
                 "1": "Primary education (ISCED 1)",
                 "2": "Lower secondary education (ISCED 2)",
                 "3": "Upper secondary education (ISCED 3)",
-                "4": "Post-secondary non -tertiary education (ISCED 4)",
-                "5": "Short -cycle tertiary education (ISCED 5)",
+                "4": "Post-secondary non-tertiary education (ISCED 4)",
+                "5": "Short-cycle tertiary education (ISCED 5)",
                 "6": "Bachelor or equivalent (ISCED 6)",
                 "7": "Master or equivalent (ISCED 7)",
                 "8": "Doctoral or equivalent (ISCED 8)",
@@ -2473,7 +2473,7 @@
             }
         },
         "Q280": {
-            "description": "Employment status - Respondent´s Spouse",
+            "description": "Employment status- Respondent´s Spouse",
             "question": "Is your spouse employed?",
             "values": {
                 "1": "Full time (30 hours a week or more)",
@@ -2492,7 +2492,7 @@
             }
         },
         "Q281": {
-            "description": "Respondent - Occupational group",
+            "description": "Respondent- Occupational group",
             "question": "To which occupational group do you belong?",
             "values": {
                 "0": "Never had a job",
@@ -2502,7 +2502,7 @@
                 "4": "Sales (for example: sales manager, shop owner, shop assistant, insurance agent, buyer)",
                 "5": "Service (for example: restaurant owner, police officer, waitress, barber, caretaker)",
                 "6": "Skilled worker (for example: foreman, motor mechanic, printer, seamstress, tool and die maker, electrician)",
-                "7": "Semi -skilled worker (for example: bricklayer, bus driver, cannery worker, carpenter, sheet metal worker, baker)",
+                "7": "Semi-skilled worker (for example: bricklayer, bus driver, cannery worker, carpenter, sheet metal worker, baker)",
                 "8": "Unskilled worker (for example: labourer, porter, unskilled factory worker, cleaner)",
                 "9": "Farm worker (for example: farm labourer, tractor driver)",
                 "10": "Farm owner, farm manager",
@@ -2514,7 +2514,7 @@
             }
         },
         "Q282": {
-            "description": "Respondent´s Spouse - Occupational group",
+            "description": "Respondent´s Spouse- Occupational group",
             "question": "To which occupational group does your spouse belong?",
             "values": {
                 "0": "Never had a job",
@@ -2524,7 +2524,7 @@
                 "4": "Sales (for example: sales manager, shop owner, shop assistant, insurance agent, buyer)",
                 "5": "Service (for example: restaurant owner, police officer, waitress, barber, caretaker)",
                 "6": "Skilled worker (for example: foreman, motor mechanic, printer, seamstress, tool and die maker, electrician)",
-                "7": "Semi -skilled worker (for example: bricklayer, bus driver, cannery worker, carpenter, sheet metal worker, baker)",
+                "7": "Semi-skilled worker (for example: bricklayer, bus driver, cannery worker, carpenter, sheet metal worker, baker)",
                 "8": "Unskilled worker (for example: labourer, porter, unskilled factory worker, cleaner)",
                 "9": "Farm worker (for example: farm labourer, tractor driver)",
                 "10": "Farm owner, farm manager",
@@ -2546,7 +2546,7 @@
                 "4": "Sales (for example: sales manager, shop owner, shop assistant, insurance agent, buyer)",
                 "5": "Service (for example: restaurant owner, police officer, waitress, barber, caretaker)",
                 "6": "Skilled worker (for example: foreman, motor mechanic, printer, seamstress, tool and die maker, electrician)",
-                "7": "Semi -skilled worker (for example: bricklayer, bus driver, cannery worker, carpenter, sheet metal worker, baker)",
+                "7": "Semi-skilled worker (for example: bricklayer, bus driver, cannery worker, carpenter, sheet metal worker, baker)",
                 "8": "Unskilled worker (for example: labourer, porter, unskilled factory worker, cleaner)",
                 "9": "Farm worker (for example: farm labourer, tractor driver)",
                 "10": "Farm owner, farm manager",
@@ -2563,7 +2563,7 @@
             "values": {
                 "1": "Government or public institution",
                 "2": "Private business or industry",
-                "3": "Private non -profit organization",
+                "3": "Private non-profit organization",
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-3": "Not applicable; Never had a job",
@@ -3614,7 +3614,7 @@
         },
         "Q33": {
             "description": "Jobs scarce: Men should have more right to a job than women",
-            "question": "Do you agree, disagree or neither agree nor disagree with the following statement: 'When jobs are scarce, men should have more right to a job than women'?",
+            "question": "Do you agree or disagree with the following statement: 'When jobs are scarce, men should have more right to a job than women'?",
             "values": {
                 "1": "Agree strongly",
                 "2": "Agree",
@@ -3644,7 +3644,7 @@
         },
         "Q35": {
             "description": "Problem if women have more income than husband",
-            "question": "Do you agree, disagree or neither agree nor disagree with the following statement 'If a woman earns more money than her husband, it's almost certain to cause problems'?",
+            "question": "Do you agree or disagree with the following statement 'If a woman earns more money than her husband, it's almost certain to cause problems'?",
             "values": {
                 "1": "Strongly agree",
                 "2": "Agree",
@@ -3659,7 +3659,7 @@
         },
         "Q36": {
             "description": "Homosexual couples are as good parents as other couples",
-            "question": "Do you agree, disagree or neither agree nor disagree with the following statement: 'Homosexual couples are as good parents as other couples'?",
+            "question": "Do you agree or disagree with the following statement: 'Homosexual couples are as good parents as other couples'?",
             "values": {
                 "1": "Agree strongly",
                 "2": "Agree",
@@ -3674,7 +3674,7 @@
         },
         "Q37": {
             "description": "Duty towards society to have children",
-            "question": "Do you agree, disagree or neither agree nor disagree with the following statement: 'It is a duty towards society to have children'?",
+            "question": "Do you agree or disagree with the following statement: 'It is a duty towards society to have children'?",
             "values": {
                 "1": "Agree strongly",
                 "2": "Agree",
@@ -3689,7 +3689,7 @@
         },
         "Q38": {
             "description": "It is children duty to take care of ill parent",
-            "question": "Do you agree, disagree or neither agree nor disagree with the following statement: 'Adult children have the duty to provide long -term care for their parents?'",
+            "question": "Do you agree or disagree with the following statement: 'Adult children have the duty to provide long-term care for their parents?'",
             "values": {
                 "1": "Agree strongly",
                 "2": "Agree",
@@ -4841,8 +4841,8 @@
             }
         },
         "Q103": {
-            "description": "Active/Inactive membership: Self -help group, mutual aid group",
-            "question": "Are you a member of a self -help group, mutual aid group?",
+            "description": "Active/Inactive membership: Self-help group, mutual aid group",
+            "question": "Are you a member of a self-help group, mutual aid group?",
             "values": {
                 "0": "Don't belong",
                 "1": "Inactive member",
@@ -6768,7 +6768,7 @@
                     "40003": "AUT: Freedom Party of Austria",
                     "40011": "AUT: Social Democratic Party of Austria",
                     "40012": "AUT: Austrian People's Party",
-                    "40014": "AUT: The Greens -- The Green Alternative",
+                    "40014": "AUT: The Greens - The Green Alternative",
                     "40015": "AUT: NEOS – The New Austria",
                     "40016": "AUT: Peter Pilz List",
                     "50001": "BGD: Bangladesh Awami League",
