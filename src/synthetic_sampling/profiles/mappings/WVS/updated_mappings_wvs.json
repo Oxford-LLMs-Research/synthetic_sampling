@@ -1567,7 +1567,7 @@
                 "2": "Female",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available; AU: Other"
+                "-5": "Missing"
             }
         },
         "Q262": {
@@ -1577,7 +1577,7 @@
                 "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q263": {
@@ -1589,7 +1589,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q264": {
@@ -1602,7 +1602,7 @@
                 "-2": "No answer",
                 "-3": "INAP; Mother does not live in country",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q265": {
@@ -1615,14 +1615,14 @@
                 "-2": "No answer",
                 "-3": "INAP; Father does not live in country",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q266": {
             "description": "Country of birth: Respondent",
             "question": "In which country were you born?",
             "values": {
-                "-5": "Missing; Unknown",
+                "-5": "Missing",
                 "-4": "Not asked",
                 "-2": "No answer",
                 "-1": "Don't know",
@@ -1793,7 +1793,7 @@
             "description": "Country of birth: Mother of the respondent",
             "question": "In which country was your mother born?",
             "values": {
-                "-5": "Missing; Unknown",
+                "-5": "Missing",
                 "-4": "Not asked",
                 "-2": "No answer",
                 "-1": "Don't know",
@@ -1964,7 +1964,7 @@
             "description": "Country of birth: Father of the respondent",
             "question": "In which country was your father born? List of codes in Annex",
             "values": {
-                "-5": "Missing; Unknown",
+                "-5": "Missing",
                 "-4": "Not asked",
                 "-2": "No answer",
                 "-1": "Don't know",
@@ -2141,7 +2141,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q270": {
@@ -2157,7 +2157,7 @@
                 "7-89": "7 persons or more",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q271": {
@@ -2171,14 +2171,14 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q272": {
             "description": "Language at home",
             "question": "What language do you normally speak at home?",
             "values": {
-                "-5": "Missing; Not available",
+                "-5": "Missing",
                 "-4": "Not asked",
                 "-2": "No answer",
                 "-1": "Don't know",
@@ -2359,7 +2359,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q274": {
@@ -2377,7 +2377,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q275": {
@@ -2396,7 +2396,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q276": {
@@ -2431,7 +2431,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q278": {
@@ -2451,7 +2451,7 @@
                 "-2": "No answer",
                 "-3": "Not applicable; No spouse/partner",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q279": {
@@ -2469,7 +2469,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q280": {
@@ -2488,7 +2488,7 @@
                 "-2": "No answer",
                 "-3": "Not applicable; No spouse/partner",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q281": {
@@ -2510,7 +2510,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q282": {
@@ -2532,7 +2532,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q283": {
@@ -2554,7 +2554,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q284": {
@@ -2568,7 +2568,7 @@
                 "-2": "No answer",
                 "-3": "Not applicable; Never had a job",
                 "-4": "Not asked",
-                "-5": "Missing; Not available; China: None"
+                "-5": "Missing"
             }
         },
         "Q285": {
@@ -2580,7 +2580,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q286": {
@@ -2607,7 +2607,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q288": {
@@ -2627,7 +2627,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q289CS": {
@@ -3215,7 +3215,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q2": {
@@ -3229,7 +3229,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q3": {
@@ -3243,7 +3243,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q4": {
@@ -3257,7 +3257,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q5": {
@@ -3271,7 +3271,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q6": {
@@ -3285,7 +3285,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q7": {
@@ -3297,7 +3297,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q8": {
@@ -3309,7 +3309,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q9": {
@@ -3321,7 +3321,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q10": {
@@ -3333,7 +3333,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q11": {
@@ -3345,7 +3345,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q12": {
@@ -3357,7 +3357,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q13": {
@@ -3369,7 +3369,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q14": {
@@ -3381,7 +3381,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q15": {
@@ -3393,7 +3393,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q16": {
@@ -3405,7 +3405,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q17": {
@@ -3417,7 +3417,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q18": {
@@ -3429,7 +3429,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q19": {
@@ -3441,7 +3441,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q20": {
@@ -3453,7 +3453,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q21": {
@@ -3465,7 +3465,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q22": {
@@ -3477,7 +3477,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q23": {
@@ -3489,7 +3489,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q24": {
@@ -3501,7 +3501,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q25": {
@@ -3513,7 +3513,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q26": {
@@ -3525,7 +3525,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q27": {
@@ -3539,7 +3539,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q28": {
@@ -3553,7 +3553,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q29": {
@@ -3567,7 +3567,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q30": {
@@ -3581,7 +3581,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q31": {
@@ -3595,7 +3595,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q32": {
@@ -3609,7 +3609,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q33": {
@@ -3624,7 +3624,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q34": {
@@ -3639,7 +3639,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q35": {
@@ -3654,7 +3654,7 @@
                 "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q36": {
@@ -3669,7 +3669,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q37": {
@@ -3684,7 +3684,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q38": {
@@ -3699,7 +3699,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q39": {
@@ -3714,7 +3714,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q40": {
@@ -3729,7 +3729,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q41": {
@@ -3744,7 +3744,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q42": {
@@ -3757,7 +3757,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q43": {
@@ -3770,7 +3770,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q44": {
@@ -3783,7 +3783,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q45": {
@@ -3796,7 +3796,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         }
     },
@@ -3812,7 +3812,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q47": {
@@ -3827,7 +3827,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked in survey",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q48": {
@@ -3847,7 +3847,7 @@
             "-1": "Don’t know",
             "-2": "No answer",
             "-4": "Not asked",
-            "-5": "Missing; Unknown"
+            "-5": "Missing"
           }
         },
         "Q49": {
@@ -3867,7 +3867,7 @@
             "-1": "Don’t know",
             "-2": "No answer",
             "-4": "Not asked",
-            "-5": "Missing; Unknown"
+            "-5": "Missing"
           }
         },
          "Q50": {
@@ -3887,7 +3887,7 @@
             "-1": "Don’t know",
             "-2": "No answer",
             "-4": "Not asked",
-            "-5": "Missing; Unknown"
+            "-5": "Missing"
           }
         },
         "Q51": {
@@ -3901,7 +3901,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q52": {
@@ -3915,7 +3915,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q53": {
@@ -3929,7 +3929,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q54": {
@@ -3943,7 +3943,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q55": {
@@ -3957,7 +3957,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q56": {
@@ -3970,7 +3970,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         }
     },
@@ -3998,7 +3998,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q59": {
@@ -4012,7 +4012,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q60": {
@@ -4026,7 +4026,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q61": {
@@ -4040,7 +4040,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q62": {
@@ -4054,7 +4054,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q63": {
@@ -4068,7 +4068,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q64": {
@@ -4082,7 +4082,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q65": {
@@ -4096,7 +4096,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q66": {
@@ -4110,7 +4110,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q67": {
@@ -4124,7 +4124,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q68": {
@@ -4138,7 +4138,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q69": {
@@ -4152,7 +4152,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q70": {
@@ -4166,7 +4166,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q71": {
@@ -4180,7 +4180,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q72": {
@@ -4194,7 +4194,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q73": {
@@ -4208,7 +4208,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q74": {
@@ -4222,7 +4222,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q75": {
@@ -4236,7 +4236,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q76": {
@@ -4250,7 +4250,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q77": {
@@ -4264,7 +4264,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q78": {
@@ -4278,7 +4278,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q79": {
@@ -4292,7 +4292,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q80": {
@@ -4306,7 +4306,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q81": {
@@ -4320,7 +4320,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q82": {
@@ -4348,7 +4348,7 @@
               "-1": "Don’t know",
               "-2": "No answer",
               "-4": "Not asked",
-              "-5": "Missing; Unknown"
+              "-5": "Missing"
             }
           },
           "Q82_APEC": {
@@ -4362,7 +4362,7 @@
               "-1": "Don’t know",
               "-2": "No answer",
               "-4": "Not asked in this country",
-              "-5": "Missing; Unknown"
+              "-5": "Missing"
             }
           },
           "Q82_ARABLEAGUE": {
@@ -4376,7 +4376,7 @@
               "-1": "Don’t know",
               "-2": "No answer",
               "-4": "Not asked in this country",
-              "-5": "Missing; Unknown"
+              "-5": "Missing"
             }
           },
           "Q82_ASEAN": {
@@ -4390,7 +4390,7 @@
               "-1": "Don’t know",
               "-2": "No answer",
               "-4": "Not asked in this country",
-              "-5": "Missing; Unknown"
+              "-5": "Missing"
             }
           },
           "Q82_CIS": {
@@ -4404,7 +4404,7 @@
               "-1": "Don't know/ Unsure",
               "-2": "No answer/ refused",
               "-4": "Not asked",
-              "-5": "Missing; Unknown"
+              "-5": "Missing"
             }
           },
           "Q82_CUSMA": {
@@ -4418,7 +4418,7 @@
               "-1": "Don't know/ Unsure",
               "-2": "No answer/ refused",
               "-4": "Not asked",
-              "-5": "Missing; Unknown"
+              "-5": "Missing"
             }
           },
           "Q82_ECO": {
@@ -4537,7 +4537,7 @@
               "-1": "Don’t know",
               "-2": "No answer",
               "-4": "Not asked",
-              "-5": "Missing; Not available"
+              "-5": "Missing"
             }
           },
           "Q82_TLC": {
@@ -4577,7 +4577,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q84": {
@@ -4591,7 +4591,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q85": {
@@ -4605,7 +4605,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q86": {
@@ -4619,7 +4619,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q87": {
@@ -4633,7 +4633,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q88": {
@@ -4647,7 +4647,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q89": {
@@ -4661,7 +4661,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q90": {
@@ -4681,7 +4681,7 @@
             "-1": "Don’t know",
             "-2": "No answer",
             "-4": "Not asked",
-            "-5": "Missing; Not available"
+            "-5": "Missing"
           }
         },
         "Q91": {
@@ -4694,7 +4694,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q92": {
@@ -4707,7 +4707,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q93": {
@@ -4720,7 +4720,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q94": {
@@ -4733,7 +4733,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q95": {
@@ -4746,7 +4746,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q96": {
@@ -4759,7 +4759,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q97": {
@@ -4772,7 +4772,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q98": {
@@ -4785,7 +4785,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q99": {
@@ -4798,7 +4798,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q100": {
@@ -4811,7 +4811,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q101": {
@@ -4824,7 +4824,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q102": {
@@ -4837,7 +4837,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q103": {
@@ -4850,7 +4850,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q104": {
@@ -4863,7 +4863,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q105": {
@@ -4876,7 +4876,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         }
     },
@@ -4898,7 +4898,7 @@
             "-1": "Don’t know",
             "-2": "No answer",
             "-4": "Not asked",
-            "-5": "Missing; Unknown"
+            "-5": "Missing"
           }
         },
         "Q107": {
@@ -4918,7 +4918,7 @@
             "-1": "Don’t know",
             "-2": "No answer",
             "-4": "Not asked",
-            "-5": "Missing; Unknown"
+            "-5": "Missing"
           }
         },
        "Q108": {
@@ -4938,7 +4938,7 @@
             "-1": "Don’t know",
             "-2": "No answer",
             "-4": "Not asked",
-            "-5": "Missing; Not available"
+            "-5": "Missing"
           }
         },
         "Q109": {
@@ -4958,7 +4958,7 @@
             "-1": "Don’t know",
             "-2": "No answer",
             "-4": "Not asked",
-            "-5": "Missing; Not available"
+            "-5": "Missing"
           }
         },
         "Q110": {
@@ -4978,7 +4978,7 @@
             "-1": "Don’t know",
             "-2": "No answer",
             "-4": "Not asked",
-            "-5": "Missing; Not available"
+            "-5": "Missing"
           }
         },
         "Q111": {
@@ -4991,7 +4991,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         }
     },
@@ -5013,7 +5013,7 @@
             "-1": "Don’t know",
             "-2": "No answer",
             "-4": "Not asked",
-            "-5": "Missing; Not available"
+            "-5": "Missing"
           }
         },
         "Q113": {
@@ -5027,7 +5027,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q114": {
@@ -5041,7 +5041,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q115": {
@@ -5055,7 +5055,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q116": {
@@ -5069,7 +5069,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q117": {
@@ -5083,7 +5083,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q118": {
@@ -5097,7 +5097,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q119": {
@@ -5130,7 +5130,7 @@
             "-1": "Don’t know",
             "-2": "No answer",
             "-4": "Not asked",
-            "-5": "Missing; Not available"
+            "-5": "Missing"
           }
         }
     },
@@ -5147,7 +5147,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q122": {
@@ -5160,7 +5160,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q123": {
@@ -5173,7 +5173,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q124": {
@@ -5186,7 +5186,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q125": {
@@ -5199,7 +5199,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q126": {
@@ -5212,7 +5212,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q127": {
@@ -5225,7 +5225,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q128": {
@@ -5238,7 +5238,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q129": {
@@ -5251,7 +5251,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q130": {
@@ -5265,7 +5265,7 @@
             "-1": "Don’t know",
             "-2": "No answer",
             "-4": "Not asked",
-            "-5": "Missing; Not available"
+            "-5": "Missing"
           }
         }
     },
@@ -5281,7 +5281,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q132": {
@@ -5295,7 +5295,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q133": {
@@ -5309,7 +5309,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q134": {
@@ -5323,7 +5323,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q135": {
@@ -5337,7 +5337,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q136": {
@@ -5351,7 +5351,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q137": {
@@ -5365,7 +5365,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q138": {
@@ -5379,7 +5379,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q139": {
@@ -5391,7 +5391,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q140": {
@@ -5403,7 +5403,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q141": {
@@ -5415,7 +5415,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q142": {
@@ -5429,7 +5429,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q143": {
@@ -5443,7 +5443,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q144": {
@@ -5455,7 +5455,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q145": {
@@ -5467,7 +5467,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q146": {
@@ -5481,7 +5481,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q147": {
@@ -5495,7 +5495,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q148": {
@@ -5509,7 +5509,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q149": {
@@ -5521,7 +5521,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q150": {
@@ -5533,7 +5533,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q151": {
@@ -5545,7 +5545,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         }
     },
@@ -5561,7 +5561,7 @@
               "-1": "Don’t know",
               "-2": "No answer",
               "-4": "Not asked",
-              "-5": "Missing; Unknown"
+              "-5": "Missing"
             }
             },
         "Q153": {
@@ -5589,7 +5589,7 @@
             "-1": "Don’t know",
             "-2": "No answer",
             "-4": "Not asked",
-            "-5": "Missing; Unknown"
+            "-5": "Missing"
           }
         },
         "Q155": {
@@ -5604,7 +5604,7 @@
             "-2": "No answer",
             "-3": "Not applicable; No first answer",
             "-4": "Not asked",
-            "-5": "Missing; Unknown"
+            "-5": "Missing"
           }
         },
         "Q156": {
@@ -5618,7 +5618,7 @@
                 "-1": "Don´t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q157": {
@@ -5633,7 +5633,7 @@
                 "-2": "No answer",
                 "-3": "Not applicable (Not first choice)",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         }
     },
@@ -5655,7 +5655,7 @@
                 "-1": "Don’t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q159": {
@@ -5675,7 +5675,7 @@
                 "-1": "Don’t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q160": {
@@ -5695,7 +5695,7 @@
                 "-1": "Don’t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         },
         "Q161": {
@@ -5715,7 +5715,7 @@
                 "-1": "Don’t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q162": {
@@ -5735,7 +5735,7 @@
                 "-1": "Don’t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Not available"
+                "-5": "Missing"
             }
         },
         "Q163": {
@@ -5755,7 +5755,7 @@
                 "-1": "Don’t know",
                 "-2": "No answer",
                 "-4": "Not asked",
-                "-5": "Missing; Unknown"
+                "-5": "Missing"
             }
         }
     },
@@ -5789,7 +5789,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q166": {
@@ -5801,7 +5801,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q167": {
@@ -5813,7 +5813,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q168": {
@@ -5825,7 +5825,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q169": {
@@ -5839,7 +5839,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q170": {
@@ -5853,7 +5853,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q171": {
@@ -5870,7 +5870,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q172": {
@@ -5888,7 +5888,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q173": {
@@ -5901,7 +5901,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q174": {
@@ -5913,7 +5913,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q175": {
@@ -5925,7 +5925,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             }
         },
@@ -5947,7 +5947,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q177": {
@@ -5967,7 +5967,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q178": {
@@ -5987,7 +5987,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q179": {
@@ -6007,7 +6007,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q180": {
@@ -6027,7 +6027,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q181": {
@@ -6047,7 +6047,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q182": {
@@ -6067,7 +6067,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q183": {
@@ -6087,7 +6087,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q184": {
@@ -6107,7 +6107,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q185": {
@@ -6127,7 +6127,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q186": {
@@ -6147,7 +6147,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q187": {
@@ -6167,7 +6167,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q188": {
@@ -6187,7 +6187,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q189": {
@@ -6207,7 +6207,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q190": {
@@ -6227,7 +6227,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q191": {
@@ -6247,7 +6247,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q192": {
@@ -6267,7 +6267,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q193": {
@@ -6287,7 +6287,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q194": {
@@ -6307,7 +6307,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q195": {
@@ -6327,7 +6327,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q196": {
@@ -6341,7 +6341,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q197": {
@@ -6355,7 +6355,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q198": {
@@ -6369,7 +6369,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             }
         },
@@ -6385,7 +6385,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q200": {
@@ -6398,7 +6398,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Unknown"
+                    "-5": "Missing"
                 }
             },
             "Q201": {
@@ -6413,7 +6413,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q202": {
@@ -6429,7 +6429,7 @@
                     "-2": "No answer",
                     "-3": "Not applicable",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q203": {
@@ -6444,7 +6444,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q204": {
@@ -6459,7 +6459,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q205": {
@@ -6474,7 +6474,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q206": {
@@ -6489,7 +6489,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q207": {
@@ -6504,7 +6504,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q208": {
@@ -6519,7 +6519,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q209": {
@@ -6532,7 +6532,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q210": {
@@ -6545,7 +6545,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q211": {
@@ -6558,7 +6558,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q212": {
@@ -6571,7 +6571,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Unknown"
+                    "-5": "Missing"
                 }
             },
             "Q213": {
@@ -6584,7 +6584,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q214": {
@@ -6597,7 +6597,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q215": {
@@ -6610,7 +6610,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q216": {
@@ -6623,7 +6623,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q217": {
@@ -6636,7 +6636,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q218": {
@@ -6649,7 +6649,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q219": {
@@ -6661,7 +6661,7 @@
                     "3": "Would never do",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q220": {
@@ -6673,7 +6673,7 @@
                     "3": "Would never do",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q221": {
@@ -6686,7 +6686,7 @@
                     "4": "Not allowed to vote",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing; Unknown"
+                    "-5": "Missing"
                 }
             },
             "Q222": {
@@ -6699,14 +6699,14 @@
                     "4": "Not allowed to vote",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q223": {
                 "description": "Which party would you vote for if there were a national election tomorrow",
                 "question": "If there were a national election tomorrow, for which party on this list would you vote?. If you do not know, which party appeals to you most?",
                 "values": {
-                    "-5": "Missing, Not available",
+                    "-5": "Missing",
                     "-4": "Not asked",
                     "-3": "Not applicable",
                     "-2": "No answer",
@@ -7696,7 +7696,7 @@
                     "4": "Not at all often",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q225": {
@@ -7709,7 +7709,7 @@
                     "4": "Not at all often",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing;Unknown"
+                    "-5": "Missing"
                 }
             },
             "Q226": {
@@ -7722,7 +7722,7 @@
                     "4": "Not at all often",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q227": {
@@ -7735,7 +7735,7 @@
                     "4": "Not at all often",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q228": {
@@ -7748,7 +7748,7 @@
                     "4": "Not at all often",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing;Unknown"
+                    "-5": "Missing"
                 }
             },
             "Q229": {
@@ -7761,7 +7761,7 @@
                     "4": "Not at all often",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q230": {
@@ -7774,7 +7774,7 @@
                     "4": "Not at all often",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing;Unknown"
+                    "-5": "Missing"
                 }
             },
             "Q231": {
@@ -7787,7 +7787,7 @@
                     "4": "Not at all often",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q232": {
@@ -7800,7 +7800,7 @@
                     "4": "Not at all often",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q233": {
@@ -7813,7 +7813,7 @@
                     "4": "Not at all often",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q234": {
@@ -7826,7 +7826,7 @@
                     "4": "Not at all important",
                     "-1": "Don´t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q234A": {
@@ -7855,7 +7855,7 @@
                     "4": "Very bad",
                     "-1": "Don’t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q236": {
@@ -7868,7 +7868,7 @@
                     "4": "Very bad",
                     "-1": "Don’t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q237": {
@@ -7881,7 +7881,7 @@
                     "4": "Very bad",
                     "-1": "Don’t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q238": {
@@ -7894,7 +7894,7 @@
                     "4": "Very bad",
                     "-1": "Don’t know",
                     "-2": "No answer",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q239": {
@@ -7908,7 +7908,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q240": {
@@ -7928,7 +7928,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q241": {
@@ -7949,7 +7949,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q242": {
@@ -7970,7 +7970,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q243": {
@@ -7991,7 +7991,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Unknown"
+                    "-5": "Missing"
                 }
             },
             "Q244": {
@@ -8012,7 +8012,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Unknown"
+                    "-5": "Missing"
                 }
             },
             "Q245": {
@@ -8033,7 +8033,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Unknown"
+                    "-5": "Missing"
                 }
             },
             "Q246": {
@@ -8054,7 +8054,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Unknown"
+                    "-5": "Missing"
                 }
             },
             "Q247": {
@@ -8075,7 +8075,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q248": {
@@ -8096,7 +8096,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q249": {
@@ -8117,7 +8117,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q250": {
@@ -8137,7 +8137,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q251": {
@@ -8157,7 +8157,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q252": {
@@ -8177,7 +8177,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q253": {
@@ -8191,7 +8191,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q254": {
@@ -8206,7 +8206,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q255": {
@@ -8220,7 +8220,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q256": {
@@ -8234,7 +8234,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q257": {
@@ -8248,7 +8248,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q258": {
@@ -8262,7 +8262,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q259": {
@@ -8276,7 +8276,7 @@
                     "-1": "Don´t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             }
         },
@@ -8293,7 +8293,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291P2": {
@@ -8308,7 +8308,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291P3": {
@@ -8323,7 +8323,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291P4": {
@@ -8338,7 +8338,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291P5": {
@@ -8353,7 +8353,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291P6": {
@@ -8368,7 +8368,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291G1": {
@@ -8383,7 +8383,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291G2": {
@@ -8398,7 +8398,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291G3": {
@@ -8413,7 +8413,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291G4": {
@@ -8428,7 +8428,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291G5": {
@@ -8443,7 +8443,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291G6": {
@@ -8458,7 +8458,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291UN1": {
@@ -8473,7 +8473,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291UN2": {
@@ -8488,7 +8488,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291UN3": {
@@ -8503,7 +8503,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291UN4": {
@@ -8518,7 +8518,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291UN5": {
@@ -8533,7 +8533,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q291UN6": {
@@ -8548,7 +8548,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292A": {
@@ -8563,7 +8563,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292B": {
@@ -8578,7 +8578,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292C": {
@@ -8593,7 +8593,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292D": {
@@ -8608,7 +8608,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292E": {
@@ -8623,7 +8623,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292F": {
@@ -8638,7 +8638,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292G": {
@@ -8653,7 +8653,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292H": {
@@ -8668,7 +8668,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292I": {
@@ -8683,7 +8683,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292J": {
@@ -8698,7 +8698,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292K": {
@@ -8713,7 +8713,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292L": {
@@ -8728,7 +8728,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292M": {
@@ -8743,7 +8743,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292N": {
@@ -8758,7 +8758,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q292O": {
@@ -8773,7 +8773,7 @@
                     "-1": "Don’t know",
                     "-2": "No answer",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             },
             "Q293": {
@@ -8795,7 +8795,7 @@
                     "-2": "No answer",
                     "-3": "Not applicable",
                     "-4": "Not asked",
-                    "-5": "Missing; Not available"
+                    "-5": "Missing"
                 }
             }
         }
