@@ -2597,7 +2597,7 @@
         },
         "Q287": {
             "description": "Social class (subjective)",
-            "question": "People sometimes describe themselves as belonging to the working class, the middle class, or the upper or lower class. Would you describe yourself as belonging to the:",
+            "question": "Which social class would you say you belong to?",
             "values": {
                 "1": "Upper class",
                 "2": "Upper middle class",
@@ -2612,7 +2612,7 @@
         },
         "Q288": {
             "description": "Scale of incomes",
-            "question": "What is the level of your household's income counting all wages, salaries, pensions and other incomes on an income scale on which 1 indicates the lowest income group and 10 the highest income group in your country",
+            "question": "What is the level of your household's income counting all wages, salaries, pensions and other incomes on an income scale on which 'lowest' indicates the lowest income group and 'tenth step' the highest income group in your country",
             "values": {
                 "1": "Lower step",
                 "2": "second step",
@@ -2751,7 +2751,7 @@
         },
         "Q290": {
             "description": "Racial belonging/ ethnic group",
-            "question": "How do you identify when it comes to Racial belonging/ ethnic group in Country?",
+            "question": "How do you identify when it comes to Racial belonging/ ethnic group in your country?",
             "values": {
                 "-5": "Missing; Not specified",
                 "-4": "Not asked",
