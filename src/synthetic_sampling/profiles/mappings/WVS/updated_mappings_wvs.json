@@ -6704,7 +6704,7 @@
             },
             "Q223": {
                 "description": "Which party would you vote for if there were a national election tomorrow",
-                "question": "If there were a national election tomorrow, for which party on this list would you vote?. If you do not know, which party appeals to you most?",
+                "question": "If there were a national election tomorrow, for which party would you vote?. If you do not know, which party appeals to you most?",
                 "values": {
                     "-5": "Missing",
                     "-4": "Not asked",
@@ -7022,13 +7022,12 @@
                     "268135": "GEO: State for the People",
                     "268136": "GEO: New Political Center Girchi",
                     "268137": "GEO: New Georgia",
-                    "276001": "DEU: Christian Social Union in Bavaria",
+                    "276001": "DEU: Christian Democratic Union of Germany; Christian Social Union in Bavaria",
                     "276002": "DEU: Social Democratic Party",
                     "276003": "DEU: Free Democratic Party",
                     "276004": "DEU: Alliance 90/The Greens",
                     "276033": "DEU: Alternative for Germany",
                     "276034": "DEU: The Left",
-                    "276035": "DEU: Christian Democratic Union of Germany; Christian Social Union in Bavaria",
                     "300002": "GRC: New Democracy",
                     "300003": "GRC: Communist Party of Greece",
                     "300101": "GRC: Independent Greeks",
