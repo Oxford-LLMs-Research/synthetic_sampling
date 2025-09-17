@@ -3199,7 +3199,10 @@
                 "4": "Guaraní",
                 "5": "Otro _nativo_",
                 "6": "Otro extranjero",
-                "-1": "Don´t know"
+                "-1": "Don´t know",
+                "-2": "No answer",
+                "-4": "Not asked in this country",
+                "-5": "Missing
             }
         }
     },
@@ -5408,7 +5411,7 @@
         },
         "Q141": {
             "description": "Things done for reasons of security: Carried a knife, gun or other weapon",
-            "question": "Have you carried a knife, gun or other weapon for reasons of security?",
+            "question": "Have you ever carried a knife, gun or other weapon for reasons of security?",
             "values": {
                 "1": "Yes",
                 "2": "No",
