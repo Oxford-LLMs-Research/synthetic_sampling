@@ -6707,7 +6707,7 @@
             },
             "Q223": {
                 "description": "Which party would you vote for if there were a national election tomorrow",
-                "question": "If there were a national election tomorrow, for which party would you vote?. If you do not know, which party appeals to you most?",
+                "question": "If there were a national election tomorrow, for which party would you vote? If you do not know, which party appeals to you most?",
                 "values": {
                     "-5": "Missing",
                     "-4": "Not asked",
