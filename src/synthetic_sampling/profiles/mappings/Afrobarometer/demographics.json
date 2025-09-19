@@ -1,5 +1,5 @@
 {
-  "country": {
+  "COUNTRY": {
     "description": "Country of respondent",
     "question": "What is your country?",
     "values": {
@@ -421,7 +421,7 @@
     "2306": "Nairobi City"
   }
 },
-  "Q1_age": {
+  "Q1": {
     "description": "Respondent's age",
     "question": "How old are you?",
     "values": {
@@ -430,7 +430,7 @@
       "-1": "Missing"
     }
   },
-  "Q2_language_home": {
+  "Q2": {
     "description": "Primary language spoken in the home",
     "question": "What is the primary language you speak in your home?",
     "values": {
