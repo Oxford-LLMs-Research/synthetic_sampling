@@ -154,18 +154,28 @@
     }
   },
   "P22ST": {
-    "description": "Justifiability of tax evasion",
-    "question": "To what extent do you think it is justifiable or unjustifiable to evade paying taxes?",
-    "values": {
-      "0": "No answer",
-      "1": "Not at all justifiable",
-      "2": "Slightly justifiable",
-      "3": "Moderately justifiable",
-      "4": "Very justifiable",
-      "5": "Completely justifiable",
-      "98": "Do not know"
-    }
-  },
+      "description": "Justifiability of tax evasion",
+      "question": "To what extent do you think it is justifiable or unjustifiable to evade paying taxes?",
+      "values": {
+        "0": "No answer",
+        "98": "Do not know",
+
+        "1": "Not at all justifiable",
+        "2": "Not at all justifiable",
+
+        "3": "Slightly justifiable",
+        "4": "Slightly justifiable",
+
+        "5": "Moderately justifiable",
+        "6": "Moderately justifiable",
+
+        "7": "Very justifiable",
+        "8": "Very justifiable",
+
+        "9": "Completely justifiable",
+        "10": "Completely justifiable"
+      }
+    },
   "P34WVSNA": {
     "description": "Most important national priority",
     "question": "Which of the following do you think is the most important priority for the country?",
