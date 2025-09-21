@@ -5021,7 +5021,7 @@
         },
         "Q113": {
             "description": "Involved in corruption: State authorities",
-            "question": "How many  state authorities do you believe are involved in corruption?",
+            "question": "How many state authorities do you believe are involved in corruption?",
             "values": {
                 "1": "None of them",
                 "2": "Few of them",
@@ -5035,7 +5035,7 @@
         },
         "Q114": {
             "description": "Involved in corruption: Business executives",
-            "question": "How many  business executives do you believe are involved in corruption?",
+            "question": "How many business executives do you believe are involved in corruption?",
             "values": {
                 "1": "None of them",
                 "2": "Few of them",
@@ -5049,7 +5049,7 @@
         },
         "Q115": {
             "description": "Involved in corruption: Local authorities",
-            "question": "How many  local authorities do you believe are involved in corruption?",
+            "question": "How many local authorities do you believe are involved in corruption?",
             "values": {
                 "1": "None of them",
                 "2": "Few of them",
@@ -5063,7 +5063,7 @@
         },
         "Q116": {
             "description": "Involved in corruption: Civil service providers",
-            "question": "How many  civil service providers (police, judiciary, civil servants, doctors, teachers) do you believe are involved in corruption?",
+            "question": "How many civil service providers (police, judiciary, civil servants, doctors, teachers) do you believe are involved in corruption?",
             "values": {
                 "1": "None of them",
                 "2": "Few of them",
@@ -5077,7 +5077,7 @@
         },
         "Q117": {
             "description": "Involved in corruption: Journalists and media",
-            "question": "How many  journalists and media do you believe are involved in corruption?",
+            "question": "How many journalists and media do you believe are involved in corruption?",
             "values": {
                 "1": "None of them",
                 "2": "Few of them",
@@ -5289,7 +5289,7 @@
         },
         "Q132": {
             "description": "Frequency in your neighborhood: Robberies",
-            "question": "How frequently does robberies occur in your neighborhood?",
+            "question": "How frequently do robberies occur in your neighborhood?",
             "values": {
                 "1": "Very Frequently",
                 "2": "Quite frequently",
@@ -5303,7 +5303,7 @@
         },
         "Q133": {
             "description": "Frequency in your neighborhood: Alcohol consumed in the streets",
-            "question": "How frequently does alcohol consumed in the streets occur in your neighborhood?",
+            "question": "How frequently people drink alcohol in the streets in your neighborhood?",
             "values": {
                 "1": "Very Frequently",
                 "2": "Quite frequently",
