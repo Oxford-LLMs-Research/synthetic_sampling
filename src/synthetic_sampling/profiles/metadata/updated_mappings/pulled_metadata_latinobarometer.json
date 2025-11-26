@@ -1,0 +1,2985 @@
+{
+  "approval_foreign_leaders": {
+    "P62N.1": {
+      "description": "Evaluation of Gustavo Petro",
+      "question": "How would you rate Gustavo Petro overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62ST.2": {
+      "description": "Evaluation of Luis Lacalle Pou",
+      "question": "How would you rate Luis Lacalle Pou overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62ST.3": {
+      "description": "Evaluation of Alberto Fernández",
+      "question": "How would you rate Alberto Fernández overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62ST.4": {
+      "description": "Evaluation of Jair Bolsonaro",
+      "question": "How would you rate Jair Bolsonaro overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62ST.5": {
+      "description": "Evaluation of Nicolás Maduro",
+      "question": "How would you rate Nicolás Maduro overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62N.6": {
+      "description": "Evaluation of Gabriel Boric",
+      "question": "How would you rate Gabriel Boric overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62ST.7": {
+      "description": "Evaluation of Pope Francis",
+      "question": "How would you rate Pope Francis overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62ST.8": {
+      "description": "Evaluation of Xi Jinping",
+      "question": "How would you rate Xi Jinping overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62N.9": {
+      "description": "Evaluation of Guillermo Lasso",
+      "question": "How would you rate Guillermo Lasso overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62ST.10": {
+      "description": "Evaluation of Donald Trump",
+      "question": "How would you rate Donald Trump overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62ST.11": {
+      "description": "Evaluation of Andrés Manuel López Obrador (AMLO)",
+      "question": "How would you rate Andrés Manuel López Obrador (AMLO) overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62N.12": {
+      "description": "Evaluation of Daniel Ortega",
+      "question": "How would you rate Daniel Ortega overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62N.13": {
+      "description": "Evaluation of Nayib Bukele",
+      "question": "How would you rate Nayib Bukele overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62N.14": {
+      "description": "Evaluation of Vladimir Putin",
+      "question": "How would you rate Vladimir Putin overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62N.15": {
+      "description": "Evaluation of Volodymyr Zelensky",
+      "question": "How would you rate Volodymyr Zelensky overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62N.16": {
+      "description": "Evaluation of Luiz Inácio Lula da Silva",
+      "question": "How would you rate Luiz Inácio Lula da Silva (Lula) overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    },
+    "P62N.17": {
+      "description": "Evaluation of Joe Biden",
+      "question": "How would you rate Joe Biden overall?",
+      "values": {
+        "96": "Don't know him",
+        "0": "Very bad",
+        "1": "Very bad",
+        "2": "Bad",
+        "3": "Bad",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Good",
+        "8": "Good",
+        "9": "Very good",
+        "10": "Very good"
+      }
+    }
+  },
+  "attitudes_economy": {
+    "P30STIN.A": {
+      "description": "Fear of job loss to automation",
+      "question": "Do you agree or disagree that robots will take your job within the next ten years?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P30INN.B": {
+      "description": "Environmental sustainability and economic growth",
+      "question": "Do you agree or disagree that it is possible to care for the environment and also have economic growth?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P30INN.C": {
+      "description": "Willingness to pay more for environmentally friendly products",
+      "question": "Do you agree or disagree that you are willing to pay 20% more for a product if it is environmentally friendly?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P30INN.D": {
+      "description": "Perception of gender inequality in business",
+      "question": "Do you agree or disagree that men have a considerable advantage over women when starting a business?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P30INN.E": {
+      "description": "Preference for products produced by women",
+      "question": "Do you agree or disagree that you prefer to buy products made by women over those made by men?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P30INN.F": {
+      "description": "Importance of technical skills for employment",
+      "question": "Do you agree or disagree that learning mathematics, engineering, or programming is important for getting a good job?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P36ST": {
+      "description": "Priority between climate action and economic growth",
+      "question": "Which of the following comes closer to your view about national priorities?",
+      "values": {
+        "0": "No answer",
+        "1": "Priority should be given to fighting climate change, even if it affects economic growth",
+        "2": "Priority should be given to economic growth, even if it affects the fight against climate change",
+        "8": "Do not know"
+      }
+    },
+    "P54ST.B": {
+      "description": "Belief in the market economy as the path to development",
+      "question": "Do you agree or disagree that a market economy is the only way your country can achieve development?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    }
+  },
+  "attitudes_politics": {
+    "P40STGBS": {
+      "description": "Interest in politics",
+      "question": "How interested are you in politics?",
+      "values": {
+        "0": "No answer",
+        "1": "Very interested",
+        "2": "Fairly interested",
+        "3": "A little interested",
+        "4": "Not at all interested",
+        "8": "Do not know"
+      }
+    },
+    "P10STGBS": {
+      "description": "Attitudes toward democracy and alternative regimes",
+      "question": "What is your general attitude toward democracy compared to other forms of government?",
+      "values": {
+        "0": "No answer",
+        "1": "Democracy is preferable to any other kind of government",
+        "2": "Under some circumstances, an authoritarian government can be preferable to a democratic one",
+        "3": "For people like me, it doesn’t matter whether we have a democratic or non-democratic regime",
+        "8": "Do not know"
+      }
+    },
+    "P18ST.A": {
+      "description": "Attitude toward democracy despite its problems",
+      "question": "Do you agree or disagree that democracy may have problems but it is the best system of government?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P18STM.B": {
+      "description": "Acceptance of undemocratic government if it solves problems",
+      "question": "Do you agree or disagree that an undemocratic government is acceptable if it can solve the country's problems?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P18STM.C": {
+      "description": "Acceptance of media control by the president in times of difficulty",
+      "question": "Do you agree or disagree that in difficult times, it is acceptable for the president to control the media?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P18N.D": {
+      "description": "Support for diversity of media sources in democracy",
+      "question": "Do you agree or disagree that democracy requires a diversity of sources in the media?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P18N.E": {
+      "description": "Support for judicial independence",
+      "question": "Do you agree or disagree that the judiciary must be independent from the executive power?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P18N.F": {
+      "description": "Evaluation of political party performance",
+      "question": "Do you agree or disagree that political parties in your country work well?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P18N.G": {
+      "description": "Skepticism about hard-handed governments solving problems",
+      "question": "Do you agree or disagree that even a hard-handed government would not be able to solve the country’s problems?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P16ST": {
+      "description": "Self-placement on left-right political scale",
+      "question": "In politics, people often talk about 'left' and 'right'. Where would you place yourself on this scale?",
+      "values": {
+        "1": "Left",
+        "2": "Center-left",
+        "3": "Center",
+        "4": "Center-right",
+        "5": "Right",
+        "97": "None",
+        "98": "Do not know",
+        "99": "No answer"
+      }
+    },
+    "P18ST.I": {
+      "description": "Belief in democracy's ability to solve problems",
+      "question": "Do you agree or disagree that democracy makes it possible to solve the problems the country faces?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P19N": {
+      "description": "Cultural preference: tradition vs. diversity",
+      "question": "Do you agree or disagree that society should be open to a diversity of traditions and habits?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Disagree — society should defend its own traditions and habits",
+        "2": "Agree — society should be open to a diversity of traditions and habits"
+      }
+    },
+    "P20STM": {
+      "description": "Support for military government in difficult times",
+      "question": "Would you support a military government replacing the democratic government if the situation becomes very difficult?",
+      "values": {
+        "0": "No answer",
+        "1": "Yes, I would support a military government",
+        "2": "No, I would not support a military government under any circumstance",
+        "8": "Do not know"
+      }
+    },
+    "P21ST": {
+      "description": "Role of political parties in democracy",
+      "question": "Do you believe that democracy can function without political parties?",
+      "values": {
+        "0": "No answer",
+        "1": "No — democracy cannot function without political parties",
+        "2": "Yes — democracy can work without parties",
+        "8": "Do not know"
+      }
+    },
+    "P22ST": {
+      "description": "Justifiability of tax evasion",
+      "question": "To what extent do you think it is justifiable or unjustifiable to evade paying taxes?",
+      "values": {
+        "0": "No answer",
+        "98": "Do not know",
+        "1": "Not at all justifiable",
+        "2": "Not at all justifiable",
+        "3": "Slightly justifiable",
+        "4": "Slightly justifiable",
+        "5": "Moderately justifiable",
+        "6": "Moderately justifiable",
+        "7": "Very justifiable",
+        "8": "Very justifiable",
+        "9": "Completely justifiable",
+        "10": "Completely justifiable"
+      }
+    },
+    "P34WVSNA": {
+      "description": "Most important national priority",
+      "question": "Which of the following do you think is the most important priority for the country?",
+      "values": {
+        "0": "No answer",
+        "1": "Maintaining order in the nation",
+        "2": "Giving people more say in important government decisions",
+        "3": "Fighting rising prices",
+        "4": "Protecting freedom of speech",
+        "8": "Do not know"
+      }
+    },
+    "P34WVSNB": {
+      "description": "Second most important national priority",
+      "question": "Which of the following do you think is the second most important priority for the country?",
+      "values": {
+        "0": "No answer",
+        "1": "Maintaining order in the nation",
+        "2": "Giving people more say in important government decisions",
+        "3": "Fighting rising prices",
+        "4": "Protecting freedom of speech",
+        "8": "Do not know"
+      }
+    },
+    "P35NA": {
+      "description": "Most important principle for good governance",
+      "question": "Which of the following do you think is most important for the best way to govern a country?",
+      "values": {
+        "0": "No answer",
+        "1": "Concentrating political power in one leader",
+        "2": "Distributing power across several institutions",
+        "3": "Ensuring the media does not question those in power",
+        "4": "Guaranteeing political liberties for citizens",
+        "8": "Do not know"
+      }
+    },
+    "P35NB": {
+      "description": "Second most important principle for good governance",
+      "question": "Which of the following do you think is second most important for the best way to govern a country?",
+      "values": {
+        "0": "No answer",
+        "1": "Concentrating political power in one leader",
+        "2": "Distributing power across several institutions",
+        "3": "Ensuring the media does not question those in power",
+        "4": "Guaranteeing political liberties for citizens",
+        "8": "Do not know"
+      }
+    },
+    "P46N": {
+      "description": "Views on freedom of expression vs. fake news control",
+      "question": "Do you think it is more important to protect freedom of expression even if it allows fake news, or to control fake news even if it limits freedom of expression?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Freedom of expression should be guaranteed, even if it means fake news circulates",
+        "2": "Fake news should be controlled, even if it limits freedom of expression",
+        "8": "Do not know"
+      }
+    },
+    "P54N.A": {
+      "description": "Attitude toward protests",
+      "question": "Do you agree or disagree that protests are a legitimate way to express political demands?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    }
+  },
+  "attitudes_social_groups": {
+    "P33N.A": {
+      "description": "Perception of immigrants' impact on the economy",
+      "question": "Do you agree or disagree that immigrants are good for the country’s economy?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P33ST.B": {
+      "description": "Perception of immigrants as job competitors",
+      "question": "Do you agree or disagree that immigrants come to compete for jobs?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P33N.C": {
+      "description": "Perception of immigrants and crime rates",
+      "question": "Do you agree or disagree that immigrants increase crime rates?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P33N.D": {
+      "description": "Perception of immigrants' cultural contributions",
+      "question": "Do you agree or disagree that immigrants improve our society with new ideas and culture?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P37CSN.A": {
+      "description": "Support for adoption rights for same-sex couples",
+      "question": "Do you agree or disagree that same-sex couples should be allowed to adopt children?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P37CSN.B": {
+      "description": "Support for same-sex marriage",
+      "question": "Do you agree or disagree that marriage between people of the same sex should be allowed?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P37STCS.C": {
+      "description": "Belief that women should stay at home and men should work",
+      "question": "Do you agree or disagree that it is better for women to concentrate on the home and for men to work outside?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P37WVSSTCS.D": {
+      "description": "Belief that men are better political leaders",
+      "question": "Do you agree or disagree that men are better political leaders than women?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P37STCS.E": {
+      "description": "Belief that a woman earning more than a man causes trouble",
+      "question": "Do you agree or disagree that when a woman earns more than a man, it almost certainly causes problems?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P37CSN.F": {
+      "description": "Support for legal recognition of gender change on ID documents",
+      "question": "Do you agree or disagree that a person’s gender change should be legally recognized on identity documents?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P37WVSCS.G": {
+      "description": "Belief that men should have job priority during scarcity",
+      "question": "Do you agree or disagree that when jobs are scarce, men should have more right to a job than women?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P37WVSCS.H": {
+      "description": "Belief that same-sex couples are equally good parents",
+      "question": "Do you agree or disagree that homosexual couples are just as good parents as heterosexual couples?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    }
+  },
+  "demographics": {
+    "IDENPA": {
+      "description": "Country",
+      "question": "Which country are you from?",
+      "values": {
+        "32": "Argentina",
+        "68": "Bolivia",
+        "76": "Brasil",
+        "152": "Chile",
+        "170": "Colombia",
+        "188": "Costa Rica",
+        "214": "Rep. Dominicana",
+        "218": "Ecuador",
+        "222": "El Salvador",
+        "320": "Guatemala",
+        "340": "Honduras",
+        "484": "Mexico",
+        "591": "Panama",
+        "600": "Paraguay",
+        "604": "Peru",
+        "858": "Uruguay",
+        "862": "Venezuela"
+      }
+    },
+    "REG": {
+      "description": "Region / Province",
+      "question": "Which region do you live in?"
+    },
+    "CIUDAD": {
+      "description": "City",
+      "question": "In which city is the interview taking place?"
+    },
+    "TAMCIUD": {
+      "description": "Size of habitat",
+      "question": "What is the size of the respondent's habitat?",
+      "values": {
+        "1": "Less than 5.000",
+        "2": "5.001 - 10.000",
+        "3": "10.001 - 20.000",
+        "4": "20.001 - 40.000",
+        "5": "40.001 - 50.000",
+        "6": "50.001 - 100.000",
+        "7": "100.001 and more",
+        "8": "(Capital)"
+      }
+    },
+    "EDAD": {
+      "description": "Age",
+      "question": "How old are you?",
+      "values": {
+        "20-21": "Age input (position 20–21 on questionnaire)"
+      }
+    },
+    "SEXO": {
+      "description": "Sex of the respondent",
+      "question": "What is your sex?",
+      "values": {
+        "1": "Man",
+        "2": "Woman"
+      }
+    },
+    "S1": {
+      "description": "Religious affiliation",
+      "question": "What is your religion, if any?",
+      "values": {
+        "0": "No answer",
+        "1": "Catholic",
+        "2": "Evangelical (no specific denomination)",
+        "3": "Evangelical Baptist",
+        "4": "Evangelical Methodist",
+        "5": "Evangelical Pentecostal",
+        "6": "Adventist",
+        "7": "Jehovah’s Witnesses",
+        "8": "Mormon",
+        "9": "Jewish",
+        "10": "Protestant",
+        "11": "African American cults / Umbanda",
+        "12": "Believer, but not affiliated with a church",
+        "13": "Agnostic",
+        "14": "Atheist",
+        "96": "Other",
+        "97": "None",
+        "98": "Do not know"
+      }
+    },
+    "S1A": {
+      "description": "Level of religious devotion",
+      "question": "How would you describe your level of religious devotion?",
+      "values": {
+        "0": "No answer",
+        "1": "Very devout",
+        "2": "Devout",
+        "3": "Not very devout",
+        "4": "Not devout at all",
+        "8": "Do not know",
+        "9": "Not applicable (no religion)"
+      }
+    },
+    "S2": {
+      "description": "Self-identified social class",
+      "question": "People sometimes describe themselves as belonging to a social class. Which class would you say you belong to?",
+      "values": {
+        "0": "No answer",
+        "1": "Upper class",
+        "2": "Upper-middle class",
+        "3": "Middle class",
+        "4": "Lower-middle class",
+        "5": "Lower class",
+        "8": "Do not know"
+      }
+    },
+    "S7": {
+      "description": "Self-identified ethnicity or race",
+      "question": "What ethnicity or race do you identify with most closely?",
+      "values": {
+        "0": "No answer",
+        "1": "Asian",
+        "2": "Black",
+        "3": "Indigenous",
+        "4": "Mestizo",
+        "5": "Mulatto",
+        "6": "White",
+        "7": "Other race",
+        "8": "Do not know"
+      }
+    },
+    "S9": {
+      "description": "Household head and main income contributor",
+      "question": "Are you the main contributor to your family's income or the head of the household?",
+      "values": {
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "S10": {
+      "description": "Age at which full-time education ended",
+      "question": "At what age did you complete your full-time education?",
+      "values": {
+        "0": "No answer",
+        "96": "Did not study",
+        "97": "Still studying",
+        "98": "Do not know / Don’t remember"
+      }
+    },
+    "S11": {
+      "description": "Respondent’s highest level of education completed",
+      "question": "What is the highest level of education you have completed?",
+      "values": {
+        "1": "No studies",
+        "2": "1 year",
+        "3": "2 years",
+        "4": "3 years",
+        "5": "4 years",
+        "6": "5 years",
+        "7": "6 years",
+        "8": "7 years",
+        "9": "8 years",
+        "10": "9 years",
+        "11": "10 years",
+        "12": "11 years",
+        "13": "12 years",
+        "14": "Incomplete university studies",
+        "15": "Complete university studies",
+        "16": "Incomplete technical studies at a higher institute or academy",
+        "17": "Complete technical studies at a higher institute or academy"
+      }
+    },
+    "S12": {
+      "description": "Parents’ highest level of education completed",
+      "question": "What is the highest level of education either of your parents completed?",
+      "values": {
+        "0": "No data",
+        "1": "No studies",
+        "2": "1 year",
+        "3": "2 years",
+        "4": "3 years",
+        "5": "4 years",
+        "6": "5 years",
+        "7": "6 years",
+        "8": "7 years",
+        "9": "8 years",
+        "10": "9 years",
+        "11": "10 years",
+        "12": "11 years",
+        "13": "12 years",
+        "14": "Incomplete university studies",
+        "15": "Complete university studies",
+        "16": "Incomplete technical studies at a higher institute or academy",
+        "17": "Complete technical studies at a higher institute or academy"
+      }
+    },
+    "S15.A": {
+      "description": "Respondent's native language",
+      "question": "What is your native language?",
+      "values": {
+        "1": "Spanish",
+        "2": "Portuguese",
+        "3": "Indigenous language",
+        "4": "Other"
+      }
+    },
+    "S16": {
+      "description": "Citizenship status",
+      "question": "Are you a citizen of this country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "S17.C": {
+      "description": "Year of birth",
+      "question": "What year were you born?",
+      "values": {
+        "0": "No answer"
+      }
+    },
+    "S18.A": {
+      "description": "Current employment situation",
+      "question": "What is your current employment situation?",
+      "values": {
+        "1": "Self-employed",
+        "2": "Employee in a state-owned company",
+        "3": "Employee in a private company",
+        "4": "Temporarily out of work",
+        "5": "Retired / pensioner",
+        "6": "Not working – responsible for housework or shopping",
+        "7": "Student"
+      }
+    },
+    "S18.B": {
+      "description": "Previous employment situation",
+      "question": "What was your previous employment situation?",
+      "values": {
+        "1": "Professional (doctor, lawyer, accountant, architect)",
+        "2": "Business owner",
+        "3": "Farmer / fisherman",
+        "4": "Self-employed, informal",
+        "5": "Professional",
+        "6": "Senior management",
+        "7": "Middle management",
+        "8": "Other",
+        "9": "Not applicable"
+      }
+    },
+    "S19": {
+      "description": "Type of current employment",
+      "question": "What type of work do you currently do?",
+      "values": {
+        "1": "Professional (doctor, lawyer, accountant, architect)",
+        "2": "Business owner",
+        "3": "Farmer / fisherman",
+        "4": "Self-employed, informal",
+        "5": "Professional",
+        "6": "Senior management",
+        "7": "Middle management",
+        "8": "Other",
+        "9": "Not applicable"
+      }
+    },
+    "S21A": {
+      "description": "Age at which the head of household completed full-time education",
+      "question": "At what age did the head of your household complete their full-time education?",
+      "values": {
+        "0": "No answer",
+        "96": "Did not study",
+        "97": "Still studying",
+        "98": "Do not know / Don’t remember",
+        "99": "Not applicable"
+      }
+    },
+    "S21B": {
+      "description": "Head of household's highest level of education",
+      "question": "What is the highest level of education completed by the head of your household?",
+      "values": {
+        "0": "No data",
+        "1": "No studies",
+        "2": "1 year",
+        "3": "2 years",
+        "4": "3 years",
+        "5": "4 years",
+        "6": "5 years",
+        "7": "6 years",
+        "8": "7 years",
+        "9": "8 years",
+        "10": "9 years",
+        "11": "10 years",
+        "12": "11 years",
+        "13": "12 years",
+        "14": "Incomplete university studies",
+        "15": "Complete university studies",
+        "16": "Incomplete technical studies at higher institute or academy",
+        "17": "Complete technical studies at higher institute or academy",
+        "99": "Not applicable"
+      }
+    },
+    "S22.A": {
+      "description": "Current employment situation of head of household",
+      "question": "What is the current employment situation of the head of your household?",
+      "values": {
+        "1": "Self-employed",
+        "2": "Employee in a state-owned company",
+        "3": "Employee in a private company",
+        "4": "Temporarily out of work",
+        "5": "Retired / pensioner",
+        "6": "Not working – responsible for housework or shopping",
+        "7": "Student",
+        "9": "Not applicable"
+      }
+    },
+    "S22.B": {
+      "description": "Previous employment situation of head of household",
+      "question": "What was the previous employment situation of the head of your household?",
+      "values": {
+        "0": "No data / No answer",
+        "1": "Professional (doctor, lawyer, accountant, architect)",
+        "2": "Business owner",
+        "3": "Farmer / fisherman",
+        "4": "Self-employed, informal",
+        "5": "Professional",
+        "6": "Senior management",
+        "7": "Middle management",
+        "8": "Other",
+        "9": "Not applicable"
+      }
+    },
+    "S23": {
+      "description": "Type of employment of head of household",
+      "question": "What type of work does the head of your household currently do?",
+      "values": {
+        "0": "No data / No answer",
+        "1": "Professional (doctor, lawyer, accountant, architect)",
+        "2": "Business owner",
+        "3": "Farmer / fisherman",
+        "4": "Self-employed, informal",
+        "5": "Professional",
+        "6": "Senior management",
+        "7": "Middle management",
+        "8": "Other",
+        "9": "Not applicable"
+      }
+    }
+  },
+  "foreign_relations_countries": {
+    "P23ST.A": {
+      "description": "Opinion of the United States",
+      "question": "What is your overall opinion of the United States?",
+      "values": {
+        "0": "No answer",
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "8": "Do not know"
+      }
+    },
+    "P23ST.B": {
+      "description": "Opinion of Russia",
+      "question": "What is your overall opinion of Russia?",
+      "values": {
+        "0": "No answer",
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "8": "Do not know"
+      }
+    },
+    "P23ST.C": {
+      "description": "Opinion of China",
+      "question": "What is your overall opinion of China?",
+      "values": {
+        "0": "No answer",
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "8": "Do not know"
+      }
+    },
+    "P23ST.D": {
+      "description": "Opinion of the European Union",
+      "question": "What is your overall opinion of the European Union?",
+      "values": {
+        "0": "No answer",
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "8": "Do not know"
+      }
+    },
+    "P23ST.E": {
+      "description": "Opinion of Ukraine",
+      "question": "What is your overall opinion of Ukraine?",
+      "values": {
+        "0": "No answer",
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "8": "Do not know"
+      }
+    },
+    "P23ST.F": {
+      "description": "Opinion of Venezuela",
+      "question": "What is your overall opinion of Venezuela?",
+      "values": {
+        "0": "No answer",
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "8": "Do not know"
+      }
+    },
+    "P24ST.A": {
+      "description": "Bilateral relations: Country and the United States",
+      "question": "How would you rate the relationship between your country and the United States?",
+      "values": {
+        "0": "No answer",
+        "1": "Very good",
+        "2": "Fairly good",
+        "3": "Fairly poor",
+        "4": "Very poor",
+        "8": "Do not know"
+      }
+    },
+    "P24ST.B": {
+      "description": "Bilateral relations: Country and Russia",
+      "question": "How would you rate the relationship between your country and Russia?",
+      "values": {
+        "0": "No answer",
+        "1": "Very good",
+        "2": "Fairly good",
+        "3": "Fairly poor",
+        "4": "Very poor",
+        "8": "Do not know"
+      }
+    },
+    "P24ST.C": {
+      "description": "Bilateral relations: Country and China",
+      "question": "How would you rate the relationship between your country and China?",
+      "values": {
+        "0": "No answer",
+        "1": "Very good",
+        "2": "Fairly good",
+        "3": "Fairly poor",
+        "4": "Very poor",
+        "8": "Do not know"
+      }
+    },
+    "P24ST.D": {
+      "description": "Bilateral relations: Country and the European Union",
+      "question": "How would you rate the relationship between your country and the European Union?",
+      "values": {
+        "0": "No answer",
+        "1": "Very good",
+        "2": "Fairly good",
+        "3": "Fairly poor",
+        "4": "Very poor",
+        "8": "Do not know"
+      }
+    },
+    "P24ST.E": {
+      "description": "Bilateral relations: Country and Venezuela",
+      "question": "How would you rate the relationship between your country and Venezuela?",
+      "values": {
+        "0": "No answer",
+        "1": "Very good",
+        "2": "Fairly good",
+        "3": "Fairly poor",
+        "4": "Very poor",
+        "8": "Do not know",
+        "9": "Not applicable"
+      }
+    },
+    "P25N.A": {
+      "description": "Economic relations: Country and the United States",
+      "question": "How would you rate the economic relationship between your country and the United States?",
+      "values": {
+        "0": "No answer",
+        "1": "Very good",
+        "2": "Fairly good",
+        "3": "Fairly poor",
+        "4": "Very poor",
+        "8": "Do not know"
+      }
+    },
+    "P25N.B": {
+      "description": "Economic relations: Country and Russia",
+      "question": "How would you rate the economic relationship between your country and Russia?",
+      "values": {
+        "0": "No answer",
+        "1": "Very good",
+        "2": "Fairly good",
+        "3": "Fairly poor",
+        "4": "Very poor",
+        "8": "Do not know"
+      }
+    },
+    "P25N.C": {
+      "description": "Economic relations: Country and China",
+      "question": "How would you rate the economic relationship between your country and China?",
+      "values": {
+        "0": "No answer",
+        "1": "Very good",
+        "2": "Fairly good",
+        "3": "Fairly poor",
+        "4": "Very poor",
+        "8": "Do not know"
+      }
+    },
+    "P26SDN.A": {
+      "description": "Perception of China as a reliable partner",
+      "question": "How much do you think China is a reliable partner for your country?",
+      "values": {
+        "0": "No answer",
+        "1": "A great deal",
+        "2": "A fair amount",
+        "3": "Not very much / Only a little",
+        "4": "Not at all",
+        "8": "Do not know"
+      }
+    },
+    "P26SDN.B": {
+      "description": "Perception of Chinese interference",
+      "question": "How much do you think China interferes in your country’s internal affairs?",
+      "values": {
+        "0": "No answer",
+        "1": "A great deal",
+        "2": "A fair amount",
+        "3": "Not very much / Only a little",
+        "4": "Not at all",
+        "8": "Do not know"
+      }
+    },
+    "P26SDN.C": {
+      "description": "Perception of China's respect for international commitments",
+      "question": "How much do you think China upholds its international commitments?",
+      "values": {
+        "0": "No answer",
+        "1": "A great deal",
+        "2": "A fair amount",
+        "3": "Not very much / Only a little",
+        "4": "Not at all",
+        "8": "Do not know"
+      }
+    },
+    "P26SDN.D": {
+      "description": "Perception of China's contribution to regional stability",
+      "question": "How much do you think China contributes to stability in Latin America?",
+      "values": {
+        "0": "No answer",
+        "1": "A great deal",
+        "2": "A fair amount",
+        "3": "Not very much / Only a little",
+        "4": "Not at all",
+        "8": "Do not know"
+      }
+    },
+    "P26SDN.E": {
+      "description": "Perception of China as a political model",
+      "question": "How much do you think China provides a good political model for your country?",
+      "values": {
+        "0": "No answer",
+        "1": "A great deal",
+        "2": "A fair amount",
+        "3": "Not very much / Only a little",
+        "4": "Not at all",
+        "8": "Do not know"
+      }
+    },
+    "P26SDN.F": {
+      "description": "Perception of China as an economic model",
+      "question": "How much do you think China provides a good economic model for your country?",
+      "values": {
+        "0": "No answer",
+        "1": "A great deal",
+        "2": "A fair amount",
+        "3": "Not very much / Only a little",
+        "4": "Not at all",
+        "8": "Do not know"
+      }
+    },
+    "P27SDN": {
+      "description": "Preference for international alignment",
+      "question": "If you could only choose one, should your country have a closer relationship with the United States or with China?",
+      "values": {
+        "0": "No answer",
+        "1": "United States",
+        "2": "China",
+        "3": "Both (volunteered)",
+        "4": "Neither (volunteered)",
+        "8": "Do not know"
+      }
+    },
+    "P28STIN": {
+      "description": "Perception of regional integration trend",
+      "question": "In the last five years, do you think your country’s integration with other countries in the region has increased or decreased?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Increased a lot",
+        "2": "Increased somewhat",
+        "3": "Decreased somewhat",
+        "4": "Decreased very much"
+      }
+    },
+    "P29STIN.A": {
+      "description": "Support for integration with Latin American countries",
+      "question": "Do you support or oppose your country’s integration with other countries in Latin America?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Very much in favor",
+        "2": "Somewhat in favor",
+        "3": "Somewhat against",
+        "4": "Very much against"
+      }
+    },
+    "P29STIN.B": {
+      "description": "Support for integration with non–Latin American countries",
+      "question": "Do you support or oppose your country’s integration with countries outside Latin America?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Very much in favor",
+        "2": "Somewhat in favor",
+        "3": "Somewhat against",
+        "4": "Very much against"
+      }
+    },
+    "P31INN.1": {
+      "description": "Perceived benefits of international integration: full set of areas",
+      "question": "Which of the following areas do you think depend on your country integrating with other countries?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Being able to study or work in another country",
+        "2": "Being able to buy foreign products at lower prices",
+        "3": "Creating more jobs",
+        "4": "Increasing wages",
+        "5": "Access to a wider variety of goods",
+        "6": "More and better access to technology"
+      }
+    },
+    "P31INN.2": {
+      "description": "Perceived benefits of international integration: subset without studying/working abroad",
+      "question": "Which of the following outcomes do you think depend on your country integrating with other countries?",
+      "values": {
+        "0": "Do not know / No answer",
+        "2": "Being able to buy foreign products at lower prices",
+        "3": "Creating more jobs",
+        "4": "Increasing wages",
+        "5": "Access to a wider variety of goods",
+        "6": "More and better access to technology"
+      }
+    },
+    "P31INN.3": {
+      "description": "Perceived benefits of international integration: subset starting from job creation",
+      "question": "Which of these areas do you think depend on your country integrating with other countries?",
+      "values": {
+        "0": "Do not know / No answer",
+        "3": "Creating more jobs",
+        "4": "Increasing wages",
+        "5": "Access to a wider variety of goods",
+        "6": "More and better access to technology"
+      }
+    },
+    "P31INN.4": {
+      "description": "Perceived benefits of international integration: subset focused on income and access",
+      "question": "Which of these areas do you think depend on your country integrating with other countries?",
+      "values": {
+        "0": "Do not know / No answer",
+        "4": "Increasing wages",
+        "5": "Access to a wider variety of goods",
+        "6": "More and better access to technology"
+      }
+    },
+    "P31INN.5": {
+      "description": "Perceived benefits of international integration: variety of goods and technology",
+      "question": "Which of these areas do you think depend on your country integrating with other countries?",
+      "values": {
+        "0": "Do not know / No answer",
+        "5": "Access to a wider variety of goods",
+        "6": "More and better access to technology"
+      }
+    },
+    "P31INN.6": {
+      "description": "Perceived benefits of international integration: only technology access",
+      "question": "Do you think better access to technology depends on your country integrating with other countries?",
+      "values": {
+        "0": "Do not know / No answer",
+        "6": "More and better access to technology"
+      }
+    }
+  },
+  "institutions_trust": {
+    "P13STGBS.A": {
+      "description": "Trust in the armed forces",
+      "question": "How much trust do you have in the armed forces?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know",
+        "9": "Not applicable (Panama and Costa Rica)"
+      }
+    },
+    "P13STGBS.B": {
+      "description": "Trust in the police",
+      "question": "How much trust do you have in the police?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P13ST.C": {
+      "description": "Trust in the Church",
+      "question": "How much trust do you have in the Church?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P13ST.D": {
+      "description": "Trust in the National Congress or Parliament",
+      "question": "How much trust do you have in the National Congress or Parliament?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P13ST.E": {
+      "description": "Trust in the National Government",
+      "question": "How much trust do you have in the National Government?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P13ST.F": {
+      "description": "Trust in the Judiciary",
+      "question": "How much trust do you have in the Judiciary?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P13ST.G": {
+      "description": "Trust in political parties",
+      "question": "How much trust do you have in political parties?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P13ST.H": {
+      "description": "Trust in the electoral institution",
+      "question": "How much trust do you have in the electoral institution?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P13ST.I": {
+      "description": "Trust in the President",
+      "question": "How much trust do you have in the President?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P14ST.A": {
+      "description": "Trust in firefighters",
+      "question": "How much trust do you have in firefighters?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P14ST.B": {
+      "description": "Trust in national companies",
+      "question": "How much trust do you have in national companies?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P14ST.C": {
+      "description": "Trust in trade unions",
+      "question": "How much trust do you have in trade unions?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P14ST.D": {
+      "description": "Trust in television",
+      "question": "How much trust do you have in television as a source of information?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P14ST.E": {
+      "description": "Trust in international companies",
+      "question": "How much trust do you have in international companies?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P14ST.F": {
+      "description": "Trust in banks",
+      "question": "How much trust do you have in banks?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P14ST.G": {
+      "description": "Trust in radio",
+      "question": "How much trust do you have in radio as a source of information?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P14ST.H": {
+      "description": "Trust in the printed press",
+      "question": "How much trust do you have in the printed press?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    },
+    "P14N.I": {
+      "description": "Trust in social media",
+      "question": "How much trust do you have in social media platforms?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "No trust",
+        "8": "Do not know"
+      }
+    }
+  },
+  "misc": {
+    "P38CSN.1": {
+      "description": "Support for various gender, family, and reproductive policies (full set)",
+      "question": "Do you agree or disagree with the following statements?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Maternity leave should be available for both mothers and fathers",
+        "2": "Women should have a reserved quota of executive jobs in private companies",
+        "3": "Women should have a reserved quota of executive jobs in the public sector",
+        "4": "Schools should provide young people with access to birth control methods",
+        "5": "Abortion should be legal in cases of rape or incest",
+        "6": "Companies should offer either subsidies or facilities to care for workers' children",
+        "7": "Women without a pension should receive a solidarity pension in old age"
+      }
+    },
+    "P38CSN.2": {
+      "description": "Support for gender, education, and family policies (subset)",
+      "question": "Do you agree or disagree with the following statements?",
+      "values": {
+        "0": "Do not know / No answer",
+        "2": "Women should have a reserved quota of executive jobs in private companies",
+        "3": "Women should have a reserved quota of executive jobs in the public sector",
+        "4": "Schools should provide young people with access to birth control methods",
+        "5": "Abortion should be legal in cases of rape or incest",
+        "6": "Companies should offer either subsidies or facilities to care for workers' children",
+        "7": "Women without a pension should receive a solidarity pension in old age"
+      }
+    },
+    "P38CSN.3": {
+      "description": "Support for public sector gender quotas and family policies",
+      "question": "Do you agree or disagree with the following statements?",
+      "values": {
+        "0": "Do not know / No answer",
+        "3": "Women should have a reserved quota of executive jobs in the public sector",
+        "4": "Schools should provide young people with access to birth control methods",
+        "5": "Abortion should be legal in cases of rape or incest",
+        "6": "Companies should offer either subsidies or facilities to care for workers' children",
+        "7": "Women without a pension should receive a solidarity pension in old age"
+      }
+    },
+    "P38CSN.4": {
+      "description": "Support for education, abortion rights, and family policies",
+      "question": "Do you agree or disagree with the following statements?",
+      "values": {
+        "0": "Do not know / No answer",
+        "4": "Schools should provide young people with access to birth control methods",
+        "5": "Abortion should be legal in cases of rape or incest",
+        "6": "Companies should offer either subsidies or facilities to care for workers' children",
+        "7": "Women without a pension should receive a solidarity pension in old age"
+      }
+    },
+    "P38CSN.5": {
+      "description": "Support for abortion rights and family care policies",
+      "question": "Do you agree or disagree with the following statements?",
+      "values": {
+        "0": "Do not know / No answer",
+        "5": "Abortion should be legal in cases of rape or incest",
+        "6": "Companies should offer either subsidies or facilities to care for workers' children",
+        "7": "Women without a pension should receive a solidarity pension in old age"
+      }
+    },
+    "P38CSN.6": {
+      "description": "Support for workplace childcare and old-age pensions for women",
+      "question": "Do you agree or disagree with the following statements?",
+      "values": {
+        "0": "Do not know / No answer",
+        "6": "Companies should offer either subsidies or facilities to care for workers' children",
+        "7": "Women without a pension should receive a solidarity pension in old age"
+      }
+    },
+    "P38CSN.7": {
+      "description": "Support for solidarity pensions for older women without a pension",
+      "question": "Do you agree or disagree that women without a pension should receive a solidarity pension in old age?",
+      "values": {
+        "0": "Do not know / No answer",
+        "7": "Women without a pension should receive a solidarity pension in old age"
+      }
+    },
+    "S24": {
+      "description": "Assessed socioeconomic level of the interviewee",
+      "question": "Based on the quality of the dwelling, furniture, and the interviewee’s general appearance, how would you rate the interviewee’s socioeconomic level?",
+      "values": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Average",
+        "4": "Bad",
+        "5": "Very bad"
+      }
+    },
+    "REEDUC.1": {
+      "description": "Recoded education level of the respondent (from S11)",
+      "question": "What is the respondent’s recoded education level?",
+      "values": {
+        "0": "No data",
+        "1": "Illiterate",
+        "2": "Incomplete basic education",
+        "3": "Complete basic education",
+        "4": "Incomplete secondary education",
+        "5": "Complete secondary education",
+        "6": "Incomplete university education",
+        "7": "Complete university education"
+      }
+    },
+    "REEDUC.2": {
+      "description": "Recoded education level of respondent’s parents (from S12)",
+      "question": "What is the recoded education level of the respondent’s parents?",
+      "values": {
+        "0": "No data",
+        "1": "Illiterate",
+        "2": "Incomplete basic education",
+        "3": "Complete basic education",
+        "4": "Incomplete secondary education",
+        "5": "Complete secondary education",
+        "6": "Incomplete university education",
+        "7": "Complete university education"
+      }
+    },
+    "REEDUC.3": {
+      "description": "Recoded education level of head of household (from S21B)",
+      "question": "What is the recoded education level of the head of household?",
+      "values": {
+        "0": "No data",
+        "1": "Illiterate",
+        "2": "Incomplete basic education",
+        "3": "Complete basic education",
+        "4": "Incomplete secondary education",
+        "5": "Complete secondary education",
+        "6": "Incomplete university education",
+        "7": "Complete university education",
+        "9": "Not applicable"
+      }
+    },
+    "REEDAD": {
+      "description": "Recoded age group",
+      "question": "Which age group do you belong to?",
+      "values": {
+        "1": "16–25 years",
+        "2": "26–40 years",
+        "3": "41–60 years",
+        "4": "61 years or older"
+      }
+    },
+    "PERPART": {
+      "description": "Type of political party supported by respondent",
+      "question": "What type of political party does the respondent support?",
+      "values": {
+        "1": "Government",
+        "2": "Opposition",
+        "3": "Other",
+        "4": "Did not mention"
+      }
+    },
+    "FAMPART": {
+      "description": "Type of political party supported by respondent’s family",
+      "question": "What type of political party does the respondent’s family support?",
+      "values": {
+        "0": "No vote / null vote / no party",
+        "10": "Green parties",
+        "20": "Communist parties",
+        "30": "Social Democratic parties",
+        "40": "Liberal parties",
+        "50": "Christian Democratic parties",
+        "60": "Conservative parties",
+        "70": "Nationalist parties",
+        "80": "Agrarian parties",
+        "90": "Ethnic and regional parties",
+        "95": "Parties with specific themes",
+        "98": "Electoral alliances (mixed origins)"
+      }
+    }
+  },
+  "pandemic": {
+    "P18N.H": {
+      "description": "Belief in the likelihood of another pandemic",
+      "question": "Do you agree or disagree that there could be another pandemic similar to Covid-19 in the coming years?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P39N": {
+      "description": "Evaluation of the country's response to the pandemic",
+      "question": "How would you evaluate your country’s ability to combat the pandemic?",
+      "values": {
+        "0": "No answer",
+        "1": "Very good",
+        "2": "Good",
+        "3": "Regular",
+        "4": "Bad",
+        "5": "Very bad",
+        "8": "Do not know"
+      }
+    }
+  },
+  "polit_behaviour_activism": {
+    "P42STGBS": {
+      "description": "Feeling of closeness to a political party",
+      "question": "Do you feel close to any political party?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "P43STGBS.A": {
+      "description": "Voting intention if elections were held this Sunday",
+      "question": "If elections were held this Sunday, which political party would you vote for?",
+      "values": {
+        "0": "No answer",
+        "94": "Other",
+        "95": "Void or blank vote",
+        "96": "Does not vote / none",
+        "97": "Not registered",
+        "98": "Do not know"
+      }
+    },
+    "P44ST.A": {
+      "description": "Frequency of political conversations with friends",
+      "question": "How often do you talk about politics with friends?",
+      "values": {
+        "0": "No answer",
+        "1": "Very frequently",
+        "2": "Frequently",
+        "3": "Almost never",
+        "4": "Never",
+        "8": "Do not know"
+      }
+    },
+    "P44ST.B": {
+      "description": "Frequency of working on community problems",
+      "question": "How often do you work on a problem that affects you or your community?",
+      "values": {
+        "0": "No answer",
+        "1": "Very frequently",
+        "2": "Frequently",
+        "3": "Almost never",
+        "4": "Never",
+        "8": "Do not know"
+      }
+    },
+    "P44ST.C": {
+      "description": "Frequency of trying to persuade others of political views",
+      "question": "How often do you try to convince others of your political views?",
+      "values": {
+        "0": "No answer",
+        "1": "Very frequently",
+        "2": "Frequently",
+        "3": "Almost never",
+        "4": "Never",
+        "8": "Do not know"
+      }
+    },
+    "P44ST.D": {
+      "description": "Frequency of working for a political party or candidate",
+      "question": "How often do you work for a political party or candidate?",
+      "values": {
+        "0": "No answer",
+        "1": "Very frequently",
+        "2": "Frequently",
+        "3": "Almost never",
+        "4": "Never",
+        "8": "Do not know"
+      }
+    },
+    "P45ST.A": {
+      "description": "Participation in petition signing",
+      "question": "Have you ever signed a petition, would you do it, or would you never do it?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Have done it",
+        "2": "Would do it",
+        "3": "Would never do it"
+      }
+    },
+    "P45S.B": {
+      "description": "Participation in authorized demonstrations",
+      "question": "Have you ever taken part in an authorized demonstration, would you do it, or would you never do it?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Have done it",
+        "2": "Would do it",
+        "3": "Would never do it"
+      }
+    },
+    "P45ST.C": {
+      "description": "Participation in non-authorized demonstrations",
+      "question": "Have you ever taken part in a non-authorized demonstration, would you do it, or would you never do it?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Have done it",
+        "2": "Would do it",
+        "3": "Would never do it"
+      }
+    },
+    "P45STN.D": {
+      "description": "Protesting on social media",
+      "question": "Have you ever protested on social media, would you do it, or would you never do it?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Have done it",
+        "2": "Would do it",
+        "3": "Would never do it"
+      }
+    },
+    "P50ST": {
+      "description": "Channels for expressing opinions on national problems",
+      "question": "Where do you usually express your opinions about national problems, or do you not usually express them?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "On social media",
+        "2": "At demonstrations or protests",
+        "3": "Among friends",
+        "4": "In the family",
+        "5": "I usually do not express them"
+      }
+    },
+    "P47ST": {
+      "description": "Preferred approach to political engagement",
+      "question": "What do you think one should do to help your country move forward?",
+      "values": {
+        "0": "No answer",
+        "1": "One must always vote",
+        "2": "One must vote and also protest",
+        "3": "One must only protest — voting is no good",
+        "4": "One must do nothing — neither vote nor protest",
+        "5": "I do not know what to do"
+      }
+    },
+    "P49ST": {
+      "description": "Perceived risk of expressing political opinions",
+      "question": "If you express your opinions freely and publicly about national problems, do you think it could have negative consequences for you?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    }
+  },
+  "quality_of_life": {
+    "P1ST": {
+      "description": "Satisfaction with life",
+      "question": "How satisfied are you with your life in general?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Very satisfied",
+        "2": "Quite satisfied",
+        "3": "Not very satisfied",
+        "4": "Not at all satisfied"
+      }
+    },
+    "S3": {
+      "description": "Experience of food insecurity in the past year",
+      "question": "In the past 12 months, how often have you or your family gone without food?",
+      "values": {
+        "0": "No answer",
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "8": "Do not know"
+      }
+    },
+    "S4": {
+      "description": "Concern about unemployment in the next 12 months",
+      "question": "How concerned are you that you will be left without work or become unemployed in the next 12 months, or do you not currently have a job?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Very concerned",
+        "2": "Concerned",
+        "3": "A little concerned",
+        "4": "Not at all concerned",
+        "5": "Do not have a job (e.g., unemployed, student, housewife, retired)"
+      }
+    },
+    "S5": {
+      "description": "Household financial sufficiency",
+      "question": "Does your salary and total family income allow you to cover your needs in a satisfactory manner?",
+      "values": {
+        "0": "No answer",
+        "1": "It’s enough, we can save",
+        "2": "It’s just enough, we don’t have major problems",
+        "3": "It’s not enough, we have problems",
+        "4": "It’s not enough, we have major problems",
+        "8": "Do not know"
+      }
+    },
+    "S6": {
+      "description": "Receiving government support or benefits",
+      "question": "Are you or someone in your family receiving support or benefits from the government?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Yes, I am receiving support",
+        "2": "Yes, a family member is receiving support",
+        "3": "Yes, both I and a family member are receiving support",
+        "4": "No, we are not receiving any support"
+      }
+    },
+    "S8": {
+      "description": "Consideration of emigration",
+      "question": "Have you or your family ever considered moving to live abroad?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "S9": {
+      "description": "Household head and main income contributor",
+      "question": "Are you the main contributor to your family's income or the head of the household?",
+      "values": {
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "S20.A": {
+      "description": "Separate bedroom for parents and children",
+      "question": "Does your household have a separate bedroom for parents and children?",
+      "values": {
+        "0": "No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "S20.B": {
+      "description": "Ownership of house",
+      "question": "Do you or your family own your home?",
+      "values": {
+        "0": "No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "S20.C": {
+      "description": "Ownership of washing machine",
+      "question": "Do you or your family have a washing machine?",
+      "values": {
+        "0": "No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "S20.D": {
+      "description": "Ownership of mobile phone or smartphone",
+      "question": "Do you or your family have a mobile phone or smartphone?",
+      "values": {
+        "0": "No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "S20.E": {
+      "description": "Ownership of car",
+      "question": "Do you or your family have a car?",
+      "values": {
+        "0": "No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "S20.F": {
+      "description": "Access to hot water",
+      "question": "Do you or your family have access to hot water at home?",
+      "values": {
+        "0": "No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "S20.G": {
+      "description": "Access to sewage system",
+      "question": "Does your home have access to a sewage system?",
+      "values": {
+        "0": "No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "S20.H": {
+      "description": "Access to at least one meal a day",
+      "question": "Do you or your family have at least one meal a day?",
+      "values": {
+        "0": "No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "S20.I": {
+      "description": "Access to drinking water",
+      "question": "Do you or your family have access to drinking water?",
+      "values": {
+        "0": "No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "S20.J": {
+      "description": "Access to internet at home",
+      "question": "Do you or your family have an internet connection at home?",
+      "values": {
+        "0": "No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "S20.K": {
+      "description": "Access to heating or air conditioning",
+      "question": "Do you or your family have heating or air conditioning at home?",
+      "values": {
+        "0": "No answer",
+        "1": "Yes",
+        "2": "No"
+      }
+    }
+  },
+  "social_media_attitudes_use": {
+    "P51N": {
+      "description": "Perception of social media's impact on politics",
+      "question": "Would you say that social media makes politics better, worse, or has no effect?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Makes politics better",
+        "2": "Neither better nor worse",
+        "3": "Makes politics worse"
+      }
+    },
+    "P52N": {
+      "description": "Perception of social media as representing public opinion",
+      "question": "Do you think that what is said on social media reflects what the general public thinks?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Represents well",
+        "2": "Does not represent well"
+      }
+    },
+    "P53N.A": {
+      "description": "Perceived level of false information in social media",
+      "question": "How much false information do you think circulates on social media?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "None"
+      }
+    },
+    "P53N.B": {
+      "description": "Perceived level of false information on TV",
+      "question": "How much false information do you think circulates on TV?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "None"
+      }
+    },
+    "P53N.C": {
+      "description": "Perceived level of false information on radio",
+      "question": "How much false information do you think circulates on radio?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "None"
+      }
+    },
+    "P53N.D": {
+      "description": "Perceived level of false information in printed press",
+      "question": "How much false information do you think circulates in the printed press?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "None"
+      }
+    },
+    "P55N": {
+      "description": "Frequency of digital payments",
+      "question": "Thinking about your purchases and payments, how many are digital (credit card, debit card, QR codes, etc.)?",
+      "values": {
+        "0": "No answer",
+        "1": "None",
+        "2": "Less than half",
+        "3": "About half",
+        "4": "More than half",
+        "5": "All"
+      }
+    },
+    "P56N.A": {
+      "description": "Perception of electronic payments as more reliable than cash",
+      "question": "Do you agree or disagree that paying electronically is more reliable than using cash?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P56N.B": {
+      "description": "Perception of data security in electronic payments",
+      "question": "Do you agree or disagree that your personal data is secure when you pay electronically?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P56N.C": {
+      "description": "Preference for electronic payments over cash",
+      "question": "Do you agree or disagree that if you can choose, you prefer to pay electronically instead of using cash?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "P56N.D": {
+      "description": "Perception of safety when carrying no cash",
+      "question": "Do you agree or disagree that it is safer to walk in the street without cash and pay electronically?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree"
+      }
+    },
+    "S13INN.A.1": {
+      "description": "E-commerce purchases in the last 12 months – all options",
+      "question": "In the last 12 months, have you purchased any products or services through e-commerce or the Internet?",
+      "values": {
+        "0": "No answer",
+        "1": "Yes, domestically",
+        "2": "Yes, from a foreign country",
+        "3": "I don’t know if it was domestic or foreign",
+        "4": "No",
+        "8": "Do not know"
+      }
+    },
+    "S13INN.A.2": {
+      "description": "E-commerce purchases – reduced answer set",
+      "question": "In the last 12 months, have you purchased any products or services through e-commerce or the Internet?",
+      "values": {
+        "0": "No answer",
+        "2": "Yes, from a foreign country",
+        "3": "I don’t know if it was domestic or foreign",
+        "4": "No",
+        "8": "Do not know"
+      }
+    },
+    "S13INN.A.3": {
+      "description": "E-commerce purchases – minimal answer set",
+      "question": "In the last 12 months, have you purchased any products or services through e-commerce or the Internet?",
+      "values": {
+        "0": "No answer",
+        "3": "I don’t know if it was domestic or foreign",
+        "4": "No",
+        "8": "Do not know"
+      }
+    },
+    "S14M.1": {
+      "description": "Use of Facebook and other social networks",
+      "question": "Do you use Facebook or any of these other social networking services?",
+      "values": {
+        "0": "No answer",
+        "1": "Facebook",
+        "2": "Snapchat",
+        "3": "YouTube",
+        "4": "Twitter",
+        "5": "WhatsApp",
+        "6": "Instagram",
+        "7": "TikTok",
+        "8": "LinkedIn",
+        "96": "Other",
+        "97": "Do not use"
+      }
+    },
+    "S14M.2": {
+      "description": "Use of Snapchat and other social networks",
+      "question": "Do you use Snapchat or any of these other social networking services?",
+      "values": {
+        "0": "No answer",
+        "2": "Snapchat",
+        "3": "YouTube",
+        "4": "Twitter",
+        "5": "WhatsApp",
+        "6": "Instagram",
+        "7": "TikTok",
+        "8": "LinkedIn",
+        "96": "Other",
+        "97": "Do not use"
+      }
+    },
+    "S14M.3": {
+      "description": "Use of YouTube and other social networks",
+      "question": "Do you use YouTube or any of these other social networking services?",
+      "values": {
+        "0": "No answer",
+        "3": "YouTube",
+        "4": "Twitter",
+        "5": "WhatsApp",
+        "6": "Instagram",
+        "7": "TikTok",
+        "8": "LinkedIn",
+        "96": "Other",
+        "97": "Do not use"
+      }
+    },
+    "S14M.4": {
+      "description": "Use of Twitter and other social networks",
+      "question": "Do you use Twitter or any of these other social networking services?",
+      "values": {
+        "0": "No answer",
+        "4": "Twitter",
+        "5": "WhatsApp",
+        "6": "Instagram",
+        "7": "TikTok",
+        "8": "LinkedIn",
+        "96": "Other",
+        "97": "Do not use"
+      }
+    },
+    "S14M.5": {
+      "description": "Use of WhatsApp and other social networks",
+      "question": "Do you use WhatsApp or any of these other social networking services?",
+      "values": {
+        "0": "No answer",
+        "5": "WhatsApp",
+        "6": "Instagram",
+        "7": "TikTok",
+        "8": "LinkedIn",
+        "96": "Other",
+        "97": "Do not use"
+      }
+    },
+    "S14M.6": {
+      "description": "Use of Instagram and other social networks",
+      "question": "Do you use Instagram or any of these other social networking services?",
+      "values": {
+        "0": "No answer",
+        "6": "Instagram",
+        "7": "TikTok",
+        "8": "LinkedIn",
+        "96": "Other",
+        "97": "Do not use"
+      }
+    },
+    "S14M.7": {
+      "description": "Use of TikTok and other social networks",
+      "question": "Do you use TikTok or any of these other social networking services?",
+      "values": {
+        "0": "No answer",
+        "7": "TikTok",
+        "8": "LinkedIn",
+        "96": "Other",
+        "97": "Do not use"
+      }
+    },
+    "S14M.8": {
+      "description": "Use of LinkedIn and other social networks",
+      "question": "Do you use LinkedIn or any of these other social networking services?",
+      "values": {
+        "0": "No answer",
+        "8": "LinkedIn",
+        "96": "Other",
+        "97": "Do not use"
+      }
+    },
+    "S14M.96": {
+      "description": "Use of other social networks",
+      "question": "Do you use any other social networking services?",
+      "values": {
+        "0": "No answer",
+        "96": "Other",
+        "97": "Do not use"
+      }
+    }
+  },
+  "social_trust": {
+    "P9STGBS": {
+      "description": "General trust in people",
+      "question": "To what extent do you feel that most people can be trusted, or that you need to be cautious when dealing with others?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "One can trust most people",
+        "2": "One can never be too careful in dealing with others"
+      }
+    },
+    "P48ST": {
+      "description": "Perception of honesty in political expression",
+      "question": "Do you think most people say what they really think about politics, or not?",
+      "values": {
+        "0": "No answer",
+        "1": "They say what they think about politics",
+        "2": "They usually do not say what they really think",
+        "8": "Do not know"
+      }
+    }
+  },
+  "state_of_civic_political_rights": {
+    "P41ST.A": {
+      "description": "Perceived guarantee of political participation",
+      "question": "To what extent do you think freedom of political participation is guaranteed in your country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Fully guaranteed",
+        "2": "Somewhat guaranteed",
+        "3": "Not guaranteed",
+        "4": "Not at all guaranteed"
+      }
+    },
+    "P41ST.B": {
+      "description": "Perceived guarantee of occupational choice",
+      "question": "To what extent do you think freedom to choose one’s occupation is guaranteed in your country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Fully guaranteed",
+        "2": "Somewhat guaranteed",
+        "3": "Not guaranteed",
+        "4": "Not at all guaranteed"
+      }
+    },
+    "P41ST.C": {
+      "description": "Perceived guarantee of environmental protection",
+      "question": "To what extent do you think environmental protection is guaranteed in your country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Fully guaranteed",
+        "2": "Somewhat guaranteed",
+        "3": "Not guaranteed",
+        "4": "Not at all guaranteed"
+      }
+    },
+    "P41ST.D": {
+      "description": "Perceived guarantee of private property protection",
+      "question": "To what extent do you think private property is protected in your country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Fully guaranteed",
+        "2": "Somewhat guaranteed",
+        "3": "Not guaranteed",
+        "4": "Not at all guaranteed"
+      }
+    },
+    "P41ST.E": {
+      "description": "Perceived guarantee of fair wealth distribution",
+      "question": "To what extent do you think there is a just and fair distribution of wealth in your country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Fully guaranteed",
+        "2": "Somewhat guaranteed",
+        "3": "Not guaranteed",
+        "4": "Not at all guaranteed"
+      }
+    },
+    "P41ST.F": {
+      "description": "Perceived gender equality",
+      "question": "To what extent do you think equality between men and women is guaranteed in your country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Fully guaranteed",
+        "2": "Somewhat guaranteed",
+        "3": "Not guaranteed",
+        "4": "Not at all guaranteed"
+      }
+    },
+    "P41ST.G": {
+      "description": "Perceived equality of opportunity regardless of origin",
+      "question": "To what extent do you think people have equal life chances regardless of their origin in your country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Fully guaranteed",
+        "2": "Somewhat guaranteed",
+        "3": "Not guaranteed",
+        "4": "Not at all guaranteed"
+      }
+    },
+    "P41ST.H": {
+      "description": "Perceived guarantee of freedom of speech",
+      "question": "To what extent do you think freedom of speech is guaranteed always and everywhere in your country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Fully guaranteed",
+        "2": "Somewhat guaranteed",
+        "3": "Not guaranteed",
+        "4": "Not at all guaranteed"
+      }
+    },
+    "P41ST.I": {
+      "description": "Perceived guarantee of freedom of religion",
+      "question": "To what extent do you think freedom of religion or faith is guaranteed in your country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Fully guaranteed",
+        "2": "Somewhat guaranteed",
+        "3": "Not guaranteed",
+        "4": "Not at all guaranteed"
+      }
+    },
+    "P41ST.J": {
+      "description": "Perceived guarantee of protection against crime",
+      "question": "To what extent do you think people are protected against crime in your country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Fully guaranteed",
+        "2": "Somewhat guaranteed",
+        "3": "Not guaranteed",
+        "4": "Not at all guaranteed"
+      }
+    },
+    "P41ST.K": {
+      "description": "Perceived guarantee of social security",
+      "question": "To what extent do you think social security is guaranteed in your country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Fully guaranteed",
+        "2": "Somewhat guaranteed",
+        "3": "Not guaranteed",
+        "4": "Not at all guaranteed"
+      }
+    },
+    "P41ST.L": {
+      "description": "Perceived guarantee of solidarity with the poor and needy",
+      "question": "To what extent do you think there is solidarity with the poor and needy in your country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Fully guaranteed",
+        "2": "Somewhat guaranteed",
+        "3": "Not guaranteed",
+        "4": "Not at all guaranteed"
+      }
+    },
+    "P41ST.M": {
+      "description": "Perceived chance to get a job",
+      "question": "To what extent do you think people have a fair chance to get a job in your country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Fully guaranteed",
+        "2": "Somewhat guaranteed",
+        "3": "Not guaranteed",
+        "4": "Not at all guaranteed"
+      }
+    }
+  },
+  "state_of_country": {
+    "P2ST": {
+      "description": "Perception of country's direction",
+      "question": "What is your opinion on the current direction in which the country is heading?",
+      "values": {
+        "0": "No answer",
+        "1": "The country is progressing",
+        "2": "The country isat a standstill",
+        "3": "The country is in decline",
+        "8": "Do not know"
+      }
+    },
+    "P3N": {
+      "description": "Opinion about national society",
+      "question": "What is your opinion about the current state of national society?",
+      "values": {
+        "0": "No answer",
+        "1": "It is all right as it is",
+        "2": "It can get better with small changes",
+        "3": "It needs deep reforms",
+        "4": "It must change radically",
+        "8": "Do not know"
+      }
+    },
+    "P4STGBS": {
+      "description": "Most important problem facing the country",
+      "question": "What do you think is the most important problem currently facing the country?",
+      "values": {
+        "0": "No answer",
+        "1": "Low salaries",
+        "2": "Employment instability",
+        "3": "Poverty",
+        "4": "Income inequality, social injustice",
+        "5": "Economy/Economic problems/financial problems",
+        "6": "Gas, fuel, scarcity, high prices",
+        "7": "Food scarcity",
+        "8": "Everything is very expensive",
+        "9": "Unemployment",
+        "10": "Inflation/rise in prices",
+        "11": "Transportation",
+        "12": "Energy problems",
+        "13": "Poor basic services (water, electricity, etc.)",
+        "14": "Education problems",
+        "15": "Housing problems",
+        "16": "Health problems",
+        "17": "Environmental problems",
+        "18": "Global warming",
+        "19": "Pollution",
+        "20": "Lack of opportunities for youth",
+        "21": "Human rights violations",
+        "22": "Lack of freedom of expression",
+        "23": "State violence, state repression",
+        "24": "Terrorism",
+        "25": "Guerrilla warfare",
+        "26": "Crime/public security",
+        "27": "Violence/gangs",
+        "28": "Domestic violence",
+        "29": "Verbal abuse",
+        "30": "Drug trafficking",
+        "31": "Drug use",
+        "32": "Racial discrimination",
+        "33": "Border issues",
+        "34": "Conflicts with neighboring countries",
+        "35": "Corruption",
+        "36": "Political situation/political problems",
+        "37": "Immigrants",
+        "38": "Foreigners",
+        "39": "Not being able to be in my country",
+        "40": "Lack of concern for the elderly",
+        "41": "Lack of parks, recreational areas",
+        "42": "Dirtiness, lack of cleanliness",
+        "43": "Infrastructure",
+        "44": "Pandemic/Coronavirus/Covid-19",
+        "45": "Judicial system/justice",
+        "96": "Other",
+        "97": "None",
+        "98": "Do not know"
+      }
+    },
+    "P11STGBS.A": {
+      "description": "Satisfaction with the functioning of democracy",
+      "question": "How satisfied are you with the way democracy works in your country?",
+      "values": {
+        "0": "No answer",
+        "1": "Very satisfied",
+        "2": "Quite satisfied",
+        "3": "Not very satisfied",
+        "4": "Not at all satisfied",
+        "8": "Do not know"
+      }
+    },
+    "P12ST": {
+      "description": "Perception of who governs the country",
+      "question": "In your opinion, is the country governed primarily by powerful groups serving their own interests, or is it governed for the good of all citizens?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Powerful groups in their own interest",
+        "2": "For the good of all"
+      }
+    },
+    "P15STGBS": {
+      "description": "Approval of the president’s leadership",
+      "question": "Do you approve or disapprove of the way the current president is leading the country?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Approve",
+        "2": "Disapprove"
+      }
+    },
+    "P17ST": {
+      "description": "Perceived fairness of income distribution",
+      "question": "How fair do you think the distribution of income is in your country?",
+      "values": {
+        "0": "No answer",
+        "1": "Very fair",
+        "2": "Fair",
+        "3": "Unfair",
+        "4": "Very unfair",
+        "8": "Do not know"
+      }
+    },
+    "P60ST": {
+      "description": "Perceived progress in reducing corruption",
+      "question": "In the last two years, how much progress has been made in reducing corruption in state institutions?",
+      "values": {
+        "0": "No answer",
+        "1": "A lot",
+        "2": "Some",
+        "3": "Little",
+        "4": "None at all",
+        "8": "Do not know"
+      }
+    },
+    "P61ST": {
+      "description": "Perceived acceptability of inequality in the country",
+      "question": "How acceptable do you think the current level of inequality is in your country?",
+      "values": {
+        "0": "No answer",
+        "1": "Completely unacceptable",
+        "2": "Unacceptable",
+        "3": "Neutral",
+        "4": "Acceptable",
+        "5": "Completely acceptable",
+        "98": "Do not know"
+      }
+    },
+    "P63ST": {
+      "description": "Perceived likelihood of a coup occurring",
+      "question": "How likely do you think it is that a coup could occur in your country, or do you not know enough to say?",
+      "values": {
+        "0": "No answer",
+        "1": "Very likely",
+        "2": "Likely",
+        "3": "A little likely",
+        "4": "Not at all likely",
+        "5": "Don’t know enough"
+      }
+    }
+  },
+  "state_of_economy": {
+    "P5STGBS": {
+      "description": "Perception of the country's current economic situation",
+      "question": "How would you describe the country’s current economic situation?",
+      "values": {
+        "0": "No answer",
+        "1": "Very good",
+        "2": "Good",
+        "3": "About average",
+        "4": "Bad",
+        "5": "Very bad",
+        "8": "Do not know"
+      }
+    },
+    "P6STGBS": {
+      "description": "Change in the country’s economic situation over the past 12 months",
+      "question": "Compared to 12 months ago, how would you describe the country’s current economic situation?",
+      "values": {
+        "0": "No answer",
+        "1": "Much better",
+        "2": "A little better",
+        "3": "The same",
+        "4": "A little worse",
+        "5": "Much worse",
+        "8": "Do not know"
+      }
+    },
+    "P7ST": {
+      "description": "Expectations for the country’s economic situation in the next 12 months",
+      "question": "Over the next 12 months, how do you expect the country’s economic situation to change compared to now?",
+      "values": {
+        "0": "No answer",
+        "1": "Much better",
+        "2": "A little better",
+        "3": "The same",
+        "4": "A little worse",
+        "5": "Much worse",
+        "8": "Do not know"
+      }
+    },
+    "P8STGBS": {
+      "description": "Expectations for personal and family economic situation in the next 12 months",
+      "question": "Over the next 12 months, how do you expect your and your family’s economic situation to change compared to now?",
+      "values": {
+        "0": "No answer",
+        "1": "Much better",
+        "2": "A little better",
+        "3": "The same",
+        "4": "A little worse",
+        "5": "Much worse",
+        "8": "Do not know"
+      }
+    },
+    "P11STGBS.B": {
+      "description": "Satisfaction with the economy",
+      "question": "How satisfied are you with the current state of the economy in your country?",
+      "values": {
+        "0": "No answer",
+        "1": "Very satisfied",
+        "2": "Quite satisfied",
+        "3": "Not very satisfied",
+        "4": "Not at all satisfied",
+        "8": "Do not know"
+      }
+    }
+  },
+  "violence": {
+    "P57ST.1": {
+      "description": "Perceived most frequent type of violence in local area (full set)",
+      "question": "Which type of violence do you think is most frequent where you live?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "Bullying",
+        "2": "Domestic violence against children",
+        "3": "Domestic violence against women",
+        "4": "Violence in the streets",
+        "5": "Organized crime",
+        "6": "Maras or gang violence",
+        "7": "State or police violence and abuse",
+        "8": "Verbal violence"
+      }
+    },
+    "P57ST.2": {
+      "description": "Perceived most frequent type of violence (excluding bullying)",
+      "question": "Among these, which type of violence do you think is most frequent where you live?",
+      "values": {
+        "0": "Do not know / No answer",
+        "2": "Domestic violence against children",
+        "3": "Domestic violence against women",
+        "4": "Violence in the streets",
+        "5": "Organized crime",
+        "6": "Maras or gang violence",
+        "7": "State or police violence and abuse",
+        "8": "Verbal violence"
+      }
+    },
+    "P57ST.3": {
+      "description": "Perceived most frequent violence (subset starting from domestic violence against women)",
+      "question": "Which type of violence do you think is most frequent where you live?",
+      "values": {
+        "0": "Do not know / No answer",
+        "3": "Domestic violence against women",
+        "4": "Violence in the streets",
+        "5": "Organized crime",
+        "6": "Maras or gang violence",
+        "7": "State or police violence and abuse",
+        "8": "Verbal violence"
+      }
+    },
+    "P57ST.4": {
+      "description": "Perceived most frequent violence (starting from street violence)",
+      "question": "Which type of violence do you think is most frequent where you live?",
+      "values": {
+        "0": "Do not know / No answer",
+        "4": "Violence in the streets",
+        "5": "Organized crime",
+        "6": "Maras or gang violence",
+        "7": "State or police violence and abuse",
+        "8": "Verbal violence"
+      }
+    },
+    "P57ST.5": {
+      "description": "Perceived most frequent violence (starting from organized crime)",
+      "question": "Which type of violence do you think is most frequent where you live?",
+      "values": {
+        "0": "Do not know / No answer",
+        "5": "Organized crime",
+        "6": "Maras or gang violence",
+        "7": "State or police violence and abuse",
+        "8": "Verbal violence"
+      }
+    },
+    "P57ST.6": {
+      "description": "Perceived most frequent violence (starting from maras-gangs)",
+      "question": "Which type of violence do you think is most frequent where you live?",
+      "values": {
+        "0": "Do not know / No answer",
+        "6": "Maras or gang violence",
+        "7": "State or police violence and abuse",
+        "8": "Verbal violence"
+      }
+    },
+    "P57ST.7": {
+      "description": "Perceived most frequent violence (state or verbal only)",
+      "question": "Which type of violence do you think is most frequent where you live?",
+      "values": {
+        "0": "Do not know / No answer",
+        "7": "State or police violence and abuse",
+        "8": "Verbal violence"
+      }
+    },
+    "P57ST.8": {
+      "description": "Perceived most frequent violence (verbal only)",
+      "question": "Which type of violence do you think is most frequent where you live?",
+      "values": {
+        "0": "Do not know / No answer",
+        "8": "Verbal violence"
+      }
+    },
+    "P58ST": {
+      "description": "Experience of crime in the household",
+      "question": "In the past 12 months, have you or a relative been assaulted, attacked, or the victim of a crime?",
+      "values": {
+        "0": "No answer",
+        "1": "You have",
+        "2": "A relative has",
+        "3": "Both you and a relative have",
+        "4": "No",
+        "8": "Do not know"
+      }
+    },
+    "P59ST": {
+      "description": "Frequency of worry about becoming a victim of violent crime",
+      "question": "How often, if at all, do you worry about becoming a victim of violent crime?",
+      "values": {
+        "0": "Do not know / No answer",
+        "1": "All the time",
+        "2": "Some of the time",
+        "3": "Just occasionally",
+        "4": "Never"
+      }
+    }
+  }
+}

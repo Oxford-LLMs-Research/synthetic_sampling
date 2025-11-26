@@ -1,0 +1,257 @@
+{
+  "Q57A": {
+    "description": "Household affected by COVID-19 illness or positive test",
+    "question": "Have you or any member of your household become ill with or tested positive for COVID-19?",
+    "values": {
+      "1": "Yes",
+      "2": "No",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q57B": {
+    "description": "Household lost income due to COVID-19",
+    "question": "Have you or any member of your household temporarily or permanently lost a job, business, or primary source of income due to COVID-19?",
+    "values": {
+      "1": "Yes",
+      "2": "No",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q58A": {
+    "description": "Received COVID-19 vaccination",
+    "question": "Have you received a vaccination against COVID-19, either one or two doses?",
+    "values": {
+      "0": "No",
+      "1": "Yes",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q58B": {
+    "description": "Likelihood of getting vaccinated for COVID-19",
+    "question": "If a vaccine for COVID-19 is available, how likely are you to try to get vaccinated?",
+    "values": {
+      "1": "Very unlikely",
+      "2": "Somewhat unlikely",
+      "3": "Somewhat likely",
+      "4": "Very likely",
+      "7": "Not applicable",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q58C": {
+    "description": "Main reason for vaccine hesitancy",
+    "question": "What is the main reason you would be unlikely to get a COVID-19 vaccine?",
+    "values": {
+      "1": "COVID doesn’t exist/COVID is not real",
+      "2": "Not worried about COVID/COVID is not serious",
+      "3": "I am at no risk or low risk for getting COVID",
+      "4": "I already had COVID and believe I am immune",
+      "5": "God will protect me",
+      "6": "Don’t trust the vaccine/worried about fake vaccines",
+      "7": "Don’t trust the government to ensure safety",
+      "8": "Vaccine is not safe",
+      "9": "Vaccine was developed too quickly",
+      "10": "Vaccine is not effective",
+      "11": "Vaccine may cause COVID",
+      "12": "Vaccine may cause infertility",
+      "13": "Vaccine may cause other bad side effects",
+      "14": "Vaccines are being used to control or track people",
+      "15": "People are being experimented on with vaccines",
+      "16": "Afraid of vaccines in general",
+      "17": "Allergic to vaccines",
+      "18": "Don’t like needles",
+      "19": "Don’t trust the vaccine source/will wait for other vaccines",
+      "20": "Effective treatments for COVID are or will be available",
+      "21": "It is too difficult to get the vaccine",
+      "22": "Vaccine will be too expensive",
+      "23": "I don’t know how to get the vaccine",
+      "24": "I will wait until others have been vaccinated",
+      "25": "I will get the vaccine later",
+      "26": "Religious objections to vaccines",
+      "95": "Some other reason",
+      "97": "Not applicable",
+      "99": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q59": {
+    "description": "Trust in government to ensure COVID-19 vaccine safety",
+    "question": "How much do you trust the government to ensure that any COVID-19 vaccine used in this country is safe?",
+    "values": {
+      "1": "Not at all",
+      "2": "Just a little",
+      "3": "Somewhat",
+      "4": "A lot",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q60": {
+    "description": "Government handling of COVID-19 response",
+    "question": "How well or badly has the current government managed the response to the COVID-19 pandemic?",
+    "values": {
+      "1": "Very badly",
+      "2": "Fairly badly",
+      "3": "Fairly well",
+      "4": "Very well",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q61A": {
+    "description": "Satisfaction with government COVID-19 relief efforts",
+    "question": "How satisfied or dissatisfied are you with the government’s response to COVID-19 in providing relief to vulnerable households?",
+    "values": {
+      "0": "Not at all satisfied",
+      "1": "Not very satisfied",
+      "2": "Fairly satisfied",
+      "3": "Very satisfied",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q61B": {
+    "description": "Satisfaction with government minimizing education disruptions",
+    "question": "How satisfied or dissatisfied are you with the government’s response to COVID-19 in ensuring that disruptions to children’s education are kept to a minimum?",
+    "values": {
+      "0": "Not at all satisfied",
+      "1": "Not very satisfied",
+      "2": "Fairly satisfied",
+      "3": "Very satisfied",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q61C": {
+    "description": "Satisfaction with government resourcing health facilities",
+    "question": "How satisfied or dissatisfied are you with the government’s response to COVID-19 in making sure that health facilities have adequate resources?",
+    "values": {
+      "0": "Not at all satisfied",
+      "1": "Not very satisfied",
+      "2": "Fairly satisfied",
+      "3": "Very satisfied",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q62": {
+    "description": "Level of corruption in COVID-19 response",
+    "question": "Considering all funds and resources available for COVID-19 response, how much do you think was lost or stolen due to corruption?",
+    "values": {
+      "1": "A lot",
+      "2": "Some",
+      "3": "A little",
+      "4": "None",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q63A": {
+    "description": "Support for censoring media during a pandemic",
+    "question": "During a public health emergency like COVID-19, is it justified for the government to censor media reporting?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q63B": {
+    "description": "Support for armed forces enforcing health mandates",
+    "question": "During a public health emergency like COVID-19, is it justified for the government to use the police or security forces to enforce public health mandates, such as restrictions on gatherings or mask-wearing?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q63C": {
+    "description": "Support for postponing elections during a pandemic",
+    "question": "During a public health emergency like COVID-19, is it justified for the government to postpone elections?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q64A": {
+    "description": "Government preparedness for future health emergencies",
+    "question": "After experiencing the COVID-19 pandemic, how prepared do you think the government will be for future public health emergencies?",
+    "values": {
+      "1": "Very unprepared",
+      "2": "Somewhat unprepared",
+      "3": "Somewhat prepared",
+      "4": "Very prepared",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q64B": {
+    "description": "Support for more investment in health emergency preparedness",
+    "question": "Should the government invest more in preparing for health emergencies like COVID-19, even if it means fewer resources for other health services?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q65A": {
+    "description": "Household received COVID-19 relief assistance",
+    "question": "Since the start of the COVID-19 pandemic, have you or your household received any assistance from the government, such as food, cash payments, or relief from bill payments?",
+    "values": {
+      "0": "No",
+      "1": "Yes",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q65B": {
+    "description": "Perceived fairness of COVID-19 relief distribution",
+    "question": "Do you think the distribution of government support during the COVID-19 pandemic, such as food packages or cash payments, has been fair or unfair?",
+    "values": {
+      "1": "Very unfair",
+      "2": "Somewhat unfair",
+      "3": "Somewhat fair",
+      "4": "Very fair",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  }
+}
+

@@ -1,0 +1,21 @@
+{
+  "P9STGBS": {
+    "description": "General trust in people",
+    "question": "To what extent do you feel that most people can be trusted, or that you need to be cautious when dealing with others?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "One can trust most people",
+      "2": "One can never be too careful in dealing with others"
+    }
+  },
+  "P48ST": {
+    "description": "Perception of honesty in political expression",
+    "question": "Do you think most people say what they really think about politics, or not?",
+    "values": {
+      "0": "No answer",
+      "1": "They say what they think about politics",
+      "2": "They usually do not say what they really think",
+      "8": "Do not know"
+    }
+  }
+}

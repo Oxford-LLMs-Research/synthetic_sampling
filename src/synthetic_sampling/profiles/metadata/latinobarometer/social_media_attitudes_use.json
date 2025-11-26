@@ -1,0 +1,271 @@
+{
+  "P51N": {
+    "description": "Perception of social media's impact on politics",
+    "question": "Would you say that social media makes politics better, worse, or has no effect?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Makes politics better",
+      "2": "Neither better nor worse",
+      "3": "Makes politics worse"
+    }
+  },
+  "P52N": {
+    "description": "Perception of social media as representing public opinion",
+    "question": "Do you think that what is said on social media reflects what the general public thinks?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Represents well",
+      "2": "Does not represent well"
+    }
+  },
+  "P53N.A": {
+    "description": "Perceived level of false information in social media",
+    "question": "How much false information do you think circulates on social media?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "None"
+    }
+  },
+  "P53N.B": {
+    "description": "Perceived level of false information on TV",
+    "question": "How much false information do you think circulates on TV?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "None"
+    }
+  },
+  "P53N.C": {
+    "description": "Perceived level of false information on radio",
+    "question": "How much false information do you think circulates on radio?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "None"
+    }
+  },
+  "P53N.D": {
+    "description": "Perceived level of false information in printed press",
+    "question": "How much false information do you think circulates in the printed press?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "None"
+    }
+  },
+  "P55N": {
+    "description": "Frequency of digital payments",
+    "question": "Thinking about your purchases and payments, how many are digital (credit card, debit card, QR codes, etc.)?",
+    "values": {
+      "0": "No answer",
+      "1": "None",
+      "2": "Less than half",
+      "3": "About half",
+      "4": "More than half",
+      "5": "All"
+    }
+  },
+    "P56N.A": {
+    "description": "Perception of electronic payments as more reliable than cash",
+    "question": "Do you agree or disagree that paying electronically is more reliable than using cash?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P56N.B": {
+    "description": "Perception of data security in electronic payments",
+    "question": "Do you agree or disagree that your personal data is secure when you pay electronically?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P56N.C": {
+    "description": "Preference for electronic payments over cash",
+    "question": "Do you agree or disagree that if you can choose, you prefer to pay electronically instead of using cash?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P56N.D": {
+    "description": "Perception of safety when carrying no cash",
+    "question": "Do you agree or disagree that it is safer to walk in the street without cash and pay electronically?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "S13INN.A.1": {
+    "description": "E-commerce purchases in the last 12 months – all options",
+    "question": "In the last 12 months, have you purchased any products or services through e-commerce or the Internet?",
+    "values": {
+      "0": "No answer",
+      "1": "Yes, domestically",
+      "2": "Yes, from a foreign country",
+      "3": "I don’t know if it was domestic or foreign",
+      "4": "No",
+      "8": "Do not know"
+    }
+  },
+  "S13INN.A.2": {
+    "description": "E-commerce purchases – reduced answer set",
+    "question": "In the last 12 months, have you purchased any products or services through e-commerce or the Internet?",
+    "values": {
+      "0": "No answer",
+      "2": "Yes, from a foreign country",
+      "3": "I don’t know if it was domestic or foreign",
+      "4": "No",
+      "8": "Do not know"
+    }
+  },
+  "S13INN.A.3": {
+    "description": "E-commerce purchases – minimal answer set",
+    "question": "In the last 12 months, have you purchased any products or services through e-commerce or the Internet?",
+    "values": {
+      "0": "No answer",
+      "3": "I don’t know if it was domestic or foreign",
+      "4": "No",
+      "8": "Do not know"
+    }
+  },
+  "S14M.1": {
+    "description": "Use of Facebook and other social networks",
+    "question": "Do you use Facebook or any of these other social networking services?",
+    "values": {
+      "0": "No answer",
+      "1": "Facebook",
+      "2": "Snapchat",
+      "3": "YouTube",
+      "4": "Twitter",
+      "5": "WhatsApp",
+      "6": "Instagram",
+      "7": "TikTok",
+      "8": "LinkedIn",
+      "96": "Other",
+      "97": "Do not use"
+    }
+  },
+  "S14M.2": {
+    "description": "Use of Snapchat and other social networks",
+    "question": "Do you use Snapchat or any of these other social networking services?",
+    "values": {
+      "0": "No answer",
+      "2": "Snapchat",
+      "3": "YouTube",
+      "4": "Twitter",
+      "5": "WhatsApp",
+      "6": "Instagram",
+      "7": "TikTok",
+      "8": "LinkedIn",
+      "96": "Other",
+      "97": "Do not use"
+    }
+  },
+  "S14M.3": {
+    "description": "Use of YouTube and other social networks",
+    "question": "Do you use YouTube or any of these other social networking services?",
+    "values": {
+      "0": "No answer",
+      "3": "YouTube",
+      "4": "Twitter",
+      "5": "WhatsApp",
+      "6": "Instagram",
+      "7": "TikTok",
+      "8": "LinkedIn",
+      "96": "Other",
+      "97": "Do not use"
+    }
+  },
+  "S14M.4": {
+    "description": "Use of Twitter and other social networks",
+    "question": "Do you use Twitter or any of these other social networking services?",
+    "values": {
+      "0": "No answer",
+      "4": "Twitter",
+      "5": "WhatsApp",
+      "6": "Instagram",
+      "7": "TikTok",
+      "8": "LinkedIn",
+      "96": "Other",
+      "97": "Do not use"
+    }
+  },
+  "S14M.5": {
+    "description": "Use of WhatsApp and other social networks",
+    "question": "Do you use WhatsApp or any of these other social networking services?",
+    "values": {
+      "0": "No answer",
+      "5": "WhatsApp",
+      "6": "Instagram",
+      "7": "TikTok",
+      "8": "LinkedIn",
+      "96": "Other",
+      "97": "Do not use"
+    }
+  },
+  "S14M.6": {
+    "description": "Use of Instagram and other social networks",
+    "question": "Do you use Instagram or any of these other social networking services?",
+    "values": {
+      "0": "No answer",
+      "6": "Instagram",
+      "7": "TikTok",
+      "8": "LinkedIn",
+      "96": "Other",
+      "97": "Do not use"
+    }
+  },
+  "S14M.7": {
+    "description": "Use of TikTok and other social networks",
+    "question": "Do you use TikTok or any of these other social networking services?",
+    "values": {
+      "0": "No answer",
+      "7": "TikTok",
+      "8": "LinkedIn",
+      "96": "Other",
+      "97": "Do not use"
+    }
+  },
+  "S14M.8": {
+    "description": "Use of LinkedIn and other social networks",
+    "question": "Do you use LinkedIn or any of these other social networking services?",
+    "values": {
+      "0": "No answer",
+      "8": "LinkedIn",
+      "96": "Other",
+      "97": "Do not use"
+    }
+  },
+  "S14M.96": {
+    "description": "Use of other social networks",
+    "question": "Do you use any other social networking services?",
+    "values": {
+      "0": "No answer",
+      "96": "Other",
+      "97": "Do not use"
+    }
+  }
+}

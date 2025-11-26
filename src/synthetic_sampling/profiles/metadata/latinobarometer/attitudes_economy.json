@@ -1,0 +1,89 @@
+{
+  "P30STIN.A": {
+    "description": "Fear of job loss to automation",
+    "question": "Do you agree or disagree that robots will take your job within the next ten years?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P30INN.B": {
+    "description": "Environmental sustainability and economic growth",
+    "question": "Do you agree or disagree that it is possible to care for the environment and also have economic growth?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P30INN.C": {
+    "description": "Willingness to pay more for environmentally friendly products",
+    "question": "Do you agree or disagree that you are willing to pay 20% more for a product if it is environmentally friendly?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P30INN.D": {
+    "description": "Perception of gender inequality in business",
+    "question": "Do you agree or disagree that men have a considerable advantage over women when starting a business?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P30INN.E": {
+    "description": "Preference for products produced by women",
+    "question": "Do you agree or disagree that you prefer to buy products made by women over those made by men?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P30INN.F": {
+    "description": "Importance of technical skills for employment",
+    "question": "Do you agree or disagree that learning mathematics, engineering, or programming is important for getting a good job?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+    "P36ST": {
+    "description": "Priority between climate action and economic growth",
+    "question": "Which of the following comes closer to your view about national priorities?",
+    "values": {
+      "0": "No answer",
+      "1": "Priority should be given to fighting climate change, even if it affects economic growth",
+      "2": "Priority should be given to economic growth, even if it affects the fight against climate change",
+      "8": "Do not know"
+    }
+  },
+    "P54ST.B": {
+    "description": "Belief in the market economy as the path to development",
+    "question": "Do you agree or disagree that a market economy is the only way your country can achieve development?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  }
+}

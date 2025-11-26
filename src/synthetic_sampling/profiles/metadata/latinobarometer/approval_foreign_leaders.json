@@ -1,0 +1,308 @@
+{
+    "P62N.1": {
+    "description": "Evaluation of Gustavo Petro",
+    "question": "How would you rate Gustavo Petro overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62ST.2": {
+    "description": "Evaluation of Luis Lacalle Pou",
+    "question": "How would you rate Luis Lacalle Pou overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62ST.3": {
+    "description": "Evaluation of Alberto Fernández",
+    "question": "How would you rate Alberto Fernández overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62ST.4": {
+    "description": "Evaluation of Jair Bolsonaro",
+    "question": "How would you rate Jair Bolsonaro overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62ST.5": {
+    "description": "Evaluation of Nicolás Maduro",
+    "question": "How would you rate Nicolás Maduro overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62N.6": {
+    "description": "Evaluation of Gabriel Boric",
+    "question": "How would you rate Gabriel Boric overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62ST.7": {
+    "description": "Evaluation of Pope Francis",
+    "question": "How would you rate Pope Francis overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62ST.8": {
+    "description": "Evaluation of Xi Jinping",
+    "question": "How would you rate Xi Jinping overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62N.9": {
+    "description": "Evaluation of Guillermo Lasso",
+    "question": "How would you rate Guillermo Lasso overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62ST.10": {
+    "description": "Evaluation of Donald Trump",
+    "question": "How would you rate Donald Trump overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62ST.11": {
+    "description": "Evaluation of Andrés Manuel López Obrador (AMLO)",
+    "question": "How would you rate Andrés Manuel López Obrador (AMLO) overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62N.12": {
+    "description": "Evaluation of Daniel Ortega",
+    "question": "How would you rate Daniel Ortega overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62N.13": {
+    "description": "Evaluation of Nayib Bukele",
+    "question": "How would you rate Nayib Bukele overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62N.14": {
+    "description": "Evaluation of Vladimir Putin",
+    "question": "How would you rate Vladimir Putin overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62N.15": {
+    "description": "Evaluation of Volodymyr Zelensky",
+    "question": "How would you rate Volodymyr Zelensky overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62N.16": {
+    "description": "Evaluation of Luiz Inácio Lula da Silva",
+    "question": "How would you rate Luiz Inácio Lula da Silva (Lula) overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  },
+  "P62N.17": {
+    "description": "Evaluation of Joe Biden",
+    "question": "How would you rate Joe Biden overall?",
+    "values": {
+      "96": "Don't know him",
+      "0": "Very bad",
+      "1": "Very bad",
+      "2": "Bad",
+      "3": "Bad",
+      "4": "Neutral",
+      "5": "Neutral",
+      "6": "Neutral",
+      "7": "Good",
+      "8": "Good",
+      "9": "Very good",
+      "10": "Very good"
+    }
+  }
+}

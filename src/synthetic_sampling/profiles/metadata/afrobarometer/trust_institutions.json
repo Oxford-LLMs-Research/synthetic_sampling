@@ -1,0 +1,173 @@
+{
+  "Q37A": {
+    "description": "Trust in the president",
+    "question": "How much do you trust the president?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q37B": {
+    "description": "Trust in parliament/national assembly",
+    "question": "How much do you trust the national parliament?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q37C": {
+    "description": "Trust in national electoral commission",
+    "question": "How much do you trust the national electoral commission?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q37D": {
+    "description": "Trust in local government council",
+    "question": "How much do you trust your elected local government council?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q37E": {
+    "description": "Trust in the ruling party",
+    "question": "How much do you trust the ruling political party?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q37F": {
+    "description": "Trust in opposition political parties",
+    "question": "How much do you trust opposition political parties?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q37G": {
+    "description": "Trust in the police",
+    "question": "How much do you trust the police?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q37H": {
+    "description": "Trust in the army",
+    "question": "How much do you trust the army?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q37I": {
+    "description": "Trust in the courts of law",
+    "question": "How much do you trust the courts of law?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q37J": {
+    "description": "Trust in traditional leaders",
+    "question": "How much do you trust traditional leaders?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+  "Q37K": {
+    "description": "Trust in religious leaders",
+    "question": "How much do you trust religious leaders?",
+    "values": {
+      "0": "Not at all",
+      "1": "Just a little",
+      "2": "Somewhat",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don’t know/Haven’t heard enough",
+      "-1": "Missing"
+    }
+  },
+    "Q48A": {
+    "description": "Who is responsible for ensuring MPs do their jobs",
+    "question": "Who should be responsible for making sure that, once elected, members of Parliament do their jobs?",
+    "values": {
+      "0": "The president/executive",
+      "1": "Parliament/local government council",
+      "2": "Their political party",
+      "3": "The voters",
+      "4": "No one",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q48B": {
+    "description": "Who is responsible for ensuring the president does his job",
+    "question": "Who should be responsible for making sure that, once elected, the president does his job?",
+    "values": {
+      "0": "The president/executive",
+      "1": "Parliament/local government council",
+      "2": "Their political party",
+      "3": "The voters",
+      "4": "No one",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  }
+}

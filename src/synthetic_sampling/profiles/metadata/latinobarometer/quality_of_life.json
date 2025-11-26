@@ -1,0 +1,177 @@
+{
+  "P1ST": {
+    "description": "Satisfaction with life",
+    "question": "How satisfied are you with your life in general?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Very satisfied",
+      "2": "Quite satisfied",
+      "3": "Not very satisfied",
+      "4": "Not at all satisfied"
+    }
+  },
+  "S3": {
+    "description": "Experience of food insecurity in the past year",
+    "question": "In the past 12 months, how often have you or your family gone without food?",
+    "values": {
+      "0": "No answer",
+      "1": "Never",
+      "2": "Rarely",
+      "3": "Sometimes",
+      "4": "Often",
+      "8": "Do not know"
+    }
+  },
+  "S4": {
+    "description": "Concern about unemployment in the next 12 months",
+    "question": "How concerned are you that you will be left without work or become unemployed in the next 12 months, or do you not currently have a job?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Very concerned",
+      "2": "Concerned",
+      "3": "A little concerned",
+      "4": "Not at all concerned",
+      "5": "Do not have a job (e.g., unemployed, student, housewife, retired)"
+    }
+  },
+  "S5": {
+    "description": "Household financial sufficiency",
+    "question": "Does your salary and total family income allow you to cover your needs in a satisfactory manner?",
+    "values": {
+      "0": "No answer",
+      "1": "It’s enough, we can save",
+      "2": "It’s just enough, we don’t have major problems",
+      "3": "It’s not enough, we have problems",
+      "4": "It’s not enough, we have major problems",
+      "8": "Do not know"
+    }
+  },
+  "S6": {
+    "description": "Receiving government support or benefits",
+    "question": "Are you or someone in your family receiving support or benefits from the government?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Yes, I am receiving support",
+      "2": "Yes, a family member is receiving support",
+      "3": "Yes, both I and a family member are receiving support",
+      "4": "No, we are not receiving any support"
+    }
+  },
+
+  "S8": {
+    "description": "Consideration of emigration",
+    "question": "Have you or your family ever considered moving to live abroad?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "S9": {
+    "description": "Household head and main income contributor",
+    "question": "Are you the main contributor to your family's income or the head of the household?",
+    "values": {
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "S20.A": {
+    "description": "Separate bedroom for parents and children",
+    "question": "Does your household have a separate bedroom for parents and children?",
+    "values": {
+      "0": "No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "S20.B": {
+    "description": "Ownership of house",
+    "question": "Do you or your family own your home?",
+    "values": {
+      "0": "No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "S20.C": {
+    "description": "Ownership of washing machine",
+    "question": "Do you or your family have a washing machine?",
+    "values": {
+      "0": "No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "S20.D": {
+    "description": "Ownership of mobile phone or smartphone",
+    "question": "Do you or your family have a mobile phone or smartphone?",
+    "values": {
+      "0": "No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "S20.E": {
+    "description": "Ownership of car",
+    "question": "Do you or your family have a car?",
+    "values": {
+      "0": "No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "S20.F": {
+    "description": "Access to hot water",
+    "question": "Do you or your family have access to hot water at home?",
+    "values": {
+      "0": "No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "S20.G": {
+    "description": "Access to sewage system",
+    "question": "Does your home have access to a sewage system?",
+    "values": {
+      "0": "No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "S20.H": {
+    "description": "Access to at least one meal a day",
+    "question": "Do you or your family have at least one meal a day?",
+    "values": {
+      "0": "No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "S20.I": {
+    "description": "Access to drinking water",
+    "question": "Do you or your family have access to drinking water?",
+    "values": {
+      "0": "No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "S20.J": {
+    "description": "Access to internet at home",
+    "question": "Do you or your family have an internet connection at home?",
+    "values": {
+      "0": "No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  },
+  "S20.K": {
+    "description": "Access to heating or air conditioning",
+    "question": "Do you or your family have heating or air conditioning at home?",
+    "values": {
+      "0": "No answer",
+      "1": "Yes",
+      "2": "No"
+    }
+  }
+}

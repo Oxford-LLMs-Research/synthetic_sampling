@@ -1,0 +1,248 @@
+{
+    "P40STGBS": {
+    "description": "Interest in politics",
+    "question": "How interested are you in politics?",
+    "values": {
+      "0": "No answer",
+      "1": "Very interested",
+      "2": "Fairly interested",
+      "3": "A little interested",
+      "4": "Not at all interested",
+      "8": "Do not know"
+    }
+  },
+  "P10STGBS": {
+    "description": "Attitudes toward democracy and alternative regimes",
+    "question": "What is your general attitude toward democracy compared to other forms of government?",
+    "values": {
+      "0": "No answer",
+      "1": "Democracy is preferable to any other kind of government",
+      "2": "Under some circumstances, an authoritarian government can be preferable to a democratic one",
+      "3": "For people like me, it doesn’t matter whether we have a democratic or non-democratic regime",
+      "8": "Do not know"
+    }
+  },
+ "P18ST.A": {
+    "description": "Attitude toward democracy despite its problems",
+    "question": "Do you agree or disagree that democracy may have problems but it is the best system of government?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P18STM.B": {
+    "description": "Acceptance of undemocratic government if it solves problems",
+    "question": "Do you agree or disagree that an undemocratic government is acceptable if it can solve the country's problems?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P18STM.C": {
+    "description": "Acceptance of media control by the president in times of difficulty",
+    "question": "Do you agree or disagree that in difficult times, it is acceptable for the president to control the media?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P18N.D": {
+    "description": "Support for diversity of media sources in democracy",
+    "question": "Do you agree or disagree that democracy requires a diversity of sources in the media?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P18N.E": {
+    "description": "Support for judicial independence",
+    "question": "Do you agree or disagree that the judiciary must be independent from the executive power?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P18N.F": {
+    "description": "Evaluation of political party performance",
+    "question": "Do you agree or disagree that political parties in your country work well?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P18N.G": {
+    "description": "Skepticism about hard-handed governments solving problems",
+    "question": "Do you agree or disagree that even a hard-handed government would not be able to solve the country’s problems?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+    "P16ST": {
+    "description": "Self-placement on left-right political scale",
+    "question": "In politics, people often talk about 'left' and 'right'. Where would you place yourself on this scale?",
+    "values": {
+      "1": "Left",
+      "2": "Center-left",
+      "3": "Center",
+      "4": "Center-right",
+      "5": "Right",
+      "97": "None",
+      "98": "Do not know",
+      "99": "No answer"
+    }
+  },
+  "P18ST.I": {
+    "description": "Belief in democracy's ability to solve problems",
+    "question": "Do you agree or disagree that democracy makes it possible to solve the problems the country faces?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  },
+  "P19N": {
+    "description": "Cultural preference: tradition vs. diversity",
+    "question": "Do you agree or disagree that society should be open to a diversity of traditions and habits?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Disagree — society should defend its own traditions and habits",
+      "2": "Agree — society should be open to a diversity of traditions and habits"
+    }
+  },
+  "P20STM": {
+    "description": "Support for military government in difficult times",
+    "question": "Would you support a military government replacing the democratic government if the situation becomes very difficult?",
+    "values": {
+      "0": "No answer",
+      "1": "Yes, I would support a military government",
+      "2": "No, I would not support a military government under any circumstance",
+      "8": "Do not know"
+    }
+  },
+  "P21ST": {
+    "description": "Role of political parties in democracy",
+    "question": "Do you believe that democracy can function without political parties?",
+    "values": {
+      "0": "No answer",
+      "1": "No — democracy cannot function without political parties",
+      "2": "Yes — democracy can work without parties",
+      "8": "Do not know"
+    }
+  },
+  "P22ST": {
+      "description": "Justifiability of tax evasion",
+      "question": "To what extent do you think it is justifiable or unjustifiable to evade paying taxes?",
+      "values": {
+        "0": "No answer",
+        "98": "Do not know",
+
+        "1": "Not at all justifiable",
+        "2": "Not at all justifiable",
+
+        "3": "Slightly justifiable",
+        "4": "Slightly justifiable",
+
+        "5": "Moderately justifiable",
+        "6": "Moderately justifiable",
+
+        "7": "Very justifiable",
+        "8": "Very justifiable",
+
+        "9": "Completely justifiable",
+        "10": "Completely justifiable"
+      }
+    },
+  "P34WVSNA": {
+    "description": "Most important national priority",
+    "question": "Which of the following do you think is the most important priority for the country?",
+    "values": {
+      "0": "No answer",
+      "1": "Maintaining order in the nation",
+      "2": "Giving people more say in important government decisions",
+      "3": "Fighting rising prices",
+      "4": "Protecting freedom of speech",
+      "8": "Do not know"
+    }
+  },
+  "P34WVSNB": {
+    "description": "Second most important national priority",
+    "question": "Which of the following do you think is the second most important priority for the country?",
+    "values": {
+      "0": "No answer",
+      "1": "Maintaining order in the nation",
+      "2": "Giving people more say in important government decisions",
+      "3": "Fighting rising prices",
+      "4": "Protecting freedom of speech",
+      "8": "Do not know"
+    }
+  },
+  "P35NA": {
+    "description": "Most important principle for good governance",
+    "question": "Which of the following do you think is most important for the best way to govern a country?",
+    "values": {
+      "0": "No answer",
+      "1": "Concentrating political power in one leader",
+      "2": "Distributing power across several institutions",
+      "3": "Ensuring the media does not question those in power",
+      "4": "Guaranteeing political liberties for citizens",
+      "8": "Do not know"
+    }
+  },
+  "P35NB": {
+    "description": "Second most important principle for good governance",
+    "question": "Which of the following do you think is second most important for the best way to govern a country?",
+    "values": {
+      "0": "No answer",
+      "1": "Concentrating political power in one leader",
+      "2": "Distributing power across several institutions",
+      "3": "Ensuring the media does not question those in power",
+      "4": "Guaranteeing political liberties for citizens",
+      "8": "Do not know"
+    }
+  },
+    "P46N": {
+    "description": "Views on freedom of expression vs. fake news control",
+    "question": "Do you think it is more important to protect freedom of expression even if it allows fake news, or to control fake news even if it limits freedom of expression?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Freedom of expression should be guaranteed, even if it means fake news circulates",
+      "2": "Fake news should be controlled, even if it limits freedom of expression",
+      "8": "Do not know"
+    }
+  },
+    "P54N.A": {
+    "description": "Attitude toward protests",
+    "question": "Do you agree or disagree that protests are a legitimate way to express political demands?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Strongly agree",
+      "2": "Agree",
+      "3": "Disagree",
+      "4": "Strongly disagree"
+    }
+  }
+}

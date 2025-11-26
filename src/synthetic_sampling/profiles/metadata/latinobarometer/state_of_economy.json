@@ -1,0 +1,66 @@
+{
+  "P5STGBS": {
+    "description": "Perception of the country's current economic situation",
+    "question": "How would you describe the country’s current economic situation?",
+    "values": {
+      "0": "No answer",
+      "1": "Very good",
+      "2": "Good",
+      "3": "About average",
+      "4": "Bad",
+      "5": "Very bad",
+      "8": "Do not know"
+    }
+  },
+  "P6STGBS": {
+    "description": "Change in the country’s economic situation over the past 12 months",
+    "question": "Compared to 12 months ago, how would you describe the country’s current economic situation?",
+    "values": {
+      "0": "No answer",
+      "1": "Much better",
+      "2": "A little better",
+      "3": "The same",
+      "4": "A little worse",
+      "5": "Much worse",
+      "8": "Do not know"
+    }
+  },
+  "P7ST": {
+    "description": "Expectations for the country’s economic situation in the next 12 months",
+    "question": "Over the next 12 months, how do you expect the country’s economic situation to change compared to now?",
+    "values": {
+      "0": "No answer",
+      "1": "Much better",
+      "2": "A little better",
+      "3": "The same",
+      "4": "A little worse",
+      "5": "Much worse",
+      "8": "Do not know"
+    }
+  },
+  "P8STGBS": {
+    "description": "Expectations for personal and family economic situation in the next 12 months",
+    "question": "Over the next 12 months, how do you expect your and your family’s economic situation to change compared to now?",
+    "values": {
+      "0": "No answer",
+      "1": "Much better",
+      "2": "A little better",
+      "3": "The same",
+      "4": "A little worse",
+      "5": "Much worse",
+      "8": "Do not know"
+    }
+  },
+    "P11STGBS.B": {
+    "description": "Satisfaction with the economy",
+    "question": "How satisfied are you with the current state of the economy in your country?",
+    "values": {
+      "0": "No answer",
+      "1": "Very satisfied",
+      "2": "Quite satisfied",
+      "3": "Not very satisfied",
+      "4": "Not at all satisfied",
+      "8": "Do not know"
+    }
+  }
+}

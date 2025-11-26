@@ -1,0 +1,159 @@
+{
+  "P2ST": {
+    "description": "Perception of country's direction",
+    "question": "What is your opinion on the current direction in which the country is heading?",
+    "values": {
+      "0": "No answer",
+      "1": "The country is progressing",
+      "2": "The country isat a standstill",
+      "3": "The country is in decline",
+      "8": "Do not know"
+    }
+  },
+  "P3N": {
+    "description": "Opinion about national society",
+    "question": "What is your opinion about the current state of national society?",
+    "values": {
+      "0": "No answer",
+      "1": "It is all right as it is",
+      "2": "It can get better with small changes",
+      "3": "It needs deep reforms",
+      "4": "It must change radically",
+      "8": "Do not know"
+    }
+  },
+  "P4STGBS": {
+    "description": "Most important problem facing the country",
+    "question": "What do you think is the most important problem currently facing the country?",
+    "values": {
+      "0": "No answer",
+      "1": "Low salaries",
+      "2": "Employment instability",
+      "3": "Poverty",
+      "4": "Income inequality, social injustice",
+      "5": "Economy/Economic problems/financial problems",
+      "6": "Gas, fuel, scarcity, high prices",
+      "7": "Food scarcity",
+      "8": "Everything is very expensive",
+      "9": "Unemployment",
+      "10": "Inflation/rise in prices",
+      "11": "Transportation",
+      "12": "Energy problems",
+      "13": "Poor basic services (water, electricity, etc.)",
+      "14": "Education problems",
+      "15": "Housing problems",
+      "16": "Health problems",
+      "17": "Environmental problems",
+      "18": "Global warming",
+      "19": "Pollution",
+      "20": "Lack of opportunities for youth",
+      "21": "Human rights violations",
+      "22": "Lack of freedom of expression",
+      "23": "State violence, state repression",
+      "24": "Terrorism",
+      "25": "Guerrilla warfare",
+      "26": "Crime/public security",
+      "27": "Violence/gangs",
+      "28": "Domestic violence",
+      "29": "Verbal abuse",
+      "30": "Drug trafficking",
+      "31": "Drug use",
+      "32": "Racial discrimination",
+      "33": "Border issues",
+      "34": "Conflicts with neighboring countries",
+      "35": "Corruption",
+      "36": "Political situation/political problems",
+      "37": "Immigrants",
+      "38": "Foreigners",
+      "39": "Not being able to be in my country",
+      "40": "Lack of concern for the elderly",
+      "41": "Lack of parks, recreational areas",
+      "42": "Dirtiness, lack of cleanliness",
+      "43": "Infrastructure",
+      "44": "Pandemic/Coronavirus/Covid-19",
+      "45": "Judicial system/justice",
+      "96": "Other",
+      "97": "None",
+      "98": "Do not know"
+    }
+  },
+    "P11STGBS.A": {
+    "description": "Satisfaction with the functioning of democracy",
+    "question": "How satisfied are you with the way democracy works in your country?",
+    "values": {
+      "0": "No answer",
+      "1": "Very satisfied",
+      "2": "Quite satisfied",
+      "3": "Not very satisfied",
+      "4": "Not at all satisfied",
+      "8": "Do not know"
+    }
+  },
+  "P12ST": {
+    "description": "Perception of who governs the country",
+    "question": "In your opinion, is the country governed primarily by powerful groups serving their own interests, or is it governed for the good of all citizens?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Powerful groups in their own interest",
+      "2": "For the good of all"
+    }
+  },
+  "P15STGBS": {
+    "description": "Approval of the president’s leadership",
+    "question": "Do you approve or disapprove of the way the current president is leading the country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Approve",
+      "2": "Disapprove"
+    }
+  },
+  "P17ST": {
+    "description": "Perceived fairness of income distribution",
+    "question": "How fair do you think the distribution of income is in your country?",
+    "values": {
+      "0": "No answer",
+      "1": "Very fair",
+      "2": "Fair",
+      "3": "Unfair",
+      "4": "Very unfair",
+      "8": "Do not know"
+    }
+  },
+    "P60ST": {
+    "description": "Perceived progress in reducing corruption",
+    "question": "In the last two years, how much progress has been made in reducing corruption in state institutions?",
+    "values": {
+      "0": "No answer",
+      "1": "A lot",
+      "2": "Some",
+      "3": "Little",
+      "4": "None at all",
+      "8": "Do not know"
+    }
+  },
+  "P61ST": {
+    "description": "Perceived acceptability of inequality in the country",
+    "question": "How acceptable do you think the current level of inequality is in your country?",
+    "values": {
+      "0": "No answer",
+      "1": "Completely unacceptable",
+      "2": "Unacceptable",
+      "3": "Neutral",
+      "4": "Acceptable",
+      "5": "Completely acceptable",
+      "98": "Do not know"
+    }
+  },
+   "P63ST": {
+    "description": "Perceived likelihood of a coup occurring",
+    "question": "How likely do you think it is that a coup could occur in your country, or do you not know enough to say?",
+    "values": {
+      "0": "No answer",
+      "1": "Very likely",
+      "2": "Likely",
+      "3": "A little likely",
+      "4": "Not at all likely",
+      "5": "Don’t know enough"
+    }
+  }
+}
