@@ -1,0 +1,816 @@
+{
+ "Q8": {
+    "description": "How often discuss politics",
+    "question": "When you get together with your friends or family, how often would you say you discuss political matters?",
+    "values": {
+      "0": "Never",
+      "1": "Occasionally",
+      "2": "Frequently",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+
+  "Q9A": {
+    "description": "Freedom to say what you think",
+    "question": "In this country, how free are you: to say what you think?",
+    "values": {
+      "1": "Not at all free",
+      "2": "Not very free",
+      "3": "Somewhat free",
+      "4": "Completely free",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q9B": {
+    "description": "Freedom to join any political organization",
+    "question": "In this country, how free are you: to join any political organization you want?",
+    "values": {
+      "1": "Not at all free",
+      "2": "Not very free",
+      "3": "Somewhat free",
+      "4": "Completely free",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q9C": {
+    "description": "Freedom to choose who to vote for",
+    "question": "In this country, how free are you: to choose who to vote for without feeling pressured?",
+    "values": {
+      "1": "Not at all free",
+      "2": "Not very free",
+      "3": "Somewhat free",
+      "4": "Completely free",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q10A": {
+    "description": "Attend a community meeting",
+    "question": "Have you attended a community meeting in the past year? If yes, how often?",
+    "values": {
+      "0": "No: Would never do this",
+      "1": "No: Would if had the chance",
+      "2": "Yes: Once or twice",
+      "3": "Yes: Several times",
+      "4": "Yes: Often",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q10B": {
+    "description": "Join others to raise an issue",
+    "question": "Have you joined others to raise an issue in the past year? If yes, how often?",
+    "values": {
+      "0": "No: Would never do this",
+      "1": "No: Would if had the chance",
+      "2": "Yes: Once or twice",
+      "3": "Yes: Several times",
+      "4": "Yes: Often",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q10C": {
+    "description": "Attend a demonstration or protest march",
+    "question": "Have you participated in a demonstration or protest march in the past year? If yes, how often?",
+    "values": {
+      "0": "No: Would never do this",
+      "1": "No: Would if had the chance",
+      "2": "Yes: Once or twice",
+      "3": "Yes: Several times",
+      "4": "Yes: Often",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q11A": {
+    "description": "Make local government councillors listen",
+    "question": "How likely is it that you could get together with others and make your local government councillor listen to your concerns?",
+    "values": {
+      "0": "Not at all likely",
+      "1": "Not very likely",
+      "2": "Somewhat likely",
+      "3": "Very likely",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q11B": {
+    "description": "Contact local government councillor",
+    "question": "During the past year, how often have you contacted a local government councillor about an important problem or to give your views?",
+    "values": {
+      "0": "Never",
+      "1": "Only once",
+      "2": "A few times",
+      "3": "Often",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q11C": {
+    "description": "Contact MP",
+    "question": "During the past year, how often have you contacted a member of Parliament about an important problem or to give your views?",
+    "values": {
+      "0": "Never",
+      "1": "Only once",
+      "2": "A few times",
+      "3": "Often",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q11D": {
+    "description": "Contact political party official",
+    "question": "During the past year, how often have you contacted a political party official about an important problem or to give your views?",
+    "values": {
+      "0": "Never",
+      "1": "Only once",
+      "2": "A few times",
+      "3": "Often",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q11E": {
+    "description": "Contact traditional leader",
+    "question": "During the past year, how often have you contacted a traditional leader about an important problem or to give your views?",
+    "values": {
+      "0": "Never",
+      "1": "Only once",
+      "2": "A few times",
+      "3": "Often",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q12A": {
+    "description": "Elections ensure MPs reflect views of voters",
+    "question": "Thinking about how elections work in practice in this country, how well do elections ensure that representatives to the National Assembly reflect the views of voters?",
+    "values": {
+      "0": "Not at all well",
+      "1": "Not very well",
+      "2": "Fairly well",
+      "3": "Very well",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q12B": {
+    "description": "Elections ensure voters remove unrepresentative leaders",
+    "question": "Thinking about how elections work in practice in this country, how well do elections enable voters to remove from office leaders who do not do what the people want?",
+    "values": {
+      "0": "Not at all well",
+      "1": "Not very well",
+      "2": "Fairly well",
+      "3": "Very well",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q13": {
+    "description": "Voting in the most recent national election",
+    "question": "In the last national election, did you vote, or not, or were you too young to vote? Or can’t you remember whether you voted?",
+    "values": {
+      "0": "I did not vote",
+      "1": "I was too young to vote",
+      "2": "I can’t remember whether I voted",
+      "3": "I voted in the election",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q14A": {
+    "description": "Freeness and fairness of the last national election",
+    "question": "On the whole, how would you rate the freeness and fairness of the last national election?",
+    "values": {
+      "1": "Not free and fair",
+      "2": "Free and fair, but with major problems",
+      "3": "Free and fair, but with minor problems",
+      "4": "Completely free and fair",
+      "8": "Do not understand the question",
+      "9": "Don’t know",
+      "98": "Refused",
+      "-1": "Missing"
+    }
+  },
+  "Q14B": {
+    "description": "How likely powerful find out your vote",
+    "question": "How likely do you think it is that powerful people can find out how you voted, even though there is supposed to be a secret ballot in this country?",
+    "values": {
+      "0": "Not at all likely",
+      "1": "Not very likely",
+      "2": "Somewhat likely",
+      "3": "Very likely",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q14C": {
+    "description": "Last national election: fear political intimidation or violence",
+    "question": "During the last national election campaign, how much did you personally fear becoming a victim of political intimidation or violence?",
+    "values": {
+      "0": "A lot",
+      "1": "Somewhat",
+      "2": "A little bit",
+      "3": "Not at all",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q15": {
+    "description": "Government bans organizations vs join any",
+    "question": "Let’s talk for a moment about the kind of society you would like to have in this country. Which of the following statements is closest to your view? Statement 1: The government should be able to ban any organization that goes against its policies. Statement 2: We should be able to join any organization, whether or not the government approves of it.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q16": {
+    "description": "Media free to publish vs government control",
+    "question": "Which of the following statements is closest to your view?Statement 1: The media should have the right to publish any views and ideas without government control. Statement 2: The government should have the right to prevent the media from publishing things that it disapproves of.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q17": {
+    "description": "Media checks government vs avoid negative reporting",
+    "question": "Which of the following statements is closest to your view? Statement 1: The news media should constantly investigate and report on government mistakes and corruption. Statement 2: Too much reporting on negative events, like government mistakes and corruption, only harms the country.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q18": {
+    "description": "Govt gets things done vs govt accountable to citizens",
+    "question": "Which of the following statements is closest to your view? Statement 1: It is more important to have a government that can get things done, even if we have no influence over what it does. Statement 2: It is more important for citizens to be able to hold government accountable, even if that means it makes decisions more slowly.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q19A": {
+    "description": "Government like a boss vs like an employee",
+    "question": "Which of the following statements is closest to your view? Statement 1: The government is like the people’s boss. People should respect the government and do what it directs. Statement 2: The government is like the people’s employee. It should respect the citizens and do what they request.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q19B": {
+    "description": "Elected officials follow voter demands vs follow own ideas",
+    "question": "Which of the following statements is closest to your view? Choose Statement 1 or Statement 2. Statement 1: Statement 1: Our elected officials should listen to voters’ views and do what they demand. Statement 2: Our elected leaders should follow their own ideas in deciding what is best for the country.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+
+  "Q20": {
+    "description": "Men only as leaders vs women leaders",
+    "question": "Which of the following statements is closest to your view? Statement 1: Men make better political leaders than women, and should be elected rather than women. Statement 2: Women should have the same chance of being elected to political office as men.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q21A": {
+    "description": "Men have more right to job",
+    "question": "Do you agree or disagree that when jobs are scarce, men should have more rights to a job than women?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q21B": {
+    "description": "Women have equal right to land",
+    "question": "Do you agree or disagree that: Women should have the same rights as men to own and inherit land.",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q22A": {
+    "description": "Reject one-party rule",
+    "question": "There are many ways to govern a country. Would you disapprove or approve of the following alternative: Only one political party is allowed to stand for election and hold office?",
+    "values": {
+      "1": "Strongly disapprove",
+      "2": "Disapprove",
+      "3": "Neither approve nor disapprove",
+      "4": "Approve",
+      "5": "Strongly approve",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q22B": {
+    "description": "Reject military rule",
+    "question": "There are many ways to govern a country. Would you disapprove or approve of the following alternative: The army comes in to govern the country?",
+    "values": {
+      "1": "Strongly disapprove",
+      "2": "Disapprove",
+      "3": "Neither approve nor disapprove",
+      "4": "Approve",
+      "5": "Strongly approve",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q22C": {
+    "description": "Reject one-man rule",
+    "question": "There are many ways to govern a country. Would you disapprove or approve of the following alternative: Elections and [Parliament] are abolished so that the [president] can decide everything?",
+    "values": {
+      "1": "Strongly disapprove",
+      "2": "Disapprove",
+      "3": "Neither approve nor disapprove",
+      "4": "Approve",
+      "5": "Strongly approve",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q23": {
+    "description": "Support for democracy",
+    "question": "Which of these three statements is closest to your own opinion? Statement 1: Democracy is preferable to any other kind of government. Statement 2: In some circumstances, a non-democratic government can be preferable. Statement 3: For someone like me, it doesn’t matter what kind of government we have.",
+    "values": {
+      "1": "Doesn’t matter",
+      "2": "Sometimes non-democratic preferable",
+      "3": "Democracy preferable",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q24": {
+    "description": "Choose leaders through elections vs other methods",
+    "question": "Which of the following statements is closest to your view? Statement 1: We should choose our leaders in this country through regular, open, and honest elections. Statement 2: Since elections sometimes produce bad results, we should adopt other methods for choosing this country’s leaders.",
+    "values": {
+      "1": "Agree very strongly with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Agree very strongly with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q25": {
+    "description": "Political parties divisive vs many parties needed",
+    "question": "Which of the following statements is closest to your view? Statement 1: Political parties create division and confusion; it is therefore unnecessary to have many political parties in Kenya. Statement 2: Many political parties are needed to make sure that Kenyans have real choices in who governs them.",
+    "values": {
+      "1": "Agree very strongly with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Agree very strongly with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q26": {
+    "description": "Democracy needs political party turnover vs ok if one party always wins",
+    "question": "Which of the following statements is closest to your view? Statement 1: In a democracy, it is better if power sometimes changes hands in elections from one political party to another. Statement 2: In a democracy, as long as a government is elected by the people in a free and fair election, it doesn’t matter if one party always wins and continuously governs the country.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q27A": {
+    "description": "Parliament makes laws vs president does",
+    "question": "Which of the following statements is closest to your view? Statement 1: Members of Parliament represent the people; therefore they should make laws for this country, even if the president does not agree. Statement 2: Since the president represents all of us, he should pass laws without worrying about what Parliament thinks.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q27B": {
+    "description": "President monitored by parliament vs free to act on own",
+    "question": "Which of the following statements is closest to your view? Statement 1: Parliament should ensure that the president explains to it on a regular basis how [his] government spends taxpayers’ money. Statement 2: The president should be able to devote full attention to developing the country rather than wasting time justifying [his] actions.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q27C": {
+    "description": "Opposition parties examine government vs cooperate",
+    "question": "Which of the following statements is closest to your view? Statement 1: After losing an election, opposition parties should monitor and criticize the government in order to hold it accountable. Statement 2: Once an election is over, opposition parties and politicians should accept defeat and cooperate with government to help it develop the country.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+
+  "Q28": {
+    "description": "President free to act vs obey the laws and courts",
+    "question": "Which of the following statements is closest to your view?\nStatement 1: Since the [president] was elected to lead the country, [he] should not be bound by laws or court decisions that [he] thinks are wrong.\nStatement 2: The [president] must always obey the laws and the courts, even if [he] thinks they are wrong.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q29B": {
+    "description": "Armed forces never intervene vs when leaders abuse power",
+    "question": "Which of the following statements is closest to your view?\nStatement 1: The country’s armed forces should never intervene in the country’s political process.\nStatement 2: It is legitimate for the armed forces to take control of government when elected leaders abuse power for their own ends.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q30": {
+    "description": "Extent of democracy",
+    "question": "Now let us speak about the political system in this country. In your opinion how much of a democracy is this country today?",
+    "values": {
+      "1": "Not a democracy",
+      "2": "A democracy, with major problems",
+      "3": "A democracy, but with minor problems",
+      "4": "A full democracy",
+      "8": "Do not understand question/do not understand what ‘democracy’ is",
+      "9": "Don’t know",
+      "98": "Refused",
+      "-1": "Missing"
+    }
+  },
+  "Q31": {
+    "description": "Satisfaction with democracy",
+    "question": "Overall, how satisfied are you with the way democracy works in this country?",
+    "values": {
+      "0": "This country is not a democracy",
+      "1": "Not at all satisfied",
+      "2": "Not very satisfied",
+      "3": "Fairly satisfied",
+      "4": "Very satisfied",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q32A": {
+    "description": "Level of democracy compared to five years ago",
+    "question": "Do you think that this country is more democratic, less democratic, or about the same than it was five years ago?",
+    "values": {
+      "1": "Much less democratic",
+      "2": "Somewhat less democratic",
+      "3": "About the same",
+      "4": "Somewhat more democratic",
+      "5": "Much more democratic",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q32B": {
+    "description": "Level of democracy in five years’ time",
+    "question": "Do you think that in five years’ time this country will be more democratic than it is now, less democratic, or about the same?",
+    "values": {
+      "1": "Much less democratic",
+      "2": "Somewhat less democratic",
+      "3": "About the same",
+      "4": "Somewhat more democratic",
+      "5": "Much more democratic",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q33A": {
+    "description": "How often party competition leads to conflict",
+    "question": "In your opinion, how often, in this country does competition between political parties lead to violent conflict?",
+    "values": {
+      "0": "Never",
+      "1": "Rarely",
+      "2": "Often",
+      "3": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q33B": {
+    "description": "How often president ignores laws",
+    "question": "In your opinion, how often, in this country does the president ignore the courts and laws of this country?",
+    "values": {
+      "0": "Never",
+      "1": "Rarely",
+      "2": "Often",
+      "3": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q33C": {
+    "description": "How often president ignores parliament",
+    "question": "In your opinion, how often, in this country does the president ignore Parliament and just do what he wants?",
+    "values": {
+      "0": "Never",
+      "1": "Rarely",
+      "2": "Often",
+      "3": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q33D": {
+    "description": "How often careful what you say",
+    "question": "In your opinion, how often, in this country do people have to be careful of what they say about politics?",
+    "values": {
+      "0": "Never",
+      "1": "Rarely",
+      "2": "Often",
+      "3": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+"Q33E": {
+    "description": "How often people treated unequally under the law",
+    "question": "In your opinion, how often, in this country: are people treated unequally under the law?",
+    "values": {
+      "0": "Never",
+      "1": "Rarely",
+      "2": "Often",
+      "3": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q33F": {
+    "description": "How often officials unpunished",
+    "question": "In your opinion, how often, in this country: do officials who commit crimes go unpunished?",
+    "values": {
+      "0": "Never",
+      "1": "Rarely",
+      "2": "Often",
+      "3": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q33G": {
+    "description": "How often ordinary people unpunished",
+    "question": "In your opinion, how often, in this country: do ordinary people who break the law go unpunished?",
+    "values": {
+      "0": "Never",
+      "1": "Rarely",
+      "2": "Often",
+      "3": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q33H": {
+    "description": "How free is news media",
+    "question": "In your opinion, how free is the news media in this country to report and comment on the news without censorship or interference by the government?",
+    "values": {
+      "0": "Not at all free",
+      "1": "Not very free",
+      "2": "Somewhat free",
+      "3": "Completely free",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q33I": {
+    "description": "Treated unfairly by government based on economic status",
+    "question": "How often, if ever, are people treated unfairly by the government based on their economic status, that is, how rich or poor they are?",
+    "values": {
+      "0": "Never",
+      "1": "Sometimes",
+      "2": "Often",
+      "3": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q34A": {
+    "description": "MPs listen",
+    "question": "How much of the time do you think the members of Parliament try their best to listen to what ordinary people have to say?",
+    "values": {
+      "0": "Never",
+      "1": "Only sometimes",
+      "2": "Often",
+      "3": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q34B": {
+    "description": "Local government councillors listen",
+    "question": "How much of the time do you think the members of local government council try their best to listen to what ordinary people have to say?",
+    "values": {
+      "0": "Never",
+      "1": "Only sometimes",
+      "2": "Often",
+      "3": "Always",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q77": {
+    "description": "Perceived influence of China's economic activities on the national economy",
+    "question": "How much influence do you think China’s economic activities in this country have on our economy?",
+    "values": {
+      "0": "None",
+      "1": "A little",
+      "2": "Some",
+      "3": "A lot",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q78A": {
+    "description": "Perceived economic and political influence of China on the country",
+    "question": "Do you think that the economic and political influence of China on this country is mostly positive or mostly negative?",
+    "values": {
+      "1": "Very negative",
+      "2": "Somewhat negative",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat positive",
+      "5": "Very positive",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q78B": {
+    "description": "Perceived economic and political influence of the United States on the country",
+    "question": "Do you think that the economic and political influence of the United States on this country is mostly positive or mostly negative?",
+    "values": {
+      "1": "Very negative",
+      "2": "Somewhat negative",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat positive",
+      "5": "Very positive",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q78C": {
+    "description": "Perceived economic and political influence of Japan on the country",
+    "question": "Do you think that the economic and political influence of Japan on this country is mostly positive or mostly negative?",
+    "values": {
+      "1": "Very negative",
+      "2": "Somewhat negative",
+      "3": "Neither positive nor negative",
+      "4": "Somewhat positive",
+      "5": "Very positive",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q78D": {
+    "description": "Awareness of Japan providing loans or development assistance to the country",
+    "question": "To your knowledge, does Japan give loans or development assistance to this country?",
+    "values": {
+      "0": "No",
+      "1": "Yes",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q78E": {
+    "description": "Perception of Japan placing conditions on loans or assistance compared to other donors",
+    "question": "When the government of Japan gives loans or development assistance to this country, do they put more or fewer requirements compared to other donor countries?",
+    "values": {
+      "0": "Far fewer requirements",
+      "1": "Somewhat fewer requirements",
+      "2": "About the same number of requirements",
+      "3": "Somewhat more requirements",
+      "4": "Many more requirements",
+      "7": "Not applicable",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  }
+}
+
+

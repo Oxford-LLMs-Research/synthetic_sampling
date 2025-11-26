@@ -1,0 +1,119 @@
+{
+  "Q74A": {
+    "description": "Frequency of getting news from radio",
+    "question": "How often do you get news from the radio?",
+    "values": {
+      "0": "Never",
+      "1": "Less than once a month",
+      "2": "A few times a month",
+      "3": "A few times a week",
+      "4": "Every day",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q74B": {
+    "description": "Frequency of getting news from television",
+    "question": "How often do you get news from television?",
+    "values": {
+      "0": "Never",
+      "1": "Less than once a month",
+      "2": "A few times a month",
+      "3": "A few times a week",
+      "4": "Every day",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q74C": {
+    "description": "Frequency of getting news from print newspapers",
+    "question": "How often do you get news from print newspapers?",
+    "values": {
+      "0": "Never",
+      "1": "Less than once a month",
+      "2": "A few times a month",
+      "3": "A few times a week",
+      "4": "Every day",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q74D": {
+    "description": "Frequency of getting news from the internet",
+    "question": "How often do you get news from the internet?",
+    "values": {
+      "0": "Never",
+      "1": "Less than once a month",
+      "2": "A few times a month",
+      "3": "A few times a week",
+      "4": "Every day",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q74E": {
+    "description": "Frequency of getting news from social media",
+    "question": "How often do you get news from social media such as Facebook, Twitter, WhatsApp, or others?",
+    "values": {
+      "0": "Never",
+      "1": "Less than once a month",
+      "2": "A few times a month",
+      "3": "A few times a week",
+      "4": "Every day",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q75": {
+    "description": "Opinion on whether government information should be for official use only",
+    "question": "Should information held by public authorities only be used by government officials and not shared with the public?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q76A": {
+    "description": "Opinion on making local government budgets public",
+    "question": "Should budgets and expenditures for the local government council be made public?",
+    "values": {
+      "0": "No, this information should only be for government use",
+      "1": "Yes, this information should be available to the public",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q76B": {
+    "description": "Opinion on making local government bids and contracts public",
+    "question": "Should all bids and contracts for government-funded projects be made public?",
+    "values": {
+      "0": "No, this information should only be for government use",
+      "1": "Yes, this information should be available to the public",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q76C": {
+    "description": "Opinion on making salaries of government officials and teachers public",
+    "question": "Should salary information for teachers and local government officials be made public?",
+    "values": {
+      "0": "No, this information should only be for government use",
+      "1": "Yes, this information should be available to the public",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  }
+}

@@ -1,0 +1,351 @@
+{
+  "P23ST.A": {
+    "description": "Opinion of the United States",
+    "question": "What is your overall opinion of the United States?",
+    "values": {
+      "0": "No answer",
+      "1": "Very favorable",
+      "2": "Somewhat favorable",
+      "3": "Somewhat unfavorable",
+      "4": "Very unfavorable",
+      "8": "Do not know"
+    }
+  },
+  "P23ST.B": {
+    "description": "Opinion of Russia",
+    "question": "What is your overall opinion of Russia?",
+    "values": {
+      "0": "No answer",
+      "1": "Very favorable",
+      "2": "Somewhat favorable",
+      "3": "Somewhat unfavorable",
+      "4": "Very unfavorable",
+      "8": "Do not know"
+    }
+  },
+  "P23ST.C": {
+    "description": "Opinion of China",
+    "question": "What is your overall opinion of China?",
+    "values": {
+      "0": "No answer",
+      "1": "Very favorable",
+      "2": "Somewhat favorable",
+      "3": "Somewhat unfavorable",
+      "4": "Very unfavorable",
+      "8": "Do not know"
+    }
+  },
+  "P23ST.D": {
+    "description": "Opinion of the European Union",
+    "question": "What is your overall opinion of the European Union?",
+    "values": {
+      "0": "No answer",
+      "1": "Very favorable",
+      "2": "Somewhat favorable",
+      "3": "Somewhat unfavorable",
+      "4": "Very unfavorable",
+      "8": "Do not know"
+    }
+  },
+  "P23ST.E": {
+    "description": "Opinion of Ukraine",
+    "question": "What is your overall opinion of Ukraine?",
+    "values": {
+      "0": "No answer",
+      "1": "Very favorable",
+      "2": "Somewhat favorable",
+      "3": "Somewhat unfavorable",
+      "4": "Very unfavorable",
+      "8": "Do not know"
+    }
+  },
+  "P23ST.F": {
+    "description": "Opinion of Venezuela",
+    "question": "What is your overall opinion of Venezuela?",
+    "values": {
+      "0": "No answer",
+      "1": "Very favorable",
+      "2": "Somewhat favorable",
+      "3": "Somewhat unfavorable",
+      "4": "Very unfavorable",
+      "8": "Do not know"
+    }
+  },
+  "P24ST.A": {
+    "description": "Bilateral relations: Country and the United States",
+    "question": "How would you rate the relationship between your country and the United States?",
+    "values": {
+      "0": "No answer",
+      "1": "Very good",
+      "2": "Fairly good",
+      "3": "Fairly poor",
+      "4": "Very poor",
+      "8": "Do not know"
+    }
+  },
+  "P24ST.B": {
+    "description": "Bilateral relations: Country and Russia",
+    "question": "How would you rate the relationship between your country and Russia?",
+    "values": {
+      "0": "No answer",
+      "1": "Very good",
+      "2": "Fairly good",
+      "3": "Fairly poor",
+      "4": "Very poor",
+      "8": "Do not know"
+    }
+  },
+  "P24ST.C": {
+    "description": "Bilateral relations: Country and China",
+    "question": "How would you rate the relationship between your country and China?",
+    "values": {
+      "0": "No answer",
+      "1": "Very good",
+      "2": "Fairly good",
+      "3": "Fairly poor",
+      "4": "Very poor",
+      "8": "Do not know"
+    }
+  },
+  "P24ST.D": {
+    "description": "Bilateral relations: Country and the European Union",
+    "question": "How would you rate the relationship between your country and the European Union?",
+    "values": {
+      "0": "No answer",
+      "1": "Very good",
+      "2": "Fairly good",
+      "3": "Fairly poor",
+      "4": "Very poor",
+      "8": "Do not know"
+    }
+  },
+  "P24ST.E": {
+    "description": "Bilateral relations: Country and Venezuela",
+    "question": "How would you rate the relationship between your country and Venezuela?",
+    "values": {
+      "0": "No answer",
+      "1": "Very good",
+      "2": "Fairly good",
+      "3": "Fairly poor",
+      "4": "Very poor",
+      "8": "Do not know",
+      "9": "Not applicable"
+    }
+  },
+  "P25N.A": {
+    "description": "Economic relations: Country and the United States",
+    "question": "How would you rate the economic relationship between your country and the United States?",
+    "values": {
+      "0": "No answer",
+      "1": "Very good",
+      "2": "Fairly good",
+      "3": "Fairly poor",
+      "4": "Very poor",
+      "8": "Do not know"
+    }
+  },
+  "P25N.B": {
+    "description": "Economic relations: Country and Russia",
+    "question": "How would you rate the economic relationship between your country and Russia?",
+    "values": {
+      "0": "No answer",
+      "1": "Very good",
+      "2": "Fairly good",
+      "3": "Fairly poor",
+      "4": "Very poor",
+      "8": "Do not know"
+    }
+  },
+  "P25N.C": {
+    "description": "Economic relations: Country and China",
+    "question": "How would you rate the economic relationship between your country and China?",
+    "values": {
+      "0": "No answer",
+      "1": "Very good",
+      "2": "Fairly good",
+      "3": "Fairly poor",
+      "4": "Very poor",
+      "8": "Do not know"
+    }
+  },
+  "P26SDN.A": {
+    "description": "Perception of China as a reliable partner",
+    "question": "How much do you think China is a reliable partner for your country?",
+    "values": {
+      "0": "No answer",
+      "1": "A great deal",
+      "2": "A fair amount",
+      "3": "Not very much / Only a little",
+      "4": "Not at all",
+      "8": "Do not know"
+    }
+  },
+  "P26SDN.B": {
+    "description": "Perception of Chinese interference",
+    "question": "How much do you think China interferes in your country’s internal affairs?",
+    "values": {
+      "0": "No answer",
+      "1": "A great deal",
+      "2": "A fair amount",
+      "3": "Not very much / Only a little",
+      "4": "Not at all",
+      "8": "Do not know"
+    }
+  },
+  "P26SDN.C": {
+    "description": "Perception of China's respect for international commitments",
+    "question": "How much do you think China upholds its international commitments?",
+    "values": {
+      "0": "No answer",
+      "1": "A great deal",
+      "2": "A fair amount",
+      "3": "Not very much / Only a little",
+      "4": "Not at all",
+      "8": "Do not know"
+    }
+  },
+  "P26SDN.D": {
+    "description": "Perception of China's contribution to regional stability",
+    "question": "How much do you think China contributes to stability in Latin America?",
+    "values": {
+      "0": "No answer",
+      "1": "A great deal",
+      "2": "A fair amount",
+      "3": "Not very much / Only a little",
+      "4": "Not at all",
+      "8": "Do not know"
+    }
+  },
+  "P26SDN.E": {
+    "description": "Perception of China as a political model",
+    "question": "How much do you think China provides a good political model for your country?",
+    "values": {
+      "0": "No answer",
+      "1": "A great deal",
+      "2": "A fair amount",
+      "3": "Not very much / Only a little",
+      "4": "Not at all",
+      "8": "Do not know"
+    }
+  },
+  "P26SDN.F": {
+    "description": "Perception of China as an economic model",
+    "question": "How much do you think China provides a good economic model for your country?",
+    "values": {
+      "0": "No answer",
+      "1": "A great deal",
+      "2": "A fair amount",
+      "3": "Not very much / Only a little",
+      "4": "Not at all",
+      "8": "Do not know"
+    }
+  },
+  "P27SDN": {
+    "description": "Preference for international alignment",
+    "question": "If you could only choose one, should your country have a closer relationship with the United States or with China?",
+    "values": {
+      "0": "No answer",
+      "1": "United States",
+      "2": "China",
+      "3": "Both (volunteered)",
+      "4": "Neither (volunteered)",
+      "8": "Do not know"
+    }
+  },
+  "P28STIN": {
+    "description": "Perception of regional integration trend",
+    "question": "In the last five years, do you think your country’s integration with other countries in the region has increased or decreased?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Increased a lot",
+      "2": "Increased somewhat",
+      "3": "Decreased somewhat",
+      "4": "Decreased very much"
+    }
+  },
+  "P29STIN.A": {
+    "description": "Support for integration with Latin American countries",
+    "question": "Do you support or oppose your country’s integration with other countries in Latin America?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Very much in favor",
+      "2": "Somewhat in favor",
+      "3": "Somewhat against",
+      "4": "Very much against"
+    }
+  },
+  "P29STIN.B": {
+    "description": "Support for integration with non–Latin American countries",
+    "question": "Do you support or oppose your country’s integration with countries outside Latin America?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Very much in favor",
+      "2": "Somewhat in favor",
+      "3": "Somewhat against",
+      "4": "Very much against"
+    }
+  },
+  "P31INN.1": {
+    "description": "Perceived benefits of international integration: full set of areas",
+    "question": "Which of the following areas do you think depend on your country integrating with other countries?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Being able to study or work in another country",
+      "2": "Being able to buy foreign products at lower prices",
+      "3": "Creating more jobs",
+      "4": "Increasing wages",
+      "5": "Access to a wider variety of goods",
+      "6": "More and better access to technology"
+    }
+  },
+  "P31INN.2": {
+    "description": "Perceived benefits of international integration: subset without studying/working abroad",
+    "question": "Which of the following outcomes do you think depend on your country integrating with other countries?",
+    "values": {
+      "0": "Do not know / No answer",
+      "2": "Being able to buy foreign products at lower prices",
+      "3": "Creating more jobs",
+      "4": "Increasing wages",
+      "5": "Access to a wider variety of goods",
+      "6": "More and better access to technology"
+    }
+  },
+  "P31INN.3": {
+    "description": "Perceived benefits of international integration: subset starting from job creation",
+    "question": "Which of these areas do you think depend on your country integrating with other countries?",
+    "values": {
+      "0": "Do not know / No answer",
+      "3": "Creating more jobs",
+      "4": "Increasing wages",
+      "5": "Access to a wider variety of goods",
+      "6": "More and better access to technology"
+    }
+  },
+  "P31INN.4": {
+    "description": "Perceived benefits of international integration: subset focused on income and access",
+    "question": "Which of these areas do you think depend on your country integrating with other countries?",
+    "values": {
+      "0": "Do not know / No answer",
+      "4": "Increasing wages",
+      "5": "Access to a wider variety of goods",
+      "6": "More and better access to technology"
+    }
+  },
+  "P31INN.5": {
+    "description": "Perceived benefits of international integration: variety of goods and technology",
+    "question": "Which of these areas do you think depend on your country integrating with other countries?",
+    "values": {
+      "0": "Do not know / No answer",
+      "5": "Access to a wider variety of goods",
+      "6": "More and better access to technology"
+    }
+  },
+  "P31INN.6": {
+    "description": "Perceived benefits of international integration: only technology access",
+    "question": "Do you think better access to technology depends on your country integrating with other countries?",
+    "values": {
+      "0": "Do not know / No answer",
+      "6": "More and better access to technology"
+    }
+  }
+}

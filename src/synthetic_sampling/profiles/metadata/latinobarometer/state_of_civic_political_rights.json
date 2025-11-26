@@ -1,0 +1,145 @@
+{
+  "P41ST.A": {
+    "description": "Perceived guarantee of political participation",
+    "question": "To what extent do you think freedom of political participation is guaranteed in your country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Fully guaranteed",
+      "2": "Somewhat guaranteed",
+      "3": "Not guaranteed",
+      "4": "Not at all guaranteed"
+    }
+  },
+  "P41ST.B": {
+    "description": "Perceived guarantee of occupational choice",
+    "question": "To what extent do you think freedom to choose one’s occupation is guaranteed in your country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Fully guaranteed",
+      "2": "Somewhat guaranteed",
+      "3": "Not guaranteed",
+      "4": "Not at all guaranteed"
+    }
+  },
+  "P41ST.C": {
+    "description": "Perceived guarantee of environmental protection",
+    "question": "To what extent do you think environmental protection is guaranteed in your country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Fully guaranteed",
+      "2": "Somewhat guaranteed",
+      "3": "Not guaranteed",
+      "4": "Not at all guaranteed"
+    }
+  },
+  "P41ST.D": {
+    "description": "Perceived guarantee of private property protection",
+    "question": "To what extent do you think private property is protected in your country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Fully guaranteed",
+      "2": "Somewhat guaranteed",
+      "3": "Not guaranteed",
+      "4": "Not at all guaranteed"
+    }
+  },
+  "P41ST.E": {
+    "description": "Perceived guarantee of fair wealth distribution",
+    "question": "To what extent do you think there is a just and fair distribution of wealth in your country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Fully guaranteed",
+      "2": "Somewhat guaranteed",
+      "3": "Not guaranteed",
+      "4": "Not at all guaranteed"
+    }
+  },
+  "P41ST.F": {
+    "description": "Perceived gender equality",
+    "question": "To what extent do you think equality between men and women is guaranteed in your country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Fully guaranteed",
+      "2": "Somewhat guaranteed",
+      "3": "Not guaranteed",
+      "4": "Not at all guaranteed"
+    }
+  },
+  "P41ST.G": {
+    "description": "Perceived equality of opportunity regardless of origin",
+    "question": "To what extent do you think people have equal life chances regardless of their origin in your country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Fully guaranteed",
+      "2": "Somewhat guaranteed",
+      "3": "Not guaranteed",
+      "4": "Not at all guaranteed"
+    }
+  },
+  "P41ST.H": {
+    "description": "Perceived guarantee of freedom of speech",
+    "question": "To what extent do you think freedom of speech is guaranteed always and everywhere in your country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Fully guaranteed",
+      "2": "Somewhat guaranteed",
+      "3": "Not guaranteed",
+      "4": "Not at all guaranteed"
+    }
+  },
+  "P41ST.I": {
+    "description": "Perceived guarantee of freedom of religion",
+    "question": "To what extent do you think freedom of religion or faith is guaranteed in your country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Fully guaranteed",
+      "2": "Somewhat guaranteed",
+      "3": "Not guaranteed",
+      "4": "Not at all guaranteed"
+    }
+  },
+  "P41ST.J": {
+    "description": "Perceived guarantee of protection against crime",
+    "question": "To what extent do you think people are protected against crime in your country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Fully guaranteed",
+      "2": "Somewhat guaranteed",
+      "3": "Not guaranteed",
+      "4": "Not at all guaranteed"
+    }
+  },
+  "P41ST.K": {
+    "description": "Perceived guarantee of social security",
+    "question": "To what extent do you think social security is guaranteed in your country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Fully guaranteed",
+      "2": "Somewhat guaranteed",
+      "3": "Not guaranteed",
+      "4": "Not at all guaranteed"
+    }
+  },
+  "P41ST.L": {
+    "description": "Perceived guarantee of solidarity with the poor and needy",
+    "question": "To what extent do you think there is solidarity with the poor and needy in your country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Fully guaranteed",
+      "2": "Somewhat guaranteed",
+      "3": "Not guaranteed",
+      "4": "Not at all guaranteed"
+    }
+  },
+  "P41ST.M": {
+    "description": "Perceived chance to get a job",
+    "question": "To what extent do you think people have a fair chance to get a job in your country?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Fully guaranteed",
+      "2": "Somewhat guaranteed",
+      "3": "Not guaranteed",
+      "4": "Not at all guaranteed"
+    }
+  }
+}

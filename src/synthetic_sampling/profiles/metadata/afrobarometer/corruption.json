@@ -1,0 +1,170 @@
+{
+  "Q38A": {
+    "description": "Perceived corruption in the Office of the President",
+    "question": "How many people in the Office of the President, including the president and officials in their office, do you think are involved in corruption?",
+    "values": {
+      "0": "None",
+      "1": "Some of them",
+      "2": "Most of them",
+      "3": "All of them",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q38B": {
+    "description": "Perceived corruption in Parliament",
+    "question": "How many members of Parliament do you think are involved in corruption?",
+    "values": {
+      "0": "None",
+      "1": "Some of them",
+      "2": "Most of them",
+      "3": "All of them",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q38C": {
+    "description": "Perceived corruption among civil servants",
+    "question": "How many civil servants do you think are involved in corruption?",
+    "values": {
+      "0": "None",
+      "1": "Some of them",
+      "2": "Most of them",
+      "3": "All of them",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q38D": {
+    "description": "Perceived corruption among local government councillors",
+    "question": "How many local government councillors do you think are involved in corruption?",
+    "values": {
+      "0": "None",
+      "1": "Some of them",
+      "2": "Most of them",
+      "3": "All of them",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q38E": {
+    "description": "Perceived corruption in the police force",
+    "question": "How many police officers do you think are involved in corruption?",
+    "values": {
+      "0": "None",
+      "1": "Some of them",
+      "2": "Most of them",
+      "3": "All of them",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q38F": {
+    "description": "Perceived corruption among judges and magistrates",
+    "question": "How many judges and magistrates do you think are involved in corruption?",
+    "values": {
+      "0": "None",
+      "1": "Some of them",
+      "2": "Most of them",
+      "3": "All of them",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q38G": {
+    "description": "Perceived corruption among tax officials",
+    "question": "How many tax officials, such as those from the national revenue authority, do you think are involved in corruption?",
+    "values": {
+      "0": "None",
+      "1": "Some of them",
+      "2": "Most of them",
+      "3": "All of them",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q38H": {
+    "description": "Perceived corruption among traditional leaders",
+    "question": "How many traditional leaders do you think are involved in corruption?",
+    "values": {
+      "0": "None",
+      "1": "Some of them",
+      "2": "Most of them",
+      "3": "All of them",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q38I": {
+    "description": "Perceived corruption among religious leaders",
+    "question": "How many religious leaders do you think are involved in corruption?",
+    "values": {
+      "0": "None",
+      "1": "Some of them",
+      "2": "Most of them",
+      "3": "All of them",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q38J": {
+    "description": "Perceived corruption among business executives",
+    "question": "How many business executives do you think are involved in corruption?",
+    "values": {
+      "0": "None",
+      "1": "Some of them",
+      "2": "Most of them",
+      "3": "All of them",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q38K": {
+    "description": "Perceived corruption among non-governmental organizations",
+    "question": "How many people in non-governmental organizations do you think are involved in corruption?",
+    "values": {
+      "0": "None",
+      "1": "Some of them",
+      "2": "Most of them",
+      "3": "All of them",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q39A": {
+    "description": "Perception of corruption trends over the past year",
+    "question": "In your opinion, over the past year, has the level of corruption in this country increased, decreased, or stayed the same?",
+    "values": {
+      "1": "Increased a lot",
+      "2": "Increased somewhat",
+      "3": "Stayed the same",
+      "4": "Decreased somewhat",
+      "5": "Decreased a lot",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  },
+  "Q39B": {
+    "description": "Safety of reporting corruption",
+    "question": "In this country, can ordinary people report incidents of corruption without fear, or do they risk retaliation or other negative consequences if they speak out?",
+    "values": {
+      "0": "Can report without fear",
+      "1": "Risk retaliation or other negative consequences",
+      "8": "Refused",
+      "9": "Don’t know",
+      "-1": "Missing"
+    }
+  }
+}

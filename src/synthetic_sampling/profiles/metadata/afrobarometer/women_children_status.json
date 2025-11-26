@@ -1,0 +1,257 @@
+{
+  "Q49A": {
+    "description": "Perceived equality of job opportunities between men and women",
+    "question": "Do women and men in this country have equal opportunities to get a job that pays a wage or salary?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q49B": {
+    "description": "Perceived equality of land ownership and inheritance rights between men and women",
+    "question": "Do women and men in this country have equal opportunities to own and inherit land?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q50A": {
+    "description": "Likelihood of increased community standing for a woman who runs for office",
+    "question": "If a woman in your community runs for elected office, how likely is it that she and her family will gain standing in the community?",
+    "values": {
+      "1": "Very unlikely",
+      "2": "Somewhat unlikely",
+      "3": "Somewhat likely",
+      "4": "Very likely",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q50B": {
+    "description": "Likelihood of criticism or harassment for a woman who runs for office",
+    "question": "If a woman in your community runs for elected office, how likely is it that she will be criticized, called names, or harassed by others in the community?",
+    "values": {
+      "1": "Very unlikely",
+      "2": "Somewhat unlikely",
+      "3": "Somewhat likely",
+      "4": "Very likely",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q50C": {
+    "description": "Likelihood of family problems for a woman who runs for office",
+    "question": "If a woman in your community runs for elected office, how likely is it that she will face problems with her family?",
+    "values": {
+      "1": "Very unlikely",
+      "2": "Somewhat unlikely",
+      "3": "Somewhat likely",
+      "4": "Very likely",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q51A": {
+    "description": "Opinion on whether the government should do more or less for women's rights and equality",
+    "question": "Should the government and elected officials do more, less, or about the same as they are doing now to advance the rights and equality of women?",
+    "values": {
+      "1": "Much less",
+      "2": "Somewhat less",
+      "3": "About the right amount",
+      "4": "Somewhat more",
+      "5": "Much more",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q51B": {
+    "description": "Most important women’s rights issue that government should address",
+    "question": "Which women's rights and equality issues is the most important for the government and society to address?",
+    "values": {
+      "0": "None of these/There are no issues for government to address",
+      "1": "Unequal access to education",
+      "2": "Unequal opportunities or pay in the workplace",
+      "3": "Too few women in influential positions in government",
+      "4": "Unequal rights of property ownership and inheritance",
+      "5": "Gender-based violence",
+      "6": "Some other issue",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q52A": {
+    "description": "Justification of parents using physical discipline on children",
+    "question": "Do you think it is justified for parents to use physical force to discipline their children?",
+    "values": {
+      "1": "Always justified",
+      "2": "Sometimes justified",
+      "3": "Never justified",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q52B": {
+    "description": "Justification of a man using physical discipline on his wife",
+    "question": "Do you think it is justified for a man to use physical discipline on his wife if she has done something he doesn’t like or thinks is wrong?",
+    "values": {
+      "1": "Always justified",
+      "2": "Sometimes justified",
+      "3": "Never justified",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q53A": {
+    "description": "Perceived prevalence of violence against women",
+    "question": "How common do you think it is for men to use violence against women and girls in the home or in the community?",
+    "values": {
+      "1": "Very common",
+      "2": "Somewhat common",
+      "3": "Not very common",
+      "4": "Not at all common",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q53B": {
+    "description": "Likelihood that police take reports of gender-based violence seriously",
+    "question": "If a woman in your community reports being a victim of gender-based violence, how likely is it that the police will take her case seriously?",
+    "values": {
+      "1": "Very unlikely",
+      "2": "Somewhat unlikely",
+      "3": "Somewhat likely",
+      "4": "Very likely",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q53C": {
+    "description": "Likelihood of criticism or harassment for a woman reporting gender-based violence",
+    "question": "If a woman in your community reports being a victim of gender-based violence, how likely is it that she will be criticized, harassed, or shamed by others in the community?",
+    "values": {
+      "1": "Very unlikely",
+      "2": "Somewhat unlikely",
+      "3": "Somewhat likely",
+      "4": "Very likely",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q54": {
+    "description": "Perception of domestic violence as a private matter vs. a criminal matter",
+    "question": "Which of the following statements is closest to your view? \nStatement 1: Domestic violence is a private matter that should be resolved within the family. \nStatement 2: Domestic violence is a criminal matter that requires the involvement of law enforcement agencies.",
+    "values": {
+      "1": "Strongly agree with Statement 1",
+      "2": "Agree with Statement 1",
+      "3": "Agree with Statement 2",
+      "4": "Strongly agree with Statement 2",
+      "5": "Agree with neither",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q55A": {
+    "description": "Frequency of adults using physical force to discipline children in the community",
+    "question": "How frequently do adults use physical force to discipline children in your community or neighborhood?",
+    "values": {
+      "1": "Very frequently",
+      "2": "Somewhat frequently",
+      "3": "Not very frequently",
+      "4": "Not at all frequently",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q55B": {
+    "description": "Frequency of child abuse, mistreatment, or neglect in the community",
+    "question": "How frequently are children abused, mistreated, or neglected in your community or neighborhood?",
+    "values": {
+      "1": "Very frequently",
+      "2": "Somewhat frequently",
+      "3": "Not very frequently",
+      "4": "Not at all frequently",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q55C": {
+    "description": "Frequency of school-age children not attending school in the community",
+    "question": "How frequently do children who should be in school not attend school in your community or neighborhood?",
+    "values": {
+      "1": "Very frequently",
+      "2": "Somewhat frequently",
+      "3": "Not very frequently",
+      "4": "Not at all frequently",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q56A": {
+    "description": "Availability of help for abused, mistreated, or neglected children",
+    "question": "In general, are people in this community able to get help for children who are abused, mistreated, or neglected?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q56B": {
+    "description": "Availability of support for children with physical disabilities",
+    "question": "In your community, are children with physical disabilities generally able to get the support they need to succeed in life?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  },
+  "Q56C": {
+    "description": "Availability of support for children and adults with mental or emotional problems",
+    "question": "In your community, are children and adults with mental or emotional problems generally able to get the help they need to have a good life?",
+    "values": {
+      "1": "Strongly disagree",
+      "2": "Disagree",
+      "3": "Neither agree nor disagree",
+      "4": "Agree",
+      "5": "Strongly agree",
+      "8": "Refused",
+      "9": "Don't know",
+      "-1": "Missing"
+    }
+  }
+}

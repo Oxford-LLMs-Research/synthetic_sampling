@@ -1,0 +1,117 @@
+{
+  "P57ST.1": {
+    "description": "Perceived most frequent type of violence in local area (full set)",
+    "question": "Which type of violence do you think is most frequent where you live?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "Bullying",
+      "2": "Domestic violence against children",
+      "3": "Domestic violence against women",
+      "4": "Violence in the streets",
+      "5": "Organized crime",
+      "6": "Maras or gang violence",
+      "7": "State or police violence and abuse",
+      "8": "Verbal violence"
+    }
+  },
+  "P57ST.2": {
+    "description": "Perceived most frequent type of violence (excluding bullying)",
+    "question": "Among these, which type of violence do you think is most frequent where you live?",
+    "values": {
+      "0": "Do not know / No answer",
+      "2": "Domestic violence against children",
+      "3": "Domestic violence against women",
+      "4": "Violence in the streets",
+      "5": "Organized crime",
+      "6": "Maras or gang violence",
+      "7": "State or police violence and abuse",
+      "8": "Verbal violence"
+    }
+  },
+  "P57ST.3": {
+    "description": "Perceived most frequent violence (subset starting from domestic violence against women)",
+    "question": "Which type of violence do you think is most frequent where you live?",
+    "values": {
+      "0": "Do not know / No answer",
+      "3": "Domestic violence against women",
+      "4": "Violence in the streets",
+      "5": "Organized crime",
+      "6": "Maras or gang violence",
+      "7": "State or police violence and abuse",
+      "8": "Verbal violence"
+    }
+  },
+  "P57ST.4": {
+    "description": "Perceived most frequent violence (starting from street violence)",
+    "question": "Which type of violence do you think is most frequent where you live?",
+    "values": {
+      "0": "Do not know / No answer",
+      "4": "Violence in the streets",
+      "5": "Organized crime",
+      "6": "Maras or gang violence",
+      "7": "State or police violence and abuse",
+      "8": "Verbal violence"
+    }
+  },
+  "P57ST.5": {
+    "description": "Perceived most frequent violence (starting from organized crime)",
+    "question": "Which type of violence do you think is most frequent where you live?",
+    "values": {
+      "0": "Do not know / No answer",
+      "5": "Organized crime",
+      "6": "Maras or gang violence",
+      "7": "State or police violence and abuse",
+      "8": "Verbal violence"
+    }
+  },
+  "P57ST.6": {
+    "description": "Perceived most frequent violence (starting from maras-gangs)",
+    "question": "Which type of violence do you think is most frequent where you live?",
+    "values": {
+      "0": "Do not know / No answer",
+      "6": "Maras or gang violence",
+      "7": "State or police violence and abuse",
+      "8": "Verbal violence"
+    }
+  },
+  "P57ST.7": {
+    "description": "Perceived most frequent violence (state or verbal only)",
+    "question": "Which type of violence do you think is most frequent where you live?",
+    "values": {
+      "0": "Do not know / No answer",
+      "7": "State or police violence and abuse",
+      "8": "Verbal violence"
+    }
+  },
+  "P57ST.8": {
+    "description": "Perceived most frequent violence (verbal only)",
+    "question": "Which type of violence do you think is most frequent where you live?",
+    "values": {
+      "0": "Do not know / No answer",
+      "8": "Verbal violence"
+    }
+  },
+  "P58ST": {
+    "description": "Experience of crime in the household",
+    "question": "In the past 12 months, have you or a relative been assaulted, attacked, or the victim of a crime?",
+    "values": {
+      "0": "No answer",
+      "1": "You have",
+      "2": "A relative has",
+      "3": "Both you and a relative have",
+      "4": "No",
+      "8": "Do not know"
+    }
+  },
+  "P59ST": {
+    "description": "Frequency of worry about becoming a victim of violent crime",
+    "question": "How often, if at all, do you worry about becoming a victim of violent crime?",
+    "values": {
+      "0": "Do not know / No answer",
+      "1": "All the time",
+      "2": "Some of the time",
+      "3": "Just occasionally",
+      "4": "Never"
+    }
+  }
+}
