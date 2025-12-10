@@ -4873,7 +4873,7 @@
     },
     "Q22C": {
       "description": "Reject one-man rule",
-      "question": "There are many ways to govern a country. Would you disapprove or approve of the following alternative: Elections and [Parliament] are abolished so that the [president] can decide everything?",
+      "question": "There are many ways to govern a country. Would you disapprove or approve of the following alternative: Elections and the country's parliament are abolished so that the the country's president can decide everything?",
       "values": {
         "1": "Strongly disapprove",
         "2": "Disapprove",
@@ -4955,7 +4955,7 @@
     },
     "Q27B": {
       "description": "President monitored by parliament vs free to act on own",
-      "question": "Which of the following statements is closest to your view? Statement 1: Parliament should ensure that the president explains to it on a regular basis how [his] government spends taxpayers’ money. Statement 2: The president should be able to devote full attention to developing the country rather than wasting time justifying [his] actions.",
+      "question": "Which of the following statements is closest to your view? Statement 1: Parliament should ensure that the president explains to it on a regular basis how their government spends taxpayers’ money. Statement 2: The president should be able to devote full attention to developing the country rather than wasting time justifying their actions.",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -4983,7 +4983,7 @@
     },
     "Q28": {
       "description": "President free to act vs obey the laws and courts",
-      "question": "Which of the following statements is closest to your view?\nStatement 1: Since the [president] was elected to lead the country, [he] should not be bound by laws or court decisions that [he] thinks are wrong.\nStatement 2: The [president] must always obey the laws and the courts, even if [he] thinks they are wrong.",
+      "question": "Which of the following statements is closest to your view?\nStatement 1: Since the country's president was elected to lead the country, they should not be bound by laws or court decisions that the country's president thinks are wrong.\nStatement 2: The the country's president must always obey the laws and the courts, even if they think they are wrong.",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
