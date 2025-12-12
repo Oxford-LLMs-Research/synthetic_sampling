@@ -29,14 +29,116 @@ POOLED_META_DIR = Path("../../metadata/pulled_metadata")
 ESS10_POOLED_OUT = POOLED_META_DIR / "ess10_profiles_metadata.json"
 ESS11_POOLED_OUT = POOLED_META_DIR / "ess11_profiles_metadata.json"
 
-# Check if output paths exist and create directories if needed
+# Check if output paths exist (false may flag path issues)
 ESS10_POOLED_OUT.parent.exists()
 
 
 # -------------------------------------------------------------------
-# OPENAI CLIENT AND QUESTION CATEGORIZATION
+# OPENAI CLIENT AND QUESTION CLEANING AND CATEGORIZATION
 # -------------------------------------------------------------------
 client = OpenAI()
+
+
+def clean_question_for_dialog(question_text: str, response_scale: dict):
+    """
+    Use GPT-model to clean the question wording for natural language dialog,
+    *and verify that the question wording is compatible with the response scale.*
+
+    The model receives both the question text and the response scale, and must ensure:
+        • The question naturally elicits responses consistent with the scale.
+        • Placeholders like [country] are replaced.
+        • Numeric/Likert scale instructions are removed and rephrased.
+        • Binary categorical questions get reformulated into natural yes/no format.
+        • If the question is already conversational and fits the scale, keep it mostly unchanged.
+
+    Returns:
+      (question_cleaned, notes_2)
+    """
+    if not question_text or not isinstance(question_text, str):
+        return question_text, ""
+
+    # Format the response scale into a readable block for GPT
+    scale_lines = "\n".join([f"{code}: {label}" for code, label in response_scale.items()])
+    response_scale_text = f"Response scale provided by the survey:\n{scale_lines}\n\n"
+
+    system_prompt = f"""
+You are helping to rewrite survey questions so they sound like natural questions in ordinary human conversation.
+Imagine you are a friendly interviewer asking these questions to a respondent, and the respondent answers in natural language.
+
+You will receive:
+1. A survey question.
+2. The full set of response categories associated with this question.
+
+Your task is to rewrite the question ONLY if necessary, making sure the wording matches what a human would naturally ask,
+while ensuring the question remains consistent with the type of responses implied by the scale.
+
+FOLLOW THESE RULES:
+
+1. PLACEHOLDER CLEANING
+   If the question contains placeholders like [country], replace them with appropriate natural phrases
+   such as "this country" or "in this country".
+
+2. NUMERIC / LIKERT SCALES
+   If the question explicitly refers to numeric or Likert instructions (e.g., 
+   "from 0 to 10", "on a scale from 1 to 5", "0 means X and 10 means Y"):
+       — REMOVE these instructions entirely.
+       — REPHRASE the question so that it elicits a natural-language response *appropriate for the scale*.
+         For example, if the scale is 0–10 levels of trust, rephrase to:
+         "How much do you trust…?"
+
+3. BINARY / APPLICABILITY QUESTIONS
+   Some questions are actually about whether something applied (e.g. "Was 'Not applicable' marked...?").
+   Rewrite them into natural yes/no questions such as:
+       "Is this question not applicable in your case?"
+
+4. SCALE CONSISTENCY CHECK
+   Do NOT rewrite the question into a form that contradicts the response scale.
+   For example:
+       • If the scale has gradations (0–10 trust, 1–5 likelihood), do NOT rewrite the question as a yes/no question.
+       • If the scale is yes/no (or 'applicable'/'not applicable'), ensure the question elicits such answers.
+       • If the scale includes categories like “very likely”, “somewhat likely”, ensure the question invites such responses.
+
+5. PRESERVE IF ALREADY GOOD
+   If the question already reads like natural conversational language AND matches the response scale,
+   leave the wording mostly unchanged.
+
+OUTPUT FORMAT:
+Return ONLY a JSON object in this form:
+{{
+  "question_cleaned": "<final natural-language question>",
+  "notes_2": "<short description of changes made, or empty string if no change>"
+}}
+No additional commentary.
+"""
+
+    try:
+        response = client.chat.completions.create(
+            model="gpt-5-mini",
+            messages=[
+                {"role": "system", "content": system_prompt},
+                # User message includes BOTH question and scale text
+                {"role": "user",
+                 "content": f"{response_scale_text}\nOriginal question:\n{question_text}"},
+            ],
+            # temperature=0,
+        )
+
+        content = response.choices[0].message.content
+        data = json.loads(content)
+
+        cleaned = data.get("question_cleaned", "").strip() or question_text
+        notes = (data.get("notes_2", "") or "").strip()
+
+        # Normalize "no change" style outputs
+        if notes.lower() in {"", "none", "no change", "no changes"}:
+            notes = ""
+
+        return cleaned, notes
+
+    except Exception as e:
+        print(f"OpenAI API error while cleaning question: {e}")
+        return question_text, ""
+
 
 QUESTION_CATEGORIES = [
     "civic engagement",
@@ -93,6 +195,21 @@ Respond with only the category text, no explanation.
         return "other"
 
 
+def clean_all_questions(records):
+    """
+    Apply OpenAI cleaning to all questions, with a tqdm progress bar.
+    Overwrites 'question_cleaned' and adds 'notes_2'.
+    """
+    print("\nCleaning question wording for natural dialog (OpenAI)...")
+
+    for rec in tqdm(records, desc="Cleaning questions", ncols=100):
+        src_q = rec.get("question_cleaned") or rec.get("question_text_raw")
+        src_r = rec.get("adjusted_values") or rec.get("values_raw")
+        cleaned_q, notes2 = clean_question_for_dialog(src_q, src_r)
+        rec["question_cleaned"] = cleaned_q
+        rec["notes_2"] = notes2
+
+    return records
 
 
 def categorize_all_questions(records):
@@ -332,11 +449,16 @@ print(f"Total records (ESS10 + ESS11): {len(all_records)}")
 print("Building unified scale-level values_raw -> adjusted_values mapping...")
 scale_mapping = build_scale_mapping(all_records, verbose=True)
 
-# Save scale mapping for inspection / manual editing
+# Save scale mapping for inspection / manual editing - ONLY NEEDED ONCE
 # Note: keys are canonical JSON strings of values_raw dicts
-print(f"Saving scale mapping to {MAPPING_PATH_OUT}")
-with MAPPING_PATH_OUT.open("w", encoding="utf-8") as f:
-    json.dump(scale_mapping, f, ensure_ascii=False, indent=2)
+# print(f"Saving scale mapping to {MAPPING_PATH_OUT}")
+# with MAPPING_PATH_OUT.open("w", encoding="utf-8") as f:
+#     json.dump(scale_mapping, f, ensure_ascii=False, indent=2)
+
+# Load scale mapping from file (if needed)
+print(f"Loading scale mapping from {MAPPING_PATH_OUT}")
+with MAPPING_PATH_OUT.open("r", encoding="utf-8") as f:
+    scale_mapping = json.load(f)
 
 # Apply mapping back to each dataset
 print("Applying scale mapping to ESS10...")
@@ -348,6 +470,10 @@ ess11_clean = apply_scale_mapping(ess11, scale_mapping, verbose=True)
 
 # Classify question topic based on question text
 all_clean = ess10_clean + ess11_clean
+
+# Additional question cleanding with OpenAI api
+all_clean = clean_all_questions(all_clean)
+
 all_clean = categorize_all_questions(all_clean)
 
 # Split back into separate datasets
@@ -356,10 +482,14 @@ ess11_final = all_clean[len(ess10_clean):]
 
 # Save cleaned metadata
 print(f"Saving cleaned ESS10 metadata to: {ESS10_PATH_OUT}")
-save_json_records(ess10_clean, ESS10_PATH_OUT)
+save_json_records(ess10_final, ESS10_PATH_OUT)
 
 print(f"Saving cleaned ESS11 metadata to: {ESS11_PATH_OUT}")
-save_json_records(ess11_clean, ESS11_PATH_OUT)
+save_json_records(ess11_final, ESS11_PATH_OUT)
+
+# Load cleaned data for verification
+ess10_final = load_json_records(ESS10_PATH_OUT)
+ess11_final = load_json_records(ESS11_PATH_OUT)
 
 
 # Reformat and export into standardized format used for further analysis
