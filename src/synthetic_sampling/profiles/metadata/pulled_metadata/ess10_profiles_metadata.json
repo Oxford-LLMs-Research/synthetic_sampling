@@ -1,1091 +1,5 @@
 {
-  "other": {
-    "name": {
-      "description": "",
-      "question": "What is the title of the dataset?",
-      "values": {}
-    },
-    "essround": {
-      "description": "",
-      "question": "Which round of the ESS is this?",
-      "values": {}
-    },
-    "edition": {
-      "description": "",
-      "question": "Which edition is this?",
-      "values": {}
-    },
-    "proddate": {
-      "description": "",
-      "question": "When was this produced?",
-      "values": {}
-    },
-    "dweight": {
-      "description": "Survey design weight",
-      "question": "What's the design weight for this respondent?",
-      "values": {}
-    },
-    "pspwght": {
-      "description": "Post-stratification survey weight",
-      "question": "What is the post‑stratification weight for this respondent, including the design weight?",
-      "values": {
-        "numeric": "Post-stratification weight (continuous numeric value)"
-      }
-    },
-    "netustm": {
-      "description": "Daily internet use duration",
-      "question": "On a typical day, how much time do you spend using the internet on a computer, tablet, smartphone, or other device?",
-      "values": {
-        "6666": "Not applicable",
-        "7777": "Refusal",
-        "8888": "Don't know",
-        "9999": "No answer"
-      }
-    },
-    "stflife": {
-      "description": "Life satisfaction",
-      "question": "Overall, how satisfied are you with your life as a whole nowadays?",
-      "values": {
-        "0": "Extremely dissatisfied",
-        "1": "Extremely dissatisfied",
-        "2": "Somewhat dissatisfied",
-        "3": "Somewhat dissatisfied",
-        "4": "Neither satisfied nor dissatisfied",
-        "5": "Neither satisfied nor dissatisfied",
-        "6": "Neither satisfied nor dissatisfied",
-        "7": "Somewhat satisfied",
-        "8": "Somewhat satisfied",
-        "9": "Extremely satisfied",
-        "10": "Extremely satisfied",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "freehms": {
-      "description": "Support for gay rights",
-      "question": "To what extent do you agree or disagree with the statement: 'Gay men and lesbians should be free to live their own lives as they wish'?",
-      "values": {
-        "1": "Agree strongly",
-        "2": "Agree",
-        "3": "Neither agree nor disagree",
-        "4": "Disagree",
-        "5": "Disagree strongly",
-        "7": "Refused",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "happy": {
-      "description": "Overall happiness level",
-      "question": "Taking all things together, how happy would you say you are?",
-      "values": {
-        "0": "Extremely unhappy",
-        "1": "Extremely unhappy",
-        "2": "Somewhat unhappy",
-        "3": "Somewhat unhappy",
-        "4": "Neither happy nor unhappy",
-        "5": "Neither happy nor unhappy",
-        "6": "Neither happy nor unhappy",
-        "7": "Somewhat happy",
-        "8": "Somewhat happy",
-        "9": "Extremely happy",
-        "10": "Extremely happy",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "crmvct": {
-      "description": "Burglary/assault victimization",
-      "question": "In the past five years, have you or anyone in your household been the victim of a burglary or an assault?",
-      "values": {
-        "1": "Yes",
-        "2": "No",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "atchctr": {
-      "description": "Emotional attachment to country",
-      "question": "How emotionally attached do you feel to this country?",
-      "values": {
-        "0": "Not at all emotionally attached",
-        "1": "Not at all emotionally attached",
-        "2": "Slightly emotionally attached",
-        "3": "Slightly emotionally attached",
-        "4": "Somewhat emotionally attached",
-        "5": "Somewhat emotionally attached",
-        "6": "Somewhat emotionally attached",
-        "7": "Mostly emotionally attached",
-        "8": "Mostly emotionally attached",
-        "9": "Very emotionally attached",
-        "10": "Very emotionally attached",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "atcherp": {
-      "description": "Emotional attachment to Europe",
-      "question": "How emotionally attached do you feel to Europe?",
-      "values": {
-        "0": "Not at all emotionally attached",
-        "1": "Not at all emotionally attached",
-        "2": "Slightly emotionally attached",
-        "3": "Slightly emotionally attached",
-        "4": "Somewhat emotionally attached",
-        "5": "Somewhat emotionally attached",
-        "6": "Somewhat emotionally attached",
-        "7": "Mostly emotionally attached",
-        "8": "Mostly emotionally attached",
-        "9": "Very emotionally attached",
-        "10": "Very emotionally attached",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "pray": {
-      "description": "Prayer frequency outside services",
-      "question": "Aside from attending religious services, how often, if at all, do you pray?",
-      "values": {
-        "1": "Every day",
-        "2": "More than once a week",
-        "3": "Once a week",
-        "4": "At least once a month",
-        "5": "Only on special holy days",
-        "6": "Less often",
-        "7": "Never",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "dscroth": {
-      "description": "Other discrimination grounds",
-      "question": "Are there any other grounds on which your group is discriminated against?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "admit": {
-      "description": "Randomized showcard order",
-      "question": "Which randomized order (A–E) was assigned to the D28 showcard items?",
-      "values": {
-        "1": "Order A",
-        "2": "Order B",
-        "3": "Order C",
-        "4": "Order D",
-        "5": "Order E",
-        "9": "Not available"
-      }
-    },
-    "showcv": {
-      "description": "Correct showcard used",
-      "question": "Was the correct showcard (A, B, C, D, or E) used?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "edctn": {
-      "description": "Recent education participation",
-      "question": "In the last 7 days, did you participate in any education or training that was not paid for by your employer, even if you were on vacation?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngoth": {
-      "description": "Last 7 days activities",
-      "question": "For each of the following \"Other\" descriptions, did it apply to what you did in the last 7 days?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngref": {
-      "description": "Refusal marked (last 7 days)",
-      "question": "In the past 7 days, does the description \"refusal\" apply to what you have been doing?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngdk": {
-      "description": "Recent activity: don't know",
-      "question": "Does this description apply to what you've been doing in the last 7 days?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngna": {
-      "description": "No answer about activities",
-      "question": "Did you choose 'No answer' for the question about what you've been doing over the past 7 days?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngothp": {
-      "description": "Partner activities (last 7 days)",
-      "question": "For each of the following descriptions, did it apply to what your partner was doing in the last 7 days?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngdkp": {
-      "description": "Partner activity (don't know)",
-      "question": "In the past 7 days, has your partner done any of the following? Please answer Yes or No for each item.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngrefp": {
-      "description": "Partner refusal indicator",
-      "question": "In the last 7 days, did the following description apply to your partner?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngnap": {
-      "description": "Partner: no answer",
-      "question": "In the past 7 days, which of the following descriptions apply to your partner? Select all that apply.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "accoth": {
-      "description": "Internet access — other location",
-      "question": "Were you able to access the internet somewhere else?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "accnone": {
-      "description": "No internet access locations",
-      "question": "If you wanted to access the Internet, would you be able to do so at each of the following locations?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "accref": {
-      "description": "Internet access: refusal option",
-      "question": "Did the respondent mark 'Refusal' for the question, \"Imagine you wanted to access the Internet. At which of these locations would you be able to do it? Select all that apply.\"?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "accdk": {
-      "description": "Internet access: Don't know",
-      "question": "If you wanted to access the internet, would you be able to do so at this location?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "accna": {
-      "description": "Internet access locations",
-      "question": "For each of the following locations, would you be able to access the internet there?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "fampref": {
-      "description": "Familiarity with preference settings",
-      "question": "How familiar are you with preference settings for computers and the internet?",
-      "values": {
-        "1": "Not at all familiar",
-        "2": "Not very familiar",
-        "3": "Somewhat familiar",
-        "4": "Very familiar",
-        "5": "Completely familiar",
-        "7": "Refused",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "famadvs": {
-      "description": "Familiarity with advanced search",
-      "question": "How familiar are you with the Advanced Search feature?",
-      "values": {
-        "1": "Not at all familiar",
-        "2": "Not very familiar",
-        "3": "Somewhat familiar",
-        "4": "Very familiar",
-        "5": "Completely familiar",
-        "7": "Refused",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "fampdf": {
-      "description": "Familiarity with PDF format",
-      "question": "How familiar are you with PDF (Portable Document Format)?",
-      "values": {
-        "1": "Not at all familiar",
-        "2": "Not very familiar",
-        "3": "Somewhat familiar",
-        "4": "Very familiar",
-        "5": "Completely familiar",
-        "7": "Refused",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "mcclose": {
-      "description": "Perceived closeness from online communication",
-      "question": "How much do online and mobile communications make people feel closer to one another?",
-      "values": {
-        "0": "Not at all",
-        "1": "Not at all",
-        "2": "Slightly",
-        "3": "Slightly",
-        "4": "Somewhat",
-        "5": "Somewhat",
-        "6": "Somewhat",
-        "7": "Mostly",
-        "8": "Mostly",
-        "9": "Completely",
-        "10": "Completely",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "mcinter": {
-      "description": "Work-personal life interference",
-      "question": "How much do online and mobile communications cause your work and personal life to interrupt each other?",
-      "values": {
-        "0": "Not at all",
-        "1": "Not at all",
-        "2": "Slightly",
-        "3": "Slightly",
-        "4": "Somewhat",
-        "5": "Somewhat",
-        "6": "Somewhat",
-        "7": "Mostly",
-        "8": "Mostly",
-        "9": "Completely",
-        "10": "Completely",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "mcpriv": {
-      "description": "Perception of privacy erosion",
-      "question": "To what extent do online and mobile communications undermine personal privacy?",
-      "values": {
-        "0": "Not at all",
-        "1": "Not at all",
-        "2": "Slightly",
-        "3": "Slightly",
-        "4": "Somewhat",
-        "5": "Somewhat",
-        "6": "Somewhat",
-        "7": "Mostly",
-        "8": "Mostly",
-        "9": "Completely",
-        "10": "Completely",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "closepnt": {
-      "description": "Closeness to parent",
-      "question": "Taking everything into consideration, how close do you feel to your parent?",
-      "values": {
-        "1": "Extremely close",
-        "2": "Very close",
-        "3": "Quite close",
-        "4": "Not very close",
-        "5": "Not at all close",
-        "6": "Not applicable",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "compnt": {
-      "description": "Communication frequency with parent",
-      "question": "How often do you communicate with your parent via text, email, or messaging apps?",
-      "values": {
-        "1": "Several times a day",
-        "2": "Once a day",
-        "3": "Several times a week",
-        "4": "Several times a month",
-        "5": "Once a month",
-        "6": "Less often",
-        "7": "Never",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "trdawrk": {
-      "description": "Tiredness after work frequency",
-      "question": "How often do you feel too tired after work to enjoy the things you'd like to do at home?",
-      "values": {
-        "1": "Never",
-        "2": "Hardly ever",
-        "3": "Sometimes",
-        "4": "Often",
-        "5": "Always",
-        "6": "Not applicable",
-        "7": "Refused",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "jbprtfp": {
-      "description": "Job prevents family time",
-      "question": "How often does your job keep you from spending as much time as you'd like with your partner or family?",
-      "values": {
-        "1": "Never",
-        "2": "Hardly ever",
-        "3": "Sometimes",
-        "4": "Often",
-        "5": "Always",
-        "6": "Don't have partner/family",
-        "66": "Not applicable",
-        "77": "Refused",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "pfmfdjba": {
-      "description": "Partner/family frustration",
-      "question": "How often do your partner or family members get fed up with the pressure your job causes?",
-      "values": {
-        "1": "Never",
-        "2": "Hardly ever",
-        "3": "Sometimes",
-        "4": "Often",
-        "5": "Always",
-        "6": "Not applicable",
-        "7": "Refused",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "wrklong": {
-      "description": "Overtime expectation frequency",
-      "question": "If you work in an organisation, how often are employees expected to work overtime, either at the workplace or at home?",
-      "values": {
-        "1": "Every day",
-        "2": "Several times a week",
-        "3": "Several times a month",
-        "4": "Once a month",
-        "5": "Less often",
-        "6": "Never",
-        "55": "I don't work in an organisation",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "wrkresp": {
-      "description": "After-hours responsiveness expectation",
-      "question": "How often are employees in your organisation expected to respond to work communications outside working hours?",
-      "values": {
-        "1": "Every day",
-        "2": "Several times a week",
-        "3": "Several times a month",
-        "4": "Once a month",
-        "5": "Less often",
-        "6": "Never",
-        "66": "Not applicable",
-        "77": "Refused",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "mansupp": {
-      "description": "Manager support for work–life balance",
-      "question": "If you have a line manager, how much does your line manager support employees in balancing work and personal commitments?",
-      "values": {
-        "0": "Not at all",
-        "1": "Not at all",
-        "2": "Not very supportive",
-        "3": "Not very supportive",
-        "4": "Neutral",
-        "5": "Neutral",
-        "6": "Neutral",
-        "7": "Somewhat supportive",
-        "8": "Somewhat supportive",
-        "9": "Completely supportive",
-        "10": "Completely supportive",
-        "55": "I don't have a line manager",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "manwrkpl": {
-      "description": "Co-location with line manager",
-      "question": "How often are you and your line manager at the same physical workplace at the same time?",
-      "values": {
-        "1": "Every day",
-        "2": "Several times a week",
-        "3": "Several times a month",
-        "4": "Once a month",
-        "5": "Less often",
-        "6": "Never",
-        "44": "I don't have a regular workplace",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "manspeak": {
-      "description": "In-person manager contact frequency",
-      "question": "How often do you speak about work in person with your line manager? Please include only times when you are physically in the same location.",
-      "values": {
-        "1": "Several times a day",
-        "2": "Once a day",
-        "3": "Several times a week",
-        "4": "Several times a month",
-        "5": "Once a month",
-        "6": "Less often",
-        "7": "Never",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "manscrn": {
-      "description": "Frequency of video contact with manager",
-      "question": "How often do you talk about work with your line manager in video calls where you can see each other?",
-      "values": {
-        "1": "Several times a day",
-        "2": "Once a day",
-        "3": "Several times a week",
-        "4": "Several times a month",
-        "5": "Once a month",
-        "6": "Less often",
-        "7": "Never",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "manphone": {
-      "description": "Phone contact with manager",
-      "question": "How often do you talk about work with your line manager by phone or another audio-only device? Include calls you make or receive, but do not count video calls where you can see each other.",
-      "values": {
-        "1": "Several times a day",
-        "2": "Once a day",
-        "3": "Several times a week",
-        "4": "Several times a month",
-        "5": "Once a month",
-        "6": "Less often",
-        "7": "Never",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "mancom": {
-      "description": "Written communication frequency",
-      "question": "How often do you communicate in writing with your line manager about work (for example, by text, email, or messaging apps)?",
-      "values": {
-        "1": "Several times a day",
-        "2": "Once a day",
-        "3": "Several times a week",
-        "4": "Several times a month",
-        "5": "Once a month",
-        "6": "Less often",
-        "7": "Never",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "colspeak": {
-      "description": "In-person work conversations",
-      "question": "How often do you talk about work with your colleagues in person? Please include only times when you are physically in the same location.",
-      "values": {
-        "1": "Several times a day",
-        "2": "Once a day",
-        "3": "Several times a week",
-        "4": "Several times a month",
-        "5": "Once a month",
-        "6": "Less often",
-        "7": "Never",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "colscrn": {
-      "description": "Video calls with colleagues",
-      "question": "How often do you talk about work with colleagues when you meet on a screen (for example, on video calls)?",
-      "values": {
-        "1": "Several times a day",
-        "2": "Once a day",
-        "3": "Several times a week",
-        "4": "Several times a month",
-        "5": "Once a month",
-        "6": "Less often",
-        "7": "Never",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "colphone": {
-      "description": "Phone work communication frequency",
-      "question": "How often do you speak with your colleagues about work by phone or another audio-only device? Include calls you make or receive, but exclude video calls where you can see each other.",
-      "values": {
-        "1": "Several times a day",
-        "2": "Once a day",
-        "3": "Several times a week",
-        "4": "Several times a month",
-        "5": "Once a month",
-        "6": "Less often",
-        "7": "Never",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "colcom": {
-      "description": "Work written communication frequency",
-      "question": "How often do you communicate in writing with your colleagues about work via text, email, or messaging apps?",
-      "values": {
-        "1": "Several times a day",
-        "2": "Once a day",
-        "3": "Several times a week",
-        "4": "Several times a month",
-        "5": "Once a month",
-        "6": "Less often",
-        "7": "Never",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "mcwrkhom": {
-      "description": "Ease of working remotely",
-      "question": "How much does online and mobile communication with the people you work with make it easy for you to work from home or from another place you choose?",
-      "values": {
-        "0": "Not at all",
-        "1": "Not at all",
-        "2": "Slightly",
-        "3": "Slightly",
-        "4": "Somewhat",
-        "5": "Somewhat",
-        "6": "Somewhat",
-        "7": "Very",
-        "8": "Very",
-        "9": "Completely",
-        "10": "Completely",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "ipcrtiv": {
-      "description": "Importance of creativity",
-      "question": "How well does this description apply to you: \"Thinking up new ideas and being creative is important to me; I like to do things in my own original way\"?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "ipfrule": {
-      "description": "Preference for following rules",
-      "question": "How much does this description sound like you: \"This person believes that people should do what they're told and should follow rules at all times, even when no one is watching\"?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "ipmodst": {
-      "description": "Importance of modesty",
-      "question": "How much does this description describe you: \"It's important to be humble and modest, and you try not to draw attention to yourself\"?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "ipgdtim": {
-      "description": "Importance of having a good time",
-      "question": "How much does this description sound like you: \"Having a good time is important to me; I like to spoil myself\"?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "impfree": {
-      "description": "Value of independence",
-      "question": "To what extent does the following description sound like you: 'It is important to make your own decisions about what you do; you like to be free and not depend on others'?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "ipsuces": {
-      "description": "Importance of being successful",
-      "question": "How well does this description match you: being very successful is important to you, and you hope people will recognize your achievements?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "ipadvnt": {
-      "description": "Adventurousness and risk-taking",
-      "question": "How much does this description sound like you: 'You look for adventures, like to take risks, and want to have an exciting life'?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "impfun": {
-      "description": "Importance of seeking fun",
-      "question": "How much does this description fit you: 'Seeks every chance to have fun and thinks it's important to do things that give pleasure'?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "admc19": {
-      "description": "CAPI randomisation group",
-      "question": "Which CAPI randomisation group was the respondent assigned to — Group 1, Group 2, or is that information not available?",
-      "values": {
-        "1": "Group 1",
-        "2": "Group 2",
-        "9": "Not available"
-      }
-    },
-    "vdcond": {
-      "description": "Interview mode",
-      "question": "How was this interview conducted?",
-      "values": {
-        "1": "In person inside respondent's home",
-        "2": "In person outside respondent's home",
-        "3": "By video",
-        "9": "Not available"
-      }
-    },
-    "vdovexre": {
-      "description": "Overall survey experience",
-      "question": "Overall, how positive or negative was your experience participating in this survey?",
-      "values": {
-        "0": "Very negative experience",
-        "1": "Very negative experience",
-        "2": "Somewhat negative experience",
-        "3": "Somewhat negative experience",
-        "4": "Neither negative nor positive experience",
-        "5": "Neither negative nor positive experience",
-        "6": "Neither negative nor positive experience",
-        "7": "Somewhat positive experience",
-        "8": "Somewhat positive experience",
-        "9": "Very positive experience",
-        "10": "Very positive experience",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "vdtype": {
-      "description": "Device used for video interview",
-      "question": "Which type of device did you use for this video interview?",
-      "values": {
-        "1": "Desktop or laptop PC",
-        "2": "Tablet",
-        "3": "Smartphone",
-        "4": "Other",
-        "6": "Not applicable",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "vdtpsvre": {
-      "description": "Issues starting video call",
-      "question": "Did you have any issues starting the video call during the interview?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "vdtpitre": {
-      "description": "Internet issues during video call",
-      "question": "During the interview, did you have internet connection problems that affected the video call?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "vdtpscre": {
-      "description": "Problems viewing showcards",
-      "question": "Did you have any problems seeing or reading the showcards on your screen during the interview?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "vdtpaure": {
-      "description": "Audio clarity issue",
-      "question": "During the interview, was the audio unclear?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "vdtpvire": {
-      "description": "Video display clarity issue",
-      "question": "During the interview, was the video display unclear?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "vdtpoire": {
-      "description": "Other technical problem",
-      "question": "Did you experience any other technical problems during the interview?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "vdtpntre": {
-      "description": "No technical issues indicator",
-      "question": "Did you have any technical issues during the interview?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "vdtpapre": {
-      "description": "Interview technical problems",
-      "question": "Did you experience any technical problems during the interview?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "vdtprere": {
-      "description": "Technical problem: refusal",
-      "question": "During the interview, did you experience 'refusal' as a technical problem?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "vdtpdkre": {
-      "description": "Technical problem: 'Don't know'",
-      "question": "During the interview, did you encounter the technical problem labeled 'Don't know'?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "vdtpnare": {
-      "description": "Technical problem: no answer",
-      "question": "During the interview, did you experience the technical problem labeled \"no answer\"?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "inwds": {
-      "description": "Interview start marker",
-      "question": "Are you ready to begin the interview?",
-      "values": {}
-    },
-    "ainws": {
-      "description": "Section A start marker",
-      "question": "Let's begin Section A.",
-      "values": {}
-    },
-    "ainwe": {
-      "description": "End of section marker",
-      "question": "That’s the end of Section A.",
-      "values": {}
-    },
-    "binwe": {
-      "description": "Section B end marker",
-      "question": "This is the end of Section B.",
-      "values": {}
-    },
-    "cinwe": {
-      "description": "Section C end marker",
-      "question": "That's the end of Section C.",
-      "values": {}
-    },
-    "dinwe": {
-      "description": "Section D end marker",
-      "question": "End of Section D.",
-      "values": {}
-    },
-    "finwe": {
-      "description": "Section F end marker",
-      "question": "This marks the end of Section F.",
-      "values": {}
-    },
-    "ginwe": {
-      "description": "Section end marker",
-      "question": "This is the end of Section G.",
-      "values": {}
-    },
-    "hinwe": {
-      "description": "Section end marker",
-      "question": "You have reached the end of Section H.",
-      "values": {}
-    },
-    "iinwe": {
-      "description": "Section I end marker",
-      "question": "We're now at the end of Section I. Are you ready to continue?",
-      "values": {}
-    },
-    "kinwe": {
-      "description": "Section end marker",
-      "question": "End of Section K (section marker, not a survey question).",
-      "values": {}
-    },
-    "vinwe": {
-      "description": "Section V end marker",
-      "question": "This is the end of Section V. Do you have any comments about this section?",
-      "values": {}
-    },
-    "inwde": {
-      "description": "End of interview marker",
-      "question": "Is this the end of the interview?",
-      "values": {}
-    },
-    "jinws": {
-      "description": "Section J start marker",
-      "question": "Now we'll begin Section J.",
-      "values": {}
-    },
-    "jinwe": {
-      "description": "Section J end marker",
-      "question": "You have reached the end of Section J.",
-      "values": {}
-    },
-    "inwtm": {
-      "description": "Interview length (minutes)",
-      "question": "Approximately how many minutes did the interview for the main questionnaire take?",
-      "values": {}
-    },
-    "mode": {
-      "description": "Data collection mode",
-      "question": "What was the mode of data collection?",
-      "values": {
-        "1": "Face-to-face interview (CAPI)",
-        "2": "Video interview (web-based)",
-        "3": "Self-completed web questionnaire (CAWI)",
-        "4": "Self-completed paper questionnaire",
-        "9": "Not available"
-      }
-    },
-    "domain": {
-      "description": "Sampling domain",
-      "question": "What is the sampling domain?",
-      "values": {}
-    },
-    "prob": {
-      "description": "Sampling probability",
-      "question": "What was the probability that this observation was selected for the sample?",
-      "values": {}
-    },
-    "psu": {
-      "description": "Primary sampling unit",
-      "question": "What is the identifier for the primary sampling unit (PSU)?",
-      "values": {}
-    }
-  },
   "demographics": {
-    "idno": {
-      "description": "",
-      "question": "What is your respondent identification number?",
-      "values": {}
-    },
     "cntry": {
       "description": "Respondent's country",
       "question": "Which country are you currently in?",
@@ -1131,16 +45,6 @@
         "UA": "Ukraine",
         "XK": "Kosovo"
       }
-    },
-    "pweight": {
-      "description": "Population size weight",
-      "question": "Is there a population size weight that should be combined with dweight or pspwght?",
-      "values": {}
-    },
-    "anweight": {
-      "description": "Survey analysis weight",
-      "question": "What is the analysis weight for this respondent?",
-      "values": {}
     },
     "imdfetn": {
       "description": "Allow immigrants of different race",
@@ -6542,7 +5446,7 @@
     },
     "edlvpeit": {
       "description": "Partner's education level",
-      "question": "Qual è il livello di istruzione più alto che suo marito, sua moglie o il suo partner ha completato con successo in questo paese?",
+      "question": "What is the highest level of education your spouse or partner has completed?",
       "values": {
         "1": "Nessun titolo",
         "2": "Licenza elementare o attestato di valutazione finale di istruzione primaria",
@@ -9890,16 +8794,6 @@
         "999999": "No answer"
       }
     },
-    "regunit": {
-      "description": "Regional unit level",
-      "question": "What is the NUTS level of this regional unit?",
-      "values": {
-        "1": "NUTS level 1",
-        "2": "NUTS level 2",
-        "3": "NUTS level 3",
-        "4": "Regional unit not part of the NUTS nomenclature"
-      }
-    },
     "region": {
       "description": "Respondent's region",
       "question": "In which region or country do you live?",
@@ -12547,11 +11441,6 @@
         "8": "Don't know",
         "9": "No answer"
       }
-    },
-    "stratum": {
-      "description": "Sampling stratum",
-      "question": "Which sampling stratum were you sampled from?",
-      "values": {}
     }
   },
   "media_information_sources": {
@@ -12604,6 +11493,797 @@
         "77": "Refusal",
         "88": "Don't know",
         "99": "No answer"
+      }
+    }
+  },
+  "other": {
+    "netustm": {
+      "description": "Daily internet use duration",
+      "question": "On a typical day, how much time do you spend using the internet on a computer, tablet, smartphone, or other device?",
+      "values": {
+        "6666": "Not applicable",
+        "7777": "Refusal",
+        "8888": "Don't know",
+        "9999": "No answer"
+      }
+    },
+    "stflife": {
+      "description": "Life satisfaction",
+      "question": "Overall, how satisfied are you with your life as a whole nowadays?",
+      "values": {
+        "0": "Extremely dissatisfied",
+        "1": "Extremely dissatisfied",
+        "2": "Somewhat dissatisfied",
+        "3": "Somewhat dissatisfied",
+        "4": "Neither satisfied nor dissatisfied",
+        "5": "Neither satisfied nor dissatisfied",
+        "6": "Neither satisfied nor dissatisfied",
+        "7": "Somewhat satisfied",
+        "8": "Somewhat satisfied",
+        "9": "Extremely satisfied",
+        "10": "Extremely satisfied",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "freehms": {
+      "description": "Support for gay rights",
+      "question": "To what extent do you agree or disagree with the statement: 'Gay men and lesbians should be free to live their own lives as they wish'?",
+      "values": {
+        "1": "Agree strongly",
+        "2": "Agree",
+        "3": "Neither agree nor disagree",
+        "4": "Disagree",
+        "5": "Disagree strongly",
+        "7": "Refused",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "happy": {
+      "description": "Overall happiness level",
+      "question": "Taking all things together, how happy would you say you are?",
+      "values": {
+        "0": "Extremely unhappy",
+        "1": "Extremely unhappy",
+        "2": "Somewhat unhappy",
+        "3": "Somewhat unhappy",
+        "4": "Neither happy nor unhappy",
+        "5": "Neither happy nor unhappy",
+        "6": "Neither happy nor unhappy",
+        "7": "Somewhat happy",
+        "8": "Somewhat happy",
+        "9": "Extremely happy",
+        "10": "Extremely happy",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "crmvct": {
+      "description": "Burglary/assault victimization",
+      "question": "In the past five years, have you or anyone in your household been the victim of a burglary or an assault?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "atchctr": {
+      "description": "Emotional attachment to country",
+      "question": "How emotionally attached do you feel to this country?",
+      "values": {
+        "0": "Not at all emotionally attached",
+        "1": "Not at all emotionally attached",
+        "2": "Slightly emotionally attached",
+        "3": "Slightly emotionally attached",
+        "4": "Somewhat emotionally attached",
+        "5": "Somewhat emotionally attached",
+        "6": "Somewhat emotionally attached",
+        "7": "Mostly emotionally attached",
+        "8": "Mostly emotionally attached",
+        "9": "Very emotionally attached",
+        "10": "Very emotionally attached",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "atcherp": {
+      "description": "Emotional attachment to Europe",
+      "question": "How emotionally attached do you feel to Europe?",
+      "values": {
+        "0": "Not at all emotionally attached",
+        "1": "Not at all emotionally attached",
+        "2": "Slightly emotionally attached",
+        "3": "Slightly emotionally attached",
+        "4": "Somewhat emotionally attached",
+        "5": "Somewhat emotionally attached",
+        "6": "Somewhat emotionally attached",
+        "7": "Mostly emotionally attached",
+        "8": "Mostly emotionally attached",
+        "9": "Very emotionally attached",
+        "10": "Very emotionally attached",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "pray": {
+      "description": "Prayer frequency outside services",
+      "question": "Aside from attending religious services, how often, if at all, do you pray?",
+      "values": {
+        "1": "Every day",
+        "2": "More than once a week",
+        "3": "Once a week",
+        "4": "At least once a month",
+        "5": "Only on special holy days",
+        "6": "Less often",
+        "7": "Never",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "dscroth": {
+      "description": "Other discrimination grounds",
+      "question": "Are there any other grounds on which your group is discriminated against?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "edctn": {
+      "description": "Recent education participation",
+      "question": "In the last 7 days, did you participate in any education or training that was not paid for by your employer, even if you were on vacation?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngoth": {
+      "description": "Last 7 days activities",
+      "question": "For each of the following \"Other\" descriptions, did it apply to what you did in the last 7 days?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngref": {
+      "description": "Refusal marked (last 7 days)",
+      "question": "In the past 7 days, does the description \"refusal\" apply to what you have been doing?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngdk": {
+      "description": "Recent activity: don't know",
+      "question": "Does this description apply to what you've been doing in the last 7 days?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngna": {
+      "description": "No answer about activities",
+      "question": "Did you choose 'No answer' for the question about what you've been doing over the past 7 days?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngothp": {
+      "description": "Partner activities (last 7 days)",
+      "question": "For each of the following descriptions, did it apply to what your partner was doing in the last 7 days?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngdkp": {
+      "description": "Partner activity (don't know)",
+      "question": "In the past 7 days, has your partner done any of the following? Please answer Yes or No for each item.",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngrefp": {
+      "description": "Partner refusal indicator",
+      "question": "In the last 7 days, did the following description apply to your partner?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngnap": {
+      "description": "Partner: no answer",
+      "question": "In the past 7 days, which of the following descriptions apply to your partner? Select all that apply.",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "accoth": {
+      "description": "Internet access — other location",
+      "question": "Were you able to access the internet somewhere else?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "accnone": {
+      "description": "No internet access locations",
+      "question": "If you wanted to access the Internet, would you be able to do so at each of the following locations?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "accref": {
+      "description": "Internet access: refusal option",
+      "question": "Did the respondent mark 'Refusal' for the question, \"Imagine you wanted to access the Internet. At which of these locations would you be able to do it? Select all that apply.\"?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "accdk": {
+      "description": "Internet access: Don't know",
+      "question": "If you wanted to access the internet, would you be able to do so at this location?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "accna": {
+      "description": "Internet access locations",
+      "question": "For each of the following locations, would you be able to access the internet there?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "fampref": {
+      "description": "Familiarity with preference settings",
+      "question": "How familiar are you with preference settings for computers and the internet?",
+      "values": {
+        "1": "Not at all familiar",
+        "2": "Not very familiar",
+        "3": "Somewhat familiar",
+        "4": "Very familiar",
+        "5": "Completely familiar",
+        "7": "Refused",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "famadvs": {
+      "description": "Familiarity with advanced search",
+      "question": "How familiar are you with the Advanced Search feature?",
+      "values": {
+        "1": "Not at all familiar",
+        "2": "Not very familiar",
+        "3": "Somewhat familiar",
+        "4": "Very familiar",
+        "5": "Completely familiar",
+        "7": "Refused",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "fampdf": {
+      "description": "Familiarity with PDF format",
+      "question": "How familiar are you with PDF (Portable Document Format)?",
+      "values": {
+        "1": "Not at all familiar",
+        "2": "Not very familiar",
+        "3": "Somewhat familiar",
+        "4": "Very familiar",
+        "5": "Completely familiar",
+        "7": "Refused",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "mcclose": {
+      "description": "Perceived closeness from online communication",
+      "question": "How much do online and mobile communications make people feel closer to one another?",
+      "values": {
+        "0": "Not at all",
+        "1": "Not at all",
+        "2": "Slightly",
+        "3": "Slightly",
+        "4": "Somewhat",
+        "5": "Somewhat",
+        "6": "Somewhat",
+        "7": "Mostly",
+        "8": "Mostly",
+        "9": "Completely",
+        "10": "Completely",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "mcinter": {
+      "description": "Work-personal life interference",
+      "question": "How much do online and mobile communications cause your work and personal life to interrupt each other?",
+      "values": {
+        "0": "Not at all",
+        "1": "Not at all",
+        "2": "Slightly",
+        "3": "Slightly",
+        "4": "Somewhat",
+        "5": "Somewhat",
+        "6": "Somewhat",
+        "7": "Mostly",
+        "8": "Mostly",
+        "9": "Completely",
+        "10": "Completely",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "mcpriv": {
+      "description": "Perception of privacy erosion",
+      "question": "To what extent do online and mobile communications undermine personal privacy?",
+      "values": {
+        "0": "Not at all",
+        "1": "Not at all",
+        "2": "Slightly",
+        "3": "Slightly",
+        "4": "Somewhat",
+        "5": "Somewhat",
+        "6": "Somewhat",
+        "7": "Mostly",
+        "8": "Mostly",
+        "9": "Completely",
+        "10": "Completely",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "closepnt": {
+      "description": "Closeness to parent",
+      "question": "Taking everything into consideration, how close do you feel to your parent?",
+      "values": {
+        "1": "Extremely close",
+        "2": "Very close",
+        "3": "Quite close",
+        "4": "Not very close",
+        "5": "Not at all close",
+        "6": "Not applicable",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "compnt": {
+      "description": "Communication frequency with parent",
+      "question": "How often do you communicate with your parent via text, email, or messaging apps?",
+      "values": {
+        "1": "Several times a day",
+        "2": "Once a day",
+        "3": "Several times a week",
+        "4": "Several times a month",
+        "5": "Once a month",
+        "6": "Less often",
+        "7": "Never",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "trdawrk": {
+      "description": "Tiredness after work frequency",
+      "question": "How often do you feel too tired after work to enjoy the things you'd like to do at home?",
+      "values": {
+        "1": "Never",
+        "2": "Hardly ever",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always",
+        "6": "Not applicable",
+        "7": "Refused",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "jbprtfp": {
+      "description": "Job prevents family time",
+      "question": "How often does your job keep you from spending as much time as you'd like with your partner or family?",
+      "values": {
+        "1": "Never",
+        "2": "Hardly ever",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always",
+        "6": "Don't have partner/family",
+        "66": "Not applicable",
+        "77": "Refused",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "pfmfdjba": {
+      "description": "Partner/family frustration",
+      "question": "How often do your partner or family members get fed up with the pressure your job causes?",
+      "values": {
+        "1": "Never",
+        "2": "Hardly ever",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always",
+        "6": "Not applicable",
+        "7": "Refused",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "wrklong": {
+      "description": "Overtime expectation frequency",
+      "question": "If you work in an organisation, how often are employees expected to work overtime, either at the workplace or at home?",
+      "values": {
+        "1": "Every day",
+        "2": "Several times a week",
+        "3": "Several times a month",
+        "4": "Once a month",
+        "5": "Less often",
+        "6": "Never",
+        "55": "I don't work in an organisation",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "wrkresp": {
+      "description": "After-hours responsiveness expectation",
+      "question": "How often are employees in your organisation expected to respond to work communications outside working hours?",
+      "values": {
+        "1": "Every day",
+        "2": "Several times a week",
+        "3": "Several times a month",
+        "4": "Once a month",
+        "5": "Less often",
+        "6": "Never",
+        "66": "Not applicable",
+        "77": "Refused",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "mansupp": {
+      "description": "Manager support for work–life balance",
+      "question": "If you have a line manager, how much does your line manager support employees in balancing work and personal commitments?",
+      "values": {
+        "0": "Not at all",
+        "1": "Not at all",
+        "2": "Not very supportive",
+        "3": "Not very supportive",
+        "4": "Neutral",
+        "5": "Neutral",
+        "6": "Neutral",
+        "7": "Somewhat supportive",
+        "8": "Somewhat supportive",
+        "9": "Completely supportive",
+        "10": "Completely supportive",
+        "55": "I don't have a line manager",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "manwrkpl": {
+      "description": "Co-location with line manager",
+      "question": "How often are you and your line manager at the same physical workplace at the same time?",
+      "values": {
+        "1": "Every day",
+        "2": "Several times a week",
+        "3": "Several times a month",
+        "4": "Once a month",
+        "5": "Less often",
+        "6": "Never",
+        "44": "I don't have a regular workplace",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "manspeak": {
+      "description": "In-person manager contact frequency",
+      "question": "How often do you speak about work in person with your line manager? Please include only times when you are physically in the same location.",
+      "values": {
+        "1": "Several times a day",
+        "2": "Once a day",
+        "3": "Several times a week",
+        "4": "Several times a month",
+        "5": "Once a month",
+        "6": "Less often",
+        "7": "Never",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "manscrn": {
+      "description": "Frequency of video contact with manager",
+      "question": "How often do you talk about work with your line manager in video calls where you can see each other?",
+      "values": {
+        "1": "Several times a day",
+        "2": "Once a day",
+        "3": "Several times a week",
+        "4": "Several times a month",
+        "5": "Once a month",
+        "6": "Less often",
+        "7": "Never",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "manphone": {
+      "description": "Phone contact with manager",
+      "question": "How often do you talk about work with your line manager by phone or another audio-only device? Include calls you make or receive, but do not count video calls where you can see each other.",
+      "values": {
+        "1": "Several times a day",
+        "2": "Once a day",
+        "3": "Several times a week",
+        "4": "Several times a month",
+        "5": "Once a month",
+        "6": "Less often",
+        "7": "Never",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "mancom": {
+      "description": "Written communication frequency",
+      "question": "How often do you communicate in writing with your line manager about work (for example, by text, email, or messaging apps)?",
+      "values": {
+        "1": "Several times a day",
+        "2": "Once a day",
+        "3": "Several times a week",
+        "4": "Several times a month",
+        "5": "Once a month",
+        "6": "Less often",
+        "7": "Never",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "colspeak": {
+      "description": "In-person work conversations",
+      "question": "How often do you talk about work with your colleagues in person? Please include only times when you are physically in the same location.",
+      "values": {
+        "1": "Several times a day",
+        "2": "Once a day",
+        "3": "Several times a week",
+        "4": "Several times a month",
+        "5": "Once a month",
+        "6": "Less often",
+        "7": "Never",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "colscrn": {
+      "description": "Video calls with colleagues",
+      "question": "How often do you talk about work with colleagues when you meet on a screen (for example, on video calls)?",
+      "values": {
+        "1": "Several times a day",
+        "2": "Once a day",
+        "3": "Several times a week",
+        "4": "Several times a month",
+        "5": "Once a month",
+        "6": "Less often",
+        "7": "Never",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "colphone": {
+      "description": "Phone work communication frequency",
+      "question": "How often do you speak with your colleagues about work by phone or another audio-only device? Include calls you make or receive, but exclude video calls where you can see each other.",
+      "values": {
+        "1": "Several times a day",
+        "2": "Once a day",
+        "3": "Several times a week",
+        "4": "Several times a month",
+        "5": "Once a month",
+        "6": "Less often",
+        "7": "Never",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "colcom": {
+      "description": "Work written communication frequency",
+      "question": "How often do you communicate in writing with your colleagues about work via text, email, or messaging apps?",
+      "values": {
+        "1": "Several times a day",
+        "2": "Once a day",
+        "3": "Several times a week",
+        "4": "Several times a month",
+        "5": "Once a month",
+        "6": "Less often",
+        "7": "Never",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "mcwrkhom": {
+      "description": "Ease of working remotely",
+      "question": "How much does online and mobile communication with the people you work with make it easy for you to work from home or from another place you choose?",
+      "values": {
+        "0": "Not at all",
+        "1": "Not at all",
+        "2": "Slightly",
+        "3": "Slightly",
+        "4": "Somewhat",
+        "5": "Somewhat",
+        "6": "Somewhat",
+        "7": "Very",
+        "8": "Very",
+        "9": "Completely",
+        "10": "Completely",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "ipcrtiv": {
+      "description": "Importance of creativity",
+      "question": "How well does this description apply to you: \"Thinking up new ideas and being creative is important to me; I like to do things in my own original way\"?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "ipfrule": {
+      "description": "Preference for following rules",
+      "question": "How much does this description sound like you: \"This person believes that people should do what they're told and should follow rules at all times, even when no one is watching\"?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "ipmodst": {
+      "description": "Importance of modesty",
+      "question": "How much does this description describe you: \"It's important to be humble and modest, and you try not to draw attention to yourself\"?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "ipgdtim": {
+      "description": "Importance of having a good time",
+      "question": "How much does this description sound like you: \"Having a good time is important to me; I like to spoil myself\"?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "impfree": {
+      "description": "Value of independence",
+      "question": "To what extent does the following description sound like you: 'It is important to make your own decisions about what you do; you like to be free and not depend on others'?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "ipsuces": {
+      "description": "Importance of being successful",
+      "question": "How well does this description match you: being very successful is important to you, and you hope people will recognize your achievements?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "ipadvnt": {
+      "description": "Adventurousness and risk-taking",
+      "question": "How much does this description sound like you: 'You look for adventures, like to take risks, and want to have an exciting life'?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "impfun": {
+      "description": "Importance of seeking fun",
+      "question": "How much does this description fit you: 'Seeks every chance to have fun and thinks it's important to do things that give pleasure'?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "admc19": {
+      "description": "CAPI randomisation group",
+      "question": "Which CAPI randomisation group was the respondent assigned to — Group 1, Group 2, or is that information not available?",
+      "values": {
+        "1": "Group 1",
+        "2": "Group 2",
+        "9": "Not available"
       }
     }
   },

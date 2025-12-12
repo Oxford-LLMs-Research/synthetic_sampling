@@ -480,6 +480,25 @@ all_clean = categorize_all_questions(all_clean)
 ess10_final = all_clean[: len(ess10_clean)]
 ess11_final = all_clean[len(ess10_clean):]
 
+# Remove admin variables
+
+admin_vars_10 = {
+    "name", "essround", "edition", "proddate",  "idno", "essround", "pweight", "anweight", "pspwght", "dweight",
+    "admit", "showcv", "regunit", "vdcond", "vdtype", "vdtpsvre", "vdtpitre", "vdtpscre", "vdtpaure",
+    "vdtpvire", "vdtpoire", "vdtpntre", "vdtpapre", "vdtprere", "vdtpdkre", "vdtpnare", "inwds", "ainws",
+    "ainwe", "binwe", "cinwe", "dinwe", "finwe", "ginwe", "hinwe", "iinwe", "kinwe", "recon", "vinwe", "inwde", 
+    "jinws", "jinwe", "inwtm", "mode", "domain", "prob", "stratum", "psu", "vdovexre"}
+ess10_final = [r for r in ess10_final if r.get("variable_name") not in admin_vars_10]
+
+admin_vars_11 = {
+    "name", "essround", "edition", "proddate",  "idno", "essround", "pweight", "anweight", "pspwght", "dweight",
+    "admit", "showcv", "regunit", "vdcond", "vdtype", "vdtpsvre", "vdtpitre", "vdtpscre", "vdtpaure",
+    "vdtpvire", "vdtpoire", "vdtpntre", "vdtpapre", "vdtprere", "vdtpdkre", "vdtpnare", "inwds", "ainws",
+    "ainwe", "binwe", "cinwe", "dinwe", "finwe", "ginwe", "hinwe", "iinwe", "einwe", "recon", "kinwe", "rinwe", "vinwe", "inwde", 
+    "jinws", "jinwe", "inwtm", "mode", "domain", "prob", "stratum", "psu"}
+ess11_final = [r for r in ess11_final if r.get("variable_name") not in admin_vars_11]
+
+
 # Save cleaned metadata
 print(f"Saving cleaned ESS10 metadata to: {ESS10_PATH_OUT}")
 save_json_records(ess10_final, ESS10_PATH_OUT)

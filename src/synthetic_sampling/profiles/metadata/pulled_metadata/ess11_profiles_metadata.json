@@ -1,1520 +1,5 @@
 {
-  "other": {
-    "name": {
-      "description": "",
-      "question": "What is the title of the dataset?",
-      "values": {}
-    },
-    "essround": {
-      "description": "",
-      "question": "Which round of the ESS is this?",
-      "values": {}
-    },
-    "edition": {
-      "description": "",
-      "question": "Which edition is this?",
-      "values": {}
-    },
-    "proddate": {
-      "description": "",
-      "question": "What was the production date?",
-      "values": {}
-    },
-    "dweight": {
-      "description": "Survey design weight",
-      "question": "What is the design weight (the sampling weight) for this survey respondent?",
-      "values": {
-        "numeric": "Design weight value (continuous sampling weight)"
-      }
-    },
-    "pspwght": {
-      "description": "Post-stratification sampling weight",
-      "question": "What is the post-stratification weight (including design weight) for this respondent?",
-      "values": {
-        "(numeric)": "Continuous numeric weight value (post-stratification including design weight)"
-      }
-    },
-    "anweight": {
-      "description": "Survey analysis weight",
-      "question": "What is the analysis weight (numeric value used for survey analysis)?",
-      "values": {}
-    },
-    "netustm": {
-      "description": "Daily internet time",
-      "question": "On a typical day, about how many hours do you spend using the internet on any device (computer, tablet, or smartphone) for work or personal use?",
-      "values": {
-        "6666": "Not applicable",
-        "7777": "Refusal",
-        "8888": "Don't know",
-        "9999": "No answer"
-      }
-    },
-    "stflife": {
-      "description": "Life satisfaction",
-      "question": "Overall, how satisfied are you with your life these days?",
-      "values": {
-        "0": "Extremely dissatisfied",
-        "1": "Extremely dissatisfied",
-        "2": "Somewhat dissatisfied",
-        "3": "Somewhat dissatisfied",
-        "4": "Neither satisfied nor dissatisfied",
-        "5": "Neither satisfied nor dissatisfied",
-        "6": "Neither satisfied nor dissatisfied",
-        "7": "Somewhat satisfied",
-        "8": "Somewhat satisfied",
-        "9": "Extremely satisfied",
-        "10": "Extremely satisfied",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "stfedu": {
-      "description": "State of education",
-      "question": "How would you rate the state of education in this country today?",
-      "values": {
-        "0": "Extremely bad",
-        "1": "Extremely bad",
-        "2": "Somewhat bad",
-        "3": "Somewhat bad",
-        "4": "Neither good nor bad",
-        "5": "Neither good nor bad",
-        "6": "Neither good nor bad",
-        "7": "Somewhat good",
-        "8": "Somewhat good",
-        "9": "Extremely good",
-        "10": "Extremely good",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "happy": {
-      "description": "Overall happiness",
-      "question": "Overall, how happy would you say you are?",
-      "values": {
-        "0": "Extremely unhappy",
-        "1": "Extremely unhappy",
-        "2": "Somewhat unhappy",
-        "3": "Somewhat unhappy",
-        "4": "Neither happy nor unhappy",
-        "5": "Neither happy nor unhappy",
-        "6": "Neither happy nor unhappy",
-        "7": "Somewhat happy",
-        "8": "Somewhat happy",
-        "9": "Extremely happy",
-        "10": "Extremely happy",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "aesfdrk": {
-      "description": "Safety walking after dark",
-      "question": "How safe would you feel walking alone in your local area after dark?",
-      "values": {
-        "1": "Very safe",
-        "2": "Safe",
-        "3": "Unsafe",
-        "4": "Very unsafe",
-        "7": "Refused",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "atchctr": {
-      "description": "Emotional attachment to country",
-      "question": "How emotionally attached do you feel to this country?",
-      "values": {
-        "0": "Not at all emotionally attached",
-        "1": "Not at all emotionally attached",
-        "2": "Slightly emotionally attached",
-        "3": "Slightly emotionally attached",
-        "4": "Somewhat emotionally attached",
-        "5": "Somewhat emotionally attached",
-        "6": "Somewhat emotionally attached",
-        "7": "Mostly emotionally attached",
-        "8": "Mostly emotionally attached",
-        "9": "Very emotionally attached",
-        "10": "Very emotionally attached",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "atcherp": {
-      "description": "Emotional attachment to Europe",
-      "question": "How emotionally attached do you feel to Europe?",
-      "values": {
-        "0": "Not at all emotionally attached",
-        "1": "Not at all emotionally attached",
-        "2": "Slightly emotionally attached",
-        "3": "Slightly emotionally attached",
-        "4": "Somewhat emotionally attached",
-        "5": "Somewhat emotionally attached",
-        "6": "Somewhat emotionally attached",
-        "7": "Mostly emotionally attached",
-        "8": "Mostly emotionally attached",
-        "9": "Very emotionally attached",
-        "10": "Very emotionally attached",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "pray": {
-      "description": "Frequency of prayer",
-      "question": "Besides when you're at religious services, how often do you pray, if at all?",
-      "values": {
-        "1": "Every day",
-        "2": "More than once a week",
-        "3": "Once a week",
-        "4": "At least once a month",
-        "5": "Only on special holy days",
-        "6": "Less often",
-        "7": "Never",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "dscroth": {
-      "description": "Other discrimination grounds",
-      "question": "Are people in your group discriminated against for any of the following other reasons? For each one, please indicate Yes or No.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dscrnap": {
-      "description": "Discrimination not applicable",
-      "question": "Is the question \"On what grounds is your group discriminated against?\" not applicable in your case?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dscrna": {
-      "description": "Discrimination: no answer selected",
-      "question": "Was 'No answer' selected for the question asking on what grounds your group is discriminated against?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "ctrlife": {
-      "description": "Perceived control over life",
-      "question": "How much control do you feel you have over your life in general nowadays?",
-      "values": {
-        "0": "No control at all",
-        "1": "No control at all",
-        "2": "Little control",
-        "3": "Little control",
-        "4": "Some control",
-        "5": "Some control",
-        "6": "Some control",
-        "7": "Mostly control",
-        "8": "Mostly control",
-        "9": "Complete control",
-        "10": "Complete control",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "etfruit": {
-      "description": "Fruit consumption frequency",
-      "question": "How often do you eat fruit (not counting fruit juice)? Please include frozen fruit.",
-      "values": {
-        "1": "Three times or more a day",
-        "2": "Twice a day",
-        "3": "Once a day",
-        "4": "Less than once a day but at least 4 times a week",
-        "5": "Less than 4 times a week but at least once a week",
-        "6": "Less than once a week",
-        "7": "Never",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "eatveg": {
-      "description": "Vegetable consumption frequency",
-      "question": "How often do you eat vegetables or salad, excluding potatoes but including frozen vegetables?",
-      "values": {
-        "1": "Three times or more a day",
-        "2": "Twice a day",
-        "3": "Once a day",
-        "4": "Less than once a day but at least 4 times a week",
-        "5": "Less than 4 times a week but at least once a week",
-        "6": "Less than once a week",
-        "7": "Never",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "dosprt": {
-      "description": "Days of physical activity",
-      "question": "In the past 7 days, on how many days did you walk briskly, play sports, or do other physical activity for at least 30 minutes? The activity doesn't have to have been continuous.",
-      "values": {
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "alcwkdy": {
-      "description": "Grams alcohol on weekday",
-      "question": "The last time you drank on a weekday (Monday–Thursday), how many grams of alcohol did you consume?",
-      "values": {
-        "6666": "Not applicable",
-        "7777": "Refusal",
-        "8888": "Don't know",
-        "9999": "No answer"
-      }
-    },
-    "alcwknd": {
-      "description": "Weekend alcohol consumption (grams)",
-      "question": "About how many grams of alcohol did you consume the last time you drank on a weekend day (Friday to Sunday)?",
-      "values": {
-        "6666": "Not applicable",
-        "7777": "Refusal",
-        "8888": "Don't know",
-        "9999": "No answer"
-      }
-    },
-    "alcbnge": {
-      "description": "Binge drinking frequency",
-      "question": "In the past 12 months, how often did you drink that amount of alcohol or more on a single occasion?",
-      "values": {
-        "1": "Daily or almost daily",
-        "2": "Weekly",
-        "3": "Monthly",
-        "4": "Less than monthly",
-        "5": "Never",
-        "6": "Not applicable",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "dshltgp": {
-      "description": "Discussed health with GP",
-      "question": "In the past 12 months, have you discussed your health with a general practitioner, including by phone, message, or a home visit?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dshltms": {
-      "description": "Discussed health with specialist",
-      "question": "In the past 12 months, did you discuss your health with a medical specialist?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dshltnt": {
-      "description": "No health professional contact",
-      "question": "In the past 12 months, did you discuss your health with any of the health professionals listed?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dshltref": {
-      "description": "Discussed health professionals",
-      "question": "In the last 12 months, have you discussed your health with the following health professionals?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dshltdk": {
-      "description": "Don't know: health discussions",
-      "question": "In the last 12 months (since that month and year), have you discussed your health with any of the following health professionals?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dshltna": {
-      "description": "Discussion with health professionals",
-      "question": "In the last 12 months, have you discussed your health with the following health professionals? (Include any form of communication or home visits.)",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "medtroc": {
-      "description": "Reason for missed care",
-      "question": "Did you not get this medical consultation or treatment because of other commitments?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "medtrnap": {
-      "description": "Not applicable reason (medical)",
-      "question": "Was \"Not applicable\" one of the reasons you couldn't get this medical consultation or treatment?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "medtrdk": {
-      "description": "Don't know reason for treatment",
-      "question": "For each of the following reasons, did it apply to why you were unable to get this medical consultation or treatment?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "medtrna": {
-      "description": "Reason: no answer (medical)",
-      "question": "Was 'No answer' recorded as a reason you were unable to get this medical consultation or treatment?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltacu": {
-      "description": "Acupuncture use (last 12 months)",
-      "question": "In the past 12 months, have you used acupuncture for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltacp": {
-      "description": "Acupressure use",
-      "question": "In the past 12 months, have you used acupressure for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltcm": {
-      "description": "Use of Chinese medicine",
-      "question": "In the past 12 months, have you used Chinese medicine for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltch": {
-      "description": "Chiropractic treatment use",
-      "question": "In the past 12 months, have you received chiropractic treatment for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltos": {
-      "description": "Osteopathy treatment use",
-      "question": "In the past 12 months, have you used osteopathy for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltho": {
-      "description": "Use of homeopathy",
-      "question": "In the last 12 months, have you used homeopathy for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltht": {
-      "description": "Use of herbal treatments",
-      "question": "In the last 12 months, have you used any herbal treatments for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhlthy": {
-      "description": "Use of hypnotherapy",
-      "question": "In the last 12 months, have you used hypnotherapy for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltmt": {
-      "description": "Use of massage therapy",
-      "question": "Have you used massage therapy for your own health in the past 12 months?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltpt": {
-      "description": "Physiotherapy use",
-      "question": "In the last 12 months, have you used physiotherapy for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltre": {
-      "description": "Reflexology treatment use",
-      "question": "In the last 12 months, have you used reflexology for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltsh": {
-      "description": "Use of spiritual healing",
-      "question": "In the past 12 months, have you used spiritual healing for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltnt": {
-      "description": "No treatments used",
-      "question": "In the last 12 months, did you use any of the treatments listed for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltref": {
-      "description": "Refusal to report treatments",
-      "question": "Since that date, for each treatment shown on this card, have you used it for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltdk": {
-      "description": "Treatment use (Don't know)",
-      "question": "In the past 12 months, do you not know what treatments you have used for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltna": {
-      "description": "Health treatments used",
-      "question": "In the past 12 months, have you used the following treatments for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "fltdpr": {
-      "description": "Frequency of feeling depressed",
-      "question": "In the past week, how often did you feel depressed?",
-      "values": {
-        "1": "None or almost none of the time",
-        "2": "Some of the time",
-        "3": "Most of the time",
-        "4": "All or almost all of the time",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "flteeff": {
-      "description": "Effort in daily activities",
-      "question": "During the past week, how often did you feel that everything you did was an effort?",
-      "values": {
-        "1": "None or almost none of the time",
-        "2": "Some of the time",
-        "3": "Most of the time",
-        "4": "All or almost all of the time",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "slprl": {
-      "description": "Restless sleep frequency",
-      "question": "During the past week, how often was your sleep restless?",
-      "values": {
-        "1": "None or almost none of the time",
-        "2": "Some of the time",
-        "3": "Most of the time",
-        "4": "All or almost all of the time",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "wrhpp": {
-      "description": "Happiness in past week",
-      "question": "In the past week, how much of the time did you feel happy?",
-      "values": {
-        "1": "None or almost none of the time",
-        "2": "Some of the time",
-        "3": "Most of the time",
-        "4": "All or almost all of the time",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "fltlnl": {
-      "description": "Frequency of feeling lonely",
-      "question": "In the past week, how often did you feel lonely?",
-      "values": {
-        "1": "None or almost none of the time",
-        "2": "Some of the time",
-        "3": "Most of the time",
-        "4": "All or almost all of the time",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "enjlf": {
-      "description": "Life enjoyment (past week)",
-      "question": "During the past week, how often did you enjoy life?",
-      "values": {
-        "1": "None or almost none of the time",
-        "2": "Some of the time",
-        "3": "Most of the time",
-        "4": "All or almost all of the time",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "fltsd": {
-      "description": "Frequency of feeling sad",
-      "question": "In the past week, how much of the time did you feel sad?",
-      "values": {
-        "1": "None or almost none of the time",
-        "2": "Some of the time",
-        "3": "Most of the time",
-        "4": "All or almost all of the time",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "cldgng": {
-      "description": "Difficulty getting going",
-      "question": "In the past week, how often did you feel you couldn't get going?",
-      "values": {
-        "1": "None or almost none of the time",
-        "2": "Some of the time",
-        "3": "Most of the time",
-        "4": "All or almost all of the time",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "hltprhc": {
-      "description": "Heart or circulation problem",
-      "question": "In the last 12 months, have you had a heart or circulatory problem?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprhb": {
-      "description": "High blood pressure (12 months)",
-      "question": "Have you had high blood pressure in the past 12 months?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprbp": {
-      "description": "Breathing problems (past year)",
-      "question": "Have you had breathing problems in the past 12 months?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltpral": {
-      "description": "Allergies in past 12 months",
-      "question": "Have you had any allergies in the last 12 months?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprbn": {
-      "description": "Back or neck pain",
-      "question": "Have you experienced back or neck pain in the past 12 months?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprpa": {
-      "description": "Muscular/joint pain (hand/arm)",
-      "question": "Have you had muscle or joint pain in your hand or arm in the past 12 months?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprpf": {
-      "description": "Muscular/joint foot or leg pain",
-      "question": "In the past 12 months, have you had muscle or joint pain in your foot or leg?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprsd": {
-      "description": "Stomach/digestion problems",
-      "question": "In the past 12 months, have you had stomach or digestion-related health problems?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprsc": {
-      "description": "Skin problems (last 12 months)",
-      "question": "Have you had any skin-related health problems in the last 12 months?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprsh": {
-      "description": "Severe headaches (past 12 months)",
-      "question": "Have you had severe headaches in the last 12 months?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprnt": {
-      "description": "No health problems reported",
-      "question": "In the past 12 months (since that month and year), have you had or experienced each of the health problems listed on this card? If none apply, select 'None of these'.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprref": {
-      "description": "Health problems (past year)",
-      "question": "Which of the health problems on this card have you had or experienced in the past 12 months? Please indicate all that apply.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprdk": {
-      "description": "Health problems (Don't know)",
-      "question": "Have you had or experienced [this health problem] in the last 12 months?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprna": {
-      "description": "Health problems (past year)",
-      "question": "Which of the health problems listed have you had in the last 12 months? Please select all that apply.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphhc": {
-      "description": "Heart or circulation problem",
-      "question": "In the last 12 months, did any heart or circulation problem limit your daily activities?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphhb": {
-      "description": "High blood pressure impact",
-      "question": "In the past 12 months, did high blood pressure interfere with your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphbp": {
-      "description": "Breathing problems affecting activities",
-      "question": "In the past 12 months, did breathing problems interfere with your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphal": {
-      "description": "Allergies hampering activities",
-      "question": "In the past 12 months, did your allergies hamper your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphbn": {
-      "description": "Back or neck pain limitation",
-      "question": "In the last 12 months, did back or neck pain hamper your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphpa": {
-      "description": "Hand/arm pain hampering activities",
-      "question": "In the past 12 months, has muscle or joint pain in your hand or arm hampered your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphpf": {
-      "description": "Muscular/joint pain in foot/leg",
-      "question": "In the past 12 months, did muscle or joint pain in your foot or leg interfere with your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphsd": {
-      "description": "Stomach/digestion impairment",
-      "question": "In the past 12 months, did stomach or digestion problems interfere with your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphsc": {
-      "description": "Skin condition impairment",
-      "question": "In the past 12 months, did any skin condition you experienced interfere with your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphsh": {
-      "description": "Severe headaches hampering activities",
-      "question": "In the past 12 months, did severe headaches interfere with your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphdi": {
-      "description": "Diabetes limiting activities",
-      "question": "In the past 12 months, did diabetes interfere with your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphnt": {
-      "description": "No incapacitating health problems",
-      "question": "In the past 12 months, did any of the following health problems interfere with your daily activities?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphnap": {
-      "description": "Health problems hampering activities",
-      "question": "For each health problem you had in the last 12 months, did it hamper your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphref": {
-      "description": "Health problems hampering activities",
-      "question": "Did the health problem(s) you had in the last 12 months hamper your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphdk": {
-      "description": "Don't know: health impact",
-      "question": "Did any health problems you had in the last 12 months hamper your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "cancfre": {
-      "description": "Duration cancer-free",
-      "question": "How long have you been cancer-free? By \"cancer-free\" I mean there have been no signs of cancer on tests or scans.",
-      "values": {
-        "1": "Less than 5 years",
-        "2": "5 to 10 years",
-        "3": "More than 10 years",
-        "6": "Not applicable",
-        "7": "Refused",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "jbexpvi": {
-      "description": "Exposure to vibrations at work",
-      "question": "Have you ever been exposed to vibrations from hand tools or machinery in any job you've had?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexpti": {
-      "description": "Tiring or painful positions",
-      "question": "In any job you've ever had, did you have to work in tiring or painful positions?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexpnap": {
-      "description": "Job exposure: not applicable",
-      "question": "In any of the jobs you've had, was 'Not applicable' ever marked for exposures?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexpref": {
-      "description": "Job exposure: refusal",
-      "question": "At any job you've had, did you ever experience refusal?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexpdk": {
-      "description": "Job exposure: don't know",
-      "question": "In any job you've ever had, did you mark “Don't know” when reporting an exposure?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexpna": {
-      "description": "Job exposure: no answer",
-      "question": "In any job you've ever had, did you encounter an item labeled \"No answer\"?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexevl": {
-      "description": "Exposure to very loud noise",
-      "question": "Have you ever been exposed to very loud noise at any job you've had?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexevh": {
-      "description": "Job exposure: very hot temperatures",
-      "question": "Have you ever been exposed to very hot temperatures in any job?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexera": {
-      "description": "Job exposure to radiation",
-      "question": "In any job you've ever had, were you exposed to radiation (for example, X-rays)?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexecp": {
-      "description": "Job exposure: chemicals",
-      "question": "Have you ever been exposed to chemical products, vapours, or other substances in any job you've had?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexebs": {
-      "description": "Work exposure to airborne contaminants",
-      "question": "In any job you've ever had, did you ever breathe in smoke, fumes, powder, or dust?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexenap": {
-      "description": "Job exposure: not applicable",
-      "question": "In any job you've ever had, were you exposed to the thing shown on this card?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexeref": {
-      "description": "Job exposure: refusal",
-      "question": "Have you ever experienced refusal in any job you've had?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexena": {
-      "description": "Job exposure: 'No answer'",
-      "question": "In any job you've ever had, was 'No answer' recorded as an exposure?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "likrisk": {
-      "description": "Risk-taking tendency",
-      "question": "To what extent does the statement 'I like to take risks' describe you?",
-      "values": {
-        "0": "Not at all",
-        "1": "A little",
-        "2": "A little",
-        "3": "Somewhat",
-        "4": "Mostly",
-        "5": "Mostly",
-        "6": "Completely",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "liklead": {
-      "description": "Desire to lead",
-      "question": "How well does the statement \"I like to be a leader\" describe you?",
-      "values": {
-        "0": "Not at all",
-        "1": "A little",
-        "2": "A little",
-        "3": "Somewhat",
-        "4": "Mostly",
-        "5": "Mostly",
-        "6": "Completely",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "actcomp": {
-      "description": "Acting compassionately",
-      "question": "How well does the statement \"I act compassionately towards others\" describe you?",
-      "values": {
-        "0": "Not at all",
-        "1": "A little",
-        "2": "A little",
-        "3": "Somewhat",
-        "4": "Mostly",
-        "5": "Mostly",
-        "6": "Completely",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "trwkcnt": {
-      "description": "Gender fairness at work",
-      "question": "When it comes to hiring, pay, and promotions at work in this country, are women or men treated less fairly, or are they treated equally?",
-      "values": {
-        "1": "Women are treated less fairly than men",
-        "2": "Men are treated less fairly than women",
-        "3": "Women and men are treated equally fairly",
-        "7": "Refused",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "wsekpwr": {
-      "description": "Perceived female power-seeking",
-      "question": "How often do you think women seek to gain power by controlling men?",
-      "values": {
-        "1": "Never",
-        "2": "Rarely",
-        "3": "Sometimes",
-        "4": "Often",
-        "5": "Always",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "weasoff": {
-      "description": "Perceived sensitivity of women",
-      "question": "How often do you think women get easily offended?",
-      "values": {
-        "1": "Never",
-        "2": "Rarely",
-        "3": "Sometimes",
-        "4": "Often",
-        "5": "Always",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "wlespdm": {
-      "description": "Perceived gender pay gap",
-      "question": "How often are women paid less than men for the same work in this country?",
-      "values": {
-        "1": "Never",
-        "2": "Rarely",
-        "3": "Sometimes",
-        "4": "Often",
-        "5": "Always",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "wexashr": {
-      "description": "Perceived exaggeration of harassment",
-      "question": "How often do you think women exaggerate claims of sexual harassment in the workplace?",
-      "values": {
-        "1": "Never",
-        "2": "Rarely",
-        "3": "Sometimes",
-        "4": "Often",
-        "5": "Always",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "wprtbym": {
-      "description": "Belief women should be protected",
-      "question": "How much do you agree or disagree with the statement: \"Men should protect women\"?",
-      "values": {
-        "1": "Agree strongly",
-        "2": "Agree",
-        "3": "Neither agree nor disagree",
-        "4": "Disagree",
-        "5": "Disagree strongly",
-        "7": "Refused",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "paccmoro": {
-      "description": "Mould or rot in housing",
-      "question": "Did your accommodation have mould or rot around the windows, on the doors, or on the floors?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "paccdwlr": {
-      "description": "Damp walls or leaking roof",
-      "question": "Does your accommodation have damp walls or a leaking roof?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "paccxhoc": {
-      "description": "Accommodation temperature problems",
-      "question": "Did you have problems with your accommodation being extremely hot or extremely cold?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "paccnois": {
-      "description": "Accommodation noise problem",
-      "question": "Did you have problems with noise in your accommodation?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "paccinro": {
-      "description": "Accommodation pest problems",
-      "question": "Does the place where you live have problems with insects or rodents?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "paccnt": {
-      "description": "No accommodation problems",
-      "question": "Did you experience none of these accommodation problems?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "paccref": {
-      "description": "Problems with accommodation",
-      "question": "Did you experience problems with accommodation?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "paccdk": {
-      "description": "Accommodation problems (don't know)",
-      "question": "Did you have problems with your accommodation?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "paccna": {
-      "description": "Problems with accommodation",
-      "question": "Have you experienced any problems with accommodation?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngoth": {
-      "description": "Other activities last week",
-      "question": "For each of the following 'Other' descriptions, please indicate whether it applies to what you've been doing in the last 7 days.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngref": {
-      "description": "Last 7 days — refusal",
-      "question": "For each of the following descriptions, did it apply to what you were doing in the last 7 days? Please answer Yes or No.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngdk": {
-      "description": "Don't know (last 7 days)",
-      "question": "In the last 7 days, did this description apply to what you were doing?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngna": {
-      "description": "No answer last week",
-      "question": "In the past 7 days, does this description apply to what you were doing?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngothp": {
-      "description": "Partner's activities last week",
-      "question": "In the past 7 days, has your partner been involved in other activities?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngdkp": {
-      "description": "Partner activity (Don't know)",
-      "question": "In the last 7 days, did your partner do each of the following? Please answer Yes or No for each item.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngnapp": {
-      "description": "Partner activity: not applicable",
-      "question": "In the last 7 days, for each of the following statements, has your partner done this? Please answer Yes or No.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngrefp": {
-      "description": "Partner refusal selection",
-      "question": "Was the 'Refusal' option chosen for the question about what your partner has been doing in the last 7 days?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngnap": {
-      "description": "Partner activity (no answer)",
-      "question": "Thinking about the past 7 days, for each of the following descriptions, has your partner done this? Please answer Yes or No for each.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "ipcrtiva": {
-      "description": "Values creativity",
-      "question": "How much does this description sound like you: \"Thinking up new ideas and being creative is important to you; you like to do things in your own original way\"?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "ipshabta": {
-      "description": "Need for admiration",
-      "question": "How much does this statement describe you: 'It's important to me to show my abilities; I want people to admire what I do'?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "impdiffa": {
-      "description": "Openness to new experiences",
-      "question": "How much does this description apply to you: \"Likes surprises, is always looking for new things to do, and thinks it's important to try many different things in life\"?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "ipmodsta": {
-      "description": "Importance of modesty",
-      "question": "How well does this describe you: \"I think it's important to be humble and modest, and I try not to draw attention to myself\"?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "ipgdtima": {
-      "description": "Importance of having a good time",
-      "question": "How much is this person like you when it comes to valuing having a good time and liking to treat themselves?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "impfreea": {
-      "description": "Preference for independence",
-      "question": "How much does this description sound like you: \"It is important to me to make my own decisions; I like being free and not depending on others\"?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "ipsucesa": {
-      "description": "Importance of success",
-      "question": "How much does this description sound like you: \"Being very successful is important to me; I want people to recognize my achievements\"?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "ipadvnta": {
-      "description": "Adventurousness and risk-taking",
-      "question": "To what extent does this statement describe you: \"I look for adventures, like to take risks, and want to have an exciting life\"?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "imptrada": {
-      "description": "Importance of traditions",
-      "question": "How well does the statement 'Tradition is important to me; I try to follow customs from my religion or my family' describe you?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "impfuna": {
-      "description": "Importance of seeking fun",
-      "question": "How well does this statement describe you: \"I seek every chance to have fun and it's important to me to do things that give me pleasure\"?",
-      "values": {
-        "1": "Very much like me",
-        "2": "Like me",
-        "3": "Somewhat like me",
-        "4": "A little like me",
-        "5": "Not like me",
-        "6": "Not like me at all",
-        "66": "Not applicable",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    },
-    "recon": {
-      "description": "Permission to be recontacted",
-      "question": "Do you agree that we can keep your name and contact details so we can contact you again with invitations to take part in future research?",
-      "values": {
-        "1": "Yes",
-        "2": "No",
-        "7": "Refusal",
-        "8": "Don't know",
-        "9": "No answer"
-      }
-    },
-    "inwds": {
-      "description": "Interview start marker",
-      "question": "Has the interview started?",
-      "values": {}
-    },
-    "ainws": {
-      "description": "Survey section header",
-      "question": "We're starting Section A now.",
-      "values": {}
-    },
-    "ainwe": {
-      "description": "Section A end marker",
-      "question": "Have you finished Section A?",
-      "values": {}
-    },
-    "binwe": {
-      "description": "End of section marker",
-      "question": "This is the end of Section B.",
-      "values": {}
-    },
-    "cinwe": {
-      "description": "Section end marker",
-      "question": "Is this the marker indicating the end of Section C?",
-      "values": {}
-    },
-    "dinwe": {
-      "description": "Section end marker",
-      "question": "You have reached the end of Section D. Would you like to continue to the next section?",
-      "values": {}
-    },
-    "einwe": {
-      "description": "Section end marker",
-      "question": "This is the end of Section E.",
-      "values": {}
-    },
-    "finwe": {
-      "description": "Section F end marker",
-      "question": "You have reached the end of Section F.",
-      "values": {}
-    },
-    "hinwe": {
-      "description": "End of section indicator",
-      "question": "This is the end of section H.",
-      "values": {}
-    },
-    "iinwe": {
-      "description": "Section end marker",
-      "question": "You have reached the end of Section I.",
-      "values": {}
-    },
-    "kinwe": {
-      "description": "Section end marker",
-      "question": "Does this indicate the end of Section K?",
-      "values": {}
-    },
-    "rinwe": {
-      "description": "Section end marker",
-      "question": "That’s the end of Section R.",
-      "values": {}
-    },
-    "inwde": {
-      "description": "Interview completion status",
-      "question": "Is this the end of the interview?",
-      "values": {}
-    },
-    "jinws": {
-      "description": "Section J start marker",
-      "question": "Now I'm going to start Section J.",
-      "values": {}
-    },
-    "jinwe": {
-      "description": "Section end marker",
-      "question": "Have we finished Section J?",
-      "values": {}
-    },
-    "mode": {
-      "description": "Mode of data collection",
-      "question": "How was the data collected?",
-      "values": {
-        "1": "Interview, Face to face (CAPI)",
-        "2": "Interview, Video (web based)",
-        "3": "Self completion, Self administered web based questionnaire (CAWI)",
-        "4": "Self completion, Self administered paper questionnaire (PAPI)",
-        "9": "Not available"
-      }
-    },
-    "domain": {
-      "description": "Sampling domain",
-      "question": "What population or area did you sample?",
-      "values": {}
-    },
-    "prob": {
-      "description": "Probability of selection",
-      "question": "What was the sampling probability — that is, the probability that a given person or unit was selected?",
-      "values": {}
-    }
-  },
   "demographics": {
-    "idno": {
-      "description": "",
-      "question": "Please enter your respondent identification number.",
-      "values": {}
-    },
     "cntry": {
       "description": "Respondent's country",
       "question": "Which country are you in?",
@@ -1559,13 +44,6 @@
         "TR": "Turkey",
         "UA": "Ukraine",
         "XK": "Kosovo"
-      }
-    },
-    "pweight": {
-      "description": "Population size weight",
-      "question": "What population weight should be used for this case? (Combine it with dweight or pspwght if applicable.)",
-      "values": {
-        "numeric": "Population weight (continuous numeric value)"
       }
     },
     "health": {
@@ -9573,7 +8051,7 @@
     },
     "edlvffit": {
       "description": "Father's education level",
-      "question": "Qual è il titolo di studio più alto che ha conseguito tuo padre?",
+      "question": "What is the highest level of education your father successfully completed?",
       "values": {
         "1": "Nessun titolo",
         "2": "Licenza elementare o attestato di valutazione finale di istruzione primaria",
@@ -11991,16 +10469,6 @@
         "999999": "No answer"
       }
     },
-    "regunit": {
-      "description": "Regional unit level",
-      "question": "What NUTS level is your regional unit?",
-      "values": {
-        "1": "NUTS level 1",
-        "2": "NUTS level 2",
-        "3": "NUTS level 3",
-        "4": "Regional unit not part of the NUTS nomenclature"
-      }
-    },
     "region": {
       "description": "Region",
       "question": "Which region do you live in?",
@@ -14310,21 +12778,6 @@
         "EU": "Europe",
         "99999": "Not available"
       }
-    },
-    "inwtm": {
-      "description": "Interview length (minutes)",
-      "question": "About how long was the main questionnaire interview?",
-      "values": {}
-    },
-    "stratum": {
-      "description": "Sampling stratum",
-      "question": "Which sampling stratum does this respondent belong to?",
-      "values": {}
-    },
-    "psu": {
-      "description": "Primary sampling unit",
-      "question": "What is the primary sampling unit (survey cluster) identifier?",
-      "values": {}
     }
   },
   "media_information_sources": {
@@ -14349,6 +12802,1370 @@
         "7": "Refusal",
         "8": "Don't know",
         "9": "No answer"
+      }
+    }
+  },
+  "other": {
+    "netustm": {
+      "description": "Daily internet time",
+      "question": "On a typical day, about how many hours do you spend using the internet on any device (computer, tablet, or smartphone) for work or personal use?",
+      "values": {
+        "6666": "Not applicable",
+        "7777": "Refusal",
+        "8888": "Don't know",
+        "9999": "No answer"
+      }
+    },
+    "stflife": {
+      "description": "Life satisfaction",
+      "question": "Overall, how satisfied are you with your life these days?",
+      "values": {
+        "0": "Extremely dissatisfied",
+        "1": "Extremely dissatisfied",
+        "2": "Somewhat dissatisfied",
+        "3": "Somewhat dissatisfied",
+        "4": "Neither satisfied nor dissatisfied",
+        "5": "Neither satisfied nor dissatisfied",
+        "6": "Neither satisfied nor dissatisfied",
+        "7": "Somewhat satisfied",
+        "8": "Somewhat satisfied",
+        "9": "Extremely satisfied",
+        "10": "Extremely satisfied",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "stfedu": {
+      "description": "State of education",
+      "question": "How would you rate the state of education in this country today?",
+      "values": {
+        "0": "Extremely bad",
+        "1": "Extremely bad",
+        "2": "Somewhat bad",
+        "3": "Somewhat bad",
+        "4": "Neither good nor bad",
+        "5": "Neither good nor bad",
+        "6": "Neither good nor bad",
+        "7": "Somewhat good",
+        "8": "Somewhat good",
+        "9": "Extremely good",
+        "10": "Extremely good",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "happy": {
+      "description": "Overall happiness",
+      "question": "Overall, how happy would you say you are?",
+      "values": {
+        "0": "Extremely unhappy",
+        "1": "Extremely unhappy",
+        "2": "Somewhat unhappy",
+        "3": "Somewhat unhappy",
+        "4": "Neither happy nor unhappy",
+        "5": "Neither happy nor unhappy",
+        "6": "Neither happy nor unhappy",
+        "7": "Somewhat happy",
+        "8": "Somewhat happy",
+        "9": "Extremely happy",
+        "10": "Extremely happy",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "aesfdrk": {
+      "description": "Safety walking after dark",
+      "question": "How safe would you feel walking alone in your local area after dark?",
+      "values": {
+        "1": "Very safe",
+        "2": "Safe",
+        "3": "Unsafe",
+        "4": "Very unsafe",
+        "7": "Refused",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "atchctr": {
+      "description": "Emotional attachment to country",
+      "question": "How emotionally attached do you feel to this country?",
+      "values": {
+        "0": "Not at all emotionally attached",
+        "1": "Not at all emotionally attached",
+        "2": "Slightly emotionally attached",
+        "3": "Slightly emotionally attached",
+        "4": "Somewhat emotionally attached",
+        "5": "Somewhat emotionally attached",
+        "6": "Somewhat emotionally attached",
+        "7": "Mostly emotionally attached",
+        "8": "Mostly emotionally attached",
+        "9": "Very emotionally attached",
+        "10": "Very emotionally attached",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "atcherp": {
+      "description": "Emotional attachment to Europe",
+      "question": "How emotionally attached do you feel to Europe?",
+      "values": {
+        "0": "Not at all emotionally attached",
+        "1": "Not at all emotionally attached",
+        "2": "Slightly emotionally attached",
+        "3": "Slightly emotionally attached",
+        "4": "Somewhat emotionally attached",
+        "5": "Somewhat emotionally attached",
+        "6": "Somewhat emotionally attached",
+        "7": "Mostly emotionally attached",
+        "8": "Mostly emotionally attached",
+        "9": "Very emotionally attached",
+        "10": "Very emotionally attached",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "pray": {
+      "description": "Frequency of prayer",
+      "question": "Besides when you're at religious services, how often do you pray, if at all?",
+      "values": {
+        "1": "Every day",
+        "2": "More than once a week",
+        "3": "Once a week",
+        "4": "At least once a month",
+        "5": "Only on special holy days",
+        "6": "Less often",
+        "7": "Never",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "dscroth": {
+      "description": "Other discrimination grounds",
+      "question": "Are people in your group discriminated against for any of the following other reasons? For each one, please indicate Yes or No.",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dscrnap": {
+      "description": "Discrimination not applicable",
+      "question": "Is the question \"On what grounds is your group discriminated against?\" not applicable in your case?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dscrna": {
+      "description": "Discrimination: no answer selected",
+      "question": "Was 'No answer' selected for the question asking on what grounds your group is discriminated against?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "ctrlife": {
+      "description": "Perceived control over life",
+      "question": "How much control do you feel you have over your life in general nowadays?",
+      "values": {
+        "0": "No control at all",
+        "1": "No control at all",
+        "2": "Little control",
+        "3": "Little control",
+        "4": "Some control",
+        "5": "Some control",
+        "6": "Some control",
+        "7": "Mostly control",
+        "8": "Mostly control",
+        "9": "Complete control",
+        "10": "Complete control",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "etfruit": {
+      "description": "Fruit consumption frequency",
+      "question": "How often do you eat fruit (not counting fruit juice)? Please include frozen fruit.",
+      "values": {
+        "1": "Three times or more a day",
+        "2": "Twice a day",
+        "3": "Once a day",
+        "4": "Less than once a day but at least 4 times a week",
+        "5": "Less than 4 times a week but at least once a week",
+        "6": "Less than once a week",
+        "7": "Never",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "eatveg": {
+      "description": "Vegetable consumption frequency",
+      "question": "How often do you eat vegetables or salad, excluding potatoes but including frozen vegetables?",
+      "values": {
+        "1": "Three times or more a day",
+        "2": "Twice a day",
+        "3": "Once a day",
+        "4": "Less than once a day but at least 4 times a week",
+        "5": "Less than 4 times a week but at least once a week",
+        "6": "Less than once a week",
+        "7": "Never",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "dosprt": {
+      "description": "Days of physical activity",
+      "question": "In the past 7 days, on how many days did you walk briskly, play sports, or do other physical activity for at least 30 minutes? The activity doesn't have to have been continuous.",
+      "values": {
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "alcwkdy": {
+      "description": "Grams alcohol on weekday",
+      "question": "The last time you drank on a weekday (Monday–Thursday), how many grams of alcohol did you consume?",
+      "values": {
+        "6666": "Not applicable",
+        "7777": "Refusal",
+        "8888": "Don't know",
+        "9999": "No answer"
+      }
+    },
+    "alcwknd": {
+      "description": "Weekend alcohol consumption (grams)",
+      "question": "About how many grams of alcohol did you consume the last time you drank on a weekend day (Friday to Sunday)?",
+      "values": {
+        "6666": "Not applicable",
+        "7777": "Refusal",
+        "8888": "Don't know",
+        "9999": "No answer"
+      }
+    },
+    "alcbnge": {
+      "description": "Binge drinking frequency",
+      "question": "In the past 12 months, how often did you drink that amount of alcohol or more on a single occasion?",
+      "values": {
+        "1": "Daily or almost daily",
+        "2": "Weekly",
+        "3": "Monthly",
+        "4": "Less than monthly",
+        "5": "Never",
+        "6": "Not applicable",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "dshltgp": {
+      "description": "Discussed health with GP",
+      "question": "In the past 12 months, have you discussed your health with a general practitioner, including by phone, message, or a home visit?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dshltms": {
+      "description": "Discussed health with specialist",
+      "question": "In the past 12 months, did you discuss your health with a medical specialist?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dshltnt": {
+      "description": "No health professional contact",
+      "question": "In the past 12 months, did you discuss your health with any of the health professionals listed?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dshltref": {
+      "description": "Discussed health professionals",
+      "question": "In the last 12 months, have you discussed your health with the following health professionals?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dshltdk": {
+      "description": "Don't know: health discussions",
+      "question": "In the last 12 months (since that month and year), have you discussed your health with any of the following health professionals?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dshltna": {
+      "description": "Discussion with health professionals",
+      "question": "In the last 12 months, have you discussed your health with the following health professionals? (Include any form of communication or home visits.)",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "medtroc": {
+      "description": "Reason for missed care",
+      "question": "Did you not get this medical consultation or treatment because of other commitments?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "medtrnap": {
+      "description": "Not applicable reason (medical)",
+      "question": "Was \"Not applicable\" one of the reasons you couldn't get this medical consultation or treatment?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "medtrdk": {
+      "description": "Don't know reason for treatment",
+      "question": "For each of the following reasons, did it apply to why you were unable to get this medical consultation or treatment?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "medtrna": {
+      "description": "Reason: no answer (medical)",
+      "question": "Was 'No answer' recorded as a reason you were unable to get this medical consultation or treatment?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltacu": {
+      "description": "Acupuncture use (last 12 months)",
+      "question": "In the past 12 months, have you used acupuncture for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltacp": {
+      "description": "Acupressure use",
+      "question": "In the past 12 months, have you used acupressure for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltcm": {
+      "description": "Use of Chinese medicine",
+      "question": "In the past 12 months, have you used Chinese medicine for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltch": {
+      "description": "Chiropractic treatment use",
+      "question": "In the past 12 months, have you received chiropractic treatment for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltos": {
+      "description": "Osteopathy treatment use",
+      "question": "In the past 12 months, have you used osteopathy for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltho": {
+      "description": "Use of homeopathy",
+      "question": "In the last 12 months, have you used homeopathy for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltht": {
+      "description": "Use of herbal treatments",
+      "question": "In the last 12 months, have you used any herbal treatments for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhlthy": {
+      "description": "Use of hypnotherapy",
+      "question": "In the last 12 months, have you used hypnotherapy for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltmt": {
+      "description": "Use of massage therapy",
+      "question": "Have you used massage therapy for your own health in the past 12 months?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltpt": {
+      "description": "Physiotherapy use",
+      "question": "In the last 12 months, have you used physiotherapy for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltre": {
+      "description": "Reflexology treatment use",
+      "question": "In the last 12 months, have you used reflexology for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltsh": {
+      "description": "Use of spiritual healing",
+      "question": "In the past 12 months, have you used spiritual healing for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltnt": {
+      "description": "No treatments used",
+      "question": "In the last 12 months, did you use any of the treatments listed for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltref": {
+      "description": "Refusal to report treatments",
+      "question": "Since that date, for each treatment shown on this card, have you used it for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltdk": {
+      "description": "Treatment use (Don't know)",
+      "question": "In the past 12 months, do you not know what treatments you have used for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "trhltna": {
+      "description": "Health treatments used",
+      "question": "In the past 12 months, have you used the following treatments for your own health?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "fltdpr": {
+      "description": "Frequency of feeling depressed",
+      "question": "In the past week, how often did you feel depressed?",
+      "values": {
+        "1": "None or almost none of the time",
+        "2": "Some of the time",
+        "3": "Most of the time",
+        "4": "All or almost all of the time",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "flteeff": {
+      "description": "Effort in daily activities",
+      "question": "During the past week, how often did you feel that everything you did was an effort?",
+      "values": {
+        "1": "None or almost none of the time",
+        "2": "Some of the time",
+        "3": "Most of the time",
+        "4": "All or almost all of the time",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "slprl": {
+      "description": "Restless sleep frequency",
+      "question": "During the past week, how often was your sleep restless?",
+      "values": {
+        "1": "None or almost none of the time",
+        "2": "Some of the time",
+        "3": "Most of the time",
+        "4": "All or almost all of the time",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "wrhpp": {
+      "description": "Happiness in past week",
+      "question": "In the past week, how much of the time did you feel happy?",
+      "values": {
+        "1": "None or almost none of the time",
+        "2": "Some of the time",
+        "3": "Most of the time",
+        "4": "All or almost all of the time",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "fltlnl": {
+      "description": "Frequency of feeling lonely",
+      "question": "In the past week, how often did you feel lonely?",
+      "values": {
+        "1": "None or almost none of the time",
+        "2": "Some of the time",
+        "3": "Most of the time",
+        "4": "All or almost all of the time",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "enjlf": {
+      "description": "Life enjoyment (past week)",
+      "question": "During the past week, how often did you enjoy life?",
+      "values": {
+        "1": "None or almost none of the time",
+        "2": "Some of the time",
+        "3": "Most of the time",
+        "4": "All or almost all of the time",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "fltsd": {
+      "description": "Frequency of feeling sad",
+      "question": "In the past week, how much of the time did you feel sad?",
+      "values": {
+        "1": "None or almost none of the time",
+        "2": "Some of the time",
+        "3": "Most of the time",
+        "4": "All or almost all of the time",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "cldgng": {
+      "description": "Difficulty getting going",
+      "question": "In the past week, how often did you feel you couldn't get going?",
+      "values": {
+        "1": "None or almost none of the time",
+        "2": "Some of the time",
+        "3": "Most of the time",
+        "4": "All or almost all of the time",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "hltprhc": {
+      "description": "Heart or circulation problem",
+      "question": "In the last 12 months, have you had a heart or circulatory problem?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltprhb": {
+      "description": "High blood pressure (12 months)",
+      "question": "Have you had high blood pressure in the past 12 months?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltprbp": {
+      "description": "Breathing problems (past year)",
+      "question": "Have you had breathing problems in the past 12 months?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltpral": {
+      "description": "Allergies in past 12 months",
+      "question": "Have you had any allergies in the last 12 months?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltprbn": {
+      "description": "Back or neck pain",
+      "question": "Have you experienced back or neck pain in the past 12 months?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltprpa": {
+      "description": "Muscular/joint pain (hand/arm)",
+      "question": "Have you had muscle or joint pain in your hand or arm in the past 12 months?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltprpf": {
+      "description": "Muscular/joint foot or leg pain",
+      "question": "In the past 12 months, have you had muscle or joint pain in your foot or leg?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltprsd": {
+      "description": "Stomach/digestion problems",
+      "question": "In the past 12 months, have you had stomach or digestion-related health problems?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltprsc": {
+      "description": "Skin problems (last 12 months)",
+      "question": "Have you had any skin-related health problems in the last 12 months?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltprsh": {
+      "description": "Severe headaches (past 12 months)",
+      "question": "Have you had severe headaches in the last 12 months?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltprnt": {
+      "description": "No health problems reported",
+      "question": "In the past 12 months (since that month and year), have you had or experienced each of the health problems listed on this card? If none apply, select 'None of these'.",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltprref": {
+      "description": "Health problems (past year)",
+      "question": "Which of the health problems on this card have you had or experienced in the past 12 months? Please indicate all that apply.",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltprdk": {
+      "description": "Health problems (Don't know)",
+      "question": "Have you had or experienced [this health problem] in the last 12 months?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltprna": {
+      "description": "Health problems (past year)",
+      "question": "Which of the health problems listed have you had in the last 12 months? Please select all that apply.",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphhc": {
+      "description": "Heart or circulation problem",
+      "question": "In the last 12 months, did any heart or circulation problem limit your daily activities?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphhb": {
+      "description": "High blood pressure impact",
+      "question": "In the past 12 months, did high blood pressure interfere with your daily activities in any way?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphbp": {
+      "description": "Breathing problems affecting activities",
+      "question": "In the past 12 months, did breathing problems interfere with your daily activities in any way?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphal": {
+      "description": "Allergies hampering activities",
+      "question": "In the past 12 months, did your allergies hamper your daily activities in any way?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphbn": {
+      "description": "Back or neck pain limitation",
+      "question": "In the last 12 months, did back or neck pain hamper your daily activities in any way?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphpa": {
+      "description": "Hand/arm pain hampering activities",
+      "question": "In the past 12 months, has muscle or joint pain in your hand or arm hampered your daily activities in any way?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphpf": {
+      "description": "Muscular/joint pain in foot/leg",
+      "question": "In the past 12 months, did muscle or joint pain in your foot or leg interfere with your daily activities in any way?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphsd": {
+      "description": "Stomach/digestion impairment",
+      "question": "In the past 12 months, did stomach or digestion problems interfere with your daily activities in any way?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphsc": {
+      "description": "Skin condition impairment",
+      "question": "In the past 12 months, did any skin condition you experienced interfere with your daily activities in any way?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphsh": {
+      "description": "Severe headaches hampering activities",
+      "question": "In the past 12 months, did severe headaches interfere with your daily activities in any way?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphdi": {
+      "description": "Diabetes limiting activities",
+      "question": "In the past 12 months, did diabetes interfere with your daily activities in any way?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphnt": {
+      "description": "No incapacitating health problems",
+      "question": "In the past 12 months, did any of the following health problems interfere with your daily activities?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphnap": {
+      "description": "Health problems hampering activities",
+      "question": "For each health problem you had in the last 12 months, did it hamper your daily activities in any way?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphref": {
+      "description": "Health problems hampering activities",
+      "question": "Did the health problem(s) you had in the last 12 months hamper your daily activities in any way?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "hltphdk": {
+      "description": "Don't know: health impact",
+      "question": "Did any health problems you had in the last 12 months hamper your daily activities in any way?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "cancfre": {
+      "description": "Duration cancer-free",
+      "question": "How long have you been cancer-free? By \"cancer-free\" I mean there have been no signs of cancer on tests or scans.",
+      "values": {
+        "1": "Less than 5 years",
+        "2": "5 to 10 years",
+        "3": "More than 10 years",
+        "6": "Not applicable",
+        "7": "Refused",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "jbexpvi": {
+      "description": "Exposure to vibrations at work",
+      "question": "Have you ever been exposed to vibrations from hand tools or machinery in any job you've had?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "jbexpti": {
+      "description": "Tiring or painful positions",
+      "question": "In any job you've ever had, did you have to work in tiring or painful positions?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "jbexpnap": {
+      "description": "Job exposure: not applicable",
+      "question": "In any of the jobs you've had, was 'Not applicable' ever marked for exposures?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "jbexpref": {
+      "description": "Job exposure: refusal",
+      "question": "At any job you've had, did you ever experience refusal?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "jbexpdk": {
+      "description": "Job exposure: don't know",
+      "question": "In any job you've ever had, did you mark “Don't know” when reporting an exposure?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "jbexpna": {
+      "description": "Job exposure: no answer",
+      "question": "In any job you've ever had, did you encounter an item labeled \"No answer\"?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "jbexevl": {
+      "description": "Exposure to very loud noise",
+      "question": "Have you ever been exposed to very loud noise at any job you've had?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "jbexevh": {
+      "description": "Job exposure: very hot temperatures",
+      "question": "Have you ever been exposed to very hot temperatures in any job?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "jbexera": {
+      "description": "Job exposure to radiation",
+      "question": "In any job you've ever had, were you exposed to radiation (for example, X-rays)?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "jbexecp": {
+      "description": "Job exposure: chemicals",
+      "question": "Have you ever been exposed to chemical products, vapours, or other substances in any job you've had?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "jbexebs": {
+      "description": "Work exposure to airborne contaminants",
+      "question": "In any job you've ever had, did you ever breathe in smoke, fumes, powder, or dust?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "jbexenap": {
+      "description": "Job exposure: not applicable",
+      "question": "In any job you've ever had, were you exposed to the thing shown on this card?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "jbexeref": {
+      "description": "Job exposure: refusal",
+      "question": "Have you ever experienced refusal in any job you've had?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "jbexena": {
+      "description": "Job exposure: 'No answer'",
+      "question": "In any job you've ever had, was 'No answer' recorded as an exposure?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "likrisk": {
+      "description": "Risk-taking tendency",
+      "question": "To what extent does the statement 'I like to take risks' describe you?",
+      "values": {
+        "0": "Not at all",
+        "1": "A little",
+        "2": "A little",
+        "3": "Somewhat",
+        "4": "Mostly",
+        "5": "Mostly",
+        "6": "Completely",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "liklead": {
+      "description": "Desire to lead",
+      "question": "How well does the statement \"I like to be a leader\" describe you?",
+      "values": {
+        "0": "Not at all",
+        "1": "A little",
+        "2": "A little",
+        "3": "Somewhat",
+        "4": "Mostly",
+        "5": "Mostly",
+        "6": "Completely",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "actcomp": {
+      "description": "Acting compassionately",
+      "question": "How well does the statement \"I act compassionately towards others\" describe you?",
+      "values": {
+        "0": "Not at all",
+        "1": "A little",
+        "2": "A little",
+        "3": "Somewhat",
+        "4": "Mostly",
+        "5": "Mostly",
+        "6": "Completely",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "trwkcnt": {
+      "description": "Gender fairness at work",
+      "question": "When it comes to hiring, pay, and promotions at work in this country, are women or men treated less fairly, or are they treated equally?",
+      "values": {
+        "1": "Women are treated less fairly than men",
+        "2": "Men are treated less fairly than women",
+        "3": "Women and men are treated equally fairly",
+        "7": "Refused",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "wsekpwr": {
+      "description": "Perceived female power-seeking",
+      "question": "How often do you think women seek to gain power by controlling men?",
+      "values": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "weasoff": {
+      "description": "Perceived sensitivity of women",
+      "question": "How often do you think women get easily offended?",
+      "values": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "wlespdm": {
+      "description": "Perceived gender pay gap",
+      "question": "How often are women paid less than men for the same work in this country?",
+      "values": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "wexashr": {
+      "description": "Perceived exaggeration of harassment",
+      "question": "How often do you think women exaggerate claims of sexual harassment in the workplace?",
+      "values": {
+        "1": "Never",
+        "2": "Rarely",
+        "3": "Sometimes",
+        "4": "Often",
+        "5": "Always",
+        "7": "Refusal",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "wprtbym": {
+      "description": "Belief women should be protected",
+      "question": "How much do you agree or disagree with the statement: \"Men should protect women\"?",
+      "values": {
+        "1": "Agree strongly",
+        "2": "Agree",
+        "3": "Neither agree nor disagree",
+        "4": "Disagree",
+        "5": "Disagree strongly",
+        "7": "Refused",
+        "8": "Don't know",
+        "9": "No answer"
+      }
+    },
+    "paccmoro": {
+      "description": "Mould or rot in housing",
+      "question": "Did your accommodation have mould or rot around the windows, on the doors, or on the floors?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "paccdwlr": {
+      "description": "Damp walls or leaking roof",
+      "question": "Does your accommodation have damp walls or a leaking roof?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "paccxhoc": {
+      "description": "Accommodation temperature problems",
+      "question": "Did you have problems with your accommodation being extremely hot or extremely cold?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "paccnois": {
+      "description": "Accommodation noise problem",
+      "question": "Did you have problems with noise in your accommodation?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "paccinro": {
+      "description": "Accommodation pest problems",
+      "question": "Does the place where you live have problems with insects or rodents?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "paccnt": {
+      "description": "No accommodation problems",
+      "question": "Did you experience none of these accommodation problems?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "paccref": {
+      "description": "Problems with accommodation",
+      "question": "Did you experience problems with accommodation?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "paccdk": {
+      "description": "Accommodation problems (don't know)",
+      "question": "Did you have problems with your accommodation?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "paccna": {
+      "description": "Problems with accommodation",
+      "question": "Have you experienced any problems with accommodation?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngoth": {
+      "description": "Other activities last week",
+      "question": "For each of the following 'Other' descriptions, please indicate whether it applies to what you've been doing in the last 7 days.",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngref": {
+      "description": "Last 7 days — refusal",
+      "question": "For each of the following descriptions, did it apply to what you were doing in the last 7 days? Please answer Yes or No.",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngdk": {
+      "description": "Don't know (last 7 days)",
+      "question": "In the last 7 days, did this description apply to what you were doing?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngna": {
+      "description": "No answer last week",
+      "question": "In the past 7 days, does this description apply to what you were doing?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngothp": {
+      "description": "Partner's activities last week",
+      "question": "In the past 7 days, has your partner been involved in other activities?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngdkp": {
+      "description": "Partner activity (Don't know)",
+      "question": "In the last 7 days, did your partner do each of the following? Please answer Yes or No for each item.",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngnapp": {
+      "description": "Partner activity: not applicable",
+      "question": "In the last 7 days, for each of the following statements, has your partner done this? Please answer Yes or No.",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngrefp": {
+      "description": "Partner refusal selection",
+      "question": "Was the 'Refusal' option chosen for the question about what your partner has been doing in the last 7 days?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "dngnap": {
+      "description": "Partner activity (no answer)",
+      "question": "Thinking about the past 7 days, for each of the following descriptions, has your partner done this? Please answer Yes or No for each.",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
+    "ipcrtiva": {
+      "description": "Values creativity",
+      "question": "How much does this description sound like you: \"Thinking up new ideas and being creative is important to you; you like to do things in your own original way\"?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "ipshabta": {
+      "description": "Need for admiration",
+      "question": "How much does this statement describe you: 'It's important to me to show my abilities; I want people to admire what I do'?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "impdiffa": {
+      "description": "Openness to new experiences",
+      "question": "How much does this description apply to you: \"Likes surprises, is always looking for new things to do, and thinks it's important to try many different things in life\"?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "ipmodsta": {
+      "description": "Importance of modesty",
+      "question": "How well does this describe you: \"I think it's important to be humble and modest, and I try not to draw attention to myself\"?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "ipgdtima": {
+      "description": "Importance of having a good time",
+      "question": "How much is this person like you when it comes to valuing having a good time and liking to treat themselves?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "impfreea": {
+      "description": "Preference for independence",
+      "question": "How much does this description sound like you: \"It is important to me to make my own decisions; I like being free and not depending on others\"?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "ipsucesa": {
+      "description": "Importance of success",
+      "question": "How much does this description sound like you: \"Being very successful is important to me; I want people to recognize my achievements\"?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "ipadvnta": {
+      "description": "Adventurousness and risk-taking",
+      "question": "To what extent does this statement describe you: \"I look for adventures, like to take risks, and want to have an exciting life\"?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "imptrada": {
+      "description": "Importance of traditions",
+      "question": "How well does the statement 'Tradition is important to me; I try to follow customs from my religion or my family' describe you?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "impfuna": {
+      "description": "Importance of seeking fun",
+      "question": "How well does this statement describe you: \"I seek every chance to have fun and it's important to me to do things that give me pleasure\"?",
+      "values": {
+        "1": "Very much like me",
+        "2": "Like me",
+        "3": "Somewhat like me",
+        "4": "A little like me",
+        "5": "Not like me",
+        "6": "Not like me at all",
+        "66": "Not applicable",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
       }
     }
   },
