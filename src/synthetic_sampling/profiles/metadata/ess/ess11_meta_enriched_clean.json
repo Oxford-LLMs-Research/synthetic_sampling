@@ -7681,74 +7681,6 @@
     "notes_2": "Rephrased to match the provided Yes/No response scale and clarified that respondents should answer each listed reason; removed 'please specify / code all that apply' wording."
   },
   {
-    "variable_name": "dscrdk",
-    "question_text_raw": "Discrimination of respondent's group: don't know\nASK IF YES AT C18 (IF C18 = 1)\nOn what grounds is your group discriminated against? Don't know\nPROBE: 'What other grounds?' CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Discrimination grounds: don't know",
-    "question_cleaned": "Was 'Don't know' listed as a reason for discrimination against your group?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed routing ('ASK IF YES AT C18') and interviewer probes. Clarified that this is a checkbox item indicating whether 'Don't know' was selected among grounds of discrimination.",
-    "question_category": "trust in social groups",
-    "notes_2": "Reworded for natural phrasing; kept meaning and binary response format."
-  },
-  {
-    "variable_name": "dscrref",
-    "question_text_raw": "Discrimination of respondent's group: refusal\nASK IF YES AT C18 (IF C18 = 1)\nOn what grounds is your group discriminated against? Refusal\nPROBE: 'What other grounds?' CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Grounds for discrimination",
-    "question_cleaned": "Was \"Refusal\" listed as a reason your group is discriminated against?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed routing (ASK IF YES AT C18) and interviewer probes; clarified this is asking whether the 'Refusal' option was selected as a ground for discrimination. Indicates a multiple-response checklist item.",
-    "question_category": "trust in social groups",
-    "notes_2": "Rephrased to a more natural yes/no question; preserved original meaning and response scale."
-  },
-  {
-    "variable_name": "dscrnap",
-    "question_text_raw": "Discrimination of respondent's group: not applicable\nASK IF YES AT C18 (IF C18 = 1)\nOn what grounds is your group discriminated against? Not applicable\nPROBE: 'What other grounds?' CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Discrimination not applicable",
-    "question_cleaned": "Is the question \"On what grounds is your group discriminated against?\" not applicable in your case?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed routing instruction (ASK IF C18=1), probe text and card/interviewer references; cleaned wording to indicate this is an indicator for 'Not applicable'.",
-    "question_category": "other",
-    "notes_2": "Converted the original meta-question into a natural yes/no question about applicability; simplified wording to match the binary response scale."
-  },
-  {
-    "variable_name": "dscrna",
-    "question_text_raw": "Discrimination of respondent's group: no answer\nASK IF YES AT C18 (IF C18 = 1)\nOn what grounds is your group discriminated against? No answer\nPROBE: 'What other grounds?' CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Discrimination: no answer selected",
-    "question_cleaned": "Was 'No answer' selected for the question asking on what grounds your group is discriminated against?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed routing and interviewer instructions (e.g. 'ASK IF YES AT C18', 'PROBE', 'CODE ALL THAT APPLY'). Reworded to indicate this is a checkbox variable capturing whether the 'No answer' option was selected for the grounds-of-discrimination question.",
-    "question_category": "other",
-    "notes_2": "Changed to a natural yes/no question and smoothed wording; meaning and response scale preserved."
-  },
-  {
     "variable_name": "ctzcntr",
     "question_text_raw": "Citizen of country\nASK ALL\nAre you a citizen of [country]?",
     "values_raw": {
@@ -12517,74 +12449,6 @@
     "notes_2": "Minor wording change: 'last' → 'past' for slightly more natural phrasing; otherwise unchanged to match the yes/no scale."
   },
   {
-    "variable_name": "dshltnt",
-    "question_text_raw": "Discussed health, last 12 months: none of these\nCARD 48\nIn the last 12 months, that is since [MONTH, YEAR], with which of the health professionals on this card have you discussed your health? None of these\nINTERVIEWER: Refer to the same month as the interview but of the previous year. For example, if the interview takes place in September 2014, use [September 2013]. CODE ALL THAT APPLY. INTERVIEWER PROBE: 'Any other'? INTERVIEWER: include any form of communication and home visits by the doctor.",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "No health professional contact",
-    "question_cleaned": "In the past 12 months, did you discuss your health with any of the health professionals listed?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card references and interviewer instructions. Rephrased into a natural question. Variable indicates whether the 'None of these' option was selected (1=Marked, 0=Not marked).",
-    "question_category": "other",
-    "notes_2": "Simplified to a natural yes/no question and removed the 'or with none of them' phrasing to match the binary (Yes/No) response scale."
-  },
-  {
-    "variable_name": "dshltref",
-    "question_text_raw": "Discussed health, last 12 months: refusal\nCARD 48\nIn the last 12 months, that is since [MONTH, YEAR], with which of the health professionals on this card have you discussed your health? Refusal\nINTERVIEWER: Refer to the same month as the interview but of the previous year. For example, if the interview takes place in September 2014, use [September 2013]. CODE ALL THAT APPLY. INTERVIEWER PROBE: 'Any other'? INTERVIEWER: include any form of communication and home visits by the doctor.",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Discussed health professionals",
-    "question_cleaned": "In the last 12 months, have you discussed your health with the following health professionals?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed interviewer instructions, card references, probes, and routing. Retained reference period. This variable represents the 'Refusal' response option for the multi-select question about discussing health with professionals.",
-    "question_category": "other",
-    "notes_2": "Removed the [MONTH, YEAR] placeholder and the refusal note; rephrased to a stem that fits yes/no responses for each listed professional."
-  },
-  {
-    "variable_name": "dshltdk",
-    "question_text_raw": "Discussed health, last 12 months: don't know\nCARD 48\nIn the last 12 months, that is since [MONTH, YEAR], with which of the health professionals on this card have you discussed your health? Don't know\nINTERVIEWER: Refer to the same month as the interview but of the previous year. For example, if the interview takes place in September 2014, use [September 2013]. CODE ALL THAT APPLY. INTERVIEWER PROBE: 'Any other'? INTERVIEWER: include any form of communication and home visits by the doctor.",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Don't know: health discussions",
-    "question_cleaned": "In the last 12 months (since that month and year), have you discussed your health with any of the following health professionals?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card label and interviewer instructions. This variable is the checkbox indicating a 'Don't know' response about whether the respondent discussed their health with listed health professionals in the past 12 months.",
-    "question_category": "other",
-    "notes_2": "Replaced the [MONTH, YEAR] placeholder with 'that month and year', removed the '(Don't know)' prompt, and rephrased to a yes/no style appropriate for the provided 0/1 responses."
-  },
-  {
-    "variable_name": "dshltna",
-    "question_text_raw": "Discussed health, last 12 months: no answer\nCARD 48\nIn the last 12 months, that is since [MONTH, YEAR], with which of the health professionals on this card have you discussed your health? No answer\nINTERVIEWER: Refer to the same month as the interview but of the previous year. For example, if the interview takes place in September 2014, use [September 2013]. CODE ALL THAT APPLY. INTERVIEWER PROBE: 'Any other'? INTERVIEWER: include any form of communication and home visits by the doctor.",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Discussion with health professionals",
-    "question_cleaned": "In the last 12 months, have you discussed your health with the following health professionals? (Include any form of communication or home visits.)",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card label and interviewer instructions; kept reference period and the instruction to include any form of communication or home visits. Preserved original value coding.",
-    "question_category": "other",
-    "notes_2": "Removed redundant phrasing and the 'Code all that apply' instruction; rephrased to prompt a separate yes/no response for each professional."
-  },
-  {
     "variable_name": "medtrun",
     "question_text_raw": "Unable to get medical consultation or treatment, last 12 months\nCARD 49\nIn the last 12 months, that is since [MONTH, YEAR], were you ever unable to get a medical consultation or the treatment you needed for any of the reasons listed on this card?\nINTERVIEWER: Refer to the same month as the interview but of the previous year. For example, if the interview takes place in September 2014, use [September 2013].",
     "values_raw": {
@@ -12717,82 +12581,14 @@
       "1": "Marked"
     },
     "description": "Other reason for no treatment",
-    "question_cleaned": "Was 'Other' one of the reasons you couldn't get this medical consultation or treatment?",
+    "question_cleaned": "Where there reasons you couldn't get this medical consultation or treatment other than lack of time, waitlist, lack of appointments, or unavailability in your area?",
     "adjusted_values": {
       "0": "No",
       "1": "Yes"
     },
     "notes": "Removed card references and interviewer instructions; rephrased as a yes/no item indicating whether the 'Other' reason was selected.",
     "question_category": "covid",
-    "notes_2": "Reworded slightly to sound more natural and conversational; left as a yes/no question to match the response scale."
-  },
-  {
-    "variable_name": "medtrnap",
-    "question_text_raw": "No medical consultation or treatment, reason: not applicable\nASK IF CODE 1 AT E14 STILL CARD 49\nWhich of the reasons on the card explains why you were unable to get this medical consultation or treatment? Not applicable\nCODE ALL THAT APPLY. INTERVIEWER PROBE: 'Any others'?",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Not applicable reason (medical)",
-    "question_cleaned": "Was \"Not applicable\" one of the reasons you couldn't get this medical consultation or treatment?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card instructions and interviewer probe; rephrased as a direct binary question about the 'Not applicable' reason.",
-    "question_category": "other",
-    "notes_2": "Reworded for natural yes/no phrasing and simplified wording; preserved original meaning."
-  },
-  {
-    "variable_name": "medtrref",
-    "question_text_raw": "No medical consultation or treatment, reason: refusal\nASK IF CODE 1 AT E14 STILL CARD 49\nWhich of the reasons on the card explains why you were unable to get this medical consultation or treatment? Refusal\nCODE ALL THAT APPLY. INTERVIEWER PROBE: 'Any others'?",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Refused medical care reason",
-    "question_cleaned": "Was refusal listed as a reason you couldn't get the medical consultation or treatment?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed routing, card references, and interviewer probe. Rephrased as a direct question about whether 'Refusal' was marked. Checkbox coding retained (1=Marked, 0=Not marked).",
-    "question_category": "covid",
-    "notes_2": "Removed quotation marks around 'Refusal' to make the wording more natural; kept the yes/no format."
-  },
-  {
-    "variable_name": "medtrdk",
-    "question_text_raw": "No medical consultation or treatment, reason: don't know\nASK IF CODE 1 AT E14 STILL CARD 49\nWhich of the reasons on the card explains why you were unable to get this medical consultation or treatment? Don't know\nCODE ALL THAT APPLY. INTERVIEWER PROBE: 'Any others'?",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Don't know reason for treatment",
-    "question_cleaned": "For each of the following reasons, did it apply to why you were unable to get this medical consultation or treatment?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed routing and interviewer instructions (ASK IF, CARD, INTERVIEWER PROBE). Rephrased to natural question and clarified 'CODE ALL THAT APPLY' as 'Select all that apply'. Variable represents the 'Don't know' checkbox option; original coding preserved.",
-    "question_category": "other",
-    "notes_2": "Reworded to prompt a yes/no response for each listed reason; removed '(Don't know)' and 'Select all that apply.'"
-  },
-  {
-    "variable_name": "medtrna",
-    "question_text_raw": "No medical consultation or treatment, reason: no answer\nASK IF CODE 1 AT E14 STILL CARD 49\nWhich of the reasons on the card explains why you were unable to get this medical consultation or treatment? No answer\nCODE ALL THAT APPLY. INTERVIEWER PROBE: 'Any others'?",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Reason: no answer (medical)",
-    "question_cleaned": "Was 'No answer' recorded as a reason you were unable to get this medical consultation or treatment?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed interviewer instructions and card references. This variable is a checkbox indicating the 'No answer' reason among all reasons for being unable to obtain medical consultation or treatment.",
-    "question_category": "other",
-    "notes_2": "Reworded into a natural yes/no question and simplified phrasing."
+    "notes_2": "Rephrased to make clear what other category is; left as a yes/no question to match the response scale."
   },
   {
     "variable_name": "medtrnu",
@@ -12806,7 +12602,7 @@
       "9": "No answer"
     },
     "description": "Reason for no unmet medical need",
-    "question_cleaned": "In the last 12 months, was that because you were able to get the medical consultation or treatment you needed, or because you did not need any medical consultation or treatment?",
+    "question_cleaned": "In the last 12 months, did you not have any unmet medical need because you were able to get the medical consultation or treatment you needed, or because you did not need any medical consultation or treatment?",
     "adjusted_values": {
       "1": "Able to get needed medical consultation or treatment",
       "2": "Did not need medical consultation or treatment",
@@ -13080,74 +12876,6 @@
     "notes": "Removed card instructions, interviewer notes, date example, and probing instructions. This is a multiple-response item coded as 'Marked'/'Not marked' indicating use in the past 12 months.",
     "question_category": "other",
     "notes_2": "Replaced the [MONTH, YEAR] placeholder with 'in the past 12 months' and made a minor wording adjustment; otherwise unchanged."
-  },
-  {
-    "variable_name": "trhltnt",
-    "question_text_raw": "Treatments used for own health, last 12 months: none of these\nASK ALL CARD 52\nIn the last 12 months, that is since [MONTH, YEAR], which of the treatments on this card have you used for your own health? None of these\nINTERVIEWER: Refer to the same month as the interview but of the previous year. For example, if the interview takes place in September 2014, use [September 2013]. PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "No treatments used",
-    "question_cleaned": "In the last 12 months, did you use any of the treatments listed for your own health?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card references and interviewer instructions. This variable records whether respondent selected the 'None of these' option for treatments used in the past 12 months.",
-    "question_category": "other",
-    "notes_2": "Removed the phrase 'or none of these' to make the wording a clear yes/no question consistent with the response scale."
-  },
-  {
-    "variable_name": "trhltref",
-    "question_text_raw": "Treatments used for own health, last 12 months: refusal\nASK ALL CARD 52\nIn the last 12 months, that is since [MONTH, YEAR], which of the treatments on this card have you used for your own health? Refusal\nINTERVIEWER: Refer to the same month as the interview but of the previous year. For example, if the interview takes place in September 2014, use [September 2013]. PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Refusal to report treatments",
-    "question_cleaned": "Since that date, for each treatment shown on this card, have you used it for your own health?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed interviewer instructions, example, probing text, and card routing. This variable is the 'Refusal' checkbox from the treatments-used-in-last-12-months card.",
-    "question_category": "other",
-    "notes_2": "Replaced placeholder [MONTH, YEAR] with 'that date'; rephrased to make it clear respondents should answer yes/no for each treatment; removed '(Refusal)'."
-  },
-  {
-    "variable_name": "trhltdk",
-    "question_text_raw": "Treatments used for own health, last 12 months: don't know\nASK ALL CARD 52\nIn the last 12 months, that is since [MONTH, YEAR], which of the treatments on this card have you used for your own health? Don't know\nINTERVIEWER: Refer to the same month as the interview but of the previous year. For example, if the interview takes place in September 2014, use [September 2013]. PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Treatment use (Don't know)",
-    "question_cleaned": "In the past 12 months, do you not know what treatments you have used for your own health?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card and interviewer instructions and probe text. This variable records the 'Don't know' response option for the treatments-used question.",
-    "question_category": "other",
-    "notes_2": "Changed 'last' to 'past' for more natural phrasing; changed wording to match the yes/no response options for each item."
-  },
-  {
-    "variable_name": "trhltna",
-    "question_text_raw": "Treatments used for own health, last 12 months: no answer\nASK ALL CARD 52\nIn the last 12 months, that is since [MONTH, YEAR], which of the treatments on this card have you used for your own health? No answer\nINTERVIEWER: Refer to the same month as the interview but of the previous year. For example, if the interview takes place in September 2014, use [September 2013]. PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Health treatments used",
-    "question_cleaned": "In the past 12 months, have you used the following treatments for your own health?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card instructions and interviewer notes (including 'ASK ALL', interviewer probe, and date example). Rephrased for clarity and kept the 12-month reference. Simplified value labels from 'Not marked'/'Marked' to 'Not used'/'Used'. Removed stray 'No answer' artifact from question text.",
-    "question_category": "other",
-    "notes_2": "Reworded slightly for natural phrasing and to match binary (yes/no) responses; 'last 12 months' changed to 'past 12 months'."
   },
   {
     "variable_name": "fltdpr",
@@ -13553,74 +13281,6 @@
     "notes_2": "Replaced the [MONTH, YEAR] placeholder with 'the past 12 months' to remove the placeholder; phrasing kept as a yes/no question to match the 0/1 response scale."
   },
   {
-    "variable_name": "hltprnt",
-    "question_text_raw": "Health problems, last 12 months: none of these\nCARD 54\nWhich of the health problems on this card have you had or experienced in the last 12 months, that is since [MONTH, YEAR]? None of these\nJust tell me which letters apply to you. INTERVIEWER: Refer to the same month as the interview but of the previous year. For example, if the interview takes place in September 2014, use [September 2013]. PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "No health problems reported",
-    "question_cleaned": "In the past 12 months (since that month and year), have you had or experienced each of the health problems listed on this card? If none apply, select 'None of these'.",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card references and interviewer instructions; rephrased for clarity. This item represents the 'None of these' checkbox from a checklist of health problems; response codes indicate whether it was marked.",
-    "question_category": "other",
-    "notes_2": "Replaced the [MONTH, YEAR] placeholder with 'that month and year' and rephrased to a per-item yes/no prompt consistent with the binary response scale; preserved the 'None of these' instruction."
-  },
-  {
-    "variable_name": "hltprref",
-    "question_text_raw": "Health problems, last 12 months: refusal\nCARD 54\nWhich of the health problems on this card have you had or experienced in the last 12 months, that is since [MONTH, YEAR]? Refusal\nJust tell me which letters apply to you. INTERVIEWER: Refer to the same month as the interview but of the previous year. For example, if the interview takes place in September 2014, use [September 2013]. PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Health problems (past year)",
-    "question_cleaned": "Which of the health problems on this card have you had or experienced in the past 12 months? Please indicate all that apply.",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed interviewer instructions, card references, and probe language. Retained the 12-month reference period. This is a multiple-response checklist item; codes indicate whether each listed problem was marked (1) or not (0).",
-    "question_category": "other",
-    "notes_2": "Replaced the placeholder '(since [MONTH, YEAR])' with 'in the past 12 months' for natural wording; otherwise minimal change."
-  },
-  {
-    "variable_name": "hltprdk",
-    "question_text_raw": "Health problems, last 12 months: don't know\nCARD 54\nWhich of the health problems on this card have you had or experienced in the last 12 months, that is since [MONTH, YEAR]? Don't know\nJust tell me which letters apply to you. INTERVIEWER: Refer to the same month as the interview but of the previous year. For example, if the interview takes place in September 2014, use [September 2013]. PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Health problems (Don't know)",
-    "question_cleaned": "Have you had or experienced [this health problem] in the last 12 months?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card references, interviewer instructions, probes, and example date guidance. This variable records whether the 'Don't know' option was marked for health problems in the past 12 months; value codes unchanged.",
-    "question_category": "other",
-    "notes_2": "Reworded to a yes/no question to match the binary scale; replaced the date placeholder with natural phrasing 'in the last 12 months' and removed the 'Don't know' instruction."
-  },
-  {
-    "variable_name": "hltprna",
-    "question_text_raw": "Health problems, last 12 months: no answer\nCARD 54\nWhich of the health problems on this card have you had or experienced in the last 12 months, that is since [MONTH, YEAR]? No answer\nJust tell me which letters apply to you. INTERVIEWER: Refer to the same month as the interview but of the previous year. For example, if the interview takes place in September 2014, use [September 2013]. PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Health problems (past year)",
-    "question_cleaned": "Which of the health problems listed have you had in the last 12 months? Please select all that apply.",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card number, interviewer instructions, probes, and duplicate 'no answer' text; simplified wording and preserved 'select all that apply' instruction.",
-    "question_category": "other",
-    "notes_2": "Replaced the [MONTH, YEAR] placeholder with 'in the last 12 months' and slightly rephrased 'indicate' to 'select' for natural wording."
-  },
-  {
     "variable_name": "hltphhc",
     "question_text_raw": "Health problems, hampered, last 12 month: heart or circulation problem\nASK IF CODE 01- 11 AT E28 STILL CARD 54\nAnd which of the health problems that you had or experienced in the last 12 months hampered you in your daily activities in any way? Heart or circulation problem\nAgain, just tell me which letters apply to you. PROBE: Which others? CODE ALL THAT APPLY",
     "values_raw": {
@@ -13808,91 +13468,6 @@
     "notes_2": "Changed 'last' to 'past' and 'hamper' to more natural 'interfere with'; kept question as a yes/no format."
   },
   {
-    "variable_name": "hltphnt",
-    "question_text_raw": "Health problems, hampered, last 12 month: none of these\nASK IF CODE 01- 11 AT E28 STILL CARD 54\nAnd which of the health problems that you had or experienced in the last 12 months hampered you in your daily activities in any way? None of these\nAgain, just tell me which letters apply to you. PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "No incapacitating health problems",
-    "question_cleaned": "In the past 12 months, did any of the following health problems interfere with your daily activities?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card references and interviewer instructions. Clarified that this item indicates whether the respondent selected 'None of these' among health problems that hampered daily activities. Simplified value labels from 'Marked/Not marked' to 'Selected/Not selected'.",
-    "question_category": "other",
-    "notes_2": "Reworded into a natural yes/no question suitable for a binary (Yes/No) response per item; removed the parenthetical instruction."
-  },
-  {
-    "variable_name": "hltphnap",
-    "question_text_raw": "Health problems, hampered, last 12 month: not applicable\nASK IF CODE 01- 11 AT E28 STILL CARD 54\nAnd which of the health problems that you had or experienced in the last 12 months hampered you in your daily activities in any way? Not applicable\nAgain, just tell me which letters apply to you. PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Health problems hampering activities",
-    "question_cleaned": "For each health problem you had in the last 12 months, did it hamper your daily activities in any way?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card instructions and interviewer probes. This variable records whether the 'Not applicable' option was marked for health problems that hampered daily activities in the last 12 months.",
-    "question_category": "other",
-    "notes_2": "Rephrased into a clear yes/no question to match the 0/1 response scale; removed the '(Not applicable)' parenthetical and changed 'Which of' to 'For each' to indicate item-level responses."
-  },
-  {
-    "variable_name": "hltphref",
-    "question_text_raw": "Health problems, hampered, last 12 month: refusal\nASK IF CODE 01- 11 AT E28 STILL CARD 54\nAnd which of the health problems that you had or experienced in the last 12 months hampered you in your daily activities in any way? Refusal\nAgain, just tell me which letters apply to you. PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Health problems hampering activities",
-    "question_cleaned": "Did the health problem(s) you had in the last 12 months hamper your daily activities in any way?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed interviewer instructions, card references, and probe text. This is an item-specific indicator for the 'Refusal' response among health problems that hampered daily activities in the last 12 months.",
-    "question_category": "other",
-    "notes_2": "Converted from a 'Which of' phrasing to a yes/no question to match the 0/1 response scale; removed 'Refusal' placeholder."
-  },
-  {
-    "variable_name": "hltphdk",
-    "question_text_raw": "Health problems, hampered, last 12 month: don't know\nASK IF CODE 01- 11 AT E28 STILL CARD 54\nAnd which of the health problems that you had or experienced in the last 12 months hampered you in your daily activities in any way? Don't know\nAgain, just tell me which letters apply to you. PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Don't know: health impact",
-    "question_cleaned": "Did any health problems you had in the last 12 months hamper your daily activities in any way?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed routing, card references, and interviewer probes. Variable indicates whether the 'Don't know' response option was marked.",
-    "question_category": "other",
-    "notes_2": "Rephrased from 'Which of the health problems...' to a yes/no question to match the binary response scale; removed the '(Don't know option)' note."
-  },
-  {
-    "variable_name": "hltphna",
-    "question_text_raw": "Health problems, hampered, last 12 month: no answer\nASK IF CODE 01- 11 AT E28 STILL CARD 54\nAnd which of the health problems that you had or experienced in the last 12 months hampered you in your daily activities in any way? No answer\nAgain, just tell me which letters apply to you. PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "No answer: health problems",
-    "question_cleaned": "Did you choose 'No answer' when asked which health problems in the last 12 months hampered your daily activities?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed routing and interviewer instructions. This variable indicates whether the respondent selected the 'No answer' option for the multi-select question on health problems that hampered daily activities in the last 12 months.",
-    "question_category": "demographics",
-    "notes_2": "Rephrased for natural language (e.g., 'select' → 'choose', 'for the question about' → 'when asked'); retained 'No answer' and yes/no format."
-  },
-  {
     "variable_name": "hltprca",
     "question_text_raw": "Have or had any health problems listed on showcard (cancer)\nASK ALL CARD 55\nDo you have or have you ever had any of the health problems listed on this card? IF YES, is that currently or previously?",
     "values_raw": {
@@ -14071,91 +13646,6 @@
     "notes_2": "Rephrased slightly for more natural conversational wording; retained yes/no response format."
   },
   {
-    "variable_name": "jbexpnt",
-    "question_text_raw": "In any job, ever exposed to: none of these\nCARD 66\nIn any of the jobs you have ever had, which of the things on this card were you exposed to? None of these\nINTERVIEWER PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Job exposure: none",
-    "question_cleaned": "In any job you've ever had, were you not exposed to any of these items?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card reference and interviewer probe; variable indicates whether 'None of these' was selected for job exposures.",
-    "question_category": "demographics",
-    "notes_2": "Reworded into a more natural yes/no question and simplified wording."
-  },
-  {
-    "variable_name": "jbexpnap",
-    "question_text_raw": "In any job, ever exposed to: not applicable\nCARD 66\nIn any of the jobs you have ever had, which of the things on this card were you exposed to? Not applicable\nINTERVIEWER PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Job exposure: not applicable",
-    "question_cleaned": "In any of the jobs you've had, was 'Not applicable' ever marked for exposures?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card reference and interviewer probe; cleaned wording to reflect whether 'Not applicable' was selected.",
-    "question_category": "other",
-    "notes_2": "Reworded into a natural yes/no question and simplified phrasing."
-  },
-  {
-    "variable_name": "jbexpref",
-    "question_text_raw": "In any job, ever exposed to: refusal\nCARD 66\nIn any of the jobs you have ever had, which of the things on this card were you exposed to? Refusal\nINTERVIEWER PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Job exposure: refusal",
-    "question_cleaned": "At any job you've had, did you ever experience refusal?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card references and interviewer instructions; rephrased as a direct exposure question. Kept original response labels.",
-    "question_category": "other",
-    "notes_2": "Reworded for natural conversational tone; kept as a yes/no question to match the provided 0/1 response scale."
-  },
-  {
-    "variable_name": "jbexpdk",
-    "question_text_raw": "In any job, ever exposed to: don't know\nCARD 66\nIn any of the jobs you have ever had, which of the things on this card were you exposed to? Don't know\nINTERVIEWER PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Job exposure: don't know",
-    "question_cleaned": "In any job you've ever had, did you mark “Don't know” when reporting an exposure?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card references and interviewer instructions. Treated as a checkbox indicator for whether 'Don't know' was selected.",
-    "question_category": "other",
-    "notes_2": "Reworded for natural conversational tone and to match the yes/no response scale."
-  },
-  {
-    "variable_name": "jbexpna",
-    "question_text_raw": "In any job, ever exposed to: no answer\nCARD 66\nIn any of the jobs you have ever had, which of the things on this card were you exposed to? No answer\nINTERVIEWER PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Job exposure: no answer",
-    "question_cleaned": "In any job you've ever had, did you encounter an item labeled \"No answer\"?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card instructions and interviewer probe. Treated as a checkbox indicator for the 'No answer' item.",
-    "question_category": "other",
-    "notes_2": "Reworded for natural yes/no phrasing and removed the awkward 'were you exposed to' construction."
-  },
-  {
     "variable_name": "jbexevl",
     "question_text_raw": "In any job, ever exposed to: very loud noise\nCARD 67\nAnd in any of the jobs you have ever had, which of the things on this card were you exposed to? Very loud noise\nINTERVIEWER PROBE: Which others? CODE ALL THAT APPLY",
     "values_raw": {
@@ -14256,91 +13746,6 @@
     "notes": "Removed card references and interviewer probe; rephrased into a natural question.",
     "question_category": "other",
     "notes_2": "Changed phrasing to a natural yes/no question; simplified 'exposed to breathing in' to 'did you ever breathe in'."
-  },
-  {
-    "variable_name": "jbexent",
-    "question_text_raw": "In any job, ever exposed to: none of these\nCARD 67\nAnd in any of the jobs you have ever had, which of the things on this card were you exposed to? None of these\nINTERVIEWER PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Job exposure: none selected",
-    "question_cleaned": "In any job you've ever had, were you exposed to any of the following?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card reference and interviewer probe; rephrased for clarity.",
-    "question_category": "demographics",
-    "notes_2": "Rephrased to natural conversational wording and removed the parenthetical '(None of these)'. Intended to be answered yes/no for each listed item."
-  },
-  {
-    "variable_name": "jbexenap",
-    "question_text_raw": "In any job, ever exposed to: not applicable\nCARD 67\nAnd in any of the jobs you have ever had, which of the things on this card were you exposed to? Not applicable\nINTERVIEWER PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Job exposure: not applicable",
-    "question_cleaned": "In any job you've ever had, were you exposed to the thing shown on this card?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card reference and interviewer instructions; kept the item label 'Not applicable'.",
-    "question_category": "other",
-    "notes_2": "Converted to a direct yes/no question to match the 0/1 response scale; removed the leading 'And' and the 'Not applicable' wording and made it per-item (the thing shown on this card)."
-  },
-  {
-    "variable_name": "jbexeref",
-    "question_text_raw": "In any job, ever exposed to: refusal\nCARD 67\nAnd in any of the jobs you have ever had, which of the things on this card were you exposed to? Refusal\nINTERVIEWER PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Job exposure: refusal",
-    "question_cleaned": "Have you ever experienced refusal in any job you've had?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card reference and interviewer instructions; simplified phrasing to a direct exposure question. Values unchanged.",
-    "question_category": "other",
-    "notes_2": "Rephrased into natural yes/no wording; retained original meaning and response scale."
-  },
-  {
-    "variable_name": "jbexedk",
-    "question_text_raw": "In any job, ever exposed to: don't know\nCARD 67\nAnd in any of the jobs you have ever had, which of the things on this card were you exposed to? Don't know\nINTERVIEWER PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Job exposure: don't know",
-    "question_cleaned": "In any job you've ever had, were you exposed to any of the things listed on this card?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card reference and interviewer probe/instructions; retained the item label 'Don't know' as part of the question.",
-    "question_category": "demographics",
-    "notes_2": "Removed the trailing 'Don't know' and rephrased into a natural yes/no question to match the binary response scale."
-  },
-  {
-    "variable_name": "jbexena",
-    "question_text_raw": "In any job, ever exposed to: no answer\nCARD 67\nAnd in any of the jobs you have ever had, which of the things on this card were you exposed to? No answer\nINTERVIEWER PROBE: Which others? CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Job exposure: 'No answer'",
-    "question_cleaned": "In any job you've ever had, was 'No answer' recorded as an exposure?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card reference and interviewer probe; simplified wording. This is a checkbox indicator for whether the 'No answer' option was marked.",
-    "question_category": "other",
-    "notes_2": "Reworded for natural yes/no phrasing and simplified wording; no change to meaning."
   },
   {
     "variable_name": "nobingnd",
@@ -16642,74 +16047,6 @@
     "notes_2": "Replaced 'accommodation' with the more conversational phrase 'place where you live' to sound natural; no change to response scale."
   },
   {
-    "variable_name": "paccnt",
-    "question_text_raw": "Problems with accomodation: none of these",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "No accommodation problems",
-    "question_cleaned": "Did you experience none of these accommodation problems?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Rephrased as a direct question and corrected spelling ('accomodation' → 'accommodation'). No other changes.",
-    "question_category": "other",
-    "notes_2": "Reworded for more natural phrasing while preserving the original yes/no meaning (Yes = had none, No = had some)."
-  },
-  {
-    "variable_name": "paccref",
-    "question_text_raw": "Problems with accomodation: refusal",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Problems with accommodation",
-    "question_cleaned": "Did you experience problems with accommodation?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed formatting artifacts; corrected spelling 'accomodation' → 'accommodation'. Treated as a checklist item indicating 'Refusal'.",
-    "question_category": "other",
-    "notes_2": "Replaced awkward phrasing 'Were you exposed to' with natural 'Did you experience' and removed the '(Refusal)' tag."
-  },
-  {
-    "variable_name": "paccdk",
-    "question_text_raw": "Problems with accomodation: don't know",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Accommodation problems (don't know)",
-    "question_cleaned": "Did you have problems with your accommodation?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Corrected spelling of 'accommodation'. No other changes; preserved original coded responses as checkbox indicators.",
-    "question_category": "other",
-    "notes_2": "Removed the trailing 'Don't know' and rephrased into a natural yes/no question consistent with the response scale."
-  },
-  {
-    "variable_name": "paccna",
-    "question_text_raw": "Problems with accomodation: no answer",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Problems with accommodation",
-    "question_cleaned": "Have you experienced any problems with accommodation?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Corrected spelling of 'accommodation' in the question text; otherwise no changes.",
-    "question_category": "other",
-    "notes_2": "Removed the trailing 'no answer' and rephrased into a natural yes/no question consistent with the 0/1 response scale."
-  },
-  {
     "variable_name": "edulvlb",
     "question_text_raw": "Highest level of education\nCARD 46\nWhat is the highest level of education you have successfully completed?\nPlease use this card.",
     "values_raw": {
@@ -18696,7 +18033,7 @@
       "1": "Marked"
     },
     "description": "Permanently sick or disabled",
-    "question_cleaned": "In the past 7 days, did the description \"permanently sick or disabled\" apply to you?",
+    "question_cleaned": "In the past 7 days, have you been permanently sick or disabled?",
     "adjusted_values": {
       "0": "No",
       "1": "Yes"
@@ -18755,74 +18092,6 @@
     "notes": "Removed card instructions and interviewer prompts; rephrased as a direct yes/no question. Simplified response labels from 'Not marked'/'Marked' to 'No'/'Yes'. Original item was part of a select-all-that-apply list.",
     "question_category": "demographics",
     "notes_2": "Minor wording change: 'last' → 'past' for more natural phrasing; otherwise unchanged to preserve yes/no response format."
-  },
-  {
-    "variable_name": "dngoth",
-    "question_text_raw": "Doing last 7 days: other\nCARD 47\nUsing this card, which of these descriptions applies to what you have been doing for the last 7 days? Other\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Other activities last week",
-    "question_cleaned": "For each of the following 'Other' descriptions, please indicate whether it applies to what you've been doing in the last 7 days.",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card reference and interviewer prompts. Simplified response labels from 'Marked'/'Not marked' to 'Selected'/'Not selected'.",
-    "question_category": "other",
-    "notes_2": "Rephrased to prompt a yes/no response for each item to match the 0/1 (No/Yes) scale."
-  },
-  {
-    "variable_name": "dngref",
-    "question_text_raw": "Doing last 7 days: refusal\nCARD 47\nUsing this card, which of these descriptions applies to what you have been doing for the last 7 days? Refusal\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Last 7 days — refusal",
-    "question_cleaned": "For each of the following descriptions, did it apply to what you were doing in the last 7 days? Please answer Yes or No.",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card instructions and interviewer probes. Preserved that this is the 'Refusal' response option for a multiple-response (select-all-that-apply) question.",
-    "question_category": "other",
-    "notes_2": "Removed 'Refusal' and 'Select all that apply'; rephrased as a yes/no prompt for each item to match the 0/1 response scale."
-  },
-  {
-    "variable_name": "dngdk",
-    "question_text_raw": "Doing last 7 days: don't know\nCARD 47\nUsing this card, which of these descriptions applies to what you have been doing for the last 7 days? Don't know\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Don't know (last 7 days)",
-    "question_cleaned": "In the last 7 days, did this description apply to what you were doing?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card instructions and interviewer prompts. This is a checkbox indicator for whether 'Don't know' was selected among multiple options.",
-    "question_category": "other",
-    "notes_2": "Rewrote as a natural yes/no question to match the binary response scale; removed the '(Don't know)' note and clarified time reference."
-  },
-  {
-    "variable_name": "dngna",
-    "question_text_raw": "Doing last 7 days: no answer\nCARD 47\nUsing this card, which of these descriptions applies to what you have been doing for the last 7 days? No answer\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "No answer last week",
-    "question_cleaned": "In the past 7 days, does this description apply to what you were doing?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card and interviewer instructions ('CARD 47', 'Select all that apply', prompts). This variable indicates whether the 'No answer' option was selected for the 'activities in last 7 days' multiple-response question. Simplified value labels from 'Not marked/Marked' to 'Not selected/Selected'.",
-    "question_category": "other",
-    "notes_2": "Changed the prompt to a natural yes/no question appropriate for item-level responses (removed 'Which descriptions' and the 'No answer' note)."
   },
   {
     "variable_name": "mainact",
@@ -23000,7 +22269,7 @@
       "1": "Marked"
     },
     "description": "Partner's housework and childcare",
-    "question_cleaned": "In the last 7 days, has your partner done any of the following? For each, please answer Yes or No: housework; looked after children; cared for other people.",
+    "question_cleaned": "In the last 7 days, has your partner done housework, looked after children, or cared for other people?",
     "adjusted_values": {
       "0": "No",
       "1": "Yes"
@@ -23008,91 +22277,6 @@
     "notes": "Removed card reference and interviewer probe text. Kept the multiple-response instruction (select all that apply).",
     "question_category": "demographics",
     "notes_2": "Made verbs parallel and added instruction to answer Yes/No for each item to match the binary response scale."
-  },
-  {
-    "variable_name": "dngothp",
-    "question_text_raw": "Partner doing last 7 days: other\nCARD 54\nWhich of the descriptions on this card applies to what he/she has been doing for the last 7 days? Other\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Partner's activities last week",
-    "question_cleaned": "In the past 7 days, has your partner been involved in other activities?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card references and interviewer prompts; rephrased 'he/she' to 'your partner' and clarified this is the 'Other' select-all-that-apply item.",
-    "question_category": "other",
-    "notes_2": "Reworded for natural phrasing, moved timeframe to 'past 7 days', simplified wording, and kept 'Select all that apply' instruction; removed awkward '(Other — select all that apply.)'."
-  },
-  {
-    "variable_name": "dngdkp",
-    "question_text_raw": "Partner doing last 7 days: don't know\nCARD 54\nWhich of the descriptions on this card applies to what he/she has been doing for the last 7 days? Don't know\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Partner activity (Don't know)",
-    "question_cleaned": "In the last 7 days, did your partner do each of the following? Please answer Yes or No for each item.",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card and interviewer instructions. Variable records whether the 'Don't know' option was selected among multiple responses; values unchanged.",
-    "question_category": "other",
-    "notes_2": "Reworded from 'Select all that apply' to a per-item Yes/No prompt consistent with the provided 0/1 scale; simplified phrasing and removed meta note."
-  },
-  {
-    "variable_name": "dngnapp",
-    "question_text_raw": "Partner doing last 7 days: not applicable\nCARD 54\nWhich of the descriptions on this card applies to what he/she has been doing for the last 7 days? Not applicable\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Partner activity: not applicable",
-    "question_cleaned": "In the last 7 days, for each of the following statements, has your partner done this? Please answer Yes or No.",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card instructions and interviewer prompts. This variable represents the 'Not applicable' checkbox in a multi-select list about the partner's activities in the last 7 days.",
-    "question_category": "other",
-    "notes_2": "Replaced 'which descriptions apply / select all that apply' with an explicit per-item yes/no instruction to match the binary (Yes/No) response scale."
-  },
-  {
-    "variable_name": "dngrefp",
-    "question_text_raw": "Partner doing last 7 days: refusal\nCARD 54\nWhich of the descriptions on this card applies to what he/she has been doing for the last 7 days? Refusal\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Partner refusal selection",
-    "question_cleaned": "Was the 'Refusal' option chosen for the question about what your partner has been doing in the last 7 days?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card instructions and interviewer prompts. Clarified that this records whether the 'Refusal' item was selected for the partner's activities in the last 7 days.",
-    "question_category": "other",
-    "notes_2": "Reworded into a natural yes/no question and clarified it refers to the option selected for the question about partner's activities in the past 7 days."
-  },
-  {
-    "variable_name": "dngnap",
-    "question_text_raw": "Partner doing last 7 days: no answer\nCARD 54\nWhich of the descriptions on this card applies to what he/she has been doing for the last 7 days? No answer\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Partner activity (no answer)",
-    "question_cleaned": "Thinking about the past 7 days, for each of the following descriptions, has your partner done this? Please answer Yes or No for each.",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card references and interviewer prompts. This is a select-all-that-apply checkbox for the 'No answer' item regarding partner activities in the past 7 days.",
-    "question_category": "other",
-    "notes_2": "Rephrased to fit the binary (Yes/No) response format and replaced 'Select all that apply' with instruction to respond Yes/No for each item."
   },
   {
     "variable_name": "mnactp",

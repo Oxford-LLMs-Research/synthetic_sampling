@@ -6099,74 +6099,6 @@
     "notes_2": "Rephrased to a yes/no question to match the binary response scale; wording made more natural."
   },
   {
-    "variable_name": "dscrdk",
-    "question_text_raw": "Discrimination of respondent's group: don't know\nASK IF YES AT C18 (IF C18 = 1)\nOn what grounds is your group discriminated against? Don't know\nPROBE: 'What other grounds?' CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Discrimination grounds response",
-    "question_cleaned": "When asked \"On what grounds is your group discriminated against?\", did you answer \"Don't know\"?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed routing instruction ('ASK IF YES AT C18') and interviewer probe. Variable indicates whether respondent selected 'Don't know' (1=Marked).",
-    "question_category": "trust in social groups",
-    "notes_2": "Reworded into a natural yes/no question asking whether the respondent selected 'Don't know' for the original question."
-  },
-  {
-    "variable_name": "dscrref",
-    "question_text_raw": "Discrimination of respondent's group: refusal\nASK IF YES AT C18 (IF C18 = 1)\nOn what grounds is your group discriminated against? Refusal\nPROBE: 'What other grounds?' CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Group discrimination grounds",
-    "question_cleaned": "Was \"Refusal\" listed as a ground for discrimination against your group?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed routing instructions and interviewer probe; clarified wording to indicate this is a checkbox for the specific discrimination ground 'Refusal'.",
-    "question_category": "trust in social groups",
-    "notes_2": "Removed the misleading 'Select all that apply.' and rephrased slightly to match a yes/no response."
-  },
-  {
-    "variable_name": "dscrnap",
-    "question_text_raw": "Discrimination of respondent's group: not applicable\nASK IF YES AT C18 (IF C18 = 1)\nOn what grounds is your group discriminated against? Not applicable\nPROBE: 'What other grounds?' CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Group discrimination: not applicable",
-    "question_cleaned": "Did you select \"Not applicable\" for the question \"On what grounds is your group discriminated against\"?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed routing/instructions (e.g., ASK IF, PROBE) and card references. Reworded to clarify this is a checkbox indicating whether 'Not applicable' was selected among grounds for group discrimination.",
-    "question_category": "trust in social groups",
-    "notes_2": "Reworded into a natural yes/no question to match the binary response scale; no placeholders present."
-  },
-  {
-    "variable_name": "dscrna",
-    "question_text_raw": "Discrimination of respondent's group: no answer\nASK IF YES AT C18 (IF C18 = 1)\nOn what grounds is your group discriminated against? No answer\nPROBE: 'What other grounds?' CODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Group discrimination grounds",
-    "question_cleaned": "Please indicate for each of the following whether your group is discriminated against on that ground (answer Yes or No).",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed routing instruction ('ASK IF...'), interviewer probe and 'no answer' artifacts. Preserved multiple-response intent (CODE ALL THAT APPLY); codes indicate for each listed ground whether it was marked (1) or not (0).",
-    "question_category": "trust in social groups",
-    "notes_2": "Rephrased to make it clear responses are Yes/No for each listed ground; removed the 'select all that apply' phrasing to match the binary response scale."
-  },
-  {
     "variable_name": "ctzcntr",
     "question_text_raw": "Citizen of country\nASK ALL\nAre you a citizen of [country]?",
     "values_raw": {
@@ -14794,7 +14726,7 @@
       "1": "Marked"
     },
     "description": "Recent community or military service",
-    "question_cleaned": "In the past 7 days, did any of the following apply to your community or military service activities? For each item, please answer Yes or No.",
+    "question_cleaned": "In the past 7 days, did any of the following apply to your community or military service activities?",
     "adjusted_values": {
       "0": "No",
       "1": "Yes"
@@ -14819,74 +14751,6 @@
     "notes": "Removed card instructions and interviewer prompts. Clarified as a multiple-response item and simplified response labels from 'Marked'/'Not marked' to 'Selected'/'Not selected'.",
     "question_category": "demographics",
     "notes_2": "Removed 'Select all that apply' and rephrased to a single yes/no question covering all listed activities to match the binary response scale."
-  },
-  {
-    "variable_name": "dngoth",
-    "question_text_raw": "Doing last 7 days: other\nCARD 47\nUsing this card, which of these descriptions applies to what you have been doing for the last 7 days? Other\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Last 7 days activities",
-    "question_cleaned": "For each of the following \"Other\" descriptions, did it apply to what you did in the last 7 days?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card instructions and interviewer prompts; rephrased into conversational form. Values unchanged (checkbox 'Other' option).",
-    "question_category": "other",
-    "notes_2": "Rephrased to a yes/no per-item format and removed the instruction 'Select all that apply' to match the 0/1 (No/Yes) response scale."
-  },
-  {
-    "variable_name": "dngref",
-    "question_text_raw": "Doing last 7 days: refusal\nCARD 47\nUsing this card, which of these descriptions applies to what you have been doing for the last 7 days? Refusal\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Refusal marked (last 7 days)",
-    "question_cleaned": "In the past 7 days, does the description \"refusal\" apply to what you have been doing?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card references, interviewer prompts, and routing text. This variable records whether the 'Refusal' option was checked among the 'last 7 days' activity responses.",
-    "question_category": "other",
-    "notes_2": "Reworded into a natural yes/no question covering the past 7 days and explicitly referencing the 'refusal' category."
-  },
-  {
-    "variable_name": "dngdk",
-    "question_text_raw": "Doing last 7 days: don't know\nCARD 47\nUsing this card, which of these descriptions applies to what you have been doing for the last 7 days? Don't know\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Recent activity: don't know",
-    "question_cleaned": "Does this description apply to what you've been doing in the last 7 days?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card reference and interviewer prompts (e.g., 'Using this card', 'Select all that apply'). Clarified wording; this item represents the 'Don't know' response option for activities in the last 7 days.",
-    "question_category": "other",
-    "notes_2": "Changed from a 'which' wording to a yes/no question to match the binary (Yes/No) response scale; removed the '(Don't know)' note."
-  },
-  {
-    "variable_name": "dngna",
-    "question_text_raw": "Doing last 7 days: no answer\nCARD 47\nUsing this card, which of these descriptions applies to what you have been doing for the last 7 days? No answer\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "No answer about activities",
-    "question_cleaned": "Did you choose 'No answer' for the question about what you've been doing over the past 7 days?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card references, interviewer prompts, and instructions. Clarified that this variable indicates whether the 'No answer' option was selected for the multi-select 'last 7 days' activities question.",
-    "question_category": "other",
-    "notes_2": "Reworded to a natural yes/no question and shortened phrasing; preserved original meaning."
   },
   {
     "variable_name": "mainact",
@@ -18509,91 +18373,6 @@
     "notes": "Removed card reference and interviewer prompts; rephrased as a natural question. This is a multiple-response (select all that apply) item.",
     "question_category": "demographics",
     "notes_2": "Rephrased to a natural yes/no format for each activity, removed 'Select all that apply' instruction so it matches the binary response scale."
-  },
-  {
-    "variable_name": "dngothp",
-    "question_text_raw": "Partner doing last 7 days: other\nCARD 54\nWhich of the descriptions on this card applies to what he/she has been doing for the last 7 days? Other\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Partner activities (last 7 days)",
-    "question_cleaned": "For each of the following descriptions, did it apply to what your partner was doing in the last 7 days?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card reference and interviewer prompts. This variable flags whether the 'Other' option was selected among partner activities in the last 7 days.",
-    "question_category": "other",
-    "notes_2": "Reworded into a clear per-item yes/no question and removed the parenthetical instruction; clarified timeframe and applicability to match the binary (Yes/No) response scale."
-  },
-  {
-    "variable_name": "dngdkp",
-    "question_text_raw": "Partner doing last 7 days: don't know\nCARD 54\nWhich of the descriptions on this card applies to what he/she has been doing for the last 7 days? Don't know\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Partner activity (don't know)",
-    "question_cleaned": "In the past 7 days, has your partner done any of the following? Please answer Yes or No for each item.",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card reference and interviewer prompts. Clarified as a 'select all that apply' checkbox for the 'Don't know' response.",
-    "question_category": "other",
-    "notes_2": "Rephrased to a natural yes/no format matching the 0:No/1:Yes scale; removed 'select all that apply' wording and the unclear note about 'Don't know', and clarified the time frame."
-  },
-  {
-    "variable_name": "dngnapp",
-    "question_text_raw": "Partner doing last 7 days: not applicable\nCARD 54\nWhich of the descriptions on this card applies to what he/she has been doing for the last 7 days? Not applicable\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Partner not applicable",
-    "question_cleaned": "Does \"Not applicable\" apply to your partner's activities in the past 7 days?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card instructions and interviewer prompts; clarified this is a select-all item indicating 'Not applicable' for partner activities in the last 7 days.",
-    "question_category": "demographics",
-    "notes_2": "Rephrased into a natural yes/no question and changed 'last 7 days' to 'past 7 days' for clarity."
-  },
-  {
-    "variable_name": "dngrefp",
-    "question_text_raw": "Partner doing last 7 days: refusal\nCARD 54\nWhich of the descriptions on this card applies to what he/she has been doing for the last 7 days? Refusal\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Partner refusal indicator",
-    "question_cleaned": "In the last 7 days, did the following description apply to your partner?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card number and interviewer prompts. Preserved that this is the 'Refusal' item from a select-all-that-apply list about partner activities in the last 7 days; no response categories changed.",
-    "question_category": "other",
-    "notes_2": "Removed the '(Refusal)' label and rephrased to a yes/no applicability question matching the 0/1 scale."
-  },
-  {
-    "variable_name": "dngnap",
-    "question_text_raw": "Partner doing last 7 days: no answer\nCARD 54\nWhich of the descriptions on this card applies to what he/she has been doing for the last 7 days? No answer\nSelect all that apply.\nPROMPT Which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Partner: no answer",
-    "question_cleaned": "In the past 7 days, which of the following descriptions apply to your partner? Select all that apply.",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card reference and interviewer prompts. This variable records whether the 'No answer' option was checked for the partner's activities in the last 7 days.",
-    "question_category": "other",
-    "notes_2": "Minor rewording to put the timeframe first for more natural phrasing; meaning and response format unchanged."
   },
   {
     "variable_name": "mnactp",
@@ -29353,7 +29132,7 @@
       "1": "Marked"
     },
     "description": "No internet access locations",
-    "question_cleaned": "If you wanted to access the Internet, would you be able to do so at each of the following locations?",
+    "question_cleaned": "Are you without internet access, including at work, at home, or in some other location?",
     "adjusted_values": {
       "0": "No",
       "1": "Yes"
@@ -29361,57 +29140,6 @@
     "notes": "Removed survey instructions (ASK ALL, CARD, PROMPT). This variable records whether the 'None of the above' option was selected in a select-all-that-apply list.",
     "question_category": "other",
     "notes_2": "Rephrased to a natural yes/no question appropriate for per-location responses; removed the '(None of the above)' parenthetical."
-  },
-  {
-    "variable_name": "accref",
-    "question_text_raw": "Location able to access the internet: Refusal\nASK ALL\nCARD 60\nImagine you wanted to access the Internet. At which of these locations would you be able to do it?\nSelect all that apply.\nPROMPT At which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Internet access: refusal option",
-    "question_cleaned": "Did the respondent mark 'Refusal' for the question, \"Imagine you wanted to access the Internet. At which of these locations would you be able to do it? Select all that apply.\"?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card instructions and interviewer prompts. This variable indicates whether the 'Refusal' checkbox was selected among locations where the respondent could access the Internet.",
-    "question_category": "other",
-    "notes_2": "Reworded into a natural yes/no question asking whether 'Refusal' was selected; preserved the original question text."
-  },
-  {
-    "variable_name": "accdk",
-    "question_text_raw": "Location able to access the internet: Don't know\nASK ALL\nCARD 60\nImagine you wanted to access the Internet. At which of these locations would you be able to do it?\nSelect all that apply.\nPROMPT At which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Internet access: Don't know",
-    "question_cleaned": "If you wanted to access the internet, would you be able to do so at this location?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card references and interviewer instructions. This variable is the 'Don't know' checkbox for the multiple-response question about locations where the respondent could access the Internet.",
-    "question_category": "other",
-    "notes_2": "Converted to a yes/no question, removed '(Don't know)', and changed phrasing to refer to 'this location' to match the binary response scale."
-  },
-  {
-    "variable_name": "accna",
-    "question_text_raw": "Location able to access the internet: No answer\nASK ALL\nCARD 60\nImagine you wanted to access the Internet. At which of these locations would you be able to do it?\nSelect all that apply.\nPROMPT At which others?\nCODE ALL THAT APPLY",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Internet access locations",
-    "question_cleaned": "For each of the following locations, would you be able to access the internet there?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed interviewer instructions and card references. Rephrased as a direct select-all question. Each code indicates whether a given location was marked (selected).",
-    "question_category": "other",
-    "notes_2": "Changed from 'Select all that apply' to a per-location yes/no phrasing to match the binary response scale."
   },
   {
     "variable_name": "fampref",
@@ -33277,74 +33005,6 @@
     "notes": "Removed screening instruction and card/interviewer text; rephrased as a direct question. This item is a 'select all that apply' checkbox response.",
     "question_category": "covid",
     "notes_2": "Removed double negative and rephrased to a natural yes/no question matching the binary response scale."
-  },
-  {
-    "variable_name": "hapnpc19",
-    "question_text_raw": "Things happened since start of COVID-19: not applicable\nASK IF RESPONDENT'S D.O.B IS LATER THAN 1950 AT F3. \nCARD 100\nUsing this card, please tell me if any of the following happened to you as a result of the coronavirus pandemic? Please include anything that has happened at any time since the start of the pandemic, even if it is no longer impacting you. Not applicable\nSelect all that apply.",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Pandemic impact: not applicable",
-    "question_cleaned": "Since the start of the coronavirus pandemic, did none of the listed events happen to you?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed routing, card and interviewer instructions. Rephrased as the 'Not applicable' checklist item indicating none of the listed pandemic impacts applied. Simplified response labels from 'Not marked'/'Marked' to 'Not selected'/'Selected'.",
-    "question_category": "covid",
-    "notes_2": "Removed the parenthetical '(Not applicable)' and simplified wording into a straightforward yes/no question."
-  },
-  {
-    "variable_name": "haprec19",
-    "question_text_raw": "Things happened since start of COVID-19: refusal\nASK IF RESPONDENT'S D.O.B IS LATER THAN 1950 AT F3. \nCARD 100\nUsing this card, please tell me if any of the following happened to you as a result of the coronavirus pandemic? Please include anything that has happened at any time since the start of the pandemic, even if it is no longer impacting you. Refusal\nSelect all that apply.",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "Refusal checkbox (COVID impacts)",
-    "question_cleaned": "Was 'Refusal' selected among the items describing things that happened to you because of the coronavirus pandemic?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card instructions and interviewer notes. This is a checkbox item from a select-all-that-apply list indicating whether the 'Refusal' option was selected for the COVID-19 impacts question.",
-    "question_category": "covid",
-    "notes_2": "Reworded to a natural yes/no question; clarified 'marked' as 'selected' and 'items about' as 'items describing'."
-  },
-  {
-    "variable_name": "hapdkc19",
-    "question_text_raw": "Things happened since start of COVID-19: don't know\nASK IF RESPONDENT'S D.O.B IS LATER THAN 1950 AT F3. \nCARD 100\nUsing this card, please tell me if any of the following happened to you as a result of the coronavirus pandemic? Please include anything that has happened at any time since the start of the pandemic, even if it is no longer impacting you. Don't know\nSelect all that apply.",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "COVID impact: Don't know",
-    "question_cleaned": "Since the start of the COVID-19 pandemic, did you ever answer \"Don't know\" when asked whether any of the following happened to you?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed card instructions, interviewer notes, and eligibility condition. This variable represents the 'Don't know' option from a select-all-that-apply list about events since the start of the pandemic.",
-    "question_category": "covid",
-    "notes_2": "Replaced 'select' with 'answer' and rephrased for a more natural conversational flow; retained original meaning and yes/no response format."
-  },
-  {
-    "variable_name": "hapnac19",
-    "question_text_raw": "Things happened since start of COVID-19: no answer\nASK IF RESPONDENT'S D.O.B IS LATER THAN 1950 AT F3. \nCARD 100\nUsing this card, please tell me if any of the following happened to you as a result of the coronavirus pandemic? Please include anything that has happened at any time since the start of the pandemic, even if it is no longer impacting you. No answer\nSelect all that apply.",
-    "values_raw": {
-      "0": "Not marked",
-      "1": "Marked"
-    },
-    "description": "No answer selected (COVID impacts)",
-    "question_cleaned": "When you were asked whether any of the listed things happened to you because of the coronavirus pandemic, did you choose 'No answer'?",
-    "adjusted_values": {
-      "0": "No",
-      "1": "Yes"
-    },
-    "notes": "Removed interviewer instructions, routing (ASK IF) and card references. This variable is the indicator for the 'No answer' item in a multi-select list about things that happened due to COVID-19. Simplified response labels from 'Not marked'/'Marked' to 'Not selected'/'Selected'.",
-    "question_category": "covid",
-    "notes_2": "Reworded for natural phrasing and clarity; removed redundant phrasing and clarified the timing ('when you were asked')."
   },
   {
     "variable_name": "icvacc19",

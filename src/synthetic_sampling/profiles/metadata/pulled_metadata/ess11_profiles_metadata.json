@@ -3194,14 +3194,6 @@
         "1": "Yes"
       }
     },
-    "hltphna": {
-      "description": "No answer: health problems",
-      "question": "Did you choose 'No answer' when asked which health problems in the last 12 months hampered your daily activities?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
     "hltprca": {
       "description": "Cancer diagnosis status",
       "question": "Have you ever had cancer? If so, was it in the past or do you currently have it?",
@@ -3230,33 +3222,9 @@
         "1": "Yes"
       }
     },
-    "jbexpnt": {
-      "description": "Job exposure: none",
-      "question": "In any job you've ever had, were you not exposed to any of these items?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
     "jbexevc": {
       "description": "Exposure to very cold temperatures",
       "question": "Have you ever been exposed to very cold temperatures in any job you've had?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexent": {
-      "description": "Job exposure: none selected",
-      "question": "In any job you've ever had, were you exposed to any of the following?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexedk": {
-      "description": "Job exposure: don't know",
-      "question": "In any job you've ever had, were you exposed to any of the things listed on this card?",
       "values": {
         "0": "No",
         "1": "Yes"
@@ -4967,7 +4935,7 @@
     },
     "dsbld": {
       "description": "Permanently sick or disabled",
-      "question": "In the past 7 days, did the description \"permanently sick or disabled\" apply to you?",
+      "question": "In the past 7 days, have you been permanently sick or disabled?",
       "values": {
         "0": "No",
         "1": "Yes"
@@ -6924,7 +6892,7 @@
     },
     "hswrkp": {
       "description": "Partner's housework and childcare",
-      "question": "In the last 7 days, has your partner done any of the following? For each, please answer Yes or No: housework; looked after children; cared for other people.",
+      "question": "In the last 7 days, has your partner done housework, looked after children, or cared for other people?",
       "values": {
         "0": "No",
         "1": "Yes"
@@ -12953,22 +12921,6 @@
         "1": "Yes"
       }
     },
-    "dscrnap": {
-      "description": "Discrimination not applicable",
-      "question": "Is the question \"On what grounds is your group discriminated against?\" not applicable in your case?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dscrna": {
-      "description": "Discrimination: no answer selected",
-      "question": "Was 'No answer' selected for the question asking on what grounds your group is discriminated against?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
     "ctrlife": {
       "description": "Perceived control over life",
       "question": "How much control do you feel you have over your life in general nowadays?",
@@ -13081,65 +13033,9 @@
         "1": "Yes"
       }
     },
-    "dshltnt": {
-      "description": "No health professional contact",
-      "question": "In the past 12 months, did you discuss your health with any of the health professionals listed?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dshltref": {
-      "description": "Discussed health professionals",
-      "question": "In the last 12 months, have you discussed your health with the following health professionals?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dshltdk": {
-      "description": "Don't know: health discussions",
-      "question": "In the last 12 months (since that month and year), have you discussed your health with any of the following health professionals?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dshltna": {
-      "description": "Discussion with health professionals",
-      "question": "In the last 12 months, have you discussed your health with the following health professionals? (Include any form of communication or home visits.)",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
     "medtroc": {
       "description": "Reason for missed care",
       "question": "Did you not get this medical consultation or treatment because of other commitments?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "medtrnap": {
-      "description": "Not applicable reason (medical)",
-      "question": "Was \"Not applicable\" one of the reasons you couldn't get this medical consultation or treatment?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "medtrdk": {
-      "description": "Don't know reason for treatment",
-      "question": "For each of the following reasons, did it apply to why you were unable to get this medical consultation or treatment?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "medtrna": {
-      "description": "Reason: no answer (medical)",
-      "question": "Was 'No answer' recorded as a reason you were unable to get this medical consultation or treatment?",
       "values": {
         "0": "No",
         "1": "Yes"
@@ -13236,38 +13132,6 @@
     "trhltsh": {
       "description": "Use of spiritual healing",
       "question": "In the past 12 months, have you used spiritual healing for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltnt": {
-      "description": "No treatments used",
-      "question": "In the last 12 months, did you use any of the treatments listed for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltref": {
-      "description": "Refusal to report treatments",
-      "question": "Since that date, for each treatment shown on this card, have you used it for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltdk": {
-      "description": "Treatment use (Don't know)",
-      "question": "In the past 12 months, do you not know what treatments you have used for your own health?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "trhltna": {
-      "description": "Health treatments used",
-      "question": "In the past 12 months, have you used the following treatments for your own health?",
       "values": {
         "0": "No",
         "1": "Yes"
@@ -13457,38 +13321,6 @@
         "1": "Yes"
       }
     },
-    "hltprnt": {
-      "description": "No health problems reported",
-      "question": "In the past 12 months (since that month and year), have you had or experienced each of the health problems listed on this card? If none apply, select 'None of these'.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprref": {
-      "description": "Health problems (past year)",
-      "question": "Which of the health problems on this card have you had or experienced in the past 12 months? Please indicate all that apply.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprdk": {
-      "description": "Health problems (Don't know)",
-      "question": "Have you had or experienced [this health problem] in the last 12 months?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltprna": {
-      "description": "Health problems (past year)",
-      "question": "Which of the health problems listed have you had in the last 12 months? Please select all that apply.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
     "hltphhc": {
       "description": "Heart or circulation problem",
       "question": "In the last 12 months, did any heart or circulation problem limit your daily activities?",
@@ -13577,38 +13409,6 @@
         "1": "Yes"
       }
     },
-    "hltphnt": {
-      "description": "No incapacitating health problems",
-      "question": "In the past 12 months, did any of the following health problems interfere with your daily activities?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphnap": {
-      "description": "Health problems hampering activities",
-      "question": "For each health problem you had in the last 12 months, did it hamper your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphref": {
-      "description": "Health problems hampering activities",
-      "question": "Did the health problem(s) you had in the last 12 months hamper your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hltphdk": {
-      "description": "Don't know: health impact",
-      "question": "Did any health problems you had in the last 12 months hamper your daily activities in any way?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
     "cancfre": {
       "description": "Duration cancer-free",
       "question": "How long have you been cancer-free? By \"cancer-free\" I mean there have been no signs of cancer on tests or scans.",
@@ -13633,38 +13433,6 @@
     "jbexpti": {
       "description": "Tiring or painful positions",
       "question": "In any job you've ever had, did you have to work in tiring or painful positions?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexpnap": {
-      "description": "Job exposure: not applicable",
-      "question": "In any of the jobs you've had, was 'Not applicable' ever marked for exposures?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexpref": {
-      "description": "Job exposure: refusal",
-      "question": "At any job you've had, did you ever experience refusal?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexpdk": {
-      "description": "Job exposure: don't know",
-      "question": "In any job you've ever had, did you mark “Don't know” when reporting an exposure?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexpna": {
-      "description": "Job exposure: no answer",
-      "question": "In any job you've ever had, did you encounter an item labeled \"No answer\"?",
       "values": {
         "0": "No",
         "1": "Yes"
@@ -13705,30 +13473,6 @@
     "jbexebs": {
       "description": "Work exposure to airborne contaminants",
       "question": "In any job you've ever had, did you ever breathe in smoke, fumes, powder, or dust?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexenap": {
-      "description": "Job exposure: not applicable",
-      "question": "In any job you've ever had, were you exposed to the thing shown on this card?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexeref": {
-      "description": "Job exposure: refusal",
-      "question": "Have you ever experienced refusal in any job you've had?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "jbexena": {
-      "description": "Job exposure: 'No answer'",
-      "question": "In any job you've ever had, was 'No answer' recorded as an exposure?",
       "values": {
         "0": "No",
         "1": "Yes"
@@ -13899,110 +13643,6 @@
     "paccinro": {
       "description": "Accommodation pest problems",
       "question": "Does the place where you live have problems with insects or rodents?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "paccnt": {
-      "description": "No accommodation problems",
-      "question": "Did you experience none of these accommodation problems?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "paccref": {
-      "description": "Problems with accommodation",
-      "question": "Did you experience problems with accommodation?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "paccdk": {
-      "description": "Accommodation problems (don't know)",
-      "question": "Did you have problems with your accommodation?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "paccna": {
-      "description": "Problems with accommodation",
-      "question": "Have you experienced any problems with accommodation?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngoth": {
-      "description": "Other activities last week",
-      "question": "For each of the following 'Other' descriptions, please indicate whether it applies to what you've been doing in the last 7 days.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngref": {
-      "description": "Last 7 days — refusal",
-      "question": "For each of the following descriptions, did it apply to what you were doing in the last 7 days? Please answer Yes or No.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngdk": {
-      "description": "Don't know (last 7 days)",
-      "question": "In the last 7 days, did this description apply to what you were doing?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngna": {
-      "description": "No answer last week",
-      "question": "In the past 7 days, does this description apply to what you were doing?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngothp": {
-      "description": "Partner's activities last week",
-      "question": "In the past 7 days, has your partner been involved in other activities?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngdkp": {
-      "description": "Partner activity (Don't know)",
-      "question": "In the last 7 days, did your partner do each of the following? Please answer Yes or No for each item.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngnapp": {
-      "description": "Partner activity: not applicable",
-      "question": "In the last 7 days, for each of the following statements, has your partner done this? Please answer Yes or No.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngrefp": {
-      "description": "Partner refusal selection",
-      "question": "Was the 'Refusal' option chosen for the question about what your partner has been doing in the last 7 days?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngnap": {
-      "description": "Partner activity (no answer)",
-      "question": "Thinking about the past 7 days, for each of the following descriptions, has your partner done this? Please answer Yes or No for each.",
       "values": {
         "0": "No",
         "1": "Yes"
@@ -14369,22 +14009,6 @@
     "dscrdsb": {
       "description": "Discrimination due to disability",
       "question": "Does your group face discrimination because of disability?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dscrdk": {
-      "description": "Discrimination grounds: don't know",
-      "question": "Was 'Don't know' listed as a reason for discrimination against your group?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dscrref": {
-      "description": "Grounds for discrimination",
-      "question": "Was \"Refusal\" listed as a reason your group is discriminated against?",
       "values": {
         "0": "No",
         "1": "Yes"
@@ -17623,15 +17247,7 @@
     },
     "medtroth": {
       "description": "Other reason for no treatment",
-      "question": "Was 'Other' one of the reasons you couldn't get this medical consultation or treatment?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "medtrref": {
-      "description": "Refused medical care reason",
-      "question": "Was refusal listed as a reason you couldn't get the medical consultation or treatment?",
+      "question": "Where there reasons you couldn't get this medical consultation or treatment other than lack of time, waitlist, lack of appointments, or unavailability in your area?",
       "values": {
         "0": "No",
         "1": "Yes"
@@ -17639,7 +17255,7 @@
     },
     "medtrnu": {
       "description": "Reason for no unmet medical need",
-      "question": "In the last 12 months, was that because you were able to get the medical consultation or treatment you needed, or because you did not need any medical consultation or treatment?",
+      "question": "In the last 12 months, did you not have any unmet medical need because you were able to get the medical consultation or treatment you needed, or because you did not need any medical consultation or treatment?",
       "values": {
         "1": "Able to get needed medical consultation or treatment",
         "2": "Did not need medical consultation or treatment",

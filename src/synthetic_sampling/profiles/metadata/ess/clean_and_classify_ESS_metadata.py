@@ -498,6 +498,21 @@ admin_vars_11 = {
     "jinws", "jinwe", "inwtm", "mode", "domain", "prob", "stratum", "psu"}
 ess11_final = [r for r in ess11_final if r.get("variable_name") not in admin_vars_11]
 
+# Remove binary variables with rare (and non-sensical in narrative form) labels
+del_vars = {
+    "dscrdk", "dscrref", "dscrnap", "dscrna", "dngoth", "dngref", "dngdk", "dngna",
+    "dngothp", "dngdkp", "dngnapp", "dngrefp", "dngnap", "accref", "accdk", "accna",
+    "hapnpc19", "haprec19", "hapdkc19", "hapnac19", "dscrdk", "dscrref", "dscrnap", 
+    "dscrna", "dshltref", "dshltdk", "dshltna", "dshltnt", "medtrnap", "medtrref", 
+    "medtrdk", "medtrna", "trhltnt", "trhltref", "trhltdk", "trhltna", "hltprref", 
+    "hltprdk", "hltprna", "hltphnap", "hltphref", "hltphdk", "hltphna", "jbexpnap", 
+    "jbexpref", "jbexpdk", "jbexpna", "jbexpnt", "jbexent", "jbexenap", "jbexeref", 
+    "jbexedk", "jbexena", "paccnt",  "paccref",  "paccdk", "paccna", "hltprnt",
+    "hltphnt"
+}
+ess10_final = [r for r in ess10_final if r.get("variable_name") not in del_vars]
+ess11_final = [r for r in ess11_final if r.get("variable_name") not in del_vars]
+
 
 # Save cleaned metadata
 print(f"Saving cleaned ESS10 metadata to: {ESS10_PATH_OUT}")

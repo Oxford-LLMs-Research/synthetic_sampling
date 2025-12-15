@@ -5798,14 +5798,6 @@
         "1": "Yes"
       }
     },
-    "dngnapp": {
-      "description": "Partner not applicable",
-      "question": "Does \"Not applicable\" apply to your partner's activities in the past 7 days?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
     "mnactp": {
       "description": "Partner's main activity",
       "question": "How would you describe your partner's main activity in the past 7 days?",
@@ -11644,70 +11636,6 @@
         "1": "Yes"
       }
     },
-    "dngoth": {
-      "description": "Last 7 days activities",
-      "question": "For each of the following \"Other\" descriptions, did it apply to what you did in the last 7 days?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngref": {
-      "description": "Refusal marked (last 7 days)",
-      "question": "In the past 7 days, does the description \"refusal\" apply to what you have been doing?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngdk": {
-      "description": "Recent activity: don't know",
-      "question": "Does this description apply to what you've been doing in the last 7 days?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngna": {
-      "description": "No answer about activities",
-      "question": "Did you choose 'No answer' for the question about what you've been doing over the past 7 days?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngothp": {
-      "description": "Partner activities (last 7 days)",
-      "question": "For each of the following descriptions, did it apply to what your partner was doing in the last 7 days?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngdkp": {
-      "description": "Partner activity (don't know)",
-      "question": "In the past 7 days, has your partner done any of the following? Please answer Yes or No for each item.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngrefp": {
-      "description": "Partner refusal indicator",
-      "question": "In the last 7 days, did the following description apply to your partner?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dngnap": {
-      "description": "Partner: no answer",
-      "question": "In the past 7 days, which of the following descriptions apply to your partner? Select all that apply.",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
     "accoth": {
       "description": "Internet access — other location",
       "question": "Were you able to access the internet somewhere else?",
@@ -11718,31 +11646,7 @@
     },
     "accnone": {
       "description": "No internet access locations",
-      "question": "If you wanted to access the Internet, would you be able to do so at each of the following locations?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "accref": {
-      "description": "Internet access: refusal option",
-      "question": "Did the respondent mark 'Refusal' for the question, \"Imagine you wanted to access the Internet. At which of these locations would you be able to do it? Select all that apply.\"?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "accdk": {
-      "description": "Internet access: Don't know",
-      "question": "If you wanted to access the internet, would you be able to do so at this location?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "accna": {
-      "description": "Internet access locations",
-      "question": "For each of the following locations, would you be able to access the internet there?",
+      "question": "Are you without internet access, including at work, at home, or in some other location?",
       "values": {
         "0": "No",
         "1": "Yes"
@@ -12501,38 +12405,6 @@
     "dscrdsb": {
       "description": "Discrimination: disability",
       "question": "Is your group discriminated against because of disability?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dscrdk": {
-      "description": "Discrimination grounds response",
-      "question": "When asked \"On what grounds is your group discriminated against?\", did you answer \"Don't know\"?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dscrref": {
-      "description": "Group discrimination grounds",
-      "question": "Was \"Refusal\" listed as a ground for discrimination against your group?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dscrnap": {
-      "description": "Group discrimination: not applicable",
-      "question": "Did you select \"Not applicable\" for the question \"On what grounds is your group discriminated against\"?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "dscrna": {
-      "description": "Group discrimination grounds",
-      "question": "Please indicate for each of the following whether your group is discriminated against on that ground (answer Yes or No).",
       "values": {
         "0": "No",
         "1": "Yes"
@@ -13778,7 +13650,7 @@
     },
     "cmsrv": {
       "description": "Recent community or military service",
-      "question": "In the past 7 days, did any of the following apply to your community or military service activities? For each item, please answer Yes or No.",
+      "question": "In the past 7 days, did any of the following apply to your community or military service activities?",
       "values": {
         "0": "No",
         "1": "Yes"
@@ -16377,38 +16249,6 @@
     "hapnwc19": {
       "description": "Not in work since COVID",
       "question": "Since the start of the COVID-19 pandemic, have you been out of work at any time?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hapnpc19": {
-      "description": "Pandemic impact: not applicable",
-      "question": "Since the start of the coronavirus pandemic, did none of the listed events happen to you?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "haprec19": {
-      "description": "Refusal checkbox (COVID impacts)",
-      "question": "Was 'Refusal' selected among the items describing things that happened to you because of the coronavirus pandemic?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hapdkc19": {
-      "description": "COVID impact: Don't know",
-      "question": "Since the start of the COVID-19 pandemic, did you ever answer \"Don't know\" when asked whether any of the following happened to you?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "hapnac19": {
-      "description": "No answer selected (COVID impacts)",
-      "question": "When you were asked whether any of the listed things happened to you because of the coronavirus pandemic, did you choose 'No answer'?",
       "values": {
         "0": "No",
         "1": "Yes"
