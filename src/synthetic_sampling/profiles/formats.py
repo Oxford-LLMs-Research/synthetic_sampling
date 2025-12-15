@@ -4,9 +4,6 @@ Profile Format Presets for LLM Survey Prediction Experiments
 This module provides preset formatters for converting respondent profiles
 into various text formats for LLM prompting. Each formatter takes a
 (question, answer) pair and returns a formatted string.
-
-Author: Maksim Zubok
-Version: 0.3.1
 """
 
 import json
@@ -87,7 +84,7 @@ PROFILE_FORMATS: dict[str, Callable[[str, str], str]] = {
 
 
 # =============================================================================
-# Public API
+# Apply formatter to a profile
 # =============================================================================
 
 def get_profile_formatter(

@@ -3,9 +3,6 @@ Data Classes for Respondent Profile Generation
 
 This module defines the core data structures used for profile generation
 and prediction instances in LLM survey prediction experiments.
-
-Author: Maksim Zubok
-Version: 0.3.1
 """
 
 from dataclasses import dataclass, field

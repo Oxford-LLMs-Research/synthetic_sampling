@@ -3,9 +3,6 @@ Utility Functions for Respondent Profile Generation
 
 This module provides utility functions for loading metadata and
 verifying profile structures.
-
-Author: Maksim Zubok
-Version: 0.3.1
 """
 
 import json

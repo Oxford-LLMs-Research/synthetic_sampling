@@ -15,9 +15,6 @@ Key capabilities:
 - Country-specific answer options (auto-detected for party vote, religion, etc.)
 - Semantic similarity filtering (exclude features too similar to target questions)
 - Flexible profile formatting (multiple prompt styles for robustness testing)
-
-Author: Maksim Zubok, generated with Opus 4.5
-Version: 0.3.1 (Added flexible profile formatting)
 """
 
 import pandas as pd
