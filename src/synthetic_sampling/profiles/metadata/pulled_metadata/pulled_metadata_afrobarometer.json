@@ -1200,7 +1200,7 @@
         "40": "Zimbabwe"
       }
     },
-    "region": {
+    "REGION": {
       "description": "Region, province, or state of respondent",
       "question": "Which region/province/state do you live in?",
       "values": {
