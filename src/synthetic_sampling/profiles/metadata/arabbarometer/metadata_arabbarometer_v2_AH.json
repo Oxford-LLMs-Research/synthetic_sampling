@@ -1,0 +1,5306 @@
+{
+  "SAMPLING VARIABLES": {
+    "ID": {
+      "description": "Respondent ID number",
+      "question": "What is the respondent ID number?",
+      "values": {}
+    },
+    "DATE": {
+      "description": "Interview date",
+      "question": "What is today’s date?",
+      "values": {}
+    },
+    "PSU": {
+      "description": "Primary sampling unit",
+      "question": "What is the primary sampling unit number?",
+      "values": {}
+    },
+    "Q1": {
+      "description": "Governorate",
+      "question": "In which governorate do you live?",
+      "values": {
+        "70001": "Baghdad",
+        "70002": "Salahaddin",
+        "70003": "Diyala",
+        "70004": "Wasit",
+        "70005": "Maysan",
+        "70006": "Basra",
+        "70007": "Dhi Qar",
+        "70008": "Muthana",
+        "70009": "Qadisiyah",
+        "70010": "Babylon",
+        "70011": "Karbala",
+        "70012": "Najaf",
+        "70013": "Anbar",
+        "70014": "Nineveh",
+        "70015": "Dohuk",
+        "70016": "Erbil",
+        "70017": "Kirkuk",
+        "70018": "Sulaymaniyah",
+        "80011": "Amman",
+        "80012": "Al Balqa",
+        "80013": "Azurqa",
+        "80014": "Madaba",
+        "80021": "Irbid",
+        "80022": "Al Mafraq",
+        "80023": "Jerash",
+        "80024": "Ajioun",
+        "80031": "Karak",
+        "80032": "Tafila",
+        "80033": "Ma'an",
+        "80034": "Aqaba",
+        "90001": "Al Asimah",
+        "90002": "Ahmadi",
+        "90003": "Farwaniya",
+        "90004": "Jahra",
+        "90005": "Hawalli",
+        "90006": "Mubarak Al-Kabeer",
+        "100001": "Akar",
+        "100002": "Baalbek",
+        "100003": "Beirut",
+        "100004": "Bekaa",
+        "100005": "El Nabatiyeh",
+        "100006": "Mount Lebanon",
+        "100007": "North",
+        "100008": "South",
+        "120001": "Adrar",
+        "120002": "Assaba",
+        "120003": "Brakna",
+        "120004": "Dakhlet Nouadhibou",
+        "120005": "Gorgol",
+        "120006": "Guidimaka",
+        "120007": "Hodh Ech Chargui",
+        "120008": "Hodh El Gharbi",
+        "120009": "Inchiri",
+        "120010": "Nouakchott-Nord",
+        "120011": "Nouakchott-Ouest",
+        "120012": "Nouakchott-Sud",
+        "120013": "Tagant",
+        "120014": "Tiris Zemmour",
+        "120015": "Trarza",
+        "130001": "Tanger-Tetouan-Al Hoceima",
+        "130002": "Oriental",
+        "130003": "Fès-Meknès",
+        "130004": "Rabat-Salé-Kénitra",
+        "130005": "Béni Mellal-Khénifra",
+        "130006": "Grand Casablanca-Settat",
+        "130007": "Marrakech-Safi",
+        "130008": "Drâa-Tafilalet",
+        "130009": "Sousse-Massa",
+        "130010": "Guelmim-Oued Noun",
+        "130011": "Laayoune-Sakia El Hamra",
+        "130012": "Eddakhla-Oued Eddahab",
+        "150001": "Bethlehem",
+        "150002": "Deir al Balah",
+        "150003": "Gaza",
+        "150004": "Hebron",
+        "150005": "Jabalia",
+        "150006": "Jerusalem",
+        "150007": "Jenin",
+        "150008": "Jerico",
+        "150009": "Khan Yunis",
+        "150010": "Nabulus",
+        "150011": "Qalqilya",
+        "150012": "Rafah",
+        "150013": "Ramallah",
+        "150014": "Salfit",
+        "150015": "Tubas",
+        "150016": "Tulkarem",
+        "210001": "Tunis",
+        "210002": "Ariana",
+        "210003": "Ben Arous",
+        "210004": "Manouba",
+        "210005": "Nabeul",
+        "210006": "Zaghouan",
+        "210007": "Bizerte",
+        "210008": "Beja",
+        "210009": "Jendouba",
+        "210010": "Kef",
+        "210011": "Siliana",
+        "210012": "Sousse",
+        "210013": "Monastir",
+        "210014": "Mahdia",
+        "210015": "Sfax",
+        "210016": "Kairouan",
+        "210017": "Kasserine",
+        "210018": "Sidi Bouzid",
+        "210019": "Gabes",
+        "210020": "Medenine",
+        "210021": "Tatouine",
+        "210022": "Gafsa",
+        "210023": "Tozeur",
+        "210024": "Kebil",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1A_PAL": {
+      "description": "Palestine area",
+      "question": "Do you live in the West Bank or Gaza?",
+      "values": {
+        "1": "West Bank",
+        "2": "Gaza"
+      }
+    },
+    "Q13": {
+      "description": "Urban or rural residence",
+      "question": "Is the area where you live urban, rural, or a camp?",
+      "values": {
+        "1": "Urban",
+        "2": "Rural",
+        "3": "Camp"
+      }
+    }
+  },
+  "SECTION I: CORE DEMOGRAPHICS": {
+    "Q1001": {
+      "description": "Respondent age",
+      "question": "How old are you?",
+      "values": {
+        "99999": "Refused to answer"
+      }
+    },
+    "Q1001YEAR": {
+      "description": "Year of birth",
+      "question": "In what year were you born?",
+      "values": {
+        "99999": "Refused to answer"
+      }
+    },
+    "Q1001APPROX": {
+      "description": "Approximate age",
+      "question": "Approximately how old are you?",
+      "values": {
+        "99999": "Refused to answer"
+      }
+    },
+    "Q1002": {
+      "description": "Respondent gender",
+      "question": "What is your gender?",
+      "values": {
+        "1": "Male",
+        "2": "Female"
+      },
+      "notes": "Question is recorded by interviewer rather than asked directly."
+    },
+    "Q1014C": {
+      "description": "Household size",
+      "question": "Including yourself, how many family members live in this household on a permanent basis?",
+      "values": {
+        "99": "Refused to answer"
+      },
+      "notes": "Clarifying note about excluding domestic workers and visitors removed from question wording."
+    },
+    "Q1014D": {
+      "description": "Number of adults in household",
+      "question": "Of the people who live in this household, how many are age 18 and over?",
+      "values": {
+        "99": "Refused to answer"
+      }
+    },
+    "Q1014E": {
+      "description": "Number of children in household",
+      "question": "Of the people who live in this household, how many are under age 18?",
+      "values": {
+        "99": "Refused to answer"
+      }
+    }
+  },
+  "SECTION II: STATE OF THE ECONOMY": {
+    "Q2061A": {
+      "description": "Most important national challenge",
+      "question": "What is the most important challenge facing your country today?",
+      "values": {
+        "1": "Economic situation (poverty, unemployment, inflation)",
+        "2": "Financial and administrative corruption",
+        "6": "Internal instability and security",
+        "7": "Foreign interference",
+        "12": "Public services (health, education, etc.)",
+        "64": "Terrorism",
+        "65": "Settler terrorism",
+        "17": "Climate change",
+        "18": "Immigration to your country",
+        "90": "Other",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      },
+      "notes": "Removed interviewer and programmer instructions from wording."
+    },
+    "Q2061A_KUW": {
+      "description": "Most important challenge Kuwait",
+      "question": "What is the most important challenge facing Kuwait today?",
+      "values": {
+        "1": "Economic situation (poverty, unemployment, inflation)",
+        "2": "Financial and administrative corruption",
+        "8": "Granting of citizenship",
+        "9": "Foreign investment",
+        "10": "Laws and legislations",
+        "12": "Public services (health, education, etc.)",
+        "17": "Climate change",
+        "18": "Immigration to your country",
+        "90": "Other",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q262": {
+      "description": "Most serious economic issue",
+      "question": "Which of the following economic issues is the most serious one facing your country?",
+      "values": {
+        "1": "Low wages, incomes, and salaries",
+        "2": "Lack of jobs",
+        "3": "Lack of affordable housing",
+        "4": "Not having enough money to meet basic needs (poverty)",
+        "5": "Prices and the cost of living are too high (inflation)",
+        "6": "The gap between the rich and the poor (inequality)",
+        "7": "Access to loans and credit",
+        "90": "Other",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q101": {
+      "description": "Evaluation of current economy",
+      "question": "How would you evaluate the current economic situation in your country?",
+      "values": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Bad",
+        "4": "Very bad",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q102": {
+      "description": "Future economic expectations",
+      "question": "Compared with now, how do you think the economic situation in your country will be in the next 2–3 years?",
+      "values": {
+        "1": "Much better",
+        "2": "Somewhat better",
+        "3": "Almost the same",
+        "4": "Somewhat worse",
+        "5": "Much worse",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q114": {
+      "description": "Change in inequality",
+      "question": "Compared with a year ago, is the gap between the rich and the poor now wider, the same, or narrower?",
+      "values": {
+        "1": "Wider",
+        "2": "Same",
+        "3": "Narrower",
+        "97": "The gap between the rich and the poor is not a problem",
+        "98": "Don’t know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q127_1A": {
+      "description": "Food availability problem",
+      "question": "To what extent is the availability of food currently a problem in your country?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not a problem at all",
+        "98": "Don’t know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q127_1B": {
+      "description": "Food affordability problem",
+      "question": "To what extent is the affordability of food currently a problem in your country?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not a problem at all",
+        "98": "Don’t know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q127_2A": {
+      "description": "Housing availability problem",
+      "question": "To what extent is the availability of housing currently a problem in your country?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not a problem at all",
+        "98": "Don’t know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q127_2B": {
+      "description": "Housing affordability problem",
+      "question": "To what extent is the affordability of housing currently a problem in your country?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not a problem at all",
+        "98": "Don’t know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q112_2": {
+      "description": "Food did not last",
+      "question": "In the past 30 days, how often was this true for you or your household: “The food that we bought did not last and we did not have money to get more”?",
+      "values": {
+        "1": "Often true",
+        "2": "Sometimes true",
+        "3": "Never true",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q112B": {
+      "description": "Main cause of food problems",
+      "question": "Which of the following do you think is the biggest cause of food-related problems in your country?",
+      "values": {
+        "1": "Climate change",
+        "2": "War in Ukraine",
+        "3": "Wealth gap between the rich and the poor",
+        "4": "Inflation",
+        "5": "Government mismanagement",
+        "6": "Protracted conflict or violence",
+        "7": "Externally imposed economic sanctions",
+        "90": "Other",
+        "97": "Food insecurity is not a problem in my country",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q129A_1": {
+      "description": "Use cheaper foods frequency",
+      "question": "In the past 7 days, how often did your household rely on less preferred and less expensive foods?",
+      "values": {
+        "1": "Every day (7 days)",
+        "2": "Most days (4–6 days)",
+        "3": "Some days (1–3 days)",
+        "4": "Never (0 days)",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q129A_2": {
+      "description": "Limit portions frequency",
+      "question": "In the past 7 days, how often did your household limit portion sizes at mealtimes because of lack of money or food?",
+      "values": {
+        "1": "Every day (7 days)",
+        "2": "Most days (4–6 days)",
+        "3": "Some days (1–3 days)",
+        "4": "Never (0 days)",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q130": {
+      "description": "Household food coping strategies",
+      "question": "Which, if any, of the following actions does your household take to purchase food?",
+      "values": {
+        "1": "Household does not take any of these actions",
+        "2": "Borrow money from family or friends to purchase food",
+        "3": "Buy food on credit",
+        "4": "Receive food donations or rely on government support programs",
+        "5": "Receive food donations or rely on support from religious institutions or charities",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      },
+      "notes": "Multiple responses allowed; option 1 is exclusive."
+    },
+    "Q118_1": {
+      "description": "Top economic priority first",
+      "question": "What is the most important issue the government should focus on to improve economic conditions in your country?",
+      "values": {
+        "1": "Create more job opportunities",
+        "2": "Raise wages for existing jobs",
+        "3": "Lower the cost of living (limit inflation)",
+        "4": "Reform the education system",
+        "5": "Encourage foreign investment",
+        "6": "Support small businesses or entrepreneurship",
+        "7": "Limit smuggling",
+        "8": "Political stability",
+        "90": "Other",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q118_2": {
+      "description": "Top economic priority second",
+      "question": "What is the second most important issue the government should focus on to improve economic conditions in your country?",
+      "values": {
+        "1": "Create more job opportunities",
+        "2": "Raise wages for existing jobs",
+        "3": "Lower the cost of living (limit inflation)",
+        "4": "Reform the education system",
+        "5": "Encourage foreign investment",
+        "6": "Support small businesses or entrepreneurship",
+        "7": "Limit smuggling",
+        "8": "Political stability",
+        "90": "Other",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q123": {
+      "description": "Top government spending priority A",
+      "question": "Which of the following should be the top priority for government spending in the coming year?",
+      "values": {
+        "1": "Education system",
+        "2": "Healthcare system",
+        "3": "Reduce environmental pollution",
+        "4": "Improve roads and transportation",
+        "5": "National security",
+        "6": "Subsidies (e.g., bread, gas, oil, electricity)",
+        "7": "Fighting terrorism",
+        "90": "Other",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q123B": {
+      "description": "Top government spending priority B",
+      "question": "Which of the following should be the top priority for government spending in the coming year?",
+      "values": {
+        "1": "Education system",
+        "2": "Healthcare system",
+        "3": "Reduce environmental pollution",
+        "4": "Improve roads and transportation",
+        "5": "National security",
+        "6": "Subsidies (e.g., bread, gas, oil, electricity)",
+        "7": "Fighting terrorism",
+        "8": "Economic development",
+        "90": "Other",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q123_KUW": {
+      "description": "Top spending priority Kuwait",
+      "question": "Which of the following should be the top priority for government spending in the coming year?",
+      "values": {
+        "1": "Education system",
+        "2": "Healthcare system",
+        "3": "Reduce environmental pollution",
+        "4": "Improve roads and transportation",
+        "5": "National security",
+        "6": "Subsidies (e.g., bread, gas, oil, electricity)",
+        "90": "Other",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    }
+  },
+  "SECTION III: TRUST & GOVERNMENT PERFORMANCE": {
+    "Q103": {
+      "description": "Interpersonal trust",
+      "question": "Generally speaking, do you think most people can be trusted, or that you must be very careful in dealing with people?",
+      "values": {
+        "1": "Most people can be trusted",
+        "2": "One must be very careful in dealing with other people",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q201A_1": {
+      "description": "Trust in government",
+      "question": "How much trust do you have in the government (council of ministers)?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      },
+      "notes": "Item from a battery; common scale documented once."
+    },
+    "Q201A_2": {
+      "description": "Trust in courts",
+      "question": "How much trust do you have in the courts and legal system?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q201A_3": {
+      "description": "Trust in parliament",
+      "question": "How much trust do you have in the elected council of representatives (parliament)?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q201A_5": {
+      "description": "Trust in local government",
+      "question": "How much trust do you have in local government?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      },
+      "notes": "Local government wording varies slightly by country (e.g., municipalities)."
+    },
+    "Q201A_41": {
+      "description": "Trust in regional government",
+      "question": "How much trust do you have in the regional government?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q201A_41_WB": {
+      "description": "Trust in West Bank government",
+      "question": "How much trust do you have in the government in the West Bank?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q201A_41_Gaza": {
+      "description": "Trust in Hamas authority",
+      "question": "How much trust do you have in the Hamas Authority?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q201A_7": {
+      "description": "Trust in civil society organizations",
+      "question": "How much trust do you have in civil society organizations?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q201A_31B": {
+      "description": "Trust in president or head of state",
+      "question": "How much trust do you have in the president or head of state?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q201A_31C": {
+      "description": "Trust in prime minister",
+      "question": "How much trust do you have in the prime minister or head of government?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q201B_6": {
+      "description": "Trust in armed forces",
+      "question": "How much trust do you have in the armed forces?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      },
+      "notes": "In Palestine, this refers to National Security Forces."
+    },
+    "Q201B_4": {
+      "description": "Trust in police",
+      "question": "How much trust do you have in the police?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q201B_13": {
+      "description": "Trust in religious leaders",
+      "question": "How much trust do you have in religious leaders?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q201B_12": {
+      "description": "Trust in named Islamist party",
+      "question": "How much trust do you have in this Islamist political party?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      },
+      "notes": "Party label varies by country (e.g., Muslim Brotherhood, Ennahda, Hamas)."
+    },
+    "Q201B_14": {
+      "description": "Trust in named movement",
+      "question": "How much trust do you have in this political movement?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q201B_15": {
+      "description": "Trust in tribal leaders",
+      "question": "How much trust do you have in tribal leaders?",
+      "values": {
+        "1": "A great deal of trust",
+        "2": "Quite a lot of trust",
+        "3": "Not a lot of trust",
+        "4": "No trust at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q105A": {
+      "description": "Neighborhood safety",
+      "question": "How would you rate the safety of your neighborhood?",
+      "values": {
+        "1": "Very safe",
+        "2": "Somewhat safe",
+        "3": "Somewhat unsafe",
+        "4": "Very unsafe",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q277_1": {
+      "description": "Robberies in neighborhood",
+      "question": "In your neighborhood, how often do robberies happen?",
+      "values": {
+        "1": "Frequently",
+        "2": "Sometimes",
+        "3": "Rarely",
+        "4": "Never",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q277_2": {
+      "description": "Street violence in neighborhood",
+      "question": "In your neighborhood, how often do street violence and fights happen?",
+      "values": {
+        "1": "Frequently",
+        "2": "Sometimes",
+        "3": "Rarely",
+        "4": "Never",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q204A_3": {
+      "description": "Satisfaction with government overall",
+      "question": "How satisfied are you with the government’s overall performance in your country?",
+      "values": {
+        "1": "Completely satisfied",
+        "2": "Satisfied",
+        "3": "Dissatisfied",
+        "4": "Completely dissatisfied",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q204A_1": {
+      "description": "Satisfaction with education system",
+      "question": "How satisfied are you with the educational system in your country?",
+      "values": {
+        "1": "Completely satisfied",
+        "2": "Satisfied",
+        "3": "Dissatisfied",
+        "4": "Completely dissatisfied",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q204A_2": {
+      "description": "Satisfaction with healthcare system",
+      "question": "How satisfied are you with the healthcare system in your country?",
+      "values": {
+        "1": "Completely satisfied",
+        "2": "Satisfied",
+        "3": "Dissatisfied",
+        "4": "Completely dissatisfied",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q204A_4": {
+      "description": "Satisfaction with streets quality",
+      "question": "How satisfied are you with the quality of the streets in your country?",
+      "values": {
+        "1": "Completely satisfied",
+        "2": "Satisfied",
+        "3": "Dissatisfied",
+        "4": "Completely dissatisfied",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q204A_5": {
+      "description": "Satisfaction with trash collection",
+      "question": "How satisfied are you with trash collection in your country?",
+      "values": {
+        "1": "Completely satisfied",
+        "2": "Satisfied",
+        "3": "Dissatisfied",
+        "4": "Completely dissatisfied",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q204A_6": {
+      "description": "Satisfaction with electricity provision",
+      "question": "How satisfied are you with the provision of electricity in your country?",
+      "values": {
+        "1": "Completely satisfied",
+        "2": "Satisfied",
+        "3": "Dissatisfied",
+        "4": "Completely dissatisfied",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q204A_7": {
+      "description": "Satisfaction with water supply",
+      "question": "How satisfied are you with the water supply in your country?",
+      "values": {
+        "1": "Completely satisfied",
+        "2": "Satisfied",
+        "3": "Dissatisfied",
+        "4": "Completely dissatisfied",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q204A_8": {
+      "description": "Satisfaction with internet access",
+      "question": "How satisfied are you with access to internet services in your country?",
+      "values": {
+        "1": "Completely satisfied",
+        "2": "Satisfied",
+        "3": "Dissatisfied",
+        "4": "Completely dissatisfied",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q204A_9": {
+      "description": "Satisfaction with civil defense",
+      "question": "How satisfied are you with civil defense in your country?",
+      "values": {
+        "1": "Completely satisfied",
+        "2": "Satisfied",
+        "3": "Dissatisfied",
+        "4": "Completely dissatisfied",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q204A_10": {
+      "description": "Satisfaction with housing policy Kuwait",
+      "question": "How satisfied are you with housing policy in Kuwait?",
+      "values": {
+        "1": "Completely satisfied",
+        "2": "Satisfied",
+        "3": "Dissatisfied",
+        "4": "Completely dissatisfied",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q204_2": {
+      "description": "Government performance creating jobs",
+      "question": "How would you evaluate the current government’s performance in creating employment opportunities?",
+      "values": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Bad",
+        "4": "Very bad",
+        "97": "This is not the government’s responsibility",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q204_3": {
+      "description": "Government performance reducing inequality",
+      "question": "How would you evaluate the current government’s performance in narrowing the gap between rich and poor?",
+      "values": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Bad",
+        "4": "Very bad",
+        "97": "This is not the government’s responsibility",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q204_11": {
+      "description": "Government performance providing security",
+      "question": "How would you evaluate the current government’s performance in providing security and order?",
+      "values": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Bad",
+        "4": "Very bad",
+        "97": "This is not the government’s responsibility",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q204_20": {
+      "description": "Government performance keeping prices down",
+      "question": "How would you evaluate the current government’s performance in keeping prices down?",
+      "values": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Bad",
+        "4": "Very bad",
+        "97": "This is not the government’s responsibility",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q273C": {
+      "description": "Most effective action to influence government",
+      "question": "Which of the following actions do you think is most effective for influencing a national government decision?",
+      "values": {
+        "1": "Contact government officials on social media",
+        "2": "Use personal connections (wasta) with government officials",
+        "3": "Contact radio, TV, or print media",
+        "4": "Get people interested in the problem and form a group",
+        "5": "Work through a political party",
+        "6": "Participate in an in-person protest, demonstration, strike, or boycott",
+        "7": "Start or engage with a social media campaign",
+        "97": "Not applicable – nothing is effective",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q273D": {
+      "description": "Least effective action to influence government",
+      "question": "Which of the following actions do you think is least effective for influencing a national government decision?",
+      "values": {
+        "1": "Contact government officials on social media",
+        "2": "Use personal connections (wasta) with government officials",
+        "3": "Contact radio, TV, or print media",
+        "4": "Get people interested in the problem and form a group",
+        "5": "Work through a political party",
+        "6": "Participate in an in-person protest, demonstration, strike, or boycott",
+        "7": "Start or engage with a social media campaign",
+        "97": "Not applicable – nothing is effective",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q273C_KUW": {
+      "description": "Most effective action Kuwait",
+      "question": "Which of the following actions do you think is most effective for influencing a national government decision?",
+      "values": {
+        "1": "Contact government officials on social media",
+        "2": "Use personal connections (wasta) with government officials",
+        "3": "Contact radio, TV, or print media",
+        "4": "Get people interested in the problem and form a group",
+        "5": "Work through a political movement",
+        "7": "Start or engage with a social media campaign",
+        "8": "Work through the National Assembly",
+        "97": "Not applicable – nothing is effective",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q273D_KUW": {
+      "description": "Least effective action Kuwait",
+      "question": "Which of the following actions do you think is least effective for influencing a national government decision?",
+      "values": {
+        "1": "Contact government officials on social media",
+        "2": "Use personal connections (wasta) with government officials",
+        "3": "Contact radio, TV, or print media",
+        "4": "Get people interested in the problem and form a group",
+        "5": "Work through a political movement",
+        "7": "Start or engage with a social media campaign",
+        "8": "Work through the National Assembly",
+        "97": "Not applicable – nothing is effective",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q210": {
+      "description": "Perceived national corruption",
+      "question": "To what extent do you think there is corruption within national state agencies and institutions in your country?",
+      "values": {
+        "1": "To a large extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q211_2": {
+      "description": "Government effort against corruption",
+      "question": "To what extent is the national government working to crack down on corruption in your country?",
+      "values": {
+        "1": "To a large extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q211B": {
+      "description": "Perceived local corruption prevalence",
+      "question": "How widespread do you think corruption is in local government or your municipality or local council?",
+      "values": {
+        "1": "Hardly anyone is involved",
+        "2": "Not a lot of officials are corrupt",
+        "3": "Most officials are corrupt",
+        "4": "Almost everyone is corrupt",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q211C": {
+      "description": "Perceived local corruption extent",
+      "question": "To what extent do you think there is corruption within local or municipal agencies and institutions in your country?",
+      "values": {
+        "1": "To a large extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q270_1": {
+      "description": "Need for wasta to get job",
+      "question": "How often do you think it is necessary for citizens in your country to use wasta or piston to get a job?",
+      "values": {
+        "1": "Frequently",
+        "2": "Sometimes",
+        "3": "Rarely",
+        "4": "Never",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q270_2": {
+      "description": "Need for wasta for documents",
+      "question": "How often do you think it is necessary for citizens in your country to use wasta or piston to get legal documents from public institutions?",
+      "values": {
+        "1": "Frequently",
+        "2": "Sometimes",
+        "3": "Rarely",
+        "4": "Never",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q271_1": {
+      "description": "Need for bribes to get job",
+      "question": "How often do you think it is necessary for citizens in your country to use rashwa (bribes) to get a job?",
+      "values": {
+        "1": "Frequently",
+        "2": "Sometimes",
+        "3": "Rarely",
+        "4": "Never",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q271_2": {
+      "description": "Need for bribes for documents",
+      "question": "How often do you think it is necessary for citizens in your country to use rashwa (bribes) to get legal documents from public institutions?",
+      "values": {
+        "1": "Frequently",
+        "2": "Sometimes",
+        "3": "Rarely",
+        "4": "Never",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q276": {
+      "description": "Government responsiveness",
+      "question": "How well do you think the government responds to what people want?",
+      "values": {
+        "1": "Very responsive",
+        "2": "Largely responsive",
+        "3": "Not very responsive",
+        "4": "Not responsive at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    }
+  },
+  "SECTION IV:  ENGAGEMENT & GOVERNANCE PREFERENCES": {
+    "Q404": {
+      "description": "Interest in politics",
+      "question": "In general, to what extent are you interested in politics?",
+      "values": {
+        "1": "Very interested",
+        "2": "Interested",
+        "3": "Uninterested",
+        "4": "Very uninterested",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q501D": {
+      "description": "Volunteering frequency",
+      "question": "In a typical month, do you volunteer your time to do unpaid work for or support a cause you care about?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q501E_2": {
+      "description": "Type of volunteer cause",
+      "question": "Which category best describes the cause you volunteer for?",
+      "values": {
+        "1": "Art, music, drama",
+        "2": "Building and construction",
+        "3": "Charity",
+        "4": "Children and youth",
+        "5": "Economic development",
+        "6": "Education",
+        "7": "Environment",
+        "8": "Health",
+        "9": "Political development",
+        "10": "Religious activity",
+        "11": "Sports",
+        "12": "Women’s empowerment",
+        "90": "Other",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      },
+      "notes": "Open-ended text response is not included; only post-coded category variable is captured."
+    },
+    "Q266": {
+      "description": "Donates money monthly",
+      "question": "In a typical month, do you donate money to a charity or to people in need?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q552_1A": {
+      "description": "Made political statement through art",
+      "question": "In the past year, did you make a political statement through art, writing, or music?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q552_1B": {
+      "description": "Participated in protest",
+      "question": "In the past year, did you participate in an in-person protest, demonstration, strike, or boycott?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q552_2A": {
+      "description": "Contacted officials via social media",
+      "question": "In the past year, did you contact government officials or institutions via social media?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q552_2B": {
+      "description": "Contacted officials using wasta",
+      "question": "In the past year, did you contact government officials or institutions using wasta?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q552_3A": {
+      "description": "Boycotted a brand",
+      "question": "In the past year, did you boycott a brand?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q552_3B": {
+      "description": "Signed petition to government",
+      "question": "In the past year, did you sign a petition asking for action from the government?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q521_1": {
+      "description": "Freedom to express opinions guaranteed",
+      "question": "To what extent is freedom to express opinions guaranteed in your country?",
+      "values": {
+        "1": "Guaranteed to a great extent",
+        "2": "Guaranteed to a medium extent",
+        "3": "Guaranteed to a limited extent",
+        "4": "Not guaranteed at all",
+        "98": "Don’t know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q521_4": {
+      "description": "Freedom to protest guaranteed",
+      "question": "To what extent is freedom to participate in peaceful protests and demonstrations guaranteed in your country?",
+      "values": {
+        "1": "Guaranteed to a great extent",
+        "2": "Guaranteed to a medium extent",
+        "3": "Guaranteed to a limited extent",
+        "4": "Not guaranteed at all",
+        "98": "Don’t know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q521_2A": {
+      "description": "Freedom of media to criticize government",
+      "question": "To what extent is freedom of the media to criticize what the government does guaranteed in your country?",
+      "values": {
+        "1": "Guaranteed to a great extent",
+        "2": "Guaranteed to a medium extent",
+        "3": "Guaranteed to a limited extent",
+        "4": "Not guaranteed at all",
+        "98": "Don’t know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q521_2B": {
+      "description": "Freedom of the press guaranteed",
+      "question": "To what extent is freedom of the press guaranteed in your country?",
+      "values": {
+        "1": "Guaranteed to a great extent",
+        "2": "Guaranteed to a medium extent",
+        "3": "Guaranteed to a limited extent",
+        "4": "Not guaranteed at all",
+        "98": "Don’t know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q521_6": {
+      "description": "Freedom of religion guaranteed",
+      "question": "To what extent is freedom of religion guaranteed in your country?",
+      "values": {
+        "1": "Guaranteed to a great extent",
+        "2": "Guaranteed to a medium extent",
+        "3": "Guaranteed to a limited extent",
+        "4": "Not guaranteed at all",
+        "98": "Don’t know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q514A": {
+      "description": "Preferred pace of political reform",
+      "question": "Do you think political reforms in your country should be introduced little by little, all at once, or not at all?",
+      "values": {
+        "1": "Little by little",
+        "2": "All at once",
+        "3": "No reforms at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q516A": {
+      "description": "Preference for democracy",
+      "question": "Which of these statements is closest to your opinion about democracy and government?",
+      "values": {
+        "1": "For people like me, it doesn’t matter what kind of government we have",
+        "2": "Under some circumstances, a non-democratic government can be preferable",
+        "3": "Democracy is always preferable to any other kind of government",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q550A_1": {
+      "description": "Equality under law as dignity pillar",
+      "question": "To what extent is equality under the law an essential pillar of human dignity?",
+      "values": {
+        "1": "Very essential",
+        "2": "Somewhat essential",
+        "3": "Not very essential",
+        "4": "Not essential at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q550A_2": {
+      "description": "No corruption as dignity pillar",
+      "question": "To what extent is the absence of corruption an essential pillar of human dignity?",
+      "values": {
+        "1": "Very essential",
+        "2": "Somewhat essential",
+        "3": "Not very essential",
+        "4": "Not essential at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q550A_3": {
+      "description": "Basic necessities as dignity pillar",
+      "question": "To what extent is having basic necessities like clean food and water, clothes, and shelter for all an essential pillar of human dignity?",
+      "values": {
+        "1": "Very essential",
+        "2": "Somewhat essential",
+        "3": "Not very essential",
+        "4": "Not essential at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q550A_4": {
+      "description": "Free elections as dignity pillar",
+      "question": "To what extent is the ability to freely choose political leaders in elections an essential pillar of human dignity?",
+      "values": {
+        "1": "Very essential",
+        "2": "Somewhat essential",
+        "3": "Not very essential",
+        "4": "Not essential at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q550A_5": {
+      "description": "Safety from physical danger as dignity pillar",
+      "question": "To what extent is feeling safe from physical danger an essential pillar of human dignity?",
+      "values": {
+        "1": "Very essential",
+        "2": "Somewhat essential",
+        "3": "Not very essential",
+        "4": "Not essential at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q550A_6": {
+      "description": "Civil rights as dignity pillar",
+      "question": "To what extent is having basic civil rights guaranteed an essential pillar of human dignity?",
+      "values": {
+        "1": "Very essential",
+        "2": "Somewhat essential",
+        "3": "Not very essential",
+        "4": "Not essential at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q550B_1": {
+      "description": "Equality under law as democracy pillar",
+      "question": "To what extent is equality under the law an essential pillar of democracy?",
+      "values": {
+        "1": "Very essential",
+        "2": "Somewhat essential",
+        "3": "Not very essential",
+        "4": "Not essential at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q550B_2": {
+      "description": "No corruption as democracy pillar",
+      "question": "To what extent is the absence of corruption an essential pillar of democracy?",
+      "values": {
+        "1": "Very essential",
+        "2": "Somewhat essential",
+        "3": "Not very essential",
+        "4": "Not essential at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q550B_3": {
+      "description": "Basic necessities as democracy pillar",
+      "question": "To what extent is having basic necessities like clean food and water, clothes, and shelter for all an essential pillar of democracy?",
+      "values": {
+        "1": "Very essential",
+        "2": "Somewhat essential",
+        "3": "Not very essential",
+        "4": "Not essential at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q550B_4": {
+      "description": "Free elections as democracy pillar",
+      "question": "To what extent is the ability to freely choose political leaders in elections an essential pillar of democracy?",
+      "values": {
+        "1": "Very essential",
+        "2": "Somewhat essential",
+        "3": "Not very essential",
+        "4": "Not essential at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q550B_5": {
+      "description": "Safety from physical danger as democracy pillar",
+      "question": "To what extent is feeling safe from physical danger an essential pillar of democracy?",
+      "values": {
+        "1": "Very essential",
+        "2": "Somewhat essential",
+        "3": "Not very essential",
+        "4": "Not essential at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q550B_6": {
+      "description": "Civil rights as democracy pillar",
+      "question": "To what extent is having basic civil rights guaranteed an essential pillar of democracy?",
+      "values": {
+        "1": "Very essential",
+        "2": "Somewhat essential",
+        "3": "Not very essential",
+        "4": "Not essential at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q551A": {
+      "description": "Main pillar of human dignity",
+      "question": "Which of the following is the main pillar of human dignity?",
+      "values": {
+        "1": "Equality under the law",
+        "2": "Absence of corruption",
+        "3": "Basic necessities available for all",
+        "4": "Ability to freely choose political leaders in elections",
+        "5": "Feeling safe from physical danger",
+        "6": "Basic civil rights are guaranteed",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q551B": {
+      "description": "Main pillar of democracy",
+      "question": "Which of the following is the main pillar of democracy?",
+      "values": {
+        "1": "Equality under the law",
+        "2": "Absence of corruption",
+        "3": "Basic necessities available for all",
+        "4": "Ability to freely choose political leaders in elections",
+        "5": "Feeling safe from physical danger",
+        "6": "Basic civil rights are guaranteed",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q516_1": {
+      "description": "Democracy weakens economy",
+      "question": "To what extent do you agree or disagree with this statement: Under a democratic system, the country’s economic performance is weak?",
+      "values": {
+        "1": "I strongly agree",
+        "2": "I agree",
+        "3": "I disagree",
+        "4": "I strongly disagree",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q516_2": {
+      "description": "Democratic regimes indecisive",
+      "question": "To what extent do you agree or disagree with this statement: Democratic regimes are indecisive and full of problems?",
+      "values": {
+        "1": "I strongly agree",
+        "2": "I agree",
+        "3": "I disagree",
+        "4": "I strongly disagree",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q516_3": {
+      "description": "Democracy ineffective at order",
+      "question": "To what extent do you agree or disagree with this statement: Democratic systems are not effective at maintaining order and stability?",
+      "values": {
+        "1": "I strongly agree",
+        "2": "I agree",
+        "3": "I disagree",
+        "4": "I strongly disagree",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q516_4": {
+      "description": "Democracy better than other systems",
+      "question": "To what extent do you agree or disagree with this statement: Democratic systems may have problems, yet they are better than other systems?",
+      "values": {
+        "1": "I strongly agree",
+        "2": "I agree",
+        "3": "I disagree",
+        "4": "I strongly disagree",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q516B_1": {
+      "description": "Non-democracy weakens economy",
+      "question": "To what extent do you agree or disagree with this statement: Under a non-democratic system, the country’s economic performance is weak?",
+      "values": {
+        "1": "I strongly agree",
+        "2": "I agree",
+        "3": "I disagree",
+        "4": "I strongly disagree",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q516B_2": {
+      "description": "Non-democratic regimes indecisive",
+      "question": "To what extent do you agree or disagree with this statement: Non-democratic regimes are indecisive and full of problems?",
+      "values": {
+        "1": "I strongly agree",
+        "2": "I agree",
+        "3": "I disagree",
+        "4": "I strongly disagree",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q516B_3": {
+      "description": "Non-democracy ineffective at order",
+      "question": "To what extent do you agree or disagree with this statement: Non-democratic systems are not effective at maintaining order and stability?",
+      "values": {
+        "1": "I strongly agree",
+        "2": "I agree",
+        "3": "I disagree",
+        "4": "I strongly disagree",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q516B_4": {
+      "description": "Non-democracy better than others",
+      "question": "To what extent do you agree or disagree with this statement: Non-democratic systems may have problems, yet they are better than other systems?",
+      "values": {
+        "1": "I strongly agree",
+        "2": "I agree",
+        "3": "I disagree",
+        "4": "I strongly disagree",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q518_1": {
+      "description": "Suitability of multiparty parliamentary system",
+      "question": "To what extent would a parliamentary system in which nationalist, left-wing, right-wing, and Islamist parties compete in elections be suitable for your country?",
+      "values": {
+        "1": "Very suitable",
+        "2": "Suitable",
+        "3": "Somewhat suitable",
+        "4": "Not suitable at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q518_3": {
+      "description": "Suitability of strong authority system",
+      "question": "To what extent would a political system governed by a strong authority that makes decisions without considering election results or opposition opinions be suitable for your country?",
+      "values": {
+        "1": "Very suitable",
+        "2": "Suitable",
+        "3": "Somewhat suitable",
+        "4": "Not suitable at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q518_4": {
+      "description": "Suitability of Islamic law system",
+      "question": "To what extent would a system governed by Islamic law with no political parties or elections be suitable for your country?",
+      "values": {
+        "1": "Very suitable",
+        "2": "Suitable",
+        "3": "Somewhat suitable",
+        "4": "Not suitable at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q518_6": {
+      "description": "Suitability of welfare without participation",
+      "question": "To what extent would a government that provides for citizens’ needs without giving them the right to participate in politics be suitable for your country?",
+      "values": {
+        "1": "Very suitable",
+        "2": "Suitable",
+        "3": "Somewhat suitable",
+        "4": "Not suitable at all",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q508": {
+      "description": "Perceived democracy in USA",
+      "question": "In your opinion, to what extent is the United States of America a democratic country?",
+      "values": {
+        "0": "No democracy at all",
+        "1": "No democracy at all",
+        "2": "Slight democracy",
+        "3": "Slight democracy",
+        "4": "Some democracy",
+        "5": "Some democracy",
+        "6": "Some democracy",
+        "7": "A lot of democracy",
+        "8": "A lot of democracy",
+        "9": "Democratic to the greatest extent",
+        "10": "Democratic to the greatest extent",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      },
+      "notes": "Collapsed from 11-point to 5-point scale."
+    },
+    "Q509": {
+      "description": "Perceived democracy in China",
+      "question": "In your opinion, to what extent is China a democratic country?",
+      "values": {
+        "0": "No democracy at all",
+        "1": "No democracy at all",
+        "2": "Slight democracy",
+        "3": "Slight democracy",
+        "4": "Some democracy",
+        "5": "Some democracy",
+        "6": "Some democracy",
+        "7": "A lot of democracy",
+        "8": "A lot of democracy",
+        "9": "Democratic to the greatest extent",
+        "10": "Democratic to the greatest extent",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      },
+      "notes": "Collapsed from 11-point to 5-point scale."
+    },
+    "Q508B": {
+      "description": "Perceived democracy in Germany",
+      "question": "In your opinion, to what extent is Germany a democratic country?",
+      "values": {
+        "0": "No democracy at all",
+        "1": "No democracy at all",
+        "2": "Slight democracy",
+        "3": "Slight democracy",
+        "4": "Some democracy",
+        "5": "Some democracy",
+        "6": "Some democracy",
+        "7": "A lot of democracy",
+        "8": "A lot of democracy",
+        "9": "Democratic to the greatest extent",
+        "10": "Democratic to the greatest extent",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      },
+      "notes": "Collapsed from 11-point to 5-point scale."
+    },
+    "Q511": {
+      "description": "Perceived democracy in own country",
+      "question": "In your opinion, to what extent is your country a democratic country?",
+      "values": {
+        "0": "No democracy at all",
+        "1": "No democracy at all",
+        "2": "Slight democracy",
+        "3": "Slight democracy",
+        "4": "Some democracy",
+        "5": "Some democracy",
+        "6": "Some democracy",
+        "7": "A lot of democracy",
+        "8": "A lot of democracy",
+        "9": "Democratic to the greatest extent",
+        "10": "Democratic to the greatest extent",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      },
+      "notes": "Collapsed from 11-point to 5-point scale."
+    },
+    "Q512": {
+      "description": "Suitability of democracy for country",
+      "question": "On a scale from 0 to 10, where 0 means democracy is absolutely inappropriate and 10 means completely appropriate, to what extent is democracy appropriate for your country?",
+      "values": {
+        "0": "Absolutely inappropriate",
+        "1": "Absolutely inappropriate",
+        "2": "Somewhat inappropriate",
+        "3": "Somewhat inappropriate",
+        "4": "Neither appropriate nor inappropriate",
+        "5": "Neither appropriate nor inappropriate",
+        "6": "Neither appropriate nor inappropriate",
+        "7": "Somewhat appropriate",
+        "8": "Somewhat appropriate",
+        "9": "Completely appropriate",
+        "10": "Completely appropriate",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      },
+      "notes": "Collapsed from 11-point to 5-point scale."
+    },
+    "Q537A": {
+      "description": "Democracy now vs Arab Spring",
+      "question": "Compared with before the Arab Spring protests of 2010–2011, how would you rate the state of democracy in your country now?",
+      "values": {
+        "1": "Much more democratic",
+        "2": "Somewhat more democratic",
+        "3": "The same as before",
+        "4": "Somewhat less democratic",
+        "5": "Much less democratic",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q533_4": {
+      "description": "Need leader who bends rules",
+      "question": "To what extent do you agree or disagree with this statement: This country needs a leader who can bend the rules if necessary to get things done?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Somewhat agree",
+        "3": "Somewhat disagree",
+        "4": "Strongly disagree",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q301A": {
+      "description": "Voted in last parliamentary election",
+      "question": "Did you vote in the last parliamentary elections?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      },
+      "notes": "Specific election date varies by country and is omitted from wording here."
+    },
+    "Q301B": {
+      "description": "Intend to vote in next parliamentary election",
+      "question": "Do you intend to vote in the upcoming parliamentary elections?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q303A": {
+      "description": "Evaluation of last parliamentary election",
+      "question": "In general, how would you evaluate the last parliamentary elections?",
+      "values": {
+        "1": "Free and fair",
+        "2": "Free and fair with minor problems",
+        "3": "Not free or fair",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q303B_1": {
+      "description": "Votes counted fairly",
+      "question": "During elections in your country, how often are votes counted fairly?",
+      "values": {
+        "1": "Frequently",
+        "2": "Sometimes",
+        "3": "Rarely",
+        "4": "Never",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q303B_2": {
+      "description": "Voters bribed",
+      "question": "During elections in your country, how often are voters bribed?",
+      "values": {
+        "1": "Frequently",
+        "2": "Sometimes",
+        "3": "Rarely",
+        "4": "Never",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q303B_3": {
+      "description": "Voters offered genuine choice",
+      "question": "During elections in your country, how often are voters offered a genuine choice?",
+      "values": {
+        "1": "Frequently",
+        "2": "Sometimes",
+        "3": "Rarely",
+        "4": "Never",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q301C": {
+      "description": "Voted in last local elections",
+      "question": "Did you vote in the last local elections?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don’t know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q503A_2": {
+      "description": "Closest political party",
+      "question": "Which political party, if any, do you feel closest to?",
+      "values": {
+        "10703": "Kurdistan Democratic Party",
+        "10704": "Al-Fatah Alliance",
+        "10709": "Victory Alliance",
+        "107010": "State of Law Coalition",
+        "107011": "Nation Wisdom Movement",
+        "107012": "National Forces Aliance",
+        "107013": "Iraqi Shi'a Islamic national movement",
+        "107014": "Rights Movement",
+        "107015": "Tishreen Movement",
+        "107016": "Islamic Virture Party",
+        "107017": "Awareness Movement",
+        "107018": "Al-Takadum Movement",
+        "107019": "Azem Alliance",
+        "107020": "Kadmon",
+        "107021": "Patriotic Union of Kurdistan",
+        "107022": "New Generation Movement",
+        "107023": "Kurdistan Islamic Union",
+        "107024": "Kurdistan Justice Group",
+        "107025": "Kurdistan Social Democratic Party",
+        "107026": "Iraqi Turkmen Front",
+        "107027": "Kurdistan Toilers' Party",
+        "107028": "Iraqi Harmony Party",
+        "10801": "Islamic Action Front (IAF)",
+        "10802": "Jordanian Communist Party",
+        "10803": "Al-Ba'ath Arab Socialist Party in Jordan (JASBP)",
+        "10804": "The Jordanian People Democratic Party (HASHD)",
+        "10805": "Jordanian Democratic Popular Unity Party",
+        "10806": "Al-Mustaqbal (Future) Party",
+        "10807": "Jordanian Progressive Party",
+        "10808": "National Current Party",
+        "10809": "Freedom Party (Al-Ahrar)",
+        "108010": "National Congress Party (Zamzam)",
+        "101001": "Amal Movement",
+        "101002": "Free Patriotic Movement",
+        "101003": "Future Movement",
+        "101004": "Hezbollah",
+        "101005": "The Phalange (Kataeb Party)",
+        "101006": "Lebanese Forces",
+        "101007": "Progressive Socialist Party",
+        "101008": "Lebanese Democratic Party",
+        "101009": "Popular Nasserist Organization (PNO)",
+        "1010010": "Tashnag",
+        "101201": "Union for the Republic (UPR)",
+        "101202": "National Rally for Reform and Development (RNRD)",
+        "101203": "Union for Democracy and Progress (UDP)",
+        "101204": "Union of the Forces of Progress (UFP)",
+        "101205": "Mauritanian Party of Union and Change (HATEM)",
+        "101206": "National Pact for Democracy and Development (ADIL)",
+        "101207": "National Democratic Alliance (AND)",
+        "101208": "Dignity and Action Party (DPA)",
+        "101209": "People's Progressive Alliance (APP)",
+        "1012010": "El Wiam (PEDS)",
+        "101301": "Authenticity and Modernity Party (PAM)",
+        "101302": "Justice and Development Party (PJD)",
+        "101303": "Istiqlal Party",
+        "101304": "National Rally of Independents (RNI)",
+        "101305": "Popular Movement (MP)",
+        "101306": "Constitutional Union (UC)",
+        "101307": "Socialist Union of Popular Forces (USFP)",
+        "101308": "Party of Progress and Socialism (PPS)",
+        "101309": "Democratic and Social Movement (MDS)",
+        "1013010": "Unified Socialist Party (PSU)",
+        "101501": "Fatah",
+        "101502": "Hamas",
+        "101503": "Democratic Front for the Liberation of Palestine (DFLP)",
+        "101504": "Palestinian National Initiative",
+        "101505": "Popular Front for the Liberation of Palestine (PFLP)",
+        "101506": "Palestinian Democratic Union (FIDA)",
+        "101507": "Hizb Ut-Tahrir",
+        "101508": "Palestinian Popular Struggle Front (PPSF)",
+        "101509": "Islamic Jihad Movement in Palestine (PIJ)",
+        "1015010": "Palestinian People's Party (PPP)",
+        "102101": "Ennahdha",
+        "102102": "Afek Tounes",
+        "102103": "Al Jomhouri",
+        "102104": "Parti du travail patriotique et démocratique (PTT)",
+        "102105": "Nidaa Tounes",
+        "102106": "Social Democratic Path",
+        "102107": "Popular Front (ej-Jabha)",
+        "102108": "Congress for the Republic",
+        "102109": "Democratic Forum for Labour and Liberties (Ettakatol)",
+        "1021010": "Free Patriotic Union (UPL)",
+        "0": "No party",
+        "90": "Other",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Country-specific party list."
+    }
+  },
+  "SECTION V: MIGRATION & IMMIGRATION": {
+    "Q104": {
+      "description": "Thought about emigrating",
+      "question": "Have you ever thought about emigrating from your country?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q104B_TUN": {
+      "description": "Preparing to emigrate (Tunisia)",
+      "question": "Are you preparing to emigrate?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q104A_2": {
+      "description": "Reasons for emigrating (coded)",
+      "question": "What are the main reasons you have thought about emigrating?",
+      "values": {
+        "1": "For economic reasons",
+        "2": "For political reasons",
+        "3": "Religious reasons",
+        "4": "Security reasons",
+        "5": "Education opportunities (for self or family members)",
+        "6": "Reunite with family",
+        "7": "Corruption",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Excludes Q104A_1 open-response text; kept only post-coded multiple-response variable."
+    },
+    "Q104B": {
+      "description": "Destination country for emigration",
+      "question": "Which country are you thinking of emigrating to?",
+      "values": {
+        "1": "Saudi Arabia",
+        "2": "The United Arab Emirates",
+        "3": "Qatar",
+        "4": "Bahrain",
+        "5": "Kuwait",
+        "6": "Oman",
+        "7": "Egypt",
+        "8": "Jordan",
+        "9": "Lebanon",
+        "10": "Morocco",
+        "11": "Algeria",
+        "12": "Tunisia",
+        "13": "Turkey",
+        "14": "The United States",
+        "15": "Canada",
+        "16": "The United Kingdom",
+        "17": "Eastern Europe",
+        "18": "France",
+        "19": "Germany",
+        "20": "Spain",
+        "21": "Italy",
+        "22": "Other Western European countries",
+        "23": "Sub-Saharan Africa",
+        "24": "China",
+        "25": "Australia",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q104C": {
+      "description": "Emigrate without papers",
+      "question": "Would you consider leaving your country even if you did not have the required papers?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1017": {
+      "description": "Family remittances",
+      "question": "Does your family receive remittances from any immediate or extended family member living abroad?",
+      "values": {
+        "1": "Yes, monthly",
+        "2": "Yes, a few times a year",
+        "3": "Yes, once a year",
+        "4": "We do not receive anything",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q907": {
+      "description": "Discrimination against Arab migrants",
+      "question": "To what extent do you think migrants from other Arab countries are discriminated against in your country?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "97": "Unaware of migrants from other Arab countries to your country",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q905": {
+      "description": "Discrimination against Sub-Saharan migrants",
+      "question": "To what extent do you think migrants from Sub-Saharan Africa are discriminated against in your country?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "97": "Unaware of migrants from Sub-Saharan Africa to your country",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q906": {
+      "description": "Discrimination against South/Southeast Asian migrants",
+      "question": "To what extent do you think migrants from South Asia and Southeast Asia are discriminated against in your country?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "97": "Unaware of migrants from South Asia and Southeast Asia to your country",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q916_1": {
+      "description": "Support law: domestic workers keep passports",
+      "question": "To what extent would you support or oppose a law guaranteeing that foreign domestic workers in your country always have possession of their passports?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q916_2": {
+      "description": "Support law: domestic workers weekly day off",
+      "question": "To what extent would you support or oppose a law guaranteeing foreign domestic workers in your country one day off per week?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q916_3": {
+      "description": "Support law: domestic workers bank account",
+      "question": "To what extent would you support or oppose a law guaranteeing foreign domestic workers in your country a bank account where they can receive their salaries?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q869F": {
+      "description": "Job competition with migrants",
+      "question": "What do you think are the chances that you or anyone in your family will not get a job while an equally or less qualified migrant receives one instead?",
+      "values": {
+        "1": "Very likely",
+        "2": "Somewhat likely",
+        "3": "Somewhat unlikely",
+        "4": "Very unlikely",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q869G": {
+      "description": "Job competition with refugees",
+      "question": "What do you think are the chances that you or anyone in your family will not get a job while an equally or less qualified refugee receives one instead?",
+      "values": {
+        "1": "Very likely",
+        "2": "Somewhat likely",
+        "3": "Somewhat unlikely",
+        "4": "Very unlikely",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    }
+  },
+  "SECTION VI: IDENTITY & RELIGIOUS PRACTICE": {
+    "Q1012": {
+      "description": "Religion",
+      "question": "What is your religion?",
+      "values": {
+        "1": "Muslim",
+        "2": "Christian",
+        "4": "No religion",
+        "90": "Other - specify",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1012A_MUSLIM": {
+      "description": "Muslim denomination",
+      "question": "What is your religious denomination?",
+      "values": {
+        "1": "Just a Muslim",
+        "2": "Sunni",
+        "3": "Shia",
+        "4": "Hanbali",
+        "5": "Shafi’i",
+        "6": "Ja’fari",
+        "7": "Druze",
+        "8": "Ahmadiyya",
+        "9": "Alawi",
+        "10": "Ibadi",
+        "11": "Malki",
+        "90": "Other - specify",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1012A_CHRISTIAN": {
+      "description": "Christian denomination",
+      "question": "What is your religious denomination?",
+      "values": {
+        "1": "Just a Christian",
+        "2": "Maronite",
+        "3": "Orthodox",
+        "4": "Catholic",
+        "5": "Armenian",
+        "6": "Coptic",
+        "7": "Protestant",
+        "8": "Sabean Mandean",
+        "90": "Other - specify",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1020JO2": {
+      "description": "Jordanian/Palestinian identity",
+      "question": "Do you consider yourself Jordanian, Palestinian, or both?",
+      "values": {
+        "1": "Jordanian",
+        "2": "Palestinian",
+        "3": "Both Jordanian and Palestinian",
+        "90": "Other - specify",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1012B2": {
+      "description": "Ethnic identity",
+      "question": "Which of the following best describes how you consider yourself?",
+      "values": {
+        "1": "Arab",
+        "2": "Kurd",
+        "3": "Amazigh (Berber)",
+        "4": "Turkmen",
+        "5": "Tourag",
+        "8": "Yazidi",
+        "9": "Assyrian",
+        "10": "Armenian",
+        "11": "Circassian",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1012C_MOR": {
+      "description": "Other languages spoken (Morocco)",
+      "question": "Do you speak a language other than Arabic?",
+      "values": {
+        "1": "One or more of the Amazigh languages",
+        "2": "Hassaniya Arabic",
+        "3": "French",
+        "4": "Spanish",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q609": {
+      "description": "Self-rated religiosity",
+      "question": "In general, would you describe yourself as religious, somewhat religious, or not religious?",
+      "values": {
+        "1": "Religious",
+        "2": "Somewhat religious",
+        "3": "Not religious",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q610_1": {
+      "description": "Frequency of daily prayer",
+      "question": "Do you pray daily always, most of the time, sometimes, rarely, or never?",
+      "values": {
+        "1": "Always",
+        "2": "Most of the time",
+        "3": "Sometimes",
+        "4": "Rarely",
+        "5": "Never",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q610_8": {
+      "description": "Pray fajr on time",
+      "question": "Do you pray fajr on time always, most of the time, sometimes, rarely, or never?",
+      "values": {
+        "1": "Always",
+        "2": "Most of the time",
+        "3": "Sometimes",
+        "4": "Rarely",
+        "5": "Never",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q610_6A": {
+      "description": "Read/listen to Quran daily",
+      "question": "Do you listen to or read the Quran daily always, most of the time, sometimes, rarely, or never?",
+      "values": {
+        "1": "Always",
+        "2": "Most of the time",
+        "3": "Sometimes",
+        "4": "Rarely",
+        "5": "Never",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q610_6B": {
+      "description": "Read/listen to Bible daily",
+      "question": "Do you listen to or read the Bible daily always, most of the time, sometimes, rarely, or never?",
+      "values": {
+        "1": "Always",
+        "2": "Most of the time",
+        "3": "Sometimes",
+        "4": "Rarely",
+        "5": "Never",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q606_2": {
+      "description": "Religious people in public positions",
+      "question": "How much do you agree or disagree with the statement: 'Your country is better off if religious people hold public positions in the state'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q606_3": {
+      "description": "Clerics influence government (have)",
+      "question": "How much do you agree or disagree with the statement: 'Religious clerics have influence over the decisions of government'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q606_3B": {
+      "description": "Clerics influence government (should)",
+      "question": "How much do you agree or disagree with the statement: 'Religious clerics should have influence over the decisions of government'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q606_NT_3": {
+      "description": "Ulama influence government (should)",
+      "question": "How much do you agree or disagree with the statement: 'The religious ulama should have influence over the decisions of government'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q606_NT_3B": {
+      "description": "Ulama influence government (have)",
+      "question": "How much do you agree or disagree with the statement: 'The religious ulama have influence over the decisions of government'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q606_4": {
+      "description": "Religion as private matter",
+      "question": "How much do you agree or disagree with the statement: 'Religious practice is a private matter and should be separated from socio-economic life'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q606_8": {
+      "description": "Corruption among religious leaders",
+      "question": "How much do you agree or disagree with the statement: 'Today, religious leaders are as likely to be corrupt as non-religious leaders'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q605": {
+      "description": "Basis of laws and sharia",
+      "question": "From your point of view, on what should the laws of your country mainly be based?",
+      "values": {
+        "1": "Entirely based on the sharia",
+        "2": "Mostly based on the sharia",
+        "3": "Equally based on sharia and the will of the people",
+        "4": "Mostly based on the will of the people",
+        "5": "Entirely based on the will of the people",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    }
+  },
+  "SECTION VII: CLIMATE CHANGE & THE ENVIRONMENT": {
+    "Q540_1": {
+      "description": "Biggest environmental challenge (first)",
+      "question": "What is the biggest environmental challenge facing your country?",
+      "values": {
+        "1": "Air quality",
+        "2": "Pollution of drinking water",
+        "3": "Pollution of seas, beaches, rivers, and lakes",
+        "4": "Lack of water resources",
+        "5": "Trash/waste management",
+        "6": "Pesticide, fertilizer, and food contamination",
+        "7": "Industry and hazardous waste contamination",
+        "8": "Inefficient use of energy (electricity, fuel)",
+        "9": "Climate change",
+        "96": "All of these are challenges",
+        "97": "None of these are challenges",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q540_2": {
+      "description": "Second biggest environmental challenge",
+      "question": "What is the second biggest environmental challenge facing your country?",
+      "values": {
+        "1": "Air quality",
+        "2": "Pollution of drinking water",
+        "3": "Pollution of seas, beaches, rivers, and lakes",
+        "4": "Lack of water resources",
+        "5": "Trash/waste management",
+        "6": "Pesticide, fertilizer, and food contamination",
+        "7": "Industry and hazardous waste contamination",
+        "8": "Inefficient use of energy (electricity, fuel)",
+        "9": "Climate change",
+        "96": "All of these are challenges",
+        "97": "None of these are challenges",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q540B_1": {
+      "description": "Impact of extreme temperatures",
+      "question": "To what extent do extreme weather temperatures impact your everyday life?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q540B_2": {
+      "description": "Impact of air pollution",
+      "question": "To what extent does air pollution impact your everyday life?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q540B_3": {
+      "description": "Impact of water scarcity",
+      "question": "To what extent does water scarcity impact your everyday life?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q274A": {
+      "description": "Frequency of electricity outages",
+      "question": "In the past 12 months, how often have you experienced electricity outages?",
+      "values": {
+        "1": "Daily",
+        "2": "Weekly",
+        "3": "Monthly",
+        "4": "Only a few times a year",
+        "5": "Never",
+        "97": "I don't have electricity",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q274B": {
+      "description": "Frequency of water outages",
+      "question": "In the past 12 months, how often have you experienced water outages?",
+      "values": {
+        "1": "Daily",
+        "2": "Weekly",
+        "3": "Monthly",
+        "4": "Only a few times a year",
+        "5": "Never",
+        "97": "I don't have water",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q548_2": {
+      "description": "Climate change associations",
+      "question": "When you hear the term 'climate change', what comes to mind first?",
+      "values": {
+        "1": "Agricultural production or food availability",
+        "2": "Weather (extreme or unseasonable temperatures)",
+        "3": "Natural disasters (earthquakes, floods, fires, droughts)",
+        "4": "Pollution",
+        "5": "Migration",
+        "98": "Don't know",
+        "99": "Refuse to answer"
+      }
+    },
+    "Q549_1A": {
+      "description": "Concern climate change: physical health",
+      "question": "To what extent are you concerned about the impact of climate change on your physical health?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not concerned at all",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q549_1B": {
+      "description": "Concern climate change: mental health",
+      "question": "To what extent are you concerned about the impact of climate change on your mental health?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not concerned at all",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q549_2": {
+      "description": "Concern climate change: personal safety",
+      "question": "To what extent are you concerned about the impact of climate change on your personal safety?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not concerned at all",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q549_3": {
+      "description": "Concern climate change: job/livelihood",
+      "question": "To what extent are you concerned about the impact of climate change on your job or your household’s livelihood?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not concerned at all",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q553A_1": {
+      "description": "Contribution to climate change: citizens own country",
+      "question": "To what extent do you believe the actions of citizens in your country contribute to climate change?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refuse to answer"
+      }
+    },
+    "Q553A_2": {
+      "description": "Contribution to climate change: citizens Western countries",
+      "question": "To what extent do you believe the actions of citizens in Western countries contribute to climate change?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refuse to answer"
+      }
+    },
+    "Q553A_3": {
+      "description": "Contribution to climate change: government own country",
+      "question": "To what extent do you believe the actions of the government of your country contribute to climate change?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refuse to answer"
+      }
+    },
+    "Q553A_4": {
+      "description": "Contribution to climate change: governments Western countries",
+      "question": "To what extent do you believe the actions of the governments of Western countries contribute to climate change?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refuse to answer"
+      }
+    },
+    "Q553A_5": {
+      "description": "Contribution to climate change: businesses own country",
+      "question": "To what extent do you believe the actions of private businesses or corporations in your country contribute to climate change?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refuse to answer"
+      }
+    },
+    "Q553A_6": {
+      "description": "Contribution to climate change: businesses Western countries",
+      "question": "To what extent do you believe the actions of private businesses or corporations in Western countries contribute to climate change?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refuse to answer"
+      }
+    },
+    "Q553B_1": {
+      "description": "Responsibility for climate action: citizens own country",
+      "question": "To what extent do you think citizens in your country should be responsible for taking steps to address climate change?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refuse to answer"
+      }
+    },
+    "Q553B_2": {
+      "description": "Responsibility for climate action: citizens Western countries",
+      "question": "To what extent do you think citizens in Western countries should be responsible for taking steps to address climate change?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refuse to answer"
+      }
+    },
+    "Q553B_3": {
+      "description": "Responsibility for climate action: government own country",
+      "question": "To what extent do you think the government of your country should be responsible for taking steps to address climate change?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refuse to answer"
+      }
+    },
+    "Q553B_4": {
+      "description": "Responsibility for climate action: governments Western countries",
+      "question": "To what extent do you think the governments of Western countries should be responsible for taking steps to address climate change?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refuse to answer"
+      }
+    },
+    "Q553B_5": {
+      "description": "Responsibility for climate action: businesses own country",
+      "question": "To what extent do you think private businesses or corporations in your country should be responsible for taking steps to address climate change?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refuse to answer"
+      }
+    },
+    "Q553B_6": {
+      "description": "Responsibility for climate action: businesses Western countries",
+      "question": "To what extent do you think private businesses or corporations in Western countries should be responsible for taking steps to address climate change?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refuse to answer"
+      }
+    },
+    "Q546": {
+      "description": "Government action on climate change",
+      "question": "Do you think your national government should do more, less, or about the same as it is doing now to deal with climate change?",
+      "values": {
+        "1": "More",
+        "2": "Less",
+        "3": "About the same",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q547_1": {
+      "description": "Support alternative energy development",
+      "question": "To what extent do you favor or oppose having your government prioritize alternative energy development, like solar or wind power, in your country?",
+      "values": {
+        "2": "Strongly favor",
+        "3": "Somewhat favor",
+        "4": "Somewhat oppose",
+        "5": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q547_2": {
+      "description": "Support phasing out fossil fuel use",
+      "question": "To what extent do you favor or oppose phasing out the use of fossil fuels, like gas and oil, in your country?",
+      "values": {
+        "2": "Strongly favor",
+        "3": "Somewhat favor",
+        "4": "Somewhat oppose",
+        "5": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q547_3": {
+      "description": "Support phasing out fossil fuel production",
+      "question": "To what extent do you favor or oppose phasing out the production of fossil fuels, like gas and oil, in your country?",
+      "values": {
+        "2": "Strongly favor",
+        "3": "Somewhat favor",
+        "4": "Somewhat oppose",
+        "5": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q547_4": {
+      "description": "Support phasing out polluting vehicles",
+      "question": "To what extent do you favor or oppose setting a common target date to phase out polluting cars and vehicles in your country?",
+      "values": {
+        "2": "Strongly favor",
+        "3": "Somewhat favor",
+        "4": "Somewhat oppose",
+        "5": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q547_TUN2": {
+      "description": "Support fines for littering (Tunisia)",
+      "question": "To what extent do you favor or oppose the government mandating financial punishment for those who litter in public spaces?",
+      "values": {
+        "2": "Strongly favor",
+        "3": "Somewhat favor",
+        "4": "Somewhat oppose",
+        "5": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q547_TUN3": {
+      "description": "Support larger budget for pollution/trash (Tunisia)",
+      "question": "To what extent do you favor or oppose specifying a larger portion of the budget to address pollution and manage trash, even if it means imposing more laws on citizens?",
+      "values": {
+        "2": "Strongly favor",
+        "3": "Somewhat favor",
+        "4": "Somewhat oppose",
+        "5": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q547_TUN4": {
+      "description": "Support higher water cost for high use (Tunisia)",
+      "question": "To what extent do you favor or oppose raising the cost of water significantly for each family that consumes more than the regular necessities for household water use?",
+      "values": {
+        "2": "Strongly favor",
+        "3": "Somewhat favor",
+        "4": "Somewhat oppose",
+        "5": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q554": {
+      "description": "Concern about natural disasters",
+      "question": "How concerned or unconcerned are you about natural disasters in your country?",
+      "values": {
+        "1": "Very concerned",
+        "2": "Somewhat concerned",
+        "3": "Somewhat unconcerned",
+        "4": "Not at all concerned",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    }
+  },
+  "SECTION VIII: GENDER NORMS & ATTITUDES": {
+    "Q601_3": {
+      "description": "Men better political leaders",
+      "question": "How much do you agree or disagree with the statement: 'In general, men are better at political leadership than women'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q601_4": {
+      "description": "Male university education priority",
+      "question": "How much do you agree or disagree with the statement: 'University education for males is more important than university education for females'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q601_5": {
+      "description": "Equal work opportunities",
+      "question": "How much do you agree or disagree with the statement: 'Men and women should have equal work opportunities'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q601_13": {
+      "description": "Woman reject arranged marriage",
+      "question": "How much do you agree or disagree with the statement: 'A woman can reject a marriage that her family chose for her without her consent'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q601_13B": {
+      "description": "Equal say in who to marry",
+      "question": "How much do you agree or disagree with the statement: 'Men and women should both have equal say in deciding who they marry'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q601_18": {
+      "description": "Man final say in family decisions",
+      "question": "How much do you agree or disagree with the statement: 'A man should have final say in all decisions concerning the family'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q601_18B": {
+      "description": "Equal say in family decisions",
+      "question": "How much do you agree or disagree with the statement: 'A man and a woman should have equal say in decisions concerning the family'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q601_21A": {
+      "description": "Support parliamentary quota for women",
+      "question": "How much do you agree or disagree with the statement: 'There should be a minimum number of seats in parliament reserved for women'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q601_21B": {
+      "description": "Support cabinet quota for women",
+      "question": "How much do you agree or disagree with the statement: 'There should be a minimum number of cabinet positions reserved for women'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q601_KUW1": {
+      "description": "Mixed-gender university classes acceptable",
+      "question": "How much do you agree or disagree with the statement: 'It is acceptable for male and female university students to attend classes together'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q622C": {
+      "description": "Main barrier to women’s employment",
+      "question": "In your opinion, which of the following is the most challenging barrier to women entering the workplace in your country?",
+      "values": {
+        "1": "Lack of available jobs",
+        "2": "Low wages",
+        "3": "Lack of legal right/protection",
+        "4": "Lack of flexibility in working hours",
+        "5": "Lack of childcare options",
+        "6": "Lack of means of transportation",
+        "7": "Lack of skills or relevant education",
+        "8": "Bias against women in hiring",
+        "9": "It is considered socially unacceptable",
+        "97": "None of these are challenges",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q622E": {
+      "description": "Main barrier to men’s employment (Iraq)",
+      "question": "In your opinion, which of the following is the most challenging barrier to men entering the workplace in Iraq?",
+      "values": {
+        "1": "Lack of available jobs",
+        "2": "Low wages",
+        "3": "Lack of legal right/protection",
+        "4": "Lack of flexibility in working hours",
+        "5": "Lack of childcare options",
+        "6": "Lack of means of transportation",
+        "7": "Lack of skills or relevant education",
+        "8": "Bias against men in hiring",
+        "9": "It is considered socially unacceptable",
+        "97": "None of these are challenges",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q622C_IRQ": {
+      "description": "Barriers to women’s employment (Iraq, multiple)",
+      "question": "In your opinion, which of the following are challenging barriers to women entering the workplace in Iraq?",
+      "values": {
+        "1": "Lack of available jobs",
+        "2": "Low wages",
+        "3": "Lack of legal right/protection",
+        "4": "Lack of flexibility in working hours",
+        "5": "Lack of childcare options",
+        "6": "Lack of means of transportation",
+        "7": "Lack of skills or relevant education",
+        "8": "Bias against women in hiring",
+        "9": "It is considered socially unacceptable",
+        "97": "None of these are challenges",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q622E_IRQ": {
+      "description": "Barriers to men’s employment (Iraq, multiple)",
+      "question": "In your opinion, which of the following are challenging barriers to men entering the workplace in your country?",
+      "values": {
+        "1": "Lack of available jobs",
+        "2": "Low wages",
+        "3": "Lack of legal right/protection",
+        "4": "Lack of flexibility in working hours",
+        "5": "Lack of childcare options",
+        "6": "Lack of means of transportation",
+        "7": "Lack of skills or relevant education",
+        "8": "Bias against women in hiring",
+        "9": "It is considered socially unacceptable",
+        "97": "None of these are challenges",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q869D": {
+      "description": "Job loss to male employee",
+      "question": "What do you think are the chances that you or anyone in your family will not get a job while an equally or less qualified male employee receives one instead?",
+      "values": {
+        "1": "Very likely",
+        "2": "Somewhat likely",
+        "3": "Somewhat unlikely",
+        "4": "Very unlikely",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q869E": {
+      "description": "Job loss to female employee",
+      "question": "What do you think are the chances that you or anyone in your family will not get a job while an equally or less qualified female employee receives one instead?",
+      "values": {
+        "1": "Very likely",
+        "2": "Somewhat likely",
+        "3": "Somewhat unlikely",
+        "4": "Very unlikely",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q626": {
+      "description": "Biggest childcare problem",
+      "question": "Thinking of childcare options in your country, which of the following is the biggest problem?",
+      "values": {
+        "1": "It is not widely available",
+        "2": "It is not affordable",
+        "3": "It is poor quality",
+        "4": "It is socially unacceptable to use it",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q624_5A": {
+      "description": "Responsibility for spending on food",
+      "question": "Who should be primarily responsible for deciding how much to spend on food in your household?",
+      "values": {
+        "1": "The female head of the household",
+        "2": "The male head of the household",
+        "3": "The household heads are equally responsible",
+        "4": "Others are responsible",
+        "97": "Not applicable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q624_5B": {
+      "description": "Responsibility for choosing food",
+      "question": "Who should be primarily responsible for deciding what types of food to buy in your household?",
+      "values": {
+        "1": "The female head of the household",
+        "2": "The male head of the household",
+        "3": "The household heads are equally responsible",
+        "4": "Others are responsible",
+        "97": "Not applicable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q628_2A": {
+      "description": "Freedom: pursue higher education",
+      "question": "Thinking about the choice to pursue higher education, who do you think has more freedom of choice?",
+      "values": {
+        "1": "Men more than women",
+        "2": "Women more than men",
+        "3": "Men and women have equal freedom",
+        "4": "Neither men nor women have freedom",
+        "97": "Not applicable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q628_2B": {
+      "description": "Freedom: choose field of study",
+      "question": "Thinking about the choice of what to study in higher education, who do you think has more freedom of choice?",
+      "values": {
+        "1": "Men more than women",
+        "2": "Women more than men",
+        "3": "Men and women have equal freedom",
+        "4": "Neither men nor women have freedom",
+        "97": "Not applicable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q628_3A": {
+      "description": "Freedom: get a job",
+      "question": "Thinking about the choice to get a job, who do you think has more freedom of choice?",
+      "values": {
+        "1": "Men more than women",
+        "2": "Women more than men",
+        "3": "Men and women have equal freedom",
+        "4": "Neither men nor women have freedom",
+        "97": "Not applicable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q628_3B": {
+      "description": "Freedom: choose type of job",
+      "question": "Thinking about the choice of what type of job to have, who do you think has more freedom of choice?",
+      "values": {
+        "1": "Men more than women",
+        "2": "Women more than men",
+        "3": "Men and women have equal freedom",
+        "4": "Neither men nor women have freedom",
+        "97": "Not applicable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q628_4A": {
+      "description": "Freedom: choose to marry",
+      "question": "Thinking about the choice to get married, who do you think has more freedom of choice?",
+      "values": {
+        "1": "Men more than women",
+        "2": "Women more than men",
+        "3": "Men and women have equal freedom",
+        "4": "Neither men nor women have freedom",
+        "97": "Not applicable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q628_4B": {
+      "description": "Freedom: choose spouse",
+      "question": "Thinking about the choice of who to marry, who do you think has more freedom of choice?",
+      "values": {
+        "1": "Men more than women",
+        "2": "Women more than men",
+        "3": "Men and women have equal freedom",
+        "4": "Neither men nor women have freedom",
+        "97": "Not applicable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q604A_NT_1": {
+      "description": "Obstacle to female relative marriage: does not pray",
+      "question": "To what degree would a suitor who does not pray be an obstacle to accepting the marriage of a close female relative?",
+      "values": {
+        "1": "Constitutes an obstacle to a large degree",
+        "2": "Constitutes an obstacle to a moderate degree",
+        "3": "Constitutes an obstacle to a small degree",
+        "4": "Constitutes no obstacle at all",
+        "97": "Not applicable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q604A_NT_3": {
+      "description": "Obstacle to female relative marriage: lower social status",
+      "question": "To what degree would a suitor from a family with a lower social status be an obstacle to accepting the marriage of a close female relative?",
+      "values": {
+        "1": "Constitutes an obstacle to a large degree",
+        "2": "Constitutes an obstacle to a moderate degree",
+        "3": "Constitutes an obstacle to a small degree",
+        "4": "Constitutes no obstacle at all",
+        "97": "Not applicable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q604B_NT_1": {
+      "description": "Obstacle to male relative marriage: does not pray",
+      "question": "To what degree would a partner who does not pray be an obstacle to accepting the marriage of a close male relative?",
+      "values": {
+        "1": "Constitutes an obstacle to a large degree",
+        "2": "Constitutes an obstacle to a moderate degree",
+        "3": "Constitutes an obstacle to a small degree",
+        "4": "Constitutes no obstacle at all",
+        "97": "Not applicable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q604B_NT_3": {
+      "description": "Obstacle to male relative marriage: lower social status",
+      "question": "To what degree would a partner from a family with a lower social status be an obstacle to accepting the marriage of a close male relative?",
+      "values": {
+        "1": "Constitutes an obstacle to a large degree",
+        "2": "Constitutes an obstacle to a moderate degree",
+        "3": "Constitutes an obstacle to a small degree",
+        "4": "Constitutes no obstacle at all",
+        "97": "Not applicable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q627_1": {
+      "description": "Harassment of women at work",
+      "question": "In your opinion, how widespread is harassment of women in the workplace in your country?",
+      "values": {
+        "1": "Very widespread",
+        "2": "Fairly widespread",
+        "3": "Fairly rare",
+        "4": "Very rare",
+        "97": "Women do not face harassment in our country",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q627_2": {
+      "description": "Harassment of women on street",
+      "question": "In your opinion, how widespread is harassment of women on the street by strangers in your country?",
+      "values": {
+        "1": "Very widespread",
+        "2": "Fairly widespread",
+        "3": "Fairly rare",
+        "4": "Very rare",
+        "97": "Women do not face harassment in our country",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q627_3": {
+      "description": "Harassment of women at home",
+      "question": "In your opinion, how widespread is harassment of women in the home by family members in your country?",
+      "values": {
+        "1": "Very widespread",
+        "2": "Fairly widespread",
+        "3": "Fairly rare",
+        "4": "Very rare",
+        "97": "Women do not face harassment in our country",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q625": {
+      "description": "Trend in violence against women",
+      "question": "In the past 12 months, has abuse of or violence against women in the community increased, stayed the same, decreased, or was it never a problem?",
+      "values": {
+        "1": "Increased",
+        "2": "Stayed the same",
+        "3": "Decreased",
+        "4": "It was never a problem",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q629": {
+      "description": "Sources of help for abused women",
+      "question": "If a woman faces abuse or violence in the community, from which of the following actors is she likely to be able to receive assistance?",
+      "values": {
+        "1": "She will not be able to receive assistance",
+        "2": "A female member of the family",
+        "3": "A male member of the family",
+        "4": "The local police",
+        "5": "A clinic or hospital",
+        "6": "A local organization",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q631": {
+      "description": "Women leaders advance women’s rights",
+      "question": "To what extent do you believe that having women in political leadership roles advances the women’s rights agenda in your country?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q630": {
+      "description": "Perceived public support for men leaders",
+      "question": "What percent of other citizens in your country do you think agrees that 'In general, men are better at political leadership than women'?",
+      "values": {
+        "1": "0–20%",
+        "2": "21–40%",
+        "3": "41–60%",
+        "4": "61–80%",
+        "5": "81–100%",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    }
+  },
+  "SECTION IX:  MEDIA": {
+    "Q409": {
+      "description": "Internet use frequency",
+      "question": "On average, how often do you use the Internet? This includes Internet used on smartphones and tablets.",
+      "values": {
+        "1": "Throughout the day",
+        "2": "At least once daily",
+        "3": "Several times a week",
+        "4": "Once a week",
+        "5": "Less than once a week",
+        "6": "I do not use the Internet",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q424": {
+      "description": "Daily hours on social media",
+      "question": "On a typical day, how many hours do you spend on social media platforms?",
+      "values": {
+        "1": "Not at all",
+        "2": "0–2 hours",
+        "3": "3–5 hours",
+        "4": "6–9 hours",
+        "5": "10 hours or more",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q412A": {
+      "description": "Social media platforms used",
+      "question": "Which social media and text messaging services do you actively use?",
+      "values": {
+        "1": "Facebook",
+        "2": "Twitter",
+        "3": "Instagram",
+        "4": "YouTube",
+        "5": "WhatsApp",
+        "6": "Telegram",
+        "7": "Snapchat",
+        "8": "Viber",
+        "9": "Clubhouse",
+        "10": "Signal",
+        "11": "TikTok",
+        "12": "Reddit",
+        "13": "Mastodon",
+        "14": "BeReal",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q432": {
+      "description": "Interactions with influencers",
+      "question": "If you follow social media influencers, which of the following do you do?",
+      "values": {
+        "1": "Click like on or share their updates",
+        "2": "Subscribe to their accounts/channels",
+        "3": "Comment on or ask questions about their posts",
+        "4": "Try products/services they recommend",
+        "5": "Adopt their political, religious, or cultural views",
+        "97": "I do not interact with social media influencers",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q432B": {
+      "description": "Main topic of influencers followed",
+      "question": "What is the main topic that the social media influencers you follow talk about most of the time?",
+      "values": {
+        "1": "Art and culture",
+        "2": "Beauty and fashion",
+        "3": "Education",
+        "4": "Food and cooking",
+        "5": "Health and healthcare",
+        "6": "Politics and reform",
+        "7": "Religion",
+        "8": "Sports and recreation",
+        "9": "Technology",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q534_1": {
+      "description": "Security of landline calls",
+      "question": "When you have private information to share with a trusted person, how secure do you feel using a landline telephone?",
+      "values": {
+        "1": "Very secure",
+        "2": "Somewhat secure",
+        "3": "Not very secure",
+        "4": "Not at all secure",
+        "97": "I do not use this form of communication",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q534_2": {
+      "description": "Security of mobile calls",
+      "question": "When you have private information to share with a trusted person, how secure do you feel using a mobile phone to talk?",
+      "values": {
+        "1": "Very secure",
+        "2": "Somewhat secure",
+        "3": "Not very secure",
+        "4": "Not at all secure",
+        "97": "I do not use this form of communication",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q534_3": {
+      "description": "Security of text messages",
+      "question": "When you have private information to share with a trusted person, how secure do you feel sending text messages on a mobile phone?",
+      "values": {
+        "1": "Very secure",
+        "2": "Somewhat secure",
+        "3": "Not very secure",
+        "4": "Not at all secure",
+        "97": "I do not use this form of communication",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q534_4": {
+      "description": "Security of online chat/messenger",
+      "question": "When you have private information to share with a trusted person, how secure do you feel using an online chatting or messenger service like WhatsApp or Facebook Messenger?",
+      "values": {
+        "1": "Very secure",
+        "2": "Somewhat secure",
+        "3": "Not very secure",
+        "4": "Not at all secure",
+        "97": "I do not use this form of communication",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q534_5": {
+      "description": "Security of email",
+      "question": "When you have private information to share with a trusted person, how secure do you feel sending an email?",
+      "values": {
+        "1": "Very secure",
+        "2": "Somewhat secure",
+        "3": "Not very secure",
+        "4": "Not at all secure",
+        "97": "I do not use this form of communication",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q431_1A": {
+      "description": "Concern about own government monitoring",
+      "question": "Thinking of your use of social media, to what extent are you concerned about your government monitoring your online activity?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a limited extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q431_1B": {
+      "description": "Concern about foreign government monitoring",
+      "question": "Thinking of your use of social media, to what extent are you concerned about a foreign government monitoring your online activity?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a limited extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q431_2": {
+      "description": "Concern about platform censorship",
+      "question": "Thinking of your use of social media, to what extent are you concerned about social media platforms themselves censoring your online activity?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a limited extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q421": {
+      "description": "Primary source for breaking news",
+      "question": "What is your primary source of information to follow breaking news as events unfold?",
+      "values": {
+        "1": "Face-to-face conversations",
+        "2": "Telephone conversations",
+        "3": "Newspapers",
+        "4": "Radio",
+        "5": "Television",
+        "6": "Social media",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    }
+  },
+  "SECTION X: INTERNATIONAL RELATIONS": {
+    "Q700B_1": {
+      "description": "Favorable opinion of United States",
+      "question": "Do you have a very favorable, somewhat favorable, somewhat unfavorable, or very unfavorable opinion of the United States?",
+      "values": {
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700B_2": {
+      "description": "Favorable opinion of Saudi Arabia",
+      "question": "Do you have a very favorable, somewhat favorable, somewhat unfavorable, or very unfavorable opinion of Saudi Arabia?",
+      "values": {
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700B_8": {
+      "description": "Favorable opinion of Russia",
+      "question": "Do you have a very favorable, somewhat favorable, somewhat unfavorable, or very unfavorable opinion of Russia?",
+      "values": {
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700B_4": {
+      "description": "Favorable opinion of Turkey",
+      "question": "Do you have a very favorable, somewhat favorable, somewhat unfavorable, or very unfavorable opinion of Turkey?",
+      "values": {
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700B_3": {
+      "description": "Favorable opinion of Iran",
+      "question": "Do you have a very favorable, somewhat favorable, somewhat unfavorable, or very unfavorable opinion of Iran?",
+      "values": {
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700B_13": {
+      "description": "Favorable opinion of China",
+      "question": "Do you have a very favorable, somewhat favorable, somewhat unfavorable, or very unfavorable opinion of China?",
+      "values": {
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700B_7": {
+      "description": "Favorable opinion of Qatar",
+      "question": "Do you have a very favorable, somewhat favorable, somewhat unfavorable, or very unfavorable opinion of Qatar?",
+      "values": {
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700B_5": {
+      "description": "Favorable opinion of France",
+      "question": "Do you have a very favorable, somewhat favorable, somewhat unfavorable, or very unfavorable opinion of France?",
+      "values": {
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700B_6": {
+      "description": "Favorable opinion of Israel",
+      "question": "Do you have a very favorable, somewhat favorable, somewhat unfavorable, or very unfavorable opinion of Israel?",
+      "values": {
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700B_12": {
+      "description": "Favorable opinion of United Kingdom",
+      "question": "Do you have a very favorable, somewhat favorable, somewhat unfavorable, or very unfavorable opinion of the United Kingdom?",
+      "values": {
+        "1": "Very favorable",
+        "2": "Somewhat favorable",
+        "3": "Somewhat unfavorable",
+        "4": "Very unfavorable",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700A_1": {
+      "description": "Preferred future economic ties with US",
+      "question": "Do you prefer that future economic relations between your country and the United States become stronger, remain the same, or become weaker than in previous years?",
+      "values": {
+        "1": "Become stronger than in previous years",
+        "2": "Remain the same as in previous years",
+        "3": "Become weaker than in previous years",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700A_2": {
+      "description": "Preferred future economic ties with Saudi Arabia",
+      "question": "Do you prefer that future economic relations between your country and Saudi Arabia become stronger, remain the same, or become weaker than in previous years?",
+      "values": {
+        "1": "Become stronger than in previous years",
+        "2": "Remain the same as in previous years",
+        "3": "Become weaker than in previous years",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700A_8": {
+      "description": "Preferred future economic ties with Russia",
+      "question": "Do you prefer that future economic relations between your country and Russia become stronger, remain the same, or become weaker than in previous years?",
+      "values": {
+        "1": "Become stronger than in previous years",
+        "2": "Remain the same as in previous years",
+        "3": "Become weaker than in previous years",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700A_4": {
+      "description": "Preferred future economic ties with Turkey",
+      "question": "Do you prefer that future economic relations between your country and Turkey become stronger, remain the same, or become weaker than in previous years?",
+      "values": {
+        "1": "Become stronger than in previous years",
+        "2": "Remain the same as in previous years",
+        "3": "Become weaker than in previous years",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700A_3": {
+      "description": "Preferred future economic ties with Iran",
+      "question": "Do you prefer that future economic relations between your country and Iran become stronger, remain the same, or become weaker than in previous years?",
+      "values": {
+        "1": "Become stronger than in previous years",
+        "2": "Remain the same as in previous years",
+        "3": "Become weaker than in previous years",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700A_13": {
+      "description": "Preferred future economic ties with China",
+      "question": "Do you prefer that future economic relations between your country and China become stronger, remain the same, or become weaker than in previous years?",
+      "values": {
+        "1": "Become stronger than in previous years",
+        "2": "Remain the same as in previous years",
+        "3": "Become weaker than in previous years",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700A_7": {
+      "description": "Preferred future economic ties with Qatar",
+      "question": "Do you prefer that future economic relations between your country and Qatar become stronger, remain the same, or become weaker than in previous years?",
+      "values": {
+        "1": "Become stronger than in previous years",
+        "2": "Remain the same as in previous years",
+        "3": "Become weaker than in previous years",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700A_5": {
+      "description": "Preferred future economic ties with France",
+      "question": "Do you prefer that future economic relations between your country and France become stronger, remain the same, or become weaker than in previous years?",
+      "values": {
+        "1": "Become stronger than in previous years",
+        "2": "Remain the same as in previous years",
+        "3": "Become weaker than in previous years",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q700A_12": {
+      "description": "Preferred future economic ties with UK",
+      "question": "Do you prefer that future economic relations between your country and the United Kingdom become stronger, remain the same, or become weaker than in previous years?",
+      "values": {
+        "1": "Become stronger than in previous years",
+        "2": "Remain the same as in previous years",
+        "3": "Become weaker than in previous years",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q730B": {
+      "description": "Preferred focus of foreign aid",
+      "question": "To which of the following areas would you most prefer foreign aid to your country be dedicated?",
+      "values": {
+        "1": "Women’s rights",
+        "2": "Environmental protection and combating climate change",
+        "3": "Civil society development",
+        "4": "Building infrastructure",
+        "5": "Improving education and vocational training",
+        "6": "Promoting civil liberties/freedoms",
+        "7": "Economic development",
+        "90": "Other - specify",
+        "97": "I do not want foreign aid",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q729_3": {
+      "description": "US aid strengthens education",
+      "question": "To what extent do you believe that US foreign aid to your country strengthens education initiatives?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a limited extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q729_5": {
+      "description": "US aid advances women’s rights",
+      "question": "To what extent do you believe that US foreign aid to your country advances women’s rights?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a limited extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q729_6": {
+      "description": "US aid strengthens civil society",
+      "question": "To what extent do you believe that US foreign aid to your country strengthens civil society?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a limited extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q729B_3": {
+      "description": "China aid strengthens education",
+      "question": "To what extent do you believe that China’s foreign aid to your country strengthens education initiatives?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a limited extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q729B_5": {
+      "description": "China aid advances women’s rights",
+      "question": "To what extent do you believe that China’s foreign aid to your country advances women’s rights?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a limited extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q729B_6": {
+      "description": "China aid strengthens civil society",
+      "question": "To what extent do you believe that China’s foreign aid to your country strengthens civil society?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a limited extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q701H_1": {
+      "description": "Main motivation of US aid",
+      "question": "Which of the following do you think is the main motivation of the United States for giving foreign aid to your country?",
+      "values": {
+        "1": "Economic development in your country",
+        "2": "Internal stability in your country",
+        "3": "Empower civil society organizations in your country",
+        "4": "Improve life of ordinary citizens in your country",
+        "5": "Gaining influence in your country",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q701H_2": {
+      "description": "Main motivation of China aid",
+      "question": "Which of the following do you think is the main motivation of China for giving foreign aid to your country?",
+      "values": {
+        "1": "Economic development in your country",
+        "2": "Internal stability in your country",
+        "3": "Empower civil society organizations in your country",
+        "4": "Improve life of ordinary citizens in your country",
+        "5": "Gaining influence in your country",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q731_1": {
+      "description": "Compare US/China policy: freedoms and rights",
+      "question": "For protecting freedoms and rights, do you think Chinese policy is better, American policy is better, or are they equally good or equally bad?",
+      "values": {
+        "1": "American policy is better",
+        "2": "Chinese policy is better",
+        "3": "Chinese and American policies are equally good",
+        "4": "Chinese and American policies are equally bad",
+        "5": "Don't know (if used in instrument)",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Retained original category 5 as printed; instrument text suggests 1–4 plus 98/99."
+    },
+    "Q731_2": {
+      "description": "Compare US/China policy: economic development",
+      "question": "For promoting economic development, do you think Chinese policy is better, American policy is better, or are they equally good or equally bad?",
+      "values": {
+        "1": "American policy is better",
+        "2": "Chinese policy is better",
+        "3": "Chinese and American policies are equally good",
+        "4": "Chinese and American policies are equally bad",
+        "5": "Don't know (if used in instrument)",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Retained original category 5 as printed; instrument text suggests 1–4 plus 98/99."
+    },
+    "Q731_3": {
+      "description": "Compare US/China policy: climate change",
+      "question": "For tackling climate change, do you think Chinese policy is better, American policy is better, or are they equally good or equally bad?",
+      "values": {
+        "1": "American policy is better",
+        "2": "Chinese policy is better",
+        "3": "Chinese and American policies are equally good",
+        "4": "Chinese and American policies are equally bad",
+        "5": "Don't know (if used in instrument)",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Retained original category 5 as printed; instrument text suggests 1–4 plus 98/99."
+    },
+    "Q731_4": {
+      "description": "Compare US/China policy: regional security",
+      "question": "For maintaining regional security, do you think Chinese policy is better, American policy is better, or are they equally good or equally bad?",
+      "values": {
+        "1": "American policy is better",
+        "2": "Chinese policy is better",
+        "3": "Chinese and American policies are equally good",
+        "4": "Chinese and American policies are equally bad",
+        "5": "Don't know (if used in instrument)",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Retained original category 5 as printed; instrument text suggests 1–4 plus 98/99."
+    },
+    "Q731_5": {
+      "description": "Compare US/China policy: Israeli-Palestinian conflict",
+      "question": "For addressing the Israeli-Palestinian conflict, do you think Chinese policy is better, American policy is better, or are they equally good or equally bad?",
+      "values": {
+        "1": "American policy is better",
+        "2": "Chinese policy is better",
+        "3": "Chinese and American policies are equally good",
+        "4": "Chinese and American policies are equally bad",
+        "5": "Don't know (if used in instrument)",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Retained original category 5 as printed; instrument text suggests 1–4 plus 98/99."
+    },
+    "Q725_1": {
+      "description": "Evaluation of Biden’s regional policy",
+      "question": "Do you think the foreign policies of United States President Joseph Biden have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
+      "values": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Neither good nor bad",
+        "4": "Bad",
+        "5": "Very bad",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q725_2": {
+      "description": "Evaluation of Putin’s regional policy",
+      "question": "Do you think the foreign policies of Russian President Vladimir Putin have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
+      "values": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Neither good nor bad",
+        "4": "Bad",
+        "5": "Very bad",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q725_3": {
+      "description": "Evaluation of Erdoğan’s regional policy",
+      "question": "Do you think the foreign policies of Turkish President Recep Tayyip Erdoğan have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
+      "values": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Neither good nor bad",
+        "4": "Bad",
+        "5": "Very bad",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q725_4": {
+      "description": "Evaluation of Xi Jinping’s regional policy",
+      "question": "Do you think the foreign policies of Chinese President Xi Jinping have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
+      "values": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Neither good nor bad",
+        "4": "Bad",
+        "5": "Very bad",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q725_5": {
+      "description": "Evaluation of Khamenei’s regional policy",
+      "question": "Do you think the foreign policies of Iranian Supreme Leader Ali Khamenei have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
+      "values": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Neither good nor bad",
+        "4": "Bad",
+        "5": "Very bad",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q725_6": {
+      "description": "Evaluation of Mohammed bin Salman’s regional policy",
+      "question": "Do you think the foreign policies of Saudi Crown Prince Mohammed bin Salman have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
+      "values": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Neither good nor bad",
+        "4": "Bad",
+        "5": "Very bad",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q725_7": {
+      "description": "Evaluation of Bashar al-Assad’s regional policy",
+      "question": "Do you think the foreign policies of Syrian President Bashar al-Assad have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
+      "values": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Neither good nor bad",
+        "4": "Bad",
+        "5": "Very bad",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q725_8": {
+      "description": "Evaluation of Mohammed bin Zayed’s regional policy",
+      "question": "Do you think the foreign policies of Emirati President Mohammed bin Zayed have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
+      "values": {
+        "1": "Very good",
+        "2": "Good",
+        "3": "Neither good nor bad",
+        "4": "Bad",
+        "5": "Very bad",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q736B": {
+      "description": "Biden’s top priority in MENA",
+      "question": "What do you think should be the Biden administration’s number one priority in the Middle East and North Africa?",
+      "values": {
+        "1": "Education",
+        "2": "Economic development",
+        "3": "Human rights",
+        "4": "Infrastructure",
+        "5": "The Palestinian question",
+        "6": "Stability and security",
+        "7": "Fighting terrorism",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q734C": {
+      "description": "Normalization with Israel",
+      "question": "To what extent do you favor or oppose the normalization of relations between Arab states and Israel?",
+      "values": {
+        "1": "Strongly favor",
+        "2": "Favor",
+        "3": "Oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q738": {
+      "description": "Preferred solution to conflict",
+      "question": "Which of the following solutions do you prefer to end the Palestinian-Israeli conflict?",
+      "values": {
+        "1": "Two states, Palestine next to Israel based on the 1967 borders",
+        "2": "One state for Jews and Arabs",
+        "3": "A Palestinian-Israeli confederation",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q833B": {
+      "description": "Concern about sectarian division",
+      "question": "How concerned are you that sectarian division is growing in your country?",
+      "values": {
+        "1": "Concerned to a great extent",
+        "2": "Concerned to a medium extent",
+        "3": "Concerned to a small extent",
+        "4": "Not concerned at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q733": {
+      "description": "Approval of Russia’s invasion of Ukraine",
+      "question": "To what extent do you approve or disapprove of Russia’s invasion of Ukraine?",
+      "values": {
+        "1": "Strongly approve",
+        "2": "Somewhat approve",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q727_5C": {
+      "description": "Preferred country for infrastructure contract",
+      "question": "If international companies from the United States, Germany, China, Turkey, France, or the UK were competing to build infrastructure in your country, which country would you prefer to get the contract?",
+      "values": {
+        "1": "The United States",
+        "2": "Germany",
+        "3": "China",
+        "4": "Turkey",
+        "5": "France",
+        "7": "United Kingdom",
+        "97": "None of these countries",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Value '5/7' in questionnaire split into 5=France and 7=United Kingdom for clarity."
+    },
+    "Q727_1A": {
+      "description": "Country that would build highest quality",
+      "question": "Which country do you think would build the highest quality infrastructure in your country?",
+      "values": {
+        "1": "The United States",
+        "2": "Germany",
+        "3": "China",
+        "4": "Turkey",
+        "5": "France",
+        "7": "United Kingdom",
+        "97": "None of these countries",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Value '5/7' in questionnaire split into 5=France and 7=United Kingdom for clarity."
+    },
+    "Q727_2A": {
+      "description": "Country that would build for least money",
+      "question": "Which country do you think would build the infrastructure for the least amount of money?",
+      "values": {
+        "1": "The United States",
+        "2": "Germany",
+        "3": "China",
+        "4": "Turkey",
+        "5": "France",
+        "7": "United Kingdom",
+        "97": "None of these countries",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Value '5/7' in questionnaire split into 5=France and 7=United Kingdom for clarity."
+    },
+    "Q727_4B": {
+      "description": "Country that would treat local workforce best",
+      "question": "Which country do you think would treat the local workforce the best when building infrastructure in your country?",
+      "values": {
+        "1": "The United States",
+        "2": "Germany",
+        "3": "China",
+        "4": "Turkey",
+        "5": "France",
+        "7": "United Kingdom",
+        "97": "None of these countries",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Value '5/7' in questionnaire split into 5=France and 7=United Kingdom for clarity."
+    },
+    "Q728_1B": {
+      "description": "Threat: China’s economic power",
+      "question": "To what extent do you see the development of China’s economic power as a threat to your country’s national security interests?",
+      "values": {
+        "1": "Critical",
+        "2": "Important but not critical",
+        "3": "Not important",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q728_2B": {
+      "description": "Threat: American economic power",
+      "question": "To what extent do you see the development of American economic power as a threat to your country’s national security interests?",
+      "values": {
+        "1": "Critical",
+        "2": "Important but not critical",
+        "3": "Not important",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q728_4A": {
+      "description": "Threat: Iran’s political influence",
+      "question": "To what extent do you see Iran’s political influence in the region as a threat to your country’s national security interests?",
+      "values": {
+        "1": "Critical",
+        "2": "Important but not critical",
+        "3": "Not important",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q728_4B": {
+      "description": "Threat: Saudi Arabia’s political influence",
+      "question": "To what extent do you see Saudi Arabia’s political influence in the region as a threat to your country’s national security interests?",
+      "values": {
+        "1": "Critical",
+        "2": "Important but not critical",
+        "3": "Not important",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q728_5A": {
+      "description": "Threat: Israeli occupation of Palestinian territories",
+      "question": "To what extent do you see the Israeli occupation of the Palestinian territories as a threat to your country’s national security interests?",
+      "values": {
+        "1": "Critical",
+        "2": "Important but not critical",
+        "3": "Not important",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q728_5B": {
+      "description": "Threat: Iran’s nuclear program",
+      "question": "To what extent do you see Iran’s nuclear program as a threat to your country’s national security interests?",
+      "values": {
+        "1": "Critical",
+        "2": "Important but not critical",
+        "3": "Not important",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q728_7": {
+      "description": "Threat: climate change",
+      "question": "To what extent do you see climate change as a threat to your country’s national security interests?",
+      "values": {
+        "1": "Critical",
+        "2": "Important but not critical",
+        "3": "Not important",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    }
+  },
+  "SECTION XI: COUNTRY -SPECIFIC QUESTIONS": {
+    "QIRQ1": {
+      "description": "Repeal law allowing rapist to marry victim",
+      "question": "To what extent do you support or oppose repealing the law that allows rapists to marry their rape victims to avoid punishment?",
+      "values": {
+        "1": "Strongly support repealing the law",
+        "2": "Somewhat support repealing the law",
+        "3": "Somewhat oppose repealing the law",
+        "4": "Strongly oppose repealing the law",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QIRQ2A": {
+      "description": "Priority decision-maker for IDPs in camps",
+      "question": "Of the following parties, who should have priority in deciding whether Iraqi IDPs living in camps return to their governorates of origin?",
+      "values": {
+        "1": "IDPs themselves",
+        "2": "Citizens from the local host community",
+        "3": "The local government",
+        "4": "The national government",
+        "5": "International humanitarian organizations",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QIRQ2B": {
+      "description": "Priority decision-maker for IDPs not in camps",
+      "question": "Of the following parties, who should have priority in deciding whether Iraqi IDPs who are not living in camps return to their governorates of origin?",
+      "values": {
+        "1": "IDPs themselves",
+        "2": "Citizens from the local host community",
+        "3": "The local government",
+        "4": "The national government",
+        "5": "International humanitarian organizations",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QIRQ3_1": {
+      "description": "Rights for ISIS children: citizenship",
+      "question": "For children born to ISIS family members with at least one Iraqi parent, should they be granted citizenship, granted citizenship only if they have undergone a reintegration program, or not granted citizenship?",
+      "values": {
+        "1": "Should be granted rights",
+        "2": "Should be granted rights only if they have undergone a reintegration program",
+        "3": "Should not be granted rights",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QIRQ3_2": {
+      "description": "Rights for ISIS children: education",
+      "question": "For children born to ISIS family members with at least one Iraqi parent, should they be granted education rights, granted education rights only if they have undergone a reintegration program, or not granted education rights?",
+      "values": {
+        "1": "Should be granted rights",
+        "2": "Should be granted rights only if they have undergone a reintegration program",
+        "3": "Should not be granted rights",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QIRQ4A": {
+      "description": "Country with most positive impact on Iraq",
+      "question": "Which of the following countries do you believe has the most positive impact on the domestic policies of Iraq?",
+      "values": {
+        "1": "United States",
+        "2": "China",
+        "3": "Iran",
+        "4": "Saudi Arabia",
+        "5": "Turkey",
+        "96": "None of these countries has a positive impact",
+        "97": "All of these countries have a positive impact",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QIRQ4B": {
+      "description": "Country with most negative impact on Iraq",
+      "question": "Which of the following countries do you believe has the most negative impact on the domestic policies of Iraq?",
+      "values": {
+        "1": "United States",
+        "2": "China",
+        "3": "Iran",
+        "4": "Saudi Arabia",
+        "5": "Turkey",
+        "96": "None of these countries has a negative impact",
+        "97": "All of these countries have a negative impact",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QJOR5": {
+      "description": "Heard of cybercrime law",
+      "question": "Have you heard about the cybercrime law approved by the House of Representatives?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QJOR6": {
+      "description": "Perceived main effect of cybercrime law",
+      "question": "What do you believe will be the main effect of the cybercrime law?",
+      "values": {
+        "1": "Address issues such as fraud, electronic fraud, online slander and humiliation, and electronic bullying",
+        "2": "Limit freedom of expression and opinion",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW26": {
+      "description": "When Bidoon problem started",
+      "question": "In your opinion, when did the Bidoon problem start in Kuwait?",
+      "values": {
+        "1": "Since the passage of the citizenship law of 1959",
+        "2": "Since 1985",
+        "3": "After the liberation of Kuwait in 1991",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW27": {
+      "description": "Bidoon problem as security threat",
+      "question": "To what extent does the problem of the Bidoon endanger national security in Kuwait?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW28_1": {
+      "description": "Solution Bidoon: naturalize all",
+      "question": "To what extent is 'naturalize them all' an appropriate solution to the problem of the Bidoon in Kuwait?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW28_2": {
+      "description": "Solution Bidoon: naturalize born in Kuwait",
+      "question": "To what extent is 'naturalize only those proven to have been born in Kuwait' an appropriate solution to the problem of the Bidoon in Kuwait?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW28_3": {
+      "description": "Solution Bidoon: naturalize eligible, deport rest",
+      "question": "To what extent is 'naturalize the eligible ones and deport the rest' an appropriate solution to the problem of the Bidoon in Kuwait?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW28_4": {
+      "description": "Solution Bidoon: naturalize eligible, permanent residency rest",
+      "question": "To what extent is 'naturalize the eligible ones and grant the rest permanent residency' an appropriate solution to the problem of the Bidoon in Kuwait?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW28_5": {
+      "description": "Solution Bidoon: permanent residency for all",
+      "question": "To what extent is 'grant them all permanent residency and close the file' an appropriate solution to the problem of the Bidoon in Kuwait?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW28_6": {
+      "description": "Solution Bidoon: deport all",
+      "question": "To what extent is 'deport them all from the country' an appropriate solution to the problem of the Bidoon in Kuwait?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW28_7": {
+      "description": "Solution Bidoon: keep situation as is",
+      "question": "To what extent is 'keep the situation as is' an appropriate solution to the problem of the Bidoon in Kuwait?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW29_1": {
+      "description": "Support forbidding naturalized from voting",
+      "question": "To what extent do you support or oppose forbidding naturalized citizens from the right to vote?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW29_2": {
+      "description": "Support forbidding naturalized from candidacy",
+      "question": "To what extent do you support or oppose forbidding naturalized citizens from the right to submit candidature for elections?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW30": {
+      "description": "Responsibility for political instability",
+      "question": "In your opinion, who is responsible for the recent political instability in Kuwait, including frequent government changes and elections?",
+      "values": {
+        "1": "Government",
+        "2": "The National Assembly",
+        "3": "They are both responsible",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW31_1": {
+      "description": "Effectiveness: new elections current law",
+      "question": "To what extent do you think new parliamentary elections based on the current election law can contribute to correcting the course in Kuwait?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW31_2": {
+      "description": "Effectiveness: new elections new law",
+      "question": "To what extent do you think new parliamentary elections based on a new election law can contribute to correcting the course in Kuwait?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW31_3": {
+      "description": "Effectiveness: government headed outside ruling family",
+      "question": "To what extent do you think forming a government headed by a person from outside the ruling family can contribute to correcting the course in Kuwait?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW31_4": {
+      "description": "Effectiveness: Emiri intervention",
+      "question": "To what extent do you think Emiri intervention to stop the implementation of government decisions can contribute to correcting the course in Kuwait?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW32": {
+      "description": "Support dissolving National Assembly",
+      "question": "To what extent do you support or oppose the dissolution of the current National Assembly?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW33_1": {
+      "description": "Support pardoning all convicts",
+      "question": "To what extent do you support or oppose pardoning all convicts and giving them an opportunity for a fresh start in the new era?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW33_2": {
+      "description": "Support restoring withdrawn citizenships",
+      "question": "To what extent do you support or oppose restoring citizenship to all from whom it was withdrawn because they posed a security threat?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW33_3": {
+      "description": "Support pardons as turning page",
+      "question": "To what extent do you support or oppose the statement: 'Pardoning convicts is turning the page in the new era'?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW34": {
+      "description": "Banks used in Kuwait",
+      "question": "With which banks do you deal in Kuwait for your accounts?",
+      "values": {
+        "1": "National Bank of Kuwait",
+        "2": "Gulf Bank",
+        "3": "Commercial Bank of Kuwait",
+        "4": "Al Ahli Bank of Kuwait",
+        "5": "Ahli United Bank",
+        "6": "Kuwait International Bank",
+        "7": "Burgan Bank",
+        "8": "Kuwait Finance House",
+        "9": "Boubyan Bank",
+        "10": "Warba Bank",
+        "11": "Bank of Bahrain and Kuwait",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW35": {
+      "description": "Number of mobile lines used",
+      "question": "How many mobile lines do you use?",
+      "values": {
+        "1": "One line",
+        "2": "Two lines",
+        "3": "Three lines",
+        "4": "Four lines",
+        "5": "More than four",
+        "97": "I do not have a mobile line",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW36": {
+      "description": "Main mobile provider",
+      "question": "Who is the mobile phone provider of your main mobile line?",
+      "values": {
+        "1": "Zain",
+        "2": "VIVA",
+        "3": "Ooredoo/Wataniya",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW37": {
+      "description": "Trust in Kuwaiti charitable work",
+      "question": "To what degree do you agree or disagree with the statement: 'I trust Kuwaiti charitable work'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Somewhat agree",
+        "3": "Somewhat disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW38": {
+      "description": "Most-read Kuwaiti newspaper",
+      "question": "Which daily Arabic-language Kuwaiti newspaper do you read most?",
+      "values": {
+        "1": "Al Qabas",
+        "2": "Al R’aee",
+        "3": "Al Anba’",
+        "4": "Al Jarida",
+        "5": "Al Nahar",
+        "6": "Al Siyasa",
+        "7": "Al Shaid",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW39": {
+      "description": "How newspaper is read",
+      "question": "How do you read the Kuwaiti newspaper you read most?",
+      "values": {
+        "1": "In print",
+        "2": "The newspaper’s website",
+        "3": "The newspaper’s mobile application",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW40": {
+      "description": "Actions in solidarity with Gaza",
+      "question": "In which of the following ways, if any, have you stood in solidarity with Gaza?",
+      "values": {
+        "1": "Boycotted companies that support Israel",
+        "2": "Continuously followed war-related news",
+        "3": "Participated in public solidarity activities",
+        "4": "Broadcasted messages of solidarity via social media",
+        "5": "Made monetary relief donations to the residents of Gaza",
+        "90": "Other - specify",
+        "97": "I have not taken any of these actions",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW41": {
+      "description": "Evaluation of Kuwait’s external aid volume",
+      "question": "How would you evaluate the volume of external aid provided by Kuwait?",
+      "values": {
+        "1": "More than it should be",
+        "2": "Less than it should be",
+        "3": "Appropriate as is",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QKUW42": {
+      "description": "Evaluation of Kuwait Fund loans",
+      "question": "How do you evaluate the amount of loans provided by the Kuwait Fund for Development to other countries?",
+      "values": {
+        "1": "More than it should be",
+        "2": "Less than it should be",
+        "3": "Appropriate as is",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QLEB6": {
+      "description": "Preferred governance system Lebanon",
+      "question": "In your opinion, which system of governance is preferable for Lebanon?",
+      "values": {
+        "1": "A sectarian system like it is now",
+        "2": "A civil/secular system",
+        "3": "A sectarian federal system administered by regions or provinces by local authorities",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QLEB7": {
+      "description": "Comfort with desectarianizing positions",
+      "question": "Would you be comfortable with authority positions that have historically been occupied by members of your sect becoming available to all other sects?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "3": "Maybe",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q220LEB": {
+      "description": "Hezbollah involvement in regional politics",
+      "question": "To what extent do you agree or disagree with the statement: 'It is good for the Arab region that Hezbollah is getting involved in regional politics'?",
+      "values": {
+        "1": "Strongly agree",
+        "2": "Agree",
+        "3": "Disagree",
+        "4": "Strongly disagree",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QLEB9": {
+      "description": "Impact of price increases on purchasing power",
+      "question": "To what extent have the increasing prices of essential goods impacted your household’s purchasing power?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "QLEB10": {
+      "description": "Substitute source of electricity",
+      "question": "With the absence of the State’s electricity (EDL), what is your substitute source for electricity?",
+      "values": {
+        "1": "Private generator",
+        "2": "Generator subscription",
+        "3": "Solar panels",
+        "4": "No substitute source of energy",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "QLEB11": {
+      "description": "Support for e-government",
+      "question": "To what extent do you support or oppose e-government, that is, applying for official documents from the Lebanese government electronically?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "QLEB12": {
+      "description": "Support for IMF agreement",
+      "question": "To what extent do you support or oppose the agreement between Lebanon and the International Monetary Fund?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "QLEB13": {
+      "description": "Likelihood of presidential elections",
+      "question": "In your opinion, what is the likelihood that presidential elections will be held in the next 6 months?",
+      "values": {
+        "1": "Very likely",
+        "2": "Somewhat likely",
+        "3": "Somewhat unlikely",
+        "4": "Not likely at all",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "QMOR4_1": {
+      "description": "Effectiveness earthquake response: government",
+      "question": "How effective or ineffective have the efforts of the government been in helping victims of the earthquake?",
+      "values": {
+        "1": "Very effective",
+        "2": "Somewhat effective",
+        "3": "Somewhat ineffective",
+        "4": "Not effective at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QMOR4_2": {
+      "description": "Effectiveness earthquake response: individual citizens",
+      "question": "How effective or ineffective have the efforts of individual citizens been in helping victims of the earthquake?",
+      "values": {
+        "1": "Very effective",
+        "2": "Somewhat effective",
+        "3": "Somewhat ineffective",
+        "4": "Not effective at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QMOR4_3": {
+      "description": "Effectiveness earthquake response: international organizations",
+      "question": "How effective or ineffective have the efforts of international humanitarian organizations been in helping victims of the earthquake?",
+      "values": {
+        "1": "Very effective",
+        "2": "Somewhat effective",
+        "3": "Somewhat ineffective",
+        "4": "Not effective at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QMOR4_4": {
+      "description": "Effectiveness earthquake response: Moroccan civil society",
+      "question": "How effective or ineffective have the efforts of Moroccan civil society organizations been in helping victims of the earthquake?",
+      "values": {
+        "1": "Very effective",
+        "2": "Somewhat effective",
+        "3": "Somewhat ineffective",
+        "4": "Not effective at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QMOR5": {
+      "description": "Evaluation of government crisis management",
+      "question": "Overall, did the government’s management of the earthquake crisis exceed, meet, or fail to meet your prior expectations?",
+      "values": {
+        "1": "Surpassed expectations",
+        "2": "Met expectations",
+        "3": "Failed to meet expectations",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QMOR6": {
+      "description": "Future of services in earthquake areas",
+      "question": "Do you think government services and infrastructure will improve, stay the same, or worsen in areas affected by the earthquake?",
+      "values": {
+        "1": "Improve",
+        "2": "Stay the same",
+        "3": "Worsen",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QMOR7": {
+      "description": "Participation in earthquake support",
+      "question": "Did you participate in any efforts to support earthquake victims?",
+      "values": {
+        "1": "Did not participate",
+        "2": "Made a financial donation",
+        "3": "Contributed effort and time to directly help those affected",
+        "4": "Provided non-financial assistance (clothes/food/others)",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QMOR8_1": {
+      "description": "Support compensation budget for victims",
+      "question": "To what extent do you support or oppose allocating part of the national budget to providing earthquake victims with compensation for damaged property?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QMOR8_2": {
+      "description": "Support earthquake-resistant building law",
+      "question": "To what extent do you support or oppose passing a new law requiring earthquake-resistant building standards, even if it increased building time and costs?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QMOR8_3A": {
+      "description": "Support requesting foreign aid for earthquake",
+      "question": "To what extent do you support or oppose the government requesting foreign aid to address the effects of the earthquake?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QMOR8_3B": {
+      "description": "Support refusing foreign aid for earthquake",
+      "question": "To what extent do you support or oppose the government refusing foreign aid to address the effects of the earthquake?",
+      "values": {
+        "1": "Strongly support",
+        "2": "Somewhat support",
+        "3": "Somewhat oppose",
+        "4": "Strongly oppose",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QPAL6": {
+      "description": "Preferred presidential candidate",
+      "question": "If new presidential elections were held today and the competition was between Marwan Barghouti, Ismail Haniyeh, and Mahmoud Abbas, for whom would you vote?",
+      "values": {
+        "1": "Marwan Barghouti",
+        "2": "Ismail Haniyeh",
+        "3": "Mahmud Abbas",
+        "97": "I would not participate",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QPAL9": {
+      "description": "Vote in 2006 parliamentary elections",
+      "question": "To whom did you vote in the last parliamentary elections on 25 January 2006?",
+      "values": {
+        "1": "Alternative list",
+        "2": "Independent Palestine",
+        "3": "Abu Ali Mustafa",
+        "4": "Abu al Abbas",
+        "5": "Freedom and social justice",
+        "6": "Change and reform",
+        "7": "National coalition for justice and democracy",
+        "8": "Third way, headed by Salam Fayyad",
+        "9": "Freedom and independence",
+        "10": "Palestinian justice",
+        "11": "Fateh",
+        "96": "None of the above",
+        "97": "I did not vote",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QPAL10": {
+      "description": "Intended vote if 2006 lists run again",
+      "question": "If new elections agreed to by all factions were held today and the same lists that took part in the last PLC elections in 2006 were nominated, for whom would you vote?",
+      "values": {
+        "1": "Alternative list",
+        "2": "Independent Palestine",
+        "3": "Abu Ali Mustafa",
+        "4": "Abu al Abbas",
+        "5": "Freedom and social justice",
+        "6": "Change and reform",
+        "7": "National coalition for justice and democracy",
+        "8": "Third way, headed by Salam Fayyad",
+        "9": "Freedom and independence",
+        "10": "Palestinian justice",
+        "11": "Fateh",
+        "96": "None of the above",
+        "97": "I would not vote",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QPAL11_1": {
+      "description": "Most important national goal (first)",
+      "question": "Which of the following should be the first most important national goal that the Palestinian people should strive to achieve?",
+      "values": {
+        "1": "Israeli withdrawal to the 1967 borders and establishment of a Palestinian state with East Jerusalem as its capital",
+        "2": "Obtain the right of return for refugees to their 1948 towns and villages",
+        "3": "Establish a democratic political system that respects freedoms and rights of Palestinians",
+        "4": "Build a pious or moral individual and a religious society that applies all Islamic teachings",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QPAL11_2": {
+      "description": "Second most important national goal",
+      "question": "Which of the following should be the second most important national goal that the Palestinian people should strive to achieve?",
+      "values": {
+        "1": "Israeli withdrawal to the 1967 borders and establishment of a Palestinian state with East Jerusalem as its capital",
+        "2": "Obtain the right of return for refugees to their 1948 towns and villages",
+        "3": "Establish a democratic political system that respects freedoms and rights of Palestinians",
+        "4": "Build a pious or moral individual and a religious society that applies all Islamic teachings",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QPAL18": {
+      "description": "Can Palestinians elect leadership",
+      "question": "Can West Bank and Gaza Strip Palestinians today elect their own leadership in parliamentary and presidential elections?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QPAL19": {
+      "description": "Main reason elections cannot be held",
+      "question": "If not, which of the following is the most likely reason that elections cannot be held?",
+      "values": {
+        "1": "The split between West Bank and Gaza makes it difficult to hold elections simultaneously",
+        "2": "Israel does not allow elections in East Jerusalem as required by the Oslo agreement",
+        "3": "The PA leadership in the West Bank is afraid of losing the elections",
+        "4": "Hamas leaders are afraid of losing control over the Gaza Strip",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QPAL20": {
+      "description": "View of Palestinian Authority",
+      "question": "Do you think the Palestinian Authority is an accomplishment or a burden for the Palestinian people?",
+      "values": {
+        "1": "The PA is an accomplishment for the Palestinian people",
+        "2": "The PA is a burden on the Palestinian people",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QPAL21": {
+      "description": "Preference for Abbas resignation",
+      "question": "If it were up to you, would you want Abbas to resign or not resign?",
+      "values": {
+        "1": "Certainly resign",
+        "2": "Resign",
+        "3": "Not resign",
+        "4": "Certainly not resign",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    }
+  },
+  "SECTION XII: DEMOGRAPHICS": {
+    "Q1001A": {
+      "description": "Governorate of origin",
+      "question": "Which governorate are you from?",
+      "values": {
+        "94": "Not from your country - specify country of birth",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Governorate codes and labels are country-specific and listed in Appendix 1; not fully expanded here."
+    },
+    "Q1003": {
+      "description": "Highest education level",
+      "question": "What is your highest level of education?",
+      "values": {
+        "1": "No formal education",
+        "2": "Elementary",
+        "3": "Preparatory/Basic",
+        "4": "Secondary",
+        "5": "Mid-level diploma/professional or technical",
+        "6": "BA",
+        "7": "MA and above",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1010": {
+      "description": "Marital status",
+      "question": "What is your current social status?",
+      "values": {
+        "1": "Single/Bachelor",
+        "2": "Living with a partner",
+        "3": "Engaged",
+        "4": "Married",
+        "5": "Divorced",
+        "6": "Separated",
+        "7": "Widowed",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1010B1": {
+      "description": "Has children",
+      "question": "Do you have children?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1001F": {
+      "description": "Head of household",
+      "question": "Are you the head of the household in your current place of residence?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1001G": {
+      "description": "Rent or own dwelling",
+      "question": "Do you currently rent or own your current place of residence?",
+      "values": {
+        "1": "Rent",
+        "2": "Own",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1001H": {
+      "description": "Has mortgage on home",
+      "question": "Do you currently have a mortgage or bank loan that you are paying off on your home?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1001E_1": {
+      "description": "Parents live in household",
+      "question": "Do your parents live in the same house as you?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1001E_2": {
+      "description": "In-laws live in household",
+      "question": "Do your in-laws live in the same house as you?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1001E_3": {
+      "description": "Children live in household",
+      "question": "Do your children live in the same house as you?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1005": {
+      "description": "Employment status",
+      "question": "Are you currently employed, self-employed, retired, a housewife, a student, unemployed and/or looking for work, or something else?",
+      "values": {
+        "1": "Employed",
+        "2": "Self-Employed",
+        "3": "Retired",
+        "4": "A housewife",
+        "5": "A student",
+        "6": "Unemployed and/or looking for work",
+        "90": "Other - specify",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1005B": {
+      "description": "Retiree receives pension",
+      "question": "Do you receive a pension?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1006": {
+      "description": "Full-time or part-time work",
+      "question": "Do you work full time or part time?",
+      "values": {
+        "1": "Full time",
+        "2": "Part time",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1006A": {
+      "description": "Sector of employment",
+      "question": "Do you work in the public sector, the private sector, or another sector?",
+      "values": {
+        "1": "Public sector",
+        "2": "Private sector",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1006B_2": {
+      "description": "Industry of employment",
+      "question": "Which of the following best describes the industry you work in?",
+      "values": {
+        "1": "Agriculture, livestock rearing, fishing",
+        "2": "Arts and entertainment",
+        "3": "Beauty and salon services",
+        "4": "Exploration and drilling",
+        "5": "Industry",
+        "6": "Electricity, gas and water",
+        "7": "Construction work",
+        "8": "Wholesale and retail sale, auto repair",
+        "9": "Hotels, restaurants, tourism",
+        "10": "Transportation and warehousing",
+        "11": "Financial intermediation, brokerage",
+        "12": "Real estate, leasing and business",
+        "13": "Government, public administration, and defense",
+        "14": "International organizations and agencies",
+        "15": "Local nongovernmental or nonprofit work",
+        "16": "Education and research",
+        "17": "Health and social work",
+        "18": "Information technology and communication",
+        "19": "Media and journalism",
+        "90": "Other - specify",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1021": {
+      "description": "Type of main income",
+      "question": "Which of the following best describes your main source of monthly income?",
+      "values": {
+        "1": "A salary/a fixed amount each month",
+        "2": "Hourly income with hours that are mostly stable each month",
+        "3": "Hourly income with hours that vary from month to month",
+        "4": "Profits from sales that are mostly stable each month",
+        "5": "Profits from sales that vary from month to month",
+        "6": "Income from rent or other financial products",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1005C": {
+      "description": "Looking for a job",
+      "question": "Are you looking for a job?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1005D": {
+      "description": "Reason not looking for job",
+      "question": "Why are you not looking for a job?",
+      "values": {
+        "1": "No jobs available",
+        "2": "Salaries are too low",
+        "3": "No jobs for my specialization",
+        "4": "Family obligations prevent me",
+        "5": "I am not allowed",
+        "90": "Other - specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1030": {
+      "description": "Ever had a job",
+      "question": "Have you ever had a job in the past?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1034": {
+      "description": "Female relatives who worked for pay",
+      "question": "Which, if any, female members of your family have ever worked for pay?",
+      "values": {
+        "1": "None worked",
+        "2": "Mother",
+        "3": "Grandmother",
+        "4": "Daughter",
+        "5": "Sister",
+        "6": "Aunt",
+        "7": "Cousin",
+        "8": "Mother-in-law",
+        "9": "Wife",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1035": {
+      "description": "Intend to return to work",
+      "question": "Do you intend to go back to work in the future?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1025": {
+      "description": "Has bank account",
+      "question": "Do you have a bank account?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q116": {
+      "description": "Has savings",
+      "question": "Do you have any savings?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1014B": {
+      "description": "Number of working youth in household",
+      "question": "How many youth under the age of 18 living in your household work?",
+      "values": {
+        "97": "There are no youth under the age of 18 in this household",
+        "99": "Refused to answer"
+      },
+      "notes": "Main response is an integer count; only special codes are listed here."
+    },
+    "Q1015A": {
+      "description": "Income relative to median",
+      "question": "Is your net monthly household income less than or greater than the median income in your country?",
+      "values": {
+        "1": "Less than median",
+        "2": "Median or more",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Median income value is country-specific and inserted by programmer."
+    },
+    "Q1016": {
+      "description": "Income sufficiency",
+      "question": "Which of these statements comes closest to describing your net household income?",
+      "values": {
+        "1": "Income covers expenses and we are able to save",
+        "2": "Income covers expenses without notable difficulties",
+        "3": "Income does not cover expenses; we face some difficulties",
+        "4": "Income does not cover expenses; we face significant difficulties",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1010C": {
+      "description": "Spouse wears hijab",
+      "question": "Does your spouse wear the hijab or niqab?",
+      "values": {
+        "1": "Yes (hijab)",
+        "2": "No",
+        "3": "Niqab",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1010D_1": {
+      "description": "Always wears hijab in public",
+      "question": "Do you always wear the hijab when you are out in public?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "97": "Not applicable: respondent is not wearing the hijab",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q1010D_2": {
+      "description": "Ever worn hijab",
+      "question": "Have you ever worn the hijab?",
+      "values": {
+        "1": "Yes",
+        "2": "No",
+        "3": "Niqab",
+        "97": "Not applicable: respondent is wearing the hijab",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    }
+  }
+}
