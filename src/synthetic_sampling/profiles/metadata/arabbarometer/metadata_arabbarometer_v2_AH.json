@@ -1,20 +1,5 @@
 {
   "SAMPLING VARIABLES": {
-    "ID": {
-      "description": "Respondent ID number",
-      "question": "What is the respondent ID number?",
-      "values": {}
-    },
-    "DATE": {
-      "description": "Interview date",
-      "question": "What is today’s date?",
-      "values": {}
-    },
-    "PSU": {
-      "description": "Primary sampling unit",
-      "question": "What is the primary sampling unit number?",
-      "values": {}
-    },
     "Q1": {
       "description": "Governorate",
       "question": "In which governorate do you live?",
