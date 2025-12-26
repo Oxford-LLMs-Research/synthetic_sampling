@@ -1586,7 +1586,7 @@
             "values": {
                 "1": "I am born in this country",
                 "2": "I am an immigrant to this country (born outside this country)",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -1598,7 +1598,7 @@
             "values": {
                 "1": "Not an immigrant",
                 "2": "Immigrant",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-3": "INAP; Mother does not live in country",
                 "-4": "Not asked",
@@ -1611,7 +1611,7 @@
             "values": {
                 "1": "Not an immigrant",
                 "2": "Immigrant",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-3": "INAP; Father does not live in country",
                 "-4": "Not asked",
@@ -2138,7 +2138,7 @@
                 "1": "Yes, I am a citizen of this country",
                 "2": "Not, I am not a citizen of this country",
                 "3": "SWI2: Applied, awaiting decision",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -2168,7 +2168,7 @@
                 "2": "Yes, own parent(s)",
                 "3": "Yes, parent(s) in law",
                 "4": "Yes, both own parent(s) and parent(s) in law",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -2356,7 +2356,7 @@
                 "4": "Separated",
                 "5": "Widowed",
                 "6": "Single",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -2374,7 +2374,7 @@
                 "5": "5 children",
                 "6": "6 children",
                 "7-25": "7 or more children",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -2393,14 +2393,14 @@
                 "6": "Bachelor or equivalent (ISCED 6)",
                 "7": "Master or equivalent (ISCED 7)",
                 "8": "Doctoral or equivalent (ISCED 8)",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
             }
         },
         "Q276": {
-            "description": "Highest educational level: Respondent´s Spouse [ISCED 2011]",
+            "description": "Highest educational level: Respondent's Spouse [ISCED 2011]",
             "question": "What is the highest educational level that your spouse has attained?",
             "values": {
                 "0": "Early childhood education (ISCED 0) / no education",
@@ -2412,11 +2412,11 @@
                 "6": "Bachelor or equivalent (ISCED 6)",
                 "7": "Master or equivalent (ISCED 7)",
                 "8": "Doctoral or equivalent (ISCED 8)",
-                "-1": "Don´t know"
+                "-1": "Don't know"
             }
         },
         "Q277": {
-            "description": "Highest educational level: Respondent´s Mother [ISCED 2011]",
+            "description": "Highest educational level: Respondent's Mother [ISCED 2011]",
             "question": "What is the highest educational level that your mother has attained?",
             "values": {
                 "0": "Early childhood education (ISCED 0) / no education",
@@ -2428,14 +2428,14 @@
                 "6": "Bachelor or equivalent (ISCED 6)",
                 "7": "Master or equivalent (ISCED 7)",
                 "8": "Doctoral or equivalent (ISCED 8)",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
             }
         },
         "Q278": {
-            "description": "Highest educational level: Respondent´s Father [ISCED 2011]",
+            "description": "Highest educational level: Respondent's Father [ISCED 2011]",
             "question": "What is the highest educational level that your father has attained?",
             "values": {
                 "0": "Early childhood education (ISCED 0) / no education",
@@ -2447,7 +2447,7 @@
                 "6": "Bachelor or equivalent (ISCED 6)",
                 "7": "Master or equivalent (ISCED 7)",
                 "8": "Doctoral or equivalent (ISCED 8)",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-3": "Not applicable; No spouse/partner",
                 "-4": "Not asked",
@@ -2466,14 +2466,14 @@
                 "6": "Student",
                 "7": "Unemployed",
                 "8": "Other",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
             }
         },
         "Q280": {
-            "description": "Employment status- Respondent´s Spouse",
+            "description": "Employment status- Respondent's Spouse",
             "question": "Is your spouse employed?",
             "values": {
                 "1": "Full time (30 hours a week or more)",
@@ -2484,7 +2484,7 @@
                 "6": "Student",
                 "7": "Unemployed",
                 "8": "Other",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-3": "Not applicable; No spouse/partner",
                 "-4": "Not asked",
@@ -2507,14 +2507,14 @@
                 "9": "Farm worker (for example: farm labourer, tractor driver)",
                 "10": "Farm owner, farm manager",
                 "11": "JP,KG,TJ: Other",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
             }
         },
         "Q282": {
-            "description": "Respondent´s Spouse- Occupational group",
+            "description": "Respondent's Spouse- Occupational group",
             "question": "To which occupational group does your spouse belong?",
             "values": {
                 "0": "Never had a job",
@@ -2529,14 +2529,14 @@
                 "9": "Farm worker (for example: farm labourer, tractor driver)",
                 "10": "Farm owner, farm manager",
                 "11": "JP,KG,TJ: Other",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
             }
         },
         "Q283": {
-            "description": "Respondent´s Father - Occupational group (when respondent was 14 years old)",
+            "description": "Respondent's Father - Occupational group (when respondent was 14 years old)",
             "question": "When you were 14, to which of the following occupational groups did your father belong?",
             "values": {
                 "0": "Never had a job",
@@ -2551,7 +2551,7 @@
                 "9": "Farm worker (for example: farm labourer, tractor driver)",
                 "10": "Farm owner, farm manager",
                 "11": "JP,KG,TJ: Other",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -2564,7 +2564,7 @@
                 "1": "Government or public institution",
                 "2": "Private business or industry",
                 "3": "Private non-profit organization",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-3": "Not applicable; Never had a job",
                 "-4": "Not asked",
@@ -2577,7 +2577,7 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -2591,7 +2591,7 @@
                 "2": "Just get by",
                 "3": "Spent some savings and borrowed money",
                 "4": "Spent savings and borrowed money",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer"
             }
         },
@@ -2604,7 +2604,7 @@
                 "3": "Lower middle class",
                 "4": "Working class",
                 "5": "Lower class",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -2624,13 +2624,13 @@
                 "8": "Eight step",
                 "9": "Nineth step",
                 "10": "Tenth step",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
             }
         },
-        "Q289CS": {
+        "Q289CS9": {
             "description": "Religious denomination - detailed list",
             "question": "Do you belong to a religion or religious denomination? If yes, which one?",
             "values": {
@@ -3189,23 +3189,6 @@
                 "909017": "NIR: Any other Black / African / Caribbean background"
             }
         },
-        "Q272B": {
-            "description": "Mother tongue or the first language spoken at home",
-            "question": "What is your mother tongue – or the first language that you were speaking at home?",
-            "values": {
-                "1": "Castellano_español",
-                "2": "Quechua",
-                "3": "Aymara",
-                "4": "Guaraní",
-                "5": "Otro _nativo_",
-                "6": "Otro extranjero",
-                "-1": "Don´t know",
-                "-2": "No answer",
-                "-4": "Not asked in this country",
-                "-5": "Missing"
-            }
-        }
-    },
     "Social Values, Norms, Stereotypes": {
         "Q1": {
             "description": "Important in life: Family",
@@ -3215,7 +3198,7 @@
                 "2": "Rather important",
                 "3": "Not very important",
                 "4": "Not at all important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3229,7 +3212,7 @@
                 "2": "Rather important",
                 "3": "Not very important",
                 "4": "Not at all important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3243,7 +3226,7 @@
                 "2": "Rather important",
                 "3": "Not very important",
                 "4": "Not at all important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3257,7 +3240,7 @@
                 "2": "Rather important",
                 "3": "Not very important",
                 "4": "Not at all important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3271,7 +3254,7 @@
                 "2": "Rather important",
                 "3": "Not very important",
                 "4": "Not at all important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3285,7 +3268,7 @@
                 "2": "Rather important",
                 "3": "Not very important",
                 "4": "Not at all important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3297,7 +3280,7 @@
             "values": {
                 "1": "Important",
                 "2": "Not so important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3309,7 +3292,7 @@
             "values": {
                 "1": "Important",
                 "2": "Not so important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3321,7 +3304,7 @@
             "values": {
                 "1": "Important",
                 "2": "Not so important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3333,7 +3316,7 @@
             "values": {
                 "1": "Important",
                 "2": "Not so important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3345,7 +3328,7 @@
             "values": {
                 "1": "Important",
                 "2": "Not so important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3357,7 +3340,7 @@
             "values": {
                 "1": "Important",
                 "2": "Not so important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3369,7 +3352,7 @@
             "values": {
                 "1": "Important",
                 "2": "Not so important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3381,7 +3364,7 @@
             "values": {
                 "1": "Important",
                 "2": "Not so important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3393,7 +3376,7 @@
             "values": {
                 "1": "Important",
                 "2": "Not so important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3405,7 +3388,7 @@
             "values": {
                 "1": "Important",
                 "2": "Not so important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3417,7 +3400,7 @@
             "values": {
                 "1": "Important",
                 "2": "Not so important",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in this country",
                 "-5": "Missing"
@@ -3429,7 +3412,7 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3441,7 +3424,7 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3453,7 +3436,7 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3465,7 +3448,7 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3477,7 +3460,7 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3489,7 +3472,7 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3501,7 +3484,7 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3513,7 +3496,7 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3525,7 +3508,7 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3539,7 +3522,7 @@
                 "2": "Agree",
                 "3": "Disagree",
                 "4": "Strongly disagree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3553,7 +3536,7 @@
                 "2": "Agree",
                 "3": "Disagree",
                 "4": "Strongly disagree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3567,7 +3550,7 @@
                 "2": "Agree",
                 "3": "Disagree",
                 "4": "Strongly disagree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3581,7 +3564,7 @@
                 "2": "Agree",
                 "3": "Disagree",
                 "4": "Strongly disagree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3595,7 +3578,7 @@
                 "2": "Agree",
                 "3": "Disagree",
                 "4": "Strongly disagree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3609,7 +3592,7 @@
                 "2": "Agree",
                 "3": "Disagree",
                 "4": "Strongly disagree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3624,7 +3607,7 @@
                 "3": "Neither agree nor disagree",
                 "4": "Disagree",
                 "5": "Disagree strongly",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3639,7 +3622,7 @@
                 "3": "Neither agree nor disagree",
                 "4": "Disagree",
                 "5": "Disagree strongly",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3669,7 +3652,7 @@
                 "3": "Neither agree nor disagree",
                 "4": "Disagree",
                 "5": "Disagree strongly",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3684,7 +3667,7 @@
                 "3": "Neither agree nor disagree",
                 "4": "Disagree",
                 "5": "Disagree strongly",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3699,14 +3682,14 @@
                 "3": "Neither agree nor disagree",
                 "4": "Disagree",
                 "5": "Disagree strongly",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
             }
         },
         "Q39": {
-            "description": "People who don´t work turn lazy",
+            "description": "People who don't work turn lazy",
             "question": "Do you agree or disagree with the following statement: 'People who don’t work turn lazy'?",
             "values": {
                 "1": "Strongly agree",
@@ -3714,7 +3697,7 @@
                 "3": "Neither agree or disagree",
                 "4": "Disagree",
                 "5": "Strongly disagree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3729,7 +3712,7 @@
                 "3": "Neither agree or disagree",
                 "4": "Disagree",
                 "5": "Strongly disagree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3744,7 +3727,7 @@
                 "3": "Neither agree nor disagree",
                 "4": "Disagree",
                 "5": "Disagree strongly",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3757,7 +3740,7 @@
                 "1": "The entire way our society is organized must be radically changed by revolutionary action",
                 "2": "Our society must be gradually improved by reforms",
                 "3": "Our present society must be valiantly defended against all subversive forces",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3768,9 +3751,9 @@
             "question": "If work were to become less important in people’s lives, would you see that as a good thing, a bad thing, or wouldn't you mind?",
             "values": {
                 "1": "Good thing",
-                "2": "Don´t mind",
+                "2": "Don't mind",
                 "3": "Bad thing",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3781,9 +3764,9 @@
             "question": "If society placed more emphasis on developing technology in the future, would you consider that a good thing, a bad thing, or wouldn't you mind?",
             "values": {
                 "1": "Good thing",
-                "2": "Don´t mind",
+                "2": "Don't mind",
                 "3": "Bad thing",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3794,9 +3777,9 @@
             "question": "If society placed more emphasis on developing technology in the future, would you consider that a good thing, a bad thing, or wouldn't you mind?",
             "values": {
                 "1": "Good thing",
-                "2": "Don´t mind",
+                "2": "Don't mind",
                 "3": "Bad thing",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3812,7 +3795,7 @@
                 "2": "Quite happy",
                 "3": "Not very happy",
                 "4": "Not at all happy",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3827,7 +3810,7 @@
                 "3": "Fair",
                 "4": "Poor",
                 "5": "Very poor",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked in survey",
                 "-5": "Missing"
@@ -3901,7 +3884,7 @@
                 "2": "Sometimes",
                 "3": "Rarely",
                 "4": "Never",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3915,7 +3898,7 @@
                 "2": "Sometimes",
                 "3": "Rarely",
                 "4": "Never",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3929,7 +3912,7 @@
                 "2": "Sometimes",
                 "3": "Rarely",
                 "4": "Never",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3943,7 +3926,7 @@
                 "2": "Sometimes",
                 "3": "Rarely",
                 "4": "Never",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3957,7 +3940,7 @@
                 "2": "Sometimes",
                 "3": "Rarely",
                 "4": "Never",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3970,7 +3953,7 @@
                 "1": "Better off",
                 "2": "Worse off",
                 "3": "Or about the same",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3984,7 +3967,7 @@
             "values": {
                 "1": "Most people can be trusted",
                 "2": "Need to be very careful",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -3998,7 +3981,7 @@
                 "2": "Trust somewhat",
                 "3": "Do not trust very much",
                 "4": "Do not trust at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4012,7 +3995,7 @@
                 "2": "Trust somewhat",
                 "3": "Do not trust very much",
                 "4": "Do not trust at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4026,7 +4009,7 @@
                 "2": "Trust somewhat",
                 "3": "Do not trust very much",
                 "4": "Do not trust at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4040,7 +4023,7 @@
                 "2": "Trust somewhat",
                 "3": "Do not trust very much",
                 "4": "Do not trust at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4054,7 +4037,7 @@
                 "2": "Trust somewhat",
                 "3": "Do not trust very much",
                 "4": "Do not trust at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4068,7 +4051,7 @@
                 "2": "Trust somewhat",
                 "3": "Do not trust very much",
                 "4": "Do not trust at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4082,7 +4065,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4096,7 +4079,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4110,7 +4093,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4124,7 +4107,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4138,7 +4121,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4152,7 +4135,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4166,7 +4149,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4180,7 +4163,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4194,7 +4177,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4208,7 +4191,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4222,7 +4205,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4236,7 +4219,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4250,7 +4233,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4264,7 +4247,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4278,7 +4261,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4292,21 +4275,21 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
             }
         },
         "Q80": {
-            "description": "Confidence: The Women´s Movement",
-            "question": "How much confidence do you have in women´s organizations?",
+            "description": "Confidence: The Women's Movement",
+            "question": "How much confidence do you have in women's organizations?",
             "values": {
                 "1": "A great deal",
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4320,7 +4303,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4334,7 +4317,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4577,7 +4560,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4591,7 +4574,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4605,7 +4588,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4619,7 +4602,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4633,7 +4616,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4647,7 +4630,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4661,7 +4644,7 @@
                 "2": "Quite a lot",
                 "3": "Not very much",
                 "4": "None at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4694,7 +4677,7 @@
                 "1": "France",
                 "2": "China",
                 "3": "India",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4707,7 +4690,7 @@
                 "1": "Washington DC",
                 "2": "London",
                 "3": "Geneva",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4720,7 +4703,7 @@
                 "1": "Climate change",
                 "2": "Human rights",
                 "3": "Destruction of historic monuments",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4733,7 +4716,7 @@
                 "0": "Don't belong",
                 "1": "Inactive member",
                 "2": "Active member",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4746,7 +4729,7 @@
                 "0": "Don't belong",
                 "1": "Inactive member",
                 "2": "Active member",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4759,7 +4742,7 @@
                 "0": "Don't belong",
                 "1": "Inactive member",
                 "2": "Active member",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4772,7 +4755,7 @@
                 "0": "Not a member",
                 "1": "Inactive member",
                 "2": "Active member",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4785,7 +4768,7 @@
                 "0": "Not a member",
                 "1": "Inactive member",
                 "2": "Active member",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4798,7 +4781,7 @@
                 "0": "Don't belong",
                 "1": "Inactive member",
                 "2": "Active member",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4811,7 +4794,7 @@
                 "0": "Not a member",
                 "1": "Inactive member",
                 "2": "Active member",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4824,7 +4807,7 @@
                 "0": "Not a member",
                 "1": "Inactive member",
                 "2": "Active member",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4837,7 +4820,7 @@
                 "0": "Don't belong",
                 "1": "Inactive member",
                 "2": "Active member",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4850,7 +4833,7 @@
                 "0": "Don't belong",
                 "1": "Inactive member",
                 "2": "Active member",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4863,7 +4846,7 @@
                 "0": "Don't belong",
                 "1": "Inactive member",
                 "2": "Active member",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4876,7 +4859,7 @@
                 "0": "Don't belong",
                 "1": "Inactive member",
                 "2": "Active member",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -4991,7 +4974,7 @@
                 "1": "A: Protect environment",
                 "2": "B: Economic growth",
                 "3": "Other answer",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5027,7 +5010,7 @@
                 "2": "Few of them",
                 "3": "Most of them",
                 "4": "All of them",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5041,7 +5024,7 @@
                 "2": "Few of them",
                 "3": "Most of them",
                 "4": "All of them",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5055,7 +5038,7 @@
                 "2": "Few of them",
                 "3": "Most of them",
                 "4": "All of them",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5069,7 +5052,7 @@
                 "2": "Few of them",
                 "3": "Most of them",
                 "4": "All of them",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5083,7 +5066,7 @@
                 "2": "Few of them",
                 "3": "Most of them",
                 "4": "All of them",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5097,7 +5080,7 @@
                 "2": "Rarely",
                 "3": "Frequently",
                 "4": "Always",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5112,7 +5095,7 @@
                 "2": "Agree",
                 "3": "Disagree",
                 "4": "Strongly disagree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer"
             }
         },
@@ -5147,7 +5130,7 @@
                 "3": "Neither good, nor bad",
                 "4": "Quite good",
                 "5": "Very good",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5160,7 +5143,7 @@
                 "0": "Disagree",
                 "1": "Hard to say",
                 "2": "Agree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5173,7 +5156,7 @@
                 "0": "Disagree",
                 "1": "Hard to say",
                 "2": "Agree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5186,7 +5169,7 @@
                 "0": "Disagree",
                 "1": "Hard to say",
                 "2": "Agree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5199,7 +5182,7 @@
                 "0": "Disagree",
                 "1": "Hard to say",
                 "2": "Agree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5212,7 +5195,7 @@
                 "0": "Disagree",
                 "1": "Hard to say",
                 "2": "Agree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5225,7 +5208,7 @@
                 "0": "Disagree",
                 "1": "Hard to say",
                 "2": "Agree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5238,7 +5221,7 @@
                 "0": "Disagree",
                 "1": "Hard to say",
                 "2": "Agree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5251,7 +5234,7 @@
                 "0": "Disagree",
                 "1": "Hard to say",
                 "2": "Agree",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5281,7 +5264,7 @@
                 "2": "Quite secure",
                 "3": "Not very secure",
                 "4": "Not at all secure",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5295,7 +5278,7 @@
                 "2": "Quite frequently",
                 "3": "Not frequently",
                 "4": "Not at all frequently",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5309,7 +5292,7 @@
                 "2": "Quite frequently",
                 "3": "Not frequently",
                 "4": "Not at all frequently",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5323,7 +5306,7 @@
                 "2": "Quite frequently",
                 "3": "Not frequently",
                 "4": "Not at all frequently",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5337,7 +5320,7 @@
                 "2": "Quite frequently",
                 "3": "Not frequently",
                 "4": "Not at all frequently",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5351,7 +5334,7 @@
                 "2": "Quite frequently",
                 "3": "Not frequently",
                 "4": "Not at all frequently",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5365,7 +5348,7 @@
                 "2": "Quite frequently",
                 "3": "Not frequently",
                 "4": "Not at all frequently",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5379,7 +5362,7 @@
                 "2": "Quite frequently",
                 "3": "Not frequently",
                 "4": "Not at all frequently",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5391,7 +5374,7 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5403,7 +5386,7 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5415,7 +5398,7 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5429,21 +5412,21 @@
                 "2": "A great deal",
                 "3": "Not much",
                 "4": "Not at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
             }
         },
         "Q143": {
-            "description": "Worries: Not being able to give one´s children a good education",
+            "description": "Worries: Not being able to give one's children a good education",
             "question": "How worried are you about not being able to give your children a good education?",
             "values": {
                 "1": "Very much",
                 "2": "A great deal",
                 "3": "Not much",
                 "4": "Not at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5455,19 +5438,19 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
             }
         },
         "Q145": {
-            "description": "Respondent´s family was victim of a crime during last year",
+            "description": "Respondent's family was victim of a crime during last year",
             "question": "And what about your immediate family, has someone in your family been the victim of a crime during the last year?",
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5481,7 +5464,7 @@
                 "2": "A great deal",
                 "3": "Not much",
                 "4": "Not at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5495,7 +5478,7 @@
                 "2": "A great deal",
                 "3": "Not much",
                 "4": "Not at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5509,7 +5492,7 @@
                 "2": "A great deal",
                 "3": "Not much",
                 "4": "Not at all",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5521,7 +5504,7 @@
             "values": {
                 "1": "Freedom",
                 "2": "Equality",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5533,7 +5516,7 @@
             "values": {
                 "1": "Freedom",
                 "2": "Security",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5545,7 +5528,7 @@
             "values": {
                 "1": "Yes",
                 "2": "No",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5618,7 +5601,7 @@
                 "2": "Progress toward a less impersonal and more humane society",
                 "3": "Progress toward a society in which Ideas count more than money",
                 "4": "The fight against crime",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5632,7 +5615,7 @@
                 "2": "Progress toward a less impersonal and more humane  society",
                 "3": "Progress toward a society in which Ideas count more than money",
                 "4": "The fight against crime",
-                "-1": "Don´t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-3": "Not applicable (Not first choice)",
                 "-4": "Not asked",
@@ -5789,7 +5772,7 @@
                 "values": {
                     "1": "Yes",
                     "2": "No",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -5801,7 +5784,7 @@
                 "values": {
                     "1": "Yes",
                     "2": "No",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -5813,7 +5796,7 @@
                 "values": {
                     "1": "Yes",
                     "2": "No",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -5825,7 +5808,7 @@
                 "values": {
                     "1": "Yes",
                     "2": "No",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -5870,7 +5853,7 @@
                     "5": "Once a year",
                     "6": "Less often",
                     "7": "Never, practically never",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -5888,7 +5871,7 @@
                     "6": "Once a year",
                     "7": "Less often",
                     "8": "Never, practically never",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -5901,7 +5884,7 @@
                     "1": "A religious person",
                     "2": "Not a religious person",
                     "3": "An atheist",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6227,7 +6210,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6247,7 +6230,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6267,7 +6250,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6287,7 +6270,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6385,7 +6368,7 @@
                     "2": "Somewhat interested",
                     "3": "Not very interested",
                     "4": "Not at all interested",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6398,7 +6381,7 @@
                     "1": "Frequently",
                     "2": "Occasionally",
                     "3": "Never",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6413,7 +6396,7 @@
                     "3": "Monthly",
                     "4": "Less than monthly",
                     "5": "Never",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6428,7 +6411,7 @@
                     "3": "Monthly",
                     "4": "Less than monthly",
                     "5": "Never",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-3": "Not applicable",
                     "-4": "Not asked",
@@ -6444,7 +6427,7 @@
                     "3": "Monthly",
                     "4": "Less than monthly",
                     "5": "Never",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6459,7 +6442,7 @@
                     "3": "Monthly",
                     "4": "Less than monthly",
                     "5": "Never",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6474,7 +6457,7 @@
                     "3": "Monthly",
                     "4": "Less than monthly",
                     "5": "Never",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6489,7 +6472,7 @@
                     "3": "Monthly",
                     "4": "Less than monthly",
                     "5": "Never",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6504,7 +6487,7 @@
                     "3": "Monthly",
                     "4": "Less than monthly",
                     "5": "Never",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6519,7 +6502,7 @@
                     "3": "Monthly",
                     "4": "Less than monthly",
                     "5": "Never",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6532,7 +6515,7 @@
                     "1": "Have done",
                     "2": "Might do",
                     "3": "Would never do",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6545,7 +6528,7 @@
                     "1": "Have done",
                     "2": "Might do",
                     "3": "Would never do",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6558,7 +6541,7 @@
                     "1": "Have done",
                     "2": "Might do",
                     "3": "Would never do",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6571,7 +6554,7 @@
                     "1": "Have done",
                     "2": "Might do",
                     "3": "Would never do",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6584,7 +6567,7 @@
                     "1": "Have done",
                     "2": "Might do",
                     "3": "Would never do",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6597,7 +6580,7 @@
                     "1": "Have done",
                     "2": "Might do",
                     "3": "Would never do",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6610,7 +6593,7 @@
                     "1": "Have done",
                     "2": "Might do",
                     "3": "Would never do",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6623,7 +6606,7 @@
                     "1": "Have done",
                     "2": "Might do",
                     "3": "Would never do",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6636,7 +6619,7 @@
                     "1": "Have done",
                     "2": "Might do",
                     "3": "Would never do",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6649,7 +6632,7 @@
                     "1": "Have done",
                     "2": "Might do",
                     "3": "Would never do",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6662,7 +6645,7 @@
                     "1": "Have done",
                     "2": "Might do",
                     "3": "Would never do",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
@@ -6674,7 +6657,7 @@
                     "1": "Have done",
                     "2": "Might do",
                     "3": "Would never do",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
@@ -6687,7 +6670,7 @@
                     "2": "Usually",
                     "3": "Never",
                     "4": "Not allowed to vote",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
@@ -6700,7 +6683,7 @@
                     "2": "Usually",
                     "3": "Never",
                     "4": "Not allowed to vote",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
@@ -7689,131 +7672,131 @@
                 }
             },
             "Q224": {
-                "description": "How often in country´s elections: Votes are counted fairly",
+                "description": "How often in country's elections: Votes are counted fairly",
                 "question": "In your view, how often are votes counted fairly in this country's elections?",
                 "values": {
                     "1": "Very often",
                     "2": "Fairly often",
                     "3": "Not often",
                     "4": "Not at all often",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
             },
             "Q225": {
-                "description": "How often in country´s elections: Opposition candidates are prevented from running",
+                "description": "How often in country's elections: Opposition candidates are prevented from running",
                 "question": "In your view, how often are opposition candidates prevented from running in this country's elections?",
                 "values": {
                     "1": "Very often",
                     "2": "Fairly often",
                     "3": "Not often",
                     "4": "Not at all often",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
             },
             "Q226": {
-                "description": "How often in country´s elections: TV news favors the governing party",
+                "description": "How often in country's elections: TV news favors the governing party",
                 "question": "In your view, how often is TV news favoring the governing party in this country's elections?",
                 "values": {
                     "1": "Very often",
                     "2": "Fairly often",
                     "3": "Not often",
                     "4": "Not at all often",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
             },
             "Q227": {
-                "description": "How often in country´s elections: Voters are bribed",
+                "description": "How often in country's elections: Voters are bribed",
                 "question": "In your view, how often are voters bribed in this country's elections?",
                 "values": {
                     "1": "Very often",
                     "2": "Fairly often",
                     "3": "Not often",
                     "4": "Not at all often",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
             },
             "Q228": {
-                "description": "How often in country´s elections: Journalists provide fair coverage of elections",
+                "description": "How often in country's elections: Journalists provide fair coverage of elections",
                 "question": "In your view, how often are journalists providing fair coverage of elections in this country's elections?",
                 "values": {
                     "1": "Very often",
                     "2": "Fairly often",
                     "3": "Not often",
                     "4": "Not at all often",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
             },
             "Q229": {
-                "description": "How often in country´s elections: Election officials are fair",
+                "description": "How often in country's elections: Election officials are fair",
                 "question": "In your view, how often are election officials being fair in this country's elections?",
                 "values": {
                     "1": "Very often",
                     "2": "Fairly often",
                     "3": "Not often",
                     "4": "Not at all often",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
             },
             "Q230": {
-                "description": "How often in country´s elections: Rich people buy elections",
+                "description": "How often in country's elections: Rich people buy elections",
                 "question": "In your view, how often are rich people buying elections in this country's elections?",
                 "values": {
                     "1": "Very often",
                     "2": "Fairly often",
                     "3": "Not often",
                     "4": "Not at all often",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
             },
             "Q231": {
-                "description": "How often in country´s elections: Voters are threatened with violence at the polls",
+                "description": "How often in country's elections: Voters are threatened with violence at the polls",
                 "question": "In your view, how often are voters threatened with violence at the polls in this country's elections?",
                 "values": {
                     "1": "Very often",
                     "2": "Fairly often",
                     "3": "Not often",
                     "4": "Not at all often",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
             },
             "Q232": {
-                "description": "How often in country´s elections: Voters are offered a genuine choice in the elections",
+                "description": "How often in country's elections: Voters are offered a genuine choice in the elections",
                 "question": "In your view, how often are voters offered a genuine choice in the elections in this country's elections?",
                 "values": {
                     "1": "Very often",
                     "2": "Fairly often",
                     "3": "Not often",
                     "4": "Not at all often",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
             },
             "Q233": {
-                "description": "How often in country´s elections: Women have equal opportunities to run the office",
+                "description": "How often in country's elections: Women have equal opportunities to run the office",
                 "question": "In your view, how often do women have equal opportunities to run for the office in this country's elections?",
                 "values": {
                     "1": "Very often",
                     "2": "Fairly often",
                     "3": "Not often",
                     "4": "Not at all often",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
@@ -7826,7 +7809,7 @@
                     "2": "Rather important",
                     "3": "Not very important",
                     "4": "Not at all important",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
@@ -7840,7 +7823,7 @@
                     "3": "Some",
                     "4": "Very little",
                     "5": "Not at all",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
@@ -8190,7 +8173,7 @@
                     "2": "Fairly much respect",
                     "3": "Not much respect",
                     "4": "No respect at all",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8205,7 +8188,7 @@
                     "3": "Not very proud",
                     "4": "Not at all proud",
                     "5": "I am not a national of this country",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8219,7 +8202,7 @@
                     "2": "Close",
                     "3": "Not very close",
                     "4": "Not close at all",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8233,7 +8216,7 @@
                     "2": "Close",
                     "3": "Not very close",
                     "4": "Not close at all",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8247,7 +8230,7 @@
                     "2": "Close",
                     "3": "Not very close",
                     "4": "Not close at all",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8261,7 +8244,7 @@
                     "2": "Close",
                     "3": "Not very close",
                     "4": "Not close at all",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8275,7 +8258,7 @@
                     "2": "Close",
                     "3": "Not very close",
                     "4": "Not close at all",
-                    "-1": "Don´t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"

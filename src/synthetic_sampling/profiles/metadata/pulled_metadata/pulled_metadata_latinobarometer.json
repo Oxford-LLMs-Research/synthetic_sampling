@@ -416,7 +416,7 @@
         "0": "No answer",
         "1": "Democracy is preferable to any other kind of government",
         "2": "Under some circumstances, an authoritarian government can be preferable to a democratic one",
-        "3": "For people like me, it doesn’t matter whether we have a democratic or non-democratic regime",
+        "3": "For people like me, it doesn't matter whether we have a democratic or non-democratic regime",
         "8": "Do not know"
       }
     },
@@ -488,7 +488,7 @@
     },
     "P18N.G": {
       "description": "Skepticism about hard-handed governments solving problems",
-      "question": "Do you agree or disagree that even a hard-handed government would not be able to solve the country’s problems?",
+      "question": "Do you agree or disagree that even a hard-handed government would not be able to solve the country's problems?",
       "values": {
         "0": "Do not know / No answer",
         "1": "Strongly agree",
@@ -642,7 +642,7 @@
   "attitudes_social_groups": {
     "P33N.A": {
       "description": "Perception of immigrants' impact on the economy",
-      "question": "Do you agree or disagree that immigrants are good for the country’s economy?",
+      "question": "Do you agree or disagree that immigrants are good for the country's economy?",
       "values": {
         "0": "Do not know / No answer",
         "1": "Strongly agree",
@@ -741,7 +741,7 @@
     },
     "P37CSN.F": {
       "description": "Support for legal recognition of gender change on ID documents",
-      "question": "Do you agree or disagree that a person’s gender change should be legally recognized on identity documents?",
+      "question": "Do you agree or disagree that a person's gender change should be legally recognized on identity documents?",
       "values": {
         "0": "Do not know / No answer",
         "1": "Strongly agree",
@@ -845,7 +845,7 @@
         "4": "Evangelical Methodist",
         "5": "Evangelical Pentecostal",
         "6": "Adventist",
-        "7": "Jehovah’s Witnesses",
+        "7": "Jehovah's Witnesses",
         "8": "Mormon",
         "9": "Jewish",
         "10": "Protestant",
@@ -914,11 +914,11 @@
         "0": "No answer",
         "96": "Did not study",
         "97": "Still studying",
-        "98": "Do not know / Don’t remember"
+        "98": "Do not know / Don't remember"
       }
     },
     "S11": {
-      "description": "Respondent’s highest level of education completed",
+      "description": "Respondent's highest level of education completed",
       "question": "What is the highest level of education you have completed?",
       "values": {
         "1": "No studies",
@@ -941,7 +941,7 @@
       }
     },
     "S12": {
-      "description": "Parents’ highest level of education completed",
+      "description": "Parents' highest level of education completed",
       "question": "What is the highest level of education either of your parents completed?",
       "values": {
         "0": "No data",
@@ -1040,7 +1040,7 @@
         "0": "No answer",
         "96": "Did not study",
         "97": "Still studying",
-        "98": "Do not know / Don’t remember",
+        "98": "Do not know / Don't remember",
         "99": "Not applicable"
       }
     },
@@ -1300,7 +1300,7 @@
     },
     "P26SDN.B": {
       "description": "Perception of Chinese interference",
-      "question": "How much do you think China interferes in your country’s internal affairs?",
+      "question": "How much do you think China interferes in your country's internal affairs?",
       "values": {
         "0": "No answer",
         "1": "A great deal",
@@ -1372,7 +1372,7 @@
     },
     "P28STIN": {
       "description": "Perception of regional integration trend",
-      "question": "In the last five years, do you think your country’s integration with other countries in the region has increased or decreased?",
+      "question": "In the last five years, do you think your country's integration with other countries in the region has increased or decreased?",
       "values": {
         "0": "Do not know / No answer",
         "1": "Increased a lot",
@@ -1383,7 +1383,7 @@
     },
     "P29STIN.A": {
       "description": "Support for integration with Latin American countries",
-      "question": "Do you support or oppose your country’s integration with other countries in Latin America?",
+      "question": "Do you support or oppose your country's integration with other countries in Latin America?",
       "values": {
         "0": "Do not know / No answer",
         "1": "Very much in favor",
@@ -1394,7 +1394,7 @@
     },
     "P29STIN.B": {
       "description": "Support for integration with non–Latin American countries",
-      "question": "Do you support or oppose your country’s integration with countries outside Latin America?",
+      "question": "Do you support or oppose your country's integration with countries outside Latin America?",
       "values": {
         "0": "Do not know / No answer",
         "1": "Very much in favor",
@@ -1766,7 +1766,7 @@
     },
     "S24": {
       "description": "Assessed socioeconomic level of the interviewee",
-      "question": "Based on the quality of the dwelling, furniture, and the interviewee’s general appearance, how would you rate the interviewee’s socioeconomic level?",
+      "question": "Based on the quality of the dwelling, furniture, and the interviewee's general appearance, how would you rate the interviewee's socioeconomic level?",
       "values": {
         "1": "Very good",
         "2": "Good",
@@ -1777,7 +1777,7 @@
     },
     "REEDUC.1": {
       "description": "Recoded education level of the respondent (from S11)",
-      "question": "What is the respondent’s recoded education level?",
+      "question": "What is the respondent's recoded education level?",
       "values": {
         "0": "No data",
         "1": "Illiterate",
@@ -1790,8 +1790,8 @@
       }
     },
     "REEDUC.2": {
-      "description": "Recoded education level of respondent’s parents (from S12)",
-      "question": "What is the recoded education level of the respondent’s parents?",
+      "description": "Recoded education level of respondent's parents (from S12)",
+      "question": "What is the recoded education level of the respondent's parents?",
       "values": {
         "0": "No data",
         "1": "Illiterate",
@@ -1839,8 +1839,8 @@
       }
     },
     "FAMPART": {
-      "description": "Type of political party supported by respondent’s family",
-      "question": "What type of political party does the respondent’s family support?",
+      "description": "Type of political party supported by respondent's family",
+      "question": "What type of political party does the respondent's family support?",
       "values": {
         "0": "No vote / null vote / no party",
         "10": "Green parties",
@@ -1871,7 +1871,7 @@
     },
     "P39N": {
       "description": "Evaluation of the country's response to the pandemic",
-      "question": "How would you evaluate your country’s ability to combat the pandemic?",
+      "question": "How would you evaluate your country's ability to combat the pandemic?",
       "values": {
         "0": "No answer",
         "1": "Very good",
@@ -2068,10 +2068,10 @@
       "question": "Does your salary and total family income allow you to cover your needs in a satisfactory manner?",
       "values": {
         "0": "No answer",
-        "1": "It’s enough, we can save",
-        "2": "It’s just enough, we don’t have major problems",
-        "3": "It’s not enough, we have problems",
-        "4": "It’s not enough, we have major problems",
+        "1": "It's enough, we can save",
+        "2": "It's just enough, we don't have major problems",
+        "3": "It's not enough, we have problems",
+        "4": "It's not enough, we have major problems",
         "8": "Do not know"
       }
     },
@@ -2091,14 +2091,6 @@
       "question": "Have you or your family ever considered moving to live abroad?",
       "values": {
         "0": "Do not know / No answer",
-        "1": "Yes",
-        "2": "No"
-      }
-    },
-    "S9": {
-      "description": "Household head and main income contributor",
-      "question": "Are you the main contributor to your family's income or the head of the household?",
-      "values": {
         "1": "Yes",
         "2": "No"
       }
@@ -2330,7 +2322,7 @@
         "0": "No answer",
         "1": "Yes, domestically",
         "2": "Yes, from a foreign country",
-        "3": "I don’t know if it was domestic or foreign",
+        "3": "I don't know if it was domestic or foreign",
         "4": "No",
         "8": "Do not know"
       }
@@ -2341,7 +2333,7 @@
       "values": {
         "0": "No answer",
         "2": "Yes, from a foreign country",
-        "3": "I don’t know if it was domestic or foreign",
+        "3": "I don't know if it was domestic or foreign",
         "4": "No",
         "8": "Do not know"
       }
@@ -2351,7 +2343,7 @@
       "question": "In the last 12 months, have you purchased any products or services through e-commerce or the Internet?",
       "values": {
         "0": "No answer",
-        "3": "I don’t know if it was domestic or foreign",
+        "3": "I don't know if it was domestic or foreign",
         "4": "No",
         "8": "Do not know"
       }
@@ -2509,7 +2501,7 @@
     },
     "P41ST.B": {
       "description": "Perceived guarantee of occupational choice",
-      "question": "To what extent do you think freedom to choose one’s occupation is guaranteed in your country?",
+      "question": "To what extent do you think freedom to choose one's occupation is guaranteed in your country?",
       "values": {
         "0": "Do not know / No answer",
         "1": "Fully guaranteed",
@@ -2741,7 +2733,7 @@
       }
     },
     "P15STGBS": {
-      "description": "Approval of the president’s leadership",
+      "description": "Approval of the president's leadership",
       "question": "Do you approve or disapprove of the way the current president is leading the country?",
       "values": {
         "0": "Do not know / No answer",
@@ -2795,14 +2787,14 @@
         "2": "Likely",
         "3": "A little likely",
         "4": "Not at all likely",
-        "5": "Don’t know enough"
+        "5": "Don't know enough"
       }
     }
   },
   "state_of_economy": {
     "P5STGBS": {
       "description": "Perception of the country's current economic situation",
-      "question": "How would you describe the country’s current economic situation?",
+      "question": "How would you describe the country's current economic situation?",
       "values": {
         "0": "No answer",
         "1": "Very good",
@@ -2814,8 +2806,8 @@
       }
     },
     "P6STGBS": {
-      "description": "Change in the country’s economic situation over the past 12 months",
-      "question": "Compared to 12 months ago, how would you describe the country’s current economic situation?",
+      "description": "Change in the country's economic situation over the past 12 months",
+      "question": "Compared to 12 months ago, how would you describe the country's current economic situation?",
       "values": {
         "0": "No answer",
         "1": "Much better",
@@ -2827,8 +2819,8 @@
       }
     },
     "P7ST": {
-      "description": "Expectations for the country’s economic situation in the next 12 months",
-      "question": "Over the next 12 months, how do you expect the country’s economic situation to change compared to now?",
+      "description": "Expectations for the country's economic situation in the next 12 months",
+      "question": "Over the next 12 months, how do you expect the country's economic situation to change compared to now?",
       "values": {
         "0": "No answer",
         "1": "Much better",
@@ -2841,7 +2833,7 @@
     },
     "P8STGBS": {
       "description": "Expectations for personal and family economic situation in the next 12 months",
-      "question": "Over the next 12 months, how do you expect your and your family’s economic situation to change compared to now?",
+      "question": "Over the next 12 months, how do you expect your and your family's economic situation to change compared to now?",
       "values": {
         "0": "No answer",
         "1": "Much better",
