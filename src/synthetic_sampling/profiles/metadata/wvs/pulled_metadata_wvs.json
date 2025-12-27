@@ -314,7 +314,7 @@
                 "250012": "Nouvelle-Aquitaine",
                 "250013": "Occitanie",
                 "250014": "Pays-de-la-Loire",
-                "250015": "Provence-Alpes-Côte d’Azur",
+                "250015": "Provence-Alpes-Côte d'Azur",
                 "276001": "Baden-Württemberg",
                 "276002": "Bavaria",
                 "276003": "Berlin",
@@ -549,11 +549,11 @@
                 "400001": "Ajlūn",
                 "400002": "Al ‘Aqabah",
                 "400003": "Al ‘Āşimah / Amman",
-                "400004": "Al Balqā’",
+                "400004": "Al Balqā'",
                 "400005": "Al Karak",
                 "400006": "Al Mafraq",
                 "400007": "Aţ Ţafīlah",
-                "400008": "Az Zarqā’",
+                "400008": "Az Zarqā'",
                 "400009": "Irbid",
                 "400010": "Jarash",
                 "400011": "Ma‘ān",
@@ -659,7 +659,7 @@
                 "434019": "Surt",
                 "434020": "Tarabulus",
                 "434021": "Wadi al Hayat",
-                "434022": "Wadi ash Shati’",
+                "434022": "Wadi ash Shati'",
                 "446001": "Macau",
                 "458001": "Johor",
                 "458002": "Kedah",
@@ -3691,7 +3691,7 @@
         },
         "Q39": {
             "description": "People who don't work turn lazy",
-            "question": "Do you agree or disagree with the following statement: 'People who don’t work turn lazy'?",
+            "question": "Do you agree or disagree with the following statement: 'People who don't work turn lazy'?",
             "values": {
                 "1": "Strongly agree",
                 "2": "Agree",
@@ -3749,7 +3749,7 @@
         },
         "Q43": {
             "description": "Future changes: Less importance placed on work",
-            "question": "If work were to become less important in people’s lives, would you see that as a good thing, a bad thing, or wouldn't you mind?",
+            "question": "If work were to become less important in people's lives, would you see that as a good thing, a bad thing, or wouldn't you mind?",
             "values": {
                 "1": "Good thing",
                 "2": "Don't mind",
@@ -3818,7 +3818,7 @@
             }
         },
         "Q48": {
-          "description": "Perceived freedom and control over one’s life",
+          "description": "Perceived freedom and control over one's life",
           "question": "To what extent do you feel you have freedom of choice and control over the way your life turns out?",
           "values": {
             "10": "A great deal",
@@ -3831,7 +3831,7 @@
             "3": "A little",
             "2": "None et all",
             "1": "None at all",
-            "-1": "Don’t know",
+            "-1": "Don't know",
             "-2": "No answer",
             "-4": "Not asked",
             "-5": "Missing"
@@ -3851,7 +3851,7 @@
             "3": "Fairly dissatisfied",
             "2": "Very dissatisfied",
             "1": "Completely dissatisfied",
-            "-1": "Don’t know",
+            "-1": "Don't know",
             "-2": "No answer",
             "-4": "Not asked",
             "-5": "Missing"
@@ -3859,7 +3859,7 @@
         },
          "Q50": {
           "description": "Satisfaction with household financial situation",
-          "question": "How satisfied are you with your household’s financial situation?",
+          "question": "How satisfied are you with your household's financial situation?",
           "values": {
             "10": "Completely Satisfied",
             "9": "Very satisfied",
@@ -3871,7 +3871,7 @@
             "3": "Fairly dissatisfied",
             "2": "Very dissatisfied",
             "1": "Completely Dissatisfied",
-            "-1": "Don’t know",
+            "-1": "Don't know",
             "-2": "No answer",
             "-4": "Not asked",
             "-5": "Missing"
@@ -3949,7 +3949,7 @@
         },
         "Q56": {
             "description": "Standard of living comparing with your parents",
-            "question": "Comparing your standard of living with your parents’ standard of living when they were about your age, would you say that you are better off, worse off or about the same?",
+            "question": "Comparing your standard of living with your parents' standard of living when they were about your age, would you say that you are better off, worse off or about the same?",
             "values": {
                 "1": "Better off",
                 "2": "Worse off",
@@ -4332,7 +4332,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked",
               "-5": "Missing"
@@ -4346,7 +4346,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked in this country",
               "-5": "Missing"
@@ -4360,7 +4360,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked in this country",
               "-5": "Missing"
@@ -4374,7 +4374,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked in this country",
               "-5": "Missing"
@@ -4416,7 +4416,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked",
               "-5": "Missing"
@@ -4430,7 +4430,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked"
             }
@@ -4443,7 +4443,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked"
             }
@@ -4456,7 +4456,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked"
             }
@@ -4469,7 +4469,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked"
             }
@@ -4482,7 +4482,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked"
             }
@@ -4495,7 +4495,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked"
             }
@@ -4508,7 +4508,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked"
             }
@@ -4521,7 +4521,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked",
               "-5": "Missing"
@@ -4535,7 +4535,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked"
             }
@@ -4548,7 +4548,7 @@
               "2": "Quite a lot",
               "3": "Not very much",
               "4": "None at all",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked"
             }
@@ -4665,7 +4665,7 @@
             "8": "Mostly democratic",
             "9": "Almost fully democratic",
             "10": "Being democratic",
-            "-1": "Don’t know",
+            "-1": "Don't know",
             "-2": "No answer",
             "-4": "Not asked",
             "-5": "Missing"
@@ -4841,8 +4841,8 @@
             }
         },
         "Q104": {
-            "description": "Active/Inactive membership: women’s group",
-            "question": "Are you a member of a women’s group?",
+            "description": "Active/Inactive membership: women's group",
+            "question": "Are you a member of a women's group?",
             "values": {
                 "0": "Don't belong",
                 "1": "Inactive member",
@@ -4882,7 +4882,7 @@
             "8": "Leaning toward income differences",
             "9": "Larger income differences",
             "10": "Larger income differences",
-            "-1": "Don’t know",
+            "-1": "Don't know",
             "-2": "No answer",
             "-4": "Not asked",
             "-5": "Missing"
@@ -4902,7 +4902,7 @@
             "8": "Leaning toward government ownership",
             "9": "Government ownership of business should be increased",
             "10": "Government ownership of business should be increased",
-            "-1": "Don’t know",
+            "-1": "Don't know",
             "-2": "No answer",
             "-4": "Not asked",
             "-5": "Missing"
@@ -4922,7 +4922,7 @@
             "8": "Leaning toward individual responsibility",
             "9": "People should take more responsibility to provide for themselves",
             "10": "People should take more responsibility to provide for themselves",
-            "-1": "Don’t know",
+            "-1": "Don't know",
             "-2": "No answer",
             "-4": "Not asked",
             "-5": "Missing"
@@ -4942,7 +4942,7 @@
             "8": "Leaning toward harmful",
             "9": "Competition is harmful",
             "10": "Competition is harmful",
-            "-1": "Don’t know",
+            "-1": "Don't know",
             "-2": "No answer",
             "-4": "Not asked",
             "-5": "Missing"
@@ -4960,9 +4960,9 @@
             "6": "Balanced",
             "7": "Leaning toward luck and connections",
             "8": "Leaning toward luck and connections",
-            "9": "Hard work doesn’t generally bring success – it’s more a matter of luck and connections",
-            "10": "Hard work doesn’t generally bring success – it’s more a matter of luck and connections",
-            "-1": "Don’t know",
+            "9": "Hard work doesn't generally bring success – it's more a matter of luck and connections",
+            "10": "Hard work doesn't generally bring success – it's more a matter of luck and connections",
+            "-1": "Don't know",
             "-2": "No answer",
             "-4": "Not asked",
             "-5": "Missing"
@@ -4997,7 +4997,7 @@
             "8": "High corruption",
             "9": "Very high corruption",
             "10": "Very high corruption",
-            "-1": "Don’t know",
+            "-1": "Don't know",
             "-2": "No answer",
             "-4": "Not asked",
             "-5": "Missing"
@@ -5114,7 +5114,7 @@
             "8": "High risk",
             "9": "Very high risk",
             "10": "Very high risk",
-            "-1": "Don’t know",
+            "-1": "Don't know",
             "-2": "No answer",
             "-4": "Not asked",
             "-5": "Missing"
@@ -5249,7 +5249,7 @@
             "2": "Let people come as long as there are jobs available",
             "3": "Place strict limits on the number of foreigners who can come here",
             "4": "Prohibit people coming here from other countries",
-            "-1": "Don’t know",
+            "-1": "Don't know",
             "-2": "No answer",
             "-4": "Not asked",
             "-5": "Missing"
@@ -5300,8 +5300,8 @@
             }
         },
         "Q134": {
-            "description": "Frequency in your neighborhood: Police or military interfere with people’s private life",
-            "question": "How frequently does police or military interfere with people’s private life occur in your neighborhood?",
+            "description": "Frequency in your neighborhood: Police or military interfere with people's private life",
+            "question": "How frequently does police or military interfere with people's private life occur in your neighborhood?",
             "values": {
                 "1": "Very Frequently",
                 "2": "Quite frequently",
@@ -5370,7 +5370,7 @@
             }
         },
         "Q139": {
-            "description": "Things done for reasons of security: Didn’t carry much money",
+            "description": "Things done for reasons of security: Didn't carry much money",
             "question": "Have you ever avoided carrying much money for security reasons?",
             "values": {
                 "1": "Yes",
@@ -5545,7 +5545,7 @@
               "2": "Strong defence forces",
               "3": "People have more say about how things are done",
               "4": "Trying to make our cities and countryside more beautiful",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No answer",
               "-4": "Not asked",
               "-5": "Missing"
@@ -5559,7 +5559,7 @@
               "2": "Making sure this country has strong defence forces",
               "3": "Seeing that people have more say about how are done at their jobs and in their communities",
               "4": "Trying to make our cities and countryside more beautiful",
-              "-1": "Don’t know",
+              "-1": "Don't know",
               "-2": "No second answer",
               "-3": "Not applicable (no first answer)",
               "-4": "Not asked"
@@ -5573,7 +5573,7 @@
             "2": "Giving people more say in important government decisions",
             "3": "Fighting rising prices",
             "4": "Protecting freedom of speech",
-            "-1": "Don’t know",
+            "-1": "Don't know",
             "-2": "No answer",
             "-4": "Not asked",
             "-5": "Missing"
@@ -5587,7 +5587,7 @@
             "2": "Giving people more say in important government decisions",
             "3": "Fighting rising prices",
             "4": "Protecting freedom of speech",
-            "-1": "Don’t know",
+            "-1": "Don't know",
             "-2": "No answer",
             "-3": "Not applicable; No first answer",
             "-4": "Not asked",
@@ -5639,7 +5639,7 @@
                 "8": "Agree",
                 "9": "Completely agree",
                 "10": "Completely agree",
-                "-1": "Don’t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5659,7 +5659,7 @@
                 "8": "Agree",
                 "9": "Completely agree",
                 "10": "Completely agree",
-                "-1": "Don’t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5679,7 +5679,7 @@
                 "8": "Agree",
                 "9": "Completely agree",
                 "10": "Completely agree",
-                "-1": "Don’t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5687,7 +5687,7 @@
         },
         "Q161": {
             "description": "Perception of science affecting moral values",
-            "question": "To what extent do you agree or disagree with the statement: 'One of the bad effects of science is that it breaks down people’s ideas of right and wrong'?",
+            "question": "To what extent do you agree or disagree with the statement: 'One of the bad effects of science is that it breaks down people's ideas of right and wrong'?",
             "values": {
                 "1": "Completely disagree",
                 "2": "Completely disagree",
@@ -5699,7 +5699,7 @@
                 "8": "Agree",
                 "9": "Completely agree",
                 "10": "Completely agree",
-                "-1": "Don’t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5719,7 +5719,7 @@
                 "8": "Agree",
                 "9": "Completely agree",
                 "10": "Completely agree",
-                "-1": "Don’t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5739,7 +5739,7 @@
                 "8": "Better off",
                 "9": "Much better off",
                 "10": "Much better off",
-                "-1": "Don’t know",
+                "-1": "Don't know",
                 "-2": "No answer",
                 "-4": "Not asked",
                 "-5": "Missing"
@@ -5761,7 +5761,7 @@
                     "8": "Important",
                     "9": "Very important",
                     "10": "Very important",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -5823,7 +5823,7 @@
                     "2": "Agree",
                     "3": "Disagree",
                     "4": "Strongly disagree",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -5837,7 +5837,7 @@
                     "2": "Agree",
                     "3": "Disagree",
                     "4": "Strongly disagree",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -5897,7 +5897,7 @@
                 "values": {
                     "1": "Follow religious norms and ceremonies",
                     "2": "Do good to other people",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -5909,7 +5909,7 @@
                 "values": {
                     "1": "Make sense of life after death",
                     "2": "Make sense of life in this world",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -5931,7 +5931,7 @@
                     "8": "Somewhat disagree",
                     "9": "Completely disagree",
                     "10": "Completely disagree",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -5951,7 +5951,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -5971,7 +5971,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -5991,7 +5991,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6011,7 +6011,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6031,7 +6031,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6051,7 +6051,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6071,7 +6071,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6091,7 +6091,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6111,7 +6111,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6131,7 +6131,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6151,7 +6151,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6171,7 +6171,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6191,7 +6191,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6291,7 +6291,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6311,7 +6311,7 @@
                     "8": "Often justifiable",
                     "9": "Always justifiable",
                     "10": "Always justifiable",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked in survey",
                     "-5": "Missing"
@@ -6325,7 +6325,7 @@
                     "2": "Probably should have the right",
                     "3": "Probably should not have the right",
                     "4": "Definitely should not have the right",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6339,7 +6339,7 @@
                     "2": "Probably should have the right",
                     "3": "Probably should not have the right",
                     "4": "Definitely should not have the right",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6353,7 +6353,7 @@
                     "2": "Probably should have the right",
                     "3": "Probably should not have the right",
                     "4": "Definitely should not have the right",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -6776,7 +6776,7 @@
                     "51034": "ARM: Free Democrats Party",
                     "51035": "ARM: Civil Contract",
                     "51036": "ARM: Bright Armenia",
-                    "51037": "ARM: Citizen’s Decision",
+                    "51037": "ARM: Citizen's Decision",
                     "51038": "ARM: Sasna Tsrer Pan-Armenian Party",
                     "51039": "ARM: Homeland Party",
                     "51040": "ARM: National Agenda Party",
@@ -7025,7 +7025,7 @@
                     "300108": "GRC: Course of Freedom",
                     "300109": "GRC: The River",
                     "300110": "GRC: Coalition of the Radical Left",
-                    "300111": "GRC: People’s Association / Golden Dawn",
+                    "300111": "GRC: People's Association / Golden Dawn",
                     "320002": "GTM: National Unity of Hope",
                     "320006": "GTM: Vamos (Come on or Let's go)",
                     "344001": "HKG: Hong Kong Association for Democracy and People's Livelihood",
@@ -7221,11 +7221,11 @@
                     "446003": "MAC: Civic Watch",
                     "446004": "MAC: New Hope",
                     "446005": "MAC: New Macau Progressives",
-                    "446006": "MAC: Macau Citizens’ Development Association",
+                    "446006": "MAC: Macau Citizens' Development Association",
                     "446007": "MAC: Macau United Citizens' Association",
                     "446008": "MAC: Powers of Political Thought",
                     "446009": "MAC: Alliance for a Happy Home",
-                    "446010": "MAC: Citizens’ Power",
+                    "446010": "MAC: Citizens' Power",
                     "446011": "MAC: New Democratic Macau Association",
                     "446012": "MAC: New Macau Development Union",
                     "446013": "MAC: Synergy Power",
@@ -7237,7 +7237,7 @@
                     "446019": "MAC: The Aurora of Grassroots",
                     "446020": "MAC: Mutual Help Grassroots",
                     "446021": "MAC: Association of Macau Activism for Democracy",
-                    "446022": "MAC: Pearl Horizon Buyers’ Rights Defence Union",
+                    "446022": "MAC: Pearl Horizon Buyers' Rights Defence Union",
                     "446023": "MAC: Front Line of Casino Workers",
                     "458004": "MYS: Socialist Party of Malaysia",
                     "458005": "MYS: National Front",
@@ -7267,7 +7267,7 @@
                     "496005": "MNG: National Labor Party",
                     "499001": "MNE: Democratic Party of Socialists of Montenegro",
                     "499002": "MNE: Social Democratic Party of Montenegro",
-                    "499005": "MNE: Socialist People’s Party of Montenegro",
+                    "499005": "MNE: Socialist People's Party of Montenegro",
                     "499007": "MNE: Bosniak Party",
                     "499008": "MNE: Croatian Civic Initiative",
                     "499009": "MNE: Liberal Party of Montenegro",
@@ -7380,7 +7380,7 @@
                     "608001": "PHL: Lakas-Christian Muslim Democrats",
                     "608002": "PHL: Liberal Party of the Philippines",
                     "608003": "PHL: Nacionalista Party",
-                    "608004": "PHL: Nationalist People’s Coalition",
+                    "608004": "PHL: Nationalist People's Coalition",
                     "608005": "PHL: Philippine Democratic Party–People's Power",
                     "608013": "PHL: Democratic Action",
                     "608014": "PHL: New Society Movement",
@@ -7803,7 +7803,7 @@
                 }
             },
             "Q234": {
-                "description": "Some people think that having honest elections makes a lot of difference in their lives; other people think that it doesn’t matter much",
+                "description": "Some people think that having honest elections makes a lot of difference in their lives; other people think that it doesn't matter much",
                 "question": "Do you think that honest elections play an important role in deciding whether you and your family are able to make a good living?. How important would you say this is?",
                 "values": {
                     "1": "Very important",
@@ -7839,7 +7839,7 @@
                     "2": "Fairly good",
                     "3": "Fairly bad",
                     "4": "Very bad",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
@@ -7852,7 +7852,7 @@
                     "2": "Fairly good",
                     "3": "Fairly bad",
                     "4": "Very bad",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
@@ -7865,7 +7865,7 @@
                     "2": "Fairly good",
                     "3": "Fairly bad",
                     "4": "Very bad",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
@@ -7878,7 +7878,7 @@
                     "2": "Fairly good",
                     "3": "Fairly bad",
                     "4": "Very bad",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-5": "Missing"
                 }
@@ -7891,7 +7891,7 @@
                     "2": "Fairly good",
                     "3": "Bad",
                     "4": "Very bad",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -7911,7 +7911,7 @@
                     "8": "Right",
                     "9": "Far right",
                     "10": "Far right",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -7932,7 +7932,7 @@
                     "8": "Essential",
                     "9": "Very essential",
                     "10": "Very essential",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -7953,7 +7953,7 @@
                     "8": "Essential",
                     "9": "Very essential",
                     "10": "Very essential",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -7974,7 +7974,7 @@
                     "8": "Extremely important",
                     "9": "Extremely important",
                     "10": "Absolutely essential",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -7995,7 +7995,7 @@
                     "8": "Extremely important",
                     "9": "Extremely important",
                     "10": "Absolutely essential",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8016,7 +8016,7 @@
                     "8": "Extremely important",
                     "9": "Extremely important",
                     "10": "Absolutely essential",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8024,7 +8024,7 @@
             },
             "Q246": {
                 "description": "Importance of civil rights protecting against oppression as a feature of democracy",
-                "question": "How essential do you think it is for a democracy that civil rights protect people’s liberty against state oppression?",
+                "question": "How essential do you think it is for a democracy that civil rights protect people's liberty against state oppression?",
                 "values": {
                     "0": "It is against democracy",
                     "1": "Not essential at all",
@@ -8037,7 +8037,7 @@
                     "8": "Extremely important",
                     "9": "Extremely important",
                     "10": "Absolutely essential",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8045,7 +8045,7 @@
             },
             "Q247": {
                 "description": "Importance of income equality as a feature of democracy",
-                "question": "How essential do you think it is for a democracy that the state makes people’s incomes more equal?",
+                "question": "How essential do you think it is for a democracy that the state makes people's incomes more equal?",
                 "values": {
                     "0": "It is against democracy",
                     "1": "Not essential at all",
@@ -8058,7 +8058,7 @@
                     "8": "Extremely important",
                     "9": "Extremely important",
                     "10": "Absolutely essential",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8079,7 +8079,7 @@
                     "8": "Extremely important",
                     "9": "Extremely important",
                     "10": "Absolutely essential",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8100,7 +8100,7 @@
                     "8": "Extremely important",
                     "9": "Extremely important",
                     "10": "Absolutely essential",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8120,7 +8120,7 @@
                     "8": "Somewhat important",
                     "9": "Very important",
                     "10": "Very important",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8140,7 +8140,7 @@
                     "8": "Somewhat democratic",
                     "9": "Very democratic",
                     "10": "Very democratic",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8160,7 +8160,7 @@
                     "8": "Somewhat satisfied",
                     "9": "Very satisfied",
                     "10": "Very satisfied",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8276,7 +8276,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8291,7 +8291,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8306,7 +8306,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8321,7 +8321,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8336,22 +8336,22 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
                 }
             },
             "Q291P6": {
-                "description": "Parliament: Parliament’s work is open and transparent",
-                "question": "Do you agree or disagree that the parliament’s work is open and transparent?",
+                "description": "Parliament: Parliament's work is open and transparent",
+                "question": "Do you agree or disagree that the parliament's work is open and transparent?",
                 "values": {
                     "1": "Agree strongly",
                     "2": "Agree",
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8366,7 +8366,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8381,7 +8381,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8396,7 +8396,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8411,7 +8411,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8426,22 +8426,22 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
                 }
             },
             "Q291G6": {
-                "description": "Government: The government’s work is open and transparent",
-                "question": "Do you agree or disagree that the government’s work is open and transparent?",
+                "description": "Government: The government's work is open and transparent",
+                "question": "Do you agree or disagree that the government's work is open and transparent?",
                 "values": {
                     "1": "Agree strongly",
                     "2": "Agree",
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8456,7 +8456,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8471,7 +8471,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8486,7 +8486,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8501,7 +8501,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8516,22 +8516,22 @@
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
                 }
             },
             "Q291UN6": {
-                "description": "United Nations: The UN’s work is open and transparent",
-                "question": "Do you agree or disagree that the United Nations’ work is open and transparent?",
+                "description": "United Nations: The UN's work is open and transparent",
+                "question": "Do you agree or disagree that the United Nations' work is open and transparent?",
                 "values": {
                     "1": "Agree strongly",
                     "2": "Agree",
                     "3": "Neither agree nor disagree",
                     "4": "Disagree",
                     "5": "Disagree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8546,7 +8546,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8561,7 +8561,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8576,7 +8576,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8591,7 +8591,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8606,7 +8606,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8621,7 +8621,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8636,7 +8636,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8651,7 +8651,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8666,22 +8666,22 @@
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
                 }
             },
             "Q292J": {
-                "description": "Politicians don’t respect people like me",
-                "question": "Do you agree or disagree that politicians don’t respect people like you?",
+                "description": "Politicians don't respect people like me",
+                "question": "Do you agree or disagree that politicians don't respect people like you?",
                 "values": {
                     "1": "Disagree strongly",
                     "2": "Disagree",
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8696,7 +8696,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8711,7 +8711,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8726,7 +8726,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8741,7 +8741,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8756,7 +8756,7 @@
                     "3": "Neither agree nor disagree",
                     "4": "Agree",
                     "5": "Agree strongly",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-4": "Not asked",
                     "-5": "Missing"
@@ -8777,7 +8777,7 @@
                     "8": "High trust",
                     "9": "High trust",
                     "10": "A great deal of trust",
-                    "-1": "Don’t know",
+                    "-1": "Don't know",
                     "-2": "No answer",
                     "-3": "Not applicable",
                     "-4": "Not asked",
