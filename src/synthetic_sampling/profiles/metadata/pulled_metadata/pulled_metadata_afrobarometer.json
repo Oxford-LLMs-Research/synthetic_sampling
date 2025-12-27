@@ -2,14 +2,14 @@
   "civic_engagement": {
     "Q35A": {
       "description": "Access to information: school budget",
-      "question": "How likely is it that you could get the following information: if you contacted the local school to find out what the school’s budget is and how the funds have been used?",
+      "question": "How likely is it that you could get the following information: if you contacted the local school to find out what the school's budget is and how the funds have been used?",
       "values": {
         "0": "Not at all likely",
         "1": "Not very likely",
         "2": "Somewhat likely",
         "3": "Very likely",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard",
+        "9": "Don't know/Haven't heard",
         "-1": "Missing"
       }
     },
@@ -22,7 +22,7 @@
         "2": "Somewhat likely",
         "3": "Very likely",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard",
+        "9": "Don't know/Haven't heard",
         "-1": "Missing"
       }
     },
@@ -35,7 +35,7 @@
         "2": "Somewhat likely",
         "3": "Very likely",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard",
+        "9": "Don't know/Haven't heard",
         "-1": "Missing"
       }
     },
@@ -48,7 +48,7 @@
         "2": "Somewhat likely",
         "3": "Very likely",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard",
+        "9": "Don't know/Haven't heard",
         "-1": "Missing"
       }
     },
@@ -61,7 +61,7 @@
         "2": "Somewhat likely",
         "3": "Very likely",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard",
+        "9": "Don't know/Haven't heard",
         "-1": "Missing"
       }
     },
@@ -74,7 +74,7 @@
         "2": "Somewhat likely",
         "3": "Very likely",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard",
+        "9": "Don't know/Haven't heard",
         "-1": "Missing"
       }
     },
@@ -85,7 +85,7 @@
         "0": "No",
         "1": "Yes",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -99,7 +99,7 @@
         "4": "Very difficult",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -113,7 +113,7 @@
         "3": "Often",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -127,7 +127,7 @@
         "3": "A lot",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -138,7 +138,7 @@
         "0": "No",
         "1": "Yes",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -152,7 +152,7 @@
         "4": "Very difficult",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -166,7 +166,7 @@
         "3": "Often",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -180,7 +180,7 @@
         "3": "A lot",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -194,7 +194,7 @@
         "3": "Often",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -208,7 +208,7 @@
         "3": "Often",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -222,7 +222,7 @@
         "3": "Often",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -236,18 +236,18 @@
         "3": "Often",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q42A": {
       "description": "Attempt to obtain an identity document",
-      "question": "In the past 12 months, have you tried to get an identity document such as a birth certificate, driver's license, passport, voter’s card, or permit from the government?",
+      "question": "In the past 12 months, have you tried to get an identity document such as a birth certificate, driver's license, passport, voter's card, or permit from the government?",
       "values": {
         "0": "No",
         "1": "Yes",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -261,7 +261,7 @@
         "4": "Very difficult",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -275,7 +275,7 @@
         "3": "Often",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -289,7 +289,7 @@
         "3": "A lot",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -300,7 +300,7 @@
         "0": "No",
         "1": "Yes",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -314,7 +314,7 @@
         "4": "Very difficult",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -328,7 +328,7 @@
         "3": "Often",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -341,7 +341,7 @@
         "2": "A few times",
         "3": "Often",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -355,7 +355,7 @@
         "3": "Often",
         "7": "No contact",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -369,7 +369,7 @@
         "4": "Often",
         "5": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -383,7 +383,7 @@
         "4": "Often",
         "5": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -397,7 +397,7 @@
         "4": "Often",
         "5": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -411,7 +411,7 @@
         "4": "Often",
         "5": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -425,7 +425,7 @@
         "4": "Often",
         "5": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     }
@@ -738,7 +738,7 @@
         "2": "Most of them",
         "3": "All of them",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -751,7 +751,7 @@
         "2": "Most of them",
         "3": "All of them",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -764,7 +764,7 @@
         "2": "Most of them",
         "3": "All of them",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -777,7 +777,7 @@
         "2": "Most of them",
         "3": "All of them",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -790,7 +790,7 @@
         "2": "Most of them",
         "3": "All of them",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -803,7 +803,7 @@
         "2": "Most of them",
         "3": "All of them",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -816,7 +816,7 @@
         "2": "Most of them",
         "3": "All of them",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -829,7 +829,7 @@
         "2": "Most of them",
         "3": "All of them",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -842,7 +842,7 @@
         "2": "Most of them",
         "3": "All of them",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -855,7 +855,7 @@
         "2": "Most of them",
         "3": "All of them",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -868,7 +868,7 @@
         "2": "Most of them",
         "3": "All of them",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -882,7 +882,7 @@
         "4": "Decreased somewhat",
         "5": "Decreased a lot",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -893,7 +893,7 @@
         "0": "Can report without fear",
         "1": "Risk retaliation or other negative consequences",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     }
@@ -950,13 +950,13 @@
       "description": "Main reason for vaccine hesitancy",
       "question": "What is the main reason you would be unlikely to get a COVID-19 vaccine?",
       "values": {
-        "1": "COVID doesn’t exist/COVID is not real",
+        "1": "COVID doesn't exist/COVID is not real",
         "2": "Not worried about COVID/COVID is not serious",
         "3": "I am at no risk or low risk for getting COVID",
         "4": "I already had COVID and believe I am immune",
         "5": "God will protect me",
-        "6": "Don’t trust the vaccine/worried about fake vaccines",
-        "7": "Don’t trust the government to ensure safety",
+        "6": "Don't trust the vaccine/worried about fake vaccines",
+        "7": "Don't trust the government to ensure safety",
         "8": "Vaccine is not safe",
         "9": "Vaccine was developed too quickly",
         "10": "Vaccine is not effective",
@@ -967,12 +967,12 @@
         "15": "People are being experimented on with vaccines",
         "16": "Afraid of vaccines in general",
         "17": "Allergic to vaccines",
-        "18": "Don’t like needles",
-        "19": "Don’t trust the vaccine source/will wait for other vaccines",
+        "18": "Don't like needles",
+        "19": "Don't trust the vaccine source/will wait for other vaccines",
         "20": "Effective treatments for COVID are or will be available",
         "21": "It is too difficult to get the vaccine",
         "22": "Vaccine will be too expensive",
-        "23": "I don’t know how to get the vaccine",
+        "23": "I don't know how to get the vaccine",
         "24": "I will wait until others have been vaccinated",
         "25": "I will get the vaccine later",
         "26": "Religious objections to vaccines",
@@ -1010,7 +1010,7 @@
     },
     "Q61A": {
       "description": "Satisfaction with government COVID-19 relief efforts",
-      "question": "How satisfied or dissatisfied are you with the government’s response to COVID-19 in providing relief to vulnerable households?",
+      "question": "How satisfied or dissatisfied are you with the government's response to COVID-19 in providing relief to vulnerable households?",
       "values": {
         "0": "Not at all satisfied",
         "1": "Not very satisfied",
@@ -1023,7 +1023,7 @@
     },
     "Q61B": {
       "description": "Satisfaction with government minimizing education disruptions",
-      "question": "How satisfied or dissatisfied are you with the government’s response to COVID-19 in ensuring that disruptions to children’s education are kept to a minimum?",
+      "question": "How satisfied or dissatisfied are you with the government's response to COVID-19 in ensuring that disruptions to children's education are kept to a minimum?",
       "values": {
         "0": "Not at all satisfied",
         "1": "Not very satisfied",
@@ -1036,7 +1036,7 @@
     },
     "Q61C": {
       "description": "Satisfaction with government resourcing health facilities",
-      "question": "How satisfied or dissatisfied are you with the government’s response to COVID-19 in making sure that health facilities have adequate resources?",
+      "question": "How satisfied or dissatisfied are you with the government's response to COVID-19 in making sure that health facilities have adequate resources?",
       "values": {
         "0": "Not at all satisfied",
         "1": "Not very satisfied",
@@ -1440,7 +1440,7 @@
         "1282": "Marahoué",
         "1283": "Moronou",
         "1284": "Nawa",
-        "1285": "N’Zi",
+        "1285": "N'Zi",
         "1286": "Poro",
         "1287": "San Pedro",
         "1288": "Sud Comoé",
@@ -1582,7 +1582,7 @@
       "question": "How old are you?",
       "values": {
         "998": "Refused",
-        "999": "Don’t know",
+        "999": "Don't know",
         "-1": "Missing"
       }
     },
@@ -1694,7 +1694,7 @@
         "464": "Chiyao",
         "465": "Chingoni",
         "466": "Chilomwe",
-        "467": "Chimang’anja",
+        "467": "Chimang'anja",
         "468": "Chisena",
         "470": "Chisenga",
         "471": "Chitonga",
@@ -1902,7 +1902,7 @@
         "1151": "Konkomba",
         "1152": "Lama, Lamba",
         "1153": "Mina, Guen",
-        "1154": "N’Tcha, Bassar",
+        "1154": "N'Tcha, Bassar",
         "1155": "Nawdem, Losso",
         "1156": "Ngam-Gam",
         "1157": "Ouatchi",
@@ -2035,7 +2035,7 @@
         "1883": "Soninké",
         "9995": "Other",
         "9998": "Refused",
-        "9999": "Don’t know",
+        "9999": "Don't know",
         "-1": "Missing"
       }
     },
@@ -2196,7 +2196,7 @@
         "464": "Yao",
         "465": "Ngoni",
         "466": "Lomwe",
-        "467": "Mang’anja",
+        "467": "Mang'anja",
         "468": "Sena",
         "470": "Senga",
         "471": "Tonga",
@@ -2457,7 +2457,7 @@
         "1151": "Konkomba",
         "1152": "Lama, Lamba",
         "1153": "Mina, Guen",
-        "1154": "N’Tcha, Bassar",
+        "1154": "N'Tcha, Bassar",
         "1155": "Nawdem, Losso",
         "1156": "Ngam-Gam",
         "1157": "Ouatchi",
@@ -2638,7 +2638,7 @@
         "5": "Only as a citizen of my country",
         "7": "Not applicable",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -2651,7 +2651,7 @@
         "2": "Mother does not identify with an ethnic or cultural group",
         "7": "Not applicable",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -2664,20 +2664,20 @@
         "2": "Father does not identify with an ethnic or cultural group",
         "7": "Not applicable",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q85B": {
-      "description": "Children belong more to mother’s or father’s side",
-      "question": "In your family, do the children belong more to the mother’s side, more to the father’s side, or to both sides equally?",
+      "description": "Children belong more to mother's or father's side",
+      "question": "In your family, do the children belong more to the mother's side, more to the father's side, or to both sides equally?",
       "values": {
         "0": "Neither side",
-        "1": "Mother’s side",
-        "2": "Father’s side",
+        "1": "Mother's side",
+        "2": "Father's side",
         "3": "Both sides equally",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -2690,7 +2690,7 @@
         "2": "Yes (part time)",
         "3": "Yes (full time)",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -2713,7 +2713,7 @@
         "12": "Upper-level professional (e.g. banker/finance, doctor, lawyer, engineer, accountant, professor, senior-level government officer)",
         "95": "Other",
         "98": "Refused",
-        "99": "Don’t know",
+        "99": "Don't know",
         "1700": "Retired",
         "-1": "Missing"
       }
@@ -2735,7 +2735,7 @@
         "6": "None of the above/Some other response",
         "7": "Not applicable/No earnings",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -2754,7 +2754,7 @@
         "8": "University completed",
         "9": "Postgraduate",
         "98": "Refused",
-        "99": "Don’t know",
+        "99": "Don't know",
         "-1": "Missing"
       }
     },
@@ -2777,7 +2777,7 @@
         "12": "Evangelical",
         "13": "Pentecostal (e.g. 'born again' and/or 'saved')",
         "14": "Independent (e.g. 'African Independent Church')",
-        "15": "Jehovah’s Witness",
+        "15": "Jehovah's Witness",
         "16": "Seventh-day Adventist",
         "17": "Mormon",
         "18": "Muslim only (i.e., respondent says only 'Muslim' without identifying a specific sub-group)",
@@ -2809,7 +2809,7 @@
         "9994": "Not asked in the country",
         "9995": "Other",
         "9998": "Refused",
-        "9999": "Don’t know",
+        "9999": "Don't know",
         "-1": "Missing"
       }
     },
@@ -2837,7 +2837,7 @@
         "5": "South Asian (Indian, Pakistani, etc.)",
         "6": "East Asian (Chinese, Korean, Indonesian, etc.)",
         "9995": "Other",
-        "9999": "Don’t know"
+        "9999": "Don't know"
       }
     },
     "Q101OTHER": {
@@ -2859,7 +2859,7 @@
       }
     },
     "Q4A": {
-      "description": "Country’s present economic condition",
+      "description": "Country's present economic condition",
       "question": "In general, how would you describe the present economic condition of this country?",
       "values": {
         "1": "Very bad",
@@ -2901,8 +2901,8 @@
       }
     },
     "Q5B": {
-      "description": "Country's economic condition in 12 months’ time",
-      "question": "Looking ahead, do you expect economic conditions in this country to be better or worse in 12 months’ time?",
+      "description": "Country's economic condition in 12 months' time",
+      "question": "Looking ahead, do you expect economic conditions in this country to be better or worse in 12 months' time?",
       "values": {
         "1": "Much worse",
         "2": "Worse",
@@ -3020,7 +3020,7 @@
         "1": "Yes, someone else in household owns",
         "2": "Yes (personally owns)",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -3032,7 +3032,7 @@
         "1": "Yes, someone else in household owns",
         "2": "Yes (personally owns)",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -3044,7 +3044,7 @@
         "1": "Yes, someone else in household owns",
         "2": "Yes (personally owns)",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -3056,7 +3056,7 @@
         "1": "Yes, someone else in household owns",
         "2": "Yes (personally owns)",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -3068,7 +3068,7 @@
         "1": "Yes, someone else in household owns",
         "2": "Yes (personally owns)",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -3080,7 +3080,7 @@
         "1": "Yes, someone else in household owns",
         "2": "Yes (personally owns)",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -3092,7 +3092,7 @@
         "1": "Yes (Has Internet access)",
         "7": "Not applicable (does not personally have a mobile phone)",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -3106,7 +3106,7 @@
         "3": "A few times a week",
         "4": "Every day",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -3120,7 +3120,7 @@
         "3": "A few times a week",
         "4": "Every day",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -3143,7 +3143,7 @@
         "13": "Surface water, like a river, dam, lake, pond, stream, canal, or irrigation channel",
         "95": "Other",
         "98": "Refused",
-        "99": "Don’t know",
+        "99": "Don't know",
         "-1": "Missing"
       }
     },
@@ -3155,20 +3155,20 @@
         "2": "Inside the compound",
         "3": "Outside the compound",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q91C": {
       "description": "Location of toilet or latrine",
-      "question": "Where is your household’s toilet or latrine located?",
+      "question": "Where is your household's toilet or latrine located?",
       "values": {
         "0": "No, no latrine available",
         "1": "Inside the house",
         "2": "Inside the compound",
         "3": "Outside the compound",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -3179,7 +3179,7 @@
         "0": "No",
         "1": "Yes",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -3194,7 +3194,7 @@
         "5": "All of the time",
         "7": "Not applicable",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     }
@@ -3368,7 +3368,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -3381,7 +3381,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -3394,7 +3394,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -3407,7 +3407,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -3420,7 +3420,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -3433,7 +3433,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -3446,7 +3446,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -3459,7 +3459,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -3472,7 +3472,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -3485,7 +3485,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -3498,7 +3498,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -3511,7 +3511,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -3524,7 +3524,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -3537,7 +3537,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -3550,7 +3550,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -3563,7 +3563,7 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -3576,12 +3576,12 @@
         "3": "Fairly well",
         "4": "Very well",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q47A": {
-      "description": "Approval of president’s performance",
+      "description": "Approval of president's performance",
       "question": "Do you approve or disapprove of the way the president has performed his job over the past 12 months?",
       "values": {
         "1": "Strongly disapprove",
@@ -3589,12 +3589,12 @@
         "3": "Approve",
         "4": "Strongly approve",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q47B": {
-      "description": "Approval of member of Parliament’s performance",
+      "description": "Approval of member of Parliament's performance",
       "question": "Do you approve or disapprove of the way your member of Parliament has performed their job over the past 12 months?",
       "values": {
         "1": "Strongly disapprove",
@@ -3602,12 +3602,12 @@
         "3": "Approve",
         "4": "Strongly approve",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q47C": {
-      "description": "Approval of local government councillor’s performance",
+      "description": "Approval of local government councillor's performance",
       "question": "Do you approve or disapprove of the way your elected local government councillor has performed their job over the past 12 months?",
       "values": {
         "1": "Strongly disapprove",
@@ -3615,7 +3615,7 @@
         "3": "Approve",
         "4": "Strongly approve",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     }
@@ -3750,13 +3750,13 @@
         "103": "Les Démocrates",
         "104": "Mouvement des Elites Engagés pour le Développement du Bénin (MOEL-BENIN)",
         "105": "Parti pour le Renouveau Démocratique (PRD)",
-        "106": "Restauré l’Espoir (RE)",
+        "106": "Restauré l'Espoir (RE)",
         "107": "Union Progressiste (UP)",
         "140": "Alliance for Progressives (AP)",
         "141": "Botswana Congress Party (BCP)",
         "142": "Botswana Democratic Party (BDP)",
         "144": "Botswana National Front (BNF)",
-        "145": "Botswana People’s Party (BPP)",
+        "145": "Botswana People's Party (BPP)",
         "146": "Botswana Patriotic Front (BPF)",
         "149": "Umbrella for Democratic Change (UDC)",
         "180": "ADF/RDA (Alliance pour la Démocratie et la Fédération/Rassemblement Démocratique Africain) - Gilbert Noël OUEDRAOGO",
@@ -3774,12 +3774,12 @@
         "220": "Movimento para Democracia (MpD)",
         "221": "Partido Africano para a Independência de Cabo Verde (PAICV)",
         "226": "União Cabo-verdiana Independente e Democrática (UCID)",
-        "260": "Convention People’s Party (CPP)",
+        "260": "Convention People's Party (CPP)",
         "261": "National Democratic Congress (NDC)",
         "262": "New Patriotic Party (NPP)",
-        "263": "People’s National Convention (PNC)",
-        "264": "Progressive People’s Party (PPP)",
-        "265": "Democratic People’s Party (DPP)",
+        "263": "People's National Convention (PNC)",
+        "264": "Progressive People's Party (PPP)",
+        "265": "Democratic People's Party (DPP)",
         "300": "Kenya Social Congress (KSC)",
         "301": "NARC – Kenya",
         "302": "Orange Democratic Movement (ODM)",
@@ -3795,7 +3795,7 @@
         "343": "Basotho National Party (BNP)",
         "344": "Popular Front for Democracy (PFD)",
         "345": "National Independent Party (NIP)",
-        "346": "Lesotho People’s Congress (LPC)",
+        "346": "Lesotho People's Congress (LPC)",
         "349": "Basotho Congress Party (BCP)",
         "352": "Alliance of Democrats (AD)",
         "353": "Movement for Economic Change (MEC)",
@@ -3812,11 +3812,11 @@
         "389": "Coalition for Democratic Change (CDC)",
         "392": "Movement for Economic Empowerment (MOVEE)",
         "393": "All Liberia Coalition Party (ALCOP)",
-        "407": "United People’s Party (UPP)",
+        "407": "United People's Party (UPP)",
         "408": "All Liberian Party (ALP)",
         "409": "People Unification Party (PUP)",
         "410": "Alternative National Congress (ANC)",
-        "420": "HVM (Hery Vaovao ho an’i Madagasikara)",
+        "420": "HVM (Hery Vaovao ho an'i Madagasikara)",
         "421": "TIM (Tiako I Madagasikara)",
         "422": "TGV (Tanora malaGasy Vonona)",
         "423": "AREMA (Antoko REvôlisionera Malagasy)",
@@ -3824,7 +3824,7 @@
         "425": "Leader Fanilo",
         "461": "Democratic Progressive Party (DPP)",
         "463": "Malawi Congress Party (MCP)",
-        "467": "People’s Party (PP)",
+        "467": "People's Party (PP)",
         "471": "United Democratic Front (UDF)",
         "475": "UTM",
         "476": "Mbakuwaku Movement for Democracy (MMD)",
@@ -3850,7 +3850,7 @@
         "541": "Renamo (Resistência Nacional de Moçambique)",
         "542": "MDM (Movimento Democrático Moçambicano)",
         "544": "PIMO (Partido Independente Moçambicano)",
-        "580": "APP (All People’s Party)",
+        "580": "APP (All People's Party)",
         "582": "COD (Congress of Democrats)",
         "583": "DPN (Democratic Party of Namibia)",
         "585": "NDP (National Democratic Party)",
@@ -3859,16 +3859,16 @@
         "590": "SWANU (Swanu of Namibia)",
         "591": "SWAPO (SWAPO Party of Namibia)",
         "592": "UDF (United Democratic Front of Namibia)",
-        "595": "LPM (Landless People’s Movement)",
+        "595": "LPM (Landless People's Movement)",
         "596": "PDM (Popular Democratic Movement)",
         "597": "IPC (Independent Patriots for Change)",
         "621": "All Progressive Congress (APC)",
-        "624": "All Nigeria People’s Party (ANPP)",
+        "624": "All Nigeria People's Party (ANPP)",
         "625": "All Progressives Grand Alliance (APGA)",
-        "631": "Democratic People’s Party (DPP)",
-        "638": "People’s Democratic Party (PDP)",
+        "631": "Democratic People's Party (DPP)",
+        "638": "People's Democratic Party (PDP)",
         "640": "Peoples Progressive Party (PPP)",
-        "641": "People’s Redemption Party (PRP)",
+        "641": "People's Redemption Party (PRP)",
         "645": "Young Professional Party (YPP)",
         "660": "Parti Démocratique Sénégalais (Abdoulaye WADE)",
         "661": "Parti Socialiste",
@@ -3879,7 +3879,7 @@
         "671": "UCS (Abdoulaye BALDE)",
         "676": "Book Guiss Guiss (Pape DIOP)",
         "678": "Pastef (Ousmane SONKO)",
-        "679": "Coalition Oser l’Avenir (Aissata TALL SALL)",
+        "679": "Coalition Oser l'Avenir (Aissata TALL SALL)",
         "684": "PUR (El Hadji Issa SALL)",
         "685": "Manko Taxawou Sénégal (Khalifa SALL)",
         "686": "Gueum sa Bopp (Bougane Gueye Dany)",
@@ -3900,7 +3900,7 @@
         "740": "Chama Cha Mapinduzi (CCM)",
         "741": "The Civic United Front (CUF)",
         "742": "Chama Cha Demokrasia na Maendeleo (CHADEMA)",
-        "746": "United People’s Democratic Party (UPDP)",
+        "746": "United People's Democratic Party (UPDP)",
         "758": "Alliance for Change and Transparency (ACT-Wazalendo)",
         "780": "National Resistance Movement (NRM)",
         "781": "Forum for Democratic Change (FDC)",
@@ -3919,7 +3919,7 @@
         "833": "United Party for National Development (UPND)",
         "860": "Citizens Coalition for Change - CCC – Chamisa",
         "861": "Zimbabwe African National Union - Patriotic Front - ZANU-PF",
-        "862": "Zimbabwe African People’s Union (ZAPU)",
+        "862": "Zimbabwe African People's Union (ZAPU)",
         "863": "Movement for Democratic Change (MDC-T) - Mwonzora",
         "864": "National Patriotic Front (NPF)",
         "865": "Movement for Democratic Change - MDC-T - Khupe",
@@ -3933,20 +3933,20 @@
         "908": "Organisation du Peuple Rodriguais (OPR)",
         "909": "Mouvement Rodriguais (MR)",
         "910": "Front Patriotique Rodriguais Ecologique (FPRE)",
-        "930": "Sierra Leone People’s Party (SLPP)",
-        "931": "All People’s Congress (APC)",
-        "932": "People’s Movement for Democratic Change (PMDC)",
+        "930": "Sierra Leone People's Party (SLPP)",
+        "931": "All People's Congress (APC)",
+        "932": "People's Movement for Democratic Change (PMDC)",
         "936": "Coalition for Change Party (C4C)",
         "937": "National Grand Coalition (NGC)",
         "939": "Revolutionary United Front Party (RUFP)",
-        "944": "People’s Democratic Party (PDP)",
+        "944": "People's Democratic Party (PDP)",
         "1100": "Alliance Nigérienne pour la Démocratie et le Progrès (ANDP Zaman Lahiya)",
         "1101": "Convention Démocratique et Sociale (CDS Rahama)",
         "1102": "Mouvement National pour la Société de Développement (MNSD Nassara)",
         "1103": "Mouvement Démocratique Nigérien pour une Fédération Africaine (MODEN FA Lumana)",
         "1104": "Parti Nigérien pour la Démocratie et le Socialisme (PNDS Tarayya)",
-        "1105": "Parti Nigérien pour l’Auto gestion (PNA Al’Oumat)",
-        "1106": "Rassemblement pour la Démocratie et le Progrès (RDP Jama’a)",
+        "1105": "Parti Nigérien pour l'Auto gestion (PNA Al'Oumat)",
+        "1106": "Rassemblement pour la Démocratie et le Progrès (RDP Jama'a)",
         "1107": "Rassemblement Social Démocrate (RSD Gaskia)",
         "1109": "CPR – INGANCI",
         "1110": "MPR JAMHURIA",
@@ -3957,9 +3957,9 @@
         "1140": "Alliance des Démocrates pour le Développement Intégral (ADDI) du Dr. Kampatib",
         "1141": "Alliance Nationale pour le Changement (ANC) de Jean-Pierre Fabre",
         "1142": "Dynamique Monseigneur Kpodzro (DMK)",
-        "1143": "Comité d’Action pour le Renouveau (CAR) de Me Yaovi Agboyibo",
+        "1143": "Comité d'Action pour le Renouveau (CAR) de Me Yaovi Agboyibo",
         "1144": "Convention Démocratique des Peuples Africains (CDPA) du Professeur Léopold Messan Gnininvi",
-        "1145": "Mouvement Patriotique pour la Démocratie et le Développement, MPDD d’Agbéyomé Kodjo",
+        "1145": "Mouvement Patriotique pour la Démocratie et le Développement, MPDD d'Agbéyomé Kodjo",
         "1146": "Parti National Panafricain, PNP de Tikpi Atchadam",
         "1147": "Parti du Renouveau et de la Rédemption, PRR de Nicolas Lawson",
         "1148": "Union pour la Démocratie et le Progrès Social, UDPS",
@@ -3974,17 +3974,17 @@
         "1225": "UPC (Union des Populations du Cameroun)",
         "1226": "PCRN (Parti Camerounais pour la Reconciliation Nationale)",
         "1260": "Rassemblement des Houphouétistes pour la Démocratie et la Paix (RHDP)",
-        "1261": "Parti Démocratique de Côte d’Ivoire (PDCI)",
+        "1261": "Parti Démocratique de Côte d'Ivoire (PDCI)",
         "1262": "Front Populaire Ivoirien (FPI)",
-        "1263": "Union pour la Démocratie et pour la Paix en Côte d’Ivoire (UDPCI)",
-        "1265": "Mouvement des Forces d’Avenir (MFA)",
-        "1268": "Union Pour la Côte d’Ivoire (UPCI)",
-        "1269": "Parti des Peuples Africains de Côte d’Ivoire (PPA-CI)",
+        "1263": "Union pour la Démocratie et pour la Paix en Côte d'Ivoire (UDPCI)",
+        "1265": "Mouvement des Forces d'Avenir (MFA)",
+        "1268": "Union Pour la Côte d'Ivoire (UPCI)",
+        "1269": "Parti des Peuples Africains de Côte d'Ivoire (PPA-CI)",
         "1270": "Partis Soroïstes (proches de Guillaume Soro)",
         "1300": "Rassemblement du Peuple de Guinée (RPG)",
         "1301": "Union des Forces Démocratiques de Guinée (UFDG)",
         "1302": "Union des Forces Républicaines (UFR)",
-        "1303": "Parti de l’Espoir pour le Développement National (PEDN)",
+        "1303": "Parti de l'Espoir pour le Développement National (PEDN)",
         "1304": "Union pour le Progrès de la Guinée (UPG)",
         "1305": "Rassemblement pour le Développement Intégré de la Guinée (RDIG)",
         "1306": "Bloc Libéral (BL)",
@@ -4019,7 +4019,7 @@
         "1582": "Democratic Current",
         "1583": "Dignity coalition",
         "1584": "Free Constitutional party",
-        "1585": "People’s Movement",
+        "1585": "People's Movement",
         "1589": "Nidaa Tounes",
         "1592": "Afek Tounes",
         "1660": "Acção Democrática Independente (ADI)",
@@ -4053,22 +4053,22 @@
         "1785": "Mouvement Congolais pour la Démocratie et le Développement Intégral (MCDDI)",
         "1787": "Parti Républicain et Libéral (PRL)",
         "1790": "Union des Démocrates Humanistes-YUKI (UDH-YUKI)",
-        "1791": "Mouvement pour l’Unité, la Solidarité et le Travail (MUST)",
-        "1792": "Club 2002 Parti pour l’Unité et la République",
-        "1796": "Parti pour l’Unité, la Liberté et le Progrès (PULP)",
+        "1791": "Mouvement pour l'Unité, la Solidarité et le Travail (MUST)",
+        "1792": "Club 2002 Parti pour l'Unité et la République",
+        "1796": "Parti pour l'Unité, la Liberté et le Progrès (PULP)",
         "1798": "Rassemblement pour la Démocratie et le Développement (RDD)",
         "1799": "Union pour la Reconstruction et le Développement du Congo (URDC)",
         "1800": "Alliance for Patriotic Reorientation and Construction (APRC)",
         "1801": "Gambia Democratic Congress (GDC)",
         "1802": "National Reconciliation Party (NRP)",
-        "1803": "People’s Democratic Organisation for Independence and Socialism (PDOIS)",
-        "1804": "People’s Progressive Party (PPP)",
+        "1803": "People's Democratic Organisation for Independence and Socialism (PDOIS)",
+        "1804": "People's Progressive Party (PPP)",
         "1805": "Gambia Party for Democracy and Progress (GPDP)",
         "1807": "Gambia Action Party (GAP)",
         "1808": "Gambia Moral Congress (GMC)",
         "1809": "United Democratic Party (UDP)",
-        "1810": "Citizens’ Alliance",
-        "1811": "National People’s Party (NPP)",
+        "1810": "Citizens' Alliance",
+        "1811": "National People's Party (NPP)",
         "1812": "Gambia For All (GFA)",
         "1815": "National Unity Party (NUP)",
         "1816": "Democratic Party (DP)",
@@ -4081,7 +4081,7 @@
         "1885": "Alliance pour la Justice et la Démocratie / Mouvement pour la Rénovation (AJD/MR)",
         "1886": "Pacte national pour le développement et la démocratie (ADEL)",
         "1887": "Parti Erribat",
-        "1888": "L’Alliance Populaire Progressiste (APP)",
+        "1888": "L'Alliance Populaire Progressiste (APP)",
         "1889": "Parti El Karama",
         "1890": "Parti ESSAWAB",
         "1891": "Parti HATTEM",
@@ -4092,13 +4092,13 @@
         "9995": "Other",
         "9997": "Not applicable",
         "9998": "Refused",
-        "9999": "Don’t know",
+        "9999": "Don't know",
         "-1": "Missing"
       }
     },
     "Q96": {
       "description": "Vote for which party",
-      "question": "If presidential elections were held tomorrow, which candidate’s party would you vote for?",
+      "question": "If presidential elections were held tomorrow, which candidate's party would you vote for?",
       "values": {
         "100": "Bloc Républicain (BR)",
         "101": "Force Cauris pour un Bénin Emergent (FCBE)",
@@ -4113,7 +4113,7 @@
         "142": "Botswana Democratic Party (BDP)",
         "143": "Botswana Movement for Democracy (BMD)",
         "144": "Botswana National Front (BNF)",
-        "145": "Botswana People’s Party (BPP)",
+        "145": "Botswana People's Party (BPP)",
         "146": "Botswana Patriotic Front (BPF)",
         "148": "Real Alternative Party (RAP)",
         "149": "Umbrella for Democratic Change (UDC)",
@@ -4136,15 +4136,15 @@
         "221": "Partido Africano para a Independência de Cabo Verde (PAICV)",
         "225": "Partido do Trabalho e da Solidariedade (PTS)",
         "226": "União Cabo-verdiana Independente e Democrática (UCID)",
-        "260": "Convention People’s Party (CPP)",
+        "260": "Convention People's Party (CPP)",
         "261": "National Democratic Congress (NDC)",
         "262": "New Patriotic Party (NPP)",
-        "263": "People’s National Convention (PNC)",
-        "264": "Progressive People’s Party (PPP)",
-        "265": "Democratic People’s Party (DPP)",
+        "263": "People's National Convention (PNC)",
+        "264": "Progressive People's Party (PPP)",
+        "265": "Democratic People's Party (DPP)",
         "266": "Great Consolidated Popular Party (GCPP)",
         "267": "National Democratic Party (NDP)",
-        "268": "All People’s Party (APC)",
+        "268": "All People's Party (APC)",
         "300": "Kenya Social Congress (KSC)",
         "301": "NARC – Kenya",
         "302": "Orange Democratic Movement (ODM)",
@@ -4160,7 +4160,7 @@
         "343": "Basotho National Party (BNP)",
         "344": "Popular Front for Democracy (PFD)",
         "345": "National Independent Party (NIP)",
-        "346": "Lesotho People’s Congress (LPC)",
+        "346": "Lesotho People's Congress (LPC)",
         "348": "Marematlou Freedom Party (MFP)",
         "349": "Basotho Congress Party (BCP)",
         "352": "Alliance of Democrats (AD)",
@@ -4176,15 +4176,15 @@
         "388": "Union of Liberian Democrats (ULD)",
         "389": "Coalition for Democratic Change (CDC)",
         "393": "All Liberia Coalition Party (ALCOP)",
-        "394": "Coalition for Liberia’s Progress (CLP)",
+        "394": "Coalition for Liberia's Progress (CLP)",
         "395": "Change Democratic Action (CDA)",
-        "397": "Progressive People’s Party (PPP)",
+        "397": "Progressive People's Party (PPP)",
         "402": "Grassroot Democratic Party of Liberia (GDPL)",
-        "407": "United People’s Party (UPP)",
+        "407": "United People's Party (UPP)",
         "408": "All Liberian Party (ALP)",
         "409": "People Unification Party (PUP)",
         "410": "Alternative National Congress (ANC)",
-        "420": "HVM (Hery Vaovao ho an’i Madagasikara)",
+        "420": "HVM (Hery Vaovao ho an'i Madagasikara)",
         "421": "TIM (Tiako I Madagasikara)",
         "422": "TGV (Tanora malaGasy Vonona)",
         "423": "AREMA (Antoko REvôlisionera Malagasy)",
@@ -4192,7 +4192,7 @@
         "425": "Leader Fanilo",
         "461": "Democratic Progressive Party (DPP)",
         "463": "Malawi Congress Party (MCP)",
-        "467": "People’s Party (PP)",
+        "467": "People's Party (PP)",
         "471": "United Democratic Front (UDF)",
         "475": "UTM",
         "476": "Mbakuwaku Movement for Democracy (MMD)",
@@ -4218,7 +4218,7 @@
         "541": "Renamo (Resistência Nacional de Moçambique)",
         "542": "MDM (Movimento Democrático Moçambicano)",
         "544": "PIMO (Partido Independente Moçambicano)",
-        "580": "APP (All People’s Party)",
+        "580": "APP (All People's Party)",
         "582": "COD (Congress of Democrats)",
         "583": "DPN (Democratic Party of Namibia)",
         "585": "NDP (National Democratic Party)",
@@ -4228,22 +4228,22 @@
         "590": "SWANU (Swanu of Namibia)",
         "591": "SWAPO (SWAPO Party of Namibia)",
         "592": "UDF (United Democratic Front of Namibia)",
-        "593": "UPM (United People’s Movement)",
-        "595": "LPM (Landless People’s Movement)",
+        "593": "UPM (United People's Movement)",
+        "595": "LPM (Landless People's Movement)",
         "596": "PDM (Popular Democratic Movement)",
         "597": "IPC (Independent Patriots for Change)",
         "598": "NEFC (National Empowerment Fighting Corruption)",
         "599": "National Patriotic Front of Namibia",
         "621": "All Progressive Congress (APC)",
         "622": "KOWA Party",
-        "624": "All Nigeria People’s Party (ANPP)",
+        "624": "All Nigeria People's Party (ANPP)",
         "625": "All Progressives Grand Alliance (APGA)",
-        "628": "Conscience People’s Congress (CPC)",
-        "631": "Democratic People’s Party (DPP)",
+        "628": "Conscience People's Congress (CPC)",
+        "631": "Democratic People's Party (DPP)",
         "637": "New Democrats (ND)",
-        "638": "People’s Democratic Party (PDP)",
-        "641": "People’s Redemption Party (PRP)",
-        "642": "People’s Salvation Party (PSP)",
+        "638": "People's Democratic Party (PDP)",
+        "641": "People's Redemption Party (PRP)",
+        "642": "People's Salvation Party (PSP)",
         "645": "Young Professional Party (YPP)",
         "660": "Parti Démocratique Sénégalais (Abdoulaye WADE)",
         "661": "Parti Socialiste",
@@ -4300,7 +4300,7 @@
         "833": "United Party for National Development (UPND)",
         "860": "Citizens Coalition for Change - CCC] - Chamisa",
         "861": "Zimbabwe African National Union - Patriotic Front (ZANU-PF)",
-        "862": "Zimbabwe African People’s Union (ZAPU)",
+        "862": "Zimbabwe African People's Union (ZAPU)",
         "863": "Movement for Democratic Change (MDC-T) - Mwonzora",
         "864": "National Patriotic Front (NPF)",
         "865": "Movement for Democratic Change - MDC-T - Khupe",
@@ -4315,17 +4315,17 @@
         "910": "Front Patriotique Rodriguais Ecologique (FPRE)",
         "911": "Rezistans ek Alternativ",
         "912": "UPR",
-        "930": "Sierra Leone People’s Party (SLPP)",
-        "931": "All People’s Congress (APC)",
+        "930": "Sierra Leone People's Party (SLPP)",
+        "931": "All People's Congress (APC)",
         "936": "Coalition for Change Party (C4C)",
         "937": "National Grand Coalition (NGC)",
-        "944": "People’s Democratic Party (PDP)",
+        "944": "People's Democratic Party (PDP)",
         "1100": "Alliance Nigérienne pour la Démocratie et le Progrès (ANDP Zaman Lahiya)",
         "1101": "Convention Démocratique et Sociale (CDS Rahama)",
         "1102": "Mouvement National pour la Société de Développement (MNSD Nassara)",
         "1103": "Mouvement Démocratique Nigérien pour une Fédération Africaine (MODEN FA Lumana)",
         "1104": "Parti Nigérien pour la Démocratie et le Socialisme (PNDS Tarayya)",
-        "1105": "Parti Nigérien pour l’Auto gestion (PNA Al’Oumat)",
+        "1105": "Parti Nigérien pour l'Auto gestion (PNA Al'Oumat)",
         "1107": "Rassemblement Social Démocrate (RSD Gaskia)",
         "1109": "CPR – INGANCI",
         "1110": "MPR JAMHURIA",
@@ -4335,7 +4335,7 @@
         "1140": "Alliance des Démocrates pour le Développement Intégral (ADDI)",
         "1141": "Alliance Nationale pour le Changement (ANC)",
         "1142": "Dynamique Monseigneur Kpodzro (DMK)",
-        "1143": "Comité d’Action pour le Renouveau (CAR)",
+        "1143": "Comité d'Action pour le Renouveau (CAR)",
         "1145": "Mouvement Patriotique pour la Démocratie et le Développement (MPDD)",
         "1146": "Parti National Panafricain (PNP)",
         "1148": "Union pour la Démocratie et le Progrès Social (UDPS)",
@@ -4350,16 +4350,16 @@
         "1225": "Union des Populations du Cameroun (UPC)",
         "1226": "Parti Camerounais pour la Réconciliation Nationale (PCRN)",
         "1260": "Rassemblement des Houphouétistes pour la Démocratie et la Paix (RHDP)",
-        "1261": "Parti Démocratique de Côte d’Ivoire (PDCI)",
+        "1261": "Parti Démocratique de Côte d'Ivoire (PDCI)",
         "1262": "Front Populaire Ivoirien (FPI)",
-        "1263": "Union pour la Démocratie et pour la Paix en Côte d’Ivoire (UDPCI)",
-        "1265": "Mouvement des Forces d’Avenir (MFA)",
-        "1269": "Parti des Peuples Africains de Côte d’Ivoire (PPA-CI)",
+        "1263": "Union pour la Démocratie et pour la Paix en Côte d'Ivoire (UDPCI)",
+        "1265": "Mouvement des Forces d'Avenir (MFA)",
+        "1269": "Parti des Peuples Africains de Côte d'Ivoire (PPA-CI)",
         "1270": "Partis Soroïstes",
         "1300": "Rassemblement du Peuple de Guinée (RPG)",
         "1301": "Union des Forces Démocratiques de Guinée (UFDG)",
         "1302": "Union des Forces Républicaines (UFR)",
-        "1303": "Parti de l’Espoir pour le Développement National (PEDN)",
+        "1303": "Parti de l'Espoir pour le Développement National (PEDN)",
         "1304": "Union pour le Progrès de la Guinée (UPG)",
         "1306": "Bloc Libéral (BL)",
         "1308": "Mamadi Doumbouya",
@@ -4393,7 +4393,7 @@
         "1581": "Qalb Tounes",
         "1582": "Freedom Destourian Party",
         "1584": "Dignity Coalition",
-        "1585": "People’s Movement",
+        "1585": "People's Movement",
         "1590": "Nidaa Tounes",
         "1591": "Afek Tounes",
         "1592": "Kais Saied",
@@ -4432,20 +4432,20 @@
         "1788": "La Chaîne",
         "1789": "Union pour la Restauration du Congo (URC)",
         "1790": "Union des Démocrates Humanistes-YUKI (UDH-YUKI)",
-        "1791": "Mouvement pour l’Unité, la Solidarité et le Travail (MUST)",
-        "1792": "Club 2002 Parti pour l’Unité et la République",
+        "1791": "Mouvement pour l'Unité, la Solidarité et le Travail (MUST)",
+        "1792": "Club 2002 Parti pour l'Unité et la République",
         "1793": "Union Patriotique pour la Démocratie et le Progrès (UPDP)",
         "1800": "Alliance for Patriotic Reorientation and Construction (APRC)",
         "1801": "Gambia Democratic Congress (GDC)",
         "1802": "National Reconciliation Party (NRP)",
-        "1803": "People’s Democratic Organisation for Independence and Socialism (PDOIS)",
-        "1804": "People’s Progressive Party (PPP)",
+        "1803": "People's Democratic Organisation for Independence and Socialism (PDOIS)",
+        "1804": "People's Progressive Party (PPP)",
         "1806": "National Convention Party (NCP)",
         "1807": "Gambia Action Party (GAP)",
         "1808": "Gambia Moral Congress (GMC)",
         "1809": "United Democratic Party (UDP)",
-        "1810": "Citizens’ Alliance (CA)",
-        "1811": "National People’s Party (NPP)",
+        "1810": "Citizens' Alliance (CA)",
+        "1811": "National People's Party (NPP)",
         "1812": "Gambia For All (GFA)",
         "1815": "National Unity Party (NUP)",
         "1817": "Alliance for National Re-orientation and Development (ANRD)",
@@ -4457,7 +4457,7 @@
         "1884": "Union pour la Démocratie et le Progrès (UDP)",
         "1885": "Alliance pour la Justice et la Démocratie / Mouvement pour la Rénovation (AJD/MR)",
         "1887": "Parti Erribat",
-        "1888": "L’Alliance Populaire Progressiste (APP)",
+        "1888": "L'Alliance Populaire Progressiste (APP)",
         "1889": "Parti El Karama",
         "1890": "Parti El-Moustakbal",
         "1891": "Parti ESSAWAB",
@@ -4469,13 +4469,13 @@
         "9995": "Other",
         "9997": "Would not vote",
         "9998": "Refused",
-        "9999": "Don’t know",
+        "9999": "Don't know",
         "-1": "Missing"
       }
     },
     "Q96OTHER": {
       "description": "Vote for which party (verbatim)",
-      "question": "If presidential elections were held tomorrow, which party’s candidate would you vote for?",
+      "question": "If presidential elections were held tomorrow, which party's candidate would you vote for?",
       "values": "String variable"
     }
   },
@@ -4666,14 +4666,14 @@
     },
     "Q13": {
       "description": "Voting in the most recent national election",
-      "question": "In the last national election, did you vote, or not, or were you too young to vote? Or can’t you remember whether you voted?",
+      "question": "In the last national election, did you vote, or not, or were you too young to vote? Or can't you remember whether you voted?",
       "values": {
         "0": "I did not vote",
         "1": "I was too young to vote",
-        "2": "I can’t remember whether I voted",
+        "2": "I can't remember whether I voted",
         "3": "I voted in the election",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4686,7 +4686,7 @@
         "3": "Free and fair, but with minor problems",
         "4": "Completely free and fair",
         "8": "Do not understand the question",
-        "9": "Don’t know",
+        "9": "Don't know",
         "98": "Refused",
         "-1": "Missing"
       }
@@ -4700,7 +4700,7 @@
         "2": "Somewhat likely",
         "3": "Very likely",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4713,13 +4713,13 @@
         "2": "A little bit",
         "3": "Not at all",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q15": {
       "description": "Government bans organizations vs join any",
-      "question": "Let’s talk for a moment about the kind of society you would like to have in this country. Which of the following statements is closest to your view? Statement 1: The government should be able to ban any organization that goes against its policies. Statement 2: We should be able to join any organization, whether or not the government approves of it.",
+      "question": "Let's talk for a moment about the kind of society you would like to have in this country. Which of the following statements is closest to your view? Statement 1: The government should be able to ban any organization that goes against its policies. Statement 2: We should be able to join any organization, whether or not the government approves of it.",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -4727,7 +4727,7 @@
         "4": "Strongly agree with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4741,7 +4741,7 @@
         "4": "Strongly agree with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4755,7 +4755,7 @@
         "4": "Strongly agree with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4769,13 +4769,13 @@
         "4": "Strongly agree with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q19A": {
       "description": "Government like a boss vs like an employee",
-      "question": "Which of the following statements is closest to your view? Statement 1: The government is like the people’s boss. People should respect the government and do what it directs. Statement 2: The government is like the people’s employee. It should respect the citizens and do what they request.",
+      "question": "Which of the following statements is closest to your view? Statement 1: The government is like the people's boss. People should respect the government and do what it directs. Statement 2: The government is like the people's employee. It should respect the citizens and do what they request.",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -4783,13 +4783,13 @@
         "4": "Strongly agree with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q19B": {
       "description": "Elected officials follow voter demands vs follow own ideas",
-      "question": "Which of the following statements is closest to your view? Choose Statement 1 or Statement 2. Statement 1: Statement 1: Our elected officials should listen to voters’ views and do what they demand. Statement 2: Our elected leaders should follow their own ideas in deciding what is best for the country.",
+      "question": "Which of the following statements is closest to your view? Choose Statement 1 or Statement 2. Statement 1: Statement 1: Our elected officials should listen to voters' views and do what they demand. Statement 2: Our elected leaders should follow their own ideas in deciding what is best for the country.",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -4797,7 +4797,7 @@
         "4": "Strongly agree with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4811,7 +4811,7 @@
         "4": "Strongly agree with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4825,7 +4825,7 @@
         "4": "Agree",
         "5": "Strongly agree",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4839,7 +4839,7 @@
         "4": "Agree",
         "5": "Strongly agree",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4853,7 +4853,7 @@
         "4": "Approve",
         "5": "Strongly approve",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4867,7 +4867,7 @@
         "4": "Approve",
         "5": "Strongly approve",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4881,25 +4881,25 @@
         "4": "Approve",
         "5": "Strongly approve",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q23": {
       "description": "Support for democracy",
-      "question": "Which of these three statements is closest to your own opinion? Statement 1: Democracy is preferable to any other kind of government. Statement 2: In some circumstances, a non-democratic government can be preferable. Statement 3: For someone like me, it doesn’t matter what kind of government we have.",
+      "question": "Which of these three statements is closest to your own opinion? Statement 1: Democracy is preferable to any other kind of government. Statement 2: In some circumstances, a non-democratic government can be preferable. Statement 3: For someone like me, it doesn't matter what kind of government we have.",
       "values": {
-        "1": "Doesn’t matter",
+        "1": "Doesn't matter",
         "2": "Sometimes non-democratic preferable",
         "3": "Democracy preferable",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q24": {
       "description": "Choose leaders through elections vs other methods",
-      "question": "Which of the following statements is closest to your view? Statement 1: We should choose our leaders in this country through regular, open, and honest elections. Statement 2: Since elections sometimes produce bad results, we should adopt other methods for choosing this country’s leaders.",
+      "question": "Which of the following statements is closest to your view? Statement 1: We should choose our leaders in this country through regular, open, and honest elections. Statement 2: Since elections sometimes produce bad results, we should adopt other methods for choosing this country's leaders.",
       "values": {
         "1": "Agree very strongly with Statement 1",
         "2": "Agree with Statement 1",
@@ -4907,7 +4907,7 @@
         "4": "Agree very strongly with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4921,13 +4921,13 @@
         "4": "Agree very strongly with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q26": {
       "description": "Democracy needs political party turnover vs ok if one party always wins",
-      "question": "Which of the following statements is closest to your view? Statement 1: In a democracy, it is better if power sometimes changes hands in elections from one political party to another. Statement 2: In a democracy, as long as a government is elected by the people in a free and fair election, it doesn’t matter if one party always wins and continuously governs the country.",
+      "question": "Which of the following statements is closest to your view? Statement 1: In a democracy, it is better if power sometimes changes hands in elections from one political party to another. Statement 2: In a democracy, as long as a government is elected by the people in a free and fair election, it doesn't matter if one party always wins and continuously governs the country.",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -4935,7 +4935,7 @@
         "4": "Strongly agree with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4949,13 +4949,13 @@
         "4": "Strongly agree with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q27B": {
       "description": "President monitored by parliament vs free to act on own",
-      "question": "Which of the following statements is closest to your view? Statement 1: Parliament should ensure that the president explains to it on a regular basis how their government spends taxpayers’ money. Statement 2: The president should be able to devote full attention to developing the country rather than wasting time justifying their actions.",
+      "question": "Which of the following statements is closest to your view? Statement 1: Parliament should ensure that the president explains to it on a regular basis how their government spends taxpayers' money. Statement 2: The president should be able to devote full attention to developing the country rather than wasting time justifying their actions.",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -4963,7 +4963,7 @@
         "4": "Strongly agree with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4977,7 +4977,7 @@
         "4": "Strongly agree with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -4991,13 +4991,13 @@
         "4": "Strongly agree with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q29B": {
       "description": "Armed forces never intervene vs when leaders abuse power",
-      "question": "Which of the following statements is closest to your view?\nStatement 1: The country’s armed forces should never intervene in the country’s political process.\nStatement 2: It is legitimate for the armed forces to take control of government when elected leaders abuse power for their own ends.",
+      "question": "Which of the following statements is closest to your view?\nStatement 1: The country's armed forces should never intervene in the country's political process.\nStatement 2: It is legitimate for the armed forces to take control of government when elected leaders abuse power for their own ends.",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -5005,7 +5005,7 @@
         "4": "Strongly agree with Statement 2",
         "5": "Agree with neither",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5017,8 +5017,8 @@
         "2": "A democracy, with major problems",
         "3": "A democracy, but with minor problems",
         "4": "A full democracy",
-        "8": "Do not understand question/do not understand what ‘democracy’ is",
-        "9": "Don’t know",
+        "8": "Do not understand question/do not understand what 'democracy' is",
+        "9": "Don't know",
         "98": "Refused",
         "-1": "Missing"
       }
@@ -5033,7 +5033,7 @@
         "3": "Fairly satisfied",
         "4": "Very satisfied",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5047,13 +5047,13 @@
         "4": "Somewhat more democratic",
         "5": "Much more democratic",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q32B": {
-      "description": "Level of democracy in five years’ time",
-      "question": "Do you think that in five years’ time this country will be more democratic than it is now, less democratic, or about the same?",
+      "description": "Level of democracy in five years' time",
+      "question": "Do you think that in five years' time this country will be more democratic than it is now, less democratic, or about the same?",
       "values": {
         "1": "Much less democratic",
         "2": "Somewhat less democratic",
@@ -5061,7 +5061,7 @@
         "4": "Somewhat more democratic",
         "5": "Much more democratic",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5074,7 +5074,7 @@
         "2": "Often",
         "3": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5087,7 +5087,7 @@
         "2": "Often",
         "3": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5100,7 +5100,7 @@
         "2": "Often",
         "3": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5113,7 +5113,7 @@
         "2": "Often",
         "3": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5126,7 +5126,7 @@
         "2": "Often",
         "3": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5139,7 +5139,7 @@
         "2": "Often",
         "3": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5152,7 +5152,7 @@
         "2": "Often",
         "3": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5165,7 +5165,7 @@
         "2": "Somewhat free",
         "3": "Completely free",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5178,7 +5178,7 @@
         "2": "Often",
         "3": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5191,7 +5191,7 @@
         "2": "Often",
         "3": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5204,13 +5204,13 @@
         "2": "Often",
         "3": "Always",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
     "Q77": {
       "description": "Perceived influence of China's economic activities on the national economy",
-      "question": "How much influence do you think China’s economic activities in this country have on our economy?",
+      "question": "How much influence do you think China's economic activities in this country have on our economy?",
       "values": {
         "0": "None",
         "1": "A little",
@@ -5300,7 +5300,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -5313,7 +5313,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -5326,7 +5326,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -5339,7 +5339,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -5352,7 +5352,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -5365,7 +5365,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -5378,7 +5378,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -5391,7 +5391,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -5404,7 +5404,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -5417,7 +5417,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -5430,7 +5430,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know/Haven’t heard enough",
+        "9": "Don't know/Haven't heard enough",
         "-1": "Missing"
       }
     },
@@ -5444,7 +5444,7 @@
         "3": "The voters",
         "4": "No one",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5458,7 +5458,7 @@
         "3": "The voters",
         "4": "No one",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     }
@@ -5474,7 +5474,7 @@
         "3": "Always",
         "7": "Not applicable",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5488,7 +5488,7 @@
         "4": "Agree",
         "5": "Strongly agree",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5501,7 +5501,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5514,7 +5514,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5527,7 +5527,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5540,7 +5540,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5553,7 +5553,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5566,7 +5566,7 @@
         "2": "Somewhat",
         "3": "A lot",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5580,7 +5580,7 @@
         "4": "Somewhat like",
         "5": "Strongly like",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5594,7 +5594,7 @@
         "4": "Somewhat like",
         "5": "Strongly like",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5608,7 +5608,7 @@
         "4": "Somewhat like",
         "5": "Strongly like",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5622,7 +5622,7 @@
         "4": "Somewhat like",
         "5": "Strongly like",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5636,7 +5636,7 @@
         "4": "Somewhat like",
         "5": "Strongly like",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5650,7 +5650,7 @@
         "4": "Somewhat like",
         "5": "Strongly like",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     },
@@ -5664,7 +5664,7 @@
         "4": "Agree",
         "5": "Strongly agree",
         "8": "Refused",
-        "9": "Don’t know",
+        "9": "Don't know",
         "-1": "Missing"
       }
     }
@@ -5752,7 +5752,7 @@
       }
     },
     "Q51B": {
-      "description": "Most important women’s rights issue that government should address",
+      "description": "Most important women's rights issue that government should address",
       "question": "Which women's rights and equality issues is the most important for the government and society to address?",
       "values": {
         "0": "None of these/There are no issues for government to address",
@@ -5781,7 +5781,7 @@
     },
     "Q52B": {
       "description": "Justification of a man using physical discipline on his wife",
-      "question": "Do you think it is justified for a man to use physical discipline on his wife if she has done something he doesn’t like or thinks is wrong?",
+      "question": "Do you think it is justified for a man to use physical discipline on his wife if she has done something he doesn't like or thinks is wrong?",
       "values": {
         "1": "Always justified",
         "2": "Sometimes justified",
