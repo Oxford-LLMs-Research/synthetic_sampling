@@ -1897,6 +1897,12 @@
         "99": "Refused to answer"
       }
     },
+    "Q104A_1": {
+      "description": "Reasons for emigrating (open-response)",
+      "question": "What are the main reasons you have thought about emigrating?",
+      "values": {},
+      "notes": "Open-response text."
+    },
     "Q104A_2": {
       "description": "Reasons for emigrating (coded)",
       "question": "What are the main reasons you have thought about emigrating?",
@@ -1912,7 +1918,7 @@
         "98": "Don't know",
         "99": "Refused to answer"
       },
-      "notes": "Excludes Q104A_1 open-response text; kept only post-coded multiple-response variable."
+      "notes": "Same question like Q104A_1 but now post-coded multiple-response variable."
     },
     "Q104B": {
       "description": "Destination country for emigration",
@@ -2318,6 +2324,252 @@
         "98": "Don't know",
         "99": "Refused to answer"
       }
+    },
+    "Q867A": {
+      "description": "Life quality vs parents",
+      "question": "Do you think your life quality is better than, the same as, or worse than your parents' life quality?",
+      "values": {
+        "1": "Better",
+        "2": "Same",
+        "3": "Worse",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q867B": {
+      "description": "Life quality vs children",
+      "question": "Do you think your children's life quality will be better than, the same as, or worse than your own life quality?",
+      "values": {
+        "1": "Better",
+        "2": "Same",
+        "3": "Worse",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q872C": {
+      "description": "Interviewer: race explanation in Q872B",
+      "question": "Did the respondent ask you to explain what 'race' was in Q872B?",
+      "values": {
+        "1": "Yes",
+        "2": "No"
+      }
+    },
+    "Q872A": {
+      "description": "Discrimination in your country (split A)",
+      "question": "To what extent do you believe racial discrimination is a serious problem in your country?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Intro clause for COUNTRY==15: 'Other than discrimination by Israel in the West Bank and Gaza'"
+    },
+    "Q872B": {
+      "description": "Discrimination by race/ethnicity in your country",
+      "question": "Do you believe discrimination on the basis of race or ethnicity is a serious problem in your country?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q872C_PAL": {
+      "description": "Discrimination in WB&G by Israelis",
+      "question": "To what extent do you believe racial discrimination by Israelis against Palestinians is a serious problem in the West Bank and Gaza?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "IF COUNTRY==15"
+    },
+    "Q873": {
+      "description": "Discrimination factors",
+      "question": "In your opinion, do people in your country experience discrimination? Please indicate all that apply.",
+      "values": {
+        "1": "Socioeconomic class",
+        "2": "The region you are from",
+        "3": "Skin color",
+        "4": "Race or ethnicity",
+        "5": "Nationality",
+        "6": "Religion",
+        "7": "Gender",
+        "8": "Tribe",
+        "9": "Age",
+        "10": "Sexual orientation",
+        "11": "Disability status",
+        "12": "Migration status",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q879": {
+      "description": "Most widespread form of discrimination",
+      "question": "Which of these is the most widespread form of discrimination in your country?",
+      "values": {
+        "1": "Socioeconomic class",
+        "2": "The region you are from",
+        "3": "Skin color",
+        "4": "Race or ethnicity",
+        "5": "Nationality",
+        "6": "Religion",
+        "7": "Gender",
+        "8": "Tribe",
+        "9": "Age",
+        "10": "Sexual orientation",
+        "11": "Disability status",
+        "12": "Migration status",
+        "13": "None of these",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Show only categories selected in Q873"
+    },
+    "Q881A": {
+      "description": "Discrimination circumstances",
+      "question": "Thinking about people who face discrimination, in which of the following circumstances do you think they have faced discrimination? Please indicate all that apply.",
+      "values": {
+        "1": "Finding employment",
+        "2": "Finding housing",
+        "3": "Accessing public education",
+        "4": "Accessing healthcare",
+        "5": "Using public transportation",
+        "6": "Dining in a restaurant",
+        "7": "Using banks or financial services",
+        "8": "None of these",
+        "90": "Other- specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q881B": {
+      "description": "Forms of Discrimination",
+      "question": "Thinking about people who face discrimination, what do they experience? Please indicate all that apply.",
+      "values": {
+        "1": "Subjected to verbal insults or hate speech",
+        "2": "Subjected to offensive jokes",
+        "3": "Assumed to be untrustworthy or dishonest",
+        "4": "Assumed to be less smart",
+        "5": "Have others dismiss or devalue their contributions",
+        "6": "Have others deny that they face more hardships",
+        "7": "Are treated as if they are inferior",
+        "8": "None of these",
+        "98": "Don't know",
+        "90": "Other- specify",
+        "99": "Refused to answer"
+      }
+    },
+    "Q882": {
+      "description": "Past-year discrimination",
+      "question": "In the past year, have you personally faced discrimination?",
+      "values": {
+        "1": "Yes, frequently",
+        "2": "Yes, sometimes",
+        "3": "Yes, but rarely",
+        "4": "No, never",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "Q883": {
+      "description": "Main discrimination reason",
+      "question": "In your opinion, what is the main reason for being discriminated against? Please choose one.",
+      "values": {
+        "1": "Socioeconomic class",
+        "2": "The region you are from",
+        "3": "Skin color",
+        "4": "Race or ethnicity",
+        "5": "Nationality",
+        "6": "Religion",
+        "7": "Gender",
+        "8": "Tribe",
+        "9": "Age",
+        "10": "Sexual orientation",
+        "11": "Disability status",
+        "12": "Migration status",
+        "90": "Other- specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Option 8 (when COUNTRY==7,8,9) and 10 (when COUNTRY==10,21) conditional on COUNTRY values in source"
+    },
+    "Q884A": {
+      "description": "Personal Discrimination circumstances",
+      "question": "In which of the following circumstances have you faced discrimination? Please indicate all that apply.",
+      "values": {
+        "1": "Finding employment",
+        "2": "Finding housing",
+        "3": "Accessing public education",
+        "4": "Accessing healthcare",
+        "5": "Using public transportation",
+        "6": "Dining in a restaurant",
+        "7": "Using banks or financial services",
+        "8": "None of these",
+        "90": "Other- specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Show option 8 only if no other option selected"
+    },
+    "Q884B": {
+      "description": "Personal Discrimination forms",
+      "question": "Thinking about discrimination you personally have faced, have you experienced any of the following? Please indicate all that apply.",
+      "values": {
+        "1": "Been subjected to verbal insults or hate speech",
+        "2": "Been subjected to offensive jokes",
+        "3": "Been assumed to be untrustworthy or dishonest",
+        "4": "Been assumed to be less smart",
+        "5": "Have others deny that you face more hardships",
+        "6": "Have others dismiss or devalue your contributions",
+        "7": "Been treated as if you are inferior",
+        "8": "None of these",
+        "98": "Don't know",
+        "90": "Other- specify",
+        "99": "Refused to answer"
+      }
+    },
+    "Q885": {
+      "description": "Government action on discrimination",
+      "question": "Do you think our national government should do more, less, or about the same amount as it is doing right now to deal with discrimination in your country?",
+      "values": {
+        "1": "More",
+        "2": "Less",
+        "3": "About the same",
+        "97": "Discrimination is not a problem",
+        "98": "Don't know",
+        "99": "Decline to answer"
+      }
+    },
+    "Q886": {
+      "description": "Travel discrimination basis outside MENA",
+      "question": "When citizens from your country travel outside the Middle East and North Africa, on what basis, if any, do you think they are likely to face discrimination?",
+      "values": {
+        "1": "Socioeconomic class",
+        "2": "NULL",
+        "3": "Skin color",
+        "4": "Race or ethnicity",
+        "5": "Nationality",
+        "6": "Religion",
+        "7": "Gender",
+        "8": "Age",
+        "9": "Sexual orientation",
+        "10": "Disability status",
+        "11": "They will not face discrimination.",
+        "90": "Other- specify",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Note: Sexual orientation option is conditional COUNTRY==10,21 ONLY"
     }
   },
   "SECTION VII: CLIMATE CHANGE & THE ENVIRONMENT": {
@@ -4124,6 +4376,182 @@
         "98": "Don't know",
         "99": "Refused to answer"
       }
+    },
+    "QGAZA1": {
+      "description": "Perception acts of terrorism",
+      "question": "From the following list of actions, which would you describe as an \"act of terrorism\"?",
+      "values": {
+        "1": "Israel's blockade of Gaza since 2007",
+        "2": "Hamas's launching of rockets into Israel, killing civilians",
+        "3": "Israel's bombing of Gaza, killing civilians",
+        "4": "Hamas's attacks on and killing of civilians in Israeli towns bordering Gaza",
+        "5": "Israel's demand that more than a million Gazan civilians leave the northern cities in the Gaza Strip",
+        "6": "Hamas's kidnapping and taking hostage more than 200 Israeli civilians",
+        "7": "Israel's cutting off the electricity and water supply and assault on civilian infrastructure in Gaza",
+        "8": "Hezbollah's attacks in Northern Israel",
+        "9": "Israel's strikes in Syria targeting Iran and its regional proxies",
+        "10": "Iran's sending weapons to Hezbollah and Hamas",
+        "11": "Israel's strikes in Lebanon",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Option 9 only if COUNTRY==9"
+    },
+    "QGAZA2": {
+      "description": "Gaza events term",
+      "question": "In your opinion, which of the following terms best describes the latest events in Gaza?",
+      "values": {
+        "1": "War",
+        "2": "Mass killing",
+        "3": "Conflict",
+        "4": "Ethnic cleansing",
+        "5": "Hostilities",
+        "6": "Massacre",
+        "7": "Genocide",
+        "90": "Other (SPECIFY)",
+        "97": "All of these terms",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QGAZA3A": {
+      "description": "Two-state commitment",
+      "question": "In your opinion, to what extent do you believe that the Israeli government is committed to a two-state solution that equally preserves the rights and security of both Israelis and Palestinians?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QGAZA3B": {
+      "description": "Two-state commitment (public)",
+      "question": "In your opinion, to what extent do you believe that the Israeli public is committed to a two-state solution that equally preserves the rights and security of both Israelis and Palestinians?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QGAZA4A": {
+      "description": "Palestinian leadership commitment",
+      "question": "In your opinion, to what extent do you believe that Palestinian leadership is committed to a two-state solution that equally preserves the rights and security of both Israelis and Palestinians?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QGAZA4B": {
+      "description": "Palestinian public commitment",
+      "question": "In your opinion, to what extent do you believe that Palestinian public is committed to a two-state solution that equally preserves the rights and security of both Israelis and Palestinians?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
+    },
+    "QGAZA5A": {
+      "description": "Palestinian rights",
+      "question": "Among the following parties, who do you believe is committed to defending Palestinian rights?",
+      "values": {
+        "1": "United States",
+        "2": "China",
+        "3": "Russia",
+        "4": "Saudi Arabia",
+        "5": "Qatar",
+        "6": "United Arab Emirates",
+        "7": "Turkey",
+        "8": "European Union",
+        "9": "United Nations",
+        "10": "Jordan",
+        "11": "Egypt",
+        "12": "Other"
+      },
+      "notes": "Fill in option 12 with COUNTRY. Changed \"12\": \"YOUR COUNTRY\" to \"12\": \"Other\" (COUNTRY!=8)"
+    },
+    "QGAZA5A2": {
+      "description": "Palestinian rights (Iran)",
+      "question": "And then among the following parties, who do you believe is committed to defending Palestinian rights?",
+      "values": {
+        "1": "Iran",
+        "2": "South Africa",
+        "3": "Germany",
+        "4": "France",
+        "5": "None of these parties",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Question only IF COUNTRY==7"
+    },
+    "QGAZA5B": {
+      "description": "Israeli rights",
+      "question": "Among the following parties, who do you believe is committed to defending Israeli rights?",
+      "values": {
+        "1": "United States",
+        "2": "China",
+        "3": "Russia",
+        "4": "Saudi Arabia",
+        "5": "Qatar",
+        "6": "United Arab Emirates",
+        "7": "Turkey",
+        "8": "European Union",
+        "9": "United Nations",
+        "10": "Jordan",
+        "11": "Egypt",
+        "12": "Other",
+        "91": "None of these parties",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+        "notes": "Fill in option 12 with COUNTRY. Changed \"12\": \"YOUR COUNTRY\" to \"12\": \"Other\" (COUNTRY!=8)"
+    },
+    "QGAZA5C": {
+      "description": "Brokered peace",
+      "question": "Who among the following parties do you believe is suited to broker a political solution that would be fair to both Palestinians and Israelis?",
+      "values": {
+        "1": "United States",
+        "2": "China",
+        "3": "Russia",
+        "4": "Saudi Arabia",
+        "5": "Qatar",
+        "6": "United Arab Emirates",
+        "7": "Turkey",
+        "8": "European Union",
+        "9": "United Nations",
+        "10": "Jordan",
+        "11": "Egypt",
+        "12": "Other",
+        "13": "Iran",
+        "91": "None of these parties",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Fill in option 12 with COUNTRY. Changed \"12\": \"YOUR COUNTRY\" to \"12\": \"Other\" (COUNTRY!=8). Only show option 13 if COUNTRY==7."
+    },
+    "QGAZA6": {
+      "description": "Use of conflict for reform",
+      "question": "In your opinion, to what extent do you believe the government of your country uses the Palestinian-Israeli conflict as a justification for the lack of reform?",
+      "values": {
+        "1": "To a great extent",
+        "2": "To a medium extent",
+        "3": "To a small extent",
+        "4": "Not at all",
+        "98": "Don't know",
+        "99": "Refused to answer"
+      },
+      "notes": "Only ask if COUNTRY!=9"
     }
   },
   "SECTION XI: COUNTRY -SPECIFIC QUESTIONS": {
@@ -5222,6 +5650,14 @@
         "99": "Refused to answer"
       }
     },
+    "Q1014A": {
+      "description": "Adults working",
+      "question": "How many adults aged 18 years and over in your household work?",
+      "values": {
+        "99": "Refused to answer"
+      },
+      "notes": "Main response is an integer count; only special codes are listed here."
+    },
     "Q1014B": {
       "description": "Number of working youth in household",
       "question": "How many youth under the age of 18 living in your household work?",
@@ -5230,6 +5666,14 @@
         "99": "Refused to answer"
       },
       "notes": "Main response is an integer count; only special codes are listed here."
+    },
+    "Q1015": {
+      "description": "Monthly household income",
+      "question": "What is your monthly household income in local currency?",
+      "values": {
+        "98": "Don't know",
+        "99": "Refused to answer"
+      }
     },
     "Q1015A": {
       "description": "Income relative to median",
@@ -5240,7 +5684,7 @@
         "98": "Don't know",
         "99": "Refused to answer"
       },
-      "notes": "Median income value is country-specific and inserted by programmer."
+      "notes": "Conditional follow-up: asked only if Q1015 equals 98 or 99. Median income value is country-specific and inserted by programmer."
     },
     "Q1016": {
       "description": "Income sufficiency",
