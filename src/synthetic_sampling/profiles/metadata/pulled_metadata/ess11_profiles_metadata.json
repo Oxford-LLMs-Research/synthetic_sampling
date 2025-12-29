@@ -5879,6 +5879,25 @@
         "99": "No answer"
       }
     },
+    "hinctnta": {
+      "description": "Household net income decile",
+      "question": "Where does your household's total income (from all sources, after taxes and compulsory deductions) fall in your country's income distribution?",
+      "values": {
+        "1": "Low income",
+        "2": "Low income",
+        "3": "Lower-middle income",
+        "4": "Lower-middle income",
+        "5": "Middle income",
+        "6": "Middle income",
+        "7": "Upper-middle income",
+        "8": "Upper-middle income",
+        "9": "High income",
+        "10": "High income",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
     "edulvlpb": {
       "description": "Partner's highest education level",
       "question": "What is the highest level of education your partner has completed?",
@@ -12748,7 +12767,7 @@
       }
     }
   },
-  "media_information_sources": {
+  "other": {
     "nwspol": {
       "description": "Time spent on political news",
       "question": "On a typical day, about how much time do you spend watching, reading, or listening to news about politics and current affairs?",
@@ -12771,9 +12790,7 @@
         "8": "Don't know",
         "9": "No answer"
       }
-    }
-  },
-  "other": {
+    },
     "netustm": {
       "description": "Daily internet time",
       "question": "On a typical day, about how many hours do you spend using the internet on any device (computer, tablet, or smartphone) for work or personal use?",
@@ -14317,13 +14334,13 @@
       "description": "Impact of gender parity",
       "question": "In general, how good or bad would it be for politics in this country if women and men were equally represented in political leadership?",
       "values": {
-        "0": "Very bad for politics in [country]",
-        "1": "Somewhat bad for politics in [country]",
-        "2": "Somewhat bad for politics in [country]",
-        "3": "Neither bad nor good for politics in [country]",
-        "4": "Somewhat good for politics in [country]",
-        "5": "Somewhat good for politics in [country]",
-        "6": "Very good for politics in [country]",
+        "0": "Very bad for politics",
+        "1": "Somewhat bad for politics",
+        "2": "Somewhat bad for politics",
+        "3": "Neither bad nor good for politics",
+        "4": "Somewhat good for politics",
+        "5": "Somewhat good for politics",
+        "6": "Very good for politics",
         "7": "Refusal",
         "8": "Don't know",
         "9": "No answer"
@@ -14751,13 +14768,13 @@
       "description": "Impact on family life",
       "question": "Overall, how good or bad is it for family life in this country if equal numbers of women and men are in paid work?",
       "values": {
-        "0": "Very bad for family life in [country]",
-        "1": "Somewhat bad for family life in [country]",
-        "2": "Somewhat bad for family life in [country]",
-        "3": "Neither bad nor good for family life in [country]",
-        "4": "Somewhat good for family life in [country]",
-        "5": "Somewhat good for family life in [country]",
-        "6": "Very good for family life in [country]",
+        "0": "Very bad for family life",
+        "1": "Somewhat bad for family life",
+        "2": "Somewhat bad for family life",
+        "3": "Neither bad nor good for family life",
+        "4": "Somewhat good for family life",
+        "5": "Somewhat good for family life",
+        "6": "Very good for family life",
         "7": "Refusal",
         "8": "Don't know",
         "9": "No answer"
@@ -16739,13 +16756,13 @@
       "description": "Economic impact of equal pay",
       "question": "How good or bad for the economy in this country would it be if women and men received equal pay for doing the same work?",
       "values": {
-        "0": "Very bad for the economy in [country]",
-        "1": "Somewhat bad for the economy in [country]",
-        "2": "Somewhat bad for the economy in [country]",
-        "3": "Neither bad nor good for the economy in [country]",
-        "4": "Somewhat good for the economy in [country]",
-        "5": "Somewhat good for the economy in [country]",
-        "6": "Very good for the economy in [country]",
+        "0": "Very bad for the economy",
+        "1": "Somewhat bad for the economy",
+        "2": "Somewhat bad for the economy",
+        "3": "Neither bad nor good for the economy",
+        "4": "Somewhat good for the economy",
+        "5": "Somewhat good for the economy",
+        "6": "Very good for the economy",
         "7": "Refusal",
         "8": "Don't know",
         "9": "No answer"
@@ -16772,25 +16789,6 @@
         "7": "Refusal",
         "8": "Don't know",
         "9": "No answer"
-      }
-    },
-    "hinctnta": {
-      "description": "Household net income decile",
-      "question": "Thinking about your household's total income from all sources, after taxes and compulsory deductions, which letter best describes it? If you don't know the exact amount, please give your best estimate and use the period you know best (weekly, monthly, or yearly).",
-      "values": {
-        "1": "J - 1st decile",
-        "2": "R - 2nd decile",
-        "3": "C - 3rd decile",
-        "4": "M - 4th decile",
-        "5": "F - 5th decile",
-        "6": "S - 6th decile",
-        "7": "K - 7th decile",
-        "8": "P - 8th decile",
-        "9": "D - 9th decile",
-        "10": "H - 10th decile",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
       }
     },
     "hincfel": {
@@ -16873,17 +16871,6 @@
         "7": "Refusal",
         "8": "Don't know",
         "9": "No answer"
-      }
-    },
-    "admrclc": {
-      "description": "Climate change treatment group",
-      "question": "Which group was the respondent randomized into for the “Reduce Climate Change” administration?",
-      "values": {
-        "1": "Group 1",
-        "2": "Group 2",
-        "3": "Group 3",
-        "6": "Not applicable",
-        "9": "Not available"
       }
     },
     "testjc34": {
@@ -17257,7 +17244,7 @@
       "description": "Reason for no unmet medical need",
       "question": "In the last 12 months, did you not have any unmet medical need because you were able to get the medical consultation or treatment you needed, or because you did not need any medical consultation or treatment?",
       "values": {
-        "1": "Able to get needed medical consultation or treatment",
+        "1": "I was able to get needed medical consultation or treatment",
         "2": "Did not need medical consultation or treatment",
         "6": "Not applicable",
         "7": "Refusal",

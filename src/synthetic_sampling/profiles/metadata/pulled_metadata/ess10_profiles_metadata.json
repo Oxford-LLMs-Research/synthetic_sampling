@@ -5039,18 +5039,18 @@
     },
     "hinctnta": {
       "description": "Household net income decile",
-      "question": "Which letter best describes where your household's total income (from all sources, after taxes and compulsory deductions) falls in the income distribution? If you don't know the exact amount, please give your best estimate and use the time period you know best (weekly, monthly, or annual).",
+      "question": "Where does your household's total income (from all sources, after taxes and compulsory deductions) fall in your country's income distribution?",
       "values": {
-        "1": "J - 1st decile",
-        "2": "R - 2nd decile",
-        "3": "C - 3rd decile",
-        "4": "M - 4th decile",
-        "5": "F - 5th decile",
-        "6": "S - 6th decile",
-        "7": "K - 7th decile",
-        "8": "P - 8th decile",
-        "9": "D - 9th decile",
-        "10": "H - 10th decile",
+        "1": "Low income",
+        "2": "Low income",
+        "3": "Lower-middle income",
+        "4": "Lower-middle income",
+        "5": "Middle income",
+        "6": "Middle income",
+        "7": "Upper-middle income",
+        "8": "Upper-middle income",
+        "9": "High income",
+        "10": "High income",
         "77": "Refusal",
         "88": "Don't know",
         "99": "No answer"
@@ -5792,7 +5792,7 @@
     },
     "hswrkp": {
       "description": "Partner housework and caregiving",
-      "question": "In the last 7 days, did your partner do any of the following? For each item, please answer Yes or No: housework; looking after children; caring for other people.",
+      "question": "In the last 7 days, did your partner do any housework, looked after children, or cared for other people?",
       "values": {
         "0": "No",
         "1": "Yes"
@@ -11435,7 +11435,7 @@
       }
     }
   },
-  "media_information_sources": {
+  "other": {
     "nwspol": {
       "description": "Time spent on political news",
       "question": "On a typical day, about how much time do you spend watching, reading, or listening to news about politics and current affairs?",
@@ -11459,36 +11459,6 @@
         "9": "No answer"
       }
     },
-    "accmove": {
-      "description": "Internet access: on the move",
-      "question": "Can you access the internet while on the move?",
-      "values": {
-        "0": "No",
-        "1": "Yes"
-      }
-    },
-    "mcmsinf": {
-      "description": "Perceived misinformation exposure",
-      "question": "How much do you think online and mobile communication exposes people to misinformation?",
-      "values": {
-        "0": "Not at all",
-        "1": "Not at all",
-        "2": "Slightly",
-        "3": "Slightly",
-        "4": "Somewhat",
-        "5": "Somewhat",
-        "6": "Somewhat",
-        "7": "Mostly",
-        "8": "Mostly",
-        "9": "Completely",
-        "10": "Completely",
-        "77": "Refusal",
-        "88": "Don't know",
-        "99": "No answer"
-      }
-    }
-  },
-  "other": {
     "netustm": {
       "description": "Daily internet use duration",
       "question": "On a typical day, how much time do you spend using the internet on a computer, tablet, smartphone, or other device?",
@@ -11636,6 +11606,14 @@
         "1": "Yes"
       }
     },
+    "accmove": {
+      "description": "Internet access: on the move",
+      "question": "Can you access the internet while on the move?",
+      "values": {
+        "0": "No",
+        "1": "Yes"
+      }
+    },
     "accoth": {
       "description": "Internet access — other location",
       "question": "Were you able to access the internet somewhere else?",
@@ -11737,6 +11715,26 @@
     "mcpriv": {
       "description": "Perception of privacy erosion",
       "question": "To what extent do online and mobile communications undermine personal privacy?",
+      "values": {
+        "0": "Not at all",
+        "1": "Not at all",
+        "2": "Slightly",
+        "3": "Slightly",
+        "4": "Somewhat",
+        "5": "Somewhat",
+        "6": "Somewhat",
+        "7": "Mostly",
+        "8": "Mostly",
+        "9": "Completely",
+        "10": "Completely",
+        "77": "Refusal",
+        "88": "Don't know",
+        "99": "No answer"
+      }
+    },
+    "mcmsinf": {
+      "description": "Perceived misinformation exposure",
+      "question": "How much do you think online and mobile communication exposes people to misinformation?",
       "values": {
         "0": "Not at all",
         "1": "Not at all",
