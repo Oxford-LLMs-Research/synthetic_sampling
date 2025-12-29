@@ -292,19 +292,30 @@ def build_profiles_structure(records):
       ...
     }
     """
+    def straighten_apostrophes(x):
+        if isinstance(x, str):
+            return x.replace("\u2019", "'").replace("\u2018", "'")
+        return x
+
     profiles = {}
 
     for rec in records:
         raw_cat = rec.get("question_category") or "other"
-        cat_key = category_to_key(raw_cat)
+        cat_key = category_to_key(straighten_apostrophes(raw_cat))
 
         var_name = rec.get("variable_name")
         if not var_name:
             continue
 
-        description = rec.get("description") or ""
-        question = rec.get("question_cleaned") or rec.get("question_text_raw") or ""
+        description = straighten_apostrophes(rec.get("description") or "")
+        question = straighten_apostrophes(
+            rec.get("question_cleaned") or rec.get("question_text_raw") or ""
+        )
+
         values = rec.get("adjusted_values") or {}
+        # Replace curly apostrophes in value *labels* too (keys are typically numeric strings)
+        if isinstance(values, dict):
+            values = {k: straighten_apostrophes(v) for k, v in values.items()}
 
         if cat_key not in profiles:
             profiles[cat_key] = {}
