@@ -1,9 +1,4 @@
 {
-  "survey_info": {
-    "name": "Asian Barometer Survey of Democracy, Governance and Development",
-    "wave": 6,
-    "description": "Core questionnaire metadata"
-  },
     "demographics": {
       "country": {
         "description": "country of residence",
