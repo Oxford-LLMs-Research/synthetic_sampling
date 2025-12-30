@@ -4,7 +4,6 @@
     "wave": 6,
     "description": "Core questionnaire metadata"
   },
-  "sections": {
     "demographics": {
       "country": {
         "description": "country of residence",
@@ -1609,8 +1608,7 @@
         "question": "To you, what does 'democracy' mean?",
         "values": {},
         "notes": "Optional open-ended question. String variable excluded from metadata."
-      }
-    },
+      },
     "satisfaction_with_government_and_democracy": {
       "Q90": {
         "description": "satisfaction with how democracy works",
@@ -3367,7 +3365,6 @@
       }
     },
     "socioeconomic_background": {
-      },
       "SE2": {
         "description": "respondent's gender",
         "question": "What is your gender?",
@@ -4349,5 +4346,5 @@
         "notes": "Optional question."
       }
     }
-
+}
 
