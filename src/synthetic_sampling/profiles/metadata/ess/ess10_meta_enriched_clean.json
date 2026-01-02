@@ -108,7 +108,7 @@
       "9999": "No answer"
     },
     "notes": "Removed interviewer/administrative wording and asterisks from labels. Preserves special nonresponse codes. The main responses are recorded as durations in hours and minutes (hh mm) which are not enumerated here.",
-    "question_category": "media/information sources",
+    "question_category": "other",
     "notes_2": "Removed the instruction to enter hours and minutes and made the wording more conversational."
   },
   {
@@ -137,7 +137,7 @@
       "9": "No answer"
     },
     "notes": "Removed 'CARD 1' and brief introductory phrase; rephrased as a direct question. Removed asterisks from special-code labels.",
-    "question_category": "media/information sources",
+    "question_category": "other",
     "notes_2": ""
   },
   {
@@ -16793,25 +16793,25 @@
       "99": "No answer"
     },
     "description": "Household net income decile",
-    "question_cleaned": "Which letter best describes where your household's total income (from all sources, after taxes and compulsory deductions) falls in the income distribution? If you don't know the exact amount, please give your best estimate and use the time period you know best (weekly, monthly, or annual).",
+    "question_cleaned": "Where does your household's total income (from all sources, after taxes and compulsory deductions) fall in your country's income distribution?",
     "adjusted_values": {
-      "1": "J - 1st decile",
-      "2": "R - 2nd decile",
-      "3": "C - 3rd decile",
-      "4": "M - 4th decile",
-      "5": "F - 5th decile",
-      "6": "S - 6th decile",
-      "7": "K - 7th decile",
-      "8": "P - 8th decile",
-      "9": "D - 9th decile",
-      "10": "H - 10th decile",
+      "1": "Low income",
+      "2": "Low income",
+      "3": "Lower-middle income",
+      "4": "Lower-middle income",
+      "5": "Middle income",
+      "6": "Middle income",
+      "7": "Upper-middle income",
+      "8": "Upper-middle income",
+      "9": "High income",
+      "10": "High income",
       "77": "Refusal",
       "88": "Don't know",
       "99": "No answer"
     },
-    "notes": "Removed card reference and interviewer instructions; rephrased as a direct question. Kept original decile categories and cleaned missing-value labels by removing asterisks.",
+    "notes": "Removed card reference and interviewer instructions; rephrased as a direct question. Collapsed decile categories into five verbal income classes and cleaned missing-value labels by removing asterisks.",
     "question_category": "demographics",
-    "notes_2": "Reworded to ask which decile-letter describes household income rather than requesting an exact figure; preserved instruction to estimate and choose a time period."
+    "notes_2": ""
   },
   {
     "variable_name": "hincfel",
@@ -18365,7 +18365,7 @@
       "1": "Marked"
     },
     "description": "Partner housework and caregiving",
-    "question_cleaned": "In the last 7 days, did your partner do any of the following? For each item, please answer Yes or No: housework; looking after children; caring for other people.",
+    "question_cleaned": "In the last 7 days, did your partner do any housework, looked after children, or cared for other people?",
     "adjusted_values": {
       "0": "No",
       "1": "Yes"
@@ -29104,7 +29104,7 @@
       "1": "Yes"
     },
     "notes": "Removed card instructions and interviewer prompts. Reworded to a conversational yes/no checkbox item (part of a 'select all that apply' list). Simplified response labels from 'Not marked'/'Marked' to 'Not selected'/'Selected'.",
-    "question_category": "media/information sources",
+    "question_category": "other",
     "notes_2": "Changed 'Would you be able to' to the simpler yes/no phrasing 'Can you'; lowercased 'internet'."
   },
   {
@@ -29430,7 +29430,7 @@
       "99": "No answer"
     },
     "notes": "Removed card and interviewer instructions. Collapsed 11-point (0–10) scale into 5 categories (0–1,2–3,4–6,7–8,9–10). Cleaned special response labels (removed asterisks).",
-    "question_category": "media/information sources",
+    "question_category": "other",
     "notes_2": "Reworded to a more conversational tone; meaning and response scale unchanged."
   },
   {

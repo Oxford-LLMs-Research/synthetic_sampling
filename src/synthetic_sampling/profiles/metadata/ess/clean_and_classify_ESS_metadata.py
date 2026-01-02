@@ -9,12 +9,6 @@ key_path = "../../../../../_keys/openai_key.txt"
 with open(key_path, "r", encoding="utf-8") as f:
     os.environ["OPENAI_API_KEY"] = f.read().strip()
 
-
-# Additional TO DO/observations: 
-# - Replace [country] with 'your country' in questions?
-# - Manually inspect scale mapping JSON for any needed corrections?
-# - Consider collapsing some non-response categories?  
-
 # -------------------------------------------------------------------
 # CONFIG
 # -------------------------------------------------------------------
@@ -147,7 +141,6 @@ QUESTION_CATEGORIES = [
     "demographics",
     "economic outlook",
     "governance",
-    "media/information sources",
     "political affiliation",
     "politics",
     "trust in institutions",
@@ -299,19 +292,30 @@ def build_profiles_structure(records):
       ...
     }
     """
+    def straighten_apostrophes(x):
+        if isinstance(x, str):
+            return x.replace("\u2019", "'").replace("\u2018", "'")
+        return x
+
     profiles = {}
 
     for rec in records:
         raw_cat = rec.get("question_category") or "other"
-        cat_key = category_to_key(raw_cat)
+        cat_key = category_to_key(straighten_apostrophes(raw_cat))
 
         var_name = rec.get("variable_name")
         if not var_name:
             continue
 
-        description = rec.get("description") or ""
-        question = rec.get("question_cleaned") or rec.get("question_text_raw") or ""
+        description = straighten_apostrophes(rec.get("description") or "")
+        question = straighten_apostrophes(
+            rec.get("question_cleaned") or rec.get("question_text_raw") or ""
+        )
+
         values = rec.get("adjusted_values") or {}
+        # Replace curly apostrophes in value *labels* too (keys are typically numeric strings)
+        if isinstance(values, dict):
+            values = {k: straighten_apostrophes(v) for k, v in values.items()}
 
         if cat_key not in profiles:
             profiles[cat_key] = {}
@@ -495,7 +499,7 @@ admin_vars_11 = {
     "admit", "showcv", "regunit", "vdcond", "vdtype", "vdtpsvre", "vdtpitre", "vdtpscre", "vdtpaure",
     "vdtpvire", "vdtpoire", "vdtpntre", "vdtpapre", "vdtprere", "vdtpdkre", "vdtpnare", "inwds", "ainws",
     "ainwe", "binwe", "cinwe", "dinwe", "finwe", "ginwe", "hinwe", "iinwe", "einwe", "recon", "kinwe", "rinwe", "vinwe", "inwde", 
-    "jinws", "jinwe", "inwtm", "mode", "domain", "prob", "stratum", "psu"}
+    "jinws", "jinwe", "inwtm", "mode", "admrclc", "domain", "prob", "stratum", "psu"}
 ess11_final = [r for r in ess11_final if r.get("variable_name") not in admin_vars_11]
 
 # Remove binary variables with rare (and non-sensical in narrative form) labels
@@ -524,6 +528,20 @@ save_json_records(ess11_final, ESS11_PATH_OUT)
 # Load cleaned data for verification
 ess10_final = load_json_records(ESS10_PATH_OUT)
 ess11_final = load_json_records(ESS11_PATH_OUT)
+
+
+# Apply mapping back to each dataset and save (only run if mapping was edited) 
+# print("Applying scale mapping to ESS10...")
+# ess10_final = apply_scale_mapping(ess10_final, scale_mapping, verbose=True)
+
+# print("Applying scale mapping to ESS11...")
+# ess11_final = apply_scale_mapping(ess11_final, scale_mapping, verbose=True)
+
+# print(f"Saving cleaned ESS10 metadata to: {ESS10_PATH_OUT}")
+# save_json_records(ess10_final, ESS10_PATH_OUT)
+
+# print(f"Saving cleaned ESS11 metadata to: {ESS11_PATH_OUT}")
+# save_json_records(ess11_final, ESS11_PATH_OUT)
 
 
 # Reformat and export into standardized format used for further analysis
