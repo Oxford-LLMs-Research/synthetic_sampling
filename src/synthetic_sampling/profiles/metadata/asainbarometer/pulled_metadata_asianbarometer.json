@@ -1560,6 +1560,7 @@
       "Q86": {
         "description": "essential democratic characteristic - set 2",
         "question": "Which one of the following is an essential characteristic of a democracy. You can only choose one option",
+        "values": {
           "1": "The legislature has oversight over the government",
           "2": "Basic necessities, like food, clothes and shelter, are provided for all",
           "3": "People are free to organize political groups",
@@ -1597,13 +1598,8 @@
           "9": "Decline to answer"
         },
         "notes":"Removed survey artifacts. Removed interviewer instructions."
-      },
-      "Q89": {
-        "description": "open-ended democracy meaning",
-        "question": "To you, what does 'democracy' mean?",
-        "values": {},
-        "notes": "Optional open-ended question. String variable excluded from metadata."
-      },
+      }
+    },
     "satisfaction_with_government_and_democracy": {
       "Q90": {
         "description": "satisfaction with how democracy works",
@@ -4342,4 +4338,3 @@
       }
     }
 }
-
