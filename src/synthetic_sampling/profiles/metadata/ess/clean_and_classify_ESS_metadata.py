@@ -15,6 +15,9 @@ with open(key_path, "r", encoding="utf-8") as f:
 ESS10_PATH_IN = Path("ess10_meta_enriched_raw.json")
 ESS11_PATH_IN = Path("ess11_meta_enriched_raw.json")
 
+ESS10_PATH_IN_CONSOLIDATED = Path("ess10_meta_enriched_clean_with_consolidations.json")
+ESS11_PATH_IN_CONSOLIDATED = Path("ess11_meta_enriched_clean_with_consolidations.json")
+
 ESS10_PATH_OUT = Path("ess10_meta_enriched_clean.json")
 ESS11_PATH_OUT = Path("ess11_meta_enriched_clean.json")
 MAPPING_PATH_OUT = Path("ess_meta_scale_mapping.json")
@@ -544,12 +547,47 @@ ess11_final = load_json_records(ESS11_PATH_OUT)
 # save_json_records(ess11_final, ESS11_PATH_OUT)
 
 
+
+# Extra step: incorporate consolidated variables generated in consolidate_ess_vars.py (rerun script if other changes are made to metadata)
+print(f"Loading ESS10 from {ESS10_PATH_IN_CONSOLIDATED}")
+ess10_final_consolidated = load_json_records(ESS10_PATH_IN_CONSOLIDATED)
+
+print(f"Loading ESS11 from {ESS11_PATH_IN_CONSOLIDATED}")
+ess11_final_consolidated = load_json_records(ESS11_PATH_IN_CONSOLIDATED)
+
+# Remove variables that were in the original but are now superseded by consolidated versions
+consolidated_var_names = {
+    'impdema', 'impdemb', 'impdemc', 'impdemd', 'impdeme',
+    'prtvtebe', 'prtvtebg', 'prtvthch', 'prtvtbhr', 'prtvtecz', 
+    'prtvtdat', 'prtvtfbg', 'prtvclt3',  'prtvgde2', 'prtvtgsi', 
+    'prtvthee', 'prtvtefi', 'prtvtefr', 'prtvtdgr', 'prtvtghu', 
+    'prtvtdis', 'prtvtdie', 'prtvtdit', 'prtvclt1', 'prtvclt2', 
+    'prtvtame', 'prtvthnl', 'prtvtmk', 'prtvtbno', 'prtvtdpt', 
+    'prtvtfsi', 'prtvtesk', 'prtvtdgb', 'prtvtchr', 'prtvtccy',
+    'prtvtiee', 'prtvtffi', 'prtvtffr', 'prtvgde1', 'prtvtegr',  
+    'prtvteis', 'prtvteie', 'prtvteil', 'prtvteit', 'prtvtblv', 
+    'prtvtinl', 'prtvtcno', 'prtvtfpl', 'prtvtept', 'prtvtbrs', 
+    'prtvtges', 'prtvtdse', 'prtvtdua', 'prtvthhu', 'prtvtbme', 
+    'prtcleat', 'prtclebe', 'prtclfbg', 'prtclbhr', 'prtclccy',
+    'prtcliee', 'prtclgfi', 'prtclgfr', 'prtclgde', 'prtclegr', 
+    'prtclihu', 'prtcleis', 'prtclfie', 'prtclfil', 'prtclfit',
+    'prtclblv', 'prtclclt', 'prtclbme', 'prtclhnl', 'prtclcno', 
+    'prtcljpl', 'prtclgpt', 'prtclbrs', 'prtclesk', 'prtclgsi',
+    'prtclhes', 'prtcldse', 'prtclhch', 'prtcleua', 'prtcldgb',
+    'prtclebe', 'prtclebg', 'prtclecz', 'prtclhee', 'prtclffi', 
+    'prtclffr', 'prtcldgr', 'prtclhhu', 'prtcldis', 'prtcleit',
+    'prtclame', 'prtclgnl', 'prtclmk', 'prtclbno', 'prtclfpt',
+    'prtclfsi'
+}
+ess10_final_consolidated = [r for r in ess10_final_consolidated if r.get("variable_name") not in consolidated_var_names]
+ess11_final_consolidated = [r for r in ess11_final_consolidated if r.get("variable_name") not in consolidated_var_names]
+
 # Reformat and export into standardized format used for further analysis
 
 POOLED_META_DIR.mkdir(parents=True, exist_ok=True)
 
-ess10_profiles = build_profiles_structure(ess10_final)
-ess11_profiles = build_profiles_structure(ess11_final)
+ess10_profiles = build_profiles_structure(ess10_final_consolidated)
+ess11_profiles = build_profiles_structure(ess11_final_consolidated)
 
 print(f"Saving ESS10 profiles metadata → {ESS10_POOLED_OUT}")
 with ESS10_POOLED_OUT.open("w", encoding="utf-8") as f:
