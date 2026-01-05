@@ -462,7 +462,7 @@
     },
     "SE9a": {
       "description": "employment type",
-      "question": "Are you currently self-employed (including business owners), working in a family business, or working for an outside employer?",
+      "question": "Are you currently self-employed, working in a family business, or working for an outside employer?",
       "values": {
         "1": "Self-employed or business owner",
         "2": "Working in family business",
@@ -565,7 +565,7 @@
     },
     "SE10a": {
       "description": "main earner employment type",
-      "question": "Is the main earner currently self-employed (including business owners), working in a family business, or working for an outside employer?",
+      "question": "Is the main earner in your household currently self-employed, working in a family business, or working for an outside employer?",
       "values": {
         "1": "Self-employed or business owner",
         "2": "Working in family business",
@@ -593,7 +593,7 @@
     },
     "SE10c": {
       "description": "occupation type - main earner",
-      "question": "Which type of job does the main earner have now?",
+      "question": "Which type of job does the main earner in your household have now?",
       "values": {
         "01": "Professional and technical (e.g., doctor, teacher, engineer, artist, accountant, nurse)",
         "02": "Higher administrative (e.g., banker, executive in big business, high government official, union official)",
@@ -613,7 +613,7 @@
     },
     "SE10d": {
       "description": "main earner seeking employment",
-      "question": "Is the main earner currently seeking employment?",
+      "question": "Is the main earner in your household currently seeking employment?",
       "values": {
         "1": "Yes (Currently unemployed but seeking work)",
         "2": "No (Not currently employed and not seeking work)",
@@ -626,7 +626,7 @@
     },
     "SE10e": {
       "description": "main earner current status",
-      "question": "What is the main earner's current status?",
+      "question": "What is the your household's main earner's current status?",
       "values": {
         "01": "Homemaker",
         "02": "Student",
@@ -818,7 +818,7 @@
     },
     "SE15a_1": {
       "description": "how many vehicles?",
-      "question": "How many vehicles do you or your family own",
+      "question": "How many vehicles do you or your family own?",
       "values": {
         "0": "Not applicable",
         "99": "Decline to answer",
@@ -853,7 +853,7 @@
     },
     "SE15c": {
       "description": "own television",
-      "question": "Do you or your family own a color or B/W television?",
+      "question": "Do you or your family own a television?",
       "values": {
         "1": "Yes",
         "2": "No"
