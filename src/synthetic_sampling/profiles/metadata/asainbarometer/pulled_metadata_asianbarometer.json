@@ -283,7 +283,7 @@
         "99": "99 years old",
         "100": "100 years old"
       },
-      "notes": "Computed from respondent’s reported year of birth in SE3; interviewer calculated age.",
+      "notes": "Computed from respondent's reported year of birth in SE3; interviewer calculated age.",
       "harmonized_section": "demographics",
       "topic_tag": null,
       "original_section": "socioeconomic_background",
@@ -719,7 +719,7 @@
         "803": "Malayu",
         "806": "Lao",
         "901": "Aceh",
-        "902": "Alif’uru",
+        "902": "Alif'uru",
         "903": "Arab",
         "904": "Atoni",
         "905": "Bali",
@@ -1009,7 +1009,7 @@
     },
     "SE15n_1": {
       "description": "how many goats and/or sheep?",
-      "question": "How many goats and/or sheep do you or your family own",
+      "question": "How many goats and/or sheep do you or your family own?",
       "values": {
         "0": "Not applicable",
         "1": "1",
@@ -1050,7 +1050,7 @@
     },
     "SE15o_1": {
       "description": "how many cows and/or buffalo?",
-      "question": "How many cows and/or buffalo do you or your family own",
+      "question": "How many cows and/or buffalo do you or your family own?",
       "values": {
         "0": "Not applicable",
         "1": "1",
@@ -1106,7 +1106,7 @@
     },
     "SE15q_1": {
       "description": "how many boats?",
-      "question": "How many boats do you or your family own",
+      "question": "How many boats do you or your family own?",
       "values": {
         "0": "Not applicable",
         "1": "1",
@@ -1238,7 +1238,7 @@
     },
     "Q80": {
       "description": "system can solve problems",
-      "question": "Over the long run, our system of government is capable of solving the problems our country faces.",
+      "question": "Do you agree or disagree with the following statement: 'Over the long run, our system of government is capable of solving the problems our country faces'?",
       "values": {
         "1": "Strongly agree",
         "2": "Agree",
@@ -1256,7 +1256,7 @@
     },
     "Q81": {
       "description": "pride in government system",
-      "question": "I am proud of our system of government.",
+      "question": "Do you agree or disagree with the following statement: 'I am proud of our system of government'?",
       "values": {
         "1": "Strongly agree",
         "2": "Agree",
@@ -1274,7 +1274,7 @@
     },
     "Q82": {
       "description": "system deserves support",
-      "question": "A system like ours deserves the people's support even if it runs into problems?",
+      "question": "Do you agree or disagree with the following statement: 'A system like ours deserves the people's support even if it runs into problems'?",
       "values": {
         "1": "Strongly agree",
         "2": "Agree",
@@ -1292,7 +1292,7 @@
     },
     "Q83": {
       "description": "prefer this system",
-      "question": "I would rather live under our system of government than any other that I can think of.",
+      "question": "Do you agree or disagree with the following statement: 'I would rather live under our system of government than any other that I can think of'?",
       "values": {
         "1": "Strongly agree",
         "2": "Agree",
@@ -1328,7 +1328,7 @@
     },
     "Q85": {
       "description": "essential democratic characteristic - set 1",
-      "question": "Which one of the following is an essential characteristic of a democracy. You can only choose one option",
+      "question": "Which one of the following do you think is an essential characteristic of a democracy: (1) Government narrows the gap between the rich and the poor, (2) People choose the government leaders in free and fair elections, (3) Government does not waste any public money, or (4) People are free to express their political views openly?",
       "values": {
         "1": "Government narrows the gap between the rich and the poor",
         "2": "People choose the government leaders in free and fair election",
@@ -1346,7 +1346,7 @@
     },
     "Q86": {
       "description": "essential democratic characteristic - set 2",
-      "question": "Which one of the following is an essential characteristic of a democracy. You can only choose one option",
+      "question": "Which one of the following do you think is an essential characteristic of a democracy: (1) The legislature has oversight over the government, (2) Basic necessities like food, clothes, and shelter are provided for all, (3) People are free to organize political groups, or (4) Government provides people with quality public services?",
       "values": {
         "1": "The legislature has oversight over the government",
         "2": "Basic necessities, like food, clothes and shelter, are provided for all",
@@ -1364,7 +1364,7 @@
     },
     "Q87": {
       "description": "essential democratic characteristic - set 3",
-      "question": "Which one of the following is an essential characteristic of a democracy. You can only choose one option",
+      "question": "Which one of the following do you think is an essential characteristic of a democracy: (1) Government ensures law and order, (2) Media is free to criticize the things government does, (3) Government ensures job opportunities for all, or (4) Multiple parties compete fairly in elections?",
       "values": {
         "1": "Government ensures law and order",
         "2": "Media is free to criticize the things government does",
@@ -1382,7 +1382,7 @@
     },
     "Q88": {
       "description": "essential democratic characteristic - set 4",
-      "question": "Which one of the following is an essential characteristic of a democracy. You can only choose one option",
+      "question": "Which one of the following do you think is an essential characteristic of a democracy: (1) People have the freedom to take part in protests and demonstrations, (2) Politics is clean and free of corruption, (3) The court protects ordinary people from the abuse of government power, or (4) People receive state aid if they are unemployed?",
       "values": {
         "1": "People have the freedom to take part in protests and demonstrations",
         "2": "Politics is clean and free of corruption",
@@ -1673,7 +1673,7 @@
     },
     "Q99": {
       "description": "citizens can remove government through elections",
-      "question": "Citizens are able to remove a government they don't like through elections. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'Citizens are able to remove a government they don't like through elections'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -1691,7 +1691,7 @@
     },
     "Q100": {
       "description": "opposition can be elected",
-      "question": "In our country, parties and candidates not in power have opportunities to be elected into government. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'In our country, parties and candidates not in power have opportunities to be elected into government'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -1709,7 +1709,7 @@
     },
     "Q101": {
       "description": "accountability between elections",
-      "question": "Between elections, the people have no way of holding the government responsible for its actions. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'Between elections, the people have no way of holding the government responsible for its actions'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -1727,7 +1727,7 @@
     },
     "Q102": {
       "description": "courts can check leaders",
-      "question": "When government leaders break the laws, there is nothing the court can do. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'When government leaders break the laws, there is nothing the court can do'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -1745,7 +1745,7 @@
     },
     "Q106": {
       "description": "freedom of speech",
-      "question": "People are free to speak what they think without fear. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'People are free to speak what they think without fear'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -1763,7 +1763,7 @@
     },
     "Q107": {
       "description": "freedom of association",
-      "question": "People can join any organization they like without fear. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'People can join any organization they like without fear'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -2110,7 +2110,7 @@
     },
     "Q148": {
       "description": "education and political voice",
-      "question": "People with little or no education should have as much say in politics as highly-educated people. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'People with little or no education should have as much say in politics as highly-educated people'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -2128,7 +2128,7 @@
     },
     "Q149": {
       "description": "following government leaders",
-      "question": "Government leaders are like the head of a family; we should all follow their decisions. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'Government leaders are like the head of a family; we should all follow their decisions'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -2146,7 +2146,7 @@
     },
     "Q150": {
       "description": "government decides discussable ideas",
-      "question": "The government should decide whether certain ideas should be allowed to be discussed in society. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'The government should decide whether certain ideas should be allowed to be discussed in society'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -2164,7 +2164,7 @@
     },
     "Q151": {
       "description": "groups disrupt harmony",
-      "question": "Harmony of the community will be disrupted if people organize lots of groups. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'Harmony of the community will be disrupted if people organize lots of groups'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -2182,7 +2182,7 @@
     },
     "Q152": {
       "description": "judges accept executive view",
-      "question": "When judges decide important cases, they should accept the view of the executive branch. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'When judges decide important cases, they should accept the view of the executive branch'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -2200,7 +2200,7 @@
     },
     "Q153": {
       "description": "legislative checks hinder government",
-      "question": "If the government is constantly checked by the legislature, it cannot possibly accomplish great things. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'If the government is constantly checked by the legislature, it cannot possibly accomplish great things'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -2218,7 +2218,7 @@
     },
     "Q154": {
       "description": "moral leaders decide everything",
-      "question": "If we have political leaders who are morally upright, we can let them decide everything. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'If we have political leaders who are morally upright, we can let them decide everything'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -2236,7 +2236,7 @@
     },
     "Q155": {
       "description": "diverse thinking causes chaos",
-      "question": "If people have too many different ways of thinking, society will be chaotic. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'If people have too many different ways of thinking, society will be chaotic'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -2270,7 +2270,7 @@
     },
     "Q157a": {
       "description": "limit imports vs more trade - strength of agreement",
-      "question": "Do you strongly agree or just agree with your previous response",
+      "question": "Regarding your previous answer about trade policy, do you strongly agree or just agree?",
       "values": {
         "1": "Strongly agree",
         "2": "Agree"
@@ -2425,7 +2425,7 @@
     },
     "Q168": {
       "description": "leader can govern by decrees",
-      "question": "In order to solve the country's urgent problems, a leader can govern the country by decrees and disregard the parliament if necessary. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'In order to solve the country's urgent problems, a leader can govern the country by decrees and disregard the parliament if necessary'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -2442,7 +2442,7 @@
     },
     "Q169": {
       "description": "elections don't matter if economy solved",
-      "question": "As long as a government can solve our country's economic problem, it does not matter if the government holds regular elections or not. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'As long as a government can solve our country's economic problems, it does not matter if the government holds regular elections or not'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -2459,7 +2459,7 @@
     },
     "Q170": {
       "description": "leader can break rules",
-      "question": "This country needs a leader who can break the rules if necessary to get things done. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'This country needs a leader who can break the rules if necessary to get things done'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -2476,7 +2476,7 @@
     },
     "Q171": {
       "description": "order matters more than democracy",
-      "question": "As long as the government can maintain order and stability in the country, it does not matter whether it is democratic or undemocratic. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'As long as the government can maintain order and stability in the country, it does not matter whether it is democratic or undemocratic'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -3578,7 +3578,7 @@
         "1208": "League for Democracy Party",
         "1209": "Beehive Social Democratic Party",
         "1210": "Others",
-        "901": "Joko Widodo and KH. Ma’ruf Amin",
+        "901": "Joko Widodo and KH. Ma'ruf Amin",
         "902": "Prabowo Subianto and Sandiaga Salahuddin Uno",
         "701": "James Soong & Sandra Yu",
         "702": "Han Kuo-yu & Chang San-cheng",
@@ -4035,7 +4035,7 @@
     },
     "Q133": {
       "description": "ability to participate in politics",
-      "question": "I think I have the ability to participate in politics. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'I think I have the ability to participate in politics'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4053,7 +4053,7 @@
     },
     "Q134": {
       "description": "politics too complicated",
-      "question": "Sometimes politics and government seems so complicated that a person like me can't really understand what is going on. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'Sometimes politics and government seems so complicated that a person like me can't really understand what is going on'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4071,7 +4071,7 @@
     },
     "Q135": {
       "description": "citizen influence on government",
-      "question": "People like me don't have any influence over what the government does. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'People like me don't have any influence over what the government does'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4426,7 +4426,7 @@
     },
     "Q67": {
       "description": "preference for boy child",
-      "question": "If a person could have only one child, it is more preferable to have a boy than a girl.",
+      "question": "Do you agree or disagree with the following statement: 'If a person could have only one child, it is more preferable to have a boy than a girl'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4444,7 +4444,7 @@
     },
     "Q103": {
       "description": "ethnic equality",
-      "question": "All citizens from different ethnic communities are treated equally by the government. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'All citizens from different ethnic communities are treated equally by the government'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4462,7 +4462,7 @@
     },
     "Q104": {
       "description": "rich-poor equality",
-      "question": "Rich and poor people are treated equally by the government. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'Rich and poor people are treated equally by the government'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4480,7 +4480,7 @@
     },
     "Q146": {
       "description": "women in politics",
-      "question": "Women should not be involved in politics as much as men. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'Women should not be involved in politics as much as men'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4536,7 +4536,7 @@
   "values_identity": {
     "Q56": {
       "description": "family over individual interest",
-      "question": "For the sake of the family, the individual should put his personal interests second.",
+      "question": "Do you agree or disagree with the following statement: 'For the sake of the family, the individual should put his personal interests second'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4554,7 +4554,7 @@
     },
     "Q57": {
       "description": "group over individual interest",
-      "question": "In a group, we should sacrifice our individual interest for the sake of the group's collective interest.",
+      "question": "Do you agree or disagree with the following statement: 'In a group, we should sacrifice our individual interest for the sake of the group's collective interest'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4572,7 +4572,7 @@
     },
     "Q58": {
       "description": "national over individual interest",
-      "question": "For the sake of national interest, individual interest could be sacrificed.",
+      "question": "Do you agree or disagree with the following statement: 'For the sake of national interest, individual interest could be sacrificed'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4590,7 +4590,7 @@
     },
     "Q59": {
       "description": "long-term relationships over immediate interest",
-      "question": "When dealing with others, developing a long-term relationship is more important than securing one's immediate interest.",
+      "question": "Do you agree or disagree with the following statement: 'When dealing with others, developing a long-term relationship is more important than securing one's immediate interest'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4608,7 +4608,7 @@
     },
     "Q60": {
       "description": "obedience to parents",
-      "question": "Even if parents' demands are unreasonable, children should still do what they ask.",
+      "question": "Do you agree or disagree with the following statement: 'Even if parents' demands are unreasonable, children should still do what they ask'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4626,7 +4626,7 @@
     },
     "Q61": {
       "description": "mother-in-law authority",
-      "question": "When a mother-in-law and a daughter-in-law come into conflict, even if the mother-in-law is in the wrong, the husband should still persuade his wife to obey his mother.",
+      "question": "Do you agree or disagree with the following statement: 'When a mother-in-law and a daughter-in-law come into conflict, even if the mother-in-law is in the wrong, the husband should still persuade his wife to obey his mother'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4644,7 +4644,7 @@
     },
     "Q62": {
       "description": "respect for teacher authority",
-      "question": "Students should not question the authority of their teacher.",
+      "question": "Do you agree or disagree with the following statement: 'Students should not question the authority of their teacher'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4662,7 +4662,7 @@
     },
     "Q63": {
       "description": "avoid quarrels for group harmony",
-      "question": "We should avoid open quarrel to preserve the harmony of the group.",
+      "question": "Do you agree or disagree with the following statement: 'We should avoid open quarrel to preserve the harmony of the group'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4680,7 +4680,7 @@
     },
     "Q64": {
       "description": "avoid conflict with others",
-      "question": "Even if there is some disagreement with others, one should avoid the conflict.",
+      "question": "Do you agree or disagree with the following statement: 'Even if there is some disagreement with others, one should avoid the conflict'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4698,7 +4698,7 @@
     },
     "Q65": {
       "description": "defer to co-workers",
-      "question": "A person should not insist on his own opinion if his co-workers disagree with him.",
+      "question": "Do you agree or disagree with the following statement: 'A person should not insist on his own opinion if his co-workers disagree with him'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4716,7 +4716,7 @@
     },
     "Q66": {
       "description": "fate determines outcomes",
-      "question": "Wealth and poverty, success and failure are all determined by fate.",
+      "question": "Do you agree or disagree with the following statement: 'Wealth and poverty, success and failure are all determined by fate'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4734,7 +4734,7 @@
     },
     "Q137": {
       "description": "loyalty to country",
-      "question": "A citizen should always remain loyal only to his country, no matter how imperfect it is or what wrong it has done. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'A citizen should always remain loyal only to his country, no matter how imperfect it is or what wrong it has done'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4752,7 +4752,7 @@
     },
     "Q147": {
       "description": "religious authority in lawmaking",
-      "question": "The government should consult religious authorities when interpreting the laws. Do you strongly agree, somewhat agree, somewhat disagree, or strongly disagree?",
+      "question": "Do you agree or disagree with the following statement: 'The government should consult religious authorities when interpreting the laws'?",
       "values": {
         "1": "Strongly agree",
         "2": "Somewhat agree",
@@ -4786,7 +4786,7 @@
     },
     "Q156a": {
       "description": "defend way of life vs learn from others - strength of agreement",
-      "question": "Do you strongly agree or just agree with your previous response",
+      "question": "Regarding your previous answer about defending your country's way of life versus learning from others, do you strongly agree or just agree?",
       "values": {
         "1": "Strongly agree",
         "2": "Agree"
