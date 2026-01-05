@@ -2316,7 +2316,7 @@
     },
     "Q15": {
       "description": "Government bans organizations vs join any",
-      "question": "Let's talk for a moment about the kind of society you would like to have in this country. Which of the following statements is closest to your view? Statement 1: The government should be able to ban any organization that goes against its policies. Statement 2: We should be able to join any organization, whether or not the government approves of it.",
+      "question": "Let's talk for a moment about the kind of society you would like to have in this country. Which of the following statements is closest to your view? Statement 1: The government should be able to ban any organization that goes against its policies. Statement 2: We should be able to join any organization, whether or not the government approves of it?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -2333,7 +2333,7 @@
     },
     "Q16": {
       "description": "Media free to publish vs government control",
-      "question": "Which of the following statements is closest to your view?Statement 1: The media should have the right to publish any views and ideas without government control. Statement 2: The government should have the right to prevent the media from publishing things that it disapproves of.",
+      "question": "Which of the following statements is closest to your view?Statement 1: The media should have the right to publish any views and ideas without government control. Statement 2: The government should have the right to prevent the media from publishing things that it disapproves of?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -2350,7 +2350,7 @@
     },
     "Q17": {
       "description": "Media checks government vs avoid negative reporting",
-      "question": "Which of the following statements is closest to your view? Statement 1: The news media should constantly investigate and report on government mistakes and corruption. Statement 2: Too much reporting on negative events, like government mistakes and corruption, only harms the country.",
+      "question": "Which of the following statements is closest to your view? Statement 1: The news media should constantly investigate and report on government mistakes and corruption. Statement 2: Too much reporting on negative events, like government mistakes and corruption, only harms the country?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -2367,7 +2367,7 @@
     },
     "Q18": {
       "description": "Govt gets things done vs govt accountable to citizens",
-      "question": "Which of the following statements is closest to your view? Statement 1: It is more important to have a government that can get things done, even if we have no influence over what it does. Statement 2: It is more important for citizens to be able to hold government accountable, even if that means it makes decisions more slowly.",
+      "question": "Which of the following statements is closest to your view? Statement 1: It is more important to have a government that can get things done, even if we have no influence over what it does. Statement 2: It is more important for citizens to be able to hold government accountable, even if that means it makes decisions more slowly?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -2384,7 +2384,7 @@
     },
     "Q19A": {
       "description": "Government like a boss vs like an employee",
-      "question": "Which of the following statements is closest to your view? Statement 1: The government is like the people's boss. People should respect the government and do what it directs. Statement 2: The government is like the people's employee. It should respect the citizens and do what they request.",
+      "question": "Which of the following statements is closest to your view? Statement 1: The government is like the people's boss. People should respect the government and do what it directs. Statement 2: The government is like the people's employee. It should respect the citizens and do what they request?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -2401,7 +2401,7 @@
     },
     "Q19B": {
       "description": "Elected officials follow voter demands vs follow own ideas",
-      "question": "Which of the following statements is closest to your view? Choose Statement 1 or Statement 2. Statement 1: Statement 1: Our elected officials should listen to voters' views and do what they demand. Statement 2: Our elected leaders should follow their own ideas in deciding what is best for the country.",
+      "question": "Which of the following statements is closest to your view? Choose Statement 1 or Statement 2. Statement 1: Statement 1: Our elected officials should listen to voters' views and do what they demand. Statement 2: Our elected leaders should follow their own ideas in deciding what is best for the country?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -2469,7 +2469,7 @@
     },
     "Q23": {
       "description": "Support for democracy",
-      "question": "Which of these three statements is closest to your own opinion? Statement 1: Democracy is preferable to any other kind of government. Statement 2: In some circumstances, a non-democratic government can be preferable. Statement 3: For someone like me, it doesn't matter what kind of government we have.",
+      "question": "Which of these three statements is closest to your own opinion? Statement 1: Democracy is preferable to any other kind of government. Statement 2: In some circumstances, a non-democratic government can be preferable. Statement 3: For someone like me, it doesn't matter what kind of government we have?",
       "values": {
         "1": "Doesn't matter",
         "2": "Sometimes non-democratic preferable",
@@ -2484,7 +2484,7 @@
     },
     "Q24": {
       "description": "Choose leaders through elections vs other methods",
-      "question": "Which of the following statements is closest to your view? Statement 1: We should choose our leaders in this country through regular, open, and honest elections. Statement 2: Since elections sometimes produce bad results, we should adopt other methods for choosing this country's leaders.",
+      "question": "Which of the following statements is closest to your view? Statement 1: We should choose our leaders in this country through regular, open, and honest elections. Statement 2: Since elections sometimes produce bad results, we should adopt other methods for choosing this country's leaders?",
       "values": {
         "1": "Agree very strongly with Statement 1",
         "2": "Agree with Statement 1",
@@ -2501,7 +2501,7 @@
     },
     "Q25": {
       "description": "Political parties divisive vs many parties needed",
-      "question": "Which of the following statements is closest to your view? Statement 1: Political parties create division and confusion; it is therefore unnecessary to have many political parties in Kenya. Statement 2: Many political parties are needed to make sure that Kenyans have real choices in who governs them.",
+      "question": "Which of the following statements is closest to your view? Statement 1: Political parties create division and confusion; it is therefore unnecessary to have many political parties in Kenya. Statement 2: Many political parties are needed to make sure that Kenyans have real choices in who governs them?",
       "values": {
         "1": "Agree very strongly with Statement 1",
         "2": "Agree with Statement 1",
@@ -2518,7 +2518,7 @@
     },
     "Q26": {
       "description": "Democracy needs political party turnover vs ok if one party always wins",
-      "question": "Which of the following statements is closest to your view? Statement 1: In a democracy, it is better if power sometimes changes hands in elections from one political party to another. Statement 2: In a democracy, as long as a government is elected by the people in a free and fair election, it doesn't matter if one party always wins and continuously governs the country.",
+      "question": "Which of the following statements is closest to your view? Statement 1: In a democracy, it is better if power sometimes changes hands in elections from one political party to another. Statement 2: In a democracy, as long as a government is elected by the people in a free and fair election, it doesn't matter if one party always wins and continuously governs the country?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -2535,7 +2535,7 @@
     },
     "Q27A": {
       "description": "Parliament makes laws vs president does",
-      "question": "Which of the following statements is closest to your view? Statement 1: Members of Parliament represent the people; therefore they should make laws for this country, even if the president does not agree. Statement 2: Since the president represents all of us, he should pass laws without worrying about what Parliament thinks.",
+      "question": "Which of the following statements is closest to your view? Statement 1: Members of Parliament represent the people; therefore they should make laws for this country, even if the president does not agree. Statement 2: Since the president represents all of us, he should pass laws without worrying about what Parliament thinks?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -2552,7 +2552,7 @@
     },
     "Q27B": {
       "description": "President monitored by parliament vs free to act on own",
-      "question": "Which of the following statements is closest to your view? Statement 1: Parliament should ensure that the president explains to it on a regular basis how their government spends taxpayers' money. Statement 2: The president should be able to devote full attention to developing the country rather than wasting time justifying their actions.",
+      "question": "Which of the following statements is closest to your view? Statement 1: Parliament should ensure that the president explains to it on a regular basis how their government spends taxpayers' money. Statement 2: The president should be able to devote full attention to developing the country rather than wasting time justifying their actions?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -2569,7 +2569,7 @@
     },
     "Q27C": {
       "description": "Opposition parties examine government vs cooperate",
-      "question": "Which of the following statements is closest to your view? Statement 1: After losing an election, opposition parties should monitor and criticize the government in order to hold it accountable. Statement 2: Once an election is over, opposition parties and politicians should accept defeat and cooperate with government to help it develop the country.",
+      "question": "Which of the following statements is closest to your view? Statement 1: After losing an election, opposition parties should monitor and criticize the government in order to hold it accountable. Statement 2: Once an election is over, opposition parties and politicians should accept defeat and cooperate with government to help it develop the country?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -2586,7 +2586,7 @@
     },
     "Q28": {
       "description": "President free to act vs obey the laws and courts",
-      "question": "Which of the following statements is closest to your view?\nStatement 1: Since the country's president was elected to lead the country, they should not be bound by laws or court decisions that the country's president thinks are wrong.\nStatement 2: The the country's president must always obey the laws and the courts, even if they think they are wrong.",
+      "question": "Which of the following statements is closest to your view?\nStatement 1: Since the country's president was elected to lead the country, they should not be bound by laws or court decisions that the country's president thinks are wrong.\nStatement 2: The the country's president must always obey the laws and the courts, even if they think they are wrong?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -2603,7 +2603,7 @@
     },
     "Q29B": {
       "description": "Armed forces never intervene vs when leaders abuse power",
-      "question": "Which of the following statements is closest to your view?\nStatement 1: The country's armed forces should never intervene in the country's political process.\nStatement 2: It is legitimate for the armed forces to take control of government when elected leaders abuse power for their own ends.",
+      "question": "Which of the following statements is closest to your view?\nStatement 1: The country's armed forces should never intervene in the country's political process.\nStatement 2: It is legitimate for the armed forces to take control of government when elected leaders abuse power for their own ends?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -5207,7 +5207,7 @@
   "social_attitudes": {
     "Q20": {
       "description": "Men only as leaders vs women leaders",
-      "question": "Which of the following statements is closest to your view? Statement 1: Men make better political leaders than women, and should be elected rather than women. Statement 2: Women should have the same chance of being elected to political office as men.",
+      "question": "Which of the following statements is closest to your view? Statement 1: Men make better political leaders than women, and should be elected rather than women. Statement 2: Women should have the same chance of being elected to political office as men?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -5241,7 +5241,7 @@
     },
     "Q21B": {
       "description": "Women have equal right to land",
-      "question": "Do you agree or disagree that: Women should have the same rights as men to own and inherit land.",
+      "question": "Do you agree or disagree that: Women should have the same rights as men to own and inherit land?",
       "values": {
         "1": "Strongly disagree",
         "2": "Disagree",
@@ -5275,7 +5275,7 @@
     },
     "Q85A": {
       "description": "Strong ties with other citizens",
-      "question": "Please tell me whether you agree or disagree with the following statement: I feel strong ties with other citizens of my country.",
+      "question": "Please tell me whether you agree or disagree with the following statement: I feel strong ties with other citizens of my country?",
       "values": {
         "1": "Strongly disagree",
         "2": "Disagree",
@@ -5610,7 +5610,7 @@
     },
     "Q88B": {
       "description": "Others see respondent as citizen like them",
-      "question": "Do you agree or disagree with the following statement: Other citizens think of me as a citizen just like them.",
+      "question": "Do you agree or disagree with the following statement: Other citizens think of me as a citizen just like them?",
       "values": {
         "1": "Strongly disagree",
         "2": "Somewhat disagree",
@@ -5657,7 +5657,7 @@
     },
     "Q54": {
       "description": "Perception of domestic violence as a private matter vs. a criminal matter",
-      "question": "Which of the following statements is closest to your view? \nStatement 1: Domestic violence is a private matter that should be resolved within the family. \nStatement 2: Domestic violence is a criminal matter that requires the involvement of law enforcement agencies.",
+      "question": "Which of the following statements is closest to your view? \nStatement 1: Domestic violence is a private matter that should be resolved within the family. \nStatement 2: Domestic violence is a criminal matter that requires the involvement of law enforcement agencies?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",
@@ -6152,7 +6152,7 @@
     },
     "Q71": {
       "description": "Jobs vs protecting the environment",
-      "question": "Which statement do you agree with more? (1) The government should focus on creating jobs and increasing incomes, even if that means increasing pollution. (2) The government should focus on preventing pollution and protecting the environment, even if it causes job losses or disruptions.",
+      "question": "Which statement do you agree with more? (1) The government should focus on creating jobs and increasing incomes, even if that means increasing pollution. (2) The government should focus on preventing pollution and protecting the environment, even if it causes job losses or disruptions?",
       "values": {
         "1": "Strongly agree with Statement 1",
         "2": "Agree with Statement 1",

@@ -549,8 +549,8 @@
         "398017": "Severo-Kazakhstanskaya oblast",
         "398018": "Zhambylskaya oblast",
         "400001": "Ajlūn",
-        "400002": "Al ‘Aqabah",
-        "400003": "Al ‘Āşimah / Amman",
+        "400002": "Al 'Aqabah",
+        "400003": "Al 'Āşimah / Amman",
         "400004": "Al Balqā'",
         "400005": "Al Karak",
         "400006": "Al Mafraq",
@@ -558,7 +558,7 @@
         "400008": "Az Zarqā'",
         "400009": "Irbid",
         "400010": "Jarash",
-        "400011": "Ma‘ān",
+        "400011": "Ma'ān",
         "400012": "Mādabā",
         "404001": "Baringo",
         "404002": "Bomet",
@@ -2651,7 +2651,7 @@
     },
     "Q285": {
       "description": "Are you the chief wage earner in your house",
-      "question": "Are you the chief wage earner in your house",
+      "question": "Are you the chief wage earner in your house?",
       "topic_tag": null,
       "original_section": "demographics",
       "values": {
@@ -2699,7 +2699,7 @@
     },
     "Q288": {
       "description": "Scale of incomes",
-      "question": "What is the level of your household's income counting all wages, salaries, pensions and other incomes on an income scale on which 'lowest' indicates the lowest income group and 'tenth step' the highest income group in your country",
+      "question": "What is the level of your household's income counting all wages, salaries, pensions and other incomes on an income scale on which 'lowest' indicates the lowest income group and 'tenth step' the highest income group in your country?",
       "topic_tag": null,
       "original_section": "demographics",
       "values": {
@@ -6760,7 +6760,7 @@
         "616004": "POL: Democratic Left Alliance",
         "616031": "POL: Law and Justice",
         "616032": "POL: Civic Platform",
-        "616053": "POL: Kukiz ‘15",
+        "616053": "POL: Kukiz '15",
         "616054": "POL: Modern",
         "616057": "POL: Coalition for the Renewal of the Republic – Liberty and Justice",
         "616058": "POL: Poland Together",
@@ -7321,7 +7321,7 @@
     },
     "Q119": {
       "description": "Degree of agreement: On the whole, women are less corrupt than men",
-      "question": "Can you tell me how strongly you agree or disagree with the following statement: On the whole, women are less corrupt than men",
+      "question": "Can you tell me how strongly you agree or disagree with the following statement: On the whole, women are less corrupt than men?",
       "topic_tag": "gender_attitudes",
       "original_section": "identity_religion_values",
       "values": {
