@@ -251,8 +251,8 @@
         "2": "Sunni",
         "3": "Shia",
         "4": "Hanbali",
-        "5": "Shafi’i",
-        "6": "Ja’fari",
+        "5": "Shafi'i",
+        "6": "Ja'fari",
         "7": "Druze",
         "8": "Ahmadiyya",
         "9": "Alawi",
@@ -832,7 +832,7 @@
         "17": "Climate change",
         "18": "Immigration to your country",
         "90": "Other",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "notes": "Removed interviewer and programmer instructions from wording.",
@@ -854,7 +854,7 @@
         "17": "Climate change",
         "18": "Immigration to your country",
         "90": "Other",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -874,7 +874,7 @@
         "6": "The gap between the rich and the poor (inequality)",
         "7": "Access to loans and credit",
         "90": "Other",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -890,7 +890,7 @@
         "2": "Good",
         "3": "Bad",
         "4": "Very bad",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -907,7 +907,7 @@
         "3": "Almost the same",
         "4": "Somewhat worse",
         "5": "Much worse",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -923,7 +923,7 @@
         "2": "Same",
         "3": "Narrower",
         "97": "The gap between the rich and the poor is not a problem",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Decline to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -944,7 +944,7 @@
         "7": "Limit smuggling",
         "8": "Political stability",
         "90": "Other",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -965,7 +965,7 @@
         "7": "Limit smuggling",
         "8": "Political stability",
         "90": "Other",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -985,7 +985,7 @@
         "6": "Subsidies (e.g., bread, gas, oil, electricity)",
         "7": "Fighting terrorism",
         "90": "Other",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1006,7 +1006,7 @@
         "7": "Fighting terrorism",
         "8": "Economic development",
         "90": "Other",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1025,7 +1025,7 @@
         "5": "National security",
         "6": "Subsidies (e.g., bread, gas, oil, electricity)",
         "90": "Other",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1041,7 +1041,7 @@
         "2": "Guaranteed to a medium extent",
         "3": "Guaranteed to a limited extent",
         "4": "Not guaranteed at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Decline to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1057,7 +1057,7 @@
         "2": "Guaranteed to a medium extent",
         "3": "Guaranteed to a limited extent",
         "4": "Not guaranteed at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Decline to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1073,7 +1073,7 @@
         "2": "Guaranteed to a medium extent",
         "3": "Guaranteed to a limited extent",
         "4": "Not guaranteed at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Decline to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1089,7 +1089,7 @@
         "2": "Guaranteed to a medium extent",
         "3": "Guaranteed to a limited extent",
         "4": "Not guaranteed at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Decline to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1105,7 +1105,7 @@
         "2": "Guaranteed to a medium extent",
         "3": "Guaranteed to a limited extent",
         "4": "Not guaranteed at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Decline to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1120,7 +1120,7 @@
         "1": "Little by little",
         "2": "All at once",
         "3": "No reforms at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1132,10 +1132,10 @@
       "description": "Preference for democracy",
       "question": "Which of these statements is closest to your opinion about democracy and government?",
       "values": {
-        "1": "For people like me, it doesn’t matter what kind of government we have",
+        "1": "For people like me, it doesn't matter what kind of government we have",
         "2": "Under some circumstances, a non-democratic government can be preferable",
         "3": "Democracy is always preferable to any other kind of government",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1151,7 +1151,7 @@
         "2": "Somewhat essential",
         "3": "Not very essential",
         "4": "Not essential at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1167,7 +1167,7 @@
         "2": "Somewhat essential",
         "3": "Not very essential",
         "4": "Not essential at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1183,7 +1183,7 @@
         "2": "Somewhat essential",
         "3": "Not very essential",
         "4": "Not essential at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1199,7 +1199,7 @@
         "2": "Somewhat essential",
         "3": "Not very essential",
         "4": "Not essential at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1215,7 +1215,7 @@
         "2": "Somewhat essential",
         "3": "Not very essential",
         "4": "Not essential at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1231,7 +1231,7 @@
         "2": "Somewhat essential",
         "3": "Not very essential",
         "4": "Not essential at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1247,7 +1247,7 @@
         "2": "Somewhat essential",
         "3": "Not very essential",
         "4": "Not essential at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1263,7 +1263,7 @@
         "2": "Somewhat essential",
         "3": "Not very essential",
         "4": "Not essential at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1279,7 +1279,7 @@
         "2": "Somewhat essential",
         "3": "Not very essential",
         "4": "Not essential at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1295,7 +1295,7 @@
         "2": "Somewhat essential",
         "3": "Not very essential",
         "4": "Not essential at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1311,7 +1311,7 @@
         "2": "Somewhat essential",
         "3": "Not very essential",
         "4": "Not essential at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1327,7 +1327,7 @@
         "2": "Somewhat essential",
         "3": "Not very essential",
         "4": "Not essential at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1345,7 +1345,7 @@
         "4": "Ability to freely choose political leaders in elections",
         "5": "Feeling safe from physical danger",
         "6": "Basic civil rights are guaranteed",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1363,7 +1363,7 @@
         "4": "Ability to freely choose political leaders in elections",
         "5": "Feeling safe from physical danger",
         "6": "Basic civil rights are guaranteed",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1373,13 +1373,13 @@
     },
     "Q516_1": {
       "description": "Democracy weakens economy",
-      "question": "To what extent do you agree or disagree with this statement: Under a democratic system, the country’s economic performance is weak?",
+      "question": "To what extent do you agree or disagree with this statement: Under a democratic system, the country's economic performance is weak?",
       "values": {
         "1": "I strongly agree",
         "2": "I agree",
         "3": "I disagree",
         "4": "I strongly disagree",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1395,7 +1395,7 @@
         "2": "I agree",
         "3": "I disagree",
         "4": "I strongly disagree",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1411,7 +1411,7 @@
         "2": "I agree",
         "3": "I disagree",
         "4": "I strongly disagree",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1427,7 +1427,7 @@
         "2": "I agree",
         "3": "I disagree",
         "4": "I strongly disagree",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1437,13 +1437,13 @@
     },
     "Q516B_1": {
       "description": "Non-democracy weakens economy",
-      "question": "To what extent do you agree or disagree with this statement: Under a non-democratic system, the country’s economic performance is weak?",
+      "question": "To what extent do you agree or disagree with this statement: Under a non-democratic system, the country's economic performance is weak?",
       "values": {
         "1": "I strongly agree",
         "2": "I agree",
         "3": "I disagree",
         "4": "I strongly disagree",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1459,7 +1459,7 @@
         "2": "I agree",
         "3": "I disagree",
         "4": "I strongly disagree",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1475,7 +1475,7 @@
         "2": "I agree",
         "3": "I disagree",
         "4": "I strongly disagree",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1491,7 +1491,7 @@
         "2": "I agree",
         "3": "I disagree",
         "4": "I strongly disagree",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1507,7 +1507,7 @@
         "2": "Suitable",
         "3": "Somewhat suitable",
         "4": "Not suitable at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1523,7 +1523,7 @@
         "2": "Suitable",
         "3": "Somewhat suitable",
         "4": "Not suitable at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1539,7 +1539,7 @@
         "2": "Suitable",
         "3": "Somewhat suitable",
         "4": "Not suitable at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1549,13 +1549,13 @@
     },
     "Q518_6": {
       "description": "Suitability of welfare without participation",
-      "question": "To what extent would a government that provides for citizens’ needs without giving them the right to participate in politics be suitable for your country?",
+      "question": "To what extent would a government that provides for citizens' needs without giving them the right to participate in politics be suitable for your country?",
       "values": {
         "1": "Very suitable",
         "2": "Suitable",
         "3": "Somewhat suitable",
         "4": "Not suitable at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1578,7 +1578,7 @@
         "8": "A lot of democracy",
         "9": "Democratic to the greatest extent",
         "10": "Democratic to the greatest extent",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "notes": "Collapsed from 11-point to 5-point scale.",
@@ -1602,7 +1602,7 @@
         "8": "A lot of democracy",
         "9": "Democratic to the greatest extent",
         "10": "Democratic to the greatest extent",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "notes": "Collapsed from 11-point to 5-point scale.",
@@ -1626,7 +1626,7 @@
         "8": "A lot of democracy",
         "9": "Democratic to the greatest extent",
         "10": "Democratic to the greatest extent",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "notes": "Collapsed from 11-point to 5-point scale.",
@@ -1650,7 +1650,7 @@
         "8": "A lot of democracy",
         "9": "Democratic to the greatest extent",
         "10": "Democratic to the greatest extent",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "notes": "Collapsed from 11-point to 5-point scale.",
@@ -1674,7 +1674,7 @@
         "8": "Somewhat appropriate",
         "9": "Completely appropriate",
         "10": "Completely appropriate",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "notes": "Collapsed from 11-point to 5-point scale.",
@@ -1692,7 +1692,7 @@
         "3": "The same as before",
         "4": "Somewhat less democratic",
         "5": "Much less democratic",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -1708,7 +1708,7 @@
         "2": "Somewhat agree",
         "3": "Somewhat disagree",
         "4": "Strongly disagree",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_attitudes",
@@ -2061,7 +2061,7 @@
       "description": "Preferred focus of foreign aid",
       "question": "To which of the following areas would you most prefer foreign aid to your country be dedicated?",
       "values": {
-        "1": "Women’s rights",
+        "1": "Women's rights",
         "2": "Environmental protection and combating climate change",
         "3": "Civil society development",
         "4": "Building infrastructure",
@@ -2095,8 +2095,8 @@
       "country_specific": false
     },
     "Q729_5": {
-      "description": "US aid advances women’s rights",
-      "question": "To what extent do you believe that US foreign aid to your country advances women’s rights?",
+      "description": "US aid advances women's rights",
+      "question": "To what extent do you believe that US foreign aid to your country advances women's rights?",
       "values": {
         "1": "To a great extent",
         "2": "To a limited extent",
@@ -2128,7 +2128,7 @@
     },
     "Q729B_3": {
       "description": "China aid strengthens education",
-      "question": "To what extent do you believe that China’s foreign aid to your country strengthens education initiatives?",
+      "question": "To what extent do you believe that China's foreign aid to your country strengthens education initiatives?",
       "values": {
         "1": "To a great extent",
         "2": "To a limited extent",
@@ -2143,8 +2143,8 @@
       "country_specific": false
     },
     "Q729B_5": {
-      "description": "China aid advances women’s rights",
-      "question": "To what extent do you believe that China’s foreign aid to your country advances women’s rights?",
+      "description": "China aid advances women's rights",
+      "question": "To what extent do you believe that China's foreign aid to your country advances women's rights?",
       "values": {
         "1": "To a great extent",
         "2": "To a limited extent",
@@ -2160,7 +2160,7 @@
     },
     "Q729B_6": {
       "description": "China aid strengthens civil society",
-      "question": "To what extent do you believe that China’s foreign aid to your country strengthens civil society?",
+      "question": "To what extent do you believe that China's foreign aid to your country strengthens civil society?",
       "values": {
         "1": "To a great extent",
         "2": "To a limited extent",
@@ -2299,7 +2299,7 @@
       "country_specific": false
     },
     "Q725_1": {
-      "description": "Evaluation of Biden’s regional policy",
+      "description": "Evaluation of Biden's regional policy",
       "question": "Do you think the foreign policies of United States President Joseph Biden have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
       "values": {
         "1": "Very good",
@@ -2316,7 +2316,7 @@
       "country_specific": false
     },
     "Q725_2": {
-      "description": "Evaluation of Putin’s regional policy",
+      "description": "Evaluation of Putin's regional policy",
       "question": "Do you think the foreign policies of Russian President Vladimir Putin have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
       "values": {
         "1": "Very good",
@@ -2333,7 +2333,7 @@
       "country_specific": false
     },
     "Q725_3": {
-      "description": "Evaluation of Erdoğan’s regional policy",
+      "description": "Evaluation of Erdoğan's regional policy",
       "question": "Do you think the foreign policies of Turkish President Recep Tayyip Erdoğan have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
       "values": {
         "1": "Very good",
@@ -2350,7 +2350,7 @@
       "country_specific": false
     },
     "Q725_4": {
-      "description": "Evaluation of Xi Jinping’s regional policy",
+      "description": "Evaluation of Xi Jinping's regional policy",
       "question": "Do you think the foreign policies of Chinese President Xi Jinping have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
       "values": {
         "1": "Very good",
@@ -2367,7 +2367,7 @@
       "country_specific": false
     },
     "Q725_5": {
-      "description": "Evaluation of Khamenei’s regional policy",
+      "description": "Evaluation of Khamenei's regional policy",
       "question": "Do you think the foreign policies of Iranian Supreme Leader Ali Khamenei have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
       "values": {
         "1": "Very good",
@@ -2384,7 +2384,7 @@
       "country_specific": false
     },
     "Q725_6": {
-      "description": "Evaluation of Mohammed bin Salman’s regional policy",
+      "description": "Evaluation of Mohammed bin Salman's regional policy",
       "question": "Do you think the foreign policies of Saudi Crown Prince Mohammed bin Salman have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
       "values": {
         "1": "Very good",
@@ -2401,7 +2401,7 @@
       "country_specific": false
     },
     "Q725_7": {
-      "description": "Evaluation of Bashar al-Assad’s regional policy",
+      "description": "Evaluation of Bashar al-Assad's regional policy",
       "question": "Do you think the foreign policies of Syrian President Bashar al-Assad have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
       "values": {
         "1": "Very good",
@@ -2418,7 +2418,7 @@
       "country_specific": false
     },
     "Q725_8": {
-      "description": "Evaluation of Mohammed bin Zayed’s regional policy",
+      "description": "Evaluation of Mohammed bin Zayed's regional policy",
       "question": "Do you think the foreign policies of Emirati President Mohammed bin Zayed have been very good, good, neither good nor bad, bad, or very bad for the Arab region?",
       "values": {
         "1": "Very good",
@@ -2435,8 +2435,8 @@
       "country_specific": false
     },
     "Q736B": {
-      "description": "Biden’s top priority in MENA",
-      "question": "What do you think should be the Biden administration’s number one priority in the Middle East and North Africa?",
+      "description": "Biden's top priority in MENA",
+      "question": "What do you think should be the Biden administration's number one priority in the Middle East and North Africa?",
       "values": {
         "1": "Education",
         "2": "Economic development",
@@ -2502,8 +2502,8 @@
       "country_specific": false
     },
     "Q733": {
-      "description": "Approval of Russia’s invasion of Ukraine",
-      "question": "To what extent do you approve or disapprove of Russia’s invasion of Ukraine?",
+      "description": "Approval of Russia's invasion of Ukraine",
+      "question": "To what extent do you approve or disapprove of Russia's invasion of Ukraine?",
       "values": {
         "1": "Strongly approve",
         "2": "Somewhat approve",
@@ -2598,8 +2598,8 @@
       "country_specific": false
     },
     "Q728_1B": {
-      "description": "Threat: China’s economic power",
-      "question": "To what extent do you see the development of China’s economic power as a threat to your country’s national security interests?",
+      "description": "Threat: China's economic power",
+      "question": "To what extent do you see the development of China's economic power as a threat to your country's national security interests?",
       "values": {
         "1": "Critical",
         "2": "Important but not critical",
@@ -2614,7 +2614,7 @@
     },
     "Q728_2B": {
       "description": "Threat: American economic power",
-      "question": "To what extent do you see the development of American economic power as a threat to your country’s national security interests?",
+      "question": "To what extent do you see the development of American economic power as a threat to your country's national security interests?",
       "values": {
         "1": "Critical",
         "2": "Important but not critical",
@@ -2628,8 +2628,8 @@
       "country_specific": false
     },
     "Q728_4A": {
-      "description": "Threat: Iran’s political influence",
-      "question": "To what extent do you see Iran’s political influence in the region as a threat to your country’s national security interests?",
+      "description": "Threat: Iran's political influence",
+      "question": "To what extent do you see Iran's political influence in the region as a threat to your country's national security interests?",
       "values": {
         "1": "Critical",
         "2": "Important but not critical",
@@ -2643,8 +2643,8 @@
       "country_specific": false
     },
     "Q728_4B": {
-      "description": "Threat: Saudi Arabia’s political influence",
-      "question": "To what extent do you see Saudi Arabia’s political influence in the region as a threat to your country’s national security interests?",
+      "description": "Threat: Saudi Arabia's political influence",
+      "question": "To what extent do you see Saudi Arabia's political influence in the region as a threat to your country's national security interests?",
       "values": {
         "1": "Critical",
         "2": "Important but not critical",
@@ -2659,7 +2659,7 @@
     },
     "Q728_5A": {
       "description": "Threat: Israeli occupation of Palestinian territories",
-      "question": "To what extent do you see the Israeli occupation of the Palestinian territories as a threat to your country’s national security interests?",
+      "question": "To what extent do you see the Israeli occupation of the Palestinian territories as a threat to your country's national security interests?",
       "values": {
         "1": "Critical",
         "2": "Important but not critical",
@@ -2673,8 +2673,8 @@
       "country_specific": false
     },
     "Q728_5B": {
-      "description": "Threat: Iran’s nuclear program",
-      "question": "To what extent do you see Iran’s nuclear program as a threat to your country’s national security interests?",
+      "description": "Threat: Iran's nuclear program",
+      "question": "To what extent do you see Iran's nuclear program as a threat to your country's national security interests?",
       "values": {
         "1": "Critical",
         "2": "Important but not critical",
@@ -2689,7 +2689,7 @@
     },
     "Q728_7": {
       "description": "Threat: climate change",
-      "question": "To what extent do you see climate change as a threat to your country’s national security interests?",
+      "question": "To what extent do you see climate change as a threat to your country's national security interests?",
       "values": {
         "1": "Critical",
         "2": "Important but not critical",
@@ -3230,7 +3230,7 @@
       "country_specific": true
     },
     "QKUW41": {
-      "description": "Evaluation of Kuwait’s external aid volume",
+      "description": "Evaluation of Kuwait's external aid volume",
       "question": "How would you evaluate the volume of external aid provided by Kuwait?",
       "values": {
         "1": "More than it should be",
@@ -3521,7 +3521,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "notes": "Item from a battery; common scale documented once.",
@@ -3538,7 +3538,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3554,7 +3554,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3570,7 +3570,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "notes": "Local government wording varies slightly by country (e.g., municipalities).",
@@ -3587,7 +3587,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3603,7 +3603,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3619,7 +3619,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3635,7 +3635,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3651,7 +3651,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3667,7 +3667,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3683,7 +3683,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "notes": "In Palestine, this refers to National Security Forces.",
@@ -3700,7 +3700,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3716,7 +3716,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3732,7 +3732,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "notes": "Party label varies by country (e.g., Muslim Brotherhood, Ennahda, Hamas).",
@@ -3749,7 +3749,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3765,7 +3765,7 @@
         "2": "Quite a lot of trust",
         "3": "Not a lot of trust",
         "4": "No trust at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3775,13 +3775,13 @@
     },
     "Q204A_3": {
       "description": "Satisfaction with government overall",
-      "question": "How satisfied are you with the government’s overall performance in your country?",
+      "question": "How satisfied are you with the government's overall performance in your country?",
       "values": {
         "1": "Completely satisfied",
         "2": "Satisfied",
         "3": "Dissatisfied",
         "4": "Completely dissatisfied",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3797,7 +3797,7 @@
         "2": "Satisfied",
         "3": "Dissatisfied",
         "4": "Completely dissatisfied",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3813,7 +3813,7 @@
         "2": "Satisfied",
         "3": "Dissatisfied",
         "4": "Completely dissatisfied",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3829,7 +3829,7 @@
         "2": "Satisfied",
         "3": "Dissatisfied",
         "4": "Completely dissatisfied",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3845,7 +3845,7 @@
         "2": "Satisfied",
         "3": "Dissatisfied",
         "4": "Completely dissatisfied",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3861,7 +3861,7 @@
         "2": "Satisfied",
         "3": "Dissatisfied",
         "4": "Completely dissatisfied",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3877,7 +3877,7 @@
         "2": "Satisfied",
         "3": "Dissatisfied",
         "4": "Completely dissatisfied",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3893,7 +3893,7 @@
         "2": "Satisfied",
         "3": "Dissatisfied",
         "4": "Completely dissatisfied",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3909,7 +3909,7 @@
         "2": "Satisfied",
         "3": "Dissatisfied",
         "4": "Completely dissatisfied",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3925,7 +3925,7 @@
         "2": "Satisfied",
         "3": "Dissatisfied",
         "4": "Completely dissatisfied",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3935,14 +3935,14 @@
     },
     "Q204_2": {
       "description": "Government performance creating jobs",
-      "question": "How would you evaluate the current government’s performance in creating employment opportunities?",
+      "question": "How would you evaluate the current government's performance in creating employment opportunities?",
       "values": {
         "1": "Very good",
         "2": "Good",
         "3": "Bad",
         "4": "Very bad",
-        "97": "This is not the government’s responsibility",
-        "98": "Don’t know",
+        "97": "This is not the government's responsibility",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3952,14 +3952,14 @@
     },
     "Q204_3": {
       "description": "Government performance reducing inequality",
-      "question": "How would you evaluate the current government’s performance in narrowing the gap between rich and poor?",
+      "question": "How would you evaluate the current government's performance in narrowing the gap between rich and poor?",
       "values": {
         "1": "Very good",
         "2": "Good",
         "3": "Bad",
         "4": "Very bad",
-        "97": "This is not the government’s responsibility",
-        "98": "Don’t know",
+        "97": "This is not the government's responsibility",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3969,14 +3969,14 @@
     },
     "Q204_11": {
       "description": "Government performance providing security",
-      "question": "How would you evaluate the current government’s performance in providing security and order?",
+      "question": "How would you evaluate the current government's performance in providing security and order?",
       "values": {
         "1": "Very good",
         "2": "Good",
         "3": "Bad",
         "4": "Very bad",
-        "97": "This is not the government’s responsibility",
-        "98": "Don’t know",
+        "97": "This is not the government's responsibility",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -3986,14 +3986,14 @@
     },
     "Q204_20": {
       "description": "Government performance keeping prices down",
-      "question": "How would you evaluate the current government’s performance in keeping prices down?",
+      "question": "How would you evaluate the current government's performance in keeping prices down?",
       "values": {
         "1": "Very good",
         "2": "Good",
         "3": "Bad",
         "4": "Very bad",
-        "97": "This is not the government’s responsibility",
-        "98": "Don’t know",
+        "97": "This is not the government's responsibility",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -4009,7 +4009,7 @@
         "2": "To a medium extent",
         "3": "To a small extent",
         "4": "Not at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -4025,7 +4025,7 @@
         "2": "To a medium extent",
         "3": "To a small extent",
         "4": "Not at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -4041,7 +4041,7 @@
         "2": "Not a lot of officials are corrupt",
         "3": "Most officials are corrupt",
         "4": "Almost everyone is corrupt",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -4057,7 +4057,7 @@
         "2": "To a medium extent",
         "3": "To a small extent",
         "4": "Not at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -4073,7 +4073,7 @@
         "2": "Sometimes",
         "3": "Rarely",
         "4": "Never",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -4089,7 +4089,7 @@
         "2": "Sometimes",
         "3": "Rarely",
         "4": "Never",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -4105,7 +4105,7 @@
         "2": "Sometimes",
         "3": "Rarely",
         "4": "Never",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -4121,7 +4121,7 @@
         "2": "Sometimes",
         "3": "Rarely",
         "4": "Never",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -4137,7 +4137,7 @@
         "2": "Largely responsive",
         "3": "Not very responsive",
         "4": "Not responsive at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "institutional_trust",
@@ -4179,7 +4179,7 @@
     },
     "QMOR5": {
       "description": "Evaluation of government crisis management",
-      "question": "Overall, did the government’s management of the earthquake crisis exceed, meet, or fail to meet your prior expectations?",
+      "question": "Overall, did the government's management of the earthquake crisis exceed, meet, or fail to meet your prior expectations?",
       "values": {
         "1": "Surpassed expectations",
         "2": "Met expectations",
@@ -4235,7 +4235,7 @@
         "6": "Participate in an in-person protest, demonstration, strike, or boycott",
         "7": "Start or engage with a social media campaign",
         "97": "Not applicable – nothing is effective",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4255,7 +4255,7 @@
         "6": "Participate in an in-person protest, demonstration, strike, or boycott",
         "7": "Start or engage with a social media campaign",
         "97": "Not applicable – nothing is effective",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4275,7 +4275,7 @@
         "7": "Start or engage with a social media campaign",
         "8": "Work through the National Assembly",
         "97": "Not applicable – nothing is effective",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4295,7 +4295,7 @@
         "7": "Start or engage with a social media campaign",
         "8": "Work through the National Assembly",
         "97": "Not applicable – nothing is effective",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4311,7 +4311,7 @@
         "2": "Interested",
         "3": "Uninterested",
         "4": "Very uninterested",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4325,7 +4325,7 @@
       "values": {
         "1": "Yes",
         "2": "No",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4348,9 +4348,9 @@
         "9": "Political development",
         "10": "Religious activity",
         "11": "Sports",
-        "12": "Women’s empowerment",
+        "12": "Women's empowerment",
         "90": "Other",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "notes": "Open-ended text response is not included; only post-coded category variable is captured.",
@@ -4365,7 +4365,7 @@
       "values": {
         "1": "Yes",
         "2": "No",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4379,7 +4379,7 @@
       "values": {
         "1": "Yes",
         "2": "No",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4393,7 +4393,7 @@
       "values": {
         "1": "Yes",
         "2": "No",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4407,7 +4407,7 @@
       "values": {
         "1": "Yes",
         "2": "No",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4421,7 +4421,7 @@
       "values": {
         "1": "Yes",
         "2": "No",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4435,7 +4435,7 @@
       "values": {
         "1": "Yes",
         "2": "No",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4449,7 +4449,7 @@
       "values": {
         "1": "Yes",
         "2": "No",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4463,7 +4463,7 @@
       "values": {
         "1": "Yes",
         "2": "No",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "notes": "Specific election date varies by country and is omitted from wording here.",
@@ -4478,7 +4478,7 @@
       "values": {
         "1": "Yes",
         "2": "No",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4493,7 +4493,7 @@
         "1": "Free and fair",
         "2": "Free and fair with minor problems",
         "3": "Not free or fair",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4509,7 +4509,7 @@
         "2": "Sometimes",
         "3": "Rarely",
         "4": "Never",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4525,7 +4525,7 @@
         "2": "Sometimes",
         "3": "Rarely",
         "4": "Never",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4541,7 +4541,7 @@
         "2": "Sometimes",
         "3": "Rarely",
         "4": "Never",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4555,7 +4555,7 @@
       "values": {
         "1": "Yes",
         "2": "No",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "political_participation",
@@ -4769,7 +4769,7 @@
       "values": {
         "1": "Most people can be trusted",
         "2": "One must be very careful in dealing with other people",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "social_attitudes",
@@ -5099,7 +5099,7 @@
     },
     "Q873": {
       "description": "Discrimination factors",
-      "question": "In your opinion, do people in your country experience discrimination? Please indicate all that apply.",
+      "question": "In your opinion, do people in your country experience discrimination?",
       "values": {
         "1": "Socioeconomic class",
         "2": "The region you are from",
@@ -5149,7 +5149,7 @@
     },
     "Q881A": {
       "description": "Discrimination circumstances",
-      "question": "Thinking about people who face discrimination, in which of the following circumstances do you think they have faced discrimination? Please indicate all that apply.",
+      "question": "Thinking about people who face discrimination, in which of the following circumstances do you think they have faced discrimination?",
       "values": {
         "1": "Finding employment",
         "2": "Finding housing",
@@ -5170,7 +5170,7 @@
     },
     "Q881B": {
       "description": "Forms of Discrimination",
-      "question": "Thinking about people who face discrimination, what do they experience? Please indicate all that apply.",
+      "question": "Thinking about people who face discrimination, what do they experience?",
       "values": {
         "1": "Subjected to verbal insults or hate speech",
         "2": "Subjected to offensive jokes",
@@ -5207,7 +5207,7 @@
     },
     "Q883": {
       "description": "Main discrimination reason",
-      "question": "In your opinion, what is the main reason for being discriminated against? Please choose one.",
+      "question": "In your opinion, what is the main reason for being discriminated against?",
       "values": {
         "1": "Socioeconomic class",
         "2": "The region you are from",
@@ -5233,7 +5233,7 @@
     },
     "Q884A": {
       "description": "Personal Discrimination circumstances",
-      "question": "In which of the following circumstances have you faced discrimination? Please indicate all that apply.",
+      "question": "In which of the following circumstances have you faced discrimination?",
       "values": {
         "1": "Finding employment",
         "2": "Finding housing",
@@ -5476,7 +5476,7 @@
       "country_specific": false
     },
     "Q622C": {
-      "description": "Main barrier to women’s employment",
+      "description": "Main barrier to women's employment",
       "question": "In your opinion, which of the following is the most challenging barrier to women entering the workplace in your country?",
       "values": {
         "1": "Lack of available jobs",
@@ -5498,7 +5498,7 @@
       "country_specific": false
     },
     "Q622E": {
-      "description": "Main barrier to men’s employment (Iraq)",
+      "description": "Main barrier to men's employment (Iraq)",
       "question": "In your opinion, which of the following is the most challenging barrier to men entering the workplace in Iraq?",
       "values": {
         "1": "Lack of available jobs",
@@ -5520,7 +5520,7 @@
       "country_specific": false
     },
     "Q622C_IRQ": {
-      "description": "Barriers to women’s employment (Iraq, multiple)",
+      "description": "Barriers to women's employment (Iraq, multiple)",
       "question": "In your opinion, which of the following are challenging barriers to women entering the workplace in Iraq?",
       "values": {
         "1": "Lack of available jobs",
@@ -5542,7 +5542,7 @@
       "country_specific": false
     },
     "Q622E_IRQ": {
-      "description": "Barriers to men’s employment (Iraq, multiple)",
+      "description": "Barriers to men's employment (Iraq, multiple)",
       "question": "In your opinion, which of the following are challenging barriers to men entering the workplace in your country?",
       "values": {
         "1": "Lack of available jobs",
@@ -5901,8 +5901,8 @@
       "country_specific": false
     },
     "Q631": {
-      "description": "Women leaders advance women’s rights",
-      "question": "To what extent do you believe that having women in political leadership roles advances the women’s rights agenda in your country?",
+      "description": "Women leaders advance women's rights",
+      "question": "To what extent do you believe that having women in political leadership roles advances the women's rights agenda in your country?",
       "values": {
         "1": "To a great extent",
         "2": "To a medium extent",
@@ -6393,7 +6393,7 @@
         "2": "To a medium extent",
         "3": "To a small extent",
         "4": "Not a problem at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Decline to answer"
       },
       "harmonized_section": "wellbeing",
@@ -6409,7 +6409,7 @@
         "2": "To a medium extent",
         "3": "To a small extent",
         "4": "Not a problem at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Decline to answer"
       },
       "harmonized_section": "wellbeing",
@@ -6425,7 +6425,7 @@
         "2": "To a medium extent",
         "3": "To a small extent",
         "4": "Not a problem at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Decline to answer"
       },
       "harmonized_section": "wellbeing",
@@ -6441,7 +6441,7 @@
         "2": "To a medium extent",
         "3": "To a small extent",
         "4": "Not a problem at all",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Decline to answer"
       },
       "harmonized_section": "wellbeing",
@@ -6456,7 +6456,7 @@
         "1": "Often true",
         "2": "Sometimes true",
         "3": "Never true",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "wellbeing",
@@ -6477,7 +6477,7 @@
         "7": "Externally imposed economic sanctions",
         "90": "Other",
         "97": "Food insecurity is not a problem in my country",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "wellbeing",
@@ -6493,7 +6493,7 @@
         "2": "Most days (4–6 days)",
         "3": "Some days (1–3 days)",
         "4": "Never (0 days)",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "wellbeing",
@@ -6509,7 +6509,7 @@
         "2": "Most days (4–6 days)",
         "3": "Some days (1–3 days)",
         "4": "Never (0 days)",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "wellbeing",
@@ -6526,7 +6526,7 @@
         "3": "Buy food on credit",
         "4": "Receive food donations or rely on government support programs",
         "5": "Receive food donations or rely on support from religious institutions or charities",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "notes": "Multiple responses allowed; option 1 is exclusive.",
@@ -6543,7 +6543,7 @@
         "2": "Somewhat safe",
         "3": "Somewhat unsafe",
         "4": "Very unsafe",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "wellbeing",
@@ -6559,7 +6559,7 @@
         "2": "Sometimes",
         "3": "Rarely",
         "4": "Never",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "wellbeing",
@@ -6575,7 +6575,7 @@
         "2": "Sometimes",
         "3": "Rarely",
         "4": "Never",
-        "98": "Don’t know",
+        "98": "Don't know",
         "99": "Refused to answer"
       },
       "harmonized_section": "wellbeing",
@@ -6667,7 +6667,7 @@
     },
     "QLEB9": {
       "description": "Impact of price increases on purchasing power",
-      "question": "To what extent have the increasing prices of essential goods impacted your household’s purchasing power?",
+      "question": "To what extent have the increasing prices of essential goods impacted your household's purchasing power?",
       "values": {
         "1": "To a great extent",
         "2": "To a medium extent",
@@ -6683,7 +6683,7 @@
     },
     "QLEB10": {
       "description": "Substitute source of electricity",
-      "question": "With the absence of the State’s electricity (EDL), what is your substitute source for electricity?",
+      "question": "With the absence of the State's electricity (EDL), what is your substitute source for electricity?",
       "values": {
         "1": "Private generator",
         "2": "Generator subscription",
@@ -6815,7 +6815,7 @@
     },
     "Q549_3": {
       "description": "Concern climate change: job/livelihood",
-      "question": "To what extent are you concerned about the impact of climate change on your job or your household’s livelihood?",
+      "question": "To what extent are you concerned about the impact of climate change on your job or your household's livelihood?",
       "values": {
         "1": "To a great extent",
         "2": "To a medium extent",
@@ -7423,8 +7423,8 @@
       "question": "Which daily Arabic-language Kuwaiti newspaper do you read most?",
       "values": {
         "1": "Al Qabas",
-        "2": "Al R’aee",
-        "3": "Al Anba’",
+        "2": "Al R'aee",
+        "3": "Al Anba'",
         "4": "Al Jarida",
         "5": "Al Nahar",
         "6": "Al Siyasa",
@@ -7443,8 +7443,8 @@
       "question": "How do you read the Kuwaiti newspaper you read most?",
       "values": {
         "1": "In print",
-        "2": "The newspaper’s website",
-        "3": "The newspaper’s mobile application",
+        "2": "The newspaper's website",
+        "3": "The newspaper's mobile application",
         "98": "Don't know",
         "99": "Refused to answer"
       },
