@@ -60,6 +60,8 @@ class RespondentProfileGenerator:
     country_col : str, optional
         Column name for country variable (e.g., 'B_COUNTRY', 'Q202'). 
         If None, country will not be included in prediction instances.
+    survey : str, optional
+        Name of the survey. If None, survey will not be included in prediction instances.
     missing_value_labels : list[str], optional
         Exact value labels to treat as missing/artifacts and exclude.
         E.g., ["Missing", "Not asked", "No answer", "Refused", "Don't know"]
@@ -85,6 +87,7 @@ class RespondentProfileGenerator:
     ...     df, metadata, 
     ...     respondent_id_col='respondent_id',
     ...     country_col='B_COUNTRY',
+    ...     survey='survey_name',
     ...     missing_value_labels=['Missing', 'No answer'],
     ...     missing_value_patterns=['not asked', 'refused'],
     ...     similarity_model='all-MiniLM-L6-v2',
@@ -106,6 +109,7 @@ class RespondentProfileGenerator:
         metadata: dict,
         respondent_id_col: Optional[str] = None,
         country_col: Optional[str] = None,
+        survey: Optional[str] = None,
         missing_value_labels: Optional[list[str]] = None,
         missing_value_patterns: Optional[list[str]] = None,
         similarity_model: Optional[str] = None,
@@ -115,6 +119,7 @@ class RespondentProfileGenerator:
         self.metadata = metadata
         self.respondent_id_col = respondent_id_col
         self.country_col = country_col
+        self.survey = survey
         
         # Missing value configuration
         self.missing_value_labels = set(missing_value_labels) if missing_value_labels else set()
@@ -1336,6 +1341,7 @@ class RespondentProfileGenerator:
             answer=answer_label,
             answer_raw=raw_answer,
             options=options,
+            survey=self.survey or "",
             profile_config=profile.config,
             target_section=target.section
         )
@@ -1407,6 +1413,7 @@ class RespondentProfileGenerator:
             answer=answer_label,
             answer_raw=raw_answer,
             options=options,
+            survey=self.survey or "",
             profile_config=profile.config,
             target_section=target.section
         )
