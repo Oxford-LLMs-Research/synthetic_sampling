@@ -14,7 +14,7 @@ import unicodedata
 # CONFIG
 # -------------------------------------------------------------------
 ESS10_META_PATH_IN = Path("ess10_meta_enriched_clean.json")
-ESS11_META_PATH_IN = Path("ess11_meta_enriched_clean.json")   # <-- fix from sample
+ESS11_META_PATH_IN = Path("ess11_meta_enriched_clean.json")   
 
 ESS10_DATA_PATH_IN = Path("../../../../../data/ess/ESS10.csv")
 ESS11_DATA_PATH_IN = Path("../../../../../data/ess/ESS11.csv")
@@ -611,6 +611,42 @@ meta = add_metadata_entry_generic(meta,  df=df, source_vars=source_vars, ess_rou
 target_vars = ['impdema', 'impdemb', 'impdemc', 'impdemd', 'impdeme']
 source_vars = add_consolidated_column(df, meta_records=meta, new_var='impdem_consolidated', target_vars=target_vars, target_var_src='impdem_consolidated_source_var', ignore_not_applicable=True, na_category='6')
 meta = add_metadata_entry_generic(meta,  df=df, source_vars=source_vars, ess_round_label="ESS Round 10", var_name='impdem_consolidated', target_vars = target_vars, question_category = 'politics', question_wording = 'What do you think is the most important for democracy in general?', description="see source variables")
+# Own education variable
+target_vars = ['edlvebe', 'edlvebg', 'edlvdch', 'edlvehr', 'edlvdcz', 
+               'edlvdee', 'edlvdfi', 'edlvdfr', 'edlvegr', 'edlvdahu',
+               'edlvdis', 'edlvdie', 'edlveit', 'edlvdlt', 'edlvdme', 
+               'edlvenl', 'edlvdmk', 'edlveno', 'edlvdpt', 'edlvesi', 
+               'edlvdsk', 'edubgb2' #,  'educgb1' # removed due to large redundancy with edubgb2
+               ]
+source_vars = add_consolidated_column(df, meta_records=meta, new_var='edlv_consolidated', target_vars=target_vars, target_var_src='edlv_consolidated_source_var', ignore_not_applicable=False)
+meta = add_metadata_entry_generic(meta,  df=df, source_vars=source_vars, ess_round_label="ESS Round 10", var_name='edlv_consolidated', target_vars = target_vars, question_category = 'demographics', question_wording = 'What is the highest level of education you have completed?', description="see source variables")
+# Partner education variable
+target_vars = ['edlvpebe', 'edlvpebg', 'edlvpdch', 'edlvpehr', 'edlvpdcz', 
+               'edlvpdee', 'edlvpdfi', 'edlvpdfr', 'edlvpegr', 'edlvpdahu',
+               'edlvpdis', 'edlvpdie', 'edlvpeit', 'edlvpdlt', 'edlvpdme',
+               'edlvpenl', 'edlvpdmk', 'edlvpeno', 'edlvpdpt', 'edlvpesi',
+               'edlvpdsk', 'edupbgb2' #,  'edupcgb1' # removed due to large redundancy with edubgb2
+               ]
+source_vars = add_consolidated_column(df, meta_records=meta, new_var='edlvp_consolidated', target_vars=target_vars, target_var_src='edlvp_consolidated_source_var', ignore_not_applicable=False)
+meta = add_metadata_entry_generic(meta,  df=df, source_vars=source_vars, ess_round_label="ESS Round 10", var_name='edlvp_consolidated', target_vars = target_vars, question_category = 'demographics', question_wording = "What is the highest level of education your spouse or partner has completed?", description="see source variables")
+# Father education variable 
+target_vars = ['edlvfebe', 'edlvfebg', 'edlvfdch', 'edlvfehr', 'edlvfdcz',
+               'edlvfdee', 'edlvfdfi', 'edlvfdfr', 'edlvfegr', 'edlvfdahu',
+               'edlvfdis', 'edlvfdie', 'edlvfeit', 'edlvfdlt', 'edlvfdme',
+               'edlvfenl', 'edlvfdmk', 'edlvfeno', 'edlvfdpt', 'edlvfesi',
+               'edlvfdsk', 'edufbgb2' #,  'edupcgb1' # removed due to large redundancy with edubgb2
+               ]           
+source_vars = add_consolidated_column(df, meta_records=meta, new_var='edlvf_consolidated', target_vars=target_vars, target_var_src='edlvf_consolidated_source_var', ignore_not_applicable=False)
+meta = add_metadata_entry_generic(meta,  df=df, source_vars=source_vars, ess_round_label="ESS Round 10", var_name='edlvf_consolidated', target_vars = target_vars, question_category = 'demographics', question_wording = "What is the highest level of education your father has completed?", description="see source variables")
+# Mother education variable 
+target_vars = ['edlvmebe', 'edlvmebg', 'edlvmdch', 'edlvmehr', 'edlvmdcz',
+               'edlvmdee', 'edlvmdfi', 'edlvmdfr', 'edlvmegr', 'edlvmdahu',
+               'edlvmdis', 'edlvmdie', 'edlvmeit', 'edlvmdlt', 'edlvmdme',
+               'edlvmenl', 'edlvmdmk', 'edlvmeno', 'edlvmdpt', 'edlvmesi',
+               'edlvmdsk', 'edumbgb2' #,  'edumcgb1' # removed due to large redundancy with edubgb2
+               ]           
+source_vars = add_consolidated_column(df, meta_records=meta, new_var='edlvm_consolidated', target_vars=target_vars, target_var_src='edlvm_consolidated_source_var', ignore_not_applicable=False)
+meta = add_metadata_entry_generic(meta,  df=df, source_vars=source_vars, ess_round_label="ESS Round 10", var_name='edlvm_consolidated', target_vars = target_vars, question_category = 'demographics', question_wording = "What is the highest level of education your mother has completed?", description="see source variables")
 # Export
 df.to_csv(ESS10_DATA_PATH_OUT, index=False)
 save_json(meta, ESS10_META_PATH_OUT)
@@ -628,6 +664,52 @@ meta_11 = add_metadata_entry_closeness(meta_11, df=df_11, source_vars=source_var
 # Party last voted for (taking first vote if multiple options in country)
 source_vars = add_party_voted_column(df_11, meta_records=meta_11, new_var=NEW_VAR_VOTED, ignore_not_applicable=True, na_category='99.0')
 meta_11 = add_metadata_entry_generic(meta_11,  df=df_11, source_vars=source_vars, ess_round_label="ESS Round 11", var_name=NEW_VAR_VOTED, target_vars = 'prtvteXX', question_category = 'politics', question_wording = 'What party did you vote for in the last election?', description="see source variables")
+# Own education variable
+target_vars = ['edlveat', 'edlvebe', 'edlvebg', 'edlvehr', 'edlvgcy',
+               'edlvdee', 'edlvdfi', 'edlvdfr', 'educde2', # 'edudde1', 
+               'edlvegr', 'edlvdahu', 'edlvdis', 'edlvdie', 'edubil1',
+               'edlvfit', 'edlvelv', 'edlvdlt', 'edlveme', # 'eduail2',
+               'edlvenl', 'edlveno', 'edlvipl', 'edlvept', 'edlvdrs',
+               'edlvdsk', 'edlvesi', 'edlvies', 'edlvdse', 'edlvdch',
+               'edlvdua', 'edubgb2' # , 'educgb1' removed due to large redundancy with edubgb2
+               ]
+source_vars = add_consolidated_column(df_11, meta_records=meta_11, new_var='edlv_consolidated', target_vars=target_vars, target_var_src='edlv_consolidated_source_var', ignore_not_applicable=False)
+meta_11 = add_metadata_entry_generic(meta_11,  df=df_11, source_vars=source_vars, ess_round_label="ESS Round 11", var_name='edlv_consolidated', target_vars = target_vars, question_category = 'demographics', question_wording = 'What is the highest level of education you have completed?', description="see source variables")
+# Partner education variable
+target_vars = ['edlvpfat', 'edlvpebe', 'edlvpebg', 'edlvpehr', 'edlvpgcy',
+               'edlvpdee', 'edlvpdfi', 'edlvpdfr',  'edupcde2', #'edupdde1',
+               'edlvpegr', 'edlvpdahu', 'edlvpdis', 'edlvpdie', # 'edupail2',
+               'edupbil1', 'edlvpfit', 'edlvpelv', 'edlvpdlt', 'edlvpeme',
+               'edlvpenl', 'edlvpeno', 'edlvphpl', 'edlvpept', 'edlvpdrs',
+               'edlvpdsk', 'edlvpesi', 'edlvphes', 'edlvpdse', 'edlvpdch',
+               'edlvpdua', 'edupbgb2' #,  'edupcgb1', # removed due to large redundancy with edubgb2
+               ]
+source_vars = add_consolidated_column(df_11, meta_records=meta_11, new_var='edlvp_consolidated', target_vars=target_vars, target_var_src='edlvp_consolidated_source_var', ignore_not_applicable=False)
+meta_11 = add_metadata_entry_generic(meta_11,  df=df_11, source_vars=source_vars, ess_round_label="ESS Round 11", var_name='edlvp_consolidated', target_vars = target_vars, question_category = 'demographics', question_wording = "What is the highest level of education your spouse or partner has completed?", description="see source variables")
+# Father education variable 
+target_vars = ['edlvfeat', 'edlvfebe', 'edlvfebg', 'edlvfehr', 'edlvfgcy',
+               'edlvfdee', 'edlvfdfi', 'edlvfdfr',  'edufbde2', # 'edufcde1',
+               'edlvfegr', 'edlvfdahu', 'edlvfdis', 'edlvfdie', 'edufbil1',
+               'edlvffit', 'edlvfelv', 'edlvfdlt', 'edlvfeme', # 'edufail2', 
+               'edlvfenl', 'edlvfeno', 'edlvfgpl', 'edlvfept', 'edlvfdrs',
+               'edlvfdsk', 'edlvfesi', 'edlvfges', 'edlvfdse', 'edlvfdch',
+               'edlvfdua', 'edufbgb2' #,  'edufcgb1', # removed due to large redundancy with edubgb2
+               ]           
+source_vars = add_consolidated_column(df_11, meta_records=meta_11, new_var='edlvf_consolidated', target_vars=target_vars, target_var_src='edlvf_consolidated_source_var', ignore_not_applicable=False)
+meta_11 = add_metadata_entry_generic(meta_11,  df=df_11, source_vars=source_vars, ess_round_label="ESS Round 11", var_name='edlvf_consolidated', target_vars = target_vars, question_category = 'demographics', question_wording = "What is the highest level of education your father has completed?", description="see source variables")
+# Mother education variable 
+target_vars = ['edlvmeat', 'edlvmebe', 'edlvmebg', 'edlvmehr', 'edlvmgcy',
+               'edlvmdee', 'edlvmdfi', 'edlvmdfr', 'edumbde2', #  'edumcde1', # removed due to large redundancy with edumbde2
+               'edlvmegr', 'edlvmdahu', 'edlvmdis', 'edlvmdie', 'edumbil1',
+               'edlvmfit', 'edlvmelv', 'edlvmdlt', 'edlvmeme', # 'edumail2', 
+               'edlvmenl', 'edlvmeno', 'edlvmgpl', 'edlvmept', 'edlvmdrs',
+               'edlvmdsk', 'edlvmesi', 'edlvmges', 'edlvmdse', 'edlvmdch',
+               'edlvmdua', 'edumbgb2' #,   'edumcgb1', # removed due to large redundancy with edubgb2
+               ]           
+source_vars = add_consolidated_column(df_11, meta_records=meta_11, new_var='edlvm_consolidated', target_vars=target_vars, target_var_src='edlvm_consolidated_source_var', ignore_not_applicable=False)
+meta_11 = add_metadata_entry_generic(meta_11,  df=df_11, source_vars=source_vars, ess_round_label="ESS Round 11", var_name='edlvm_consolidated', target_vars = target_vars, question_category = 'demographics', question_wording = "What is the highest level of education your mother has completed?", description="see source variables")
+
+
 # Export
 df_11.to_csv(ESS11_DATA_PATH_OUT, index=False)
 save_json(meta_11, ESS11_META_PATH_OUT)
@@ -639,6 +721,33 @@ print(f"[DONE] Wrote metadata: {ESS11_META_PATH_OUT}")
 
 
 # ------------------------------------ CHECKS ---------------------------------------
+
+# Crosstable
+a = df_11["edubil1"].map(code_to_key).fillna(MISSING_LABEL)
+b = df_11["eduail2"].map(code_to_key).fillna(MISSING_LABEL)
+ct = pd.crosstab(a, b, dropna=False, margins=True)
+print("Cross-tabulation: edubil1 (rows) x eduail2 (cols)")
+print(ct.to_string())
+
+# Simple freq table
+freq_table = df_11["eduail2"].value_counts(dropna=False).sort_index()
+# ensure full output (no truncation)
+print(freq_table.to_string())
+
+
+
+# Simple freq table
+freq_table = df_11["testji6"].value_counts(dropna=False).sort_index()
+# ensure full output (no truncation)
+print(freq_table.to_string())
+
+# Crosstable
+a = df_11["testji6"].map(code_to_key).fillna(MISSING_LABEL)
+b = df_11["testji3"].map(code_to_key).fillna(MISSING_LABEL)
+ct = pd.crosstab(a, b, dropna=False, margins=True)
+print("Cross-tabulation: testji3 (rows) x eduail2 (cols)")
+print(ct.to_string())
+
 
 # frequency table for the new variable
 print("Frequency table for ESS Round 10 party closeness variable:")

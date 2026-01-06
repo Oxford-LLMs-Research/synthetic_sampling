@@ -557,7 +557,9 @@ ess11_final_consolidated = load_json_records(ESS11_PATH_IN_CONSOLIDATED)
 
 # Remove variables that were in the original but are now superseded by consolidated versions
 consolidated_var_names = {
+    # Most important for democracy
     'impdema', 'impdemb', 'impdemc', 'impdemd', 'impdeme',
+    # Party voting behavior and closeness
     'prtvtebe', 'prtvtebg', 'prtvthch', 'prtvtbhr', 'prtvtecz', 
     'prtvtdat', 'prtvtfbg', 'prtvclt3',  'prtvgde2', 'prtvtgsi', 
     'prtvthee', 'prtvtefi', 'prtvtefr', 'prtvtdgr', 'prtvtghu', 
@@ -577,7 +579,54 @@ consolidated_var_names = {
     'prtclebe', 'prtclebg', 'prtclecz', 'prtclhee', 'prtclffi', 
     'prtclffr', 'prtcldgr', 'prtclhhu', 'prtcldis', 'prtcleit',
     'prtclame', 'prtclgnl', 'prtclmk', 'prtclbno', 'prtclfpt',
-    'prtclfsi'
+    'prtclfsi',
+    # Religion
+    'rlgdnbat', 'rlgdnacy', 'rlgdnafi', 'rlgdnade', 'rlgdnagr',
+    'rlgdnhu', 'rlgdnais', 'rlgdnie', 'rlgdnlv', 'rlgdnlt',
+    'rlgdme', 'rlgdnanl', 'rlgdnno', 'rlgdnapl', 'rlgdnapt',
+    'rlgdnrs', 'rlgdnask', 'rlgdnase', 'rlgdnach', 'rlgdnaua',
+    'rlgdngb', 'rlgdebat', 'rlgdeacy', 'rlgdeafi', 'rlgdeade', 
+    'rlgdeagr', 'rlgdehu', 'rlgdeais', 'rlgdeie', 'rlgdelv',
+    'rlgdelt', 'rlgdeme', 'rlgdeanl', 'rlgdeno', 'rlgdeapl',
+    'rlgdeapt', 'rlgders', 'rlgdeask', 'rlgdease', 'rlgdeach',
+    'rlgdeaua', 'rlgdegb', 'rlgdgr', 'rlgdnach', 'rlgdnmk', 
+    'rlgdnbsk', 'rlgdemk', 'rlgdebsk',
+    # Education
+    'edlvebe', 'edlvebg', 'edlvdch', 'edlvehr', 'edlvdcz', 
+    'edlvdee', 'edlvdfi', 'edlvdfr', 'edlvegr', 'edlvdahu',
+    'edlvdis', 'edlvdie', 'edlveit', 'edlvdlt', 'edlvdme', 
+    'edlvenl', 'edlvdmk', 'edlveno', 'edlvdpt', 'edlvesi', 
+    'edlvdsk', 'edubgb2', 'educgb1',
+    'edlveat', 'edlvgcy', 'edudde1', 'educde2', 'edlvdua', 
+    'edubil1', 'eduail2', 'edlvfit', 'edlvelv', 'edlveme',
+    'edlvipl', 'edlvept', 'edlvdrs', 'edlvies', 'edlvdse',           
+    'edlvpebe', 'edlvpebg', 'edlvpdch', 'edlvpehr', 'edlvpdcz', 
+    'edlvpdee', 'edlvpdfi', 'edlvpdfr', 'edlvpegr', 'edlvpdahu',
+    'edlvpdis', 'edlvpdie', 'edlvpeit', 'edlvpdlt', 'edlvpdme',
+    'edlvpenl', 'edlvpdmk', 'edlvpeno', 'edlvpdpt', 'edlvpesi',
+    'edlvpdsk', 'edupbgb2',  'edupcgb1',
+    'edlvpfat', 'edlvpgcy', 'edupdde1', 'edupcde2', 'edupail2',
+    'edupbil1', 'edlvpfit', 'edlvpelv', 'edlvpeme', 'edlvphpl',
+    'edlvpept', 'edlvpdrs', 'edlvphes', 'edlvpdse', 'edlvpdua', 
+    'edlvfebe', 'edlvfebg', 'edlvfdch', 'edlvfehr', 'edlvfdcz',
+    'edlvfdee', 'edlvfdfi', 'edlvfdfr', 'edlvfegr', 'edlvfdahu',
+    'edlvfdis', 'edlvfdie', 'edlvfeit', 'edlvfdlt', 'edlvfdme',
+    'edlvfenl', 'edlvfdmk', 'edlvfeno', 'edlvfdpt', 'edlvfesi',
+    'edlvfdsk', 'edufbgb2',  'edlvfeat', 'edlvfgcy', 'edufcde1', 
+    'edufbde2', 'edufbil1', 'edufail2', 'edlvffit', 'edlvfelv', 
+    'edlvfeme', 'edlvfgpl', 'edlvfept', 'edlvfdrs', 'edlvfges', 
+    'edlvfdse', 'edlvfdua', 
+    'edlvmebe', 'edlvmebg', 'edlvmdch', 'edlvmehr', 'edlvmdcz',
+    'edlvmdee', 'edlvmdfi', 'edlvmdfr', 'edlvmegr', 'edlvmdahu',
+    'edlvmdis', 'edlvmdie', 'edlvmeit', 'edlvmdlt', 'edlvmdme',
+    'edlvmenl', 'edlvmdmk', 'edlvmeno', 'edlvmdpt', 'edlvmesi',
+    'edlvmdsk', 'edumbgb2',  'edumcgb1',
+    'edlvmeat', 'edlvmgcy', 'edumcde1', 'edumbde2',
+    'edumbil1', 'edumail2', 'edlvmfit', 'edlvmelv', 'edlvmeme',
+    'edlvmgpl', 'edlvmept', 'edlvmdrs', 'edlvmges', 'edlvmdse', 
+    'edlvmdua'
+    # Redundant climate change questions (not straightforward to consolidate due to variations in response scales and wording, only kept one variant of each question)
+    'testji4', 'testji5', 'testji6', 'testji7', 'testji8', 'testji9',
 }
 ess10_final_consolidated = [r for r in ess10_final_consolidated if r.get("variable_name") not in consolidated_var_names]
 ess11_final_consolidated = [r for r in ess11_final_consolidated if r.get("variable_name") not in consolidated_var_names]
