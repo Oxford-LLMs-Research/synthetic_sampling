@@ -624,9 +624,9 @@ consolidated_var_names = {
     'edlvmeat', 'edlvmgcy', 'edumcde1', 'edumbde2',
     'edumbil1', 'edumail2', 'edlvmfit', 'edlvmelv', 'edlvmeme',
     'edlvmgpl', 'edlvmept', 'edlvmdrs', 'edlvmges', 'edlvmdse', 
-    'edlvmdua'
+    'edlvmdua',
     # Redundant climate change questions (not straightforward to consolidate due to variations in response scales and wording, only kept one variant of each question)
-    'testji4', 'testji5', 'testji6', 'testji7', 'testji8', 'testji9',
+    'testji4', 'testji5', 'testji6', 'testji7', 'testji8', 'testji9'
 }
 ess10_final_consolidated = [r for r in ess10_final_consolidated if r.get("variable_name") not in consolidated_var_names]
 ess11_final_consolidated = [r for r in ess11_final_consolidated if r.get("variable_name") not in consolidated_var_names]
