@@ -23,6 +23,16 @@ class ProfileConfig:
     def total_features(self) -> int:
         """Total features excluding always-include features."""
         return self.n_sections * self.m_features_per_section
+    
+    @property
+    def profile_type(self) -> str:
+        """
+        Generate a profile type identifier from config.
+        
+        Format: s{n_sections}m{m_features_per_section}
+        Examples: 's1m2' (sparse), 's2m4' (medium), 's4m6' (rich)
+        """
+        return f"s{self.n_sections}m{self.m_features_per_section}"
 
 
 @dataclass 
@@ -59,7 +69,8 @@ class RespondentProfile:
             'config': {
                 'n_sections': self.config.n_sections,
                 'm_features_per_section': self.config.m_features_per_section,
-                'seed': self.config.seed
+                'seed': self.config.seed,
+                'profile_type': self.config.profile_type,
             },
             'sections_sampled': self.sections_sampled,
             'always_included': self.always_included
@@ -96,15 +107,19 @@ class PredictionInstance:
     A complete instance for LLM prediction: profile + target + ground truth.
     
     This is the final output format that gets fed to the LLM evaluation pipeline.
-    Matches the structure you specified:
-    {
-        'id': respondent_id,
-        'country': country_value,
-        'questions': {question_text: answer_label, ...},  # features
-        'target_question': question_text,
-        'answer': ground_truth_label,
-        'options': [option1, option2, ...]
-    }
+    
+    Key identifiers:
+    - example_id: Unique identifier for this specific instance
+      Format: {survey}_{respondent_id}_{target_code}_{profile_type}
+      Example: "ess_wave_10_12345_Q5A_s2m4"
+    - base_id: Shared identifier across profile types for the same respondent+target
+      Format: {survey}_{respondent_id}_{target_code}
+      Example: "ess_wave_10_12345_Q5A"
+    
+    This allows:
+    - Unique identification of each prediction instance
+    - Grouping instances by respondent+target to compare across profile richness levels
+    - Easy joining of predictions back to ground truth
     """
     id: Union[int, str]
     country: Optional[Union[int, str]]
@@ -115,36 +130,82 @@ class PredictionInstance:
     answer_raw: any  # Raw value for verification
     options: list[str]
     
+    # Survey identifier
+    survey: str = ""  # Survey identifier (e.g., 'ess_wave_10', 'afrobarometer')
+    
     # Metadata for analysis
     profile_config: Optional[ProfileConfig] = None
     target_section: Optional[str] = None
     
+    # Computed identifiers (populated in __post_init__)
+    example_id: str = field(default="", init=False)
+    base_id: str = field(default="", init=False)
+    
+    def __post_init__(self):
+        """Generate example_id and base_id from components."""
+        self._generate_ids()
+    
+    def _generate_ids(self):
+        """Generate example_id and base_id from components."""
+        # Sanitize respondent_id for use in ID string
+        rid_str = str(self.id).replace(' ', '_').replace('/', '_')
+        
+        # Base ID: shared across profile types
+        if self.survey:
+            self.base_id = f"{self.survey}_{rid_str}_{self.target_code}"
+        else:
+            self.base_id = f"{rid_str}_{self.target_code}"
+        
+        # Example ID: unique per profile type
+        if self.profile_config:
+            profile_type = self.profile_config.profile_type
+            self.example_id = f"{self.base_id}_{profile_type}"
+        else:
+            self.example_id = self.base_id
+    
+    def set_survey(self, survey: str):
+        """Set survey identifier and regenerate IDs."""
+        self.survey = survey
+        self._generate_ids()
+    
+    @property
+    def profile_type(self) -> Optional[str]:
+        """Get profile type string from config."""
+        if self.profile_config:
+            return self.profile_config.profile_type
+        return None
+    
     def to_dict(self) -> dict:
         """
-        Convert to the exact dict format you specified.
+        Convert to dict format for LLM prompting/evaluation.
         
-        Returns the clean format for LLM prompting/evaluation.
+        Includes example_id and base_id for tracking.
         """
         return {
+            'example_id': self.example_id,
+            'base_id': self.base_id,
+            'survey': self.survey,
             'id': self.id,
             'country': self.country,
             'questions': self.features,
             'target_question': self.target_question,
+            'target_code': self.target_code,
             'answer': self.answer,
-            'options': self.options
+            'options': self.options,
+            'profile_type': self.profile_type,
         }
     
     def to_full_dict(self) -> dict:
-        """Return full dict including metadata for analysis."""
+        """Return full dict including all metadata for analysis."""
         d = self.to_dict()
         d['_metadata'] = {
-            'target_code': self.target_code,
             'answer_raw': self.answer_raw,
             'target_section': self.target_section,
             'profile_config': {
                 'n_sections': self.profile_config.n_sections,
                 'm_features_per_section': self.profile_config.m_features_per_section,
-                'seed': self.profile_config.seed
+                'seed': self.profile_config.seed,
+                'profile_type': self.profile_config.profile_type,
             } if self.profile_config else None
         }
         return d
@@ -182,20 +243,8 @@ class PredictionInstance:
         -------
         str
             Formatted profile string ready for LLM prompt
-            
-        Examples
-        --------
-        >>> instance.format_profile('bullet')
-        '- How old are you?: 30-45\\n- What is your gender?: Female\\n...'
-        
-        >>> instance.format_profile('qa', separator='\\n\\n')
-        'Q: How old are you?\\nA: 30-45\\n\\nQ: What is your gender?\\nA: Female\\n\\n...'
-        
-        >>> instance.format_profile(lambda q, a: f"* {q} = {a}")
-        '* How old are you? = 30-45\\n* What is your gender? = Female\\n...'
         """
         formatter = get_profile_formatter(format_spec)
-        
         lines = [formatter(q, a) for q, a in self.features.items()]
         return separator.join(lines)
     
@@ -265,24 +314,6 @@ class PredictionInstance:
         -------
         str
             Complete prompt ready for LLM
-            
-        Examples
-        --------
-        >>> prompt = instance.to_prompt(profile_format='bullet')
-        >>> print(prompt)
-        Here is information about a survey respondent:
-        
-        - How old are you?: 30-45
-        - What is your gender?: Female
-        ...
-        
-        Based on this information, please answer:
-        Which party would you vote for?
-        
-        Options:
-        1. Democrats
-        2. Republicans
-        ...
         """
         profile_str = self.format_profile(profile_format, profile_separator)
         target_str = self.format_target(include_options, options_format)
@@ -302,4 +333,3 @@ class PredictionInstance:
 
 Based on this information, please answer:
 {target_str}"""
-
