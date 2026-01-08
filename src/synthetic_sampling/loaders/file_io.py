@@ -29,6 +29,9 @@ def load_csv(
     """
     encodings_to_try = [encoding, 'utf-8', 'latin-1', 'cp1252']
     
+    # Set low_memory=False to avoid mixed type warnings
+    kwargs.setdefault('low_memory', False)
+    
     for enc in encodings_to_try:
         try:
             return pd.read_csv(filepath, encoding=enc, **kwargs)
@@ -45,14 +48,20 @@ def load_stata(filepath: Path, **kwargs) -> pd.DataFrame:
     return pd.read_stata(filepath, **kwargs)
 
 
-def load_spss(filepath: Path, **kwargs) -> pd.DataFrame:
+def load_spss(filepath: Path, convert_categoricals: bool = False, **kwargs) -> pd.DataFrame:
     """
     Load an SPSS SAV file into a DataFrame.
+    
+    Args:
+        filepath: Path to the SAV file
+        convert_categoricals: If False (default), keep numeric codes.
+                              If True, convert to category labels.
+        **kwargs: Additional arguments passed to pd.read_spss
     
     Requires pyreadstat to be installed.
     """
     try:
-        return pd.read_spss(filepath, **kwargs)
+        return pd.read_spss(filepath, convert_categoricals=convert_categoricals, **kwargs)
     except ImportError:
         raise ImportError(
             "Loading SPSS files requires pyreadstat. "

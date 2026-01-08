@@ -132,7 +132,7 @@ class DatasetBuilder:
                 if not isinstance(var_info, dict):
                     continue
                 # Only include questions that have values defined
-                if var_info.get('values'):
+                if isinstance(var_info.get('values'), dict) and var_info.get('values') != {}:
                     all_questions.append({
                         'section': section,
                         'var_code': var_code,

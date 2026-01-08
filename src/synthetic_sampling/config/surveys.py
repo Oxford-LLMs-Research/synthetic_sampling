@@ -92,6 +92,8 @@ SURVEY_REGISTRY: Dict[str, SurveyConfig] = {
         folder_name='Asianbarometer',
         respondent_id_col='idnumber',
         country_col='country',
+        id_columns_to_combine=('country', 'idnumber'),
+        id_separator='_',
         metadata_path='pulled_metadata/pulled_metadata_asianbarometer.json',
         file_patterns=('asian_barometer.csv', '*.csv', '*.dta', '*.sav'),
     ),
@@ -101,31 +103,35 @@ SURVEY_REGISTRY: Dict[str, SurveyConfig] = {
         survey_id='latinobarometer',
         folder_name='Latinobarometro',
         respondent_id_col='respondent_id',  # Constructed from IDENPA + NUMENTRE
-        country_col='COUNTRY',
+        country_col='IDENPA',
         metadata_path='pulled_metadata/pulled_metadata_latinobarometer.json',
         file_patterns=('*.sav', '*.dta', '*.csv'),
         id_columns_to_combine=('IDENPA', 'NUMENTRE'),
         id_separator='_',
     ),
     
-    'ess_wave_10': SurveyConfig(
+        'ess_wave_10': SurveyConfig(
         name='European Social Survey Wave 10',
         survey_id='ess_wave_10',
         folder_name='ESS/wave_10',
-        respondent_id_col='idno',
+        respondent_id_col='respondent_id',  # Changed: now constructed
         country_col='cntry',
         metadata_path='pulled_metadata/pulled_metadata_ess10.json',
         file_patterns=('*.csv', '*.dta', '*.sav'),
+        id_columns_to_combine=('cntry', 'idno'),  # Added: country + id
+        id_separator='_',
     ),
-    
+
     'ess_wave_11': SurveyConfig(
         name='European Social Survey Wave 11',
         survey_id='ess_wave_11',
         folder_name='ESS/wave_11',
-        respondent_id_col='idno',
+        respondent_id_col='respondent_id',  # Changed: now constructed
         country_col='cntry',
         metadata_path='pulled_metadata/pulled_metadata_ess11.json',
         file_patterns=('*.csv', '*.dta', '*.sav'),
+        id_columns_to_combine=('cntry', 'idno'),  # Added: country + id
+        id_separator='_',
     ),
 }
 

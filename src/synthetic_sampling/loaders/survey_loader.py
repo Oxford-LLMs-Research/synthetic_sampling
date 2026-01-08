@@ -154,8 +154,18 @@ class SurveyLoader:
                 f"Available columns: {list(df.columns)[:10]}..."
             )
         
-        # Construct composite ID
-        id_parts = [df[col].astype(str) for col in columns]
+        # Construct composite ID, converting floats to clean integers where possible
+        def clean_id_part(series):
+            """Convert series to clean string, removing .0 from floats."""
+            def clean_value(x):
+                if pd.isna(x):
+                    return 'NA'
+                if isinstance(x, float) and x.is_integer():
+                    return str(int(x))
+                return str(x).strip()
+            return series.apply(clean_value)
+        
+        id_parts = [clean_id_part(df[col]) for col in columns]
         df[config.respondent_id_col] = id_parts[0]
         for part in id_parts[1:]:
             df[config.respondent_id_col] = df[config.respondent_id_col] + separator + part
