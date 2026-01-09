@@ -108,3 +108,17 @@ ENV/
 .vscode/
 .idea/
 
+# Outputs and test data
+outputs/
+*.jsonl
+
+# Test scripts
+scripts/test_*.py
+
+# Local config (user-specific paths)
+configs/local.yaml
+
+# Survey data files (large, should not be in repo)
+*.csv
+*.dta
+*.sav
