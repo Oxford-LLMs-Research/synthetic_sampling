@@ -4,11 +4,7 @@ Dataset Builder for LLM Survey Prediction Experiments.
 This module provides the DatasetBuilder class which orchestrates:
 - Loading survey data via SurveyLoader
 - Configuring RespondentProfileGenerator
-<<<<<<< HEAD
 - Sampling target questions (including concept-level for country-specific vars)
-=======
-- Sampling target questions
->>>>>>> origin/main
 - Generating prediction instances
 - Saving to JSONL format
 """
@@ -18,21 +14,15 @@ import random
 from pathlib import Path
 from typing import Optional, List, Dict, Any, Union
 import numpy as np
-<<<<<<< HEAD
 import pandas as pd
-=======
->>>>>>> origin/main
 
 from ..config import DataPaths, DatasetConfig, GeneratorConfig, get_survey_config
 from ..loaders import SurveyLoader
 from ..profiles.generator import RespondentProfileGenerator
-<<<<<<< HEAD
 from ..profiles.country_specific import (
     create_handler_for_survey,
     CountrySpecificHandler,
 )
-=======
->>>>>>> origin/main
 
 
 class DatasetBuilder:
@@ -45,14 +35,11 @@ class DatasetBuilder:
     - Target question sampling
     - Output serialization
     
-<<<<<<< HEAD
     For surveys with country-specific variables (like ESS), the builder:
     - Replaces individual country vars with concept representatives in target pool
     - Resolves concepts to country-specific variables per respondent
     - Uses existing generator infrastructure for profile generation
     
-=======
->>>>>>> origin/main
     Example
     -------
     >>> from synthetic_sampling.config import DataPaths, DatasetConfig, GeneratorConfig
@@ -112,7 +99,6 @@ class DatasetBuilder:
             print(message)
     
     # -------------------------------------------------------------------------
-<<<<<<< HEAD
     # Country-Specific Handler
     # -------------------------------------------------------------------------
     
@@ -134,8 +120,6 @@ class DatasetBuilder:
         return handler
     
     # -------------------------------------------------------------------------
-=======
->>>>>>> origin/main
     # Target Sampling
     # -------------------------------------------------------------------------
     
@@ -144,12 +128,8 @@ class DatasetBuilder:
         metadata: dict,
         n: int,
         seed: Optional[int] = None,
-<<<<<<< HEAD
         exclude_sections: Optional[List[str]] = None,
         cs_handler: Optional[CountrySpecificHandler] = None
-=======
-        exclude_sections: Optional[List[str]] = None
->>>>>>> origin/main
     ) -> List[Dict[str, Any]]:
         """
         Sample n random target questions from survey metadata.
@@ -164,33 +144,24 @@ class DatasetBuilder:
             Random seed for reproducibility
         exclude_sections : list[str], optional
             Sections to exclude from sampling (e.g., demographics)
-<<<<<<< HEAD
         cs_handler : CountrySpecificHandler, optional
             If provided, country-specific vars are excluded and concept
             representatives are added to the pool.
-=======
->>>>>>> origin/main
             
         Returns
         -------
         list[dict]
             List of dicts with keys: 'section', 'var_code', 'question', 'values'
-<<<<<<< HEAD
             For concepts: also includes 'is_concept', 'concept_id'
-=======
->>>>>>> origin/main
         """
         if seed is not None:
             random.seed(seed)
         
-<<<<<<< HEAD
         # Get country-specific vars to exclude (replaced by concepts)
         cs_vars = set()
         if cs_handler:
             cs_vars = cs_handler.get_variables_to_exclude_from_pool()
         
-=======
->>>>>>> origin/main
         # Flatten metadata structure
         all_questions = []
         for section, variables in metadata.items():
@@ -199,12 +170,9 @@ class DatasetBuilder:
             if not isinstance(variables, dict):
                 continue
             for var_code, var_info in variables.items():
-<<<<<<< HEAD
                 # Skip country-specific vars (replaced by concepts)
                 if var_code in cs_vars:
                     continue
-=======
->>>>>>> origin/main
                 if not isinstance(var_info, dict):
                     continue
                 # Only include questions that have values defined
@@ -214,7 +182,6 @@ class DatasetBuilder:
                         'var_code': var_code,
                         'question': var_info.get('question', var_info.get('description', var_code)),
                         'values': var_info.get('values', {}),
-<<<<<<< HEAD
                         'is_concept': False,
                     })
         
@@ -225,10 +192,6 @@ class DatasetBuilder:
             self._log(f"  Target pool: {len(all_questions)} items "
                      f"({len(all_questions) - len(concepts)} regular + {len(concepts)} concepts)")
         
-=======
-                    })
-        
->>>>>>> origin/main
         n = min(n, len(all_questions))
         if n == 0:
             return []
@@ -274,7 +237,6 @@ class DatasetBuilder:
         sampled_indices = np.random.choice(len(all_ids), size=n, replace=False)
         return [all_ids[i] for i in sampled_indices]
     
-<<<<<<< HEAD
     def _generate_concept_instances(
         self,
         generator: RespondentProfileGenerator,
@@ -378,18 +340,12 @@ class DatasetBuilder:
         
         return instances
     
-=======
->>>>>>> origin/main
     def build_survey_dataset(
         self,
         survey_id: str,
         target_codes: Optional[List[str]] = None,
-<<<<<<< HEAD
         respondent_ids: Optional[List[Any]] = None,
         min_target_coverage: Optional[float] = None
-=======
-        respondent_ids: Optional[List[Any]] = None
->>>>>>> origin/main
     ) -> List[Dict[str, Any]]:
         """
         Build dataset for a single survey.
@@ -402,11 +358,8 @@ class DatasetBuilder:
             Specific target question codes. If None, samples randomly.
         respondent_ids : list, optional
             Specific respondent IDs. If None, samples randomly.
-<<<<<<< HEAD
         min_target_coverage : float, optional
             Minimum coverage threshold for target variables (not yet implemented)
-=======
->>>>>>> origin/main
             
         Returns
         -------
@@ -421,7 +374,6 @@ class DatasetBuilder:
         df, metadata = self.loader.load_survey(survey_id)
         survey_config = get_survey_config(survey_id)
         
-<<<<<<< HEAD
         # Create country-specific handler
         cs_handler = self._create_country_specific_handler(survey_id, metadata)
         
@@ -431,17 +383,11 @@ class DatasetBuilder:
         # Track concept targets for special handling
         concept_targets = {}  # concept_id -> concept_info
         
-=======
-        # Create generator
-        generator = self._create_generator(survey_id, df, metadata)
-        
->>>>>>> origin/main
         # Sample or use provided targets
         if target_codes is None:
             sampled_targets = self.sample_target_questions(
                 metadata,
                 n=self.dataset_config.n_targets_per_respondent,
-<<<<<<< HEAD
                 seed=self.dataset_config.seed,
                 cs_handler=cs_handler
             )
@@ -471,15 +417,6 @@ class DatasetBuilder:
         # Add concept variables to exclusions
         if concept_exclusions:
             generator.add_exclusions(list(concept_exclusions))
-=======
-                seed=self.dataset_config.seed
-            )
-            target_codes = [t['var_code'] for t in sampled_targets]
-            self._log(f"Sampled {len(target_codes)} target questions")
-        
-        # Set targets in generator
-        generator.set_target_questions(target_codes)
->>>>>>> origin/main
         
         # Sample or use provided respondents
         if respondent_ids is None:
@@ -491,7 +428,6 @@ class DatasetBuilder:
             )
             self._log(f"Sampled {len(respondent_ids)} respondents")
         
-<<<<<<< HEAD
         # Generate instances
         self._log(f"Generating instances...")
         instances = []
@@ -522,18 +458,6 @@ class DatasetBuilder:
             )
             instances.extend(concept_instances)
             self._log(f"  Concept targets: {len(concept_instances)} instances")
-=======
-        # Generate instances using existing generator method
-        self._log(f"Generating instances...")
-        instances = generator.generate_dataset_as_list(
-            respondent_ids=respondent_ids,
-            n_sections=self.dataset_config.n_sections,
-            m_features_per_section=self.dataset_config.m_features_per_section,
-            seed=self.dataset_config.seed,
-            target_codes=target_codes,
-            as_dicts=True
-        )
->>>>>>> origin/main
         
         self._log(f"✓ Generated {len(instances)} instances for {survey_id}")
         
@@ -546,12 +470,8 @@ class DatasetBuilder:
     def build_dataset(
         self,
         survey_ids: Optional[List[str]] = None,
-<<<<<<< HEAD
         skip_errors: bool = True,
         min_target_coverage: Optional[float] = None
-=======
-        skip_errors: bool = True
->>>>>>> origin/main
     ) -> List[Dict[str, Any]]:
         """
         Build dataset across multiple surveys.
@@ -562,11 +482,8 @@ class DatasetBuilder:
             Surveys to include. If None, uses dataset_config.surveys or all available.
         skip_errors : bool, default True
             If True, continue with other surveys if one fails.
-<<<<<<< HEAD
         min_target_coverage : float, optional
             Minimum coverage threshold for target variables (passed to build_survey_dataset)
-=======
->>>>>>> origin/main
             
         Returns
         -------
@@ -587,24 +504,17 @@ class DatasetBuilder:
         
         for survey_id in survey_ids:
             try:
-<<<<<<< HEAD
                 instances = self.build_survey_dataset(
                     survey_id,
                     min_target_coverage=min_target_coverage
                 )
-=======
-                instances = self.build_survey_dataset(survey_id)
->>>>>>> origin/main
                 all_instances.extend(instances)
                 survey_counts[survey_id] = len(instances)
             except Exception as e:
                 if skip_errors:
                     self._log(f"⚠ Failed to process {survey_id}: {e}")
-<<<<<<< HEAD
                     import traceback
                     traceback.print_exc()
-=======
->>>>>>> origin/main
                     survey_counts[survey_id] = 0
                 else:
                     raise
