@@ -194,6 +194,7 @@ def list_surveys_detailed() -> str:
     return '\n'.join(lines)
 
 
+>>>>>>> origin/main
 BAROMETER_SURVEYS = ['afrobarometer', 'arabbarometer', 'asianbarometer', 'latinobarometer']
 ESS_SURVEYS = ['ess_wave_10', 'ess_wave_11']
 ALL_SURVEYS = list(SURVEY_REGISTRY.keys())
