@@ -2899,11 +2899,11 @@
         "8": "Do not know",
         "9": "Not applicable (no religion)"
       },
-      "harmonized_section": "demographics",
+      "harmonized_section": "values_identity",
       "topic_tag": null,
       "original_section": "demographics"
     },
-    
+
     "P61ST": {
       "description": "Perceived acceptability of inequality in the country",
       "question": "How acceptable do you think the current level of inequality is in your country?",
@@ -2916,7 +2916,7 @@
         "5": "Completely acceptable",
         "98": "Do not know"
       },
-      "harmonized_section": "political_attitudes",
+      "harmonized_section": "values_identity",
       "topic_tag": "economic_policy",
       "original_section": "state_of_country"
     },
