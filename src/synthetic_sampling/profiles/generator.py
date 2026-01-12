@@ -165,9 +165,12 @@ class RespondentProfileGenerator:
             print(f"  Threshold: {self.similarity_threshold}")
     
     def _build_section_index(self) -> dict[str, list[str]]:
-        """Map section names to list of feature codes."""
+        """Map section names to list of feature codes. Excludes 'EXCLUDED' section."""
         section_to_features = {}
         for section, questions in self.metadata.items():
+            # Skip the EXCLUDED section - it's for metadata organization, not sampling
+            if section == 'EXCLUDED':
+                continue
             section_to_features[section] = list(questions.keys())
         return section_to_features
     

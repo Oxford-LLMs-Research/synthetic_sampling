@@ -156,6 +156,11 @@ class DatasetBuilder:
         """
         if seed is not None:
             random.seed(seed)
+
+        # Always exclude 'EXCLUDED' section, plus any user-specified exclusions
+        if exclude_sections is None:
+            exclude_sections = []
+        exclude_sections_set = set(exclude_sections) | {'EXCLUDED'}
         
         # Get country-specific vars to exclude (replaced by concepts)
         cs_vars = set()
@@ -165,7 +170,7 @@ class DatasetBuilder:
         # Flatten metadata structure
         all_questions = []
         for section, variables in metadata.items():
-            if exclude_sections and section in exclude_sections:
+            if section in exclude_sections_set: 
                 continue
             if not isinstance(variables, dict):
                 continue
