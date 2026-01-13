@@ -105,22 +105,6 @@
       "topic_tag": null,
       "original_section": "demographics"
     },
-    "S1A": {
-      "description": "Level of religious devotion",
-      "question": "How would you describe your level of religious devotion?",
-      "values": {
-        "0": "No answer",
-        "1": "Very devout",
-        "2": "Devout",
-        "3": "Not very devout",
-        "4": "Not devout at all",
-        "8": "Do not know",
-        "9": "Not applicable (no religion)"
-      },
-      "harmonized_section": "demographics",
-      "topic_tag": null,
-      "original_section": "demographics"
-    },
     "S2": {
       "description": "Self-identified social class",
       "question": "People sometimes describe themselves as belonging to a social class. Which class would you say you belong to?",
@@ -1927,22 +1911,6 @@
       "topic_tag": "economic_policy",
       "original_section": "state_of_country"
     },
-    "P61ST": {
-      "description": "Perceived acceptability of inequality in the country",
-      "question": "How acceptable do you think the current level of inequality is in your country?",
-      "values": {
-        "0": "No answer",
-        "1": "Completely unacceptable",
-        "2": "Unacceptable",
-        "3": "Neutral",
-        "4": "Acceptable",
-        "5": "Completely acceptable",
-        "98": "Do not know"
-      },
-      "harmonized_section": "political_attitudes",
-      "topic_tag": "economic_policy",
-      "original_section": "state_of_country"
-    },
     "P63ST": {
       "description": "Perceived likelihood of a coup occurring",
       "question": "How likely do you think it is that a coup could occur in your country, or do you not know enough to say?",
@@ -2918,6 +2886,41 @@
       "topic_tag": "traditionalism",
       "original_section": "attitudes_politics"
     },
+
+    "S1A": {
+      "description": "Level of religious devotion",
+      "question": "How would you describe your level of religious devotion?",
+      "values": {
+        "0": "No answer",
+        "1": "Very devout",
+        "2": "Devout",
+        "3": "Not very devout",
+        "4": "Not devout at all",
+        "8": "Do not know",
+        "9": "Not applicable (no religion)"
+      },
+      "harmonized_section": "values_identity",
+      "topic_tag": null,
+      "original_section": "demographics"
+    },
+
+    "P61ST": {
+      "description": "Perceived acceptability of inequality in the country",
+      "question": "How acceptable do you think the current level of inequality is in your country?",
+      "values": {
+        "0": "No answer",
+        "1": "Completely unacceptable",
+        "2": "Unacceptable",
+        "3": "Neutral",
+        "4": "Acceptable",
+        "5": "Completely acceptable",
+        "98": "Do not know"
+      },
+      "harmonized_section": "values_identity",
+      "topic_tag": "economic_policy",
+      "original_section": "state_of_country"
+    },
+
     "P22ST": {
       "description": "Justifiability of tax evasion",
       "question": "To what extent do you think it is justifiable or unjustifiable to evade paying taxes?",
