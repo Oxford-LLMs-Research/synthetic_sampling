@@ -31,7 +31,7 @@ Usage:
 import json
 import random
 from dataclasses import dataclass, field, asdict
-from typing import Dict, List, Optional, Any, Tuple
+from typing import Dict, List, Optional, Any
 from pathlib import Path
 from copy import deepcopy
 
@@ -49,8 +49,9 @@ class FeatureOrderTestInstance:
     same profile features, enabling assessment of prediction consistency.
     
     Key design: `orderings` contains different arrangements of the same
-    features. Each ordering is a list of (question, answer) tuples that
-    can be formatted into a profile prompt.
+    features. Each ordering is a dictionary mapping questions to answers,
+    matching the structure of the base instances' "questions" field.
+    Order is preserved via dictionary insertion order (Python 3.7+).
     
     Attributes:
         example_id: Unique identifier (prefixed with 'fo_')
@@ -69,7 +70,7 @@ class FeatureOrderTestInstance:
         ground_truth_index: Index of ground truth in options
         options: List of answer options
         
-        orderings: Dict mapping ordering name to list of (question, answer) tuples
+        orderings: Dict mapping ordering name to dict of {question: answer}
             - "original": features in original order
             - "random_1": first random permutation
             - "random_2": second random permutation
@@ -102,8 +103,8 @@ class FeatureOrderTestInstance:
     options: List[str]
     
     # Orderings - THE KEY STRUCTURE
-    # Each ordering is a list of (question, answer) tuples
-    orderings: Dict[str, List[Tuple[str, str]]]
+    # Each ordering is a dict of {question: answer}, preserving insertion order
+    orderings: Dict[str, Dict[str, str]]
     
     # Seeds for reproducibility
     ordering_seeds: Dict[str, Optional[int]]
@@ -114,23 +115,13 @@ class FeatureOrderTestInstance:
     
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for JSON serialization."""
-        # Convert tuples to lists for JSON compatibility
-        d = asdict(self)
-        d['orderings'] = {
-            k: [list(pair) for pair in v] 
-            for k, v in self.orderings.items()
-        }
-        return d
+        # Orderings are already dictionaries, so no conversion needed
+        return asdict(self)
     
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'FeatureOrderTestInstance':
         """Create instance from dictionary."""
-        # Convert lists back to tuples
-        if 'orderings' in data:
-            data['orderings'] = {
-                k: [tuple(pair) for pair in v]
-                for k, v in data['orderings'].items()
-            }
+        # Orderings are already dictionaries, so no conversion needed
         return cls(**data)
     
     def get_ordering_names(self) -> List[str]:
@@ -145,7 +136,7 @@ class FeatureOrderTestInstance:
         """Get a specific ordering as a question->answer dict."""
         if ordering_name not in self.orderings:
             raise KeyError(f"Unknown ordering: {ordering_name}")
-        return {q: a for q, a in self.orderings[ordering_name]}
+        return self.orderings[ordering_name]
     
     def format_ordering(
         self, 
@@ -166,7 +157,7 @@ class FeatureOrderTestInstance:
             raise KeyError(f"Unknown ordering: {ordering_name}")
         
         lines = []
-        for question, answer in self.orderings[ordering_name]:
+        for question, answer in self.orderings[ordering_name].items():
             lines.append(template.format(question=question, answer=answer))
         return "\n".join(lines)
 
@@ -385,12 +376,12 @@ class FeatureOrderTestGenerator:
         if ground_truth_index == -1:
             return make_ineligible('ground_truth_not_in_options')
         
-        # Create original ordering as list of tuples
-        original_ordering = list(questions.items())
+        # Create original ordering as a dict (preserves insertion order in Python 3.7+)
+        original_ordering = dict(questions)
         
-        # Build orderings dict
-        orderings: Dict[str, List[Tuple[str, str]]] = {
-            "original": original_ordering,
+        # Build orderings dict - each ordering is a dict of {question: answer}
+        orderings: Dict[str, Dict[str, str]] = {
+            "original": original_ordering.copy(),
         }
         ordering_seeds: Dict[str, Optional[int]] = {
             "original": None,
@@ -398,13 +389,18 @@ class FeatureOrderTestGenerator:
         
         # Add reversed ordering
         if self.include_reversed:
-            orderings["reversed"] = list(reversed(original_ordering))
+            # Create reversed dict by iterating in reverse order
+            reversed_items = list(questions.items())[::-1]
+            orderings["reversed"] = dict(reversed_items)
             ordering_seeds["reversed"] = None
         
         # Add random orderings
         n_random = self.n_random_orderings
         if n_features >= self.min_features_for_extra_ordering:
             n_random += 1  # Extra ordering for larger profiles
+        
+        # Convert to list of items for shuffling
+        original_items = list(questions.items())
         
         for i in range(n_random):
             ordering_name = f"random_{i + 1}"
@@ -413,22 +409,23 @@ class FeatureOrderTestGenerator:
             
             # Shuffle with this seed
             rng_local = random.Random(seed_for_ordering)
-            shuffled = original_ordering.copy()
-            rng_local.shuffle(shuffled)
+            shuffled_items = original_items.copy()
+            rng_local.shuffle(shuffled_items)
             
             # Ensure it's actually different from original and reversed
             # (for small feature sets, shuffling might produce same order)
             attempts = 0
             while attempts < 10:
-                if shuffled != original_ordering and shuffled != list(reversed(original_ordering)):
+                if shuffled_items != original_items and shuffled_items != list(reversed(original_items)):
                     break
                 seed_for_ordering += 1
                 rng_local = random.Random(seed_for_ordering)
-                shuffled = original_ordering.copy()
-                rng_local.shuffle(shuffled)
+                shuffled_items = original_items.copy()
+                rng_local.shuffle(shuffled_items)
                 attempts += 1
             
-            orderings[ordering_name] = shuffled
+            # Convert shuffled list back to dict (preserves order)
+            orderings[ordering_name] = dict(shuffled_items)
             ordering_seeds[ordering_name] = seed_for_ordering
         
         # Update stats
