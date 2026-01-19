@@ -8,7 +8,7 @@ without hardcoded paths.
 
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Optional, Dict, Any, List
+from typing import Optional, Dict, Any, List, Union
 import os
 
 # yaml is optional - only needed if loading from YAML files
@@ -67,7 +67,7 @@ class DataPaths:
         return Path(expanded)
     
     @classmethod
-    def from_yaml(cls, config_path: Path | str) -> 'DataPaths':
+    def from_yaml(cls, config_path: Union[Path, str]) -> 'DataPaths':
         """
         Load paths from a YAML configuration file.
         
@@ -197,7 +197,7 @@ class GeneratorConfig:
     similarity_threshold: float = 0.7
     
     @classmethod
-    def from_yaml(cls, config_path: Path | str) -> 'GeneratorConfig':
+    def from_yaml(cls, config_path: Union[Path, str]) -> 'GeneratorConfig':
         """Load generator config from YAML file."""
         if not YAML_AVAILABLE:
             raise ImportError("Loading from YAML requires pyyaml.")
@@ -247,7 +247,7 @@ class DatasetConfig:
     surveys: Optional[List[str]] = None
     
     @classmethod
-    def from_yaml(cls, config_path: Path | str) -> 'DatasetConfig':
+    def from_yaml(cls, config_path: Union[Path, str]) -> 'DatasetConfig':
         """Load dataset config from YAML file."""
         if not YAML_AVAILABLE:
             raise ImportError("Loading from YAML requires pyyaml.")
@@ -274,7 +274,7 @@ class DatasetConfig:
         return f"s{self.n_sections}m{self.m_features_per_section}"
 
 
-def load_config(config_path: Path | str) -> Dict[str, Any]:
+def load_config(config_path: Union[Path, str]) -> Dict[str, Any]:
     """
     Load a complete configuration file and return all config objects.
     

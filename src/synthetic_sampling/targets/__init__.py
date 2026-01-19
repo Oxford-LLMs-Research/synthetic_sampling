@@ -13,7 +13,6 @@ from .targets import (
     # Data structures
     SampledTarget,
     SectionStats,
-    TargetSamplingMetadata,
     
     # Utilities
     targets_to_codes,
@@ -34,7 +33,6 @@ __all__ = [
     # Data structures
     'SampledTarget',
     'SectionStats',
-    'TargetSamplingMetadata',
     
     # Utilities
     'targets_to_codes',

@@ -23,6 +23,7 @@ Usage:
 import argparse
 import json
 import random
+import sys
 from collections import defaultdict
 from copy import deepcopy
 from dataclasses import dataclass
@@ -31,16 +32,15 @@ from typing import Optional, List, Dict, Any, Tuple, Set
 import numpy as np
 import pandas as pd
 
+# Add src to path
+repo_root = Path(__file__).parent.parent
+sys.path.insert(0, str(repo_root / 'src'))
+
 # Import from synthetic_sampling package
 from synthetic_sampling.targets import (
     sample_targets_stratified,
     SampledTarget,
-    targets_to_codes,
-    is_concept_code,
-    get_concept_id_from_code,
     ESS_CONCEPT_CONFIGS,
-    detect_country_specific_variables,
-    CONCEPT_MARKER,
 )
 
 

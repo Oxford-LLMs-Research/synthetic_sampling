@@ -21,7 +21,8 @@ dependencies = [
   "numpy",
   "pandas",
   "sentence-transformers",
-  "scipy"
+  "scipy",
+  "pyreadstat"
 ]
 
 [project.optional-dependencies]
