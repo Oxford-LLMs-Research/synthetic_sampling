@@ -20,7 +20,8 @@ license = {text = "MIT license"}
 dependencies = [
   "numpy",
   "pandas",
-  "sentence-transformers"
+  "sentence-transformers",
+  "scipy"
 ]
 
 [project.optional-dependencies]
