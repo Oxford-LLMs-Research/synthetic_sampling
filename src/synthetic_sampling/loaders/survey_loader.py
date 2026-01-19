@@ -118,7 +118,9 @@ class SurveyLoader:
             )
         
         # Find matching files
-        files = find_data_files(survey_dir, config.get_file_patterns())
+        # Prefer numeric formats (.dta, .sav) over CSV to preserve numeric codes
+        # CSV files often have pre-converted text labels which cause mapping issues
+        files = find_data_files(survey_dir, config.get_file_patterns(), prefer_numeric=True)
         
         if config.multi_file:
             df = load_multiple_files(files, encoding=config.encoding)

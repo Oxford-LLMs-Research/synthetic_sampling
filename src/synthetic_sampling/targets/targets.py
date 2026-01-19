@@ -330,6 +330,109 @@ def _looks_like_numeric_scale(values_map: Dict[str, str]) -> bool:
     return False
 
 
+def has_valid_fixed_options(values_map: Dict[str, str]) -> bool:
+    """
+    Check if a question has valid fixed options suitable for prediction.
+    
+    Excludes:
+    - Questions with no values mapping
+    - Questions with only missing values
+    - Questions that appear to be numeric/open-ended (many consecutive numeric values)
+    
+    Note: Does NOT exclude questions with many categorical options (e.g., party choice,
+    religion) as these are valid fixed-option questions, just with many categories.
+    
+    Parameters
+    ----------
+    values_map : dict
+        Mapping of raw values to labels
+        
+    Returns
+    -------
+    bool
+        True if question has valid fixed options for prediction
+    """
+    if not values_map or not isinstance(values_map, dict):
+        return False
+    
+    # Filter out missing/artifact values
+    missing_patterns = [
+        'missing', 'refused', "don't know", 'no answer', 'not asked',
+        'not applicable', 'nan', 'n/a', 'dk', 'ra', 'decline',
+        'do not understand', "can't choose"
+    ]
+    
+    substantive_labels = []
+    substantive_raw_values = []
+    for raw_val, label in values_map.items():
+        label_lower = str(label).lower()
+        is_missing = any(pattern in label_lower for pattern in missing_patterns)
+        if not is_missing:
+            substantive_labels.append(label)
+            substantive_raw_values.append(raw_val)
+    
+    # Must have at least 2 substantive options (binary minimum)
+    if len(substantive_labels) < 2:
+        return False
+    
+    # Check if this looks like a numeric/open-ended question
+    # (many consecutive numeric values, like age 18-99)
+    # vs. categorical with many options (like party/religion with text labels)
+    # Key difference: numeric questions have numeric LABELS, categorical have text labels
+    if len(substantive_raw_values) > 20:
+        # Check if LABELS are mostly numeric (indicates numeric question like age)
+        # vs. text labels (indicates categorical like party/religion)
+        numeric_labels = 0
+        for raw_val, label in values_map.items():
+            label_lower = str(label).lower()
+            is_missing = any(pattern in label_lower for pattern in missing_patterns)
+            if is_missing:
+                continue
+            
+            # Check if label is just a number (like "18", "19", "30", "60")
+            # vs. text (like "Democratic Party", "Catholic")
+            label_stripped = str(label).strip()
+            try:
+                # If label can be parsed as a number and is just the number, it's numeric
+                float(label_stripped)
+                # Also check if it's a simple integer representation
+                if label_stripped == str(int(float(label_stripped))):
+                    numeric_labels += 1
+            except (ValueError, TypeError):
+                # Label is text - this is categorical
+                pass
+        
+        # If most labels are numeric, check if they form a consecutive sequence
+        if numeric_labels > len(substantive_labels) * 0.7:
+            # Most labels are numeric - check if they form consecutive sequence
+            try:
+                numeric_label_values = []
+                for raw_val, label in values_map.items():
+                    label_lower = str(label).lower()
+                    is_missing = any(pattern in label_lower for pattern in missing_patterns)
+                    if is_missing:
+                        continue
+                    try:
+                        num = float(str(label).strip())
+                        numeric_label_values.append(num)
+                    except (ValueError, TypeError):
+                        pass
+                
+                if len(numeric_label_values) > 20:
+                    sorted_nums = sorted(numeric_label_values)
+                    range_span = sorted_nums[-1] - sorted_nums[0]
+                    # If the range is close to the count, it's likely consecutive
+                    # (e.g., 18-99 = 81 values for 82 options = dense sequence)
+                    if range_span <= len(sorted_nums) * 1.5:
+                        # This looks like a numeric scale (age, hours, etc.) - exclude
+                        return False
+            except Exception:
+                # If we can't analyze, err on the side of inclusion
+                pass
+    
+    return True
+
+
 # =============================================================================
 # Target Question Dataclass
 # =============================================================================
@@ -453,7 +556,8 @@ def compute_section_stats(
                 continue
                 
             values = var_info.get('values', {})
-            if isinstance(values, dict) and values:
+            # Only count questions with valid fixed options (not numeric/open-ended)
+            if isinstance(values, dict) and values and has_valid_fixed_options(values):
                 n_with_values += 1
                 
                 # Track topic tag
@@ -509,7 +613,7 @@ def print_section_stats(stats: Dict[str, SectionStats]) -> None:
 
 def compute_target_allocation(
     section_stats: Dict[str, SectionStats],
-    total_targets: int = 40,
+    n_targets: int = 40,
     min_features_per_section: int = 3,
     min_targets_per_section: int = 0,
     max_targets_per_section: Optional[int] = None
@@ -526,7 +630,7 @@ def compute_target_allocation(
     ----------
     section_stats : dict
         Section statistics from compute_section_stats
-    total_targets : int
+    n_targets : int
         Total number of targets to sample
     min_features_per_section : int
         Minimum features to preserve per section for profiles
@@ -548,10 +652,10 @@ def compute_target_allocation(
     
     total_available = sum(available.values())
     
-    if total_available < total_targets:
+    if total_available < n_targets:
         print(f"Warning: Only {total_available} targets available "
-              f"(requested {total_targets}). Adjusting.")
-        total_targets = total_available
+              f"(requested {n_targets}). Adjusting.")
+        n_targets = total_available
     
     if total_available == 0:
         return {section: 0 for section in section_stats}
@@ -566,7 +670,7 @@ def compute_target_allocation(
             weight = section_stats[section].usable_questions / sum(
                 s.usable_questions for s in section_stats.values() if s.usable_questions > 0
             )
-            raw_alloc = weight * total_targets
+            raw_alloc = weight * n_targets
             allocation[section] = int(raw_alloc)
     
     # Apply constraints
@@ -579,7 +683,7 @@ def compute_target_allocation(
     
     # Distribute remaining targets
     allocated = sum(allocation.values())
-    remaining = total_targets - allocated
+    remaining = n_targets - allocated
     
     if remaining > 0:
         # Sort by available - allocated (most room first)
@@ -608,7 +712,7 @@ def compute_target_allocation(
 
 def sample_targets_stratified(
     metadata: Dict[str, Dict[str, Any]],
-    total_targets: int = 40,
+    n_targets: int = 40,
     min_features_per_section: int = 3,
     exclude_sections: Optional[List[str]] = None,
     seed: Optional[int] = None,
@@ -631,7 +735,7 @@ def sample_targets_stratified(
     ----------
     metadata : dict
         Survey metadata: section -> var_code -> {question, values, topic_tag, ...}
-    total_targets : int
+    n_targets : int
         Total number of targets to sample
     min_features_per_section : int
         Minimum features to preserve per section
@@ -697,7 +801,7 @@ def sample_targets_stratified(
     # Compute target allocation
     allocation = compute_target_allocation(
         section_stats,
-        total_targets=total_targets,
+        n_targets=n_targets,
         min_features_per_section=min_features_per_section
     )
     
@@ -730,6 +834,10 @@ def sample_targets_stratified(
             if not isinstance(values, dict) or not values:
                 continue
             
+            # Skip questions without valid fixed options (numeric/open-ended)
+            if not has_valid_fixed_options(values):
+                continue
+            
             target = SampledTarget(
                 var_code=var_code,
                 section=section,
@@ -743,11 +851,16 @@ def sample_targets_stratified(
         # Add concept representatives for this section
         for rep in concept_representatives:
             if rep['section'] == section:
+                # Concept representatives should have valid options too
+                rep_values = rep.get('values', {})
+                if rep_values and not has_valid_fixed_options(rep_values):
+                    continue  # Skip concepts without valid fixed options
+                
                 target = SampledTarget(
                     var_code=rep['var_code'],
                     section=section,
                     question=rep['question'],
-                    values=rep.get('values', {}),
+                    values=rep_values,
                     topic_tag=rep.get('topic_tag'),
                     is_concept=True,
                     concept_id=rep['concept_id'],
@@ -766,7 +879,7 @@ def sample_targets_stratified(
     
     # Compile sampling metadata
     sampling_metadata = {
-        'total_requested': total_targets,
+        'total_requested': n_targets,
         'total_sampled': len(sampled_targets),
         'allocation': allocation,
         'section_stats': {s: {'usable': stats.usable_questions}
@@ -936,7 +1049,7 @@ if __name__ == '__main__':
         
         targets, meta = sample_targets_stratified(
             metadata,
-            total_targets=40,
+            n_targets=40,
             min_features_per_section=3,
             seed=42,
             verbose=True

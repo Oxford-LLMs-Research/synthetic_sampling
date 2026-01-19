@@ -2,33 +2,33 @@
 """
 Main Dataset Generation Script for LLM Survey Prediction Experiments.
 
-This script orchestrates the complete data generation pipeline:
-1. Target sampling (adaptive stratified across sections)
-2. Respondent sampling
-3. Profile generation at 3 richness levels (sparse/medium/rich) with strict superset
-4. Instance serialization to JSONL
-
-For ESS surveys, handles country-specific variables via concept sampling and resolution.
-
-Profile Richness Levels:
-- Sparse: 3 sections × 2 features = 6 features
-- Medium: 4 sections × 3 features = 12 features  
-- Rich:   6 sections × 4 features = 24 features
+Uses existing SURVEY_REGISTRY configuration to generate instances.
 
 Usage:
-    python scripts/generate_main_dataset.py --config config.yaml
-    python scripts/generate_main_dataset.py --survey ess_wave_11 --n_respondents 100 --output test.jsonl
+    # Generate for a single survey
+    python scripts/generate_main_dataset.py --survey ess_wave_11
+    
+    # Generate for all surveys
+    python scripts/generate_main_dataset.py --all
+    
+    # Generate for ESS surveys only
+    python scripts/generate_main_dataset.py --ess-only
+    
+    # List available surveys
+    python scripts/generate_main_dataset.py --list
+    
+    # Custom paths
+    python scripts/generate_main_dataset.py --survey wvs \
+        --raw-data-dir /path/to/data \
+        --metadata-dir /path/to/metadata \
+        --output-dir /path/to/output
 """
 
+import sys
 import argparse
 import json
-import random
-import sys
-from collections import defaultdict
-from copy import deepcopy
-from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional, List, Dict, Any, Tuple, Set
+from typing import Optional, List, Dict, Any, Tuple
 import numpy as np
 import pandas as pd
 
@@ -36,684 +36,214 @@ import pandas as pd
 repo_root = Path(__file__).parent.parent
 sys.path.insert(0, str(repo_root / 'src'))
 
-# Import from synthetic_sampling package
+from synthetic_sampling.config.surveys import (
+    SURVEY_REGISTRY,
+    ESS_SURVEYS,
+    ALL_SURVEYS,
+    get_survey_config,
+    list_surveys_detailed,
+    SurveyConfig,
+)
+from synthetic_sampling.config import load_config
+
 from synthetic_sampling.targets import (
     sample_targets_stratified,
-    SampledTarget,
     ESS_CONCEPT_CONFIGS,
 )
+from synthetic_sampling.profiles.generator import RespondentProfileGenerator
+
+# =============================================================================
+# Profile Richness Configuration  
+# =============================================================================
+
+RICHNESS_LEVELS = {
+    'sparse': {'n_sections': 3, 'm_features': 2},   # 6 features
+    'medium': {'n_sections': 4, 'm_features': 3},   # 12 features  
+    'rich':   {'n_sections': 6, 'm_features': 4},   # 24 features
+}
 
 
 # =============================================================================
-# Profile Richness Configuration
+# Data Loading
 # =============================================================================
 
-@dataclass
-class ProfileRichnessConfig:
-    """Configuration for a profile richness level."""
-    name: str           # e.g., 'sparse', 'medium', 'rich'
-    n_sections: int     # Number of sections to sample from
-    m_features: int     # Features per section
+def convert_to_native_types(obj):
+    """Convert numpy/pandas types to native Python types for JSON serialization."""
+    # Handle arrays first to avoid ambiguous truth value errors
+    if isinstance(obj, np.ndarray):
+        return obj.tolist()
+    if isinstance(obj, (list, tuple)):
+        return [convert_to_native_types(item) for item in obj]
     
-    @property
-    def total_features(self) -> int:
-        return self.n_sections * self.m_features
+    # Check for NaN/NA values (only for scalar values, not arrays)
+    try:
+        if pd.isna(obj):
+            return None
+    except (ValueError, TypeError):
+        # pd.isna() can fail for some types, continue
+        pass
     
-    @property
-    def type_code(self) -> str:
-        """Short code like 's3m2' for sparse (3 sections, 2 features each)."""
-        return f"s{self.n_sections}m{self.m_features}"
+    # Convert numpy scalar types
+    if isinstance(obj, (np.integer, np.int64, np.int32, np.int16, np.int8)):
+        return int(obj)
+    if isinstance(obj, (np.floating, np.float64, np.float32, np.float16)):
+        return float(obj)
+    if isinstance(obj, np.bool_):
+        return bool(obj)
+    
+    # Handle dicts
+    if isinstance(obj, dict):
+        return {k: convert_to_native_types(v) for k, v in obj.items()}
+    
+    return obj
 
-
-# Default richness levels with strict subset relationships
-RICHNESS_LEVELS = [
-    ProfileRichnessConfig('sparse', n_sections=3, m_features=2),   # 6 features
-    ProfileRichnessConfig('medium', n_sections=4, m_features=3),   # 12 features
-    ProfileRichnessConfig('rich', n_sections=6, m_features=4),     # 24 features
-]
-
-
-# =============================================================================
-# ESS Concept Resolution
-# =============================================================================
-
-class ConceptResolver:
+def load_survey_data(
+    survey_config: SurveyConfig,
+    raw_data_dir: Path,
+    metadata_dir: Path
+) -> Tuple[Dict, pd.DataFrame]:
     """
-    Resolves ESS country-specific concepts to actual variable codes.
-    
-    Handles concepts like 'party_voted' which map to different variables
-    per country (e.g., prtvtdat for Austria, prtvgde1 for Germany).
-    """
-    
-    def __init__(self, metadata: Dict, concept_configs: Dict[str, Dict] = None):
-        """
-        Initialize resolver with survey metadata.
-        
-        Parameters
-        ----------
-        metadata : dict
-            Full survey metadata with questions
-        concept_configs : dict, optional
-            Concept configurations (defaults to ESS_CONCEPT_CONFIGS)
-        """
-        self.metadata = metadata
-        self.concept_configs = concept_configs or ESS_CONCEPT_CONFIGS
-        
-        # Build concept -> country -> variable mapping
-        self._build_concept_maps()
-    
-    def _build_concept_maps(self):
-        """Build mappings from concepts to country-specific variables."""
-        self.concept_to_vars = defaultdict(dict)  # concept_id -> {country: var_code}
-        self.var_to_concept = {}  # var_code -> concept_id
-        
-        all_var_codes = set(self.metadata.get('questions', {}).keys())
-        
-        for concept_id, config in self.concept_configs.items():
-            prefix = config['prefix']
-            
-            for var_code in all_var_codes:
-                if var_code.startswith(prefix):
-                    # Extract country code from variable name
-                    country = self._extract_country(var_code, prefix)
-                    if country:
-                        self.concept_to_vars[concept_id][country] = var_code
-                        self.var_to_concept[var_code] = concept_id
-    
-    def _extract_country(self, var_code: str, prefix: str) -> Optional[str]:
-        """Extract country code from variable name."""
-        suffix = var_code[len(prefix):]
-        
-        # Handle patterns like 'prtvgde1' -> 'de', 'prtvtdat' -> 'at'
-        # Country code is typically 2 chars before any trailing digits
-        suffix_no_digits = suffix.rstrip('0123456789')
-        
-        if len(suffix_no_digits) >= 2:
-            return suffix_no_digits[-2:].upper()
-        return None
-    
-    def get_variable_for_country(
-        self, 
-        concept_id: str, 
-        country: str
-    ) -> Optional[str]:
-        """
-        Get the variable code for a concept in a specific country.
-        
-        Parameters
-        ----------
-        concept_id : str
-            Concept identifier (e.g., 'party_voted')
-        country : str
-            Country code (e.g., 'DE', 'AT')
-            
-        Returns
-        -------
-        str or None
-            Variable code for this concept in this country, or None if not available
-        """
-        country_upper = country.upper()
-        return self.concept_to_vars.get(concept_id, {}).get(country_upper)
-    
-    def get_variable_metadata(self, var_code: str) -> Optional[Dict]:
-        """Get metadata for a specific variable."""
-        return self.metadata.get('questions', {}).get(var_code)
-    
-    def get_all_concept_variables(self, concept_id: str) -> Set[str]:
-        """Get all variable codes associated with a concept."""
-        return set(self.concept_to_vars.get(concept_id, {}).values())
-    
-    def get_all_concepts(self) -> List[str]:
-        """Get list of all concept IDs."""
-        return list(self.concept_to_vars.keys())
-    
-    def is_country_specific_var(self, var_code: str) -> bool:
-        """Check if a variable is country-specific."""
-        return var_code in self.var_to_concept
-
-
-# =============================================================================
-# Profile Generation with Superset Constraint
-# =============================================================================
-
-def expand_profile_superset(
-    base_features: Dict[str, Any],
-    base_sections: List[str],
-    target_config: ProfileRichnessConfig,
-    metadata: Dict,
-    respondent_data: Dict,
-    exclude_codes: Set[str],
-    rng: np.random.RandomState,
-    missing_patterns: Set[str] = None
-) -> Tuple[Dict[str, Any], List[str]]:
-    """
-    Expand a profile to a richer level while preserving all base features.
-    
-    Guarantees strict superset: all features in base profile appear in expanded profile.
+    Load metadata and response data for a survey.
     
     Parameters
     ----------
-    base_features : dict
-        Features from the sparser profile (code -> answer)
-    base_sections : list
-        Sections used in the sparser profile
-    target_config : ProfileRichnessConfig
-        Target richness configuration
-    metadata : dict
-        Survey metadata
-    respondent_data : dict
-        Respondent's full data row
-    exclude_codes : set
-        Variable codes to exclude (target + related)
-    rng : np.random.RandomState
-        Random state for reproducibility
-    missing_patterns : set, optional
-        Patterns indicating missing values
+    survey_config : SurveyConfig
+        Survey configuration from SURVEY_REGISTRY
+    raw_data_dir : Path
+        Base directory containing survey data folders
+    metadata_dir : Path
+        Base directory containing metadata JSONs
         
     Returns
     -------
     tuple
-        (expanded_features dict, sections_used list)
+        (metadata dict, response DataFrame)
     """
-    if missing_patterns is None:
-        missing_patterns = {
-            'missing', 'refused', "don't know", 'no answer',
-            'not asked', 'not applicable', 'nan', 'n/a', ''
-        }
+    # Load metadata
+    metadata_path = metadata_dir / survey_config.metadata_path
+    if not metadata_path.exists():
+        raise FileNotFoundError(f"Metadata not found: {metadata_path}")
     
-    # Start with base features
-    expanded = deepcopy(base_features)
-    sections_used = list(base_sections)
+    with open(metadata_path, 'r', encoding='utf-8') as f:
+        metadata = json.load(f)
     
-    # Get all available sections
-    all_sections = list(metadata.get('sections', {}).keys())
+    # Find data file
+    data_dir = raw_data_dir / survey_config.folder_name
+    if not data_dir.exists():
+        raise FileNotFoundError(f"Data directory not found: {data_dir}")
     
-    # Need to add more sections?
-    sections_to_add = target_config.n_sections - len(sections_used)
-    if sections_to_add > 0:
-        available_sections = [s for s in all_sections if s not in sections_used]
-        if len(available_sections) >= sections_to_add:
-            new_sections = rng.choice(
-                available_sections, 
-                size=sections_to_add, 
-                replace=False
-            ).tolist()
-            sections_used.extend(new_sections)
+    # Prioritize numeric formats (.dta, .sav) over CSV to preserve numeric codes
+    # CSV files often have pre-converted text labels which cause mapping issues
+    data_file = None
+    preferred_formats = ['.dta', '.sav']  # Prefer these over CSV
     
-    # For each section, ensure we have enough features
-    questions = metadata.get('questions', {})
+    # First, try to find preferred numeric formats
+    for preferred_ext in preferred_formats:
+        matches = list(data_dir.glob(f'*{preferred_ext}'))
+        if matches:
+            data_file = matches[0]
+            break
     
-    for section in sections_used:
-        # Get current features from this section
-        section_questions = metadata.get('sections', {}).get(section, [])
-        current_section_features = {
-            code: val for code, val in expanded.items()
-            if code in section_questions
-        }
-        
-        # Need more features from this section?
-        features_needed = target_config.m_features - len(current_section_features)
-        
-        if features_needed > 0:
-            # Get available questions from this section
-            available_qs = [
-                q for q in section_questions
-                if q not in expanded
-                and q not in exclude_codes
-                and q in questions
-            ]
-            
-            # Oversample to handle missing values
-            oversample_factor = 3
-            sample_size = min(features_needed * oversample_factor, len(available_qs))
-            
-            if sample_size > 0:
-                candidates = rng.choice(
-                    available_qs,
-                    size=sample_size,
-                    replace=False
-                ).tolist()
-                
-                added = 0
-                for q_code in candidates:
-                    if added >= features_needed:
-                        break
-                    
-                    # Get respondent's answer
-                    answer = respondent_data.get(q_code)
-                    
-                    # Skip missing values
-                    if answer is None:
-                        continue
-                    answer_str = str(answer).lower().strip()
-                    if answer_str in missing_patterns:
-                        continue
-                    
-                    expanded[q_code] = answer
-                    added += 1
-    
-    return expanded, sections_used
-
-
-def generate_profile_hierarchy(
-    respondent_data: Dict,
-    target_code: str,
-    metadata: Dict,
-    richness_levels: List[ProfileRichnessConfig],
-    exclude_codes: Set[str],
-    seed: int,
-    missing_patterns: Set[str] = None
-) -> List[Tuple[ProfileRichnessConfig, Dict[str, Any], List[str]]]:
-    """
-    Generate a hierarchy of profiles with strict superset relationships.
-    
-    Parameters
-    ----------
-    respondent_data : dict
-        Respondent's data
-    target_code : str
-        Target question code
-    metadata : dict
-        Survey metadata
-    richness_levels : list
-        List of ProfileRichnessConfig, ordered sparse to rich
-    exclude_codes : set
-        Codes to exclude from profiles
-    seed : int
-        Random seed
-    missing_patterns : set, optional
-        Missing value patterns
-        
-    Returns
-    -------
-    list of tuples
-        [(config, features_dict, sections_used), ...] for each level
-    """
-    if missing_patterns is None:
-        missing_patterns = {
-            'missing', 'refused', "don't know", 'no answer',
-            'not asked', 'not applicable', 'nan', 'n/a', ''
-        }
-    
-    rng = np.random.RandomState(seed)
-    profiles = []
-    
-    # Generate sparsest profile first
-    base_config = richness_levels[0]
-    base_features, base_sections = _generate_base_profile(
-        respondent_data=respondent_data,
-        config=base_config,
-        metadata=metadata,
-        exclude_codes=exclude_codes,
-        rng=rng,
-        missing_patterns=missing_patterns
-    )
-    profiles.append((base_config, base_features, base_sections))
-    
-    # Expand to richer levels
-    current_features = base_features
-    current_sections = base_sections
-    
-    for config in richness_levels[1:]:
-        expanded_features, expanded_sections = expand_profile_superset(
-            base_features=current_features,
-            base_sections=current_sections,
-            target_config=config,
-            metadata=metadata,
-            respondent_data=respondent_data,
-            exclude_codes=exclude_codes,
-            rng=rng,
-            missing_patterns=missing_patterns
-        )
-        profiles.append((config, expanded_features, expanded_sections))
-        current_features = expanded_features
-        current_sections = expanded_sections
-    
-    return profiles
-
-
-def _generate_base_profile(
-    respondent_data: Dict,
-    config: ProfileRichnessConfig,
-    metadata: Dict,
-    exclude_codes: Set[str],
-    rng: np.random.RandomState,
-    missing_patterns: Set[str]
-) -> Tuple[Dict[str, Any], List[str]]:
-    """Generate the base (sparsest) profile."""
-    all_sections = list(metadata.get('sections', {}).keys())
-    questions = metadata.get('questions', {})
-    
-    # Sample sections
-    if len(all_sections) >= config.n_sections:
-        sections = rng.choice(
-            all_sections, 
-            size=config.n_sections, 
-            replace=False
-        ).tolist()
-    else:
-        sections = all_sections
-    
-    features = {}
-    
-    for section in sections:
-        section_qs = metadata.get('sections', {}).get(section, [])
-        
-        # Filter to usable questions
-        available = [
-            q for q in section_qs
-            if q not in exclude_codes
-            and q in questions
-        ]
-        
-        # Oversample
-        oversample_factor = 3
-        sample_size = min(config.m_features * oversample_factor, len(available))
-        
-        if sample_size > 0:
-            candidates = rng.choice(available, size=sample_size, replace=False).tolist()
-            
-            added = 0
-            for q_code in candidates:
-                if added >= config.m_features:
-                    break
-                
-                answer = respondent_data.get(q_code)
-                if answer is None:
+    # If no preferred format found, fall back to file patterns
+    if data_file is None:
+        for pattern in survey_config.get_file_patterns():
+            matches = list(data_dir.glob(pattern))
+            if matches:
+                # Skip CSV if we haven't found preferred formats yet
+                if matches[0].suffix == '.csv' and any(
+                    (data_dir / f).suffix in preferred_formats 
+                    for f in data_dir.iterdir() 
+                    if f.is_file()
+                ):
+                    # There might be a .dta or .sav file, continue searching
                     continue
-                answer_str = str(answer).lower().strip()
-                if answer_str in missing_patterns:
-                    continue
-                
-                features[q_code] = answer
-                added += 1
+                data_file = matches[0]
+                break
     
-    return features, sections
-
-
-# =============================================================================
-# Instance Generation
-# =============================================================================
-
-@dataclass
-class GeneratedInstance:
-    """A single generated instance for evaluation."""
-    example_id: str
-    base_id: str
-    survey: str
-    respondent_id: Any
-    country: Optional[str]
-    
-    profile_type: str
-    profile_name: str
-    n_features: int
-    feature_codes: List[str]
-    sections_used: List[str]
-    
-    target_code: str
-    target_section: str
-    target_concept: Optional[str]  # For ESS concepts
-    
-    answer: str
-    answer_raw: Any
-    options: List[str]
-    
-    questions: Dict[str, str]  # code -> question text
-    profile_answers: Dict[str, str]  # code -> answer text
-    
-    def to_dict(self) -> Dict[str, Any]:
-        return {
-            'example_id': self.example_id,
-            'base_id': self.base_id,
-            'survey': self.survey,
-            'respondent_id': self.respondent_id,
-            'country': self.country,
-            'profile_type': self.profile_type,
-            'profile_name': self.profile_name,
-            'n_features': self.n_features,
-            'feature_codes': self.feature_codes,
-            'sections_used': self.sections_used,
-            'target_code': self.target_code,
-            'target_section': self.target_section,
-            'target_concept': self.target_concept,
-            'answer': self.answer,
-            'answer_raw': self.answer_raw,
-            'options': self.options,
-            'questions': self.questions,
-            'profile_answers': self.profile_answers,
-        }
-    
-    def to_jsonl(self) -> str:
-        return json.dumps(self.to_dict(), ensure_ascii=False)
-
-
-def generate_instances_for_respondent(
-    respondent_data: Dict,
-    respondent_id: Any,
-    survey_name: str,
-    targets: List[SampledTarget],
-    metadata: Dict,
-    richness_levels: List[ProfileRichnessConfig],
-    concept_resolver: Optional[ConceptResolver] = None,
-    country_col: str = 'cntry',
-    seed: int = 42
-) -> List[GeneratedInstance]:
-    """
-    Generate all instances for a single respondent.
-    
-    Parameters
-    ----------
-    respondent_data : dict
-        Respondent's full data row
-    respondent_id : any
-        Respondent identifier
-    survey_name : str
-        Survey identifier
-    targets : list
-        Sampled target questions
-    metadata : dict
-        Survey metadata
-    richness_levels : list
-        Profile richness configurations
-    concept_resolver : ConceptResolver, optional
-        For ESS concept resolution
-    country_col : str
-        Column name for country
-    seed : int
-        Base random seed
-        
-    Returns
-    -------
-    list of GeneratedInstance
-    """
-    instances = []
-    questions = metadata.get('questions', {})
-    country = respondent_data.get(country_col)
-    
-    for target in targets:
-        # Handle concept targets
-        if target.is_concept and concept_resolver:
-            resolved_code = concept_resolver.get_variable_for_country(
-                target.concept_id, country
-            )
-            if resolved_code is None:
-                continue  # No variable for this concept in this country
-            
-            actual_target_code = resolved_code
-            target_concept = target.concept_id
-            
-            # Exclude all concept variables from features
-            exclude_codes = concept_resolver.get_all_concept_variables(target.concept_id)
-            exclude_codes.add(actual_target_code)
-        else:
-            actual_target_code = target.code
-            target_concept = None
-            exclude_codes = {actual_target_code}
-        
-        # Get target answer
-        answer_raw = respondent_data.get(actual_target_code)
-        if answer_raw is None:
-            continue
-        
-        answer_str = str(answer_raw).lower().strip()
-        if answer_str in {'missing', 'refused', "don't know", 'no answer', 'nan', ''}:
-            continue
-        
-        # Get target metadata
-        target_meta = questions.get(actual_target_code, {})
-        options = target_meta.get('options', [])
-        target_section = target.section
-        
-        # Generate profile hierarchy
-        respondent_seed = hash((seed, respondent_id, actual_target_code)) % (2**31)
-        
-        profiles = generate_profile_hierarchy(
-            respondent_data=respondent_data,
-            target_code=actual_target_code,
-            metadata=metadata,
-            richness_levels=richness_levels,
-            exclude_codes=exclude_codes,
-            seed=respondent_seed
+    if data_file is None:
+        raise FileNotFoundError(
+            f"No data file in {data_dir} matching: {survey_config.file_patterns}"
         )
-        
-        # Create instances for each profile level
-        for config, features, sections in profiles:
-            # Build questions dict (feature code -> question text)
-            questions_dict = {}
-            profile_answers = {}
-            
-            for code, answer in features.items():
-                q_meta = questions.get(code, {})
-                questions_dict[code] = q_meta.get('question_text', '')
-                profile_answers[code] = str(answer)
-            
-            base_id = f"{survey_name}_{respondent_id}_{actual_target_code}"
-            example_id = f"{base_id}_{config.type_code}"
-            
-            instance = GeneratedInstance(
-                example_id=example_id,
-                base_id=base_id,
-                survey=survey_name,
-                respondent_id=respondent_id,
-                country=country,
-                profile_type=config.type_code,
-                profile_name=config.name,
-                n_features=len(features),
-                feature_codes=list(features.keys()),
-                sections_used=sections,
-                target_code=actual_target_code,
-                target_section=target_section,
-                target_concept=target_concept,
-                answer=str(answer_raw),
-                answer_raw=answer_raw,
-                options=options,
-                questions=questions_dict,
-                profile_answers=profile_answers
-            )
-            
-            instances.append(instance)
     
-    return instances
-
-
-# =============================================================================
-# Main Processing
-# =============================================================================
-
-def load_metadata(path: str) -> Dict:
-    """Load survey metadata from JSON."""
-    with open(path, 'r', encoding='utf-8') as f:
-        return json.load(f)
-
-
-def load_data(path: str) -> pd.DataFrame:
-    """Load survey data from CSV, DTA, or SAV."""
-    path = Path(path)
+    # Load based on extension
+    print(f"  Loading: {data_file.name} ({data_file.suffix})")
     
-    if path.suffix == '.csv':
-        return pd.read_csv(path)
-    elif path.suffix == '.dta':
-        return pd.read_stata(path)
-    elif path.suffix == '.sav':
+    if data_file.suffix == '.csv':
+        data = pd.read_csv(data_file, encoding=survey_config.encoding)
+    elif data_file.suffix == '.dta':
+        data = pd.read_stata(data_file)
+    elif data_file.suffix == '.sav':
         import pyreadstat
-        df, _ = pyreadstat.read_sav(path)
-        return df
+        data, _ = pyreadstat.read_sav(str(data_file))
     else:
-        raise ValueError(f"Unsupported file format: {path.suffix}")
+        raise ValueError(f"Unsupported format: {data_file.suffix}")
+    
+    # Construct respondent ID if needed
+    if survey_config.id_columns_to_combine:
+        cols = list(survey_config.id_columns_to_combine)
+        data[survey_config.respondent_id_col] = data[cols].astype(str).agg(
+            survey_config.id_separator.join, axis=1
+        )
+    
+    return metadata, data
 
+
+# =============================================================================
+# Instance Generation (simplified - uses existing generator if available)
+# =============================================================================
 
 def process_survey(
-    metadata: Dict,
-    data: pd.DataFrame,
-    survey_name: str,
-    n_respondents: int,
-    n_targets: int,
-    output_path: Optional[str] = None,
-    richness_levels: List[ProfileRichnessConfig] = None,
-    is_ess: bool = False,
-    respondent_id_col: str = 'respondent_id',
-    country_col: str = 'cntry',
+    survey_id: str,
+    raw_data_dir: Path,
+    metadata_dir: Path,
+    output_dir: Path,
+    n_respondents: int = 1200,
+    n_targets: int = 50,
     seed: int = 42,
-    verbose: bool = True
-) -> List[GeneratedInstance]:
+    verbose: bool = True,
+    similarity_model: str = 'all-MiniLM-L6-v2',
+    similarity_threshold: float = 0.85
+) -> Optional[Path]:
     """
-    Process a survey and generate all instances.
+    Process a single survey and generate instances.
     
-    Parameters
-    ----------
-    metadata : dict
-        Survey metadata
-    data : pd.DataFrame
-        Survey response data
-    survey_name : str
-        Survey identifier
-    n_respondents : int
-        Number of respondents to sample
-    n_targets : int
-        Number of targets to sample
-    output_path : str, optional
-        Path for JSONL output (streams if provided)
-    richness_levels : list, optional
-        Profile configurations
-    is_ess : bool
-        Whether this is an ESS survey (enables concept handling)
-    respondent_id_col : str
-        Column for respondent ID
-    country_col : str
-        Column for country
-    seed : int
-        Random seed
-    verbose : bool
-        Print progress
-        
-    Returns
-    -------
-    list of GeneratedInstance
-        All generated instances (empty if streaming to file)
+    Returns output file path if successful.
     """
-    if richness_levels is None:
-        richness_levels = RICHNESS_LEVELS
+    survey_config = get_survey_config(survey_id)
+    is_ess = survey_id in ESS_SURVEYS
+    
+    if verbose:
+        print(f"\n{'='*60}")
+        print(f"Processing: {survey_config.name} ({survey_id})")
+        print(f"{'='*60}")
+    
+    # Load data
+    try:
+        metadata, data = load_survey_data(survey_config, raw_data_dir, metadata_dir)
+        if verbose:
+            print(f"  Loaded {len(data)} respondents")
+    except FileNotFoundError as e:
+        print(f"  ERROR: {e}")
+        return None
     
     rng = np.random.RandomState(seed)
     
-    # Setup ESS concept handling
-    concept_resolver = None
-    concept_configs = None
+    # Get country codes for ESS concept handling
     country_codes = None
-    
+    concept_configs = None
     if is_ess:
-        concept_resolver = ConceptResolver(metadata, ESS_CONCEPT_CONFIGS)
+        country_col = survey_config.country_col
+        if country_col in data.columns:
+            country_codes = data[country_col].unique().tolist()
         concept_configs = ESS_CONCEPT_CONFIGS
-        country_codes = data[country_col].unique().tolist() if country_col in data.columns else None
-        
         if verbose:
-            print(f"ESS mode: {len(concept_resolver.get_all_concepts())} concepts detected")
+            print(f"  ESS mode: {len(country_codes or [])} countries")
     
     # Sample targets
     if verbose:
-        print(f"Sampling {n_targets} targets...")
+        print(f"  Sampling {n_targets} targets...")
     
-    targets = sample_targets_stratified(
+    targets, sampling_metadata = sample_targets_stratified(
         metadata=metadata,
         n_targets=n_targets,
         seed=seed,
@@ -722,60 +252,189 @@ def process_survey(
     )
     
     if verbose:
-        print(f"  Sampled {len(targets)} targets across {len(set(t.section for t in targets))} sections")
+        sections = set(t.section for t in targets)
+        print(f"    Got {len(targets)} targets across {len(sections)} sections")
     
     # Sample respondents
-    if verbose:
-        print(f"Sampling {n_respondents} respondents...")
+    n_sample = min(n_respondents, len(data))
+    respondent_indices = rng.choice(len(data), size=n_sample, replace=False)
     
-    respondent_indices = rng.choice(
-        len(data),
-        size=min(n_respondents, len(data)),
-        replace=False
+    if verbose:
+        print(f"  Sampled {n_sample} respondents")
+    
+    # Output file
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / f"{survey_id}_instances.jsonl"
+    
+    # Extract target codes (skip ESS concepts for now)
+    target_codes = [t.var_code for t in targets if not (t.is_concept and is_ess)]
+    
+    if not target_codes:
+        if verbose:
+            print(f"  No valid targets found (all are ESS concepts)")
+        return None
+    
+    # Create generator with semantic filtering enabled
+    if verbose:
+        print(f"  Initializing RespondentProfileGenerator with semantic filtering...")
+        print(f"    Model: {similarity_model}")
+        print(f"    Threshold: {similarity_threshold}")
+    
+    # Verify sentence-transformers is available before creating generator
+    if similarity_model is not None:
+        try:
+            import sentence_transformers
+            if verbose:
+                print(f"    ✓ sentence-transformers {sentence_transformers.__version__} available")
+        except ImportError as e:
+            print(f"\n  ERROR: sentence-transformers package not found in current Python environment.")
+            print(f"  Install with: pip install sentence-transformers")
+            print(f"  Or check that you're using the correct Python environment.")
+            print(f"  Current Python: {sys.executable}")
+            raise
+    
+    # Use comprehensive missing value patterns
+    # NOTE: "Don't know" is a VALID response (respondent has no opinion) - we want to predict it
+    # Only exclude survey/interview artifacts like "Not asked", "Refused", "Missing", etc.
+    missing_value_labels = [
+        'Missing', 'Refused', 'No answer', 'Not asked',
+        'Not applicable', 'Decline to answer', "Can't choose", 
+        'Do not understand', 'Not available', 'No response'
+    ]
+    missing_value_patterns = [
+        'missing', 'refused', 'no answer', 'not asked',
+        'not applicable', 'decline', "can't", 'do not understand',
+        'not available', 'no response', 'nan', 'na', 'n/a'
+        # NOTE: "don't know" is intentionally NOT in this list - it's a valid response
+    ]
+    
+    generator = RespondentProfileGenerator(
+        survey_data=data,
+        metadata=metadata,
+        respondent_id_col=survey_config.respondent_id_col,
+        country_col=survey_config.country_col,
+        survey=survey_id,
+        missing_value_labels=missing_value_labels,
+        missing_value_patterns=missing_value_patterns,
+        similarity_model=similarity_model,
+        similarity_threshold=similarity_threshold
     )
     
+    # Set target questions (this triggers semantic similarity computation)
+    if verbose:
+        print(f"  Setting {len(target_codes)} target questions...")
+    generator.set_target_questions(target_codes)
+    
     # Generate instances
-    instances = []
-    output_file = None
+    if verbose:
+        print(f"  Generating instances...")
     
-    if output_path:
-        output_file = open(output_path, 'w', encoding='utf-8')
-    
-    try:
+    instance_count = 0
+    with open(output_path, 'w', encoding='utf-8') as f:
         for i, idx in enumerate(respondent_indices):
-            row = data.iloc[idx].to_dict()
-            resp_id = row.get(respondent_id_col, idx)
+            row = data.iloc[idx]
+            resp_id = row[survey_config.respondent_id_col] if survey_config.respondent_id_col in row.index else idx
+            resp_id = convert_to_native_types(resp_id)
             
-            resp_instances = generate_instances_for_respondent(
-                respondent_data=row,
-                respondent_id=resp_id,
-                survey_name=survey_name,
-                targets=targets,
-                metadata=metadata,
-                richness_levels=richness_levels,
-                concept_resolver=concept_resolver,
-                country_col=country_col,
-                seed=seed
-            )
+            # Generate instances for each target at each richness level
+            for target in targets:
+                # Handle ESS concepts
+                if target.is_concept and is_ess:
+                    continue
+                
+                target_code = target.var_code
+                
+                # Generate profiles at each richness level with strict superset relationships
+                # Use expand_profile to maintain superset relationships while applying
+                # semantic filtering at each expansion step
+                base_profile = None
+                
+                for level_name, level_config in RICHNESS_LEVELS.items():
+                    n_sections = level_config['n_sections']
+                    m_features = level_config['m_features']
+                    
+                    # Generate or expand profile
+                    if base_profile is None:
+                        # First level: generate base profile with semantic filtering
+                        try:
+                            base_profile = generator.generate_profile(
+                                respondent_id=resp_id,
+                                n_sections=n_sections,
+                                m_features_per_section=m_features,
+                                seed=seed,
+                                shuffle_features=False,
+                                target_code=target_code  # Apply per-target semantic exclusions
+                            )
+                        except (ValueError, KeyError) as e:
+                            # Skip if profile generation fails (e.g., insufficient features)
+                            if verbose and i == 0:
+                                print(f"    Warning: Could not generate profile for {target_code} at {level_name}: {e}")
+                            break
+                    else:
+                        # Subsequent levels: expand existing profile
+                        # This maintains superset relationships while respecting semantic exclusions
+                        add_sections = n_sections - base_profile.config.n_sections
+                        add_features = m_features - base_profile.config.m_features_per_section
+                        
+                        if add_sections < 0 or add_features < 0:
+                            # This shouldn't happen if RICHNESS_LEVELS is ordered correctly
+                            continue
+                        
+                        try:
+                            base_profile = generator.expand_profile(
+                                profile=base_profile,
+                                add_sections=add_sections,
+                                add_features_per_section=add_features,
+                                target_code=target_code  # Apply per-target semantic exclusions during expansion
+                            )
+                        except (ValueError, KeyError) as e:
+                            # Skip if expansion fails
+                            if verbose and i == 0:
+                                print(f"    Warning: Could not expand profile for {target_code} at {level_name}: {e}")
+                            break
+                    
+                    # Generate prediction instance from profile
+                    instance = generator.generate_prediction_instance_from_profile(
+                        profile=base_profile,
+                        target_code=target_code,
+                        skip_missing_targets=True
+                    )
+                    
+                    if instance is None:
+                        # Skip if target answer is missing
+                        continue
+                    
+                    # Convert to dict format matching expected output
+                    profile_type_code = f"s{n_sections}m{m_features}"
+                    instance_dict = {
+                        'example_id': f"{survey_id}_{resp_id}_{target_code}_{profile_type_code}",
+                        'base_id': f"{survey_id}_{resp_id}_{target_code}",
+                        'survey': survey_id,
+                        'id': str(instance.id),
+                        'country': str(instance.country) if instance.country is not None else None,
+                        'questions': instance.features,
+                        'target_question': instance.target_question,
+                        'target_code': target_code,
+                        'target_section': instance.target_section,
+                        'target_topic_tag': target.topic_tag,
+                        'target_response_format': target.response_format,
+                        'answer': instance.answer,
+                        'options': convert_to_native_types(instance.options),
+                        'profile_type': profile_type_code,
+                    }
+                    
+                    # Convert entire instance to ensure all values are JSON-serializable
+                    instance_dict = convert_to_native_types(instance_dict)
+                    f.write(json.dumps(instance_dict, ensure_ascii=False) + '\n')
+                    instance_count += 1
             
-            if output_file:
-                for inst in resp_instances:
-                    output_file.write(inst.to_jsonl() + '\n')
-            else:
-                instances.extend(resp_instances)
-            
-            if verbose and (i + 1) % 100 == 0:
-                print(f"  Processed {i + 1}/{len(respondent_indices)} respondents")
-    
-    finally:
-        if output_file:
-            output_file.close()
+            if verbose and (i + 1) % 200 == 0:
+                print(f"    Processed {i + 1}/{n_sample} respondents...")
     
     if verbose:
-        total = len(instances) if not output_path else (i + 1) * len(targets) * len(richness_levels)
-        print(f"Generated ~{total} instances")
+        print(f"\n  [OK] Wrote {instance_count} instances to: {output_path}")
     
-    return instances
+    return output_path
 
 
 # =============================================================================
@@ -784,80 +443,129 @@ def process_survey(
 
 def main():
     parser = argparse.ArgumentParser(
-        description='Generate main dataset for LLM survey prediction experiments'
+        description='Generate dataset using SURVEY_REGISTRY configuration',
+        formatter_class=argparse.RawDescriptionHelpFormatter
     )
     
-    parser.add_argument(
-        '--metadata', type=str, required=True,
-        help='Path to survey metadata JSON'
-    )
-    parser.add_argument(
-        '--data', type=str, required=True,
-        help='Path to survey data (CSV, DTA, or SAV)'
-    )
-    parser.add_argument(
-        '--survey', type=str, required=True,
-        help='Survey name/identifier'
-    )
-    parser.add_argument(
-        '--output', type=str, required=True,
-        help='Output JSONL path'
-    )
-    parser.add_argument(
-        '--n_respondents', type=int, default=1000,
-        help='Number of respondents to sample'
-    )
-    parser.add_argument(
-        '--n_targets', type=int, default=40,
-        help='Number of target questions to sample'
-    )
-    parser.add_argument(
-        '--seed', type=int, default=42,
-        help='Random seed'
-    )
-    parser.add_argument(
-        '--respondent_id_col', type=str, default='respondent_id',
-        help='Column name for respondent ID'
-    )
-    parser.add_argument(
-        '--country_col', type=str, default='cntry',
-        help='Column name for country'
-    )
-    parser.add_argument(
-        '--is_ess', action='store_true',
-        help='Enable ESS country-specific variable handling'
-    )
-    parser.add_argument(
-        '--quiet', action='store_true',
-        help='Suppress progress output'
-    )
+    # Survey selection
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument('--survey', type=str, help='Single survey ID')
+    group.add_argument('--surveys', type=str, nargs='+', help='Multiple survey IDs')
+    group.add_argument('--all', action='store_true', help='All surveys')
+    group.add_argument('--ess-only', action='store_true', help='ESS surveys only')
+    group.add_argument('--list', action='store_true', help='List available surveys')
+    
+    # Config
+    parser.add_argument('--config', type=str, default='configs/local.yaml',
+                       help='Path to YAML config file (default: configs/local.yaml)')
+    
+    # Paths (can override config)
+    parser.add_argument('--raw-data-dir', type=str, default=None,
+                       help='Base directory for survey data (overrides config)')
+    parser.add_argument('--metadata-dir', type=str, default=None,
+                       help='Base directory for metadata (overrides config)')
+    parser.add_argument('--output-dir', type=str, default=None,
+                       help='Output directory (overrides config)')
+    
+    # Sampling
+    parser.add_argument('--n-respondents', type=int, default=1200)
+    parser.add_argument('--n-targets', type=int, default=50)
+    parser.add_argument('--seed', type=int, default=42)
+    parser.add_argument('--quiet', action='store_true')
+    
+    # Semantic filtering
+    parser.add_argument('--similarity-model', type=str, default='all-MiniLM-L6-v2',
+                       help='Sentence transformer model for semantic filtering (default: all-MiniLM-L6-v2)')
+    parser.add_argument('--similarity-threshold', type=float, default=0.85,
+                       help='Similarity threshold for semantic filtering (default: 0.85)')
     
     args = parser.parse_args()
     
-    # Load data
-    print(f"Loading metadata from {args.metadata}...")
-    metadata = load_metadata(args.metadata)
+    # List and exit
+    if args.list:
+        print(list_surveys_detailed())
+        print(f"\nSurvey groups:")
+        print(f"  ESS_SURVEYS: {ESS_SURVEYS}")
+        print(f"  ALL_SURVEYS: {ALL_SURVEYS}")
+        return
     
-    print(f"Loading data from {args.data}...")
-    data = load_data(args.data)
-    print(f"  Loaded {len(data)} respondents")
+    # Determine surveys to process
+    if args.survey:
+        surveys = [args.survey]
+    elif args.surveys:
+        surveys = args.surveys
+    elif args.all:
+        surveys = ALL_SURVEYS
+    elif args.ess_only:
+        surveys = ESS_SURVEYS
+    else:
+        parser.print_help()
+        print("\nSpecify --survey, --surveys, --all, --ess-only, or --list")
+        return
+    
+    # Validate
+    invalid = [s for s in surveys if s not in SURVEY_REGISTRY]
+    if invalid:
+        print(f"Unknown survey(s): {invalid}")
+        print(f"Available: {list(SURVEY_REGISTRY.keys())}")
+        return
+    
+    # Load config for paths (if not overridden)
+    config_path = repo_root / args.config
+    if config_path.exists():
+        config = load_config(config_path)
+        paths = config['paths']
+        default_raw_data = paths.raw_data_dir
+        default_metadata = paths.metadata_dir
+        default_output = paths.output_dir
+    else:
+        # Fallback defaults if config not found
+        default_raw_data = Path('data/raw')
+        default_metadata = Path('data')
+        default_output = Path('data/generated')
+    
+    # Use provided paths or config defaults
+    raw_data_dir = Path(args.raw_data_dir) if args.raw_data_dir else default_raw_data
+    metadata_dir = Path(args.metadata_dir) if args.metadata_dir else default_metadata
+    output_dir = Path(args.output_dir) if args.output_dir else default_output
+    
+    print(f"Configuration:")
+    print(f"  Raw data:    {raw_data_dir}")
+    print(f"  Metadata:    {metadata_dir}")
+    print(f"  Output:      {output_dir}")
+    print(f"  Surveys:     {surveys}")
+    print(f"  Respondents: {args.n_respondents}")
+    print(f"  Targets:     {args.n_targets}")
+    print(f"  Semantic filtering: {args.similarity_model} (threshold={args.similarity_threshold})")
     
     # Process
-    process_survey(
-        metadata=metadata,
-        data=data,
-        survey_name=args.survey,
-        n_respondents=args.n_respondents,
-        n_targets=args.n_targets,
-        output_path=args.output,
-        is_ess=args.is_ess,
-        respondent_id_col=args.respondent_id_col,
-        country_col=args.country_col,
-        seed=args.seed,
-        verbose=not args.quiet
-    )
+    results = {}
+    for survey_id in surveys:
+        try:
+            path = process_survey(
+                survey_id=survey_id,
+                raw_data_dir=raw_data_dir,
+                metadata_dir=metadata_dir,
+                output_dir=output_dir,
+                n_respondents=args.n_respondents,
+                n_targets=args.n_targets,
+                seed=args.seed,
+                verbose=not args.quiet,
+                similarity_model=args.similarity_model,
+                similarity_threshold=args.similarity_threshold
+            )
+            results[survey_id] = 'success' if path else 'skipped'
+        except Exception as e:
+            print(f"ERROR: {e}")
+            results[survey_id] = f'error: {e}'
     
-    print(f"Output written to {args.output}")
+    # Summary
+    print(f"\n{'='*60}")
+    print("Summary")
+    print(f"{'='*60}")
+    for name, status in results.items():
+        symbol = '[OK]' if status == 'success' else '[ERROR]'
+        print(f"  {symbol} {name}: {status}")
 
 
 if __name__ == '__main__':

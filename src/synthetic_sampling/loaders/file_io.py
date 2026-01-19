@@ -110,6 +110,7 @@ def load_file(
 def find_data_files(
     directory: Path,
     patterns: List[str],
+    prefer_numeric: bool = True,
 ) -> List[Path]:
     """
     Find data files in a directory matching given patterns.
@@ -117,9 +118,13 @@ def find_data_files(
     Patterns are tried in order; returns files matching the first 
     pattern that finds any files.
     
+    If prefer_numeric=True, prioritizes .dta and .sav files over .csv
+    to preserve numeric codes instead of pre-converted text labels.
+    
     Args:
         directory: Directory to search in
         patterns: Glob patterns to try (e.g., ['*.csv', '*.dta'])
+        prefer_numeric: If True, prefer .dta/.sav over .csv when available
         
     Returns:
         List of matching file paths (sorted for deterministic ordering)
@@ -129,6 +134,15 @@ def find_data_files(
     if not directory.exists():
         raise FileNotFoundError(f"Directory not found: {directory}")
     
+    # If prefer_numeric, check for .dta/.sav first (preserve numeric codes)
+    if prefer_numeric:
+        numeric_patterns = ['*.dta', '*.sav']
+        for pattern in numeric_patterns:
+            matches = list(directory.glob(pattern))
+            if matches:
+                return sorted(matches)
+    
+    # Otherwise, follow pattern order
     for pattern in patterns:
         matches = list(directory.glob(pattern))
         if matches:

@@ -88,17 +88,38 @@ class TargetQuestion:
     values_map: dict[str, str]  # raw_value -> label mapping
     
     def get_label_for_value(self, raw_value) -> str:
-        """Convert raw response value to label."""
+        """
+        Convert raw response value to label.
+        
+        Handles both numeric codes (maps via values_map) and pre-converted text labels.
+        If the raw_value is already a text label that exists in values_map values,
+        it returns it as-is. Otherwise, tries to map numeric codes.
+        """
+        if raw_value is None:
+            return str(raw_value)
+        
+        raw_str = str(raw_value).strip()
+        
+        # Check if raw_value is already a label in values_map
+        if raw_str in self.values_map.values():
+            return raw_str
+        
+        # Try exact match in keys
         if raw_value in self.values_map:
             return self.values_map[raw_value]
-        if str(raw_value) in self.values_map:
-            return self.values_map[str(raw_value)]
+        if raw_str in self.values_map:
+            return self.values_map[raw_str]
+        
+        # Try numeric conversion
         try:
-            if str(int(raw_value)) in self.values_map:
-                return self.values_map[str(int(raw_value))]
+            int_key = str(int(float(raw_value)))
+            if int_key in self.values_map:
+                return self.values_map[int_key]
         except (ValueError, TypeError):
             pass
-        return str(raw_value)
+        
+        # If no match found, return as-is (assume it's already a label)
+        return raw_str
 
 
 @dataclass

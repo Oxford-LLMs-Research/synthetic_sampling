@@ -64,7 +64,8 @@ class RespondentProfileGenerator:
         Name of the survey. If None, survey will not be included in prediction instances.
     missing_value_labels : list[str], optional
         Exact value labels to treat as missing/artifacts and exclude.
-        E.g., ["Missing", "Not asked", "No answer", "Refused", "Don't know"]
+        E.g., ["Missing", "Not asked", "No answer", "Refused"]
+        Note: "Don't know" is a VALID response (respondent has no opinion) and should NOT be excluded.
         These are excluded from: (1) answer options for targets, 
         (2) feature values (respondent's answer is checked).
     missing_value_patterns : list[str], optional
@@ -131,6 +132,18 @@ class RespondentProfileGenerator:
         self._embedder = None  # Lazy load
         self._question_embeddings = None  # Cache
         self._target_similar_features: dict[str, set[str]] = {}  # target_code -> excluded features
+        
+        # Verify sentence-transformers import if semantic filtering is enabled
+        if self.similarity_model_name is not None:
+            try:
+                import sentence_transformers
+            except ImportError as e:
+                raise ImportError(
+                    f"sentence-transformers package required for semantic similarity. "
+                    f"Install with: pip install sentence-transformers\n"
+                    f"Original error: {e}\n"
+                    f"Note: Make sure you're running in the correct Python environment."
+                ) from e
         
         # Validate country_col if provided
         if country_col is not None and country_col not in survey_data.columns:
@@ -203,11 +216,19 @@ class RespondentProfileGenerator:
             try:
                 from sentence_transformers import SentenceTransformer
                 self._embedder = SentenceTransformer(self.similarity_model_name)
-            except ImportError:
+            except ImportError as e:
                 raise ImportError(
-                    "sentence-transformers package required for semantic similarity. "
-                    "Install with: pip install sentence-transformers"
-                )
+                    f"sentence-transformers package required for semantic similarity. "
+                    f"Install with: pip install sentence-transformers\n"
+                    f"Original error: {e}"
+                ) from e
+            except Exception as e:
+                # Catch other potential errors (e.g., model download issues)
+                raise RuntimeError(
+                    f"Failed to load sentence transformer model '{self.similarity_model_name}'. "
+                    f"Error: {e}\n"
+                    f"Make sure sentence-transformers is installed: pip install sentence-transformers"
+                ) from e
         return self._embedder
     
     def _compute_question_embeddings(self, question_codes: list[str]) -> np.ndarray:
@@ -377,8 +398,23 @@ class RespondentProfileGenerator:
         
         label_str = str(label)
         
+        # Check for common missing value numeric codes (before string conversion)
+        # These are often used in survey data: -1, -2, -3, -4, -5, -9, etc.
+        try:
+            label_num = float(label_str)
+            if label_num < 0 or label_num in [-1, -2, -3, -4, -5, -9, 999, 9999]:
+                # Check if it's a known missing code pattern
+                if label_num < 0 or label_num >= 999:
+                    return True
+        except (ValueError, TypeError):
+            pass
+        
         # Check exact matches
         if label_str in self.missing_value_labels:
+            return True
+        
+        # Check for common missing value strings
+        if label_str.lower() in ['nan', 'none', 'null', 'na', 'n/a']:
             return True
         
         # Check pattern matches (case-insensitive)
@@ -784,7 +820,8 @@ class RespondentProfileGenerator:
         self,
         profile: RespondentProfile,
         add_sections: int = 0,
-        add_features_per_section: int = 0
+        add_features_per_section: int = 0,
+        target_code: Optional[str] = None
     ) -> RespondentProfile:
         """
         Expand an existing profile by adding more sections and/or features.
@@ -805,6 +842,10 @@ class RespondentProfileGenerator:
         add_features_per_section : int
             Additional features to sample per section (applies to all sections,
             including newly added ones)
+        target_code : str, optional
+            If provided, applies per-target semantic similarity exclusions
+            when building the expansion pool. This ensures that features
+            semantically similar to the target are excluded during expansion.
             
         Returns
         -------
@@ -818,14 +859,26 @@ class RespondentProfileGenerator:
         respondent_data = self._get_respondent_data(profile.respondent_id)
         
         # Build pool excluding already-selected features
+        # Use target-specific pool if target_code is provided (applies semantic exclusions)
         already_selected = set(profile.feature_codes)
-        reserved = already_selected | self._excluded_features
         
-        expansion_pool = {}
-        for section, features in self._section_to_features.items():
-            available = [f for f in features if f not in reserved]
-            if available:
-                expansion_pool[section] = available
+        if target_code is not None:
+            # Get target-specific pool (includes semantic similarity exclusions)
+            base_pool = self.get_available_pool_for_target(target_code)
+            # Further filter to exclude already-selected features
+            expansion_pool = {}
+            for section, features in base_pool.items():
+                available = [f for f in features if f not in already_selected]
+                if available:
+                    expansion_pool[section] = available
+        else:
+            # Use global pool (no semantic exclusions)
+            reserved = already_selected | self._excluded_features
+            expansion_pool = {}
+            for section, features in self._section_to_features.items():
+                available = [f for f in features if f not in reserved]
+                if available:
+                    expansion_pool[section] = available
         
         # Create expansion-specific RNG
         # Use a different but deterministic seed for expansion
@@ -1186,12 +1239,18 @@ class RespondentProfileGenerator:
                     if not self._is_missing_value_label(label):
                         valid_labels.append(label)
                 
-                # Store unique labels (preserving order from metadata where possible)
-                # Use metadata order for consistency
+                # Store unique labels
+                # First, include labels from metadata in their original order
+                # Then append any additional labels from data that aren't in metadata
                 ordered_labels = [
                     opt for opt in target.options if opt in valid_labels
                 ]
-                self._country_options[country][code] = ordered_labels
+                # Add any labels from data that aren't in metadata (preserve data order)
+                additional_labels = [
+                    label for label in valid_labels 
+                    if label not in ordered_labels
+                ]
+                self._country_options[country][code] = ordered_labels + additional_labels
         
         # Report statistics
         for code in self._country_specific_targets:
@@ -1295,6 +1354,24 @@ class RespondentProfileGenerator:
         
         # Check if target answer is valid (not missing/artifact)
         raw_answer = respondent_data.get(target_code)
+        
+        # Check raw value first (before label conversion) for common missing codes
+        # Common missing codes: -1, -2, -3, -4, -5, -9, 999, 9999, etc.
+        if raw_answer is not None:
+            try:
+                raw_str = str(raw_answer).strip()
+                # Check for common missing value code patterns
+                if raw_str in ['-1', '-2', '-3', '-4', '-5', '-9', '999', '9999', '9998', '9995']:
+                    if skip_missing_targets:
+                        return None
+                # Also check if it's a negative number (most surveys use negatives for missing)
+                raw_num = float(raw_answer)
+                if raw_num < 0:
+                    if skip_missing_targets:
+                        return None
+            except (ValueError, TypeError):
+                pass
+        
         answer_label = target.get_label_for_value(raw_answer)
         
         if skip_missing_targets and self._is_missing_value_label(answer_label):
@@ -1321,13 +1398,19 @@ class RespondentProfileGenerator:
         
         # Validate that respondent's answer is in the options
         # (it should be, but this catches edge cases)
-        if answer_label not in options and not self._is_missing_value_label(answer_label):
-            import warnings
-            warnings.warn(
-                f"Respondent {respondent_id}: answer '{answer_label}' for {target_code} "
-                f"not in options for country {country_value}. Adding it."
-            )
-            options = options + [answer_label]
+        # NEVER add missing values to options - skip them entirely
+        if answer_label not in options:
+            if self._is_missing_value_label(answer_label):
+                # This is a missing value that wasn't caught earlier - skip it
+                return None
+            else:
+                # Valid answer not in options - this is unusual but add it
+                import warnings
+                warnings.warn(
+                    f"Respondent {respondent_id}: answer '{answer_label}' for {target_code} "
+                    f"not in options for country {country_value}. Adding it."
+                )
+                options = options + [answer_label]
         
         # Convert profile features to {question_text: answer_label} format
         features_dict = {}
@@ -1380,6 +1463,24 @@ class RespondentProfileGenerator:
         respondent_data = self._get_respondent_data(profile.respondent_id)
         
         raw_answer = respondent_data.get(target_code)
+        
+        # Check raw value first (before label conversion) for common missing codes
+        # Common missing codes: -1, -2, -3, -4, -5, -9, 999, 9999, etc.
+        if raw_answer is not None:
+            try:
+                raw_str = str(raw_answer).strip()
+                # Check for common missing value code patterns
+                if raw_str in ['-1', '-2', '-3', '-4', '-5', '-9', '999', '9999', '9998', '9995']:
+                    if skip_missing_targets:
+                        return None
+                # Also check if it's a negative number (most surveys use negatives for missing)
+                raw_num = float(raw_answer)
+                if raw_num < 0:
+                    if skip_missing_targets:
+                        return None
+            except (ValueError, TypeError):
+                pass
+        
         answer_label = target.get_label_for_value(raw_answer)
         
         # Check if target answer is valid
@@ -1394,13 +1495,19 @@ class RespondentProfileGenerator:
             options = target.options
         
         # Validate that respondent's answer is in the options
-        if answer_label not in options and not self._is_missing_value_label(answer_label):
-            import warnings
-            warnings.warn(
-                f"Respondent {profile.respondent_id}: answer '{answer_label}' for {target_code} "
-                f"not in options for country {country_value}. Adding it."
-            )
-            options = options + [answer_label]
+        # NEVER add missing values to options - skip them entirely
+        if answer_label not in options:
+            if self._is_missing_value_label(answer_label):
+                # This is a missing value that wasn't caught earlier - skip it
+                return None
+            else:
+                # Valid answer not in options - this is unusual but add it
+                import warnings
+                warnings.warn(
+                    f"Respondent {profile.respondent_id}: answer '{answer_label}' for {target_code} "
+                    f"not in options for country {country_value}. Adding it."
+                )
+                options = options + [answer_label]
         
         features_dict = {
             info.get('question', info.get('description', code)): info['value_label']
