@@ -463,20 +463,27 @@ class SampledTarget:
     
     def __post_init__(self):
         if self.response_format == 'other' and not self.is_concept:
-            self.response_format = detect_response_format(self.values)
+            # Only detect format if values is a dict (not a string like "String variable")
+            if isinstance(self.values, dict):
+                self.response_format = detect_response_format(self.values)
         elif self.is_concept:
             # Concepts have dynamic response formats per country
             self.response_format = 'country_specific'
     
     def to_dict(self) -> Dict[str, Any]:
+        # Safely compute n_options only if values is a dict
+        n_options = 0
+        if self.values and isinstance(self.values, dict):
+            n_options = len([v for v in self.values.values() 
+                            if not _is_missing_label(v)])
+        
         return {
             'var_code': self.var_code,
             'section': self.section,
             'question': self.question,
             'topic_tag': self.topic_tag,
             'response_format': self.response_format,
-            'n_options': len([v for v in self.values.values() 
-                            if not _is_missing_label(v)]) if self.values else 0,
+            'n_options': n_options,
             'is_concept': self.is_concept,
             'concept_id': self.concept_id,
         }

@@ -27,6 +27,7 @@ Usage:
 import sys
 import argparse
 import json
+import hashlib
 from pathlib import Path
 from typing import Optional, List, Dict, Any, Tuple
 import numpy as np
@@ -61,6 +62,25 @@ RICHNESS_LEVELS = {
     'medium': {'n_sections': 4, 'm_features': 3},   # 12 features  
     'rich':   {'n_sections': 6, 'm_features': 4},   # 24 features
 }
+
+
+# =============================================================================
+# Helper Functions
+# =============================================================================
+
+def get_respondent_target_seed(base_seed: int, respondent_id: Any, target_code: str) -> int:
+    """
+    Generate a unique but reproducible seed for a respondent x target combination.
+    
+    This ensures:
+    1. Same (respondent_id, target_code, base_seed) always produces same profile
+    2. Different respondent x target combinations get different random sequences
+    3. Changing base_seed changes all profiles
+    4. Profiles for the same respondent x target are supersets (via expand_profile)
+    """
+    combined = f"{base_seed}_{respondent_id}_{target_code}"
+    hash_val = int(hashlib.sha256(combined.encode()).hexdigest()[:8], 16)
+    return hash_val
 
 
 # =============================================================================
@@ -285,7 +305,7 @@ def process_survey(
         try:
             import sentence_transformers
             if verbose:
-                print(f"    ✓ sentence-transformers {sentence_transformers.__version__} available")
+                print(f"    [OK] sentence-transformers {sentence_transformers.__version__} available")
         except ImportError as e:
             print(f"\n  ERROR: sentence-transformers package not found in current Python environment.")
             print(f"  Install with: pip install sentence-transformers")
@@ -344,6 +364,11 @@ def process_survey(
                 
                 target_code = target.var_code
                 
+                # Generate unique seed for this respondent x target combination
+                # This ensures different combinations get different features,
+                # while maintaining superset relationships within the same combination
+                respondent_target_seed = get_respondent_target_seed(seed, resp_id, target_code)
+                
                 # Generate profiles at each richness level with strict superset relationships
                 # Use expand_profile to maintain superset relationships while applying
                 # semantic filtering at each expansion step
@@ -361,7 +386,7 @@ def process_survey(
                                 respondent_id=resp_id,
                                 n_sections=n_sections,
                                 m_features_per_section=m_features,
-                                seed=seed,
+                                seed=respondent_target_seed,  # Use unique seed per respondent x target
                                 shuffle_features=False,
                                 target_code=target_code  # Apply per-target semantic exclusions
                             )

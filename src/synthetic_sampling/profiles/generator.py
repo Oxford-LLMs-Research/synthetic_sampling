@@ -611,8 +611,8 @@ class RespondentProfileGenerator:
         q_info = self.metadata[section].get(feature_code, {})
         values_map = q_info.get('values', {})
         
-        # If no values map, just return raw value as string
-        if not values_map:
+        # If no values map or values is a string (like "String variable"), just return raw value as string
+        if not values_map or not isinstance(values_map, dict):
             return str(raw_value)
         
         # Try exact match first (works for both numeric and string keys)
@@ -1128,6 +1128,10 @@ class RespondentProfileGenerator:
                     q_info = questions[code]
                     values_map = q_info.get('values', {})
                     
+                    # Skip if values is a string (like "String variable") instead of a dict
+                    if not isinstance(values_map, dict):
+                        continue
+                    
                     # Filter out missing/artifact values from options
                     valid_options = self._filter_valid_options(values_map)
                     
@@ -1192,8 +1196,9 @@ class RespondentProfileGenerator:
         
         # Report
         total_original = sum(
-            len(self.metadata[self._feature_to_section[code]][code].get('values', {}))
+            len(v) if isinstance(v, dict) else 0
             for code in self._target_questions
+            for v in [self.metadata[self._feature_to_section[code]][code].get('values', {})]
         )
         total_filtered = sum(len(t.options) for t in self._target_questions.values())
         
@@ -1262,7 +1267,7 @@ class RespondentProfileGenerator:
                 for c in countries
             ]
             avg_country = sum(country_counts) / len(country_counts) if country_counts else 0
-            print(f"    {code}: {global_count} global options → avg {avg_country:.1f} per country")
+            print(f"    {code}: {global_count} global options -> avg {avg_country:.1f} per country")
     
     def _get_country_specific_options(
         self, 
