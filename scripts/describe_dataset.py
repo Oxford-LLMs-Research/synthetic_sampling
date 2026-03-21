@@ -33,6 +33,14 @@ def describe_dataset(jsonl_path: str, include_targets: bool = True, markdown_fil
     """
     Describe a dataset JSONL file.
     
+    Returns
+    -------
+    question_identifiers : set
+        Set of unique question identifiers (survey_target_code)
+    """
+    """
+    Describe a dataset JSONL file.
+    
     Parameters
     ----------
     jsonl_path : str
@@ -63,6 +71,7 @@ def describe_dataset(jsonl_path: str, include_targets: bool = True, markdown_fil
         'response_format': None,
         'question': None
     })
+    question_identifiers = set()  # Track unique survey_target_code combinations
     response_formats = Counter()
     topic_tags = Counter()
     
@@ -78,6 +87,10 @@ def describe_dataset(jsonl_path: str, include_targets: bool = True, markdown_fil
             # Collect target information
             if include_targets:
                 target_code = instance['target_code']
+                survey = instance['survey']
+                question_id = f"{survey}_{target_code}"  # Unique question identifier
+                question_identifiers.add(question_id)
+                
                 if target_code not in targets_info:
                     targets_info[target_code]['section'] = instance.get('target_section', 'unknown')
                     targets_info[target_code]['question'] = instance.get('target_question', '')
@@ -111,7 +124,7 @@ def describe_dataset(jsonl_path: str, include_targets: bool = True, markdown_fil
         write_output(f"| {profile_type} | {count:,} |")
     
     if include_targets and targets_info:
-        write_output(f"\n## Target Questions: {len(targets_info)} unique targets")
+        write_output(f"\n## Target Questions: {len(question_identifiers)} unique question identifiers ({len(targets_info)} unique target codes)")
         
         # Show response format breakdown
         if response_formats:
@@ -149,6 +162,8 @@ def describe_dataset(jsonl_path: str, include_targets: bool = True, markdown_fil
                 topic_tag = info.get('topic_tag') or '-'
                 write_output(f"| {target_code} | {info['count']:,} | {resp_format} | {topic_tag} | {question} |")
     
+    return question_identifiers if include_targets else set()
+    
     write_output("\n" + "=" * 70)
 
 
@@ -166,6 +181,7 @@ def describe_multiple_files(jsonl_paths: List[str], include_targets: bool = True
     all_instances_by_survey = Counter()
     all_instances_by_profile = Counter()
     all_targets = defaultdict(lambda: {'count': 0, 'section': None, 'question': None, 'topic_tag': None, 'response_format': None})
+    all_question_identifiers = set()  # Track unique survey_target_code combinations
     all_response_formats = Counter()
     all_topic_tags = Counter()
     total_instances = 0
@@ -174,7 +190,9 @@ def describe_multiple_files(jsonl_paths: List[str], include_targets: bool = True
     # Process each file
     for jsonl_path in jsonl_paths:
         write_output(f"\n")
-        describe_dataset(jsonl_path, include_targets=include_targets, markdown_file=markdown_file)
+        file_question_ids = describe_dataset(jsonl_path, include_targets=include_targets, markdown_file=markdown_file)
+        if include_targets:
+            all_question_identifiers.update(file_question_ids)
         
         # Aggregate statistics
         with open(jsonl_path, 'r', encoding='utf-8') as f:
@@ -222,7 +240,7 @@ def describe_multiple_files(jsonl_paths: List[str], include_targets: bool = True
         write_output(f"| {profile_type} | {count:,} |")
     
     if include_targets and all_targets:
-        write_output(f"\n## Aggregate Target Questions: {len(all_targets)} unique targets")
+        write_output(f"\n## Aggregate Target Questions: {len(all_question_identifiers)} unique question identifiers ({len(all_targets)} unique target codes)")
         
         # Show aggregate response format breakdown
         if all_response_formats:

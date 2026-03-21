@@ -122,3 +122,16 @@ configs/local.yaml
 *.csv
 *.dta
 *.sav
+
+# Analysis outputs (figures, numeric exports, scratch lists — regenerate from scripts)
+analysis/.cache/
+analysis/**/*.json
+analysis/**/*.pdf
+analysis/**/*.png
+analysis/**/*.svg
+analysis/**/*.tex
+analysis/*.tex
+analysis/**/*.txt
+analysis/**/*.md
+/missing_targets*.json
+/all_261_targets.txt

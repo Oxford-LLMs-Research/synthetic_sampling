@@ -493,8 +493,8 @@ def main():
                        help='Output directory (overrides config)')
     
     # Sampling
-    parser.add_argument('--n-respondents', type=int, default=1200)
-    parser.add_argument('--n-targets', type=int, default=50)
+    parser.add_argument('--n-respondents', type=int, default=1000)
+    parser.add_argument('--n-targets', type=int, default=40)
     parser.add_argument('--seed', type=int, default=42)
     parser.add_argument('--quiet', action='store_true')
     

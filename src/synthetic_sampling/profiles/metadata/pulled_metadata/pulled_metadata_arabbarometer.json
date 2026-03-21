@@ -123,6 +123,42 @@
       "original_section": "SAMPLING VARIABLES",
       "country_specific": false
     },
+    "COUNTRY": {
+      "description": "Country of respondent",
+      "question": "Which country are you from?",
+      "values": {
+        "7": "Iraq",
+        "8": "Jordan",
+        "9": "Kuwait",
+        "10": "Lebanon",
+        "12": "Mauritania",
+        "13": "Morocco",
+        "15": "Palestine",
+        "21": "Tunisia"
+      },
+      "harmonized_section": "demographics",
+      "topic_tag": null,
+      "original_section": "SAMPLING VARIABLES",
+      "country_specific": false
+    },
+    "COUNTRY": {
+      "description": "Country of respondent",
+      "question": "Which country are you from?",
+      "values": {
+        "7": "Iraq",
+        "8": "Jordan",
+        "9": "Kuwait",
+        "10": "Lebanon",
+        "12": "Mauritania",
+        "13": "Morocco",
+        "15": "Palestine",
+        "21": "Tunisia"
+      },
+      "harmonized_section": "demographics",
+      "topic_tag": null,
+      "original_section": "SAMPLING VARIABLES",
+      "country_specific": false
+    },
     "Q1A_PAL": {
       "description": "Palestine area",
       "question": "Do you live in the West Bank or Gaza?",
