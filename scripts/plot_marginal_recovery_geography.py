@@ -128,13 +128,17 @@ def load_cells() -> pd.DataFrame:
     return agg
 
 
-def plot_region(cells: pd.DataFrame) -> pd.DataFrame:
+def region_summary(cells: pd.DataFrame) -> pd.DataFrame:
     reg = (cells.groupby("region")
            .agg(tv_model=("tv_model", "mean"), tv_global=("tv_global", "mean"),
                 n_cells=("tv_model", "size"))
            .reset_index())
     reg["continent"] = reg["region"].map(CONTINENT_MAP)
-    reg = reg.sort_values("tv_model").reset_index(drop=True)
+    return reg.sort_values("tv_model").reset_index(drop=True)
+
+
+def plot_region(cells: pd.DataFrame) -> pd.DataFrame:
+    reg = region_summary(cells)
 
     fig, ax = plt.subplots(figsize=(5.2, 4.4))
     for i, row in reg.iterrows():
@@ -242,8 +246,8 @@ def load_cells_permodel() -> pd.DataFrame:
     return cells
 
 
-def plot_region_permodel(cells_pm: pd.DataFrame, order: list[str]) -> None:
-    """One row per region: 13 small dots (one per model) + open baseline dot."""
+def plot_region_combined(cells_pm: pd.DataFrame, order: list[str]) -> None:
+    """One row per region: 13 small model dots, 13-model mean, baseline dot."""
     reg_pm = (cells_pm.groupby(["region", "model"])
               .agg(tv_model=("tv_model", "mean"))
               .reset_index())
@@ -251,7 +255,6 @@ def plot_region_permodel(cells_pm: pd.DataFrame, order: list[str]) -> None:
                 .agg(tv_global=("tv_global", "mean"))
                 .reset_index())
     reg_pm = reg_pm.merge(reg_base, on="region")
-    reg_pm["continent"] = reg_pm["region"].map(CONTINENT_MAP)
 
     fig, ax = plt.subplots(figsize=(5.2, 4.6))
     for i, region in enumerate(order):
@@ -259,8 +262,10 @@ def plot_region_permodel(cells_pm: pd.DataFrame, order: list[str]) -> None:
         color = CONTINENT_COLORS[CONTINENT_MAP[region]]
         lo, hi = g["tv_model"].min(), g["tv_model"].max()
         ax.hlines(i, lo, hi, color=color, alpha=0.35, linewidth=1.0, zorder=2)
-        ax.scatter(g["tv_model"], [i] * len(g), color=color, s=14,
-                   alpha=0.75, edgecolor="none", zorder=3)
+        ax.scatter(g["tv_model"], [i] * len(g), color=color, s=13,
+                   alpha=0.65, edgecolor="none", zorder=3)
+        ax.scatter(g["tv_model"].mean(), i, color=color, s=58,
+                   edgecolor="black", linewidth=0.5, zorder=4)
         ax.scatter(g["tv_global"].iloc[0], i, facecolor="white",
                    edgecolor=color, s=40, linewidth=1.0, zorder=4)
     ax.set_yticks(np.arange(len(order)))
@@ -271,22 +276,25 @@ def plot_region_permodel(cells_pm: pd.DataFrame, order: list[str]) -> None:
 
     handles = [
         Line2D([], [], marker="o", linestyle="", markerfacecolor="#444444",
+               markeredgecolor="black", markeredgewidth=0.5, markersize=7,
+               label="13-model mean"),
+        Line2D([], [], marker="o", linestyle="", markerfacecolor="#444444",
                markeredgecolor="none", markersize=4,
                label="One model (13 dots per region)"),
         Line2D([], [], marker="o", linestyle="", markerfacecolor="white",
                markeredgecolor="#444444", markeredgewidth=1.0, markersize=6,
                label="Pooled cross-country margin"),
     ]
-    leg = ax.legend(handles=handles, loc="upper center", fontsize=7,
-                    frameon=False, handletextpad=0.4, labelspacing=0.35,
-                    bbox_to_anchor=(0.5, -0.11), ncol=2, columnspacing=1.2)
+    ax.legend(handles=handles, loc="upper center", fontsize=7,
+              frameon=False, handletextpad=0.4, labelspacing=0.35,
+              bbox_to_anchor=(0.5, -0.11), ncol=3, columnspacing=1.0)
 
     plt.tight_layout(pad=0.5)
-    base = OUT_DIR / "figure_marginal_recovery_region_permodel"
+    base = OUT_DIR / "figure_marginal_recovery_region"
     plt.savefig(base.with_suffix(".pdf"), bbox_inches="tight", dpi=300)
     plt.savefig(base.with_suffix(".png"), bbox_inches="tight", dpi=300)
     plt.close(fig)
-    print(f"Saved {base}.pdf/.png")
+    print(f"Saved {base}.pdf/.png (combined)")
 
 
 def plot_country_grid(cells_pm: pd.DataFrame) -> None:
@@ -344,11 +352,11 @@ def plot_country_grid(cells_pm: pd.DataFrame) -> None:
 
 def main() -> None:
     cells = load_cells()
-    reg = plot_region(cells)
+    reg = region_summary(cells)
     cty = plot_country(cells)
 
     cells_pm = load_cells_permodel()
-    plot_region_permodel(cells_pm, order=list(reg.sort_values("tv_model")["region"]))
+    plot_region_combined(cells_pm, order=list(reg.sort_values("tv_model")["region"]))
     plot_country_grid(cells_pm)
 
     reg["excess"] = reg["tv_model"] - reg["tv_global"]
@@ -370,7 +378,6 @@ def main() -> None:
     if AAAI_FIG_DIR.exists():
         for name in ("figure_marginal_recovery_region.pdf",
                      "figure_marginal_recovery_country.pdf",
-                     "figure_marginal_recovery_region_permodel.pdf",
                      "figure_marginal_recovery_country_permodel.pdf"):
             shutil.copy2(OUT_DIR / name, AAAI_FIG_DIR / name)
             print(f"Copied {name} to {AAAI_FIG_DIR}")

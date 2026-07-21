@@ -87,40 +87,54 @@ def main():
     region_agg["continent"] = region_agg["region"].map(CONTINENT_MAP).fillna("Other")
     region_agg = region_agg.sort_values("norm_acc_mean").reset_index(drop=True)
 
+    # Per-model regional means (small dots behind the pooled mean)
+    per_model = (df.groupby(["region", "model"])["norm_acc"]
+                   .mean()
+                   .reset_index())
+
     # ---- plot ----
     fig, ax = plt.subplots(figsize=(7.5, 5.5))
     y_pos = np.arange(len(region_agg))
 
     for i, row in region_agg.iterrows():
         color = CONTINENT_COLORS.get(row["continent"], "#666666")
-        # Connecting line
-        ax.hlines(i, 0, row["norm_acc_mean"], color="gray", alpha=0.15, linewidth=0.5)
-        # Error bar
-        ax.errorbar(row["norm_acc_mean"], i,
-                    xerr=row["ci95"],
-                    fmt="none", color="black",
-                    capsize=2, capthick=0.5, elinewidth=0.5)
-        # Colored dot
+        pm = per_model[per_model["region"] == row["region"]]["norm_acc"]
+        # Range across models
+        ax.hlines(i, pm.min(), pm.max(), color=color, alpha=0.3,
+                  linewidth=1.0, zorder=2)
+        # One small dot per model
+        ax.scatter(pm, [i] * len(pm), color=color, s=14, alpha=0.6,
+                   edgecolor="none", zorder=3)
+        # 13-model pooled mean
         ax.scatter(row["norm_acc_mean"], i, color=color, s=90,
                    edgecolor="black", linewidth=0.5, zorder=4)
 
     ax.axvline(0, color="gray", linestyle=":", linewidth=0.6, alpha=0.6)
     ax.set_yticks(y_pos)
     ax.set_yticklabels(region_agg["region"], fontsize=8.5)
-    ax.set_xlabel("Mean Normalized Accuracy (mean ± 95% CI)", fontsize=10)
+    ax.set_xlabel("Mean Normalized Accuracy", fontsize=10)
     ax.grid(axis="x", linestyle="--", alpha=0.25, linewidth=0.4)
 
-    # Pad x-axis so CIs are visible
-    xmax = (region_agg["norm_acc_mean"] + region_agg["ci95"]).max()
-    xmin = (region_agg["norm_acc_mean"] - region_agg["ci95"]).min()
+    # Pad x-axis so the per-model range is visible
+    xmax = per_model["norm_acc"].max()
+    xmin = min(per_model["norm_acc"].min(), 0)
     pad = max(0.01, (xmax - xmin) * 0.05)
     ax.set_xlim(xmin - pad, xmax + pad)
 
     # Legend
     patches = [mpatches.Patch(facecolor=c, edgecolor="black", linewidth=0.4, label=k)
                for k, c in CONTINENT_COLORS.items()]
-    legend = ax.legend(handles=patches, title="Continent", loc="lower right",
-                       fontsize=8, title_fontsize=8.5, frameon=True, framealpha=0.9,
+    from matplotlib.lines import Line2D
+    patches += [
+        Line2D([], [], marker="o", linestyle="", markerfacecolor="#666666",
+               markeredgecolor="black", markeredgewidth=0.5, markersize=8,
+               label="13-model mean"),
+        Line2D([], [], marker="o", linestyle="", markerfacecolor="#666666",
+               markeredgecolor="none", markersize=4, alpha=0.7,
+               label="One model"),
+    ]
+    legend = ax.legend(handles=patches, loc="lower right",
+                       fontsize=8, frameon=True, framealpha=0.9,
                        handlelength=1.0, handletextpad=0.4)
     legend.get_frame().set_linewidth(0.4)
 
@@ -132,10 +146,12 @@ def main():
     plt.close(fig)
     print(f"Saved {out_base}.pdf/.png")
 
-    if LATEX_FIG_DIR.exists():
-        dest = LATEX_FIG_DIR / "figure_region_accuracy.pdf"
-        shutil.copy2(out_base.with_suffix(".pdf"), dest)
-        print(f"Copied to {dest}")
+    for fig_dir in (LATEX_FIG_DIR,
+                    Path(r"C:\Users\murrn\cursor\synthetic_sampling_aaai\emnlp\figures")):
+        if fig_dir.exists():
+            dest = fig_dir / "figure_region_accuracy.pdf"
+            shutil.copy2(out_base.with_suffix(".pdf"), dest)
+            print(f"Copied to {dest}")
 
     # Print summary
     print("\nRegion summary (norm_acc):")
