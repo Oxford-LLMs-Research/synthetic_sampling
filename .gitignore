@@ -135,3 +135,5 @@ analysis/**/*.txt
 analysis/**/*.md
 /missing_targets*.json
 /all_261_targets.txt
+.venv312/
+old-venv-requirements.txt
