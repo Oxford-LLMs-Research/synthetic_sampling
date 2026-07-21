@@ -26,7 +26,7 @@ from scipy.spatial.distance import jensenshannon
 from scipy.stats import entropy
 
 # ---------------------------------------------------------------------------
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[1]
 ANALYSIS_DIR = ROOT / "analysis"
 NORM_ACC_DIR = ANALYSIS_DIR / "normalized_accuracy"
 XGB_DIR = ANALYSIS_DIR / "xgboost_baseline"
@@ -182,10 +182,12 @@ def make_figure(norm_agg, majority_by_pt, xgb_by_pt, vr_jsd_df,
     # ------------------------------------------------------------------
     # Helper: draw one horizontal panel
     # ------------------------------------------------------------------
-    def draw_panel(ax, metric_key, df, title, xlabel, ref_lines=None):
+    def draw_panel(ax, metric_key, df, title, xlabel, ref_lines=None,
+                   show_ylabels=True):
         """
         df: DataFrame with columns [model, profile_type, <metric_key>]
         ref_lines: list of (value, linestyle, color, label)
+        show_ylabels: if False, suppress y-axis tick labels (used for panels b/c)
         """
         if show_all_profiles:
             # Three connected points per model, left→right = sparse→rich
@@ -222,7 +224,11 @@ def make_figure(norm_agg, majority_by_pt, xgb_by_pt, vr_jsd_df,
                     ax.scatter(val, y_pos[i], color=fc, edgecolors=ec, s=80, zorder=4,
                                linewidths=1.8)
             ax.set_yticks(y_pos)
-            ax.set_yticklabels(display_names, fontsize=8.5)
+            if show_ylabels:
+                ax.set_yticklabels(display_names, fontsize=8.5)
+            else:
+                ax.set_yticklabels([])
+                ax.tick_params(axis="y", length=0)
             ax.set_xlabel(xlabel, fontsize=10)
             if ref_lines:
                 for val, ls, rc, lbl in ref_lines:
@@ -251,10 +257,10 @@ def make_figure(norm_agg, majority_by_pt, xgb_by_pt, vr_jsd_df,
     # Panel (b): Variance ratio
     # ------------------------------------------------------------------
     if vr_jsd_df is not None and not vr_jsd_df.empty:
-        ref_b = [(1.0, "--", "black", "Human variance level (VR = 1)")]
+        ref_b = [(1.0, "--", "black", "Human variance (VR = 1)")]
         draw_panel(axes[1], "mean_vr", vr_jsd_df,
                    "(b) Variance ratio\n(VR < 1 = model flattens response diversity)",
-                   "Variance ratio", ref_b)
+                   "Variance ratio", ref_b, show_ylabels=False)
         axes[1].legend(fontsize=7.5)
     else:
         axes[1].text(0.5, 0.5, "VR/JSD not computed\n(run without --skip-vr-jsd)",
@@ -266,8 +272,8 @@ def make_figure(norm_agg, majority_by_pt, xgb_by_pt, vr_jsd_df,
     # ------------------------------------------------------------------
     if vr_jsd_df is not None and not vr_jsd_df.empty:
         draw_panel(axes[2], "mean_jsd", vr_jsd_df,
-                   "(c) Jensen-Shannon Divergence\n(lower = model distribution closer to human)",
-                   "Mean JSD", ref_lines=None)
+                   "(c) Jensen-Shannon Divergence\n(lower = closer to human distribution)",
+                   "Mean JSD", ref_lines=None, show_ylabels=False)
     else:
         axes[2].text(0.5, 0.5, "VR/JSD not computed\n(run without --skip-vr-jsd)",
                      ha="center", va="center", transform=axes[2].transAxes)
@@ -278,11 +284,13 @@ def make_figure(norm_agg, majority_by_pt, xgb_by_pt, vr_jsd_df,
     # ------------------------------------------------------------------
     family_patches = [mpatches.Patch(facecolor=c, label=f)
                       for f, c in FAMILY_COLORS.items()]
+    # Filled = instruct, open = base (already visible in y-axis labels; keep as
+    # a compact visual aid without redundant legend text entries)
     inst_marker = mlines.Line2D([], [], color="gray", marker="o", linestyle="None",
-                                markersize=7, label="Instruct / fine-tuned")
+                                markersize=7, label="Instruct")
     base_marker = mlines.Line2D([], [], color="gray", marker="o", linestyle="None",
                                 markersize=7, markerfacecolor="white", markeredgewidth=1.5,
-                                label="Base model")
+                                label="Base")
     fig.legend(handles=family_patches + [inst_marker, base_marker],
                loc="lower center", ncol=8, fontsize=8,
                bbox_to_anchor=(0.5, -0.06))
