@@ -90,6 +90,21 @@ def tv_distance(counts_a: Counter, counts_b: Counter) -> float:
     return 0.5 * sum(abs(counts_a[l] / na - counts_b[l] / nb) for l in labels)
 
 
+def js_divergence(counts_a: Counter, counts_b: Counter) -> float:
+    """Jensen-Shannon divergence (natural log), matching the main-text metric."""
+    labels = sorted(set(counts_a) | set(counts_b))
+    na, nb = sum(counts_a.values()), sum(counts_b.values())
+    p = np.array([counts_a[l] / na for l in labels])
+    q = np.array([counts_b[l] / nb for l in labels])
+    m = 0.5 * (p + q)
+
+    def kl(a, b):
+        mask = a > 0
+        return float(np.sum(a[mask] * np.log(a[mask] / b[mask])))
+
+    return 0.5 * kl(p, m) + 0.5 * kl(q, m)
+
+
 def process_model(model: str, resp_country: pd.DataFrame) -> pd.DataFrame:
     df = pd.read_csv(
         ANALYSIS / model / "results_data.csv",
@@ -118,9 +133,12 @@ def process_model(model: str, resp_country: pd.DataFrame) -> pd.DataFrame:
                 "n": n,
                 "tv_model": tv_distance(pred_c, true_c),
                 "tv_global": tv_distance(global_true, true_c),
+                "jsd_model": js_divergence(pred_c, true_c),
+                "jsd_global": js_divergence(global_true, true_c),
             })
     out = pd.DataFrame(rows)
     out["model_beats_global"] = out["tv_model"] < out["tv_global"]
+    out["model_beats_global_jsd"] = out["jsd_model"] < out["jsd_global"]
     out.to_csv(OUT / f"per_cell_{model}.csv", index=False)
     return out
 
@@ -140,6 +158,9 @@ def main() -> None:
                 mean_tv_model=("tv_model", "mean"),
                 mean_tv_global=("tv_global", "mean"),
                 beats_global_share=("model_beats_global", "mean"),
+                mean_jsd_model=("jsd_model", "mean"),
+                mean_jsd_global=("jsd_global", "mean"),
+                beats_global_share_jsd=("model_beats_global_jsd", "mean"),
             )
             .reset_index()
         )
