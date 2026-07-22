@@ -25,6 +25,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from repair_ids import repair
+
 ANALYSIS = Path(r"C:\Users\murrn\cursor\synthetic_sampling\analysis")
 MR = ANALYSIS / "marginal_recovery"
 OUT = ANALYSIS / "equity_audit"
@@ -58,12 +60,13 @@ def build_instance_table() -> pd.DataFrame:
     for m in MODELS:
         df = pd.read_csv(
             ANALYSIS / m / "results_data.csv",
-            usecols=["survey", "respondent_id", "target_code", "profile_type",
-                     "ground_truth", "correct"],
-            dtype={"survey": str, "respondent_id": str, "target_code": str,
-                   "profile_type": str, "ground_truth": str},
+            usecols=["example_id", "survey", "respondent_id", "target_code",
+                     "profile_type", "ground_truth", "correct"],
+            dtype={"example_id": str, "survey": str, "respondent_id": str,
+                   "target_code": str, "profile_type": str, "ground_truth": str},
         )
-        df = df[df["profile_type"] == PROFILE].drop(columns="profile_type")
+        df = df[df["profile_type"] == PROFILE]
+        df = repair(df, verbose=False).drop(columns=["profile_type", "example_id"])
         df["correct"] = df["correct"].astype(str).str.lower().eq("true").astype(np.float32)
         df = df.rename(columns={"correct": f"c_{m}"})
         if base is None:

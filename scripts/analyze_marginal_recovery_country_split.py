@@ -40,7 +40,7 @@ MAIN_DATA = ROOT / "synthetic_sampling" / "outputs" / "main_data_smaller_20_jan_
 METADATA = SCRIPTS.parent / "src" / "synthetic_sampling" / "profiles" / "metadata"
 OUT = ANALYSIS / "marginal_recovery"
 
-MIN_N = 30
+MIN_N = 20
 PROFILE = "s6m4"
 
 MODELS = [

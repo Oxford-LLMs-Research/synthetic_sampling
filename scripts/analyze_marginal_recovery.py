@@ -30,6 +30,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from repair_ids import repair
+
 ROOT = Path(r"C:\Users\murrn\cursor\synthetic_sampling")
 ANALYSIS = ROOT / "analysis"
 MAIN_DATA = ROOT / "synthetic_sampling" / "outputs" / "main_data_smaller_20_jan_26" / "main_data"
@@ -108,10 +110,11 @@ def js_divergence(counts_a: Counter, counts_b: Counter) -> float:
 def process_model(model: str, resp_country: pd.DataFrame) -> pd.DataFrame:
     df = pd.read_csv(
         ANALYSIS / model / "results_data.csv",
-        usecols=["survey", "respondent_id", "target_code", "profile_type",
-                 "ground_truth", "predicted"],
+        usecols=["example_id", "survey", "respondent_id", "target_code",
+                 "profile_type", "ground_truth", "predicted"],
         dtype=str,
     )
+    df = repair(df, verbose=False)
     df = df.merge(resp_country, on=["survey", "respondent_id"], how="left")
 
     rows = []

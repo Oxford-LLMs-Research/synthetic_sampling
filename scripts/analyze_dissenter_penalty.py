@@ -24,6 +24,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from repair_ids import repair
+
 ANALYSIS = Path(r"C:\Users\murrn\cursor\synthetic_sampling\analysis")
 MR = ANALYSIS / "marginal_recovery"
 OUT = ANALYSIS / "equity_audit"
@@ -53,12 +55,13 @@ def load_n_options() -> pd.DataFrame:
 def process_model(model: str, resp_country: pd.DataFrame) -> pd.DataFrame:
     df = pd.read_csv(
         ANALYSIS / model / "results_data.csv",
-        usecols=["survey", "respondent_id", "target_code", "profile_type",
-                 "ground_truth", "correct"],
-        dtype={"survey": str, "respondent_id": str, "target_code": str,
-               "profile_type": str, "ground_truth": str},
+        usecols=["example_id", "survey", "respondent_id", "target_code",
+                 "profile_type", "ground_truth", "correct"],
+        dtype={"example_id": str, "survey": str, "respondent_id": str,
+               "target_code": str, "profile_type": str, "ground_truth": str},
     )
     df = df[df["profile_type"] == PROFILE]
+    df = repair(df, verbose=False)
     df["correct"] = df["correct"].astype(str).str.lower().eq("true")
     df = df.merge(resp_country, on=["survey", "respondent_id"], how="left")
     df = df[df["country"].notna()]
