@@ -106,8 +106,9 @@ def main() -> None:
 
     all_df["share_bin"] = pd.cut(all_df["modal_share"], SHARE_BINS,
                                  labels=SHARE_LABELS, right=False)
-    by_share = (all_df.groupby(["share_bin", "is_modal"], observed=True)["correct"]
-                .agg(["mean", "size"]).unstack())
+    by_share = (all_df.groupby(["share_bin", "is_modal"], observed=True)
+                .agg(acc=("correct", "mean"), norm=("norm_acc", "mean"),
+                     n=("correct", "size")).unstack())
     by_share.to_csv(OUT / "dissenter_penalty_by_share.csv")
 
     cells = (all_df.groupby(["survey", "target_code", "country", "is_modal"])
