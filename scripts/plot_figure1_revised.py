@@ -51,7 +51,7 @@ MODEL_META = {
     "qwen3-4b":              ("Qwen 3 4B",           "Qwen",     True),
     "qwen3-32b":             ("Qwen 3 32B",          "Qwen",     True),
     "gpt-oss":               ("GPT-OSS 120B",        "GPT-OSS",  True),
-    "deepseek":              ("DeepSeek-V3",         "DeepSeek", True),
+    "deepseek":              ("DeepSeek-V3.1",         "DeepSeek", True),
     "gemma3-27b":            ("Gemma 3 27B",         "Gemma",    True),
 }
 

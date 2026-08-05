@@ -26,10 +26,13 @@ import matplotlib.patches as mpatches
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[1]
+import paperfig as pf
+
+ROOT = pf.ROOT  # outer analysis tree; parents[1] points at a stale copy
 NORM_ACC_PATH = ROOT / "analysis/normalized_accuracy/per_question_norm_acc.csv"
 RESULTS_DIR   = ROOT / "analysis"
-ZIP_PATH      = ROOT.parent / "synthetic_sampling UPDATED.zip"
+META_DIR      = (ROOT / "synthetic_sampling/src/synthetic_sampling"
+                 "/profiles/metadata/pulled_metadata")
 OUT_DIR       = ROOT / "analysis/figures/emnlp_revision"
 LATEX_FIG_DIR = (ROOT / "paper/emnlp/Association_for_Computational_Linguistics__ACL__conference"
                  "/latex/figures")
@@ -87,13 +90,13 @@ TOPIC_DISPLAY = {
 }
 
 META_PATHS = {
-    "afrobarometer":   "synthetic_sampling/synthetic_sampling/src/synthetic_sampling/profiles/metadata/pulled_metadata/pulled_metadata_afrobarometer.json",
-    "arabbarometer":   "synthetic_sampling/synthetic_sampling/src/synthetic_sampling/profiles/metadata/pulled_metadata/pulled_metadata_arabbarometer.json",
-    "asianbarometer":  "synthetic_sampling/synthetic_sampling/src/synthetic_sampling/profiles/metadata/pulled_metadata/pulled_metadata_asianbarometer.json",
-    "ess_wave_10":     "synthetic_sampling/synthetic_sampling/src/synthetic_sampling/profiles/metadata/pulled_metadata/pulled_metadata_ess10.json",
-    "ess_wave_11":     "synthetic_sampling/synthetic_sampling/src/synthetic_sampling/profiles/metadata/pulled_metadata/pulled_metadata_ess11.json",
-    "latinobarometer": "synthetic_sampling/synthetic_sampling/src/synthetic_sampling/profiles/metadata/pulled_metadata/pulled_metadata_latinobarometer.json",
-    "wvs":             "synthetic_sampling/synthetic_sampling/src/synthetic_sampling/profiles/metadata/pulled_metadata/pulled_metadata_wvs.json",
+    "afrobarometer":   "pulled_metadata_afrobarometer.json",
+    "arabbarometer":   "pulled_metadata_arabbarometer.json",
+    "asianbarometer":  "pulled_metadata_asianbarometer.json",
+    "ess_wave_10":     "pulled_metadata_ess10.json",
+    "ess_wave_11":     "pulled_metadata_ess11.json",
+    "latinobarometer": "pulled_metadata_latinobarometer.json",
+    "wvs":             "pulled_metadata_wvs.json",
 }
 
 MODELS = [
@@ -108,13 +111,12 @@ MODELS = [
 
 def build_question_metadata() -> dict:
     mapping = {}
-    with zipfile.ZipFile(ZIP_PATH) as z:
-        for surv, path in META_PATHS.items():
-            try:
-                data = json.loads(z.read(path))
-            except KeyError:
-                print(f"  [warn] missing zip entry for {surv}")
+    for surv, fname in META_PATHS.items():
+            path = META_DIR / fname
+            if not path.exists():
+                print(f"  [warn] missing metadata file for {surv}: {path}")
                 continue
+            data = json.loads(path.read_text(encoding="utf-8"))
             for section, questions in data.items():
                 if not isinstance(questions, dict):
                     continue
@@ -189,6 +191,7 @@ def load_metrics(q_meta: dict) -> pd.DataFrame:
 
 
 def main():
+    pf.use_style()
     print("Loading question metadata...")
     q_meta = build_question_metadata()
     print(f"  {len(q_meta)} entries")
@@ -205,7 +208,7 @@ def main():
         "figure.dpi": 300,
     })
 
-    fig, ax = plt.subplots(figsize=(11.5, 7.2))
+    fig, ax = plt.subplots(figsize=(pf.FULL, 3.35), layout="constrained")
 
     x_min, x_max = merged["mean_norm_acc"].min() - 0.05, merged["mean_norm_acc"].max() + 0.07
     y_min_log = 0.035   # just below political_priorities (0.053)
@@ -232,7 +235,7 @@ def main():
         xs.append(x)
         ys.append(y)
         texts.append(
-            ax.text(x, y, label, fontsize=6.8, color=color,
+            ax.text(x, y, label, fontsize=9, color=color,
                     ha="center", va="bottom", zorder=6)
         )
 
@@ -261,41 +264,27 @@ def main():
         print("  [note] adjustText not installed")
 
     ax.set_xlabel(
-        "Mean normalized accuracy  (0 = random chance, positive = above chance)",
-        fontsize=9)
-    ax.set_ylabel(
-        "Mean variance ratio, log scale\n"
-        r"(VR $<$ 1: model flattens diversity; VR $=$ 1: human-like spread)",
-        fontsize=9)
+        "Mean normalized accuracy  (0 = random chance)", fontsize=9)
+    # Kept short: the long two-line version was taller than the axis and got
+    # clipped once the figure was drawn at its true print size.
+    ax.set_ylabel("Mean entropy ratio, log scale\n"
+                  r"($<$ 1: flattens diversity)", fontsize=9)
+    ax.tick_params(labelsize=7)
 
     ax.grid(axis="both", linestyle="--", alpha=0.18, linewidth=0.4)
 
-    # Section legend
+    # Inside and boxed, the paper's convention. The upper-left is empty of
+    # points, and the box stops the key from reading as a caption for the
+    # below-chance shading it sits on.
     section_patches = [
         mpatches.Patch(facecolor=SECTION_COLORS[s], label=SECTION_LABELS[s], alpha=0.9)
         for s in sorted(SECTION_COLORS)
     ]
-    ax.legend(
-        handles=section_patches,
-        fontsize=7.5, loc="upper left",
-        frameon=True, framealpha=0.92,
-        handlelength=1.2, borderpad=0.5,
-        ncol=1,
-    )
+    pf.boxed_legend(ax, section_patches, loc="upper left", fontsize=9,
+                    handlelength=1.0, labelspacing=0.25, ncol=2,
+                    columnspacing=1.0)
 
-    plt.tight_layout(pad=0.8)
-
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out_base = OUT_DIR / "figure4_topic_scatter"
-    plt.savefig(out_base.with_suffix(".pdf"), bbox_inches="tight", dpi=300)
-    plt.savefig(out_base.with_suffix(".png"), bbox_inches="tight", dpi=300)
-    plt.close(fig)
-    print(f"\nSaved {out_base}.pdf/.png")
-
-    if LATEX_FIG_DIR.exists():
-        dest = LATEX_FIG_DIR / "figure_topic_scatter.pdf"
-        shutil.copy2(out_base.with_suffix(".pdf"), dest)
-        print(f"Copied to {dest}")
+    pf.save(fig, "figure_topic_scatter", pf.FULL)
 
 
 if __name__ == "__main__":

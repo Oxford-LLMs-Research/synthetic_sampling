@@ -137,3 +137,7 @@ analysis/**/*.md
 /all_261_targets.txt
 .venv312/
 old-venv-requirements.txt
+
+# Superseded pre-distinct-M snapshots and cluster upload bundles
+*.pre_distinct_m
+*_upload.tar.gz

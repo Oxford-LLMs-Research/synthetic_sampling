@@ -9,11 +9,11 @@ Usage on Colab (A100/GH200-class GPU, ~65 GB VRAM for bf16 Qwen3-32B):
     !python colab_run_experiments.py --experiment country \
         --input country_injection_instances.jsonl --out country_results.jsonl
 
-Each instance is scored under two conditions that share the identical
+Each instance is scored under conditions that share the identical
 pipeline and differ only in the manipulated element:
 
-  temporal:  baseline prompt  vs  a "The survey was conducted in {year}."
-             line inserted after the profile block.
+  temporal:  baseline | with_year (true) | with_year_placebo | with_date
+             (fine interview date, only when interview_date is present).
   country:   original profile vs  the same profile with one appended item
              "In which country do you live?" -> country name.
 
@@ -52,13 +52,31 @@ def render_profile(questions: dict) -> str:
     return "\n\n".join(f"Q: {q}\nA: {a}" for q, a in questions.items())
 
 
+def temporal_conditions(instance: dict) -> list[str]:
+    conds = ["baseline", "with_year", "with_year_placebo"]
+    if instance.get("interview_date"):
+        conds.append("with_date")
+    return conds
+
+
 def build_prompt(instance: dict, condition: str, experiment: str) -> str:
     questions = dict(instance["questions"])
     extra = ""
-    if experiment == "temporal" and condition == "with_year":
-        extra = f"The survey was conducted in {instance['survey_year']}.\n\n"
+    if experiment == "temporal":
+        if condition == "with_year":
+            extra = f"The survey was conducted in {instance['survey_year']}.\n\n"
+        elif condition == "with_year_placebo":
+            extra = (
+                f"The survey was conducted in {instance['survey_year_placebo']}.\n\n"
+            )
+        elif condition == "with_date":
+            extra = (
+                f"The interview took place on {instance['interview_date']}.\n\n"
+            )
     if experiment == "country" and condition == "with_country":
         questions[instance["country_question"]] = instance["country_name"]
+    if experiment == "country" and condition == "with_country_placebo":
+        questions[instance["country_question"]] = instance["country_placebo_name"]
     return PROMPT_TEMPLATE.format(
         profile=render_profile(questions),
         extra=extra,
@@ -110,9 +128,6 @@ def main():
                     help="score only the first N instances (smoke test)")
     args = ap.parse_args()
 
-    conditions = (["baseline", "with_year"] if args.experiment == "temporal"
-                  else ["baseline", "with_country"])
-
     done = set()
     if os.path.exists(args.out):
         with open(args.out, encoding="utf-8") as fh:
@@ -143,6 +158,8 @@ def main():
     n_scored = 0
     with open(args.out, "a", encoding="utf-8") as out_fh:
         for k, inst in enumerate(instances):
+            conditions = (temporal_conditions(inst) if args.experiment == "temporal"
+                          else ["baseline", "with_country", "with_country_placebo"])
             for cond in conditions:
                 if (inst["example_id"], cond) in done:
                     continue

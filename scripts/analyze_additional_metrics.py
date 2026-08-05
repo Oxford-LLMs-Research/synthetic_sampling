@@ -20,6 +20,16 @@ phrases in DK_PATTERN (the survey option text itself, e.g. "Don't know",
 "Don't know/Haven't heard"). Matching is anchored so that substantive answers
 containing the words are not swept in.
 
+Anchoring alone was not enough. "Don't know him" is a substantive answer to
+questions asking how much a respondent knows about a named figure, and it
+begins with a hedging phrase, so DK_PATTERN swept in 19k of them. That put the
+model rates in this table on a wider base than the human rate quoted beside
+them, overstating the models' hedging by 0.2-1.2 points and making the human
+rate look 0.7 points higher than the 1.1% reported in the appendix text.
+DK_EXCLUDE removes it, and the two sides now share a base. It is the only
+substantive string DK_PATTERN matches: the other six are all genuine
+non-response options.
+
 Outputs to analysis/additional_metrics/:
   by_survey.csv  by_n_options.csv  headline_metrics.csv
   dk_hedging.csv  dk_targets.csv  yes_no_bias.csv
@@ -44,7 +54,7 @@ PROFILE = "s6m4"
 DK_THRESHOLD = 0.80
 
 MODELS = {
-    "qwen3-32b": "Qwen 3 32B", "deepseek": "DeepSeek-V3",
+    "qwen3-32b": "Qwen 3 32B", "deepseek": "DeepSeek-V3.1",
     "llama3.1_8b_instruct": "Llama 3.1 8B inst.", "gpt-oss": "GPT-OSS 120B",
     "llama3.1_70b_instruct": "Llama 3.1 70B inst.", "olmo3_7b_dpo": "OLMo 3 7B inst.",
     "gemma3-27b": "Gemma 3 27B", "qwen3-4b": "Qwen 3 4B",
@@ -63,6 +73,15 @@ SURVEY_NAMES = {
 DK_PATTERN = re.compile(
     r"^\s*(don.?t know|do not know|can.?t choose|cannot choose|not sure|"
     r"no opinion|haven.?t heard|don.?t care)", re.IGNORECASE)
+
+# "Don't know him" answers a question about a named figure; it states a
+# position rather than declining to. See the module docstring.
+DK_EXCLUDE = re.compile(r"^\s*(don.?t|do not) know (him|her|them|what)\b",
+                        re.IGNORECASE)
+
+
+def is_dk(s: pd.Series) -> pd.Series:
+    return s.str.match(DK_PATTERN) & ~s.str.match(DK_EXCLUDE)
 
 
 def load_n_options() -> pd.DataFrame:
@@ -127,8 +146,8 @@ def main() -> None:
                               "norm_acc": g["norm_acc"].mean()})
 
         # --- Don't know hedging -------------------------------------------
-        df["pred_dk"] = df["predicted"].fillna("").str.match(DK_PATTERN)
-        df["true_dk"] = df["ground_truth"].fillna("").str.match(DK_PATTERN)
+        df["pred_dk"] = is_dk(df["predicted"].fillna(""))
+        df["true_dk"] = is_dk(df["ground_truth"].fillna(""))
         per_target = df.groupby(["survey", "target_code"]).agg(
             pred_dk=("pred_dk", "mean"), true_dk=("true_dk", "mean"),
             n=("pred_dk", "size")).reset_index()

@@ -14,6 +14,8 @@ import matplotlib.patches as mpatches
 import numpy as np
 import pandas as pd
 
+import paperfig as pf
+
 # ---------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parents[2]
 MEM_DATA = (ROOT / "synthetic_sampling/analysis/mixed_effects/mixed_effects_data.csv")
@@ -62,6 +64,7 @@ def normalized_accuracy(correct, n_options):
 
 
 def main():
+    pf.use_style()
     print("Loading MEM data...")
     df = pd.read_csv(MEM_DATA, encoding="latin-1",
                      usecols=["model", "correct", "region", "n_options"])
@@ -93,7 +96,7 @@ def main():
                    .reset_index())
 
     # ---- plot ----
-    fig, ax = plt.subplots(figsize=(7.5, 5.5))
+    fig, ax = plt.subplots(figsize=(pf.COL, 3.45), layout="constrained")
     y_pos = np.arange(len(region_agg))
 
     for i, row in region_agg.iterrows():
@@ -103,17 +106,19 @@ def main():
         ax.hlines(i, pm.min(), pm.max(), color=color, alpha=0.3,
                   linewidth=1.0, zorder=2)
         # One small dot per model
-        ax.scatter(pm, [i] * len(pm), color=color, s=14, alpha=0.6,
+        ax.scatter(pm, [i] * len(pm), color=color, s=6, alpha=0.6,
                    edgecolor="none", zorder=3)
         # 13-model pooled mean
-        ax.scatter(row["norm_acc_mean"], i, color=color, s=90,
-                   edgecolor="black", linewidth=0.5, zorder=4)
+        ax.scatter(row["norm_acc_mean"], i, color=color, s=26,
+                   edgecolor="black", linewidth=0.4, zorder=4)
 
     ax.axvline(0, color="gray", linestyle=":", linewidth=0.6, alpha=0.6)
     ax.set_yticks(y_pos)
-    ax.set_yticklabels(region_agg["region"], fontsize=8.5)
-    ax.set_xlabel("Mean Normalized Accuracy", fontsize=10)
-    ax.grid(axis="x", linestyle="--", alpha=0.25, linewidth=0.4)
+    ax.set_yticklabels(region_agg["region"], fontsize=9)
+    ax.tick_params(axis="x", labelsize=7)
+    ax.set_xlabel("Mean normalized accuracy", fontsize=9)
+    ax.grid(axis="x", linestyle="--", alpha=pf.GRID_A, linewidth=0.4)
+    ax.set_axisbelow(True)
 
     # Pad x-axis so the per-model range is visible
     xmax = per_model["norm_acc"].max()
@@ -127,31 +132,19 @@ def main():
     from matplotlib.lines import Line2D
     patches += [
         Line2D([], [], marker="o", linestyle="", markerfacecolor="#666666",
-               markeredgecolor="black", markeredgewidth=0.5, markersize=8,
+               markeredgecolor="black", markeredgewidth=0.4, markersize=4.5,
                label="13-model mean"),
         Line2D([], [], marker="o", linestyle="", markerfacecolor="#666666",
-               markeredgecolor="none", markersize=4, alpha=0.7,
+               markeredgecolor="none", markersize=2.5, alpha=0.7,
                label="One model"),
     ]
-    legend = ax.legend(handles=patches, loc="lower right",
-                       fontsize=8, frameon=True, framealpha=0.9,
-                       handlelength=1.0, handletextpad=0.4)
-    legend.get_frame().set_linewidth(0.4)
+    # Below the axes: the two circle keys use the same marker as the data, and
+    # inside the axes they sat at plausible accuracies on the African rows.
+    fig.legend(handles=patches, loc="outside lower center", fontsize=9,
+               frameon=False, handlelength=1.0, handletextpad=0.3,
+               ncol=4, columnspacing=1.2)
 
-    plt.tight_layout(pad=0.5)
-
-    out_base = OUT_DIR / "figure3a_region_accuracy"
-    plt.savefig(out_base.with_suffix(".pdf"), bbox_inches="tight", dpi=300)
-    plt.savefig(out_base.with_suffix(".png"), bbox_inches="tight", dpi=300)
-    plt.close(fig)
-    print(f"Saved {out_base}.pdf/.png")
-
-    for fig_dir in (LATEX_FIG_DIR,
-                    Path(r"C:\Users\murrn\cursor\synthetic_sampling_aaai\emnlp\figures")):
-        if fig_dir.exists():
-            dest = fig_dir / "figure_region_accuracy.pdf"
-            shutil.copy2(out_base.with_suffix(".pdf"), dest)
-            print(f"Copied to {dest}")
+    pf.save(fig, "figure_region_accuracy", pf.COL)
 
     # Print summary
     print("\nRegion summary (norm_acc):")

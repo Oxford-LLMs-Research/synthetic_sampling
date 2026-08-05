@@ -120,7 +120,7 @@ def main() -> None:
     share = flags["country_in_profile"].mean()
     print(f"instances flagged country-in-profile: {share:.3f}")
 
-    resp_country = pd.read_csv(OUT / "respondent_country.csv", dtype=str)
+    resp_country = pd.read_csv(OUT / "respondent_country.csv", dtype=str, keep_default_na=False)
 
     all_rows = []
     for model in MODELS:

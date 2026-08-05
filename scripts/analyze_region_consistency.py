@@ -63,7 +63,7 @@ FAMILY = {
 }
 
 DISPLAY = {
-    "deepseek": "DeepSeek-V3", "gemma3-27b": "Gemma 3 27B", "gpt-oss": "GPT-OSS 120B",
+    "deepseek": "DeepSeek-V3.1", "gemma3-27b": "Gemma 3 27B", "gpt-oss": "GPT-OSS 120B",
     "llama3.1_70b_base": "Llama 3.1 70B base",
     "llama3.1_70b_instruct": "Llama 3.1 70B inst.",
     "llama3.1_8b_base": "Llama 3.1 8B base",

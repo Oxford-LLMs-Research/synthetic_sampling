@@ -86,7 +86,7 @@ def build_instance_table() -> pd.DataFrame:
     base["norm_acc"] = ((base["mean_correct"] - 1 / base["n_options"])
                         / (1 - 1 / base["n_options"]))
 
-    rc = pd.read_csv(MR / "respondent_country.csv", dtype=str)
+    rc = pd.read_csv(MR / "respondent_country.csv", dtype=str, keep_default_na=False)
     base = base.merge(rc, on=["survey", "respondent_id"], how="left")
     demo = pd.read_csv(OUT / "respondent_demographics.csv", dtype=str)
     base = base.merge(demo, on=["survey", "respondent_id"], how="left")

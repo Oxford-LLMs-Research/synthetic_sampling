@@ -28,6 +28,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+import paperfig as pf
+
 ANALYSIS = Path(r"C:\Users\murrn\cursor\synthetic_sampling\analysis")
 OUT = ANALYSIS / "llm_vs_xgb"
 OUT.mkdir(exist_ok=True)
@@ -70,7 +72,7 @@ def bootstrap_table(merged: pd.DataFrame, label: str) -> pd.DataFrame:
 def plot_scatter(rich: pd.DataFrame) -> None:
     """Best LLM vs XGBoost per question at rich profiles."""
     g = rich[rich["model"] == BEST_MODEL]
-    fig, ax = plt.subplots(figsize=(4.4, 4.4))
+    fig, ax = plt.subplots(figsize=(pf.COL, 3.35), layout="constrained")
     lims = (min(g["xgb_norm_acc_matched"].min(), g["norm_acc"].min()) - 0.04,
             max(g["xgb_norm_acc_matched"].max(), g["norm_acc"].max()) + 0.04)
     ax.plot(lims, lims, linestyle="--", color="gray", linewidth=0.7, alpha=0.8,
@@ -79,25 +81,20 @@ def plot_scatter(rich: pd.DataFrame) -> None:
                color="#2E5090", edgecolor="none", zorder=3)
     win = (g["norm_acc"] > g["xgb_norm_acc_matched"]).mean()
     ax.text(0.03, 0.97, f"LLM above diagonal:\n{win:.0%} of questions",
-            transform=ax.transAxes, ha="left", va="top", fontsize=8)
-    ax.set_xlabel("XGBoost normalized accuracy (same features)", fontsize=9)
-    ax.set_ylabel("Qwen 3 32B normalized accuracy", fontsize=9)
+            transform=ax.transAxes, ha="left", va="top", fontsize=7)
+    ax.set_xlabel("XGBoost normalized accuracy\n(same features)", fontsize=7.5)
+    ax.set_ylabel("Qwen 3 32B normalized accuracy", fontsize=7.5)
     ax.set_xlim(lims)
     ax.set_ylim(lims)
     ax.set_aspect("equal")
-    ax.grid(linestyle="--", alpha=0.2, linewidth=0.4)
-    plt.tight_layout(pad=0.5)
-    base = FIG_DIR / "figure_llm_vs_xgb_scatter"
-    plt.savefig(base.with_suffix(".pdf"), bbox_inches="tight", dpi=300)
-    plt.savefig(base.with_suffix(".png"), bbox_inches="tight", dpi=300)
-    plt.close(fig)
-    print(f"Saved {base}.pdf/.png")
-    if AAAI_FIG_DIR.exists():
-        shutil.copy2(base.with_suffix(".pdf"),
-                     AAAI_FIG_DIR / "figure_llm_vs_xgb_scatter.pdf")
+    ax.grid(linestyle="--", alpha=pf.GRID_A, linewidth=0.4)
+    ax.set_axisbelow(True)
+    ax.tick_params(labelsize=7)
+    pf.save(fig, "figure_llm_vs_xgb_scatter", pf.COL)
 
 
 def main() -> None:
+    pf.use_style()
     llm = pd.read_csv(ANALYSIS / "normalized_accuracy" / "per_question_norm_acc_fixed.csv")
     xgb = pd.read_csv(ANALYSIS / "xgboost_baseline" / "results_matched_to_llm.csv")
 

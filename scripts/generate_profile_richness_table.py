@@ -20,7 +20,7 @@ from typing import Dict, List, Optional
 
 # Model metadata for display names and sorting
 MODEL_METADATA = {
-    'deepseek-v3p1-terminus': {'display': 'DeepSeek-V3', 'size': 37, 'family': 'DeepSeek'},
+    'deepseek-v3p1-terminus': {'display': 'DeepSeek-V3.1', 'size': 37, 'family': 'DeepSeek'},
     'gemma-3-27b-instruct': {'display': 'Gemma 3 27B', 'size': 27, 'family': 'Gemma'},
     'gpt_oss': {'display': 'GPT-OSS 120B', 'size': 120, 'family': 'GPT-OSS'},
     'llama3.1-70b-base': {'display': 'Llama 3.1 70B Base', 'size': 70, 'family': 'Llama'},

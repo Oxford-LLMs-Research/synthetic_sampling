@@ -162,7 +162,7 @@ def main() -> None:
 
     # Join check against the evaluation sample
     rc = pd.read_csv(Path(r"C:\Users\murrn\cursor\synthetic_sampling\analysis")
-                     / "marginal_recovery" / "respondent_country.csv", dtype=str)
+                     / "marginal_recovery" / "respondent_country.csv", dtype=str, keep_default_na=False)
     merged = rc.merge(demo, on=["survey", "respondent_id"], how="left")
     print("\njoin rate onto evaluation respondents:")
     print(merged.groupby("survey")["gender"].apply(lambda s: s.notna().mean())

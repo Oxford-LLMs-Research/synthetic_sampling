@@ -123,7 +123,8 @@ def build_feature_matrix(instances, text_to_varcode, varcode_to_valmap):
 
     for inst in instances:
         if n_options is None:
-            n_options = len(inst["options"])
+            # Distinct labels, not option slots: see compute_normalized_accuracy.py.
+            n_options = len(set(inst["options"]))
 
         row = {}
         for question_text, answer_text in inst["questions"].items():

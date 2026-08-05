@@ -20,7 +20,9 @@ import matplotlib.lines as mlines
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[1]
+import paperfig as pf
+
+ROOT = pf.ROOT  # outer analysis tree; parents[1] points at a stale copy
 NORM_ACC_PATH = ROOT / "analysis/normalized_accuracy/per_question_norm_acc.csv"
 XGB_PATH      = ROOT / "analysis/xgboost_baseline/results_merged.csv"
 MAJ_PATH      = ROOT / "analysis/normalized_accuracy/majority_class_norm_acc.csv"
@@ -117,26 +119,34 @@ def draw_trajectory_panel(ax, data_dict, metric, title, ylabel,
                 alpha=0.85, marker="o", markersize=3.5, zorder=3)
 
     if ref_lines:
+        # Labelled in place, just under each line. A legend box sat on top of
+        # the reference lines it was describing, since every line here is near
+        # the top of its panel.
         for val, ls, label in ref_lines:
             if not np.isnan(val):
-                ax.axhline(val, color="black", linestyle=ls, linewidth=1.1,
-                           alpha=0.75, label=label, zorder=4)
-        ax.legend(fontsize=7.5, loc="upper left",
-                  frameon=True, framealpha=0.9,
-                  handlelength=1.4, borderpad=0.4)
+                ax.axhline(val, color="black", linestyle=ls, linewidth=1.0,
+                           alpha=0.75, zorder=4)
+                # The majority-class and XGBoost lines sit ~0.02 apart, so each
+                # label is otherwise struck through by the other line.
+                ax.annotate(label, xy=(-0.22, val), xytext=(0, -2.5),
+                            textcoords="offset points", fontsize=9,
+                            color="#333333", ha="left", va="top", zorder=6,
+                            bbox=dict(facecolor="white", edgecolor="none",
+                                      boxstyle="square,pad=0.15"))
 
     if y_zero:
         ax.axhline(0, color="gray", linestyle=":", linewidth=0.6, alpha=0.5)
 
     ax.set_xticks(list(PROFILE_X.values()))
-    ax.set_xticklabels([PROFILE_LABELS[p] for p in PROFILE_ORDER], fontsize=8.5)
+    ax.set_xticklabels([PROFILE_LABELS[p] for p in PROFILE_ORDER], fontsize=9)
     ax.set_ylabel(ylabel, fontsize=9)
-    ax.set_title(title, fontsize=9, pad=5)
+    ax.set_title(title, fontsize=9, pad=4)
     ax.set_xlim(-0.3, 2.3)
     ax.grid(axis="y", linestyle="--", alpha=0.25, linewidth=0.4)
 
 
 def main():
+    pf.use_style()
     norm_agg = load_norm_acc()
     xgb_by_pt, maj_by_pt = load_references()
     vr_jsd = load_vr_jsd()
@@ -155,8 +165,8 @@ def main():
     xgb_s6 = xgb_by_pt.get("s6m4", float("nan"))
 
     # Three-panel figure, same width as Figure 1
-    fig, axes = plt.subplots(1, 3, figsize=(16, 5.2))
-    fig.subplots_adjust(wspace=0.30)
+    fig, axes = plt.subplots(1, 3, figsize=(pf.FULL, 2.75),
+                         layout="constrained")
 
     # (a) Normalized accuracy
     draw_trajectory_panel(
@@ -174,9 +184,9 @@ def main():
     if vr_dict:
         draw_trajectory_panel(
             axes[1], vr_dict, "mean_vr",
-            "(b) Variance ratio\n(VR < 1 = model flattens response diversity)",
-            "Variance ratio",
-            ref_lines=[(1.0, "--", "Human variance (VR = 1)")],
+            "(b) Entropy ratio\n(< 1 = model flattens response diversity)",
+            "Entropy ratio",
+            ref_lines=[(1.0, "--", "Human diversity (ratio = 1)")],
         )
     else:
         axes[1].text(0.5, 0.5, "VR data not found", ha="center", va="center",
@@ -203,21 +213,11 @@ def main():
     base_line = mlines.Line2D([], [], color="gray", linestyle="--", linewidth=1.2,
                               marker="o", markersize=5, label="Base")
     fig.legend(handles=family_patches + [inst_line, base_line],
-               loc="lower center", ncol=8, fontsize=8,
-               bbox_to_anchor=(0.5, -0.06))
+               loc="outside lower center", ncol=8, fontsize=9,
+               frameon=False, handlelength=1.4,
+               columnspacing=1.2, handletextpad=0.5)
 
-    plt.tight_layout(rect=[0, 0.06, 1, 1])
-
-    out_base = OUT_DIR / "figure2_profile_richness"
-    plt.savefig(out_base.with_suffix(".pdf"), bbox_inches="tight", dpi=300)
-    plt.savefig(out_base.with_suffix(".png"), bbox_inches="tight", dpi=300)
-    plt.close(fig)
-    print(f"Saved {out_base}.pdf/.png")
-
-    if LATEX_FIG_DIR.exists():
-        dest = LATEX_FIG_DIR / "figure_profile_richness.pdf"
-        shutil.copy2(out_base.with_suffix(".pdf"), dest)
-        print(f"Copied to {dest}")
+    pf.save(fig, "figure_profile_richness", pf.FULL)
 
 
 if __name__ == "__main__":

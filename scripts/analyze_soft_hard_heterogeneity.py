@@ -37,6 +37,8 @@ import pandas as pd
 from scipy.spatial.distance import jensenshannon
 from scipy.stats import entropy
 
+from repair_ids import load_valid_targets
+
 ROOT = Path(r"C:\Users\murrn\cursor\synthetic_sampling")
 RESULTS = ROOT / "results"
 OUT = ROOT / "analysis" / "soft_hard"
@@ -45,7 +47,7 @@ OUT.mkdir(parents=True, exist_ok=True)
 PROFILE_SUFFIX = "_s6m4"
 
 MODEL_DISPLAY = {
-    "qwen3-32b": "Qwen 3 32B", "deepseek-v3p1-terminus": "DeepSeek-V3",
+    "qwen3-32b": "Qwen 3 32B", "deepseek-v3p1-terminus": "DeepSeek-V3.1",
     "llama3.1-8b-instruct": "Llama 3.1 8B inst.", "gpt_oss": "GPT-OSS 120B",
     "llama3.1-70b-instruct": "Llama 3.1 70B inst.", "olmo3-7b-dpo": "OLMo 3 7B inst.",
     "gemma-3-27b-instruct": "Gemma 3 27B", "qwen3-4b": "Qwen 3 4B",
@@ -53,6 +55,26 @@ MODEL_DISPLAY = {
     "olmo3-32b-base": "OLMo 3 32B base", "llama3.1-70b-base": "Llama 3.1 70B base",
     "llama3.1-8b-base": "Llama 3.1 8B base",
 }
+
+
+VALID_TARGETS = load_valid_targets()   # survey -> codes, longest first
+
+
+def target_from_example_id(eid: str, survey: str) -> str | None:
+    """Recover the target code from example_id: {survey}_{respondent}_{code}_{profile}.
+
+    Splitting on the last underscore is wrong whenever the code itself contains
+    one, which is true of most Arab Barometer targets (Q725_5, Q201B_13) and a
+    few WVS ones. Resolving against the known target list, longest code first,
+    is unambiguous; this is the same repair applied to results_data.csv in
+    repair_ids.py, and without it several distinct questions collapse onto one
+    fragment and their answer distributions get pooled.
+    """
+    stem = eid[: -len(PROFILE_SUFFIX)] if eid.endswith(PROFILE_SUFFIX) else eid
+    for code in VALID_TARGETS.get(survey, []):
+        if stem.endswith(f"_{code}"):
+            return code
+    return None
 
 
 def softmax(scores: np.ndarray) -> np.ndarray:
@@ -78,11 +100,10 @@ def process_model(model_dir: Path) -> pd.DataFrame:
                 lp = d.get("option_logprobs") or {}
                 if len(lp) < 2:
                     continue
-                # target code sits between respondent id and the profile suffix;
-                # grouping only needs a stable key, so use the full option set
-                # signature plus the trailing code recovered from example_id.
-                stem = eid[: -len(PROFILE_SUFFIX)]
-                key = (survey, stem.rsplit("_", 1)[-1], tuple(sorted(lp)))
+                code = target_from_example_id(eid, survey)
+                if code is None:
+                    continue
+                key = (survey, code, tuple(sorted(lp)))
                 emp[key][d["ground_truth"]] += 1
                 hard[key][d["predicted"]] += 1
                 opts = list(lp)

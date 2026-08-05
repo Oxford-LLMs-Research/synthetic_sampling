@@ -60,6 +60,14 @@ def normalized_accuracy(acc: float, n_options: int) -> float:
 print("Building n_options lookup from JSONL files...")
 n_options_map = {}   # (survey, target_code) -> int
 
+# Count DISTINCT option strings, not option slots. The harmonization verbalizes
+# ESS 0-10 scales into seven anchors, so 26 of the 267 targets present option
+# lists like ['Extremely dissatisfied', 'Extremely dissatisfied', 'Somewhat
+# dissatisfied', ...]: thirteen entries, seven distinct labels. Scoring is over
+# option strings, duplicates receive identical scores, and both the prediction
+# and the ground truth are labels, so the predictor faces a seven-way choice and
+# chance is 1/7. Dividing by thirteen would put chance at 0.07 rather than 0 for
+# those questions and inflate their normalized accuracy.
 for fname in JSONL_FILES:
     path = JSONL_DIR / fname
     with open(path, "r", encoding="utf-8", errors="replace") as f:
@@ -67,7 +75,7 @@ for fname in JSONL_FILES:
             inst = json.loads(line)
             key = (inst["survey"], inst["target_code"])
             if key not in n_options_map:
-                n_options_map[key] = len(inst["options"])
+                n_options_map[key] = len(set(inst["options"]))
 
 print(f"  {len(n_options_map)} (survey, target) pairs with n_options")
 
