@@ -4,9 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "synthetic_sampling"
-version = "0.1.0"
-description = "LLMs for syntehtic sampling usecase in social sciences"
-readme = "README.rst"
+version = "0.2.0"
+description = "Generate configurable respondent profiles from cross-national survey metadata for LLM evaluation in social-science research"
+readme = "README.md"
 authors = [
   {name = "Ilya Boytsov", email = "ilyaboytsov1805@gmail.com"}
 ]
@@ -14,23 +14,41 @@ maintainers = [
   {name = "Ilya Boytsov", email = "ilyaboytsov1805@gmail.com"}
 ]
 classifiers = [
-
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
 ]
 license = {text = "MIT license"}
+requires-python = ">=3.10"
 dependencies = [
   "numpy",
   "pandas",
   "sentence-transformers",
   "scipy",
-  "pyreadstat"
+  "pyreadstat",
 ]
 
 [project.optional-dependencies]
+semantic = [
+    "sentence-transformers",
+]
+yaml = [
+    "pyyaml",
+]
+all = [
+    "sentence-transformers",
+    "pyyaml",
+]
 dev = [
-    "coverage",  # testing
-    "mypy",  # linting
-    "pytest",  # testing
-    "ruff"  # linting
+    "coverage",
+    "mypy",
+    "pytest",
+    "ruff",
 ]
 
 [project.urls]
@@ -42,8 +60,11 @@ homepage = "https://github.com/iboytsov/synthetic_sampling"
 [tool.setuptools]
 package-dir = {"" = "src"}
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.setuptools.package-data]
-"*" = ["*.*"]
+"synthetic_sampling.profiles.metadata" = ["**/*.json"]
 
 
 

@@ -1,35 +1,33 @@
 """
-Synthetic Sampling: LLM evaluation for survey response prediction.
+Synthetic Sampling -- respondent profile generation for LLM evaluation.
 
-This package provides tools for:
-- Loading and preprocessing cross-national survey data
-- Generating respondent profiles with configurable features
-- Creating prediction instances for LLM evaluation
-- Managing experimental configurations
+Quick Start::
 
-Quick Start:
-    from synthetic_sampling.config import DataPaths, DatasetConfig, GeneratorConfig
-    from synthetic_sampling.builder import DatasetBuilder
-    
-    paths = DataPaths(
-        raw_data_dir='~/data/surveys',
-        metadata_dir='./src/synthetic_sampling/profiles/metadata',
-        output_dir='./outputs'
-    )
-    
-    builder = DatasetBuilder(paths, DatasetConfig(), GeneratorConfig())
-    instances = builder.build_dataset(['wvs'])
-    builder.save_jsonl(instances, 'dataset.jsonl')
+    from synthetic_sampling import ProfileBuilder
 
-Modules:
-    config: Configuration management (paths, surveys, parameters)
-    loaders: Data loading (survey files, metadata)
-    profiles: Profile generation (RespondentProfileGenerator)
-    builder: Dataset building (DatasetBuilder)
+    # Explore bundled survey metadata (no data required)
+    builder = ProfileBuilder('wvs')
+    builder.list_sections()
+    builder.list_variables('demographics')
+
+    # Load survey data and generate profiles
+    builder.load_data('~/data/WVS/wvs.csv')
+    profile = builder.generate_profile(respondent_id=12345, seed=42)
+
+See ``ProfileBuilder`` for the full API.
 """
 
 __version__ = '0.2.0'
 __author__ = 'Oxford LLMs Research'
+
+# -- High-level public API (recommended for external users) ----------------
+
+from .profile_builder import ProfileBuilder
+
+from .profiles.utils import get_bundled_metadata_dir, load_survey_metadata
+from .profiles.formats import list_profile_formats, PROFILE_FORMATS
+
+# -- Lower-level API (config, loaders, builder) ----------------------------
 
 from .config import (
     DataPaths,
@@ -49,6 +47,12 @@ from .loaders import (
 from .builder import DatasetBuilder
 
 __all__ = [
+    # High-level API
+    'ProfileBuilder',
+    'get_bundled_metadata_dir',
+    'load_survey_metadata',
+    'list_profile_formats',
+    'PROFILE_FORMATS',
     # Version
     '__version__',
     # Config

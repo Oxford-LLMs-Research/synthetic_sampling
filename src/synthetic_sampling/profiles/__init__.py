@@ -18,8 +18,10 @@ from .formats import (
     PROFILE_FORMATS
 )
 from .utils import (
+    get_bundled_metadata_dir,
+    load_survey_metadata,
     load_metadata,
-    verify_profile_nesting
+    verify_profile_nesting,
 )
 
 __all__ = [
@@ -35,6 +37,8 @@ __all__ = [
     'list_profile_formats',
     'PROFILE_FORMATS',
     # Utility functions
+    'get_bundled_metadata_dir',
+    'load_survey_metadata',
     'load_metadata',
     'verify_profile_nesting',
 ]

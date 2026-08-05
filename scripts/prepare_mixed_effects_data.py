@@ -279,7 +279,8 @@ def prepare_mixed_effects_data(
                 region = "Unknown"
             
             # Get n_options from the instance
-            n_options = len(inst.options) if inst.options else None
+            # Distinct labels, not option slots: see compute_normalized_accuracy.py.
+            n_options = len(set(inst.options)) if inst.options else None
             
             rows.append({
                 'example_id': inst.example_id,  # Unique identifier for each instance
