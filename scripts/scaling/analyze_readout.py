@@ -59,6 +59,34 @@ RESULTS = REPO.parent / "results"
 OUT = ANALYSIS / "readout"
 ALPHAS = np.concatenate([[0.0], np.geomspace(0.05, 8.0, 24)])
 
+# Served-model tag -> results/ directory holding the paper's stored SGLang
+# scores, for the section-5 harness control. Tags follow score_formats.py's
+# convention (HF id, '/'->'_', lowercased). New-to-grid models (the 235B
+# anchor) have no stored run and the control is skipped for them.
+TAG_TO_STORED = {
+    "qwen_qwen3-32b": "qwen3-32b",
+    "qwen_qwen3-4b": "qwen3-4b",
+    "google_gemma-3-27b-it": "gemma-3-27b-instruct",
+    "openai_gpt-oss-120b": "gpt_oss",
+    "meta-llama_llama-3.1-8b": "llama3.1-8b-base",
+    "meta-llama_llama-3.1-8b-instruct": "llama3.1-8b-instruct",
+    "meta-llama_llama-3.1-70b": "llama3.1-70b-base",
+    "meta-llama_llama-3.1-70b-instruct": "llama3.1-70b-instruct",
+    "allenai_olmo-3-1025-7b": "olmo3-7b-base",
+    "allenai_olmo-3-7b-dpo": "olmo3-7b-dpo",
+    "allenai_olmo-3-1025-32b": "olmo3-32b-base",
+    "allenai_olmo-3.1-32b-instruct-dpo": "olmo3-32b-dpo",
+    "deepseek-ai_deepseek-v3.1-terminus": "deepseek-v3p1-terminus",
+}
+
+
+def tag_of(path: Path) -> str:
+    stem = path.stem
+    for prefix in ("readout_results_", "readout_grid_", "readout_pmi_"):
+        if stem.startswith(prefix):
+            return stem[len(prefix):]
+    return stem
+
 
 # --------------------------------------------------------------------------
 def auc(scores: np.ndarray, labels: np.ndarray) -> float:
@@ -193,8 +221,16 @@ def main() -> None:
                     default=SCALE / "readout_results" / "readout_results_qwen_qwen3-32b.jsonl")
     ap.add_argument("--input", type=Path, default=SCALE / "readout_set.jsonl")
     ap.add_argument("--perm", type=int, default=300)
-    ap.add_argument("--stored-model", default="qwen3-32b")
+    ap.add_argument("--stored-model", default=None,
+                    help="results/ dir for the section-5 stored-scores control;"
+                         " defaults via TAG_TO_STORED, skipped when unknown")
+    ap.add_argument("--tag", default=None,
+                    help="suffix for the output CSVs; defaults from the "
+                         "results filename so per-model runs never clobber "
+                         "each other")
     args = ap.parse_args()
+    tag = args.tag or tag_of(args.results)
+    stored_model = args.stored_model or TAG_TO_STORED.get(tag)
 
     meta = {}
     for line in open(args.input, encoding="utf-8"):
@@ -364,16 +400,28 @@ def main() -> None:
         qq = base.loc[common, "q"].to_numpy()
         m = qmean(d, qq)
         lo, hi = boot_ci(d, qq)
+        # Normalized contrast, the quantity app:readout quotes. M is the
+        # number of distinct answers observed per question, the paper's
+        # convention. Shipping it here closes audit item N26: the CSV used to
+        # carry only the raw contrast while the supplement quoted normalized.
+        M = base.loc[common, "q"].map(main_set.groupby("q").truth.nunique())
+        keep = (M >= 2).to_numpy()
+        nd = (d[keep] / (1 - 1 / M.to_numpy()[keep]))
+        nm = qmean(nd, qq[keep])
+        nlo, nhi = boot_ci(nd, qq[keep])
         star = "*" if (lo > 0 or hi < 0) else " "
         print(f"  {arm:<20} raw accuracy {m:+.4f} [{lo:+.4f}, {hi:+.4f}] {star}"
+              f"   normalized {nm:+.4f} [{nlo:+.4f}, {nhi:+.4f}]"
               f"   n={len(common):,}")
         contrasts.append({"arm": arm, "d_acc": m, "lo": lo, "hi": hi,
+                          "d_norm_acc": nm, "norm_lo": nlo, "norm_hi": nhi,
                           "n": len(common)})
 
     # ---- 3. the measurement's own noise floor ------------------------------
     print("\n=== 3. replicate: the same options scored twice ===")
     print("this is the ceiling every agreement rate must be read against")
     rep = df[df["set"] == "original_replicate"]
+    rep_rows = []
     if rep.empty:
         print("  no replicate records found")
     else:
@@ -385,6 +433,8 @@ def main() -> None:
                 continue
             agree = (a.loc[common] == b.loc[common]).mean()
             print(f"  {arm:<20} {agree:>6.1%} agreement   n={len(common):,}")
+            rep_rows.append({"arm": arm, "agreement": agree,
+                             "n": len(common)})
 
     # ---- 4. generation matching -------------------------------------------
     gen = main_set[main_set.arm.str.startswith("generate")]
@@ -407,16 +457,20 @@ def main() -> None:
     # ---- 5. harness control against the stored run ------------------------
     print("\n=== 5. fresh echo_plain against the paper's stored scores ===")
     stored = {}
-    d = RESULTS / args.stored_model
-    want = set(base.index)
-    for f in sorted(d.glob("*.jsonl")):
-        for line in open(f, encoding="utf-8"):
-            r = json.loads(line)
-            if r["example_id"] in want:
-                stored[r["example_id"]] = r
-    if not stored:
-        print("  stored results not found; skipping")
+    if stored_model is None:
+        print(f"  no stored run mapped for tag '{tag}' (new-to-grid model?); "
+              f"skipping")
     else:
+        d = RESULTS / stored_model
+        want = set(base.index)
+        for f in sorted(d.glob("*.jsonl")):
+            for line in open(f, encoding="utf-8"):
+                r = json.loads(line)
+                if r["example_id"] in want:
+                    stored[r["example_id"]] = r
+    if stored_model is not None and not stored:
+        print("  stored results not found; skipping")
+    elif stored:
         ids = [i for i in base.index if i in stored]
         agree = np.mean([stored[i]["predicted"] == base.loc[i, "pred"] for i in ids])
         shift = np.mean([
@@ -459,9 +513,18 @@ def main() -> None:
           "looks like")
 
     OUT.mkdir(parents=True, exist_ok=True)
-    pd.DataFrame(summary).to_csv(OUT / "readout_summary.csv", index=False)
-    pd.DataFrame(contrasts).to_csv(OUT / "readout_contrasts.csv", index=False)
-    print(f"\nwrote readout_summary.csv and readout_contrasts.csv to {OUT}")
+    # Tag-suffixed always: the fixed names readout_summary.csv /
+    # readout_contrasts.csv were clobbered per run (the unsuffixed file on disk
+    # is silently the Qwen 3 4B run, a documented trap).
+    pd.DataFrame(summary).to_csv(OUT / f"readout_summary_{tag}.csv", index=False)
+    pd.DataFrame(contrasts).to_csv(OUT / f"readout_contrasts_{tag}.csv",
+                                   index=False)
+    if rep_rows:
+        pd.DataFrame(rep_rows).to_csv(OUT / f"readout_replicate_{tag}.csv",
+                                      index=False)
+    print(f"\nwrote readout_summary / readout_contrasts"
+          f"{' / readout_replicate' if rep_rows else ''} CSVs for tag "
+          f"'{tag}' to {OUT}")
 
 
 if __name__ == "__main__":

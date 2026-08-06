@@ -136,10 +136,14 @@ def main() -> None:
                     if name == "consensus"
                     else sub[[f"ok_{a}" for a in READOUTS]].mean(axis=1).to_numpy(),
                     sub.q.to_numpy())
-        na = qmean(norm((sub.pred == sub.truth).to_numpy().astype(float)
+        # Normalization is undefined at M=1 (the readout set carries one such
+        # question), so norm acc follows the paper's convention and uses the
+        # M >= 2 questions only; raw accuracy keeps everything.
+        subM = sub[sub.M >= 2]
+        na = qmean(norm((subM.pred == subM.truth).to_numpy().astype(float)
                         if name == "consensus"
-                        else sub[[f"ok_{a}" for a in READOUTS]].mean(axis=1).to_numpy(),
-                        sub.M.to_numpy()), sub.q.to_numpy())
+                        else subM[[f"ok_{a}" for a in READOUTS]].mean(axis=1).to_numpy(),
+                        subM.M.to_numpy()), subM.q.to_numpy())
         print(f"{name:<26}{len(sub)/len(d):>8.1%}{raw:>10.3f}{na:>10.3f}")
     print("  (for no-consensus rows the three readouts are averaged, since there "
           "is no single prediction)")
