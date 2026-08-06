@@ -31,6 +31,7 @@ import copy
 import io
 import json
 import math
+import os
 import sys
 from pathlib import Path
 
@@ -40,7 +41,11 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="repla
 # the label readout is the thing being tested, so if it is dead the run is
 # pointless. Everything else can be missing and the run is still worth having.
 CRITICAL_ARM = "label_num"
-MAX_LABEL_MISS = 0.10
+# Base models may not put a bare digit where the matcher looks; that is a
+# finding to record, not a bug to abort on. The grid sbatch exports
+# READOUT_MAX_LABEL_MISS=1.0 for the four base models, demoting the guard to
+# advisory for those runs only.
+MAX_LABEL_MISS = float(os.environ.get("READOUT_MAX_LABEL_MISS", "0.10"))
 MIN_ROWS = 40
 
 
@@ -61,20 +66,45 @@ def check(rows: list[dict]) -> tuple[list[str], list[str]]:
     if errs:
         fatal.append(f"arms returned errors: {errs[:6]}")
 
-    vals = [v for r in rows for k, d in r["results"].items()
-            if k.endswith(CRITICAL_ARM) for v in d.get("scores", {}).values()]
-    miss = sum(1 for v in vals if not math.isfinite(v))
-    rate = miss / len(vals) if vals else 1.0
-    notes.append(f"{CRITICAL_ARM}: {miss}/{len(vals)} options got no label "
-                 f"logprob ({rate:.1%})")
-    # Total failure means the tokeniser puts the label somewhere the matcher
-    # never looks; on Qwen 3 32B that was 72 of 72 before the trailing-space
-    # fix. A handful of misses is a different thing: those instances drop out of
-    # the analysis and cost nothing.
-    if not vals or rate > MAX_LABEL_MISS:
-        fatal.append(f"{CRITICAL_ARM}: {miss}/{len(vals)} options ({rate:.0%}) "
-                     "got no label logprob; the tokeniser emits labels the "
-                     "matcher misses")
+    # The critical-arm check applies only when the run actually scores that
+    # arm. The PMI pilot runs echo arms alone, and aborting it over an arm it
+    # never requested would repeat the false-abort failure this file exists to
+    # avoid.
+    has_critical = any(k.endswith(CRITICAL_ARM)
+                       for r in rows for k in r["results"])
+    if has_critical:
+        vals = [v for r in rows for k, d in r["results"].items()
+                if k.endswith(CRITICAL_ARM) for v in d.get("scores", {}).values()]
+        miss = sum(1 for v in vals if not math.isfinite(v))
+        rate = miss / len(vals) if vals else 1.0
+        notes.append(f"{CRITICAL_ARM}: {miss}/{len(vals)} options got no label "
+                     f"logprob ({rate:.1%})")
+        # Total failure means the tokeniser puts the label somewhere the matcher
+        # never looks; on Qwen 3 32B that was 72 of 72 before the trailing-space
+        # fix. A handful of misses is a different thing: those instances drop
+        # out of the analysis and cost nothing.
+        if not vals or rate > MAX_LABEL_MISS:
+            fatal.append(f"{CRITICAL_ARM}: {miss}/{len(vals)} options ({rate:.0%}) "
+                         "got no label logprob; the tokeniser emits labels the "
+                         "matcher misses")
+    else:
+        notes.append(f"{CRITICAL_ARM} not among this run's arms; label check "
+                     "skipped")
+
+    # Advisory: the neutral PMI arms must return finite scores. A dead neutral
+    # arm does not invalidate the in-context arms, so it never aborts, but the
+    # PMI correction would be uncomputable and that is worth knowing at smoke
+    # time rather than after the run.
+    for arm in ("echo_qonly", "echo_ctxfree"):
+        vals = [v for r in rows for k, d in r["results"].items()
+                if k.endswith(arm) for v in d.get("scores", {}).values()]
+        if vals:
+            bad = sum(1 for v in vals if not math.isfinite(v))
+            if bad:
+                notes.append(f"WARN {arm}: {bad}/{len(vals)} scores not finite; "
+                             "the PMI correction will lose those options")
+            else:
+                notes.append(f"{arm}: {len(vals)} scores, all finite")
 
     # Everything below is advisory. Each affects one auxiliary arm or one
     # secondary quantity, never the four scoring arms the analysis needs.
@@ -118,8 +148,15 @@ def self_test(path: Path) -> int:
             if k.endswith(CRITICAL_ARM):
                 d["scores"] = {o: float("nan") for o in d.get("scores", {})}
     fatal, _ = check(blanked)
-    print(f"label arm blanked: {'PASS (caught)' if fatal else 'FAIL (missed)'}")
-    ok &= bool(fatal)
+    if MAX_LABEL_MISS >= 1.0:
+        # Guard demoted via READOUT_MAX_LABEL_MISS (base-model runs): a dead
+        # label arm is expected NOT to abort, so the expectation inverts.
+        print(f"label arm blanked: "
+              f"{'PASS (tolerated, guard demoted)' if not fatal else 'FAIL'}")
+        ok &= not fatal
+    else:
+        print(f"label arm blanked: {'PASS (caught)' if fatal else 'FAIL (missed)'}")
+        ok &= bool(fatal)
 
     truncated = rows[:MIN_ROWS - 1]
     fatal, _ = check(truncated)
