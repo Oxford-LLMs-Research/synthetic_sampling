@@ -1,1 +1,5 @@
+# Cluster job scripts and shell scripts must be LF in the working copy:
+# an sbatch with CRLF fails on ARC, and autocrlf on Windows would otherwise
+# materialise CRLF at checkout (docs/CLUSTER_HANDOFF.md, CLAUDE.md).
 *.sbatch text eol=lf
+*.sh text eol=lf
