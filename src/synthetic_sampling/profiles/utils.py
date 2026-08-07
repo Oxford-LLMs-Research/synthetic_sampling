@@ -14,44 +14,14 @@ if TYPE_CHECKING:
 
 
 def get_bundled_metadata_dir() -> Path:
-    """
-    Return the absolute path to the bundled survey metadata directory.
-
-    This directory contains pre-built metadata JSON files for all
-    supported surveys (WVS, ESS, Afrobarometer, etc.). The files
-    ship with the package so users never need to locate them manually.
-
-    Returns
-    -------
-    Path
-        Absolute path to ``src/synthetic_sampling/profiles/metadata``
-    """
-    return Path(__file__).resolve().parent / 'metadata'
+    """Absolute path to bundled survey metadata (surveys/metadata/)."""
+    from ..surveys import metadata as meta_pkg
+    return Path(meta_pkg.__file__).resolve().parent
 
 
 def load_survey_metadata(survey_id: str) -> dict:
-    """
-    Load the bundled metadata JSON for a given survey.
-
-    Parameters
-    ----------
-    survey_id : str
-        Survey identifier (e.g. ``'wvs'``, ``'ess_wave_10'``).
-        Must match an entry in ``SURVEY_REGISTRY``.
-
-    Returns
-    -------
-    dict
-        Nested dict: section -> variable_code -> variable info
-
-    Raises
-    ------
-    KeyError
-        If *survey_id* is not in the registry.
-    FileNotFoundError
-        If the metadata file is missing from the package.
-    """
-    from ..config.surveys import get_survey_config
+    """Load the bundled metadata JSON for a given survey."""
+    from ..surveys.registry import get_survey_config
 
     config = get_survey_config(survey_id)
     metadata_path = get_bundled_metadata_dir() / config.metadata_path

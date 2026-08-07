@@ -1,71 +1,45 @@
 """
-Synthetic Sampling -- respondent profile generation for LLM evaluation.
+Synthetic Sampling -- profile generation and LLM scoring for survey prediction.
 
-Quick Start::
+Minimal-core pipeline (rebuild/minimal-core):
 
-    from synthetic_sampling import ProfileBuilder
+    surveys   load + harmonise six survey sources
+    profiles  instance generation (incl. ESS concept resolve)
+    scoring   /completions arms (label_num primary; echo retained)
+    analysis  normalized accuracy, AUC, prior-correct, bootstrap
+    checks    smoke, coverage, number verification
 
-    # Explore bundled survey metadata (no data required)
-    builder = ProfileBuilder('wvs')
-    builder.list_sections()
-    builder.list_variables('demographics')
+Import from subpackages for heavy use::
 
-    # Load survey data and generate profiles
-    builder.load_data('~/data/WVS/wvs.csv')
-    profile = builder.generate_profile(respondent_id=12345, seed=42)
-
-See ``ProfileBuilder`` for the full API.
+    from synthetic_sampling.surveys import DataPaths, SurveyLoader, list_surveys
+    from synthetic_sampling.profiles import DatasetBuilder
+    from synthetic_sampling.scoring import run_scoring, DEFAULT_ARMS
 """
 
-__version__ = '0.2.0'
-__author__ = 'Oxford LLMs Research'
+__version__ = "0.3.0"
+__author__ = "Oxford LLMs Research"
 
-# -- High-level public API (recommended for external users) ----------------
-
-from .profile_builder import ProfileBuilder
-
-from .profiles.utils import get_bundled_metadata_dir, load_survey_metadata
-from .profiles.formats import list_profile_formats, PROFILE_FORMATS
-
-# -- Lower-level API (config, loaders, builder) ----------------------------
-
-from .config import (
+# Light public surface (survey registry + paths). Heavy modules stay in
+# subpackages so `ss-score` does not import the profile generator.
+from .surveys import (
+    SURVEY_REGISTRY,
     DataPaths,
     DatasetConfig,
     GeneratorConfig,
-    SURVEY_REGISTRY,
+    SurveyLoader,
     get_survey_config,
     list_surveys,
     load_config,
 )
 
-from .loaders import (
-    SurveyLoader,
-    scan_survey_directory,
-)
-
-from .builder import DatasetBuilder
-
 __all__ = [
-    # High-level API
-    'ProfileBuilder',
-    'get_bundled_metadata_dir',
-    'load_survey_metadata',
-    'list_profile_formats',
-    'PROFILE_FORMATS',
-    # Version
-    '__version__',
-    # Config
-    'DataPaths',
-    'DatasetConfig',
-    'GeneratorConfig',
-    'SURVEY_REGISTRY',
-    'get_survey_config',
-    'list_surveys',
-    'load_config',
-    # Loaders
-    'SurveyLoader',
-    'scan_survey_directory',
-    # Builder
-    'DatasetBuilder',
+    "__version__",
+    "SURVEY_REGISTRY",
+    "DataPaths",
+    "DatasetConfig",
+    "GeneratorConfig",
+    "SurveyLoader",
+    "get_survey_config",
+    "list_surveys",
+    "load_config",
 ]
