@@ -13,7 +13,7 @@
 # smoke, then run. Resume-safe: the runner skips example_ids already in OUT.
 # Keep this file LF-only (never Path.write_text on Windows).
 # Required env: MODEL, INPUT, OUT. Optional: ARMS, REPLICATE_FRAC, DTYPE,
-# MAX_MODEL_LEN, LIMIT, SHARD_INDEX, SHARD_COUNT, PORT.
+# MAX_MODEL_LEN, LIMIT, SHARD_INDEX, SHARD_COUNT, PORT, VLLM_READY_TIMEOUT_SEC.
 
 set -euo pipefail
 
@@ -48,15 +48,19 @@ vllm serve "$MODEL" --port "$PORT" --dtype "$DTYPE" \
 VLLM_PID=$!
 trap 'kill $VLLM_PID 2>/dev/null || true' EXIT
 
-for i in $(seq 1 240); do
-  if curl -sf "http://127.0.0.1:${PORT}/v1/models" >/dev/null; then break; fi
+# Wait until ready, or until vLLM dies. Slurm --time is the real backstop.
+# Optional VLLM_READY_TIMEOUT_SEC caps the wait (unset = no curl timeout).
+elapsed=0
+while ! curl -sf "http://127.0.0.1:${PORT}/v1/models" >/dev/null; do
   if ! kill -0 $VLLM_PID 2>/dev/null; then
     echo "vLLM died during startup, see its log"; exit 1
   fi
+  if [ -n "${VLLM_READY_TIMEOUT_SEC:-}" ] && [ "$elapsed" -ge "$VLLM_READY_TIMEOUT_SEC" ]; then
+    echo "vLLM never came up within ${VLLM_READY_TIMEOUT_SEC}s"; exit 1
+  fi
   sleep 5
+  elapsed=$((elapsed + 5))
 done
-curl -sf "http://127.0.0.1:${PORT}/v1/models" >/dev/null \
-  || { echo "vLLM never came up"; exit 1; }
 
 # Smoke gate spanning the design, not just its head.
 SMOKE_IN="$(dirname "$OUT")/smoke_in_${SLURM_JOB_ID:-local}.jsonl"
