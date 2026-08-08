@@ -172,3 +172,102 @@ def test_hygiene_scan_and_filter():
 def test_leakage_exclusions():
     excl = target_exclusions(["Q1", "Q2"])
     assert excl == {"Q1", "Q2"}
+
+
+def test_extra_field_renders_between_profile_and_question():
+    inst = {**INST, "extra": "The survey was conducted in 2024.\n\n"}
+    for arm in ("label_num", "echo_plain"):
+        prompt = build_prompt(inst, ["Yes", "No"], arm)
+        assert "The survey was conducted in 2024." in prompt
+        assert (prompt.index("Profile:")
+                < prompt.index("The survey was conducted")
+                < prompt.index("Question:"))
+    # PMI premises exclude the context line.
+    assert "2024" not in build_prompt(inst, ["Yes", "No"], "echo_qonly")
+    assert "2024" not in build_prompt(inst, ["Yes", "No"], "echo_ctxfree")
+    # Absent field falls back to the paper template unchanged.
+    assert build_prompt(dict(INST), ["Yes", "No"], "echo_plain") == \
+        build_prompt({**INST, "extra": None}, ["Yes", "No"], "echo_plain")
+
+
+def test_injection_converter_conditions():
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location(
+        "convert_injection_instances",
+        Path(__file__).resolve().parents[1] / "scripts"
+        / "convert_injection_instances.py")
+    conv = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(conv)
+
+    src = {
+        "example_id": "wvs_1_Q1_s6m4", "base_id": "wvs_1_Q1",
+        "survey": "wvs", "target_code": "Q1", "id": "1", "country": "20.0",
+        "questions": {"How old are you?": "18-24"},
+        "target_question": "Do you trust most people?",
+        "options": ["Yes", "No"], "answer": "No",
+        "country_question": "In which country do you live?",
+        "country_name": "Kenya", "country_placebo_name": "India",
+        "survey_year": 2024, "survey_year_placebo": 2020,
+        "interview_date": "2024-07-09",
+    }
+    base = conv.convert_one("country", src, "baseline")
+    assert base["example_id"] == "wvs_1_Q1_s6m4_baseline"
+    assert base["base_id"] == "wvs_1_Q1_s6m4"
+    assert base["ground_truth_index"] == 1
+    assert base["option_sets"] == {"original": ["Yes", "No"]}
+    assert "extra" not in base and "country" not in str(base["questions"])
+
+    real = conv.convert_one("country", src, "with_country")
+    assert list(real["questions"])[-1] == "In which country do you live?"
+    assert real["questions"]["In which country do you live?"] == "Kenya"
+    placebo = conv.convert_one("country", src, "with_country_placebo")
+    assert placebo["questions"]["In which country do you live?"] == "India"
+
+    assert conv.convert_one("temporal", src, "with_year")["extra"] == \
+        "The survey was conducted in 2024.\n\n"
+    assert conv.convert_one("temporal", src, "with_year_placebo")["extra"] == \
+        "The survey was conducted in 2020.\n\n"
+    assert conv.convert_one("temporal", src, "with_date")["extra"] == \
+        "The interview took place on 2024-07-09.\n\n"
+    assert conv.conditions("temporal", {**src, "interview_date": None}) == \
+        ["baseline", "with_year", "with_year_placebo",
+         "with_country", "with_country_and_year"]
+
+
+def test_injection_converter_combined_cell():
+    import importlib.util
+
+    spec = importlib.util.spec_from_file_location(
+        "convert_injection_instances2",
+        Path(__file__).resolve().parents[1] / "scripts"
+        / "convert_injection_instances.py")
+    conv = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(conv)
+
+    src = {
+        "example_id": "wvs_1_Q1_s6m4", "survey": "wvs", "target_code": "Q1",
+        "id": "1", "country": "404", "questions": {"How old are you?": "18-24"},
+        "target_question": "Do you trust most people?",
+        "options": ["Yes", "No"], "answer": "No",
+        "survey_year": 2024, "survey_year_placebo": 2020,
+        "interview_date": "2024-07-09",
+        "country_question": conv.COUNTRY_QUESTION, "country_name": "Kenya",
+    }
+    # Temporal substrate with a resolved country name gains the 2x2 cells.
+    assert conv.conditions("temporal", src) == [
+        "baseline", "with_year", "with_year_placebo", "with_date",
+        "with_country", "with_country_and_year"]
+    # Without a name the original condition list is unchanged.
+    bare = {k: v for k, v in src.items()
+            if k not in ("country_question", "country_name")}
+    assert conv.conditions("temporal", bare) == [
+        "baseline", "with_year", "with_year_placebo", "with_date"]
+
+    combo = conv.convert_one("temporal", src, "with_country_and_year")
+    assert list(combo["questions"])[-1] == conv.COUNTRY_QUESTION
+    assert combo["questions"][conv.COUNTRY_QUESTION] == "Kenya"
+    assert combo["extra"] == "The survey was conducted in 2024.\n\n"
+    solo = conv.convert_one("temporal", src, "with_country")
+    assert solo["questions"][conv.COUNTRY_QUESTION] == "Kenya"
+    assert "extra" not in solo

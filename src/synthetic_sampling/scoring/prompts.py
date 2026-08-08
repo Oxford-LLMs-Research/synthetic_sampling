@@ -24,10 +24,16 @@ def build_prompt(inst: dict, options: list[str], arm: str) -> str:
     Label arms append a trailing space after ``Answer:``. Without it, some
     tokenisers emit a standalone space first and the digit readout returns
     empty on every slot.
+
+    An optional instance field ``extra`` is a context block between profile
+    and question (the injection riders: "The survey was conducted in <year>.").
+    The PMI premises (``echo_qonly``, ``echo_ctxfree``) deliberately exclude
+    it: they are option-fluency premises, not context conditions.
     """
     profile = render_profile(dict(inst["questions"]))
     base = PROMPT_TEMPLATE.format(
-        profile=profile, extra="", question=inst["target_question"])
+        profile=profile, extra=inst.get("extra") or "",
+        question=inst["target_question"])
 
     if arm == "echo_plain":
         return base

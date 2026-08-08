@@ -15,7 +15,8 @@ per-respondent variables via `CountrySpecificHandler`. Output: JSONL with
 `example_id`, `questions`, `target_question`, `options` / `option_sets`.
 
 ```
-ss-generate --config configs/local.yaml --out outputs/instances.jsonl
+ss-generate --config configs/local.yaml \
+  --out outputs/<experiment>/inputs/instances.jsonl
 ```
 
 ## 3. Score
@@ -31,7 +32,8 @@ Replicate: hash-stable fraction of instances also scored as
 See [ELICITATIONS.md](ELICITATIONS.md).
 
 ```
-ss-score --input outputs/instances.jsonl --out outputs/results.jsonl \
+ss-score --input outputs/<experiment>/inputs/instances.jsonl \
+  --out outputs/<experiment>/results/results.jsonl \
   --base-url http://127.0.0.1:8000/v1 --model Qwen/Qwen3-32B \
   --replicate-frac 0.1
 ```
@@ -39,8 +41,9 @@ ss-score --input outputs/instances.jsonl --out outputs/results.jsonl \
 ## 4. Check
 
 ```
-ss-analyze smoke outputs/smoke.jsonl
-ss-analyze coverage outputs/results.jsonl outputs/instances.jsonl
+ss-analyze smoke outputs/<experiment>/results/smoke.jsonl
+ss-analyze coverage outputs/<experiment>/results/results.jsonl \
+  outputs/<experiment>/inputs/instances.jsonl
 ```
 
 Smoke aborts only on fatal label-readout failure. Coverage fails if any arm is
@@ -57,8 +60,24 @@ Importable kernels in `synthetic_sampling.analysis`:
 - `replicate_agreement` / `summarize_controls`
 
 ```
-ss-analyze replicate outputs/results.jsonl --arm label_num
+ss-analyze replicate outputs/<experiment>/results/results.jsonl --arm label_num
 ```
+
+## Outputs layout
+
+One folder per experiment under `outputs/`, split by role:
+
+```
+outputs/<experiment>/inputs/    instance files fed to the models
+outputs/<experiment>/results/   scored outputs, smoke and status artifacts
+```
+
+No loose files at the `outputs/` root. `outputs/` is gitignored and must stay
+regenerable (inputs from `scripts/` generators or converters, results from
+scoring runs); anything pulled from the cluster that is NOT regenerable goes to
+the outer workspace `../outputs_recovered/`, outside the repo. Converters and
+launchers default their paths to this layout
+(`scripts/convert_injection_instances.py` is the pattern).
 
 ## Cluster
 

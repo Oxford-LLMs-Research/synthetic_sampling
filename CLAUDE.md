@@ -10,6 +10,12 @@ Paper/build workspace rules live in `synthetic_sampling_aaai/CLAUDE.md`.
 - Survey microdata and result dumps live in the sibling workspace
   `../data`, `../results`, `../analysis` (not in git).
 - Paper workspace: `C:\Users\murrn\cursor\synthetic_sampling_aaai\`.
+- Outputs layout (dated 8 Aug 2026): one folder per experiment,
+  `outputs/<experiment>/inputs/` (instance files fed to the models) and
+  `outputs/<experiment>/results/` (scored outputs, smoke/status artifacts).
+  No loose files at the `outputs/` root. `outputs/` is gitignored and must
+  stay regenerable; non-regenerable cluster pulls go to the outer
+  `../outputs_recovered/`, never inside the repo.
 
 ## Pipeline modules
 
