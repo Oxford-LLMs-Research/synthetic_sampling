@@ -8,7 +8,9 @@ reasoning stage; the label readout afterwards rotates as always), and is
 asked to think step by step, ending with "Final answer: <option number>".
 
 Sampled generation at the model card's recommended settings (temperature
-0.6, top-p 0.95, top-k 20) with a FIXED per-request seed, against the same vLLM
+0.6, top-p 0.95, top-k 20) with a FIXED per-request seed, no verbal length
+cap (max_tokens 2048 is the hard stop; a transcript cut off before its
+final-answer line is recorded data), against the same vLLM
 /completions serving the scoring uses. Greedy decoding is deliberately not
 the default: model cards warn it degenerates into repetition over long
 generations, which would handicap exactly the hypothesis C1 tests; the
@@ -41,14 +43,17 @@ LADDER_SET = OUTER / "outputs_recovered" / "ladder_readout_set.jsonl"
 
 REASONING_INSTRUCTION = (
     "Think step by step about how this respondent would answer the target "
-    "question, using their prior answers as evidence. Keep it under 200 "
-    "words. End with a line of the form 'Final answer: <option number>'."
+    "question, using their prior answers as evidence. End with a line of "
+    "the form 'Final answer: <option number>'."
 )
 
 
 def build_reasoning_prompt(inst: dict) -> str:
+    """Same profile conventions as scoring: prose `profile_text` wins."""
+    profile = (inst.get("profile_text")
+               or render_profile(dict(inst["questions"])))
     base = PROMPT_TEMPLATE.format(
-        profile=render_profile(dict(inst["questions"])), extra="",
+        profile=profile, extra="",
         question=inst["target_question"])
     head, _, _ = base.partition("\nInstructions:")
     options = inst["option_sets"]["original"]
@@ -78,7 +83,12 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--tasks", type=Path, default=TASKS)
     ap.add_argument("--ladder-set", type=Path, default=LADDER_SET)
-    ap.add_argument("--max-tokens", type=int, default=512)
+    ap.add_argument("--input", type=Path, default=None,
+                    help="Runner-format instance file to reason over instead "
+                         "of the default substrate (e.g. the validated "
+                         "narrative arm for the presentation x elicitation "
+                         "2x2); prose profile_text is honoured.")
+    ap.add_argument("--max-tokens", type=int, default=2048)
     ap.add_argument("--temperature", type=float, default=0.6)
     ap.add_argument("--top-p", type=float, default=0.95)
     ap.add_argument("--top-k", type=int, default=20)
@@ -95,8 +105,13 @@ def main(argv: list[str] | None = None) -> int:
                     done.add(json.loads(line)["example_id"])
                 except (json.JSONDecodeError, KeyError):
                     pass
-    insts = [r for r in load_substrate(args.tasks, args.ladder_set)
-             if r["example_id"] not in done]
+    if args.input is not None:
+        with open(args.input, encoding="utf-8") as fh:
+            pool = [json.loads(line) for line in fh]
+        pool.sort(key=lambda r: r["example_id"])
+    else:
+        pool = load_substrate(args.tasks, args.ladder_set)
+    insts = [r for r in pool if r["example_id"] not in done]
     if args.limit:
         insts = insts[:args.limit]
     print(f"{len(insts)} transcripts to generate "

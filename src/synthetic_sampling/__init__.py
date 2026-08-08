@@ -19,27 +19,20 @@ Import from subpackages for heavy use::
 __version__ = "0.3.0"
 __author__ = "Oxford LLMs Research"
 
-# Light public surface (survey registry + paths). Heavy modules stay in
-# subpackages so `ss-score` does not import the profile generator.
-from .surveys import (
-    SURVEY_REGISTRY,
-    DataPaths,
-    DatasetConfig,
-    GeneratorConfig,
-    SurveyLoader,
-    get_survey_config,
-    list_surveys,
-    load_config,
-)
+# The survey surface is exposed LAZILY (PEP 562): `surveys` imports pandas,
+# which the cluster scoring venv does not carry, and `ss-score` /
+# `ss-analyze` must run without it (the 8 Aug A1 jobs failed on exactly
+# this). Anything here resolves on first attribute access, not at import.
+_SURVEYS_EXPORTS = {
+    "SURVEY_REGISTRY", "DataPaths", "DatasetConfig", "GeneratorConfig",
+    "SurveyLoader", "get_survey_config", "list_surveys", "load_config",
+}
 
-__all__ = [
-    "__version__",
-    "SURVEY_REGISTRY",
-    "DataPaths",
-    "DatasetConfig",
-    "GeneratorConfig",
-    "SurveyLoader",
-    "get_survey_config",
-    "list_surveys",
-    "load_config",
-]
+__all__ = ["__version__", *sorted(_SURVEYS_EXPORTS)]
+
+
+def __getattr__(name):
+    if name in _SURVEYS_EXPORTS:
+        from . import surveys
+        return getattr(surveys, name)
+    raise AttributeError(f"module {__name__!r} has no attribute {name!r}")
