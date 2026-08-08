@@ -195,7 +195,7 @@ def test_injection_converter_conditions():
 
     spec = importlib.util.spec_from_file_location(
         "convert_injection_instances",
-        Path(__file__).resolve().parents[1] / "scripts"
+        Path(__file__).resolve().parents[1] / "scripts" / "injection"
         / "convert_injection_instances.py")
     conv = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(conv)
@@ -240,7 +240,7 @@ def test_injection_converter_combined_cell():
 
     spec = importlib.util.spec_from_file_location(
         "convert_injection_instances2",
-        Path(__file__).resolve().parents[1] / "scripts"
+        Path(__file__).resolve().parents[1] / "scripts" / "injection"
         / "convert_injection_instances.py")
     conv = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(conv)
@@ -271,3 +271,28 @@ def test_injection_converter_combined_cell():
     solo = conv.convert_one("temporal", src, "with_country")
     assert solo["questions"][conv.COUNTRY_QUESTION] == "Kenya"
     assert "extra" not in solo
+
+
+def test_profile_text_replaces_qa_rendering():
+    inst = {**INST, "profile_text": "A young woman who distrusts strangers."}
+    for arm in ("label_num", "echo_plain"):
+        prompt = build_prompt(inst, ["Yes", "No"], arm)
+        assert "A young woman who distrusts strangers." in prompt
+        assert "Q: How old are you?" not in prompt
+    # PMI premises exclude the prose profile entirely.
+    assert "young woman" not in build_prompt(inst, ["Yes", "No"], "echo_qonly")
+
+
+def test_reasoning_inserted_between_question_and_options():
+    inst = {**INST, "reasoning": "They trust family but said neighbours lie."}
+    prompt = build_prompt(inst, ["Yes", "No"], "label_num")
+    q = prompt.index("Question:")
+    r = prompt.index("Reasoning: They trust family")
+    o = prompt.index("Options:")
+    i = prompt.index("Instructions:")
+    assert q < r < o < i
+    assert prompt.endswith("Answer: ")
+    # echo path keeps reasoning before Instructions too
+    p2 = build_prompt(inst, ["Yes", "No"], "echo_plain")
+    assert p2.index("Question:") < p2.index("Reasoning:") < p2.index("Instructions:")
+    assert "neighbours" not in build_prompt(inst, ["Yes", "No"], "echo_qonly")

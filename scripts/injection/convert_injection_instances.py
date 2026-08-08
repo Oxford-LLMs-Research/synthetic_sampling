@@ -30,8 +30,8 @@ instance lands in the same output file (paired same-serving contrasts).
 base_id is set to the SOURCE example_id: the pairing key across conditions.
 
 Usage (from the repo root; defaults match the recovered files):
-    python scripts/convert_injection_instances.py
-    python scripts/convert_injection_instances.py --experiment country
+    python scripts/injection/convert_injection_instances.py
+    python scripts/injection/convert_injection_instances.py --experiment country
 """
 
 from __future__ import annotations
@@ -41,7 +41,7 @@ import json
 from collections import Counter
 from pathlib import Path
 
-REPO = Path(__file__).resolve().parents[1]
+REPO = Path(__file__).resolve().parents[2]
 OUTER = REPO.parent
 DEFAULT_IN = {
     "country": OUTER / "outputs_recovered" / "country_injection_instances.jsonl",

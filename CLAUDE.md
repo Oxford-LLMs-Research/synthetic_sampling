@@ -15,7 +15,10 @@ Paper/build workspace rules live in `synthetic_sampling_aaai/CLAUDE.md`.
   `outputs/<experiment>/results/` (scored outputs, smoke/status artifacts).
   No loose files at the `outputs/` root. `outputs/` is gitignored and must
   stay regenerable; non-regenerable cluster pulls go to the outer
-  `../outputs_recovered/`, never inside the repo.
+  `../outputs_recovered/`, never inside the repo. `scripts/` mirrors the
+  same layout (one folder per experiment; generic wrappers and `cluster/`
+  at top level); code needed by two experiments graduates to `src/`,
+  never copied between script folders.
 
 ## Pipeline modules
 

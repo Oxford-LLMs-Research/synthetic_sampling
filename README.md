@@ -41,17 +41,27 @@ ss-analyze coverage outputs/<experiment>/results/results.jsonl \
 ss-analyze replicate outputs/<experiment>/results/results.jsonl --arm label_num
 ```
 
-## Outputs layout
+## Scripts and outputs layout
 
-One folder per experiment under `outputs/`, split by role; no loose files at
-the `outputs/` root:
+One folder per experiment in BOTH trees, same names, so the script that
+produced an output is always findable by symmetry. `scripts/` keeps only the
+pipeline-generic CLI wrappers and `cluster/` at top level:
 
 ```
+scripts/
+  analyze.py score.py generate_instances.py   pipeline-generic wrappers
+  cluster/                                    sbatch + submit wrappers
+  <experiment>/                               e.g. injection, narrative, reasoning
 outputs/
-  <experiment>/            e.g. country_injection, temporal_context
+  <experiment>/            e.g. country_injection, temporal_context, narrative
     inputs/                instance files fed to the models
     results/               scored outputs, smoke and status artifacts
 ```
+
+Graduation rule: logic needed by two experiments moves into the package
+(`src/synthetic_sampling/`), never gets copied between script folders.
+Scripts stay thin, single-experiment orchestration. No loose files at the
+`outputs/` root.
 
 `outputs/` is gitignored and regenerable: inputs come from generators or
 converters in `scripts/`, results from scoring runs. Run artifacts pulled back

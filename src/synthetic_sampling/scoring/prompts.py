@@ -25,15 +25,27 @@ def build_prompt(inst: dict, options: list[str], arm: str) -> str:
     tokenisers emit a standalone space first and the digit readout returns
     empty on every slot.
 
-    An optional instance field ``extra`` is a context block between profile
-    and question (the injection riders: "The survey was conducted in <year>.").
-    The PMI premises (``echo_qonly``, ``echo_ctxfree``) deliberately exclude
-    it: they are option-fluency premises, not context conditions.
+    Optional instance fields, all excluded from the PMI premises
+    (``echo_qonly``, ``echo_ctxfree``), which are option-fluency premises,
+    not context conditions:
+
+    - ``extra``: a context block between profile and question (the injection
+      riders: "The survey was conducted in <year>.").
+    - ``profile_text``: prose replacing the rendered q:a profile (the
+      narrative presentation arm, RUN_CATALOGUE B3).
+    - ``reasoning``: a reasoning transcript inserted after the question (the
+      reason-then-answer arm, RUN_CATALOGUE C1; the readout then happens at
+      the post-reasoning position).
     """
-    profile = render_profile(dict(inst["questions"]))
+    profile = (inst.get("profile_text")
+               or render_profile(dict(inst["questions"])))
     base = PROMPT_TEMPLATE.format(
         profile=profile, extra=inst.get("extra") or "",
         question=inst["target_question"])
+    if inst.get("reasoning"):
+        head, sep, tail = base.partition("\n\nInstructions:")
+        base = (f"{head}\n\nReasoning: {inst['reasoning'].strip()}"
+                f"{sep}{tail}")
 
     if arm == "echo_plain":
         return base

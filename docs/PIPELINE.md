@@ -77,7 +77,7 @@ regenerable (inputs from `scripts/` generators or converters, results from
 scoring runs); anything pulled from the cluster that is NOT regenerable goes to
 the outer workspace `../outputs_recovered/`, outside the repo. Converters and
 launchers default their paths to this layout
-(`scripts/convert_injection_instances.py` is the pattern).
+(`scripts/injection/convert_injection_instances.py` is the pattern). `scripts/` mirrors this: one folder per experiment, generic CLI wrappers and `cluster/` at top level; logic needed twice graduates into the package.
 
 ## Cluster
 
