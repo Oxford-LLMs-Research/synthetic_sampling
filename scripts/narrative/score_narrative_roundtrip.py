@@ -28,7 +28,11 @@ IN_DIR = REPO / "outputs" / "narrative" / "inputs"
 
 
 def norm(s: str) -> str:
-    return " ".join(str(s).split()).strip().lower()
+    """Mojibake-tolerant: the source data carries corrupted apostrophes
+    ('Can�t choose', a Phase 0 hygiene item); the replacement char and
+    curly-apostrophe variants collapse so a clean extraction can match."""
+    s = str(s).replace("’", "'").replace("�", "'")
+    return " ".join(s.split()).strip().lower()
 
 
 def score_extraction(true_answers: list[str], extracted: dict) -> dict:

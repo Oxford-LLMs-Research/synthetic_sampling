@@ -70,15 +70,18 @@ def gate_draft(narrative: str) -> list[str]:
     return fails
 
 
-def answer_vocab(ladder_set: Path) -> dict[str, list[str]]:
-    """Question text -> observed answers across the full ladder set."""
-    vocab: dict[str, set[str]] = defaultdict(set)
+def answer_vocab(ladder_set: Path) -> dict[tuple, list[str]]:
+    """(survey, question) -> observed answers. Keyed per survey: the same
+    question text carries different harmonised wordings across surveys
+    (Male/Female vs Man/Woman), and pooling them lets the validator pick
+    the right meaning in the wrong survey's words (wave-1 finding)."""
+    vocab: dict[tuple, set] = defaultdict(set)
     with open(ladder_set, encoding="utf-8") as fh:
         for line in fh:
             r = json.loads(line)
             for q, a in r["questions"].items():
-                vocab[q].add(a)
-    return {q: sorted(v) for q, v in vocab.items()}
+                vocab[(r["survey"], q)].add(a)
+    return {k: sorted(v) for k, v in vocab.items()}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -154,7 +157,7 @@ def main(argv: list[str] | None = None) -> int:
             if status.get(task_id) != "pass":
                 continue
             qs = [{"n": i + 1, "question": q,
-                   "options": vocab.get(q, [])}
+                   "options": vocab.get((t["survey"], q), [])}
                   for i, q in enumerate(t["questions"])]
             fh.write(json.dumps({
                 "task_id": task_id, "narrative": drafts[task_id],
