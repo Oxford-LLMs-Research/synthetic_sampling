@@ -8,7 +8,11 @@
 #   A1_MODELS="Qwen/Qwen3-30B-A3B-Instruct-2507" ./scripts/cluster/submit_a1.sh
 #
 # A1_MODELS overrides the roster (space-separated HF ids). The MoE candidate
-# joins only after its readout battery certifies label_num (see A6).
+# certified on 8 Aug (A6), so it is now eligible — but the default roster here
+# is deliberately left at two models because the A1 jobs were submitted under
+# it. Adding a model to the default would make a re-run silently launch a
+# different design than the one in flight; run the MoE cell explicitly instead:
+#   A1_MODELS="Qwen/Qwen3-30B-A3B-Instruct-2507" ./scripts/cluster/submit_a1.sh
 
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"

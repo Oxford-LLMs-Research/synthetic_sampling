@@ -16,14 +16,21 @@
 #   ./scripts/cluster/submit_b3.sh
 #   B3_MODELS="Qwen/Qwen3-30B-A3B-Instruct-2507" ./scripts/cluster/submit_b3.sh
 #
-# B3_MODELS overrides the roster (space-separated HF ids). The MoE is eligible
-# (A6 certified 8 Aug); cross-model reads carry its lower-accuracy caveat.
+# B3_MODELS overrides the roster (space-separated HF ids). The MoE is in the
+# default roster because A6 certified it on 8 Aug (fidelity PASS, calibration
+# temperature-fixable) and it costs ~10 min of serving here, so a third model
+# is close to free. It earns its slot on design grounds too: the roster then
+# spans 4B-active MoE / 32B dense x two model families, and B3 is powered for
+# a NULL — "presentation does not move the ceiling" is far harder to dismiss
+# on three architectures than on two. Its absolute accuracy sits below the
+# dense 32Bs (norm 0.235), so read it WITHIN model, never as a level shift
+# against them; every B3 contrast is within-pair within-serving anyway.
 
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 mkdir -p "$ROOT/logs"
 
-MODELS="${B3_MODELS:-Qwen/Qwen3-32B allenai/Olmo-3.1-32B-Instruct-DPO}"
+MODELS="${B3_MODELS:-Qwen/Qwen3-32B allenai/Olmo-3.1-32B-Instruct-DPO Qwen/Qwen3-30B-A3B-Instruct-2507}"
 INPUT="$ROOT/outputs/narrative/inputs/narrative_label_set.jsonl"
 
 if [ ! -f "$INPUT" ]; then
