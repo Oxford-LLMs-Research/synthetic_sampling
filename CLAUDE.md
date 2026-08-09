@@ -14,8 +14,16 @@ Paper/build workspace rules live in `synthetic_sampling_aaai/CLAUDE.md`.
   `outputs/<experiment>/inputs/` (instance files fed to the models) and
   `outputs/<experiment>/results/` (scored outputs, smoke/status artifacts).
   No loose files at the `outputs/` root. `outputs/` is gitignored and must
-  stay regenerable; non-regenerable cluster pulls go to the outer
-  `../outputs_recovered/`, never inside the repo. `scripts/` mirrors the
+  stay regenerable; ANYTHING non-regenerable goes to the outer
+  `../outputs_recovered/`, never inside the repo. Widened 9 Aug 2026: that
+  directory was for cluster pulls, but the hazard is the same whichever
+  machine made the file — `outputs/` is documented as safe to clear and
+  rebuild, so a non-regenerable artifact left there is one cleanup away from
+  gone. Sampled LLM generation is non-regenerable by this test: re-running it
+  yields different text, which is a different substrate, not a restored one.
+  Back it up as a self-contained folder with a README stating why it cannot
+  be rebuilt, plus `SHA256SUMS.json` so the copy can be re-verified without
+  the source (`narrative_substrate_b3/` is the pattern). `scripts/` mirrors the
   same layout (one folder per experiment; generic wrappers and `cluster/`
   at top level); code needed by two experiments graduates to `src/`,
   never copied between script folders.
