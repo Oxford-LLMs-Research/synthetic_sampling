@@ -348,10 +348,8 @@ Rules that keep the entries fillable:
   14.0% on Qwen), so form changes which predictions flip without moving
   accuracy. Since neither A1's injection effect nor B3's format effect
   cleared its +0.04 falsifier, the pre-registered A1xB3 crossed rider does
-  not run; caveats: Olmo carries 105 non-finite `label_num` scores (miss
-  2.2–3.2%, passes the gate) and the Olmo cell has an open provenance check
-  (see below) — its verdict is provisional until 8513125 is shown to have
-  scored fresh.
+  not run; caveat: Olmo carries 105 non-finite `label_num` scores (miss
+  2.2–3.2%, passes the gate).
 - **Ran:** 9 Aug 2026, resubmission on the port-isolated harness: jobs
   8513124 (Qwen3-32B, COMPLETED 43:19), 8513125 (Olmo, COMPLETED 56:20),
   8513126 (MoE, COMPLETED 22:13) per sacct; each result file's cluster
@@ -364,14 +362,16 @@ Rules that keep the entries fillable:
   cross-served the whole battery against the A1 job's serving exactly as
   feared. Its smoke/serve artifacts are absent from the results dir
   (cleared before resubmission) and its scores were superseded by 8513125.
-- **Open provenance check (Olmo cell only):** the runner is resume-safe
-  (skips example_ids already in OUT) and both rounds share the output
-  filename, so 8513125 must be shown to have re-scored from scratch rather
-  than resumed over 8511398's file. Decided by 8513125's `done: N
-  instances` log line and by comparing `smoke_8513125.jsonl` scores to the
-  main file — logs pending pull. If it resumed, the Olmo cell is
-  cross-served and must be re-run; the Qwen and MoE cells are unaffected
-  (their first-round jobs died in seconds with no output).
+- **Provenance check CLOSED (11 Aug):** because the runner is resume-safe
+  and both rounds share the output filename, 8513125 had to be shown to
+  have re-scored rather than resumed over 8511398's cross-served file. Two
+  artifacts confirm fresh scoring: its own vLLM's serve log shows 27,970
+  completed requests — full-battery volume, matching the known-clean Qwen
+  (27,793) and MoE (27,778) jobs, impossible under resume-skip — and
+  smoke-vs-main predicted labels agree 176/176 per model, identical to the
+  known-clean baselines (raw logprobs differ ~0.1 across runs from vLLM
+  batching; labels are the stable readout). Serve logs and smoke files in
+  `WORK/outputs_recovered/b3_logs/`.
 - **Hardware:** ARC HTC `short`, 1x H100 per model, ~8h wall budget;
   nodes htc-g053 (Qwen), htc-g058 (Olmo), htc-g053 (MoE) per sacct
 - **Blocker of the failed round (diagnosed, fixed):** nothing to do with B3. Every
