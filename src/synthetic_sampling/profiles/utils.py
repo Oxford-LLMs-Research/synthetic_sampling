@@ -20,7 +20,8 @@ def get_bundled_metadata_dir() -> Path:
 
 
 def load_survey_metadata(survey_id: str) -> dict:
-    """Load the bundled metadata JSON for a given survey."""
+    """Load the bundled metadata JSON for a survey, harmonised (Phase 0)."""
+    from ..surveys.harmonise import apply_harmonisation
     from ..surveys.registry import get_survey_config
 
     config = get_survey_config(survey_id)
@@ -32,7 +33,8 @@ def load_survey_metadata(survey_id: str) -> dict:
             f"Expected at: {metadata_path}"
         )
 
-    return load_metadata(str(metadata_path))
+    return apply_harmonisation(
+        load_metadata(str(metadata_path)), survey_id=survey_id)
 
 
 def load_metadata(filepath: str) -> dict:

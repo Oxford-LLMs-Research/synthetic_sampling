@@ -178,17 +178,18 @@ class SurveyLoader:
         return df
     
     def _load_metadata(self, config: SurveyConfig) -> dict:
-        """Load survey metadata JSON."""
+        """Load survey metadata JSON, harmonised (Phase 0 decisions)."""
         metadata_path = self.paths.metadata_dir / config.metadata_path
-        
+
         if not metadata_path.exists():
             raise FileNotFoundError(
                 f"Metadata file not found: {metadata_path}\n"
                 f"Expected at: {config.metadata_path} relative to {self.paths.metadata_dir}"
             )
-        
+
         with open(metadata_path, 'r', encoding='utf-8') as f:
-            return json.load(f)
+            raw = json.load(f)
+        return apply_harmonisation(raw, survey_id=config.survey_id)
     
     def _validate(
         self,

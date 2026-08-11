@@ -179,6 +179,69 @@ def test_hygiene_scan_and_filter():
     assert filter_missingness_codes(["Yes", "94.0"], ["94.0"]) == ["Yes"]
 
 
+def test_phase0_harmonisation_decisions():
+    """The 11 Aug Phase 0 decisions, one assertion per decision."""
+    from synthetic_sampling.surveys.harmonise import (
+        apply_harmonisation, code_enters_profile, dedupe_option_labels)
+
+    # D1: option sets present unique labels, order preserved.
+    assert dedupe_option_labels(
+        ["Never", "Never", "Rarely", "Sometimes", "Rarely"]) == [
+        "Never", "Rarely", "Sometimes"]
+
+    # D2: netustm wording states minutes on both waves.
+    for sid, fn in (("ess_wave_10", "pulled_metadata_ess10.json"),
+                    ("ess_wave_11", "pulled_metadata_ess11.json")):
+        meta = load_survey_metadata(sid)
+        var = next(b["netustm"] for b in meta.values()
+                   if isinstance(b, dict) and "netustm" in b)
+        assert "minutes" in var["question"]
+        assert "hours" not in var["question"]
+
+    # D3: hand labels present; unlabeled and no-answer codes never enter
+    # a profile; substantive sentinel does.
+    wvs = load_survey_metadata("wvs")
+    q234a = next(b["Q234A"] for b in wvs.values()
+                 if isinstance(b, dict) and "Q234A" in b)
+    assert q234a["values"]["-4"] == "Not asked"
+    assert not code_enters_profile("wvs", "Q234A", -4, q234a["values"])
+    ess11 = load_survey_metadata("ess_wave_11")
+    anc = next(b["anctrya2"] for b in ess11.values()
+               if isinstance(b, dict) and "anctrya2" in b)
+    assert anc["values"]["555555"] == "No second ancestry"
+    assert code_enters_profile("ess_wave_11", "anctrya2", 555555, anc["values"])
+    assert not code_enters_profile("wvs", "QX", "77", {"1": "Yes"})  # unlabeled
+    assert not code_enters_profile("arabbarometer", "Q1015", 99999, None)
+    assert code_enters_profile("arabbarometer", "Q1015", 1500, None)
+
+    # D4: the Q48 typo is rewritten (and the census's KNOWN_DEFECTS agree).
+    q48 = next(b["Q48"] for b in wvs.values()
+               if isinstance(b, dict) and "Q48" in b)
+    assert "None et all" not in q48["values"].values()
+    assert list(q48["values"].values()).count("None at all") >= 2
+
+    # D5: Afro case renames applied; Arab/Latino drops removed; Latino S17
+    # renamed to the file column.
+    afro = load_survey_metadata("afrobarometer")
+    afro_vars = {v for b in afro.values() if isinstance(b, dict) for v in b}
+    assert "Q45PT1" in afro_vars and "Q45pt1" not in afro_vars
+    arab = load_survey_metadata("arabbarometer")
+    arab_vars = {v for b in arab.values() if isinstance(b, dict) for v in b}
+    assert "QGAZA1" not in arab_vars and "Q1034" not in arab_vars
+    lat = load_survey_metadata("latinobarometer")
+    lat_vars = {v for b in lat.values() if isinstance(b, dict) for v in b}
+    assert "S17" in lat_vars and "S17.C" not in lat_vars
+    assert "REEDUC.1" not in lat_vars and "P38CSN.1" not in lat_vars
+
+    # D6: KNOWN_DEFECTS carries Q48, not the stale Q149.
+    from synthetic_sampling.surveys.harmonise import KNOWN_DEFECTS
+    assert any(d.var_code == "Q48" for d in KNOWN_DEFECTS)
+    assert not any(d.var_code == "Q149" for d in KNOWN_DEFECTS)
+
+    # Idempotence: harmonising the harmonised view changes nothing.
+    assert apply_harmonisation(wvs, survey_id="wvs") == wvs
+
+
 def test_leakage_exclusions():
     excl = target_exclusions(["Q1", "Q2"])
     assert excl == {"Q1", "Q2"}

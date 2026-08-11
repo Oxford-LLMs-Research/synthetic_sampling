@@ -32,7 +32,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = ROOT.parent / "data"
-META = ROOT / "src" / "synthetic_sampling" / "surveys" / "metadata" / "pulled_metadata"
+META = ROOT / "src" / "synthetic_sampling" / "surveys" / "metadata"
 OUTDIR = ROOT.parent / "analysis" / "hygiene"
 
 SURVEYS = {
