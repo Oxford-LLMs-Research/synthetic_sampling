@@ -316,7 +316,7 @@ Rules that keep the entries fillable:
 - **Code:** `CODE/scripts/cluster/submit_a1.sh` (submitted with
   `A1_MODELS="allenai/Olmo-3.1-32B-Instruct-DPO"`) @ commit NOT RECORDED
   (RUNSTAMP in the full logs, pending pull); analysis
-  `CODE/scripts/injection/analyze_a1.py` @ this commit
+  `CODE/scripts/injection/analyze_a1.py` @ d413701
 - **Inputs:** as A1-COUNTRY / A1-TEMPORAL (same instance files, new serving)
 - **Outputs:** `CODE/outputs/{country_injection,temporal_context}/results/`
   (`*olmo*.jsonl`); backup `WORK/outputs_recovered/a1_scores/`; job logs in
@@ -373,7 +373,7 @@ Rules that keep the entries fillable:
 - **Code:** `CODE/scripts/narrative/`, `CODE/scripts/cluster/submit_b3.sh` @
   1f72154 or later (the port-isolation commit; exact cluster HEAD in the
   RUNSTAMP, pending pull); analysis `CODE/scripts/narrative/analyze_b3.py`
-  @ this commit
+  @ d413701
 - **Inputs:** `CODE/outputs/narrative/inputs/narrative_label_set.jsonl` — 723 of
   734 pairs x 3 arms (qa / narrative1 / narrative2); 11 pairs excluded as data
   after blind fact-recovery validation. Backup:
