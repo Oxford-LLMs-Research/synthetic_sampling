@@ -114,3 +114,72 @@ def test_reasoning_prompt_shape():
         < prompt.index("Reasoning:")
     assert prompt.endswith("Reasoning:")
     assert "1. Yes\n2. No" in prompt
+
+
+def test_make_reasoned_set_assembles_2x2(tmp_path):
+    """End-to-end assembly: qa+reasoned for every pair, narrative cells only
+    where the pair's narrative validated (B3 exclusion inherited)."""
+    import json
+
+    mr = load("make_reasoned_set")
+
+    def jl(path, rows):
+        path.write_text(
+            "\n".join(json.dumps(r) for r in rows) + "\n", encoding="utf-8")
+        return path
+
+    src = {
+        "survey": "wvs", "target_code": "Q1", "id": "R1", "country": "1",
+        "target_question": "Trust?",
+        "option_sets": {"original": ["Yes", "No"]},
+        "ground_truth": "Yes", "ground_truth_index": 0,
+        "questions": {"Age?": "18-24"},
+    }
+    tasks = jl(tmp_path / "tasks.jsonl",
+               [{"example_id": "eA"}, {"example_id": "eB"}])
+    ladder = jl(tmp_path / "ladder.jsonl",
+                [{"example_id": "eA", **src}, {"example_id": "eB", **src}])
+    qa_tr = jl(tmp_path / "qa_tr.jsonl", [
+        {"example_id": "eA", "reasoning_raw": "Thinks.\nFinal answer: 1",
+         "finish_reason": "stop"},
+        {"example_id": "eB", "reasoning_raw": "Hmm.\nFinal answer: 2",
+         "finish_reason": "stop"},
+    ])
+    # Only eA has a validated narrative (eB = inherited B3 exclusion).
+    nset = jl(tmp_path / "narr_set.jsonl", [
+        {"example_id": "eA_narr1", "arm_label": "narrative1",
+         "base_id": "eA", "profile_text": "A young respondent.", **src},
+    ])
+    ntr = jl(tmp_path / "narr_tr.jsonl", [
+        {"example_id": "eA_narr1",
+         "reasoning_raw": "Prose thoughts.\nFinal answer: 1",
+         "finish_reason": "stop"},
+    ])
+    out = tmp_path / "c1_set.jsonl"
+    rc = mr.main([
+        "--transcripts", str(qa_tr), "--out", str(out),
+        "--tasks", str(tasks), "--ladder-set", str(ladder),
+        "--narrative-transcripts", str(ntr), "--narrative-set", str(nset),
+    ])
+    assert rc == 0
+
+    rows = [json.loads(l) for l in out.read_text(encoding="utf-8").splitlines()]
+    by_arm = {}
+    for r in rows:
+        by_arm.setdefault(r["arm_label"], []).append(r)
+    assert sorted(by_arm) == [
+        "narrative_direct", "narrative_reasoned", "qa", "reasoned"]
+    assert len(by_arm["qa"]) == len(by_arm["reasoned"]) == 2
+    assert len(by_arm["narrative_direct"]) == 1
+    assert len(by_arm["narrative_reasoned"]) == 1
+    # All four cells of eA share base_id (paired within one serving).
+    assert {r["base_id"] for r in rows if r["base_id"] == "eA"} == {"eA"}
+    assert sum(r["base_id"] == "eA" for r in rows) == 4
+    # The reasoned cells carry TRUNCATED transcripts; direct cells none.
+    nr = by_arm["narrative_reasoned"][0]
+    assert "Final answer" not in nr["reasoning"]
+    assert nr["profile_text"] == "A young respondent."
+    assert "reasoning" not in by_arm["narrative_direct"][0]
+    # Sidecar has a row per transcript with its cell.
+    sidecar = (tmp_path / "c1_set_parse.csv").read_text(encoding="utf-8")
+    assert "qa" in sidecar and "narrative" in sidecar

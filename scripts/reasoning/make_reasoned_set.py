@@ -67,13 +67,41 @@ def parse_stated_answer(text: str, options: list[str]) -> dict:
     return {"parse": "no_marker", "stated_index": None}
 
 
+def _parse_row(eid: str, cell: str, t: dict, options: list[str]) -> tuple[dict, str, bool]:
+    """Sidecar row + truncated reasoning for one transcript."""
+    raw = t["reasoning_raw"]
+    reasoning, has_marker = truncate_at_marker(raw)
+    parsed = parse_stated_answer(raw, options)
+    row = {
+        "example_id": eid, "cell": cell,
+        "parse": parsed["parse"],
+        "stated_index": ("" if parsed["stated_index"] is None
+                         else parsed["stated_index"]),
+        "has_marker": has_marker,
+        "finish_reason": t.get("finish_reason"),
+        "reasoning_words": len(reasoning.split()),
+    }
+    return row, reasoning, has_marker
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--transcripts", type=Path, required=True)
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--tasks", type=Path, default=TASKS)
     ap.add_argument("--ladder-set", type=Path, default=LADDER_SET)
+    ap.add_argument("--narrative-transcripts", type=Path, default=None,
+                    help="Transcripts generated over the narrative1 arm "
+                         "(generate_reasoning.py --input ... "
+                         "--input-arm-label narrative1). Enables the "
+                         "presentation x elicitation 2x2: adds "
+                         "narrative_direct and narrative_reasoned arms.")
+    ap.add_argument("--narrative-set", type=Path, default=None,
+                    help="narrative_label_set.jsonl (supplies the validated "
+                         "narrative1 instances; B3 exclusions inherited).")
     args = ap.parse_args(argv)
+    if bool(args.narrative_transcripts) != bool(args.narrative_set):
+        ap.error("--narrative-transcripts and --narrative-set go together")
 
     eids = set()
     with open(args.tasks, encoding="utf-8") as fh:
@@ -92,36 +120,44 @@ def main(argv: list[str] | None = None) -> int:
             r = json.loads(line)
             transcripts[r["example_id"]] = r
 
+    # 2x2 inputs: narrative1 instance per base_id, and its transcript
+    # (keyed by the narrative instance's example_id, `<base>_narr1`).
+    narr1: dict[str, dict] = {}
+    narr_transcripts: dict[str, dict] = {}
+    if args.narrative_set:
+        with open(args.narrative_set, encoding="utf-8") as fh:
+            for line in fh:
+                r = json.loads(line)
+                if r.get("arm_label") == "narrative1":
+                    narr1[r["base_id"]] = r
+        with open(args.narrative_transcripts, encoding="utf-8") as fh:
+            for line in fh:
+                r = json.loads(line)
+                narr_transcripts[r["example_id"]] = r
+
     sidecar_path = args.out.with_name(args.out.stem + "_parse.csv")
-    n_pairs = n_err = 0
+    n_pairs = n_quads = n_err = 0
     args.out.parent.mkdir(parents=True, exist_ok=True)
     with open(args.out, "w", encoding="utf-8", newline="\n") as fh, \
             open(sidecar_path, "w", encoding="utf-8", newline="") as sc:
         w = csv.DictWriter(sc, fieldnames=[
-            "example_id", "parse", "stated_index", "has_marker",
+            "example_id", "cell", "parse", "stated_index", "has_marker",
             "finish_reason", "reasoning_words"])
         w.writeheader()
         for eid in sorted(eids):
             t = transcripts.get(eid)
             if t is None or "error" in t:
                 n_err += 1
-                w.writerow({"example_id": eid, "parse": "generation_error",
+                w.writerow({"example_id": eid, "cell": "qa",
+                            "parse": "generation_error",
                             "stated_index": "", "has_marker": "",
                             "finish_reason": (t or {}).get("error", "missing"),
                             "reasoning_words": ""})
                 continue
             src = source[eid]
             options = src["option_sets"]["original"]
-            raw = t["reasoning_raw"]
-            reasoning, has_marker = truncate_at_marker(raw)
-            parsed = parse_stated_answer(raw, options)
-            w.writerow({"example_id": eid, **{
-                "parse": parsed["parse"],
-                "stated_index": ("" if parsed["stated_index"] is None
-                                 else parsed["stated_index"]),
-                "has_marker": has_marker,
-                "finish_reason": t.get("finish_reason"),
-                "reasoning_words": len(reasoning.split())}})
+            row, reasoning, _ = _parse_row(eid, "qa", t, options)
+            w.writerow(row)
             common = {
                 "base_id": eid,
                 "survey": src["survey"], "target_code": src["target_code"],
@@ -141,7 +177,39 @@ def main(argv: list[str] | None = None) -> int:
                 ensure_ascii=False) + "\n")
             n_pairs += 1
 
-    print(f"{n_pairs} pairs assembled (2 instances each), "
+            # The 2x2 cells, only for pairs whose narrative validated (the
+            # B3 exclusion is inherited, never patched).
+            ninst = narr1.get(eid)
+            if ninst is None:
+                continue
+            nt = narr_transcripts.get(ninst["example_id"])
+            if nt is None or "error" in nt:
+                n_err += 1
+                w.writerow({"example_id": ninst["example_id"],
+                            "cell": "narrative",
+                            "parse": "generation_error",
+                            "stated_index": "", "has_marker": "",
+                            "finish_reason": (nt or {}).get("error", "missing"),
+                            "reasoning_words": ""})
+                continue
+            nrow, nreasoning, _ = _parse_row(
+                ninst["example_id"], "narrative", nt, options)
+            w.writerow(nrow)
+            fh.write(json.dumps({
+                "example_id": f"{eid}_narrdirect",
+                "arm_label": "narrative_direct",
+                "profile_text": ninst["profile_text"], **common},
+                ensure_ascii=False) + "\n")
+            fh.write(json.dumps({
+                "example_id": f"{eid}_narrreasoned",
+                "arm_label": "narrative_reasoned",
+                "profile_text": ninst["profile_text"],
+                "reasoning": nreasoning, **common},
+                ensure_ascii=False) + "\n")
+            n_quads += 1
+
+    print(f"{n_pairs} pairs assembled (qa + reasoned), "
+          f"{n_quads} completed to 2x2 quads, "
           f"{n_err} generation errors -> {args.out}")
     print(f"parse sidecar -> {sidecar_path}")
     return 0

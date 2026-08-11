@@ -88,6 +88,10 @@ def main(argv: list[str] | None = None) -> int:
                          "of the default substrate (e.g. the validated "
                          "narrative arm for the presentation x elicitation "
                          "2x2); prose profile_text is honoured.")
+    ap.add_argument("--input-arm-label", default=None,
+                    help="With --input: keep only rows whose arm_label "
+                         "matches (e.g. narrative1, so the 2x2 reasons over "
+                         "draft 1 only, per the 8 Aug pre-registration).")
     ap.add_argument("--max-tokens", type=int, default=2048)
     ap.add_argument("--temperature", type=float, default=0.6)
     ap.add_argument("--top-p", type=float, default=0.95)
@@ -108,6 +112,9 @@ def main(argv: list[str] | None = None) -> int:
     if args.input is not None:
         with open(args.input, encoding="utf-8") as fh:
             pool = [json.loads(line) for line in fh]
+        if args.input_arm_label:
+            pool = [r for r in pool
+                    if r.get("arm_label") == args.input_arm_label]
         pool.sort(key=lambda r: r["example_id"])
     else:
         pool = load_substrate(args.tasks, args.ladder_set)
