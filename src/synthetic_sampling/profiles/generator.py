@@ -425,32 +425,59 @@ class RespondentProfileGenerator:
         
         return False
     
-    def _filter_valid_options(self, values_map: dict[str, str]) -> list[str]:
+    def _filter_valid_options(
+        self, values_map: dict[str, str], feature_code: str = ""
+    ) -> list[str]:
         """
         Filter answer options to exclude missing/artifact values.
-        
-        Returns list of valid option labels only.
+
+        Two layers: the label heuristic (legacy backstop), and the Phase 0
+        drop routing — labels of PROFILE_DROP_CODES ("Not asked",
+        "Refused to answer", "Not classifiable") are non-answers, never
+        options.
         """
+        from ..surveys.harmonise import dedupe_option_labels, profile_drop_labels
+
+        drop_labels = profile_drop_labels(
+            self.survey or "", feature_code, values_map)
         valid_options = []
         for raw_value, label in values_map.items():
+            if label in drop_labels:
+                continue
             if not self._is_missing_value_label(label):
                 valid_options.append(label)
-        return valid_options
-    
+        # Phase 0 decision 1: binned scales map several codes to one label;
+        # the presented option set carries each label once.
+        return dedupe_option_labels(valid_options)
+
     def _respondent_has_valid_value(
-        self, 
-        feature_code: str, 
+        self,
+        feature_code: str,
         respondent_data: pd.Series
     ) -> bool:
         """
         Check if respondent has a non-missing value for a feature.
-        
-        Returns False if the respondent's answer maps to a missing/artifact label.
+
+        Phase 0 rule first (a code with no label, a routed no-answer code,
+        or a continuous-variable sentinel never enters a profile), then the
+        legacy label heuristic as backstop.
         """
+        from ..surveys.harmonise import code_enters_profile
+
         raw_value = respondent_data.get(feature_code)
         if pd.isna(raw_value):
             return False
-        
+
+        section = self._feature_to_section.get(feature_code)
+        values_map = None
+        if section is not None:
+            q_info = self.metadata[section].get(feature_code, {})
+            vm = q_info.get('values')
+            values_map = vm if isinstance(vm, dict) and vm else None
+        if not code_enters_profile(
+                self.survey or "", feature_code, raw_value, values_map):
+            return False
+
         label = self._get_value_label(feature_code, raw_value)
         return not self._is_missing_value_label(label)
     
@@ -1133,7 +1160,8 @@ class RespondentProfileGenerator:
                         continue
                     
                     # Filter out missing/artifact values from options
-                    valid_options = self._filter_valid_options(values_map)
+                    valid_options = self._filter_valid_options(
+                        values_map, feature_code=code)
                     
                     self._target_questions[code] = TargetQuestion(
                         code=code,

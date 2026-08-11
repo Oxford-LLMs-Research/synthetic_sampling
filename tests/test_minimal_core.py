@@ -242,6 +242,47 @@ def test_phase0_harmonisation_decisions():
     assert apply_harmonisation(wvs, survey_id="wvs") == wvs
 
 
+def test_generator_enforces_phase0_profile_rules():
+    """The generator, not just the metadata, keeps non-answers out of
+    profiles and duplicate labels out of option sets."""
+    import pandas as pd
+    from synthetic_sampling.profiles.generator import (
+        RespondentProfileGenerator as ProfileGenerator)
+
+    metadata = {
+        "sec": {
+            "Q234A": {
+                "question": "Test q?",
+                "values": {"1": "Yes", "2": "No", "-4": "Not asked"},
+            },
+            "Q180": {
+                "question": "Justifiable?",
+                "values": {"1": "Never", "2": "Never", "3": "Sometimes",
+                           "4": "Always"},
+            },
+        }
+    }
+    df = pd.DataFrame(
+        {"Q234A": [1, -4, 77], "Q180": [1, 2, 3], "rid": [1, 2, 3]}
+    ).set_index("rid", drop=False)
+    gen = ProfileGenerator(df, metadata, respondent_id_col="rid",
+                           survey="wvs")
+
+    # Routed no-answer code (-4 "Not asked") never counts as a valid value...
+    assert gen._respondent_has_valid_value("Q234A", df.loc[1])
+    assert not gen._respondent_has_valid_value("Q234A", df.loc[2])
+    # ...and neither does an unlabeled code (77 is not in the values map).
+    assert not gen._respondent_has_valid_value("Q234A", df.loc[3])
+
+    # Option lists: the drop label is not an option, duplicates collapse.
+    opts = gen._filter_valid_options(
+        metadata["sec"]["Q234A"]["values"], feature_code="Q234A")
+    assert opts == ["Yes", "No"]
+    assert gen._filter_valid_options(
+        metadata["sec"]["Q180"]["values"], feature_code="Q180") == [
+        "Never", "Sometimes", "Always"]
+
+
 def test_leakage_exclusions():
     excl = target_exclusions(["Q1", "Q2"])
     assert excl == {"Q1", "Q2"}

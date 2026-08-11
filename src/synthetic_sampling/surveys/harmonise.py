@@ -117,10 +117,13 @@ LABEL_ADDITIONS: Dict[str, Dict[str, Dict[str, str]]] = {
 }
 
 # Decision 3: hand-labelled codes that mean "no substantive answer" — the
-# respondent's q:a line is dropped, same as an unlabeled code.
+# respondent's q:a line is dropped, same as an unlabeled code. (555555
+# "No second ancestry" is substantive and deliberately NOT here; 444444
+# "Not classifiable" is a non-answer and is.)
 PROFILE_DROP_CODES: Dict[str, Dict[str, frozenset]] = {
     "wvs": {v: frozenset({"-4"}) for v in _WVS_NOT_ASKED_VARS},
     "arabbarometer": {"Q1015": frozenset({"99999"})},
+    "ess_wave_11": {"anctrya2": frozenset({"444444"})},
 }
 
 # Decision 3: census-locked sentinel codes for CONTINUOUS variables (no
@@ -194,8 +197,26 @@ def code_enters_profile(
     if drops and c in drops:
         return False
     if values_map:
-        return c in values_map
+        if c in {_norm_code(k) for k in values_map}:
+            return True
+        # Pre-mapped microdata carries the label itself, not the code.
+        return c in {str(v) for v in values_map.values()} - profile_drop_labels(
+            survey_id, var_code, values_map)
     return c not in CONTINUOUS_SENTINELS
+
+
+def profile_drop_labels(
+    survey_id: str,
+    var_code: str,
+    values_map: Optional[Dict[str, str]],
+) -> frozenset:
+    """Labels of PROFILE_DROP_CODES for a variable — excluded from option
+    lists as well as from profile lines (a non-answer is not an option)."""
+    drops = PROFILE_DROP_CODES.get(survey_id, {}).get(var_code)
+    if not drops or not values_map:
+        return frozenset()
+    return frozenset(
+        str(v) for k, v in values_map.items() if _norm_code(k) in drops)
 
 
 def _norm_code(val: Any) -> str:
