@@ -360,8 +360,10 @@ Rules that keep the entries fillable:
   cancelled before scoring. sacct shows it COMPLETED in 49:46, co-scheduled
   on `htc-g058` with A1-OLMO's 8510995 whose vLLM held port 8000 — so it
   cross-served the whole battery against the A1 job's serving exactly as
-  feared. Its smoke/serve artifacts are absent from the results dir
-  (cleared before resubmission) and its scores were superseded by 8513125.
+  feared — its pulled log confirms it: instant attach on port 8000, smoke
+  PASS, 2,169 instances in 47.4 min at 0.56–0.59 inst/s (half speed,
+  sharing the A1 job's GPU). Its scores were superseded by 8513125, whose
+  log shows `done: 2169 instances in 20.2 min` — full fresh scoring.
 - **Provenance check CLOSED (11 Aug):** because the runner is resume-safe
   and both rounds share the output filename, 8513125 had to be shown to
   have re-scored rather than resumed over 8511398's cross-served file. Two
@@ -370,8 +372,8 @@ Rules that keep the entries fillable:
   (27,793) and MoE (27,778) jobs, impossible under resume-skip — and
   smoke-vs-main predicted labels agree 176/176 per model, identical to the
   known-clean baselines (raw logprobs differ ~0.1 across runs from vLLM
-  batching; labels are the stable readout). Serve logs and smoke files in
-  `WORK/outputs_recovered/b3_logs/`.
+  batching; labels are the stable readout). Job logs (both rounds), serve
+  logs and smoke files in `WORK/outputs_recovered/b3_logs/`.
 - **Hardware:** ARC HTC `short`, 1x H100 per model, ~8h wall budget;
   nodes htc-g053 (Qwen), htc-g058 (Olmo), htc-g053 (MoE) per sacct
 - **Blocker of the failed round (diagnosed, fixed):** nothing to do with B3. Every
@@ -394,9 +396,8 @@ Rules that keep the entries fillable:
 - **Gate credit:** caught in 11 s against an 8 h allocation, because the smoke
   spans the design rather than the head of the file.
 - **Code:** `CODE/scripts/narrative/`, `CODE/scripts/cluster/submit_b3.sh` @
-  1f72154 or later (the port-isolation commit; exact cluster HEAD in the
-  RUNSTAMP, pending pull); analysis `CODE/scripts/narrative/analyze_b3.py`
-  @ d413701
+  1f72154 exactly, per the RUNSTAMP lines of all three jobs; analysis
+  `CODE/scripts/narrative/analyze_b3.py` @ d413701
 - **Inputs:** `CODE/outputs/narrative/inputs/narrative_label_set.jsonl` — 723 of
   734 pairs x 3 arms (qa / narrative1 / narrative2); 11 pairs excluded as data
   after blind fact-recovery validation. Backup:
