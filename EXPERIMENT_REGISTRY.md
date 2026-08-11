@@ -292,16 +292,17 @@ Rules that keep the entries fillable:
   year-vs-placebo stays indistinguishable (+0.002, 2.6% flips). The Qwen
   finding that adding any context line costs ~1 point does NOT replicate —
   all five injected temporal cells sit 0.6–1.2 points *above* baseline with
-  CIs spanning zero — so that cost is model-specific, not a law. Caveats:
+  CIs spanning zero — so that cost is model-specific, not a law. Caveat:
   `label_num` miss rates 1.8–5.0% (the known Olmo label-tokenisation cost;
-  passes the 90% gate), and the run predates the port-isolation fix (see
-  B3-NARRATIVE), though a cross-serve would have 404'd since its only
-  same-model neighbour was cancelled — full job logs pending pull.
-- **Ran:** 9 Aug 2026, jobs 8510995 (country) and 8510996 (temporal);
-  results landed locally 21:34. Earlier rounds: 8492739/8492740,
-  8498371/8498372.
+  passes the 90% gate). Serving isolation confirmed 11 Aug from the serve
+  logs despite predating the port fix: each job's own vLLM held port 8000
+  for its whole window (country 15:16–17:39 on g058, temporal 15:32–19:14
+  on g053), so both scored against their own servers.
+- **Ran:** 9 Aug 2026, jobs 8510995 (country, COMPLETED 2:59:02) and
+  8510996 (temporal, COMPLETED 4:24:17) per sacct; scoring 140.7 min /
+  217.1 min per job logs. Earlier rounds: 8492739/8492740, 8498371/8498372.
 - **Hardware:** ARC HTC `short`, 1x H100, nodes `htc-g058` (country) /
-  `htc-g053` (temporal); runtimes NOT RECORDED (full logs pending pull)
+  `htc-g053` (temporal)
 - **Failure history:**
   - Round 1 — `ModuleNotFoundError: No module named 'pandas'` in `ss-score`
     at import. Fixed by bf5e760.
@@ -319,9 +320,12 @@ Rules that keep the entries fillable:
   `CODE/scripts/injection/analyze_a1.py` @ d413701
 - **Inputs:** as A1-COUNTRY / A1-TEMPORAL (same instance files, new serving)
 - **Outputs:** `CODE/outputs/{country_injection,temporal_context}/results/`
-  (`*olmo*.jsonl`); backup `WORK/outputs_recovered/a1_scores/`; job logs in
-  `WORK/outputs_recovered/a1_logs/` (round-4 logs are stale snapshots,
-  full copies pending pull)
+  (`*olmo*.jsonl`); backup `WORK/outputs_recovered/a1_scores/`; full job
+  logs, vLLM serve logs and smoke artifacts pulled 11 Aug into
+  `WORK/outputs_recovered/a1_logs/`. No RUNSTAMP lines: round 4 predates
+  the stamp (added with 1f72154), so the exact cluster HEAD stays NOT
+  RECORDED, bounded to (56cf61a, 1f72154) — the hardcoded port 8000 in the
+  logs proves pre-fix.
 - **Verified by:** `CODE/scripts/injection/verify_a1_numbers.py` against
   `WORK/analysis/injection/a1_{levels,deltas}_allenai_olmo-3.1-32b-instruct-dpo.csv`;
   coverage 8,550/8,550 and 12,583/12,583, replicate 100.0% on 2,098 pairs
@@ -344,14 +348,32 @@ Rules that keep the entries fillable:
   14.0% on Qwen), so form changes which predictions flip without moving
   accuracy. Since neither A1's injection effect nor B3's format effect
   cleared its +0.04 falsifier, the pre-registered A1xB3 crossed rider does
-  not run; caveat: Olmo carries 105 non-finite `label_num` scores (miss
-  2.2–3.2%, passes the gate).
-- **Ran:** 9 Aug 2026, resubmission round on the port-isolated harness;
-  job ids NOT RECORDED (logs pending pull); results landed locally 21:34.
-  Failed round: 8511397 (Qwen3-32B) FAILED 15:45:10, 8511398 (Olmo)
-  cancelled, 8511399 (MoE) cancelled — no scores existed from it.
+  not run; caveats: Olmo carries 105 non-finite `label_num` scores (miss
+  2.2–3.2%, passes the gate) and the Olmo cell has an open provenance check
+  (see below) — its verdict is provisional until 8513125 is shown to have
+  scored fresh.
+- **Ran:** 9 Aug 2026, resubmission on the port-isolated harness: jobs
+  8513124 (Qwen3-32B, COMPLETED 43:19), 8513125 (Olmo, COMPLETED 56:20),
+  8513126 (MoE, COMPLETED 22:13) per sacct; each result file's cluster
+  mtime matches its job's completion (17:57:35 / 18:36:11 / 18:20:56).
+  First round: 8511397 (Qwen3-32B) FAILED at 11 s, 8511399 (MoE) FAILED at
+  7 s, both harmless; 8511398 (Olmo) — see the correction below.
+- **Correction (11 Aug, from sacct):** the 9 Aug record said 8511398 was
+  cancelled before scoring. sacct shows it COMPLETED in 49:46, co-scheduled
+  on `htc-g058` with A1-OLMO's 8510995 whose vLLM held port 8000 — so it
+  cross-served the whole battery against the A1 job's serving exactly as
+  feared. Its smoke/serve artifacts are absent from the results dir
+  (cleared before resubmission) and its scores were superseded by 8513125.
+- **Open provenance check (Olmo cell only):** the runner is resume-safe
+  (skips example_ids already in OUT) and both rounds share the output
+  filename, so 8513125 must be shown to have re-scored from scratch rather
+  than resumed over 8511398's file. Decided by 8513125's `done: N
+  instances` log line and by comparing `smoke_8513125.jsonl` scores to the
+  main file — logs pending pull. If it resumed, the Olmo cell is
+  cross-served and must be re-run; the Qwen and MoE cells are unaffected
+  (their first-round jobs died in seconds with no output).
 - **Hardware:** ARC HTC `short`, 1x H100 per model, ~8h wall budget;
-  nodes NOT RECORDED (RUNSTAMP pending pull)
+  nodes htc-g053 (Qwen), htc-g058 (Olmo), htc-g053 (MoE) per sacct
 - **Blocker of the failed round (diagnosed, fixed):** nothing to do with B3. Every
   request returned `HTTP 404: The model 'Qwen/Qwen3-32B' does not exist` — the
   job attached to a **different job's vLLM**. `run_score.sbatch` hardcoded
@@ -362,9 +384,10 @@ Rules that keep the entries fillable:
   an empty score set, not a cause.
 - **Why it mattered beyond this job:** 8511398 was co-scheduled on `htc-g058`
   with A1-OLMO's 8510995, **both Olmo-3.1-32B-Instruct-DPO**. A matching model
-  name produces no 404, so it would have passed its gate and scored the whole
-  battery against the A1 job's serving — a silent violation of the one-serving
-  rule that no downstream check could detect. Cancelled before that happened.
+  name produces no 404, so it passed its gate and scored the whole battery
+  against the A1 job's serving — a silent violation of the one-serving rule
+  that no downstream check could detect. (The 9 Aug record claimed it was
+  cancelled first; sacct shows COMPLETED 49:46 — see the correction above.)
 - **Harness fix (9 Aug 2026):** `PORT` now derives from `SLURM_JOB_ID`; the job
   aborts if anything already answers on that port; and readiness requires the
   served model to match `$MODEL`, not merely a 200.
