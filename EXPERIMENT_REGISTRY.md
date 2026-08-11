@@ -61,6 +61,7 @@ Rules that keep the entries fillable:
 | [A1-OLMO](#a1-olmo--a1-roster-completion-on-olmo-3132b) | LANDED | 9 Aug 2026 | Olmo-3.1-32B | Placebo penalty replicates; Qwen's context-line cost does not |
 | [A6-MOE](#a6-moe--moe-readout-battery-and-speed-benchmark) | LANDED | 8 Aug 2026 | Qwen3-30B-A3B | `label_num` certifies on an MoE; ~4.0x faster than dense 32B |
 | [B3-NARRATIVE](#b3-narrative--validated-narrative-presentation-battery) | LANDED | 9 Aug 2026 | 3-model roster | Presentation null holds; form flips predictions, not accuracy |
+| [C1-REASONED](#c1-reasoned--reason-then-answer-and-the-presentation-x-elicitation-2x2) | PLANNED | — | 3-model roster | Reason-then-answer 2x2; harness complete, awaiting submit |
 | [EXPA-PARAPHRASE](#expa-paraphrase--format-stability-under-validated-paraphrase) | LANDED | 6 Aug 2026 | Qwen3-32B, Olmo-3.1-32B | Instability was mostly the scoring rule, not the model |
 | [LADDER-READOUT](#ladder-readout--feature-ladder-x-elicitation) | LANDED | 6–7 Aug 2026 | Qwen3-4B/32B, Olmo-3.1-32B | Accuracy saturates on the first informative feature |
 | [READOUT-GRID](#readout-grid--six-arm-readout-grid-on-olmo) | LANDED | 6 Aug 2026 | Olmo-3.1-32B | Six-arm elicitation sweep; `label_num_natural` fails on Olmo |
@@ -418,9 +419,44 @@ Rules that keep the entries fillable:
 
 ---
 
+## Planned
+
+### C1-REASONED — reason-then-answer and the presentation x elicitation 2x2
+
+- **Status:** PLANNED (harness complete, awaiting submission)
+- **Rationale:** Test whether reason-then-answer moves the accuracy ceiling
+  that every direct elicitation saturates at, by reading the label
+  distribution at the post-reasoning, pre-commitment position — the
+  AUC-to-accuracy conversion failure is the motivating opening. The 2x2
+  over B3's validated narratives (qa/narrative x direct/reasoned, paired
+  within serving) tests whether elicitation and presentation interact.
+- **Result:** PENDING. Pre-registered (8 Aug + same-day amendments):
+  reasoned-minus-qa within +-0.02 (falsifier +0.04), parse failure <5% on
+  instruction-tuned models, any interaction beyond +-0.02 is the
+  non-additivity signature; ECE shifts reported either way.
+- **Ran:** not yet submitted
+- **Hardware:** ARC HTC `short`, 1x H100 per model, 8h wall budget
+- **Code:** `CODE/scripts/reasoning/`,
+  `CODE/scripts/cluster/{run_c1.sbatch,submit_c1.sh}` @ cacb90a — one
+  serving per model runs stage 1 (sampled transcripts: t=0.6, top-p 0.95,
+  top-k 20, seed 42, max_tokens 2048), stage 2 assembly, smoke, scoring
+- **Inputs:** assembled on-cluster per model:
+  `CODE/outputs/reasoning/inputs/c1_label_set_<tag>.jsonl` (734 pairs x
+  {qa, reasoned} + 723 x {narrative_direct, narrative_reasoned} = 2,914
+  instances); substrate = B3's `narrative_tasks.jsonl` + the ladder set,
+  exclusions inherited
+- **Outputs:** `CODE/outputs/reasoning/results/` (does not exist yet);
+  stage-1 transcripts are sampled generation — NON-REGENERABLE, pull and
+  back up with the results
+- **Roster:** Qwen3-32B, Olmo-3.1-32B, Qwen3-30B-A3B (as B3)
+- **Constraint:** never split the stages or the four arms across jobs —
+  every cell scores against the serving that generated its transcripts.
+
+---
+
 ## Not yet registered
 
-Catalogue entries A2–A5, B1, B2, C1 and T0.2–T0.5 are decided but unrun; they
+Catalogue entries A2–A5, B1, B2 and T0.2–T0.5 are decided but unrun; they
 enter this file when submitted. Historical pre-rebuild runs (`control_*`,
 `scaling_*`, `readout_mini`) exist in `WORK/outputs_recovered/` without STATUS
 files and are unregistered — their rationale and results need recovering from
