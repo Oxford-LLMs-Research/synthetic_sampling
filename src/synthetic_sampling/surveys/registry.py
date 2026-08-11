@@ -49,9 +49,19 @@ class SurveyConfig:
     id_columns_to_combine: Optional[tuple] = None
     id_separator: str = "_"
     country_specific: Optional[CountrySpecificConfig] = None
-    # Phase 0 fills these; stubs so temporal work does not invent ad-hoc joins.
+    # Interview timing, filled by the Phase 0 census (11 Aug 2026). Values
+    # verified against the microdata itself (see PAPER_STATE 11 Aug); the
+    # source documentation is stored in WORK/data/questioneers/.
     interview_date_col: Optional[str] = None
     interview_date_format: Optional[str] = None
+    # Fallbacks for sources without a single full-date column: a per-respondent
+    # year column, and/or the component columns that exist (in the order named).
+    interview_year_col: Optional[str] = None
+    interview_date_parts: Optional[Tuple[str, ...]] = None
+    # Wave identity and observed fieldwork period (min-max of interview dates
+    # in the file we hold), so instances can carry survey-time context.
+    wave_label: Optional[str] = None
+    field_period: Optional[str] = None
 
     def get_file_patterns(self) -> List[str]:
         return list(self.file_patterns)
@@ -69,6 +79,13 @@ SURVEY_REGISTRY: Dict[str, SurveyConfig] = {
         country_col="B_COUNTRY",
         metadata_path="pulled_metadata_wvs.json",
         file_patterns=("*.csv", "*.dta", "*.sav"),
+        # J_INTDATE is an integer YYYYMMDD; -4/-5 are missing codes (5,484
+        # rows carry them and have no interview date).
+        interview_date_col="J_INTDATE",
+        interview_date_format="%Y%m%d",
+        interview_year_col="A_YEAR",
+        wave_label="World Values Survey wave 7",
+        field_period="2017-2023",
     ),
     "afrobarometer": SurveyConfig(
         name="Afrobarometer",
@@ -78,6 +95,10 @@ SURVEY_REGISTRY: Dict[str, SurveyConfig] = {
         country_col="COUNTRY",
         metadata_path="pulled_metadata_afrobarometer.json",
         file_patterns=("*.csv", "*.dta", "*.sav"),
+        interview_date_col="DATEINTR",
+        interview_date_format="%Y-%m-%d",
+        wave_label="Afrobarometer Round 9",
+        field_period="2021-2023",
     ),
     "arabbarometer": SurveyConfig(
         name="Arab Barometer",
@@ -87,6 +108,11 @@ SURVEY_REGISTRY: Dict[str, SurveyConfig] = {
         country_col="COUNTRY",
         metadata_path="pulled_metadata_arabbarometer.json",
         file_patterns=("*.csv", "*.dta", "*.sav"),
+        # DATE is the interview date; Q1001YEAR is a birth year, not timing.
+        interview_date_col="DATE",
+        interview_date_format="%Y-%m-%d",
+        wave_label="Arab Barometer Wave VIII",
+        field_period="2023-2024",
     ),
     "asianbarometer": SurveyConfig(
         name="Asian Barometer",
@@ -98,6 +124,12 @@ SURVEY_REGISTRY: Dict[str, SurveyConfig] = {
         id_separator="_",
         metadata_path="pulled_metadata_asianbarometer.json",
         file_patterns=("asian_barometer.csv", "*.csv", "*.dta", "*.sav"),
+        # No full-date column; 'year' is an integer, 'month' a month NAME
+        # string ('February'). No day-of-month exists in the combined file.
+        interview_year_col="year",
+        interview_date_parts=("year", "month"),
+        wave_label="Asian Barometer wave 6",
+        field_period="2021-2023",
     ),
     "latinobarometer": SurveyConfig(
         name="Latinobarómetro",
@@ -109,6 +141,11 @@ SURVEY_REGISTRY: Dict[str, SurveyConfig] = {
         file_patterns=("*.sav", "*.dta", "*.csv"),
         id_columns_to_combine=("IDENPA", "NUMENTRE"),
         id_separator="_",
+        # No year column: NUMINVES is constant 23 (the 2023 study). DIAREAL /
+        # MESREAL are numeric day and month; observed months are 2-4.
+        interview_date_parts=("DIAREAL", "MESREAL"),
+        wave_label="Latinobarometro 2023",
+        field_period="Feb-Apr 2023",
     ),
     "ess_wave_10": SurveyConfig(
         name="European Social Survey Wave 10",
@@ -123,6 +160,8 @@ SURVEY_REGISTRY: Dict[str, SurveyConfig] = {
         country_specific=ESS_COUNTRY_SPECIFIC_CONFIG,
         interview_date_col="inwds",
         interview_date_format="%Y-%m-%d %H:%M:%S",
+        wave_label="European Social Survey round 10",
+        field_period="2020-2022",
     ),
     "ess_wave_11": SurveyConfig(
         name="European Social Survey Wave 11",
@@ -137,6 +176,8 @@ SURVEY_REGISTRY: Dict[str, SurveyConfig] = {
         country_specific=ESS_COUNTRY_SPECIFIC_CONFIG,
         interview_date_col="inwds",
         interview_date_format="%Y-%m-%d %H:%M:%S",
+        wave_label="European Social Survey round 11",
+        field_period="2023-2024",
     ),
 }
 

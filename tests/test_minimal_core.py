@@ -151,6 +151,16 @@ def test_registry_and_bundled_metadata():
     assert "ess_wave_10" in ids
     assert SURVEY_REGISTRY["ess_wave_10"].has_country_specific_vars()
     assert SURVEY_REGISTRY["ess_wave_10"].interview_date_col == "inwds"
+    # Phase 0 (11 Aug 2026): every survey carries wave identity and at least
+    # one interview-timing source, verified against the microdata by
+    # scripts/phase0/verify_interview_dates.py.
+    for sid, cfg in SURVEY_REGISTRY.items():
+        assert cfg.wave_label and cfg.field_period, sid
+        assert (cfg.interview_date_col or cfg.interview_year_col
+                or cfg.interview_date_parts), sid
+    assert SURVEY_REGISTRY["wvs"].interview_date_col == "J_INTDATE"
+    assert SURVEY_REGISTRY["latinobarometer"].interview_date_parts == (
+        "DIAREAL", "MESREAL")
     meta_dir = get_bundled_metadata_dir()
     assert (meta_dir / "pulled_metadata_wvs.json").exists()
     meta = load_survey_metadata("wvs")
