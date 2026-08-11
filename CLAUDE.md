@@ -48,6 +48,29 @@ Thin CLIs: `ss-generate`, `ss-score`, `ss-analyze`.
 - Cluster operations: paper workspace `docs/CLUSTER_HANDOFF.md`. Cluster
   storage is not backed up.
 
+## Experiment registry
+
+`EXPERIMENT_REGISTRY.md` (repo root, tracked) is the run record: every
+experiment, past and future, gets an entry. Add it when the run is SUBMITTED
+(status PLANNED / RUNNING) and complete it when the run lands; an experiment
+that ran without an entry did not happen as far as this project is concerned.
+Rationale and Result are capped at three sentences each — anything longer
+belongs in the paper workspace's `PAPER_STATE.md`, which the entry links to.
+Never invent a field: `NOT RECORDED` is a valid value, a plausible-looking
+commit id is not. `run_score.sbatch` prints `RUNSTAMP` lines (commit, job,
+node, model, arms) at job start; read an entry's provenance off those, not off
+job dates.
+
+Held in two places on purpose (decided 9 Aug 2026): git gives it a revision
+history, and `../outputs_recovered/experiment_registry/` keeps a copy that
+survives losing the checkout — it is not regenerable, no script produces its
+prose, and for runs before 9 Aug it is the only surviving statement of what
+produced those scores. **The repo copy is canonical; the mirror is never
+hand-edited.** Run `python scripts/sync_registry.py` after every registry edit,
+in the same commit, and `--check` to test for drift. Paths inside the file use
+`CODE/` `WORK/` `PAPER/` prefixes, not repo-relative links, so the two copies
+stay byte-identical.
+
 ## Verification
 
 - Every reported number is verified against its source CSV by script
