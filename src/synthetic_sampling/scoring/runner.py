@@ -82,10 +82,14 @@ def run_scoring(
     shard_index: Optional[int] = None,
     shard_count: Optional[int] = None,
     api_key: Optional[str] = None,
+    chat_template_kwargs: Optional[dict] = None,
 ) -> int:
     """Score instances to JSONL. Returns number of instances written this call."""
     key = api_key or os.environ.get("OPENAI_API_KEY", "EMPTY")
-    url = f"{base_url.rstrip('/')}/completions"
+    urls = {
+        "completions": f"{base_url.rstrip('/')}/completions",
+        "chat": f"{base_url.rstrip('/')}/chat/completions",
+    }
     headers = {
         "Authorization": f"Bearer {key}",
         "Content-Type": "application/json",
@@ -116,8 +120,9 @@ def run_scoring(
             for arm in arms:
                 try:
                     rec = score_arm(
-                        session, url, headers, model, inst, options, arm,
-                        set_name=set_name)
+                        session, urls, headers, model, inst, options, arm,
+                        set_name=set_name,
+                        chat_template_kwargs=chat_template_kwargs)
                 except Exception as exc:  # noqa: BLE001
                     rec = {"error": f"{type(exc).__name__}: {exc}"}
                 out["results"][f"{set_name}|{arm}"] = rec

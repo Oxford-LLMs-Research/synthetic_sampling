@@ -410,3 +410,63 @@ def test_reasoning_inserted_between_question_and_options():
     p2 = build_prompt(inst, ["Yes", "No"], "echo_plain")
     assert p2.index("Question:") < p2.index("Reasoning:") < p2.index("Instructions:")
     assert "neighbours" not in build_prompt(inst, ["Yes", "No"], "echo_qonly")
+
+
+def test_chat_messages_are_the_label_prompt_minus_answer_scaffold():
+    from synthetic_sampling.scoring.prompts import build_chat_messages
+
+    opts = ["Yes", "No", "Don't know"]
+    msgs = build_chat_messages(INST, opts, "chat_label_num")
+    assert [m["role"] for m in msgs] == ["user"]
+    raw = build_prompt(INST, opts, "label_num")
+    assert raw == msgs[0]["content"] + "\n\nAnswer: "
+    # optional fields ride along identically (content parity by construction)
+    inst = {**INST, "profile_text": "A cautious retiree.",
+            "reasoning": "They said neighbours lie."}
+    content = build_chat_messages(inst, opts, "chat_label_num")[0]["content"]
+    assert "A cautious retiree." in content
+    assert "Reasoning: They said neighbours lie." in content
+    assert not content.endswith("Answer: ")
+
+
+def test_chat_label_arm_scores_first_token_and_forwards_kwargs():
+    from synthetic_sampling.scoring.arms import score_arm
+
+    calls = []
+
+    class _Resp:
+        status_code = 200
+
+        def __init__(self, top):
+            self._top = top
+
+        def json(self):
+            return {"choices": [{"logprobs": {"content": [{
+                "token": "1",
+                "top_logprobs": [
+                    {"token": k, "logprob": v} for k, v in self._top.items()
+                ],
+            }]}}]}
+
+    class _Session:
+        def post(self, url, headers=None, json=None, timeout=None):
+            calls.append((url, json))
+            # rotation 0 favours slot 1 strongly, rotation 1 weakly, so the
+            # option shown first in rotation 0 wins the average.
+            top = ({"1": -0.1, "2": -3.0} if len(calls) == 1
+                   else {"1": -0.5, "2": -3.0})
+            return _Resp(top)
+
+    urls = {"completions": "http://x/v1/completions",
+            "chat": "http://x/v1/chat/completions"}
+    rec = score_arm(_Session(), urls, {}, "m", INST, ["Yes", "No"],
+                    "chat_label_num",
+                    chat_template_kwargs={"enable_thinking": False})
+    assert rec["predicted"] == "Yes"
+    assert rec["predicted_index"] == 0
+    assert all(u.endswith("/chat/completions") for u, _ in calls)
+    for _, payload in calls:
+        assert payload["chat_template_kwargs"] == {"enable_thinking": False}
+        assert payload["temperature"] == 0
+        assert payload["logprobs"] is True and payload["top_logprobs"] == 20
+        assert payload["messages"][0]["role"] == "user"

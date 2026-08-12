@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 
 from synthetic_sampling.scoring import DEFAULT_ARMS, parse_arms, run_scoring
@@ -26,6 +27,10 @@ def main(argv: list[str] | None = None) -> int:
                     help="Fraction also scored as original_replicate")
     ap.add_argument("--shard-index", type=int, default=None)
     ap.add_argument("--shard-count", type=int, default=None)
+    ap.add_argument("--chat-template-kwargs", default=None,
+                    help="JSON dict forwarded to the chat template for "
+                         "chat_* arms (e.g. '{\"enable_thinking\": false}' "
+                         "on Qwen3-32B).")
     args = ap.parse_args(argv)
 
     n = run_scoring(
@@ -39,6 +44,8 @@ def main(argv: list[str] | None = None) -> int:
         replicate_frac=args.replicate_frac,
         shard_index=args.shard_index,
         shard_count=args.shard_count,
+        chat_template_kwargs=(json.loads(args.chat_template_kwargs)
+                              if args.chat_template_kwargs else None),
     )
     return 0 if n >= 0 else 1
 

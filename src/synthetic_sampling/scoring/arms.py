@@ -5,12 +5,16 @@ from __future__ import annotations
 import threading
 
 from .client import post_with_retries
-from .prompts import build_prompt
+from .prompts import build_chat_messages, build_prompt
 
 # Default package arms. Dead arms (generate*, label_alpha, echo_listed*) stay
 # off this list until a claim needs them; they remain on make-package.
 DEFAULT_ARMS = ("label_num", "echo_plain", "echo_qonly", "echo_ctxfree")
-KEPT_ARMS = DEFAULT_ARMS + ("label_num_natural",)
+# chat_label_num (RUN_CATALOGUE A4): the same label readout through the
+# model's own chat template via /chat/completions, so template-vs-raw is a
+# paired within-serving contrast. NOTE its name ends with "label_num" on
+# purpose — the smoke gate's critical-arm check pools both label readouts.
+KEPT_ARMS = DEFAULT_ARMS + ("label_num_natural", "chat_label_num")
 REPLICATE = "original"
 
 _NEUTRAL_CACHE: dict[tuple, dict] = {}
@@ -93,19 +97,79 @@ def score_labels(session, url, headers, model, inst, options, arm) -> dict:
     }
 
 
-def score_arm(session, url, headers, model, inst, options, arm,
-              set_name: str = "original") -> dict:
-    """Dispatch one arm; return scores + predicted option."""
+def _label_logprobs_chat(session, url, headers, model, messages, labels,
+                         depth: int = 3,
+                         chat_template_kwargs: dict | None = None) -> dict:
+    """Chat twin of ``_label_logprobs``: first generated position (within
+    ``depth``) whose top-20 contains a label token."""
+    payload = {
+        "model": model, "messages": messages, "max_tokens": depth,
+        "temperature": 0, "logprobs": True, "top_logprobs": 20,
+    }
+    if chat_template_kwargs:
+        payload["chat_template_kwargs"] = chat_template_kwargs
+    r = post_with_retries(session, url, headers, payload)
+    content = (r.json()["choices"][0].get("logprobs") or {}).get("content") or []
+    want = {l.upper() for l in labels}
+    for pos in content:
+        norm: dict[str, float] = {}
+        for entry in (pos.get("top_logprobs") or []):
+            key = entry["token"].strip().strip(".):").upper()
+            v = entry["logprob"]
+            if key and (key not in norm or v > norm[key]):
+                norm[key] = v
+        if want & set(norm):
+            return norm
+    return {}
+
+
+def score_labels_chat(session, url, headers, model, inst, options,
+                      chat_template_kwargs: dict | None = None) -> dict:
+    """Latin-square digit readout through the model's own chat template."""
+    m = len(options)
+    labels = [str(i + 1) for i in range(m)]
+    totals = {o: [] for o in options}
+    for shift in range(m):
+        shown = [options[(i + shift) % m] for i in range(m)]
+        messages = build_chat_messages(inst, shown, "chat_label_num")
+        top = _label_logprobs_chat(
+            session, url, headers, model, messages, labels,
+            chat_template_kwargs=chat_template_kwargs)
+        for slot, o in enumerate(shown):
+            v = top.get(labels[slot].upper())
+            if v is not None:
+                totals[o].append(v)
+    return {
+        o: (sum(v) / len(v) if v else float("-inf"))
+        for o, v in totals.items()
+    }
+
+
+def score_arm(session, urls, headers, model, inst, options, arm,
+              set_name: str = "original",
+              chat_template_kwargs: dict | None = None) -> dict:
+    """Dispatch one arm; return scores + predicted option.
+
+    ``urls`` maps endpoint kind to URL: ``{"completions": ..., "chat": ...}``
+    (a bare string is accepted for backward compatibility with raw arms).
+    """
+    if isinstance(urls, str):
+        urls = {"completions": urls}
     if arm == "echo_plain":
         sc = score_echo(
-            session, url, headers, model,
+            session, urls["completions"], headers, model,
             build_prompt(inst, options, arm), options)
     elif arm in ("echo_qonly", "echo_ctxfree"):
         sc = _cached_echo(
-            session, url, headers, model,
+            session, urls["completions"], headers, model,
             build_prompt(inst, options, arm), options, set_name)
     elif arm in ("label_num", "label_num_natural"):
-        sc = score_labels(session, url, headers, model, inst, options, arm)
+        sc = score_labels(
+            session, urls["completions"], headers, model, inst, options, arm)
+    elif arm == "chat_label_num":
+        sc = score_labels_chat(
+            session, urls["chat"], headers, model, inst, options,
+            chat_template_kwargs=chat_template_kwargs)
     else:
         raise ValueError(f"unsupported arm: {arm}")
     best = max(sc, key=sc.get)

@@ -65,3 +65,21 @@ def build_prompt(inst: dict, options: list[str], arm: str) -> str:
     tail = (f"{head.rstrip()}\n\nOptions:\n{block}\n\nInstructions: {instr} "
             "No reasoning. No explanation. No extra text.\n\nAnswer:")
     return tail + " " if arm.startswith("label_") else tail
+
+
+def build_chat_messages(inst: dict, options: list[str], arm: str) -> list[dict]:
+    """Chat-template twin of ``build_prompt`` (RUN_CATALOGUE A4/C2).
+
+    Content parity by construction: the user message IS the raw label
+    prompt minus its trailing ``Answer:`` scaffold — the chat template
+    supplies the assistant-turn boundary that ``Answer:`` supplied in
+    completion mode. Anything ``build_prompt`` renders (profile_text,
+    extra, reasoning) is therefore carried identically.
+    """
+    if arm not in ("chat_label_num",):
+        raise ValueError(f"unsupported chat arm: {arm}")
+    raw = build_prompt(inst, options, "label_num")
+    content, sep, _ = raw.rpartition("\n\nAnswer:")
+    if not sep:
+        raise ValueError("label prompt lost its Answer: scaffold")
+    return [{"role": "user", "content": content}]
