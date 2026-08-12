@@ -39,7 +39,16 @@ PORT="${PORT:-$(( 20000 + (${SLURM_JOB_ID:-$$} % 10000) ))}"
 BASE_URL="http://127.0.0.1:${PORT}/v1"
 
 REPO="${SLURM_SUBMIT_DIR:-$PWD}"
-LADDER_SET="${LADDER_SET:-$REPO/../outputs_recovered/ladder_readout_set.jsonl}"
+# Ladder-set resolution: explicit env wins; else the ARC staging location
+# ($DATA/data/), else the local-workstation layout. The unset-var default
+# has killed two submissions at the fail-fast check; never rely on it on ARC.
+if [ -z "${LADDER_SET:-}" ]; then
+  if [ -n "${DATA:-}" ] && [ -f "$DATA/data/ladder_readout_set.jsonl" ]; then
+    LADDER_SET="$DATA/data/ladder_readout_set.jsonl"
+  else
+    LADDER_SET="$REPO/../outputs_recovered/ladder_readout_set.jsonl"
+  fi
+fi
 TASKS="$REPO/outputs/narrative/inputs/narrative_tasks.jsonl"
 GEN="$REPO/outputs/thinking/generated/thinking_${TAG}.jsonl"
 INPUT="$REPO/outputs/thinking/inputs/c2_label_set_${TAG}.jsonl"
