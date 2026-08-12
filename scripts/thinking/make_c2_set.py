@@ -15,8 +15,10 @@ Sidecar CSV records, per transcript: has_block / closed (a generation cut
 inside its think block is a datum), think_words, the stated-answer parse
 (C1 protocol + bare_digit for markerless chat answers), finish_reason, and
 loop_markers (how many times the think content restates a final answer —
-the C1 pathology, predicted <5% here). Failures are DATA, never repaired;
-an errored generation drops the pair from the set and is counted.
+the C1 pathology, predicted <5% here). Failures are DATA, never repaired; an errored generation drops the pair
+from the set and is counted. Only example_ids present in the transcripts
+file are assembled (so a canary ``--limit`` run is not drowned in fake
+missing-transcript errors).
 
 Usage:
   python scripts/thinking/make_c2_set.py \
@@ -39,7 +41,13 @@ OUTER = REPO.parent
 TASKS = REPO / "outputs" / "narrative" / "inputs" / "narrative_tasks.jsonl"
 LADDER_SET = OUTER / "outputs_recovered" / "ladder_readout_set.jsonl"
 
-LOOP_MARKER = re.compile(r"(?i)final answer\s*[:\-]?\s*(?:option\s*)?\d+")
+# Restatement census in the think content (the C1 pathology, predicted <5%
+# here). The generation instruction never asks for a "Final answer" marker,
+# so a thinking-mode loop more likely restates "the answer is 4" — the
+# pattern covers both phrasings and is a LOWER BOUND either way (a loop
+# that restates without the word "answer" is not counted).
+LOOP_MARKER = re.compile(
+    r"(?i)(?:final answer|the answer is|answer)\s*[:\-]?\s*(?:option\s*)?\d+")
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -67,6 +75,9 @@ def main(argv: list[str] | None = None) -> int:
             r = json.loads(line)
             transcripts[r["example_id"]] = r
 
+    # Assemble only eids present in the transcripts file (canary --limit
+    # must not treat unrequested pairs as generation_error, or the gates
+    # always abort).
     sidecar_path = args.out.with_name(args.out.stem + "_parse.csv")
     n_pairs = n_err = 0
     args.out.parent.mkdir(parents=True, exist_ok=True)
@@ -76,19 +87,30 @@ def main(argv: list[str] | None = None) -> int:
             "example_id", "parse", "stated_index", "has_block", "closed",
             "think_words", "loop_markers", "finish_reason"])
         w.writeheader()
-        for eid in sorted(eids):
-            t = transcripts.get(eid)
-            if t is None or "error" in t:
+        for eid in sorted(transcripts):
+            if eid not in source:
+                continue
+            t = transcripts[eid]
+            if "error" in t:
                 n_err += 1
                 w.writerow({"example_id": eid, "parse": "generation_error",
                             "stated_index": "", "has_block": "",
                             "closed": "", "think_words": "",
                             "loop_markers": "",
-                            "finish_reason": (t or {}).get("error", "missing")})
+                            "finish_reason": t.get("error", "error")})
+                continue
+            raw = t.get("thinking_raw")
+            if raw is None:
+                n_err += 1
+                w.writerow({"example_id": eid, "parse": "generation_error",
+                            "stated_index": "", "has_block": "",
+                            "closed": "", "think_words": "",
+                            "loop_markers": "",
+                            "finish_reason": "null_content"})
                 continue
             src = source[eid]
             options = src["option_sets"]["original"]
-            split = split_think(t["thinking_raw"])
+            split = split_think(raw)
             parsed = parse_stated_chat(split["answer"], options)
             w.writerow({
                 "example_id": eid, "parse": parsed["parse"],
@@ -118,8 +140,13 @@ def main(argv: list[str] | None = None) -> int:
                 ensure_ascii=False) + "\n")
             n_pairs += 1
 
+    # Self-auditing accounting: transcripts absent from the generated file
+    # produce no rows at all (correct for a capped canary), so the log must
+    # say how many of the substrate's pairs this set actually covers.
+    n_missing = len(eids & set(source)) - n_pairs - n_err
     print(f"{n_pairs} toggle pairs assembled (direct + thinking), "
-          f"{n_err} generation errors -> {args.out}")
+          f"{n_err} generation errors, "
+          f"{n_missing} substrate pairs without a transcript -> {args.out}")
     print(f"parse sidecar -> {sidecar_path}")
     return 0
 

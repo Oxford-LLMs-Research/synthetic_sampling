@@ -12,8 +12,8 @@
 # serving generates the thinking transcripts (chat template, toggle ON),
 # assembles the paired toggle set, and scores BOTH cells with thinking OFF
 # (locked protocol: the reasoning is injected text, never a live-thinking
-# shallow read). Same weights, same user message; the toggle is the only
-# difference between the cells' provenance. Keep this file LF-only.
+# shallow read). Same weights; generation uses a think-then-digit instruction
+# (not the scoring "No reasoning" readout lock). Keep this file LF-only.
 # Required env: none (Qwen3-32B is the toggle-bearing model). Optional:
 # MODEL, TAG, ARMS, REPLICATE_FRAC, DTYPE, MAX_MODEL_LEN, PORT,
 # VLLM_READY_TIMEOUT_SEC, C2_LIMIT.

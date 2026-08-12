@@ -3,9 +3,16 @@
 The elicitation axis rerun with the instrument C1 lacked (RUN_CATALOGUE C2,
 pre-registered 12 Aug): Qwen3-32B generates through /chat/completions with
 ``enable_thinking: true`` — its own trained reasoning mode — over the same
-734-pair qa substrate as C1. The user message is IDENTICAL to the one the
-direct (thinking-off) cell is scored with, so the toggle is the only
-difference in the request.
+734-pair qa substrate as C1.
+
+Generation uses its OWN instruction (think, then reply with the option
+number). It deliberately does NOT reuse the scoring ``chat_label_num``
+user message, which ends in ``No reasoning`` — that line is a readout
+format lock, and sending it while the template forces a think block is a
+contradiction. Profile / question / options stay the same content as the
+scoring cells; only the instruction differs. Scoring still uses the
+standard label template (``No reasoning`` = emit the digit only) with
+thinking OFF and the think-block content injected on the ``_ton`` cell.
 
 Sampled at the model card's thinking-mode settings (t=0.6, top-p 0.95,
 top-k 20) with a fixed seed; max_tokens 4096 (thinking runs longer than
@@ -26,17 +33,43 @@ from __future__ import annotations
 
 import argparse
 import json
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from synthetic_sampling.scoring.client import make_session, post_with_retries
-from synthetic_sampling.scoring.prompts import build_chat_messages
+from synthetic_sampling.scoring.prompts import render_profile
 
 REPO = Path(__file__).resolve().parents[2]
 OUTER = REPO.parent
 TASKS = REPO / "outputs" / "narrative" / "inputs" / "narrative_tasks.jsonl"
 LADDER_SET = OUTER / "outputs_recovered" / "ladder_readout_set.jsonl"
+
+# Visible-answer format only — the think block is supplied by the template
+# hard switch (enable_thinking=true), not by forbidding reasoning in text.
+THINKING_INSTRUCTION = (
+    "Think carefully about how this respondent would answer the target "
+    "question, using their prior answers as evidence. After thinking, "
+    "reply with only the option number."
+)
+
+
+def build_thinking_messages(inst: dict) -> list[dict]:
+    """Chat user turn for native-thinking generation (not the score template)."""
+    profile = (inst.get("profile_text")
+               or render_profile(dict(inst["questions"])))
+    options = inst["option_sets"]["original"]
+    block = "\n".join(f"{i + 1}. {o}" for i, o in enumerate(options))
+    content = (
+        "You are a helpful assistant. Predict how the respondent would "
+        "answer the target question using their prior answers.\n\n"
+        f"Profile: {profile}\n\n"
+        f"Question: {inst['target_question']}\n\n"
+        f"Options:\n{block}\n\n"
+        f"Instructions: {THINKING_INSTRUCTION}"
+    )
+    return [{"role": "user", "content": content}]
 
 
 def load_substrate(tasks_path: Path, ladder_path: Path) -> list[dict]:
@@ -95,10 +128,10 @@ def main(argv: list[str] | None = None) -> int:
     sampling = {"temperature": args.temperature, "top_p": args.top_p,
                 "top_k": args.top_k, "seed": args.seed}
     trace_rows: list[dict] = []
+    trace_lock = threading.Lock()
 
     def work(inst: dict) -> dict:
-        messages = build_chat_messages(
-            inst, inst["option_sets"]["original"], "chat_label_num")
+        messages = build_thinking_messages(inst)
         payload = {
             "model": args.model, "messages": messages,
             "max_tokens": args.max_tokens, **sampling,
@@ -106,16 +139,36 @@ def main(argv: list[str] | None = None) -> int:
         }
         try:
             r = post_with_retries(session, url, headers, payload)
-            choice = r.json()["choices"][0]
+            body = r.json()
+            choice = body["choices"][0]
+            msg = choice.get("message") or {}
+            # Prefer raw content (tags in text when no reasoning-parser).
+            # If a parser split the block out, stitch it back so split_think
+            # and the canary trace still see one string.
+            content = msg.get("content")
+            reasoning = (msg.get("reasoning")
+                         or msg.get("reasoning_content") or "")
+            if content is None:
+                content = ""
+            if reasoning and "<think>" not in content:
+                content = f"<think>{reasoning}</think>{content}"
             rec = {"example_id": inst["example_id"],
-                   "thinking_raw": choice["message"]["content"],
+                   "thinking_raw": content,
                    "finish_reason": choice.get("finish_reason"),
                    "sampling": sampling}
+            raw_for_trace = body
         except Exception as exc:  # noqa: BLE001
             rec = {"example_id": inst["example_id"],
                    "error": f"{type(exc).__name__}: {exc}"}
-        if len(trace_rows) < args.trace:
-            trace_rows.append({"request": payload, "response": rec})
+            raw_for_trace = None
+        if args.trace:
+            with trace_lock:
+                if len(trace_rows) < args.trace:
+                    trace_rows.append({
+                        "request": payload,
+                        "response": raw_for_trace,
+                        "record": rec,
+                    })
         return rec
 
     t0, n = time.time(), 0

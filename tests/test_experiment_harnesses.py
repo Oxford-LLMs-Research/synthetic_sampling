@@ -16,6 +16,7 @@ FOLDER = {
     "make_reasoned_set": "reasoning",
     "convert_injection_instances": "injection",
     "make_c2_set": "thinking",
+    "generate_thinking": "thinking",
 }
 
 
@@ -117,15 +118,38 @@ def test_reasoning_prompt_shape():
     assert "1. Yes\n2. No" in prompt
 
 
-def test_make_c2_set_assembles_toggle_pairs(tmp_path):
+def test_thinking_generation_prompt_invites_reasoning():
+    """Generation must not reuse the scoring 'No reasoning' format lock."""
+    from synthetic_sampling.scoring.prompts import build_chat_messages
+
+    gt = load("generate_thinking")
+    inst = {
+        "questions": {"How old are you?": "18-24"},
+        "target_question": "Do you trust most people?",
+        "option_sets": {"original": ["Yes", "No"]},
+    }
+    content = gt.build_thinking_messages(inst)[0]["content"]
+    assert "No reasoning" not in content
+    assert "Think carefully" in content
+    assert content.index("Profile:") < content.index("Question:") \
+        < content.index("Options:") < content.index("Instructions:")
+    assert "1. Yes\n2. No" in content
+    assert "reply with only the option number" in content.lower()
+    # Scoring template still carries the format lock (unchanged).
+    scored = build_chat_messages(
+        inst, inst["option_sets"]["original"], "chat_label_num")[0]["content"]
+    assert "No reasoning" in scored
+
+
+def test_make_c2_set_assembles_toggle_pairs(tmp_path, capsys):
     import csv
     import json
 
     mod = load("make_c2_set")
 
     tasks = tmp_path / "tasks.jsonl"
-    tasks.write_text(json.dumps({"example_id": "e1"}) + "\n"
-                     + json.dumps({"example_id": "e2"}) + "\n",
+    tasks.write_text("".join(json.dumps({"example_id": e}) + "\n"
+                             for e in ("e1", "e2", "e3")),
                      encoding="utf-8")
     src_row = {
         "survey": "wvs", "target_code": "Q1", "id": 7, "country": "X",
@@ -135,13 +159,16 @@ def test_make_c2_set_assembles_toggle_pairs(tmp_path):
     }
     ladder = tmp_path / "ladder.jsonl"
     ladder.write_text(
-        json.dumps({"example_id": "e1", **src_row}) + "\n"
-        + json.dumps({"example_id": "e2", **src_row}) + "\n",
+        "".join(json.dumps({"example_id": e, **src_row}) + "\n"
+                for e in ("e1", "e2", "e3")),
         encoding="utf-8")
+    # e1 loops (two restatements, neither using a "Final answer" marker),
+    # e2 errored, e3 has no transcript at all (capped canary shape).
     trans = tmp_path / "trans.jsonl"
     trans.write_text(
         json.dumps({"example_id": "e1",
-                    "thinking_raw": "<think>they trust family</think>1",
+                    "thinking_raw": "<think>the answer is 1. Wait - "
+                                    "the answer is 1</think>1",
                     "finish_reason": "stop"}) + "\n"
         + json.dumps({"example_id": "e2", "error": "boom"}) + "\n",
         encoding="utf-8")
@@ -155,12 +182,16 @@ def test_make_c2_set_assembles_toggle_pairs(tmp_path):
     assert rows[0]["arm_label"] == "direct" and "reasoning" not in rows[0]
     assert rows[1]["arm_label"] == "thinking"
     # the injected reasoning is the THINK CONTENT only: no tags, no answer
-    assert rows[1]["reasoning"] == "they trust family"
+    assert rows[1]["reasoning"].startswith("the answer is 1")
     sidecar = list(csv.DictReader(
         open(tmp_path / "c2_set_parse.csv", encoding="utf-8")))
     assert {r["example_id"]: r["parse"] for r in sidecar} == {
         "e1": "bare_digit", "e2": "generation_error"}
     assert sidecar[0]["stated_index"] == "0"
+    # loop census counts marker-less restatements too
+    assert sidecar[0]["loop_markers"] == "2"
+    # missing transcripts are absent from the set but counted in the log
+    assert "1 substrate pairs without a transcript" in capsys.readouterr().out
 
 
 def test_make_reasoned_set_assembles_2x2(tmp_path):
