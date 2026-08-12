@@ -129,6 +129,26 @@ def test_smoke_passes_on_enough_good_rows():
     assert any("label_num" in n for n in notes)
 
 
+def test_smoke_fails_when_one_label_arm_is_dead():
+    # A healthy raw label arm must NOT mask a dead chat arm (or vice versa):
+    # each *label_num arm clears the miss threshold independently.
+    good = {"Yes": -0.1, "No": -0.5}
+    dead = {"Yes": float("-inf"), "No": float("-inf")}
+    rows = [
+        {
+            "example_id": f"e{i}",
+            "results": {
+                "original|label_num": {"scores": good, "predicted": "Yes"},
+                "original|chat_label_num": {"scores": dead, "predicted": "Yes"},
+            },
+        }
+        for i in range(45)
+    ]
+    fatal, _ = check_smoke(rows)
+    assert any("chat_label_num" in f for f in fatal)
+    assert not any(f.startswith("label_num:") for f in fatal)
+
+
 def test_normalized_accuracy_and_auc():
     assert normalized_accuracy(0.5, 2) == pytest.approx(0.0)
     assert normalized_accuracy(1.0, 2) == pytest.approx(1.0)

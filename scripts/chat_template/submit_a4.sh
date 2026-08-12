@@ -23,10 +23,13 @@ MODELS="${A4_MODELS:-Qwen/Qwen3-32B allenai/Olmo-3.1-32B-Instruct-DPO Qwen/Qwen3
 
 for MODEL in $MODELS; do
   TAG="$(echo "$MODEL" | tr '[:upper:]' '[:lower:]' | tr '/' '_')"
-  KWARGS=""
-  if [ "$MODEL" = "Qwen/Qwen3-32B" ]; then
-    KWARGS='{"enable_thinking": false}'
-  fi
+  # Toggle-bearing templates must have thinking OFF in A4 (non-reasoning
+  # arm). Prefix match so revision suffixes don't silently drop the kwarg.
+  case "$MODEL" in
+    Qwen/Qwen3-32B*|Qwen/Qwen3-4B*|Qwen/Qwen3-235B*)
+      KWARGS='{"enable_thinking": false}' ;;
+    *) KWARGS="" ;;
+  esac
   MODEL="$MODEL" TAG="$TAG" REPLICATE_FRAC=0.25 CHAT_KWARGS="$KWARGS" \
     sbatch --export=ALL --job-name="a4-${TAG##*_}" \
     "$ROOT/scripts/chat_template/run_a4.sbatch"

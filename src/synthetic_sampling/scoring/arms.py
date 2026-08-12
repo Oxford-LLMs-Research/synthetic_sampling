@@ -12,8 +12,9 @@ from .prompts import build_chat_messages, build_prompt
 DEFAULT_ARMS = ("label_num", "echo_plain", "echo_qonly", "echo_ctxfree")
 # chat_label_num (RUN_CATALOGUE A4): the same label readout through the
 # model's own chat template via /chat/completions, so template-vs-raw is a
-# paired within-serving contrast. NOTE its name ends with "label_num" on
-# purpose — the smoke gate's critical-arm check pools both label readouts.
+# paired within-serving contrast. The smoke gate checks every *label_num
+# arm's miss rate independently — a healthy raw arm cannot mask a dead
+# chat arm.
 KEPT_ARMS = DEFAULT_ARMS + ("label_num_natural", "chat_label_num")
 REPLICATE = "original"
 

@@ -28,27 +28,33 @@ def check_smoke(rows: List[dict]) -> Tuple[List[str], List[str]]:
     if errs:
         fatal.append(f"arms returned errors: {errs[:6]}")
 
-    has_critical = any(
-        k.endswith(CRITICAL_ARM) for r in rows for k in r.get("results", {}))
-    if has_critical:
+    # Every label-readout arm must clear the miss threshold INDEPENDENTLY
+    # (label_num, chat_label_num, ...). Pooling them would let a healthy raw
+    # arm mask a dead chat arm — the A4 failure mode.
+    arms_present = sorted({
+        k.split("|", 1)[1] if "|" in k else k
+        for r in rows for k in r.get("results", {})
+    })
+    label_arms = [a for a in arms_present if a.endswith(CRITICAL_ARM)]
+    if not label_arms:
+        notes.append(
+            f"{CRITICAL_ARM} not among this run's arms; label check skipped")
+    for arm in label_arms:
         vals = [
             v for r in rows for k, d in r["results"].items()
-            if k.endswith(CRITICAL_ARM)
+            if (k.split("|", 1)[1] if "|" in k else k) == arm
             for v in d.get("scores", {}).values()
         ]
         miss = sum(1 for v in vals if not math.isfinite(v))
         rate = miss / len(vals) if vals else 1.0
         notes.append(
-            f"{CRITICAL_ARM}: {miss}/{len(vals)} options got no label "
+            f"{arm}: {miss}/{len(vals)} options got no label "
             f"logprob ({rate:.1%})")
         if not vals or rate > MAX_LABEL_MISS:
             fatal.append(
-                f"{CRITICAL_ARM}: {miss}/{len(vals)} options ({rate:.0%}) "
+                f"{arm}: {miss}/{len(vals)} options ({rate:.0%}) "
                 "got no label logprob; the tokeniser emits labels the "
                 "matcher misses")
-    else:
-        notes.append(
-            f"{CRITICAL_ARM} not among this run's arms; label check skipped")
 
     for arm in ("echo_qonly", "echo_ctxfree"):
         vals = [
