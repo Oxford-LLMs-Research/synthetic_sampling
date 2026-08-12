@@ -479,9 +479,9 @@ Rules that keep the entries fillable:
 
 ### A4-CHAT-TEMPLATE — the label readout through the tuned format
 
-- **Status:** RUNNING (submitted 12 Aug; the canary passed every gate
-  first — 0/270 chat label misses, 100% usable all five arms; canary job
-  id NOT RECORDED, it lives in the `_canary` log/RUNSTAMP on ARC)
+- **Status:** RUNNING (submitted 12 Aug; canary job 8554505 passed every
+  gate first — 0/270 chat label misses, 100% usable all five arms; id
+  recovered off the pulled `smoke_8554505` artifacts)
 - **Rationale:** Every scoring run uses raw /completions; C1's transcripts
   proved that regime is out-of-distribution for the tuned models in
   generation (95% loops, 35-42% empty), so the non-reasoning instrument
