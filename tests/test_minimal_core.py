@@ -149,6 +149,44 @@ def test_smoke_fails_when_one_label_arm_is_dead():
     assert not any(f.startswith("label_num:") for f in fatal)
 
 
+def test_split_think_handles_all_block_shapes():
+    from synthetic_sampling.scoring.thinking import split_think
+
+    r = split_think("<think>weighing the profile</think>Final answer: 3")
+    assert r == {"think": "weighing the profile",
+                 "answer": "Final answer: 3",
+                 "has_block": True, "closed": True}
+    # truncated inside the block (max_tokens): reasoning kept, no answer
+    r = split_think("<think>they said neighbours lie and")
+    assert r["has_block"] and not r["closed"]
+    assert r["think"].startswith("they said") and r["answer"] == ""
+    # empty block (thinking suppressed by template)
+    r = split_think("<think></think>4. Somewhat like")
+    assert r == {"think": "", "answer": "4. Somewhat like",
+                 "has_block": True, "closed": True}
+    # no block at all
+    r = split_think("Final answer: 2")
+    assert r == {"think": "", "answer": "Final answer: 2",
+                 "has_block": False, "closed": False}
+
+
+def test_parse_stated_chat_protocol():
+    from synthetic_sampling.scoring.thinking import parse_stated_chat
+
+    opts = ["Yes", "No", "Don't know"]
+    assert parse_stated_chat("Final answer: 2", opts) == {
+        "parse": "digit", "stated_index": 1}
+    assert parse_stated_chat("2.", opts) == {
+        "parse": "bare_digit", "stated_index": 1}
+    assert parse_stated_chat("Option 3", opts) == {
+        "parse": "bare_digit", "stated_index": 2}
+    assert parse_stated_chat("Don't know.", opts) == {
+        "parse": "option_text", "stated_index": 2}
+    assert parse_stated_chat("Final answer: 9", opts)["parse"] == "digit_out_of_range"
+    assert parse_stated_chat("", opts)["parse"] == "empty_answer"
+    assert parse_stated_chat("It depends on many things.", opts)["parse"] == "unparseable"
+
+
 def test_normalized_accuracy_and_auc():
     assert normalized_accuracy(0.5, 2) == pytest.approx(0.0)
     assert normalized_accuracy(1.0, 2) == pytest.approx(1.0)
