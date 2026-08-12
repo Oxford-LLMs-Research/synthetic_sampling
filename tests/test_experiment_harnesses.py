@@ -162,12 +162,14 @@ def test_make_c2_set_assembles_toggle_pairs(tmp_path, capsys):
         "".join(json.dumps({"example_id": e, **src_row}) + "\n"
                 for e in ("e1", "e2", "e3")),
         encoding="utf-8")
-    # e1 loops (two restatements, neither using a "Final answer" marker),
-    # e2 errored, e3 has no transcript at all (capped canary shape).
+    # e1 loops (two restatements, neither using a "Final answer" marker;
+    # the "cannot answer 3" phrase must NOT count), e2 errored, e3 has no
+    # transcript at all (capped canary shape).
     trans = tmp_path / "trans.jsonl"
     trans.write_text(
         json.dumps({"example_id": "e1",
-                    "thinking_raw": "<think>the answer is 1. Wait - "
+                    "thinking_raw": "<think>the answer is 1. I cannot "
+                                    "answer 3 of these. Wait - "
                                     "the answer is 1</think>1",
                     "finish_reason": "stop"}) + "\n"
         + json.dumps({"example_id": "e2", "error": "boom"}) + "\n",

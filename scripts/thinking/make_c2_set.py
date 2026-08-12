@@ -43,11 +43,14 @@ LADDER_SET = OUTER / "outputs_recovered" / "ladder_readout_set.jsonl"
 
 # Restatement census in the think content (the C1 pathology, predicted <5%
 # here). The generation instruction never asks for a "Final answer" marker,
-# so a thinking-mode loop more likely restates "the answer is 4" — the
-# pattern covers both phrasings and is a LOWER BOUND either way (a loop
-# that restates without the word "answer" is not counted).
+# so a thinking-mode loop more likely restates "the answer is 4". Bare
+# "answer \d" is deliberately NOT matched — "I cannot answer 3 of these"
+# is a false positive — so a bare digit after "answer" without a colon or
+# dash goes uncounted. A noisy LOWER BOUND: treat a <5% pass or a mild
+# exceedance as descriptive, never as a sharp threshold.
 LOOP_MARKER = re.compile(
-    r"(?i)(?:final answer|the answer is|answer)\s*[:\-]?\s*(?:option\s*)?\d+")
+    r"(?i)(?:(?:final answer|the answer is)\s*[:\-]?|answer\s*[:\-])"
+    r"\s*(?:option\s*)?\d+")
 
 
 def main(argv: list[str] | None = None) -> int:
