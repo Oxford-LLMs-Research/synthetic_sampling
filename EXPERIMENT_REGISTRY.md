@@ -466,9 +466,12 @@ Rules that keep the entries fillable:
 - **Constraint:** never split the stages or the four arms across jobs —
   every cell scores against the serving that generated its transcripts.
 - **Verified by:** `CODE/scripts/reasoning/verify_c1_numbers.py` against
-  `WORK/analysis/reasoning/c1_{levels,contrasts,elicitation}_<tag>.csv`
-  (366 pinned values, exit 0); tables from
-  `CODE/scripts/reasoning/analyze_c1.py`.
+  `WORK/analysis/reasoning/c1_{levels,contrasts,elicitation,transcripts}_<tag>.csv`
+  (474 pinned values, exit 0); tables from
+  `CODE/scripts/reasoning/analyze_c1.py`. Transcript-loop census and
+  clean/looped robustness splits added 12 Aug after transcript inspection
+  (see PAPER_STATE): Qwen3-32B loops on 95% of transcripts; the C1 verdicts
+  survive the splits.
 
 ---
 

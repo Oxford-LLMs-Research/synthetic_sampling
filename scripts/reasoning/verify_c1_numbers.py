@@ -24,6 +24,20 @@ Verdicts these rows carry, against the 8 Aug pre-registration:
   and the stated final answer are near-interchangeable readouts.
 - Replicate ceiling 100.0% on 744 pairs for every arm and model, read
   against the 64.4% cross-serving floor.
+- Loop census (12 Aug, post-hoc descriptive after eyeballing transcripts):
+  Qwen3-32B's transcripts are degenerate on 95.2%/95.7% of pairs (>= 2
+  "Final answer" markers; median 13-14 restatements, max 326; 73-83% hit
+  the 2048-token cap). The MoE loops on 15.4%/9.0% and Olmo not at all
+  (it under-generates instead). The loop is a STUCK answer, not
+  oscillation — only 3-8% of looped transcripts ever change digit — and
+  the parse protocol (last marker) reads it correctly, which is why the
+  parse table is clean. Robustness splits: the MoE's clean-majority
+  reasoned-qa is -0.0065 (null without loops); Qwen3-32B's
+  narrative_reasoned deficit persists in the looped majority (-0.0440,
+  CI -0.089..-0.007) and is not milder in the tiny clean remainder
+  (-0.0630, n=31, wide CI) — the harm is not a loop artifact. Confidence
+  inflation is also not loop-driven (clean reasoned transcripts are as
+  overconfident as looped ones).
 
     python scripts/reasoning/verify_c1_numbers.py
 """
@@ -100,6 +114,22 @@ TABLES = {
             dict(arm="echo_plain", contrast="replicate", n_pairs=744,
                  delta_acc=float("nan"), ci_lo=float("nan"), ci_hi=float("nan"),
                  flip_rate=0.0000, agree_rate=1.0000),
+            dict(arm="label_num", contrast="reasoned-qa|looped", n_pairs=699,
+                 delta_acc=-0.0138, ci_lo=-0.0491, ci_hi=0.0217,
+                 flip_rate=0.2132, agree_rate=0.7868),
+            dict(arm="label_num", contrast="reasoned-qa|clean", n_pairs=35,
+                 delta_acc=0.0278, ci_lo=-0.1389, ci_hi=0.2222,
+                 flip_rate=0.2286, agree_rate=0.7714),
+            dict(arm="label_num",
+                 contrast="narrative_reasoned-narrative_direct|looped",
+                 n_pairs=692,
+                 delta_acc=-0.0440, ci_lo=-0.0891, ci_hi=-0.0067,
+                 flip_rate=0.2486, agree_rate=0.7514),
+            dict(arm="label_num",
+                 contrast="narrative_reasoned-narrative_direct|clean",
+                 n_pairs=31,
+                 delta_acc=-0.0630, ci_lo=-0.2407, ci_hi=0.0963,
+                 flip_rate=0.2903, agree_rate=0.7097),
         ],
         [
             dict(cell="qa", n_transcripts=734,
@@ -110,6 +140,16 @@ TABLES = {
                  parse_fail_rate=0.0014, empty_rate=0.0000,
                  stated_acc=0.5014, stated_vs_label_agree=0.9778,
                  n_parsed=722, n_no_marker=0),
+        ],
+        [
+            dict(cell="qa", n=734, length_rate=0.7316, loop_rate=0.9523,
+                 heavy_loop_rate=0.6594, median_markers=13.0,
+                 max_markers=313, median_words=1550.0,
+                 digit_instability_rate=0.0315),
+            dict(cell="narrative", n=723, length_rate=0.8313,
+                 loop_rate=0.9571, heavy_loop_rate=0.7358,
+                 median_markers=14.0, max_markers=326, median_words=1642.0,
+                 digit_instability_rate=0.0361),
         ],
     ),
     "allenai_olmo-3.1-32b-instruct-dpo": (
@@ -172,6 +212,15 @@ TABLES = {
             dict(arm="echo_plain", contrast="replicate", n_pairs=744,
                  delta_acc=float("nan"), ci_lo=float("nan"), ci_hi=float("nan"),
                  flip_rate=0.0000, agree_rate=1.0000),
+            # Olmo has one looped transcript, below MIN_SPLIT: clean only.
+            dict(arm="label_num", contrast="reasoned-qa|clean", n_pairs=733,
+                 delta_acc=-0.0171, ci_lo=-0.0505, ci_hi=0.0163,
+                 flip_rate=0.2005, agree_rate=0.7995),
+            dict(arm="label_num",
+                 contrast="narrative_reasoned-narrative_direct|clean",
+                 n_pairs=722,
+                 delta_acc=-0.0176, ci_lo=-0.0462, ci_hi=0.0112,
+                 flip_rate=0.1828, agree_rate=0.8172),
         ],
         [
             dict(cell="qa", n_transcripts=734,
@@ -182,6 +231,16 @@ TABLES = {
                  parse_fail_rate=0.4191, empty_rate=0.4080,
                  stated_acc=0.4762, stated_vs_label_agree=0.9500,
                  n_parsed=420, n_no_marker=302),
+        ],
+        [
+            dict(cell="qa", n=734, length_rate=0.0000, loop_rate=0.0014,
+                 heavy_loop_rate=0.0000, median_markers=1.0,
+                 max_markers=4, median_words=114.5,
+                 digit_instability_rate=1.0000),
+            dict(cell="narrative", n=723, length_rate=0.0000,
+                 loop_rate=0.0014, heavy_loop_rate=0.0000,
+                 median_markers=1.0, max_markers=2, median_words=91.0,
+                 digit_instability_rate=0.0000),
         ],
     ),
     "qwen_qwen3-30b-a3b-instruct-2507": (
@@ -244,6 +303,22 @@ TABLES = {
             dict(arm="echo_plain", contrast="replicate", n_pairs=744,
                  delta_acc=float("nan"), ci_lo=float("nan"), ci_hi=float("nan"),
                  flip_rate=0.0000, agree_rate=1.0000),
+            dict(arm="label_num", contrast="reasoned-qa|looped", n_pairs=113,
+                 delta_acc=-0.0334, ci_lo=-0.1462, ci_hi=0.0708,
+                 flip_rate=0.3186, agree_rate=0.6814),
+            dict(arm="label_num", contrast="reasoned-qa|clean", n_pairs=621,
+                 delta_acc=-0.0065, ci_lo=-0.0459, ci_hi=0.0320,
+                 flip_rate=0.2093, agree_rate=0.7907),
+            dict(arm="label_num",
+                 contrast="narrative_reasoned-narrative_direct|looped",
+                 n_pairs=65,
+                 delta_acc=0.0470, ci_lo=-0.0424, ci_hi=0.1409,
+                 flip_rate=0.3231, agree_rate=0.6769),
+            dict(arm="label_num",
+                 contrast="narrative_reasoned-narrative_direct|clean",
+                 n_pairs=658,
+                 delta_acc=-0.0131, ci_lo=-0.0498, ci_hi=0.0248,
+                 flip_rate=0.2401, agree_rate=0.7599),
         ],
         [
             dict(cell="qa", n_transcripts=734,
@@ -255,6 +330,16 @@ TABLES = {
                  stated_acc=0.5297, stated_vs_label_agree=0.9502,
                  n_parsed=723, n_no_marker=0),
         ],
+        [
+            dict(cell="qa", n=734, length_rate=0.6035, loop_rate=0.1540,
+                 heavy_loop_rate=0.0845, median_markers=1.0,
+                 max_markers=205, median_words=1581.5,
+                 digit_instability_rate=0.0442),
+            dict(cell="narrative", n=723, length_rate=0.4274,
+                 loop_rate=0.0899, heavy_loop_rate=0.0650,
+                 median_markers=1.0, max_markers=195, median_words=300.0,
+                 digit_instability_rate=0.0769),
+        ],
     ),
 }
 
@@ -262,7 +347,7 @@ TABLES = {
 def main() -> int:
     bad: list[str] = []
     n = 0
-    for tag, (levels, contrasts, elic) in TABLES.items():
+    for tag, (levels, contrasts, elic, transcripts) in TABLES.items():
         bad += [f"[{tag}] {m}" for m in verify_table_against_csv(
             levels, ANALYSIS / f"c1_levels_{tag}.csv",
             join_keys=("arm", "condition"),
@@ -282,6 +367,13 @@ def main() -> int:
                         "stated_acc", "stated_vs_label_agree",
                         "n_parsed", "n_no_marker"), tol=5e-5)]
         n += len(elic) * 7
+        bad += [f"[{tag}] {m}" for m in verify_table_against_csv(
+            transcripts, ANALYSIS / f"c1_transcripts_{tag}.csv",
+            join_keys=("cell",),
+            value_cols=("n", "length_rate", "loop_rate", "heavy_loop_rate",
+                        "median_markers", "max_markers", "median_words",
+                        "digit_instability_rate"), tol=5e-5)]
+        n += len(transcripts) * 8
 
     for m in bad:
         print("FAIL ", m)

@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -40,6 +41,15 @@ ARMS = ("label_num", "echo_plain")
 CONDITIONS = ("qa", "reasoned", "narrative_direct", "narrative_reasoned")
 # Sidecar cell -> the reasoned instance its transcript feeds.
 PARSE_OK = ("digit", "option_text")
+
+# Degenerate-loop census (12 Aug, post-hoc but descriptive): a transcript
+# with >= 2 "Final answer" markers looped — restated its answer instead of
+# stopping. The parse protocol reads the LAST marker so loops are invisible
+# in the parse table; this table makes them countable, and the clean/looped
+# contrast splits show whether endpoint 1 depends on them.
+MARKER = re.compile(r"(?im)^[ \t]*final answer\s*[:\-]", re.MULTILINE)
+DIGIT = re.compile(r"(?i)final answer\s*[:\-]?\s*(?:option\s*)?(\d+)")
+MIN_SPLIT = 20  # emit clean/looped contrast rows only above this many pairs
 
 
 def _softmax_conf(scores: dict) -> float:
@@ -193,6 +203,50 @@ def interaction(df: pd.DataFrame, arm: str) -> dict:
     }
 
 
+def transcript_pathology(tag: str) -> tuple[list[dict], dict[str, set]]:
+    """Per-cell loop census over the stage-1 transcripts.
+
+    Returns the table rows and, per cell, the base_ids of looped (>= 2
+    marker) transcripts for the robustness splits.
+    """
+    gen = ROOT / "outputs" / "reasoning" / "generated"
+    rows, loops = [], {}
+    for cell, fname in (("qa", f"reasoning_{tag}.jsonl"),
+                        ("narrative", f"reasoning_narr1_{tag}.jsonl")):
+        marks, words, length_fin, unstable = [], [], 0, 0
+        looped_ids: set[str] = set()
+        for line in (gen / fname).open(encoding="utf-8"):
+            r = json.loads(line)
+            if "error" in r:
+                continue
+            raw = r["reasoning_raw"]
+            m = len(MARKER.findall(raw))
+            marks.append(m)
+            words.append(len(raw.split()))
+            if r.get("finish_reason") == "length":
+                length_fin += 1
+            if m >= 2:
+                base = re.sub(r"_narr1$", "", r["example_id"])
+                looped_ids.add(base)
+                if len(set(DIGIT.findall(raw))) > 1:
+                    unstable += 1
+        n = len(marks)
+        ma = np.array(marks)
+        rows.append({
+            "model": tag, "cell": cell, "n": n,
+            "length_rate": length_fin / n,
+            "loop_rate": float((ma >= 2).mean()),
+            "heavy_loop_rate": float((ma >= 5).mean()),
+            "median_markers": float(np.median(ma)),
+            "max_markers": int(ma.max()),
+            "median_words": float(np.median(words)),
+            "digit_instability_rate": (unstable / len(looped_ids)
+                                       if looped_ids else float("nan")),
+        })
+        loops[cell] = looped_ids
+    return rows, loops
+
+
 def elicitation(tag: str, df: pd.DataFrame) -> list[dict]:
     """Parse outcomes (sidecar) + stated-answer readout vs the label readout.
 
@@ -279,12 +333,33 @@ def run(tag: str) -> None:
             "agree_rate": rate,
         })
 
+    # Loop-census robustness: the elicitation contrasts split by whether the
+    # stage-1 transcript looped (label_num only; both halves need MIN_SPLIT
+    # pairs, so Olmo — 1 looped transcript — gets no split rows).
+    pathology, loops = transcript_pathology(tag)
+    for cond, base, cell in (("reasoned", "qa", "qa"),
+                             ("narrative_reasoned", "narrative_direct",
+                              "narrative")):
+        in_loop = df["base_id"].isin(loops[cell])
+        for label, mask in (("looped", in_loop), ("clean", ~in_loop)):
+            sub = df[mask]
+            if min(len(sub[sub["condition"] == cond]),
+                   len(sub[sub["condition"] == base])) < MIN_SPLIT:
+                continue
+            contrasts.append({
+                "model": tag, "arm": "label_num",
+                "contrast": f"{cond}-{base}|{label}",
+                **paired(sub, "label_num", cond, base),
+            })
+
     elic = elicitation(tag, df)
 
     pd.DataFrame(levels).to_csv(OUTDIR / f"c1_levels_{tag}.csv", index=False)
     pd.DataFrame(contrasts).to_csv(OUTDIR / f"c1_contrasts_{tag}.csv", index=False)
     pd.DataFrame(elic).to_csv(OUTDIR / f"c1_elicitation_{tag}.csv", index=False)
-    for stem in ("levels", "contrasts", "elicitation"):
+    pd.DataFrame(pathology).to_csv(OUTDIR / f"c1_transcripts_{tag}.csv",
+                                   index=False)
+    for stem in ("levels", "contrasts", "elicitation", "transcripts"):
         print(f"wrote {OUTDIR / f'c1_{stem}_{tag}.csv'}")
 
 
