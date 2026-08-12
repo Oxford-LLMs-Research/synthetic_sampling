@@ -62,7 +62,7 @@ Rules that keep the entries fillable:
 | [A6-MOE](#a6-moe--moe-readout-battery-and-speed-benchmark) | LANDED | 8 Aug 2026 | Qwen3-30B-A3B | `label_num` certifies on an MoE; ~4.0x faster than dense 32B |
 | [B3-NARRATIVE](#b3-narrative--validated-narrative-presentation-battery) | LANDED | 9 Aug 2026 | 3-model roster | Presentation null holds; form flips predictions, not accuracy |
 | [C1-REASONED](#c1-reasoned--reason-then-answer-and-the-presentation-x-elicitation-2x2) | LANDED | 12 Aug 2026 | 3-model roster | Reasoning never lifts accuracy but inflates confidence everywhere; Olmo won't reason 35-42% of the time |
-| [A4-CHAT-TEMPLATE](#a4-chat-template--the-label-readout-through-the-tuned-format) | RUNNING | 12 Aug 2026 | 3-model roster | Template-vs-raw paired within serving; jobs 8555167-69 |
+| [A4-CHAT-TEMPLATE](#a4-chat-template--the-label-readout-through-the-tuned-format) | LANDED | 12 Aug 2026 | 3-model roster | Instrument validated, no contrast flips; small qa-positive template tax; Qwen3-32B narrative penalty resurfaces under chat |
 | [C2-THINKING](#c2-thinking--the-native-thinking-toggle) | PLANNED | — | Qwen3-32B | Thinking toggle ON vs OFF, same weights, one serving; harness at 0c17e36 |
 | [EXPA-PARAPHRASE](#expa-paraphrase--format-stability-under-validated-paraphrase) | LANDED | 6 Aug 2026 | Qwen3-32B, Olmo-3.1-32B | Instability was mostly the scoring rule, not the model |
 | [LADDER-READOUT](#ladder-readout--feature-ladder-x-elicitation) | LANDED | 6–7 Aug 2026 | Qwen3-4B/32B, Olmo-3.1-32B | Accuracy saturates on the first informative feature |
@@ -479,9 +479,8 @@ Rules that keep the entries fillable:
 
 ### A4-CHAT-TEMPLATE — the label readout through the tuned format
 
-- **Status:** RUNNING (submitted 12 Aug; canary job 8554505 passed every
-  gate first — 0/270 chat label misses, 100% usable all five arms; id
-  recovered off the pulled `smoke_8554505` artifacts)
+- **Status:** LANDED (canary job 8554505 passed every gate first — 0/270
+  chat label misses, 100% usable all five arms)
 - **Rationale:** Every scoring run uses raw /completions; C1's transcripts
   proved that regime is out-of-distribution for the tuned models in
   generation (95% loops, 35-42% empty), so the non-reasoning instrument
@@ -489,11 +488,15 @@ Rules that keep the entries fillable:
   chat_label_num arm scores the same instances through each model's own
   chat template IN THE SAME SERVING as the raw arms, making template-vs-raw
   a paired within-serving contrast.
-- **Result:** PENDING. Pre-registered (12 Aug, PAPER_STATE): the
-  presentation contrast (narrative1-qa) replicates under the template
-  within +-0.02; a contrast flip beyond +-0.04 means the raw-completion
-  instrument is confounded and every landed null gains a template caveat.
-  The template tax on levels is reported descriptively, no falsifier.
+- **Result:** No contrast flips beyond +-0.04 anywhere — the
+  raw-completion instrument is validated and every landed null stands;
+  the template tax is small and qa-positive (+0.007 to +0.020, flipping
+  9-15% of predictions) but confidence-inflating (ECE +0.02 to +0.10).
+  Exception pattern, third sighting: Qwen3-32B under its own template
+  pays for prose narratives (narrative1-qa -0.033, narrative2-qa -0.031,
+  both CIs excluding zero) while its raw readout in the SAME serving is
+  null. Olmo's label-tokenisation misses vanish under chat (0 vs 107
+  non-finite); replicates 100% chat, >=99.81% raw (514 pairs).
 - **Ran:** 12 Aug 2026, jobs 8555167 (Qwen3-32B, htc-g058,
   `enable_thinking=false` confirmed in RUNSTAMP), 8555168 (Olmo-3.1-32B,
   htc-g054), 8555169 (Qwen3-30B-A3B, htc-g054); all @ 7f9c327 per RUNSTAMP;
@@ -513,6 +516,11 @@ Rules that keep the entries fillable:
 - **Roster:** Qwen3-32B, Olmo-3.1-32B, Qwen3-30B-A3B (as B3)
 - **Constraint:** raw and chat arms must never split across jobs — the
   template contrast only exists within one serving.
+- **Verified by:** `CODE/scripts/chat_template/verify_a4_numbers.py`
+  against `WORK/analysis/chat_template/a4_{levels,contrasts}_<tag>.csv`
+  (432 pinned values, exit 0); tables from
+  `CODE/scripts/chat_template/analyze_a4.py`; backup
+  `WORK/outputs_recovered/a4_chat_template/` (17 files, sums verified).
 
 ### C2-THINKING — the native thinking toggle
 
