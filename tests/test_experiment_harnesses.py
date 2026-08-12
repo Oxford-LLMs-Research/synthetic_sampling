@@ -15,6 +15,7 @@ FOLDER = {
     "generate_reasoning": "reasoning",
     "make_reasoned_set": "reasoning",
     "convert_injection_instances": "injection",
+    "make_c2_set": "thinking",
 }
 
 
@@ -114,6 +115,52 @@ def test_reasoning_prompt_shape():
         < prompt.index("Reasoning:")
     assert prompt.endswith("Reasoning:")
     assert "1. Yes\n2. No" in prompt
+
+
+def test_make_c2_set_assembles_toggle_pairs(tmp_path):
+    import csv
+    import json
+
+    mod = load("make_c2_set")
+
+    tasks = tmp_path / "tasks.jsonl"
+    tasks.write_text(json.dumps({"example_id": "e1"}) + "\n"
+                     + json.dumps({"example_id": "e2"}) + "\n",
+                     encoding="utf-8")
+    src_row = {
+        "survey": "wvs", "target_code": "Q1", "id": 7, "country": "X",
+        "target_question": "Trust?", "ground_truth": "Yes",
+        "ground_truth_index": 0, "questions": {"Age?": "30"},
+        "option_sets": {"original": ["Yes", "No"]},
+    }
+    ladder = tmp_path / "ladder.jsonl"
+    ladder.write_text(
+        json.dumps({"example_id": "e1", **src_row}) + "\n"
+        + json.dumps({"example_id": "e2", **src_row}) + "\n",
+        encoding="utf-8")
+    trans = tmp_path / "trans.jsonl"
+    trans.write_text(
+        json.dumps({"example_id": "e1",
+                    "thinking_raw": "<think>they trust family</think>1",
+                    "finish_reason": "stop"}) + "\n"
+        + json.dumps({"example_id": "e2", "error": "boom"}) + "\n",
+        encoding="utf-8")
+
+    out = tmp_path / "c2_set.jsonl"
+    mod.main(["--transcripts", str(trans), "--out", str(out),
+              "--tasks", str(tasks), "--ladder-set", str(ladder)])
+
+    rows = [json.loads(l) for l in out.open(encoding="utf-8")]
+    assert [r["example_id"] for r in rows] == ["e1_toff", "e1_ton"]
+    assert rows[0]["arm_label"] == "direct" and "reasoning" not in rows[0]
+    assert rows[1]["arm_label"] == "thinking"
+    # the injected reasoning is the THINK CONTENT only: no tags, no answer
+    assert rows[1]["reasoning"] == "they trust family"
+    sidecar = list(csv.DictReader(
+        open(tmp_path / "c2_set_parse.csv", encoding="utf-8")))
+    assert {r["example_id"]: r["parse"] for r in sidecar} == {
+        "e1": "bare_digit", "e2": "generation_error"}
+    assert sidecar[0]["stated_index"] == "0"
 
 
 def test_make_reasoned_set_assembles_2x2(tmp_path):
