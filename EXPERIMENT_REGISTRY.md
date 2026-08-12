@@ -62,7 +62,7 @@ Rules that keep the entries fillable:
 | [A6-MOE](#a6-moe--moe-readout-battery-and-speed-benchmark) | LANDED | 8 Aug 2026 | Qwen3-30B-A3B | `label_num` certifies on an MoE; ~4.0x faster than dense 32B |
 | [B3-NARRATIVE](#b3-narrative--validated-narrative-presentation-battery) | LANDED | 9 Aug 2026 | 3-model roster | Presentation null holds; form flips predictions, not accuracy |
 | [C1-REASONED](#c1-reasoned--reason-then-answer-and-the-presentation-x-elicitation-2x2) | LANDED | 12 Aug 2026 | 3-model roster | Reasoning never lifts accuracy but inflates confidence everywhere; Olmo won't reason 35-42% of the time |
-| [A4-CHAT-TEMPLATE](#a4-chat-template--the-label-readout-through-the-tuned-format) | PLANNED | — | 3-model roster | Template-vs-raw as a paired within-serving contrast; harness at da49fee |
+| [A4-CHAT-TEMPLATE](#a4-chat-template--the-label-readout-through-the-tuned-format) | PLANNED | — | 3-model roster | Template-vs-raw as a paired within-serving contrast; harness at 05390ee |
 | [EXPA-PARAPHRASE](#expa-paraphrase--format-stability-under-validated-paraphrase) | LANDED | 6 Aug 2026 | Qwen3-32B, Olmo-3.1-32B | Instability was mostly the scoring rule, not the model |
 | [LADDER-READOUT](#ladder-readout--feature-ladder-x-elicitation) | LANDED | 6–7 Aug 2026 | Qwen3-4B/32B, Olmo-3.1-32B | Accuracy saturates on the first informative feature |
 | [READOUT-GRID](#readout-grid--six-arm-readout-grid-on-olmo) | LANDED | 6 Aug 2026 | Olmo-3.1-32B | Six-arm elicitation sweep; `label_num_natural` fails on Olmo |
@@ -494,9 +494,11 @@ Rules that keep the entries fillable:
 - **Ran:** not yet submitted
 - **Hardware:** ARC HTC `short`, 1x H100 per model, 8h wall budget
 - **Code:** `CODE/src/synthetic_sampling/scoring/` (chat_label_num arm),
-  `CODE/scripts/chat_template/{run_a4.sbatch,submit_a4.sh}` @ da49fee;
-  Qwen3-32B gets `enable_thinking=false` (its template defaults to
-  thinking ON; A4 is the non-reasoning arm)
+  `CODE/scripts/chat_template/{run_a4.sbatch,submit_a4.sh}` @ 05390ee
+  (da49fee + review fixes: per-arm smoke gate so a healthy raw arm cannot
+  mask a dead chat arm, prefix-matched toggle kwargs); Qwen3-32B gets
+  `enable_thinking=false` (its template defaults to thinking ON; A4 is the
+  non-reasoning arm); read the run commit off RUNSTAMP at submit
 - **Inputs:** `CODE/outputs/narrative/inputs/narrative_label_set.jsonl`
   (B3's 2,169 instances = 723 pairs x {qa, narrative1, narrative2};
   instances reused, scores fresh per the reuse rule)
