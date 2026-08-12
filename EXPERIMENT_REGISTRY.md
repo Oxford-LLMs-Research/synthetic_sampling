@@ -63,7 +63,7 @@ Rules that keep the entries fillable:
 | [B3-NARRATIVE](#b3-narrative--validated-narrative-presentation-battery) | LANDED | 9 Aug 2026 | 3-model roster | Presentation null holds; form flips predictions, not accuracy |
 | [C1-REASONED](#c1-reasoned--reason-then-answer-and-the-presentation-x-elicitation-2x2) | LANDED | 12 Aug 2026 | 3-model roster | Reasoning never lifts accuracy but inflates confidence everywhere; Olmo won't reason 35-42% of the time |
 | [A4-CHAT-TEMPLATE](#a4-chat-template--the-label-readout-through-the-tuned-format) | LANDED | 12 Aug 2026 | 3-model roster | Instrument validated, no contrast flips; small qa-positive template tax; Qwen3-32B narrative penalty resurfaces under chat |
-| [C2-THINKING](#c2-thinking--the-native-thinking-toggle) | RUNNING | 12 Aug 2026 | Qwen3-32B | Thinking toggle ON vs OFF, same weights, one serving; job 8556174 |
+| [C2-THINKING](#c2-thinking--the-native-thinking-toggle) | LANDED | 12 Aug 2026 | Qwen3-32B | Native thinking hurts on the chat readout (-0.040, CI excl. 0); confidence inflation replicates with zero pathology |
 | [C3-THINKING-SIBLING](#c3-thinking-sibling--reasoning-as-training-at-fixed-base) | PLANNED | — | Thinking-2507 vs Instruct-2507 | Reasoning-as-training at fixed base; harness at 27c00aa |
 | [EXPA-PARAPHRASE](#expa-paraphrase--format-stability-under-validated-paraphrase) | LANDED | 6 Aug 2026 | Qwen3-32B, Olmo-3.1-32B | Instability was mostly the scoring rule, not the model |
 | [LADDER-READOUT](#ladder-readout--feature-ladder-x-elicitation) | LANDED | 6–7 Aug 2026 | Qwen3-4B/32B, Olmo-3.1-32B | Accuracy saturates on the first informative feature |
@@ -525,9 +525,8 @@ Rules that keep the entries fillable:
 
 ### C2-THINKING — the native thinking toggle
 
-- **Status:** RUNNING (full run submitted 12 Aug, job 8556174; canary job
-  8555556 passed every gate first — 25/25 think blocks closed, 0 empty,
-  25/25 stated parses, trace inspected)
+- **Status:** LANDED (canary job 8555556 passed every gate first — 25/25
+  think blocks closed, 0 empty, 25/25 stated parses, trace inspected)
 - **Rationale:** C1's "reasoning does not help" verdict was elicited through
   raw /completions, which its own loop census proved out-of-distribution
   for generation; C2 reruns the elicitation axis with the instrument the
@@ -536,12 +535,19 @@ Rules that keep the entries fillable:
   think-then-digit instruction; both cells score with thinking OFF and the
   think-block content injected on the thinking cell (locked 12 Aug
   protocol — an elicitation-protocol contrast, not a one-flag ablation).
-- **Result:** PENDING. Pre-registered (12 Aug + same-day amendments):
-  thinking-minus-direct within +-0.02 (falsifier +0.04); instrument claim
-  that native templating cures the C1 pathology (loop and empty rates <5%,
-  noisy-lower-bound census); calibration reported either way.
-- **Ran:** submitted 12 Aug 2026, job 8556174 (full run; provenance off
-  its RUNSTAMP when it lands); canary 8555556 on 12 Aug
+- **Result:** The falsifier is untouched and the sign runs the other way:
+  thinking-minus-direct is -0.020 on the raw readout (CI spanning zero)
+  and -0.040 on the chat readout (CI -0.079..-0.007, EXCLUDING zero) —
+  properly-elicited native thinking hurts against the direct chat
+  readout, so C1's null was not an elicitation artifact. The instrument
+  claim essentially holds (0 empty, 0 truncation, 0/734 parse failures,
+  100% blocks closed; loop census 6.1% vs the <5% target, a marginal
+  miss on a noisy lower bound, against C1's 95%). Confidence inflation
+  replicates with zero pathology to blame (ECE 0.25->0.42 raw,
+  0.33->0.45 chat); stated answers agree with the label readouts at
+  99.3/98.6% and lose to just asking directly (0.531 vs 0.575).
+- **Ran:** 12 Aug 2026, job 8556174 (full run; run commit read off its
+  RUNSTAMP once the log is pulled); canary 8555556 same day
 - **Hardware:** ARC HTC `short`, 1x H100, 8h wall budget
 - **Code:** `CODE/scripts/thinking/` @ 0c17e36 (generate_thinking.py chat
   generation with trace, make_c2_set.py assembly with self-auditing
@@ -558,6 +564,11 @@ Rules that keep the entries fillable:
 - **Roster:** Qwen3-32B only (the toggle-bearing model)
 - **Constraint:** generation and both scoring cells in ONE serving; the
   ON cell is never scored with live thinking at shallow depth.
+- **Verified by:** `CODE/scripts/thinking/verify_c2_numbers.py` against
+  `WORK/analysis/thinking/c2_{levels,contrasts,elicitation}_<tag>.csv`
+  (60 pinned values, exit 0); tables from
+  `CODE/scripts/thinking/analyze_c2.py`; backup
+  `WORK/outputs_recovered/c2_thinking/` (sums verified, canary + full).
 
 ### C3-THINKING-SIBLING — reasoning as training, at fixed base
 
