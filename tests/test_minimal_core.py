@@ -168,6 +168,10 @@ def test_split_think_handles_all_block_shapes():
     r = split_think("Final answer: 2")
     assert r == {"think": "", "answer": "Final answer: 2",
                  "has_block": False, "closed": False}
+    # Thinking-2507: template pre-opens <think>, output has only the close
+    r = split_think("weighing the profile\n</think>\n\n5")
+    assert r == {"think": "weighing the profile", "answer": "5",
+                 "has_block": True, "closed": True}
 
 
 def test_parse_stated_chat_protocol():

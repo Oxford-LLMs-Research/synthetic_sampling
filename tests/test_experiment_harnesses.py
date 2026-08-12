@@ -16,6 +16,8 @@ FOLDER = {
     "make_reasoned_set": "reasoning",
     "convert_injection_instances": "injection",
     "make_c2_set": "thinking",
+    "make_c3_set": "thinking",
+    "make_c3_direct_set": "thinking",
     "generate_thinking": "thinking",
 }
 
@@ -194,6 +196,69 @@ def test_make_c2_set_assembles_toggle_pairs(tmp_path, capsys):
     assert sidecar[0]["loop_markers"] == "2"
     # missing transcripts are absent from the set but counted in the log
     assert "1 substrate pairs without a transcript" in capsys.readouterr().out
+
+
+def test_make_c3_set_thinking_only_and_close_only_block(tmp_path, capsys):
+    import csv
+    import json
+
+    mod = load("make_c3_set")
+    tasks = tmp_path / "tasks.jsonl"
+    tasks.write_text(json.dumps({"example_id": "e1"}) + "\n", encoding="utf-8")
+    src = {
+        "survey": "wvs", "target_code": "Q1", "id": 7, "country": "X",
+        "target_question": "Trust?", "ground_truth": "Yes",
+        "ground_truth_index": 0, "questions": {"Age?": "30"},
+        "option_sets": {"original": ["Yes", "No"]},
+    }
+    ladder = tmp_path / "ladder.jsonl"
+    ladder.write_text(json.dumps({"example_id": "e1", **src}) + "\n",
+                      encoding="utf-8")
+    # Thinking-2507 close-only shape (template pre-opened <think>).
+    trans = tmp_path / "trans.jsonl"
+    trans.write_text(json.dumps({
+        "example_id": "e1",
+        "thinking_raw": "they trust family\n</think>\n\n1",
+        "finish_reason": "stop",
+    }) + "\n", encoding="utf-8")
+    out = tmp_path / "c3.jsonl"
+    mod.main(["--transcripts", str(trans), "--out", str(out),
+              "--tasks", str(tasks), "--ladder-set", str(ladder)])
+    rows = [json.loads(l) for l in out.open(encoding="utf-8")]
+    assert len(rows) == 1
+    assert rows[0]["example_id"] == "e1_thinking"
+    assert rows[0]["arm_label"] == "thinking"
+    assert rows[0]["reasoning"] == "they trust family"
+    assert "toff" not in rows[0]["example_id"]
+    sc = list(csv.DictReader(open(tmp_path / "c3_parse.csv", encoding="utf-8")))
+    assert sc[0]["has_block"] == "True" and sc[0]["closed"] == "True"
+    assert sc[0]["parse"] == "bare_digit" and sc[0]["stated_index"] == "0"
+
+
+def test_make_c3_direct_set_caps_for_canary(tmp_path):
+    import json
+
+    mod = load("make_c3_direct_set")
+    tasks = tmp_path / "tasks.jsonl"
+    tasks.write_text("".join(json.dumps({"example_id": e}) + "\n"
+                             for e in ("e1", "e2", "e3")), encoding="utf-8")
+    src = {
+        "survey": "wvs", "target_code": "Q1", "id": 7, "country": "X",
+        "target_question": "Trust?", "ground_truth": "Yes",
+        "ground_truth_index": 0, "questions": {"Age?": "30"},
+        "option_sets": {"original": ["Yes", "No"]},
+    }
+    ladder = tmp_path / "ladder.jsonl"
+    ladder.write_text("".join(json.dumps({"example_id": e, **src}) + "\n"
+                              for e in ("e1", "e2", "e3")), encoding="utf-8")
+    out = tmp_path / "direct.jsonl"
+    mod.main(["--out", str(out), "--tasks", str(tasks),
+              "--ladder-set", str(ladder), "--limit", "2"])
+    rows = [json.loads(l) for l in out.open(encoding="utf-8")]
+    assert len(rows) == 2
+    assert all(r["arm_label"] == "direct" for r in rows)
+    assert all("reasoning" not in r for r in rows)
+    assert rows[0]["example_id"].endswith("_direct")
 
 
 def test_make_reasoned_set_assembles_2x2(tmp_path):

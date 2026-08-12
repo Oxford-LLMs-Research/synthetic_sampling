@@ -103,7 +103,15 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--trace", type=int, default=0,
                     help="Dump the first N request/response pairs verbatim "
                          "to <out stem>_trace.json for inspection.")
+    ap.add_argument("--chat-template-kwargs",
+                    default='{"enable_thinking": true}',
+                    help="JSON object forwarded to the chat template. "
+                         "Empty string omits the field (Thinking-2507: "
+                         "thinking is always on; the kwarg is unnecessary).")
     args = ap.parse_args(argv)
+    chat_kwargs = None
+    if args.chat_template_kwargs.strip():
+        chat_kwargs = json.loads(args.chat_template_kwargs)
 
     done = set()
     if args.out.exists():
@@ -135,8 +143,13 @@ def main(argv: list[str] | None = None) -> int:
         payload = {
             "model": args.model, "messages": messages,
             "max_tokens": args.max_tokens, **sampling,
-            "chat_template_kwargs": {"enable_thinking": True},
         }
+        if chat_kwargs is not None:
+            payload["chat_template_kwargs"] = chat_kwargs
+        # Thinking-2507 may emit only </think> (template pre-opened the
+        # block). Prepend <think> when the open tag is missing so
+        # split_think and traces share one canonical string shape.
+        # (Stitch happens after the response; see below.)
         try:
             r = post_with_retries(session, url, headers, payload)
             body = r.json()
@@ -150,8 +163,11 @@ def main(argv: list[str] | None = None) -> int:
                          or msg.get("reasoning_content") or "")
             if content is None:
                 content = ""
-            if reasoning and "<think>" not in content:
+            # Parser-split shape: reasoning in a side field, answer in content.
+            if reasoning and "<think>" not in content and "</think>" not in content:
                 content = f"<think>{reasoning}</think>{content}"
+            # Thinking-2507 close-only content (no open tag) is left as-is;
+            # split_think accepts that shape.
             rec = {"example_id": inst["example_id"],
                    "thinking_raw": content,
                    "finish_reason": choice.get("finish_reason"),

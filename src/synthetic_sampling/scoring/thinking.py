@@ -9,6 +9,9 @@ Cases handled, all covered by tests:
 - normal:      <think>...</think> answer   -> (reasoning, answer, closed)
 - truncated:   <think>... [max_tokens]     -> (reasoning, "", not closed)
 - empty block: <think></think> answer      -> ("", answer, closed)
+- close-only:  ...</think> answer          -> (reasoning, answer, closed)
+  (Qwen3-Thinking-2507: the chat template pre-opens ``<think>``, so the
+  model output often has only the close tag — C3)
 - no block:    answer                      -> ("", answer, no block)
 """
 
@@ -27,8 +30,15 @@ def split_think(text: str) -> dict:
     exactly one); anything after its close tag is answer text. Returns
     ``think`` (block content), ``answer`` (visible text), ``has_block``,
     and ``closed`` (False when generation was cut inside the block).
+
+    Thinking-2507 pre-opens the block in the template: generation may
+    contain ``</think>`` with no opening tag. That shape is a closed block.
     """
     if THINK_OPEN not in text:
+        if THINK_CLOSE in text:
+            think, _, answer = text.partition(THINK_CLOSE)
+            return {"think": think.strip(), "answer": answer.strip(),
+                    "has_block": True, "closed": True}
         return {"think": "", "answer": text.strip(),
                 "has_block": False, "closed": False}
     head, _, rest = text.partition(THINK_OPEN)
