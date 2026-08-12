@@ -63,6 +63,7 @@ Rules that keep the entries fillable:
 | [B3-NARRATIVE](#b3-narrative--validated-narrative-presentation-battery) | LANDED | 9 Aug 2026 | 3-model roster | Presentation null holds; form flips predictions, not accuracy |
 | [C1-REASONED](#c1-reasoned--reason-then-answer-and-the-presentation-x-elicitation-2x2) | LANDED | 12 Aug 2026 | 3-model roster | Reasoning never lifts accuracy but inflates confidence everywhere; Olmo won't reason 35-42% of the time |
 | [A4-CHAT-TEMPLATE](#a4-chat-template--the-label-readout-through-the-tuned-format) | PLANNED | — | 3-model roster | Template-vs-raw as a paired within-serving contrast; harness at 05390ee |
+| [C2-THINKING](#c2-thinking--the-native-thinking-toggle) | PLANNED | — | Qwen3-32B | Thinking toggle ON vs OFF, same weights, one serving; harness at 0c17e36 |
 | [EXPA-PARAPHRASE](#expa-paraphrase--format-stability-under-validated-paraphrase) | LANDED | 6 Aug 2026 | Qwen3-32B, Olmo-3.1-32B | Instability was mostly the scoring rule, not the model |
 | [LADDER-READOUT](#ladder-readout--feature-ladder-x-elicitation) | LANDED | 6–7 Aug 2026 | Qwen3-4B/32B, Olmo-3.1-32B | Accuracy saturates on the first informative feature |
 | [READOUT-GRID](#readout-grid--six-arm-readout-grid-on-olmo) | LANDED | 6 Aug 2026 | Olmo-3.1-32B | Six-arm elicitation sweep; `label_num_natural` fails on Olmo |
@@ -506,6 +507,39 @@ Rules that keep the entries fillable:
 - **Roster:** Qwen3-32B, Olmo-3.1-32B, Qwen3-30B-A3B (as B3)
 - **Constraint:** raw and chat arms must never split across jobs — the
   template contrast only exists within one serving.
+
+### C2-THINKING — the native thinking toggle
+
+- **Status:** PLANNED (harness complete and reviewed, awaiting submission)
+- **Rationale:** C1's "reasoning does not help" verdict was elicited through
+  raw /completions, which its own loop census proved out-of-distribution
+  for generation; C2 reruns the elicitation axis with the instrument the
+  model was trained for — Qwen3-32B under its own chat template, thinking
+  toggle ON vs OFF, same weights, one serving. Generation uses a
+  think-then-digit instruction; both cells score with thinking OFF and the
+  think-block content injected on the thinking cell (locked 12 Aug
+  protocol — an elicitation-protocol contrast, not a one-flag ablation).
+- **Result:** PENDING. Pre-registered (12 Aug + same-day amendments):
+  thinking-minus-direct within +-0.02 (falsifier +0.04); instrument claim
+  that native templating cures the C1 pathology (loop and empty rates <5%,
+  noisy-lower-bound census); calibration reported either way.
+- **Ran:** not yet submitted
+- **Hardware:** ARC HTC `short`, 1x H100, 8h wall budget
+- **Code:** `CODE/scripts/thinking/` @ 0c17e36 (generate_thinking.py chat
+  generation with trace, make_c2_set.py assembly with self-auditing
+  accounting, check_c2_gates.py instrument gates, run_c2.sbatch);
+  `CODE/src/synthetic_sampling/scoring/thinking.py` splitter/parse; read
+  the run commit off RUNSTAMP at submit
+- **Inputs:** assembled on-cluster:
+  `CODE/outputs/thinking/inputs/c2_label_set_<tag>.jsonl` (734 pairs x
+  {direct, thinking}); substrate = C1's qa substrate (narrative_tasks +
+  ladder set)
+- **Outputs:** `CODE/outputs/thinking/` (does not exist yet); stage-1
+  transcripts are sampled generation — NON-REGENERABLE, pull and back up
+  with the results
+- **Roster:** Qwen3-32B only (the toggle-bearing model)
+- **Constraint:** generation and both scoring cells in ONE serving; the
+  ON cell is never scored with live thinking at shallow depth.
 
 ## Not yet registered
 
