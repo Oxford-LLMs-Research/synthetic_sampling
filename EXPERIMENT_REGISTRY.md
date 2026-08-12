@@ -63,7 +63,7 @@ Rules that keep the entries fillable:
 | [B3-NARRATIVE](#b3-narrative--validated-narrative-presentation-battery) | LANDED | 9 Aug 2026 | 3-model roster | Presentation null holds; form flips predictions, not accuracy |
 | [C1-REASONED](#c1-reasoned--reason-then-answer-and-the-presentation-x-elicitation-2x2) | LANDED | 12 Aug 2026 | 3-model roster | Reasoning never lifts accuracy but inflates confidence everywhere; Olmo won't reason 35-42% of the time |
 | [A4-CHAT-TEMPLATE](#a4-chat-template--the-label-readout-through-the-tuned-format) | LANDED | 12 Aug 2026 | 3-model roster | Instrument validated, no contrast flips; small qa-positive template tax; Qwen3-32B narrative penalty resurfaces under chat |
-| [C2-THINKING](#c2-thinking--the-native-thinking-toggle) | PLANNED | — | Qwen3-32B | Thinking toggle ON vs OFF, same weights, one serving; harness at 0c17e36 |
+| [C2-THINKING](#c2-thinking--the-native-thinking-toggle) | RUNNING | 12 Aug 2026 | Qwen3-32B | Thinking toggle ON vs OFF, same weights, one serving; job 8556174 |
 | [C3-THINKING-SIBLING](#c3-thinking-sibling--reasoning-as-training-at-fixed-base) | PLANNED | — | Thinking-2507 vs Instruct-2507 | Reasoning-as-training at fixed base; harness at 27c00aa |
 | [EXPA-PARAPHRASE](#expa-paraphrase--format-stability-under-validated-paraphrase) | LANDED | 6 Aug 2026 | Qwen3-32B, Olmo-3.1-32B | Instability was mostly the scoring rule, not the model |
 | [LADDER-READOUT](#ladder-readout--feature-ladder-x-elicitation) | LANDED | 6–7 Aug 2026 | Qwen3-4B/32B, Olmo-3.1-32B | Accuracy saturates on the first informative feature |
@@ -525,7 +525,9 @@ Rules that keep the entries fillable:
 
 ### C2-THINKING — the native thinking toggle
 
-- **Status:** PLANNED (harness complete and reviewed, awaiting submission)
+- **Status:** RUNNING (full run submitted 12 Aug, job 8556174; canary job
+  8555556 passed every gate first — 25/25 think blocks closed, 0 empty,
+  25/25 stated parses, trace inspected)
 - **Rationale:** C1's "reasoning does not help" verdict was elicited through
   raw /completions, which its own loop census proved out-of-distribution
   for generation; C2 reruns the elicitation axis with the instrument the
@@ -538,7 +540,8 @@ Rules that keep the entries fillable:
   thinking-minus-direct within +-0.02 (falsifier +0.04); instrument claim
   that native templating cures the C1 pathology (loop and empty rates <5%,
   noisy-lower-bound census); calibration reported either way.
-- **Ran:** not yet submitted
+- **Ran:** submitted 12 Aug 2026, job 8556174 (full run; provenance off
+  its RUNSTAMP when it lands); canary 8555556 on 12 Aug
 - **Hardware:** ARC HTC `short`, 1x H100, 8h wall budget
 - **Code:** `CODE/scripts/thinking/` @ 0c17e36 (generate_thinking.py chat
   generation with trace, make_c2_set.py assembly with self-auditing
