@@ -100,6 +100,16 @@ def main(argv: list[str] | None = None) -> int:
             src = source[eid]
             options = src["option_sets"]["original"]
             split = split_think(raw)
+            # Truncated close-only shape: the template pre-opens <think>,
+            # so a generation cut before </think> carries NEITHER tag and
+            # split_think reads it as tagless answer text. finish_reason
+            # disambiguates: at "length" with no block detected, the whole
+            # text IS the (unfinished) think content — inject it, no
+            # stated answer. Without this, the instance would enter the
+            # thinking arm with an EMPTY reasoning field.
+            if not split["has_block"] and t.get("finish_reason") == "length":
+                split = {"think": raw.strip(), "answer": "",
+                         "has_block": True, "closed": False}
             parsed = parse_stated_chat(split["answer"], options)
             w.writerow({
                 "example_id": eid, "parse": parsed["parse"],

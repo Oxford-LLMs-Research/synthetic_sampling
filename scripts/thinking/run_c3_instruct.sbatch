@@ -22,7 +22,8 @@ C3_LIMIT="${C3_LIMIT:-}"
 if [ -n "$C3_LIMIT" ]; then
   TAG="${TAG}_canary"
 fi
-ARMS="${ARMS:-label_num,chat_label_num}"
+# echo_plain rides as the paper-method / serving control, as everywhere.
+ARMS="${ARMS:-label_num,chat_label_num,echo_plain}"
 REPLICATE_FRAC="${REPLICATE_FRAC:-0.25}"
 DTYPE="${DTYPE:-bfloat16}"
 MAX_MODEL_LEN="${MAX_MODEL_LEN:-16384}"

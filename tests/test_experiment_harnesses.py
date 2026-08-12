@@ -214,25 +214,44 @@ def test_make_c3_set_thinking_only_and_close_only_block(tmp_path, capsys):
     ladder = tmp_path / "ladder.jsonl"
     ladder.write_text(json.dumps({"example_id": "e1", **src}) + "\n",
                       encoding="utf-8")
-    # Thinking-2507 close-only shape (template pre-opened <think>).
+    # e1: Thinking-2507 close-only shape (template pre-opened <think>).
+    # e2: the truncated twin — cut inside the pre-opened block, so the raw
+    # text carries NEITHER tag; finish_reason=length must rescue it as
+    # think content, never as an empty-reasoning instance.
+    tasks.write_text(json.dumps({"example_id": "e1"}) + "\n"
+                     + json.dumps({"example_id": "e2"}) + "\n",
+                     encoding="utf-8")
+    ladder.write_text(
+        json.dumps({"example_id": "e1", **src}) + "\n"
+        + json.dumps({"example_id": "e2", **src}) + "\n",
+        encoding="utf-8")
     trans = tmp_path / "trans.jsonl"
     trans.write_text(json.dumps({
         "example_id": "e1",
         "thinking_raw": "they trust family\n</think>\n\n1",
         "finish_reason": "stop",
+    }) + "\n" + json.dumps({
+        "example_id": "e2",
+        "thinking_raw": "weighing the profile evidence and",
+        "finish_reason": "length",
     }) + "\n", encoding="utf-8")
     out = tmp_path / "c3.jsonl"
     mod.main(["--transcripts", str(trans), "--out", str(out),
               "--tasks", str(tasks), "--ladder-set", str(ladder)])
     rows = [json.loads(l) for l in out.open(encoding="utf-8")]
-    assert len(rows) == 1
+    assert len(rows) == 2
     assert rows[0]["example_id"] == "e1_thinking"
     assert rows[0]["arm_label"] == "thinking"
     assert rows[0]["reasoning"] == "they trust family"
     assert "toff" not in rows[0]["example_id"]
+    # truncated twin: the whole text is injected as reasoning, no answer
+    assert rows[1]["example_id"] == "e2_thinking"
+    assert rows[1]["reasoning"] == "weighing the profile evidence and"
     sc = list(csv.DictReader(open(tmp_path / "c3_parse.csv", encoding="utf-8")))
     assert sc[0]["has_block"] == "True" and sc[0]["closed"] == "True"
     assert sc[0]["parse"] == "bare_digit" and sc[0]["stated_index"] == "0"
+    assert sc[1]["has_block"] == "True" and sc[1]["closed"] == "False"
+    assert sc[1]["parse"] == "empty_answer" and sc[1]["think_words"] == "5"
 
 
 def test_make_c3_direct_set_caps_for_canary(tmp_path):

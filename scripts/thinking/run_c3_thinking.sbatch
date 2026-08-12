@@ -25,8 +25,9 @@ C3_LIMIT="${C3_LIMIT:-}"
 if [ -n "$C3_LIMIT" ]; then
   TAG="${TAG}_canary"
 fi
-# Completions label readout only — see header.
-ARMS="${ARMS:-label_num}"
+# Completions readouts only — see header. echo_plain rides as the
+# paper-method / serving control, as on every other experiment.
+ARMS="${ARMS:-label_num,echo_plain}"
 REPLICATE_FRAC="${REPLICATE_FRAC:-0.25}"
 DTYPE="${DTYPE:-bfloat16}"
 MAX_MODEL_LEN="${MAX_MODEL_LEN:-16384}"
@@ -61,7 +62,7 @@ mkdir -p "$(dirname "$GEN")" "$(dirname "$INPUT")" "$(dirname "$OUT")" logs
 echo "RUNSTAMP repo=$(git -C "$REPO" rev-parse HEAD 2>/dev/null || echo NOT_RECORDED)"
 echo "RUNSTAMP job=${SLURM_JOB_ID:-local} node=$(hostname) model=$MODEL"
 echo "RUNSTAMP arms=$ARMS replicate=$REPLICATE_FRAC input=$INPUT out=$OUT"
-echo "RUNSTAMP c3 thinking: generate (no chat_template_kwargs; always-on) then score label_num"
+echo "RUNSTAMP c3 thinking: generate (no chat_template_kwargs; always-on, max_tokens=8192) then score via /completions"
 
 if curl -sf "http://127.0.0.1:${PORT}/v1/models" >/dev/null 2>&1; then
   echo "FATAL port $PORT on $(hostname) is already serving; refusing to attach"
@@ -88,11 +89,15 @@ while ! curl -sf "http://127.0.0.1:${PORT}/v1/models" 2>/dev/null | grep -qF "$M
   elapsed=$((elapsed + 5))
 done
 
-# Empty --chat-template-kwargs: Thinking-2507 is always-on; the kwarg is a no-op.
+# Empty --chat-template-kwargs: Thinking-2507 is always-on; the kwarg is a
+# no-op. max_tokens 8192: this checkpoint thinks LONG, and a generation cut
+# inside its (pre-opened) think block is the shape the assembler has to
+# rescue via finish_reason — keep it rare, not common.
 python "$REPO/scripts/thinking/generate_thinking.py" \
   --base-url "$BASE_URL" --model "$MODEL" \
   --ladder-set "$LADDER_SET" --tasks "$TASKS" \
   --out "$GEN" --trace 5 --chat-template-kwargs "" \
+  --max-tokens 8192 \
   ${C3_LIMIT:+--limit "$C3_LIMIT"}
 
 python "$REPO/scripts/thinking/make_c3_set.py" \
