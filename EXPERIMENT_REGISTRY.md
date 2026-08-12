@@ -64,6 +64,7 @@ Rules that keep the entries fillable:
 | [C1-REASONED](#c1-reasoned--reason-then-answer-and-the-presentation-x-elicitation-2x2) | LANDED | 12 Aug 2026 | 3-model roster | Reasoning never lifts accuracy but inflates confidence everywhere; Olmo won't reason 35-42% of the time |
 | [A4-CHAT-TEMPLATE](#a4-chat-template--the-label-readout-through-the-tuned-format) | LANDED | 12 Aug 2026 | 3-model roster | Instrument validated, no contrast flips; small qa-positive template tax; Qwen3-32B narrative penalty resurfaces under chat |
 | [C2-THINKING](#c2-thinking--the-native-thinking-toggle) | PLANNED | — | Qwen3-32B | Thinking toggle ON vs OFF, same weights, one serving; harness at 0c17e36 |
+| [C3-THINKING-SIBLING](#c3-thinking-sibling--reasoning-as-training-at-fixed-base) | PLANNED | — | Thinking-2507 vs Instruct-2507 | Reasoning-as-training at fixed base; harness at 27c00aa |
 | [EXPA-PARAPHRASE](#expa-paraphrase--format-stability-under-validated-paraphrase) | LANDED | 6 Aug 2026 | Qwen3-32B, Olmo-3.1-32B | Instability was mostly the scoring rule, not the model |
 | [LADDER-READOUT](#ladder-readout--feature-ladder-x-elicitation) | LANDED | 6–7 Aug 2026 | Qwen3-4B/32B, Olmo-3.1-32B | Accuracy saturates on the first informative feature |
 | [READOUT-GRID](#readout-grid--six-arm-readout-grid-on-olmo) | LANDED | 6 Aug 2026 | Olmo-3.1-32B | Six-arm elicitation sweep; `label_num_natural` fails on Olmo |
@@ -554,6 +555,41 @@ Rules that keep the entries fillable:
 - **Roster:** Qwen3-32B only (the toggle-bearing model)
 - **Constraint:** generation and both scoring cells in ONE serving; the
   ON cell is never scored with live thinking at shallow depth.
+
+### C3-THINKING-SIBLING — reasoning as training, at fixed base
+
+- **Status:** PLANNED (harness complete and reviewed, awaiting submission)
+- **Rationale:** The training axis no toggle can isolate:
+  Qwen3-30B-A3B-Thinking-2507 vs its roster sibling Instruct-2507 — same
+  base, divergent post-training. The Thinking cell generates natively
+  (always-on thinking, chat template, max_tokens 8192), injects the
+  think-block content, and scores via raw /completions `label_num`
+  (chat scoring would re-open a think block); the Instruct cell gets
+  FRESH direct scores in its own serving, so the primary contrast is
+  raw-vs-raw across the checkpoint pair.
+- **Result:** PENDING. Pre-registered (12 Aug): the Thinking sibling
+  lands within +-0.02 of Instruct-2507's qa ceiling; falsifier +0.04
+  above it ("broke the feature ceiling" reads only once the GroupKFold
+  XGBoost ceiling is in hand — until then, "beat the sibling").
+- **Ran:** not yet submitted
+- **Hardware:** ARC HTC `short`, 1x H100 per job (two jobs, two servings
+  — cross-checkpoint contrast, inherently cross-serving)
+- **Code:** `CODE/scripts/thinking/{make_c3_set,make_c3_direct_set}.py`,
+  `run_c3_{thinking,instruct}.sbatch`, `submit_c3.sh` @ 27c00aa
+  (fa48549 + review fixes: truncated close-only think blocks rescued via
+  finish_reason, echo_plain controls, max_tokens 8192); read the run
+  commit off RUNSTAMP at submit
+- **Inputs:** assembled on-cluster: `CODE/outputs/thinking/inputs/
+  c3_{thinking,direct}_set_<tag>.jsonl` (734 pairs each); substrate =
+  C1/C2's qa substrate
+- **Outputs:** `CODE/outputs/thinking/results/c3_*` (does not exist yet);
+  Thinking transcripts are sampled generation — NON-REGENERABLE
+- **Roster:** Thinking-2507 (STAGED, snapshot 144afc2f, see
+  `PAPER/docs/MODEL_CHECKPOINTS.md`) + Instruct-2507 (fresh scores; A6/A4
+  numbers never reused across servings)
+- **Constraint:** certification-grade read: the Thinking checkpoint enters
+  no comparison beyond its matched sibling; canary + trace inspection
+  before the full Thinking job (`C3_LIMIT=40`).
 
 ## Not yet registered
 
