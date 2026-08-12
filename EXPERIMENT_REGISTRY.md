@@ -64,7 +64,7 @@ Rules that keep the entries fillable:
 | [C1-REASONED](#c1-reasoned--reason-then-answer-and-the-presentation-x-elicitation-2x2) | LANDED | 12 Aug 2026 | 3-model roster | Reasoning never lifts accuracy but inflates confidence everywhere; Olmo won't reason 35-42% of the time |
 | [A4-CHAT-TEMPLATE](#a4-chat-template--the-label-readout-through-the-tuned-format) | LANDED | 12 Aug 2026 | 3-model roster | Instrument validated, no contrast flips; small qa-positive template tax; Qwen3-32B narrative penalty resurfaces under chat |
 | [C2-THINKING](#c2-thinking--the-native-thinking-toggle) | LANDED | 12 Aug 2026 | Qwen3-32B | Native thinking hurts on the chat readout (-0.040, CI excl. 0); confidence inflation replicates with zero pathology |
-| [C3-THINKING-SIBLING](#c3-thinking-sibling--reasoning-as-training-at-fixed-base) | PLANNED | — | Thinking-2507 vs Instruct-2507 | Reasoning-as-training at fixed base; harness at 27c00aa |
+| [C3-THINKING-SIBLING](#c3-thinking-sibling--reasoning-as-training-at-fixed-base) | RUNNING | 12 Aug 2026 | Thinking-2507 vs Instruct-2507 | Reasoning-as-training at fixed base; jobs 8556542/8556543 |
 | [EXPA-PARAPHRASE](#expa-paraphrase--format-stability-under-validated-paraphrase) | LANDED | 6 Aug 2026 | Qwen3-32B, Olmo-3.1-32B | Instability was mostly the scoring rule, not the model |
 | [LADDER-READOUT](#ladder-readout--feature-ladder-x-elicitation) | LANDED | 6–7 Aug 2026 | Qwen3-4B/32B, Olmo-3.1-32B | Accuracy saturates on the first informative feature |
 | [READOUT-GRID](#readout-grid--six-arm-readout-grid-on-olmo) | LANDED | 6 Aug 2026 | Olmo-3.1-32B | Six-arm elicitation sweep; `label_num_natural` fails on Olmo |
@@ -546,8 +546,9 @@ Rules that keep the entries fillable:
   replicates with zero pathology to blame (ECE 0.25->0.42 raw,
   0.33->0.45 chat); stated answers agree with the label readouts at
   99.3/98.6% and lose to just asking directly (0.531 vs 0.575).
-- **Ran:** 12 Aug 2026, job 8556174 (full run; run commit read off its
-  RUNSTAMP once the log is pulled); canary 8555556 same day
+- **Ran:** 12 Aug 2026, job 8556174, node htc-g053, @ 0c17e36 per
+  RUNSTAMP (stage 1 chat thinking ON t=0.6/0.95/20 seed 42 max_tokens
+  4096; scoring thinking OFF); canary 8555556 same day
 - **Hardware:** ARC HTC `short`, 1x H100, 8h wall budget
 - **Code:** `CODE/scripts/thinking/` @ 0c17e36 (generate_thinking.py chat
   generation with trace, make_c2_set.py assembly with self-auditing
@@ -572,7 +573,12 @@ Rules that keep the entries fillable:
 
 ### C3-THINKING-SIBLING — reasoning as training, at fixed base
 
-- **Status:** PLANNED (harness complete and reviewed, awaiting submission)
+- **Status:** RUNNING (full pair submitted 12 Aug: jobs 8556542 Thinking /
+  8556543 Instruct, both htc-g058 @ 585362d per RUNSTAMP; canary pair
+  8556181/8556182 passed first — Thinking canary 40/40 close-only blocks
+  closed, 0 loops, 0 empty, 40/40 bare-digit parses, trace confirmed the
+  pre-opened-block shape, think words median 548 / max 1,660 vs the 8,192
+  cap)
 - **Rationale:** The training axis no toggle can isolate:
   Qwen3-30B-A3B-Thinking-2507 vs its roster sibling Instruct-2507 — same
   base, divergent post-training. The Thinking cell generates natively
@@ -585,7 +591,8 @@ Rules that keep the entries fillable:
   lands within +-0.02 of Instruct-2507's qa ceiling; falsifier +0.04
   above it ("broke the feature ceiling" reads only once the GroupKFold
   XGBoost ceiling is in hand — until then, "beat the sibling").
-- **Ran:** not yet submitted
+- **Ran:** 12 Aug 2026, jobs 8556542 (Thinking) and 8556543 (Instruct),
+  both htc-g058 @ 585362d; canaries 8556181/8556182 same day
 - **Hardware:** ARC HTC `short`, 1x H100 per job (two jobs, two servings
   — cross-checkpoint contrast, inherently cross-serving)
 - **Code:** `CODE/scripts/thinking/{make_c3_set,make_c3_direct_set}.py`,
