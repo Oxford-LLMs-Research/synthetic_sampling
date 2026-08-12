@@ -62,7 +62,7 @@ Rules that keep the entries fillable:
 | [A6-MOE](#a6-moe--moe-readout-battery-and-speed-benchmark) | LANDED | 8 Aug 2026 | Qwen3-30B-A3B | `label_num` certifies on an MoE; ~4.0x faster than dense 32B |
 | [B3-NARRATIVE](#b3-narrative--validated-narrative-presentation-battery) | LANDED | 9 Aug 2026 | 3-model roster | Presentation null holds; form flips predictions, not accuracy |
 | [C1-REASONED](#c1-reasoned--reason-then-answer-and-the-presentation-x-elicitation-2x2) | LANDED | 12 Aug 2026 | 3-model roster | Reasoning never lifts accuracy but inflates confidence everywhere; Olmo won't reason 35-42% of the time |
-| [A4-CHAT-TEMPLATE](#a4-chat-template--the-label-readout-through-the-tuned-format) | PLANNED | — | 3-model roster | Template-vs-raw as a paired within-serving contrast; harness at 05390ee |
+| [A4-CHAT-TEMPLATE](#a4-chat-template--the-label-readout-through-the-tuned-format) | RUNNING | 12 Aug 2026 | 3-model roster | Template-vs-raw paired within serving; jobs 8555167-69 |
 | [C2-THINKING](#c2-thinking--the-native-thinking-toggle) | PLANNED | — | Qwen3-32B | Thinking toggle ON vs OFF, same weights, one serving; harness at 0c17e36 |
 | [EXPA-PARAPHRASE](#expa-paraphrase--format-stability-under-validated-paraphrase) | LANDED | 6 Aug 2026 | Qwen3-32B, Olmo-3.1-32B | Instability was mostly the scoring rule, not the model |
 | [LADDER-READOUT](#ladder-readout--feature-ladder-x-elicitation) | LANDED | 6–7 Aug 2026 | Qwen3-4B/32B, Olmo-3.1-32B | Accuracy saturates on the first informative feature |
