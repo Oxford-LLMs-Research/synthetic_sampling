@@ -61,7 +61,7 @@ Rules that keep the entries fillable:
 | [A1-OLMO](#a1-olmo--a1-roster-completion-on-olmo-3132b) | LANDED | 9 Aug 2026 | Olmo-3.1-32B | Placebo penalty replicates; Qwen's context-line cost does not |
 | [A6-MOE](#a6-moe--moe-readout-battery-and-speed-benchmark) | LANDED | 8 Aug 2026 | Qwen3-30B-A3B | `label_num` certifies on an MoE; ~4.0x faster than dense 32B |
 | [B3-NARRATIVE](#b3-narrative--validated-narrative-presentation-battery) | LANDED | 9 Aug 2026 | 3-model roster | Presentation null holds; form flips predictions, not accuracy |
-| [C1-REASONED](#c1-reasoned--reason-then-answer-and-the-presentation-x-elicitation-2x2) | LANDED | 12 Aug 2026 | 3-model roster | Reason-then-answer 2x2 ran clean (jobs 8550834-36); analysis pending |
+| [C1-REASONED](#c1-reasoned--reason-then-answer-and-the-presentation-x-elicitation-2x2) | LANDED | 12 Aug 2026 | 3-model roster | Reasoning never lifts accuracy but inflates confidence everywhere; Olmo won't reason 35-42% of the time |
 | [EXPA-PARAPHRASE](#expa-paraphrase--format-stability-under-validated-paraphrase) | LANDED | 6 Aug 2026 | Qwen3-32B, Olmo-3.1-32B | Instability was mostly the scoring rule, not the model |
 | [LADDER-READOUT](#ladder-readout--feature-ladder-x-elicitation) | LANDED | 6–7 Aug 2026 | Qwen3-4B/32B, Olmo-3.1-32B | Accuracy saturates on the first informative feature |
 | [READOUT-GRID](#readout-grid--six-arm-readout-grid-on-olmo) | LANDED | 6 Aug 2026 | Olmo-3.1-32B | Six-arm elicitation sweep; `label_num_natural` fails on Olmo |
@@ -423,17 +423,23 @@ Rules that keep the entries fillable:
 
 ### C1-REASONED — reason-then-answer and the presentation x elicitation 2x2
 
-- **Status:** LANDED (jobs complete; analysis pending)
+- **Status:** LANDED
 - **Rationale:** Test whether reason-then-answer moves the accuracy ceiling
   that every direct elicitation saturates at, by reading the label
   distribution at the post-reasoning, pre-commitment position — the
   AUC-to-accuracy conversion failure is the motivating opening. The 2x2
   over B3's validated narratives (qa/narrative x direct/reasoned, paired
   within serving) tests whether elicitation and presentation interact.
-- **Result:** PENDING analysis. Pre-registered (8 Aug + same-day
-  amendments): reasoned-minus-qa within +-0.02 (falsifier +0.04), parse
-  failure <5% on instruction-tuned models, any interaction beyond +-0.02 is
-  the non-additivity signature; ECE shifts reported either way.
+- **Result:** Reasoned-minus-qa is null on all three models (-0.006 to
+  -0.016, every CI spanning zero, the +0.04 falsifier nowhere approached),
+  while reasoning inflates label_num confidence everywhere with no accuracy
+  gain, worsening ECE by +0.09 to +0.16. Qwen3-32B is the exception cell:
+  narrative_reasoned-minus-narrative_direct = -0.040 (CI -0.084 to -0.002,
+  the one primary CI excluding zero), interaction point estimate -0.029,
+  beyond the pre-registered +-0.02 band (CI spans zero). Parse failure is
+  0.0-0.3% on the Qwens but Olmo returns EMPTY completions for 35-42% of
+  transcripts (prediction 2 fails there); stated-vs-label agreement
+  93.7-98.9%; replicates 744/744 every arm and model.
 - **Ran:** 12 Aug 2026, jobs 8550834 (Qwen3-32B), 8550835 (Olmo-3.1-32B),
   8550836 (Qwen3-30B-A3B); canary job 8550590 (Qwen3-32B, `C1_LIMIT=25`,
   node htc-g058, 11 Aug) passed every gate first — 48/48 clean digit
@@ -459,6 +465,10 @@ Rules that keep the entries fillable:
 - **Roster:** Qwen3-32B, Olmo-3.1-32B, Qwen3-30B-A3B (as B3)
 - **Constraint:** never split the stages or the four arms across jobs —
   every cell scores against the serving that generated its transcripts.
+- **Verified by:** `CODE/scripts/reasoning/verify_c1_numbers.py` against
+  `WORK/analysis/reasoning/c1_{levels,contrasts,elicitation}_<tag>.csv`
+  (366 pinned values, exit 0); tables from
+  `CODE/scripts/reasoning/analyze_c1.py`.
 
 ---
 
