@@ -479,7 +479,9 @@ Rules that keep the entries fillable:
 
 ### A4-CHAT-TEMPLATE — the label readout through the tuned format
 
-- **Status:** PLANNED (harness complete, awaiting submission)
+- **Status:** RUNNING (submitted 12 Aug; the canary passed every gate
+  first — 0/270 chat label misses, 100% usable all five arms; canary job
+  id NOT RECORDED, it lives in the `_canary` log/RUNSTAMP on ARC)
 - **Rationale:** Every scoring run uses raw /completions; C1's transcripts
   proved that regime is out-of-distribution for the tuned models in
   generation (95% loops, 35-42% empty), so the non-reasoning instrument
@@ -492,7 +494,9 @@ Rules that keep the entries fillable:
   within +-0.02; a contrast flip beyond +-0.04 means the raw-completion
   instrument is confounded and every landed null gains a template caveat.
   The template tax on levels is reported descriptively, no falsifier.
-- **Ran:** not yet submitted
+- **Ran:** submitted 12 Aug 2026, jobs 8555167, 8555168, 8555169 (model
+  mapping read off each log's RUNSTAMP when they land; nodes htc-g058 and
+  htc-g054 x2 per squeue)
 - **Hardware:** ARC HTC `short`, 1x H100 per model, 8h wall budget
 - **Code:** `CODE/src/synthetic_sampling/scoring/` (chat_label_num arm),
   `CODE/scripts/chat_template/{run_a4.sbatch,submit_a4.sh}` @ 05390ee
