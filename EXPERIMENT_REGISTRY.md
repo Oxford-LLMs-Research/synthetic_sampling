@@ -494,9 +494,11 @@ Rules that keep the entries fillable:
   within +-0.02; a contrast flip beyond +-0.04 means the raw-completion
   instrument is confounded and every landed null gains a template caveat.
   The template tax on levels is reported descriptively, no falsifier.
-- **Ran:** submitted 12 Aug 2026, jobs 8555167, 8555168, 8555169 (model
-  mapping read off each log's RUNSTAMP when they land; nodes htc-g058 and
-  htc-g054 x2 per squeue)
+- **Ran:** 12 Aug 2026, jobs 8555167 (Qwen3-32B, htc-g058,
+  `enable_thinking=false` confirmed in RUNSTAMP), 8555168 (Olmo-3.1-32B,
+  htc-g054), 8555169 (Qwen3-30B-A3B, htc-g054); all @ 7f9c327 per RUNSTAMP;
+  all completed same day, 2,683/2,683 usable on all five arms (Olmo
+  label_num carries 107 non-finite scores, its known miss pattern)
 - **Hardware:** ARC HTC `short`, 1x H100 per model, 8h wall budget
 - **Code:** `CODE/src/synthetic_sampling/scoring/` (chat_label_num arm),
   `CODE/scripts/chat_template/{run_a4.sbatch,submit_a4.sh}` @ 05390ee
