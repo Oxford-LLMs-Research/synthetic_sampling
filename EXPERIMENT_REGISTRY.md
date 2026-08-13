@@ -64,7 +64,7 @@ Rules that keep the entries fillable:
 | [C1-REASONED](#c1-reasoned--reason-then-answer-and-the-presentation-x-elicitation-2x2) | LANDED | 12 Aug 2026 | 3-model roster | Reasoning never lifts accuracy but inflates confidence everywhere; Olmo won't reason 35-42% of the time |
 | [A4-CHAT-TEMPLATE](#a4-chat-template--the-label-readout-through-the-tuned-format) | LANDED | 12 Aug 2026 | 3-model roster | Instrument validated, no contrast flips; small qa-positive template tax; Qwen3-32B narrative penalty resurfaces under chat |
 | [C2-THINKING](#c2-thinking--the-native-thinking-toggle) | LANDED | 12 Aug 2026 | Qwen3-32B | Native thinking hurts on the chat readout (-0.040, CI excl. 0); confidence inflation replicates with zero pathology |
-| [C3-THINKING-SIBLING](#c3-thinking-sibling--reasoning-as-training-at-fixed-base) | RUNNING | 12 Aug 2026 | Thinking-2507 vs Instruct-2507 | Reasoning-as-training at fixed base; jobs 8556542/8556543 |
+| [C3-THINKING-SIBLING](#c3-thinking-sibling--reasoning-as-training-at-fixed-base) | LANDED | 13 Aug 2026 | Thinking-2507 vs Instruct-2507 | Thinking sibling underperforms (-0.059, CI excl. 0) under native deployment; reasoning objection closed on all three axes |
 | [A2-FEATURE-ORDER](#a2-feature-order--feature-order-at-k24) | PLANNED | 13 Aug 2026 | 3-model roster | Does informative-feature position move the readout; harness @ 8777126 |
 | [A3-DEFAULT-OPTIONS](#a3-default-options--dk-options-in-the-numbered-list) | PLANNED | 13 Aug 2026 | 3-model roster | DK present vs absent; forced-last dropped — the latin square cancels position |
 | [EXPA-PARAPHRASE](#expa-paraphrase--format-stability-under-validated-paraphrase) | LANDED | 6 Aug 2026 | Qwen3-32B, Olmo-3.1-32B | Instability was mostly the scoring rule, not the model |
@@ -667,44 +667,64 @@ Rules that keep the entries fillable:
 
 ### C3-THINKING-SIBLING — reasoning as training, at fixed base
 
-- **Status:** RUNNING (full pair submitted 12 Aug: jobs 8556542 Thinking /
-  8556543 Instruct, both htc-g058 @ 585362d per RUNSTAMP; canary pair
-  8556181/8556182 passed first — Thinking canary 40/40 close-only blocks
-  closed, 0 loops, 0 empty, 40/40 bare-digit parses, trace confirmed the
-  pre-opened-block shape, think words median 548 / max 1,660 vs the 8,192
-  cap)
+- **Status:** LANDED (protocol AMENDED 13 Aug before scoring — see the
+  C3 debrief in `PAPER/docs/PAPER_STATE.md`: the injected-trace
+  `label_num` read on the Thinking checkpoint was DROPPED as
+  template-fighting, non-deployment, and post-decision; the design of
+  record is native stated answers + a K=10 sampled distribution. The
+  original full pair 8556542/8556543 aborted at the smoke gate — stride
+  30 on 734-row sets undershoots MIN_ROWS=40 — but 8556542's stage-1
+  generation survived as draw 1 and was never rewritten.)
 - **Rationale:** The training axis no toggle can isolate:
   Qwen3-30B-A3B-Thinking-2507 vs its roster sibling Instruct-2507 — same
-  base, divergent post-training. The Thinking cell generates natively
-  (always-on thinking, chat template, max_tokens 8192), injects the
-  think-block content, and scores via raw /completions `label_num`
-  (chat scoring would re-open a think block); the Instruct cell gets
-  FRESH direct scores in its own serving, so the primary contrast is
-  raw-vs-raw across the checkpoint pair.
-- **Result:** PENDING. Pre-registered (12 Aug): the Thinking sibling
-  lands within +-0.02 of Instruct-2507's qa ceiling; falsifier +0.04
-  above it ("broke the feature ceiling" reads only once the GroupKFold
-  XGBoost ceiling is in hand — until then, "beat the sibling").
-- **Ran:** 12 Aug 2026, jobs 8556542 (Thinking) and 8556543 (Instruct),
-  both htc-g058 @ 585362d; canaries 8556181/8556182 same day
-- **Hardware:** ARC HTC `short`, 1x H100 per job (two jobs, two servings
-  — cross-checkpoint contrast, inherently cross-serving)
-- **Code:** `CODE/scripts/thinking/{make_c3_set,make_c3_direct_set}.py`,
-  `run_c3_{thinking,instruct}.sbatch`, `submit_c3.sh` @ 27c00aa
-  (fa48549 + review fixes: truncated close-only think blocks rescued via
-  finish_reason, echo_plain controls, max_tokens 8192); read the run
-  commit off RUNSTAMP at submit
-- **Inputs:** assembled on-cluster: `CODE/outputs/thinking/inputs/
-  c3_{thinking,direct}_set_<tag>.jsonl` (734 pairs each); substrate =
-  C1/C2's qa substrate
-- **Outputs:** `CODE/outputs/thinking/results/c3_*` (does not exist yet);
-  Thinking transcripts are sampled generation — NON-REGENERABLE
-- **Roster:** Thinking-2507 (STAGED, snapshot 144afc2f, see
-  `PAPER/docs/MODEL_CHECKPOINTS.md`) + Instruct-2507 (fresh scores; A6/A4
-  numbers never reused across servings)
-- **Constraint:** certification-grade read: the Thinking checkpoint enters
-  no comparison beyond its matched sibling; canary + trace inspection
-  before the full Thinking job (`C3_LIMIT=40`).
+  base, divergent post-training — under PLAUSIBLE DEPLOYMENT. Thinking
+  cell: native chat generation with always-on thinking; accuracy is the
+  stated digit after `</think>` in draw 1 (seed 42), the distribution is
+  the K=10 histogram of stated digits (seeds 42–51); majority vote is a
+  separate estimand. Instruct cell: fresh direct scores, `chat_label_num`
+  as the sibling ceiling (`label_num`/`echo_plain` ride along).
+- **Result:** The thinking-trained sibling UNDERPERFORMS: stated K=1 vs
+  the Instruct chat ceiling -0.0585 (CI -0.101..-0.018, excluding zero;
+  vs raw label_num -0.0507, also excluding zero), with flawless
+  elicitation across all 10 draws (100% blocks closed, 0 truncations, 0
+  parse failures, 1.9% loops) and no rescue from majority vote (norm
+  0.2673 vs K=1's 0.2750) — carrying the C2-anchored readout-asymmetry
+  caveat (stated-vs-chat -0.044 on fixed weights), the verdict is "no
+  gain, plausibly a real cost". Sampling the thinking model also recovers
+  marginals WORSE than the Instruct first-token distribution (mean TV
+  0.2765 vs 0.2430; self-consistency 0.82). Both siblings sit far below
+  the prompt-parity supervised ceiling (0.4654, XGB-CEILING-FULL): the
+  reasoning objection is now closed on all three axes — prompting (C1),
+  elicitation (C2), training (C3) — none closes the conversion gap.
+- **Ran:** 12–13 Aug 2026: draw 1 from job 8556542 (htc-g058, generation
+  completed before the smoke abort); Instruct scores job 8560584
+  (htc-g058); draws 2–10 job 8560661 (htc-g054, generate-only, seeds
+  43–51); all @ 585362d per RUNSTAMP; canary pair 8556181/8556182
+  (12 Aug) passed first
+- **Hardware:** ARC HTC `short`, 1x H100 per job (cross-checkpoint,
+  inherently cross-serving)
+- **Code:** `CODE/scripts/thinking/{generate_thinking,make_c3_direct_set}
+  .py`, `run_c3_instruct.sbatch`, `run_c3_thinking_k10.sbatch` @ 585362d
+  per RUNSTAMP (k10 sbatch authored on-cluster 13 Aug, committed at
+  landing; `run_c3_thinking.sbatch` RETIRED with an abort guard — its
+  injected-trace protocol is archive-only); analysis
+  `analyze_c3.py` + `verify_c3_numbers.py` (50 pins, exit 0)
+- **Inputs:** `CODE/outputs/thinking/inputs/c3_direct_set_<instr>.jsonl`
+  (734); generation from the ladder qa substrate (C1/C2's 734 pairs)
+- **Outputs:** `CODE/outputs/thinking/generated/thinking_<think>*.jsonl`
+  (draws 1–10, 734 each — sampled generation, NON-REGENERABLE) +
+  `CODE/outputs/thinking/results/c3_direct_results_<instr>.jsonl`;
+  backed up to `WORK/outputs_recovered/c3_thinking/` (tar + README +
+  SHA256SUMS; old-protocol canaries archive-only there)
+- **Verified by:** `CODE/scripts/thinking/verify_c3_numbers.py` (50
+  checks, exit 0) against `WORK/analysis/thinking/c3_*.csv`
+- **Roster:** Thinking-2507 (snapshot 144afc2f) + Instruct-2507 (fresh
+  scores; A6/A4 numbers never reused across servings)
+- **Constraint:** the Thinking checkpoint enters no comparison beyond its
+  matched sibling; never resubmit the retired sbatch (it would overwrite
+  draw 1); the stated-vs-logprob readout difference is part of the
+  deployment estimand, not a bug, but every quoted delta carries the
+  C2 anchor.
 
 ### A2-FEATURE-ORDER — feature order at k=24
 
