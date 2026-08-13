@@ -10,7 +10,7 @@ Fatal (instrument):
   or the template pre-opens the block and the splitter needs adapting —
   either way scoring would measure the wrong thing; read the trace file)
 
-Usage: python scripts/thinking/check_c2_gates.py <c2_label_set.jsonl>
+Usage: python scripts/native_thinking/check_c2_gates.py <c2_label_set.jsonl>
 """
 
 from __future__ import annotations

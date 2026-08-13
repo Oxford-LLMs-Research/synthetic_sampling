@@ -4,8 +4,8 @@
 # (fresh direct scores) over the same 734-pair substrate. Two jobs, two
 # servings — the contrast is cross-checkpoint, not within-serving.
 #
-#   ./scripts/thinking/submit_c3.sh
-#   C3_LIMIT=40 ./scripts/thinking/submit_c3.sh   # canary both cells
+#   ./scripts/native_thinking/submit_c3.sh
+#   C3_LIMIT=40 ./scripts/native_thinking/submit_c3.sh   # canary both cells
 #   (need >=40 pairs: thinking cell is 1 row/pair and smoke wants 40 rows)
 #
 # Read Thinking canary gates + *_trace.json before the full Thinking job.
@@ -19,8 +19,8 @@ export C3_LIMIT
 
 echo "Submitting C3 Thinking (limit=${C3_LIMIT:-full})"
 sbatch --export=ALL --job-name="c3-thinking" \
-  "$ROOT/scripts/thinking/run_c3_thinking.sbatch"
+  "$ROOT/scripts/native_thinking/run_c3_thinking.sbatch"
 
 echo "Submitting C3 Instruct (limit=${C3_LIMIT:-full})"
 sbatch --export=ALL --job-name="c3-instruct" \
-  "$ROOT/scripts/thinking/run_c3_instruct.sbatch"
+  "$ROOT/scripts/native_thinking/run_c3_instruct.sbatch"

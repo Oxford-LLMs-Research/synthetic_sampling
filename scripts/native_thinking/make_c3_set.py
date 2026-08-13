@@ -12,9 +12,9 @@ Sidecar schema matches C2 (has_block / closed / parse / loop_markers);
 file are assembled (canary ``--limit`` safe).
 
 Usage:
-  python scripts/thinking/make_c3_set.py \\
-      --transcripts outputs/thinking/generated/thinking_qwen_...thinking-2507.jsonl \\
-      --out outputs/thinking/inputs/c3_thinking_set_....jsonl
+  python scripts/native_thinking/make_c3_set.py \\
+      --transcripts outputs/native_thinking/generated/thinking_qwen_...thinking-2507.jsonl \\
+      --out outputs/native_thinking/inputs/c3_thinking_set_....jsonl
 """
 
 from __future__ import annotations

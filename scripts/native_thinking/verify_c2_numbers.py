@@ -24,7 +24,7 @@ Verdicts these rows carry, against the 12 Aug pre-registration:
   the model's own post-thinking answers lose to just asking directly.
 - Replicates 100.0% on 365 pairs, both arms.
 
-    python scripts/thinking/verify_c2_numbers.py
+    python scripts/native_thinking/verify_c2_numbers.py
 """
 
 from __future__ import annotations

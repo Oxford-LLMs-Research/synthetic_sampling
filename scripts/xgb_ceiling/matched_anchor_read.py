@@ -26,7 +26,7 @@ REPO = Path(__file__).resolve().parents[2]
 WORK = REPO.parent
 AN = WORK / "analysis" / "xgb_ceiling"
 B3_TASKS = REPO / "outputs" / "narrative" / "inputs" / "narrative_tasks.jsonl"
-C2_RESULTS = (REPO / "outputs" / "thinking" / "results"
+C2_RESULTS = (REPO / "outputs" / "native_thinking" / "results"
               / "c2_label_results_qwen_qwen3-32b.jsonl")
 MODEL_TAG = "qwen3-32b_label_num_direct(c2_toff)"
 

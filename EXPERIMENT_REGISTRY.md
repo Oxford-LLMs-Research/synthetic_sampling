@@ -544,28 +544,28 @@ Rules that keep the entries fillable:
   outputs are a separate serving and are never mixed into the real run
 - **Hardware:** ARC HTC `short`, 1x H100 per model; nodes htc-g053
   (8550834, 8550835), htc-g055 (8550836)
-- **Code:** `CODE/scripts/reasoning/`,
+- **Code:** `CODE/scripts/cot_reasoning/`,
   `CODE/scripts/cluster/{run_c1.sbatch,submit_c1.sh}` @ 4405c84 (per
   RUNSTAMP; planned @ cacb90a, 4405c84 added only the canary mode) — one
   serving per model runs stage 1 (sampled transcripts: t=0.6, top-p 0.95,
   top-k 20, seed 42, max_tokens 2048), stage 2 assembly, smoke, scoring
 - **Inputs:** assembled on-cluster per model:
-  `CODE/outputs/reasoning/inputs/c1_label_set_<tag>.jsonl` (734 pairs x
+  `CODE/outputs/cot_reasoning/inputs/c1_label_set_<tag>.jsonl` (734 pairs x
   {qa, reasoned} + 723 x {narrative_direct, narrative_reasoned} = 2,914
   instances); substrate = B3's `narrative_tasks.jsonl` + the ladder set,
   exclusions inherited
-- **Outputs:** `CODE/outputs/reasoning/results/c1_label_results_<tag>.jsonl`
+- **Outputs:** `CODE/outputs/cot_reasoning/results/c1_label_results_<tag>.jsonl`
   (3,658/3,658 usable on all four arms, all models; Olmo label_num has 458
   non-finite scores, its known miss pattern); stage-1 transcripts in
-  `CODE/outputs/reasoning/generated/` are sampled generation —
+  `CODE/outputs/cot_reasoning/generated/` are sampled generation —
   NON-REGENERABLE, backed up to `WORK/outputs_recovered/` on pull
 - **Roster:** Qwen3-32B, Olmo-3.1-32B, Qwen3-30B-A3B (as B3)
 - **Constraint:** never split the stages or the four arms across jobs —
   every cell scores against the serving that generated its transcripts.
-- **Verified by:** `CODE/scripts/reasoning/verify_c1_numbers.py` against
+- **Verified by:** `CODE/scripts/cot_reasoning/verify_c1_numbers.py` against
   `WORK/analysis/reasoning/c1_{levels,contrasts,elicitation,transcripts}_<tag>.csv`
   (474 pinned values, exit 0); tables from
-  `CODE/scripts/reasoning/analyze_c1.py`. Transcript-loop census and
+  `CODE/scripts/cot_reasoning/analyze_c1.py`. Transcript-loop census and
   clean/looped robustness splits added 12 Aug after transcript inspection
   (see PAPER_STATE): Qwen3-32B loops on 95% of transcripts; the C1 verdicts
   survive the splits.
@@ -644,25 +644,25 @@ Rules that keep the entries fillable:
   RUNSTAMP (stage 1 chat thinking ON t=0.6/0.95/20 seed 42 max_tokens
   4096; scoring thinking OFF); canary 8555556 same day
 - **Hardware:** ARC HTC `short`, 1x H100, 8h wall budget
-- **Code:** `CODE/scripts/thinking/` @ 0c17e36 (generate_thinking.py chat
+- **Code:** `CODE/scripts/native_thinking/` @ 0c17e36 (generate_thinking.py chat
   generation with trace, make_c2_set.py assembly with self-auditing
   accounting, check_c2_gates.py instrument gates, run_c2.sbatch);
   `CODE/src/synthetic_sampling/scoring/thinking.py` splitter/parse; read
   the run commit off RUNSTAMP at submit
 - **Inputs:** assembled on-cluster:
-  `CODE/outputs/thinking/inputs/c2_label_set_<tag>.jsonl` (734 pairs x
+  `CODE/outputs/native_thinking/inputs/c2_label_set_<tag>.jsonl` (734 pairs x
   {direct, thinking}); substrate = C1's qa substrate (narrative_tasks +
   ladder set)
-- **Outputs:** `CODE/outputs/thinking/` (does not exist yet); stage-1
+- **Outputs:** `CODE/outputs/native_thinking/` (does not exist yet); stage-1
   transcripts are sampled generation — NON-REGENERABLE, pull and back up
   with the results
 - **Roster:** Qwen3-32B only (the toggle-bearing model)
 - **Constraint:** generation and both scoring cells in ONE serving; the
   ON cell is never scored with live thinking at shallow depth.
-- **Verified by:** `CODE/scripts/thinking/verify_c2_numbers.py` against
+- **Verified by:** `CODE/scripts/native_thinking/verify_c2_numbers.py` against
   `WORK/analysis/thinking/c2_{levels,contrasts,elicitation}_<tag>.csv`
   (60 pinned values, exit 0); tables from
-  `CODE/scripts/thinking/analyze_c2.py`; backup
+  `CODE/scripts/native_thinking/analyze_c2.py`; backup
   `WORK/outputs_recovered/c2_thinking/` (sums verified, canary + full).
 
 ### C3-THINKING-SIBLING — reasoning as training, at fixed base
@@ -703,20 +703,20 @@ Rules that keep the entries fillable:
   (12 Aug) passed first
 - **Hardware:** ARC HTC `short`, 1x H100 per job (cross-checkpoint,
   inherently cross-serving)
-- **Code:** `CODE/scripts/thinking/{generate_thinking,make_c3_direct_set}
+- **Code:** `CODE/scripts/native_thinking/{generate_thinking,make_c3_direct_set}
   .py`, `run_c3_instruct.sbatch`, `run_c3_thinking_k10.sbatch` @ 585362d
   per RUNSTAMP (k10 sbatch authored on-cluster 13 Aug, committed at
   landing; `run_c3_thinking.sbatch` RETIRED with an abort guard — its
   injected-trace protocol is archive-only); analysis
   `analyze_c3.py` + `verify_c3_numbers.py` (50 pins, exit 0)
-- **Inputs:** `CODE/outputs/thinking/inputs/c3_direct_set_<instr>.jsonl`
+- **Inputs:** `CODE/outputs/native_thinking/inputs/c3_direct_set_<instr>.jsonl`
   (734); generation from the ladder qa substrate (C1/C2's 734 pairs)
-- **Outputs:** `CODE/outputs/thinking/generated/thinking_<think>*.jsonl`
+- **Outputs:** `CODE/outputs/native_thinking/generated/thinking_<think>*.jsonl`
   (draws 1–10, 734 each — sampled generation, NON-REGENERABLE) +
-  `CODE/outputs/thinking/results/c3_direct_results_<instr>.jsonl`;
+  `CODE/outputs/native_thinking/results/c3_direct_results_<instr>.jsonl`;
   backed up to `WORK/outputs_recovered/c3_thinking/` (tar + README +
   SHA256SUMS; old-protocol canaries archive-only there)
-- **Verified by:** `CODE/scripts/thinking/verify_c3_numbers.py` (50
+- **Verified by:** `CODE/scripts/native_thinking/verify_c3_numbers.py` (50
   checks, exit 0) against `WORK/analysis/thinking/c3_*.csv`
 - **Roster:** Thinking-2507 (snapshot 144afc2f) + Instruct-2507 (fresh
   scores; A6/A4 numbers never reused across servings)
@@ -744,12 +744,15 @@ Rules that keep the entries fillable:
   convention, ladder informative gate gets an ordering caveat). A null
   keeps the LADDER default (informative-first); no survey-order cell
   exists, so nothing here licenses "natural order".
-- **Ran:** not yet; canary first (`A2_LIMIT=30`, multiples of 3 keep whole
-  triples)
+- **Ran:** not yet. Canary job 8562167 (`A2_LIMIT=30`, multiples of 3 keep
+  whole triples) submitted 13 Aug; still queued — the cluster paused for
+  extreme heat, the job runs under the same id when it resumes
 - **Hardware:** planned ARC HTC `short`, 1x H100 per model
 - **Code:** `CODE/scripts/feature_order/{make_a2_set,verify_a2_set}.py`,
   `submit_a2.sh` @ 8777126; review fixes (B3-identity pin, adaptive smoke
-  stride in the generic `run_score.sbatch`) @ c6f05ea; read the run
+  stride in the generic `run_score.sbatch`) @ c6f05ea; `analyze_a2.py`
+  written pre-landing to the locked estimands (deltas + flip rates
+  co-primary), smoke-tested on planted synthetic effects; read the run
   commit off RUNSTAMP at submit
 - **Inputs:** `CODE/outputs/feature_order/inputs/a2_order_set.jsonl`
   (734 pairs x 3 cells = 2,202 instances, 25 targets; pinned by
@@ -782,8 +785,9 @@ Rules that keep the entries fillable:
   DK absent + per-question correction); accuracy read ONLY as
   substantive-argmax on substantive-truth rows, within +-0.02, falsifier
   +-0.04. Raw cross-cell accuracy is non-comparable by construction.
-- **Ran:** not yet; canary first (`A3_LIMIT=20`, even numbers keep whole
-  pairs)
+- **Ran:** not yet. Canary job 8562168 (`A3_LIMIT=20`, even numbers keep
+  whole pairs) submitted 13 Aug; still queued — the cluster paused for
+  extreme heat, the job runs under the same id when it resumes
 - **Hardware:** planned ARC HTC `short`, 1x H100 per model
 - **Code:** `CODE/scripts/default_options/{make_a3_set,verify_a3_set,
   analyze_a3}.py`, `submit_a3.sh` @ 8777126 + c6f05ea (review fixes:

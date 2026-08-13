@@ -28,7 +28,7 @@ Writes (WORK/analysis/thinking/):
                             Instruct chat softmax shares vs human;
                             self-consistency; majority-vote row
 
-    python scripts/thinking/analyze_c3.py
+    python scripts/native_thinking/analyze_c3.py
 """
 
 from __future__ import annotations
@@ -51,8 +51,8 @@ from synthetic_sampling.scoring.thinking import parse_stated_chat, split_think
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTER = ROOT.parent
-GEN = ROOT / "outputs" / "thinking" / "generated"
-RES = ROOT / "outputs" / "thinking" / "results"
+GEN = ROOT / "outputs" / "native_thinking" / "generated"
+RES = ROOT / "outputs" / "native_thinking" / "results"
 LADDER = OUTER / "outputs_recovered" / "ladder_readout_set.jsonl"
 B3_TASKS = ROOT / "outputs" / "narrative" / "inputs" / "narrative_tasks.jsonl"
 OUTDIR = OUTER / "analysis" / "thinking"

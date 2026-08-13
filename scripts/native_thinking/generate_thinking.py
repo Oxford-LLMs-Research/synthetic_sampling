@@ -25,8 +25,8 @@ raw regime is the pathology C2 exists to remove.
 for eyeball verification before the full run is trusted.
 
 Usage (inside a cluster job with vLLM up):
-  python scripts/thinking/generate_thinking.py --base-url http://127.0.0.1:PORT/v1 \
-      --model Qwen/Qwen3-32B --out outputs/thinking/generated/thinking_qwen_qwen3-32b.jsonl
+  python scripts/native_thinking/generate_thinking.py --base-url http://127.0.0.1:PORT/v1 \
+      --model Qwen/Qwen3-32B --out outputs/native_thinking/generated/thinking_qwen_qwen3-32b.jsonl
 """
 
 from __future__ import annotations

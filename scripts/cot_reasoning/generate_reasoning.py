@@ -21,8 +21,8 @@ is DATA: parse failures and missing final-answer markers are recorded
 downstream (make_reasoned_set.py), never repaired.
 
 Usage (inside a cluster job with vLLM up):
-  python scripts/reasoning/generate_reasoning.py --base-url http://127.0.0.1:8000/v1 \
-      --model Qwen/Qwen3-32B --out outputs/reasoning/generated/reasoning_qwen_qwen3-32b.jsonl
+  python scripts/cot_reasoning/generate_reasoning.py --base-url http://127.0.0.1:8000/v1 \
+      --model Qwen/Qwen3-32B --out outputs/cot_reasoning/generated/reasoning_qwen_qwen3-32b.jsonl
 """
 
 from __future__ import annotations

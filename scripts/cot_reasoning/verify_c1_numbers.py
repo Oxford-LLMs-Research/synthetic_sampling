@@ -39,7 +39,7 @@ Verdicts these rows carry, against the 8 Aug pre-registration:
   inflation is also not loop-driven (clean reasoned transcripts are as
   overconfident as looped ones).
 
-    python scripts/reasoning/verify_c1_numbers.py
+    python scripts/cot_reasoning/verify_c1_numbers.py
 """
 
 from __future__ import annotations

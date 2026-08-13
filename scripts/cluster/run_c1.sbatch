@@ -37,11 +37,11 @@ BASE_URL="http://127.0.0.1:${PORT}/v1"
 REPO="${SLURM_SUBMIT_DIR:-$PWD}"
 LADDER_SET="${LADDER_SET:-$REPO/../outputs_recovered/ladder_readout_set.jsonl}"
 NARR_SET="$REPO/outputs/narrative/inputs/narrative_label_set.jsonl"
-GEN_DIR="$REPO/outputs/reasoning/generated"
+GEN_DIR="$REPO/outputs/cot_reasoning/generated"
 QA_TRANS="$GEN_DIR/reasoning_${TAG}.jsonl"
 NARR_TRANS="$GEN_DIR/reasoning_narr1_${TAG}.jsonl"
-INPUT="$REPO/outputs/reasoning/inputs/c1_label_set_${TAG}.jsonl"
-OUT="$REPO/outputs/reasoning/results/c1_label_results_${TAG}.jsonl"
+INPUT="$REPO/outputs/cot_reasoning/inputs/c1_label_set_${TAG}.jsonl"
+OUT="$REPO/outputs/cot_reasoning/results/c1_label_results_${TAG}.jsonl"
 
 if command -v module >/dev/null 2>&1; then
   module load Python/3.11.5-GCCcore-13.2.0
@@ -92,20 +92,20 @@ while ! curl -sf "http://127.0.0.1:${PORT}/v1/models" 2>/dev/null | grep -qF "$M
 done
 
 # Stage 1a: reasoning transcripts over the qa substrate (734 pairs).
-python "$REPO/scripts/reasoning/generate_reasoning.py" \
+python "$REPO/scripts/cot_reasoning/generate_reasoning.py" \
   --base-url "$BASE_URL" --model "$MODEL" \
   --ladder-set "$LADDER_SET" --out "$QA_TRANS" \
   ${C1_LIMIT:+--limit "$C1_LIMIT"}
 
 # Stage 1b: reasoning transcripts over the validated narrative1 arm (723).
-python "$REPO/scripts/reasoning/generate_reasoning.py" \
+python "$REPO/scripts/cot_reasoning/generate_reasoning.py" \
   --base-url "$BASE_URL" --model "$MODEL" \
   --input "$NARR_SET" --input-arm-label narrative1 \
   --out "$NARR_TRANS" \
   ${C1_LIMIT:+--limit "$C1_LIMIT"}
 
 # Stage 2: assemble the 2x2 scoring set (parse sidecar is data).
-python "$REPO/scripts/reasoning/make_reasoned_set.py" \
+python "$REPO/scripts/cot_reasoning/make_reasoned_set.py" \
   --transcripts "$QA_TRANS" \
   --narrative-transcripts "$NARR_TRANS" --narrative-set "$NARR_SET" \
   --ladder-set "$LADDER_SET" --out "$INPUT"

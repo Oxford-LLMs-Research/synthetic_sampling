@@ -5,8 +5,8 @@ Instruct-2507 ceiling against which the Thinking checkpoint is read.
 Fresh scores only (reuse rule: instances yes, scores never across servings).
 
 Usage:
-  python scripts/thinking/make_c3_direct_set.py \\
-      --out outputs/thinking/inputs/c3_direct_set_qwen_qwen3-30b-a3b-instruct-2507.jsonl
+  python scripts/native_thinking/make_c3_direct_set.py \\
+      --out outputs/native_thinking/inputs/c3_direct_set_qwen_qwen3-30b-a3b-instruct-2507.jsonl
 """
 
 from __future__ import annotations

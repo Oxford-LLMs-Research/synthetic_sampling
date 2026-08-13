@@ -10,7 +10,7 @@ table from the stage-2 sidecar (parse outcomes, stated-answer accuracy,
 stated-vs-label agreement, loop/empty/truncation census against C1's
 pathology baseline).
 
-    python scripts/thinking/analyze_c2.py --tag qwen_qwen3-32b
+    python scripts/native_thinking/analyze_c2.py --tag qwen_qwen3-32b
 
 Every number quoted anywhere else must come out of the CSVs this writes;
 `verify_c2_numbers.py` re-checks them by script.
@@ -49,8 +49,8 @@ def _softmax_conf(scores: dict) -> float:
 
 
 def load(tag: str) -> tuple[pd.DataFrame, list[dict]]:
-    inp = ROOT / "outputs" / "thinking" / "inputs" / f"c2_label_set_{tag}.jsonl"
-    res = ROOT / "outputs" / "thinking" / "results" / f"c2_label_results_{tag}.jsonl"
+    inp = ROOT / "outputs" / "native_thinking" / "inputs" / f"c2_label_set_{tag}.jsonl"
+    res = ROOT / "outputs" / "native_thinking" / "results" / f"c2_label_results_{tag}.jsonl"
 
     meta: dict[str, dict] = {}
     for line in inp.open(encoding="utf-8"):
@@ -165,7 +165,7 @@ def paired(df: pd.DataFrame, arm: str, cond: str, baseline: str) -> dict:
 
 def elicitation(tag: str, df: pd.DataFrame) -> list[dict]:
     """Sidecar census + stated answer vs the two injected label readouts."""
-    sc = pd.read_csv(ROOT / "outputs" / "thinking" / "inputs"
+    sc = pd.read_csv(ROOT / "outputs" / "native_thinking" / "inputs"
                      / f"c2_label_set_{tag}_parse.csv")
     lab = df[df["condition"] == "thinking"].set_index("example_id")
     g = sc.copy()

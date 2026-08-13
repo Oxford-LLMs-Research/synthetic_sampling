@@ -21,9 +21,9 @@ file are assembled (so a canary ``--limit`` run is not drowned in fake
 missing-transcript errors).
 
 Usage:
-  python scripts/thinking/make_c2_set.py \
-      --transcripts outputs/thinking/generated/thinking_qwen_qwen3-32b.jsonl \
-      --out outputs/thinking/inputs/c2_label_set_qwen_qwen3-32b.jsonl
+  python scripts/native_thinking/make_c2_set.py \
+      --transcripts outputs/native_thinking/generated/thinking_qwen_qwen3-32b.jsonl \
+      --out outputs/native_thinking/inputs/c2_label_set_qwen_qwen3-32b.jsonl
 """
 
 from __future__ import annotations

@@ -11,7 +11,7 @@ signature beyond +-0.02), the replicate ceiling, and the elicitation table
 (parse outcomes from the stage-2 sidecar — failures are DATA — stated-answer
 accuracy, and stated-vs-label agreement).
 
-    python scripts/reasoning/analyze_c1.py --tag qwen_qwen3-32b
+    python scripts/cot_reasoning/analyze_c1.py --tag qwen_qwen3-32b
 
 Every number quoted anywhere else must come out of the CSVs this writes;
 `verify_c1_numbers.py` re-checks them by script.
@@ -62,8 +62,8 @@ def _softmax_conf(scores: dict) -> float:
 
 def load(tag: str) -> tuple[pd.DataFrame, list[dict]]:
     """Join the scoring set (conditions, options) to the scored file."""
-    inp = ROOT / "outputs" / "reasoning" / "inputs" / f"c1_label_set_{tag}.jsonl"
-    res = ROOT / "outputs" / "reasoning" / "results" / f"c1_label_results_{tag}.jsonl"
+    inp = ROOT / "outputs" / "cot_reasoning" / "inputs" / f"c1_label_set_{tag}.jsonl"
+    res = ROOT / "outputs" / "cot_reasoning" / "results" / f"c1_label_results_{tag}.jsonl"
 
     meta: dict[str, dict] = {}
     for line in inp.open(encoding="utf-8"):
@@ -209,7 +209,7 @@ def transcript_pathology(tag: str) -> tuple[list[dict], dict[str, set]]:
     Returns the table rows and, per cell, the base_ids of looped (>= 2
     marker) transcripts for the robustness splits.
     """
-    gen = ROOT / "outputs" / "reasoning" / "generated"
+    gen = ROOT / "outputs" / "cot_reasoning" / "generated"
     rows, loops = [], {}
     for cell, fname in (("qa", f"reasoning_{tag}.jsonl"),
                         ("narrative", f"reasoning_narr1_{tag}.jsonl")):
@@ -254,7 +254,7 @@ def elicitation(tag: str, df: pd.DataFrame) -> list[dict]:
     `<eid>_narr1`) feeds `<eid>_narrreasoned`. An empty transcript is
     `no_marker` with zero reasoning words — Olmo's dominant failure mode.
     """
-    sc = pd.read_csv(ROOT / "outputs" / "reasoning" / "inputs"
+    sc = pd.read_csv(ROOT / "outputs" / "cot_reasoning" / "inputs"
                      / f"c1_label_set_{tag}_parse.csv")
     lab = df[df["condition"].isin(("reasoned", "narrative_reasoned"))]
     lab = lab.set_index("example_id")

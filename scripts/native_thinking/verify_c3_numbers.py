@@ -24,7 +24,7 @@ the amendment:
   (0.4654, XGB-CEILING-FULL): reasoning-as-training does not close the
   conversion gap either.
 
-    python scripts/thinking/verify_c3_numbers.py
+    python scripts/native_thinking/verify_c3_numbers.py
 """
 
 from __future__ import annotations

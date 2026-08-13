@@ -18,9 +18,9 @@ instance still enters the label-readout arm (with the full transcript when
 no marker exists to truncate at).
 
 Usage:
-  python scripts/reasoning/make_reasoned_set.py \
-      --transcripts outputs/reasoning/generated/reasoning_qwen_qwen3-32b.jsonl \
-      --out outputs/reasoning/inputs/reasoning_label_set_qwen_qwen3-32b.jsonl
+  python scripts/cot_reasoning/make_reasoned_set.py \
+      --transcripts outputs/cot_reasoning/generated/reasoning_qwen_qwen3-32b.jsonl \
+      --out outputs/cot_reasoning/inputs/reasoning_label_set_qwen_qwen3-32b.jsonl
 """
 
 from __future__ import annotations
