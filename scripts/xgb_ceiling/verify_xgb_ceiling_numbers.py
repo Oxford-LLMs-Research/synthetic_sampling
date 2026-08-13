@@ -61,6 +61,20 @@ def main() -> int:
     check("matched xgb norm_acc", 0.2764, m["xgb_norm_acc"])
     check("matched gap", 0.0796, m["gap_model_minus_xgb"])
 
+    # Selection-era large-sample diagnostics quoted in the 13 Aug
+    # deliberation (PAPER_STATE): within-country all-features XGB.
+    c = pd.read_csv(REPO.parent / "analysis" / "feature_importance_xgb"
+                    / "cell_diagnostics.csv")
+    ok = c[c["status"] == "ok"]
+    check("diag cells", 132, len(ok), 0.5)
+    check("diag mean n_used", 2200, ok["n_used"].mean(), 1.0)
+    check("diag mean majority", 0.5256, ok["majority_baseline"].mean())
+    check("diag mean model_acc", 0.6238, ok["model_acc"].mean())
+    check("diag mean raw lift", 0.0982,
+          (ok["model_acc"] - ok["majority_baseline"]).mean())
+    check("diag mean norm_lift", 0.1791, ok["norm_lift"].mean())
+    check("diag frac lift<=0", 0.212, (ok["norm_lift"] <= 0).mean(), 5e-4)
+
     ladder_dump = AN / "xgb_ladder_dump.jsonl"
     n_lines = sum(1 for _ in ladder_dump.open(encoding="utf-8"))
     check("ladder dump rows", 13652, n_lines, 0.5)

@@ -436,16 +436,20 @@ Rules that keep the entries fillable:
   locally with the out-of-fold dumps kept; in-run consistency gates
   reproduce T0.1's pinned per-target and per-rung tables before anything
   new is read.
-- **Result:** On the C-series 734-pair substrate the same-features ceiling
-  estimate is norm 0.2764 (660 usable instances, 22 targets) and
-  Qwen3-32B's matched direct readout sits ABOVE it at 0.3560 (+0.0796) —
-  "the model fails to convert signal" now reads "the model sits at or
-  above the feature ceiling", with the standing small-cell caveat (XGB
-  fits on ~50-row cells, biased down). The dissenter penalty is not
-  LLM-specific: XGBoost scores 0.66/0.72 on modal respondents vs
-  0.17/0.16 on dissenters (readout/ladder-k24), entropy ratio 0.53–0.56.
-  C3's +0.04 falsifier now reads "broke the feature ceiling", no longer
-  just "beat the sibling".
+- **Result:** On the C-series 734-pair substrate Qwen3-32B's matched
+  direct readout (norm 0.3560) sits +0.0796 ABOVE the small-sample
+  same-features fit (norm 0.2764; 660 usable instances, 22 targets) —
+  DOWNGRADED same day from "above the feature ceiling": the ~50-row cells
+  starve XGBoost into a marginal predictor (one random feature outscores
+  k=24 informative in its own rung table), and the selection-era
+  large-sample diagnostics show properly-fit XGBoost lifts +0.098 raw
+  over the mode, so the true ceiling sits between the floor and
+  XGB-CEILING-FULL's answer (see PAPER_STATE 13 Aug deliberation). The
+  dissenter penalty is qualitatively not LLM-specific (0.66/0.72 modal vs
+  0.17/0.16 dissenter, entropy ratio 0.53–0.56) but the split is partly a
+  starved-fit number; the bound from the large-sample diagnostics is that
+  even a friendly fit catches <~20% of dissenters. C3's falsifier reads
+  "broke the SMALL-SAMPLE floor" until the full fit lands.
 - **Ran:** 13 Aug 2026 (no GPU, local; deterministic seed 42)
 - **Hardware:** local CPU
 - **Code:** `CODE/scripts/xgb_ceiling/{run_xgb_ceiling,matched_anchor_read,
