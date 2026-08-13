@@ -75,6 +75,30 @@ def main() -> int:
     check("diag mean norm_lift", 0.1791, ok["norm_lift"].mean())
     check("diag frac lift<=0", 0.212, (ok["norm_lift"] <= 0).mean(), 5e-4)
 
+    # XGB-CEILING-FULL: the properly-fit bracket (13 Aug, second landing).
+    f = pd.read_csv(AN / "xgb_full_anchor_summary.csv").set_index("regime")
+    for regime, n, acc, nacc in (
+            ("grouped", 704, 0.6463, 0.4911),
+            ("within", 734, 0.6771, 0.5369),
+            ("within_prompt24", 734, 0.6362, 0.4654)):
+        check(f"full {regime} n", n, f.loc[regime, "n"], 0.5)
+        check(f"full {regime} acc", acc, f.loc[regime, "acc"])
+        check(f"full {regime} norm_acc", nacc, f.loc[regime, "norm_acc"])
+
+    fd = pd.read_csv(AN / "xgb_full_dissenter_split.csv")
+    for regime, modal, diss in (
+            ("grouped", 0.7809, 0.4038),
+            ("within", 0.7829, 0.4489),
+            ("within_prompt24", 0.7449, 0.3929)):
+        g = fd[fd["regime"] == regime]
+        check(f"full {regime} modal", modal, g["acc_modal"].mean())
+        check(f"full {regime} dissenter", diss, g["acc_dissenter"].mean())
+
+    ld = pd.read_csv(AN / "xgb_llm_dissenter_split.csv")
+    check("llm split targets", 25, len(ld), 0.5)
+    check("llm modal", 0.6487, ld["acc_modal"].mean())
+    check("llm dissenter", 0.3736, ld["acc_dissenter"].mean())
+
     ladder_dump = AN / "xgb_ladder_dump.jsonl"
     n_lines = sum(1 for _ in ladder_dump.open(encoding="utf-8"))
     check("ladder dump rows", 13652, n_lines, 0.5)

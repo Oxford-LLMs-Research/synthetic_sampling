@@ -115,15 +115,18 @@ def load_anchor() -> dict:
             t["pairs"].append({
                 "example_id": eid, "resp_id": str(r["id"]),
                 "gt_text": r["ground_truth"], "country": str(r["country"]),
+                "qtexts": {q.strip() for q in r["questions"]},
             })
             t["qtexts"].update(q.strip() for q in r["questions"])
     return per_target
 
 
-def fit_oof(X: np.ndarray, y: np.ndarray, splits) -> tuple[np.ndarray, np.ndarray]:
+def fit_oof(X: np.ndarray, y: np.ndarray, splits,
+            M: int) -> tuple[np.ndarray, np.ndarray]:
+    """M is the FULL option count: a fold (or a country slice) may never
+    contain the last option, so y.max()+1 under-sizes the matrix."""
     from xgboost import XGBClassifier
 
-    M = int(y.max()) + 1
     oof = np.full((len(y), M), np.nan)
     fold_of = np.full(len(y), -1)
     for f, (tr, te) in enumerate(splits):
@@ -279,23 +282,62 @@ def main(argv: list[str] | None = None) -> int:
             regimes = {}
             if n_splits >= 2 and len(np.unique(y)) >= 2:
                 oof, fold = fit_oof(
-                    X, y, GroupKFold(n_splits=n_splits).split(X, y, grp))
+                    X, y, GroupKFold(n_splits=n_splits).split(X, y, grp),
+                    M=len(opts))
                 regimes["grouped"] = (oof, fold, np.arange(len(y)))
             # --- regime B: within-country, only countries carrying anchors
+            # --- regime C: within_prompt24 — feature columns restricted to
+            #     that country's anchor top-24 (informative rank is
+            #     per-country, so this is the set the PROMPT carried);
+            #     the pool regimes see ~86 features per respondent, the
+            #     prompt sees 24 — this is the apples-to-apples cell.
+            code_of_text: dict[str, int] = {}
+            for j, code in enumerate(feat_codes):
+                code_of_text[code] = j
+            text2j = {}
+            for q in sorted(t["qtexts"]):
+                cands = [c for c in text2codes.get(q, []) if c in df.columns
+                         and c != target]
+                if cands:
+                    cands.sort(key=lambda c: df[c].notna().sum(),
+                               reverse=True)
+                    if cands[0] in code_of_text:
+                        text2j[q] = code_of_text[cands[0]]
+            country_pairs: dict[str, list] = defaultdict(list)
+            for p in t["pairs"]:
+                country_pairs[p["country"]].append(p)
             oof_w = np.full((len(y), len(opts)), np.nan)
             fold_w = np.full(len(y), -1)
-            done_rows = []
-            for c in sorted({grp[i] for i in anchor_pos}):
+            oof_p = np.full((len(y), len(opts)), np.nan)
+            fold_p = np.full(len(y), -1)
+            done_rows, done_rows_p = [], []
+            for c in sorted(country_pairs):
                 rows = np.flatnonzero(grp == c)
                 if len(rows) < 50 or len(np.unique(y[rows])) < 2:
                     continue
                 kf = KFold(n_splits=5, shuffle=True, random_state=SEED)
-                oof_c, fold_c = fit_oof(X[rows], y[rows], kf.split(rows))
+                oof_c, fold_c = fit_oof(X[rows], y[rows], kf.split(rows),
+                                        M=len(opts))
                 oof_w[rows] = oof_c
                 fold_w[rows] = fold_c
                 done_rows.extend(rows.tolist())
+                prompt_q = set()
+                for p in country_pairs[c]:
+                    prompt_q.update(p["qtexts"])
+                cols = sorted({text2j[q] for q in prompt_q if q in text2j})
+                if len(cols) < 5:
+                    continue
+                kf = KFold(n_splits=5, shuffle=True, random_state=SEED)
+                oof_c, fold_c = fit_oof(X[rows][:, cols], y[rows],
+                                        kf.split(rows), M=len(opts))
+                oof_p[rows] = oof_c
+                fold_p[rows] = fold_c
+                done_rows_p.extend(rows.tolist())
             if done_rows:
                 regimes["within"] = (oof_w, fold_w, np.array(done_rows))
+            if done_rows_p:
+                regimes["within_prompt24"] = (
+                    oof_p, fold_p, np.array(done_rows_p))
 
             for regime, (oof, fold, valid) in regimes.items():
                 valid_set = set(valid.tolist())
