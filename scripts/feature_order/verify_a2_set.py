@@ -33,6 +33,9 @@ from synthetic_sampling.scoring.prompts import build_prompt  # noqa: E402
 
 LADDER = OUTER / "outputs_recovered" / "ladder_readout_set.jsonl"
 SET = REPO / "outputs" / "feature_order" / "inputs" / "a2_order_set.jsonl"
+# B3's task list: A2's substrate claim is IDENTITY with B3's sample, not
+# just matching counts — a different seed would still hit 734/25.
+B3_TASKS = REPO / "outputs" / "narrative" / "inputs" / "narrative_tasks.jsonl"
 
 N_PAIRS = 734
 N_TARGETS = 25
@@ -59,6 +62,14 @@ def main() -> int:
     targets = {(r["survey"], r["target_code"]) for r in rows}
     if len(targets) != N_TARGETS:
         fail(f"{len(targets)} targets, want {N_TARGETS}", bad)
+
+    b3_ids = {json.loads(l)["example_id"]
+              for l in B3_TASKS.open(encoding="utf-8")}
+    if set(by_pair) != b3_ids:
+        only_a2 = len(set(by_pair) - b3_ids)
+        only_b3 = len(b3_ids - set(by_pair))
+        fail(f"base_ids are not B3's sample: {only_a2} only in A2, "
+             f"{only_b3} only in B3", bad)
 
     # Adjacency: each consecutive block of three rows is one pair.
     for i in range(0, len(rows), 3):

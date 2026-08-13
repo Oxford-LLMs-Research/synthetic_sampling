@@ -101,10 +101,32 @@ while ! curl -sf "http://127.0.0.1:${PORT}/v1/models" 2>/dev/null | grep -qF "$M
   elapsed=$((elapsed + 5))
 done
 
-# Smoke gate spanning the design, not just its head.
+# Smoke gate spanning the design, not just its head. The stride is derived
+# from the input, not fixed: a fixed 50 undershot MIN_ROWS=40 on 734-row
+# (C3, jobs 8556542/8556543) and 1,568-row (A3) sets, aborting AFTER the
+# model load — and an even stride on a paired-cell set samples only one
+# cell (A3's pairs sit at odd/even lines). Target ~44 rows; step the
+# stride down until coprime with 2 and 3 so neither pairs nor triples
+# alias out (stepping DOWN only adds rows, never drops below target).
 SMOKE_IN="$(dirname "$OUT")/smoke_in_${SLURM_JOB_ID:-local}.jsonl"
 SMOKE_OUT="$(dirname "$OUT")/smoke_${SLURM_JOB_ID:-local}.jsonl"
-awk 'NR % 50 == 1' "$INPUT" > "$SMOKE_IN"
+N_INPUT=$(wc -l < "$INPUT")
+STRIDE=$(( N_INPUT / 44 ))
+while [ "$STRIDE" -gt 1 ] && { [ $((STRIDE % 2)) -eq 0 ] || [ $((STRIDE % 3)) -eq 0 ]; }; do
+  STRIDE=$((STRIDE - 1))
+done
+if [ "$STRIDE" -le 1 ]; then
+  # <88 input rows: NR % 1 == 1 never matches, so copy the whole file.
+  cp "$INPUT" "$SMOKE_IN"
+else
+  awk -v s="$STRIDE" 'NR % s == 1' "$INPUT" > "$SMOKE_IN"
+fi
+N_SMOKE=$(wc -l < "$SMOKE_IN")
+if [ "$N_SMOKE" -lt 40 ] && [ "$N_INPUT" -ge 40 ]; then
+  echo "FATAL smoke_in has $N_SMOKE rows (need >=40) from $N_INPUT input rows"
+  exit 1
+fi
+echo "smoke: $N_SMOKE rows from $N_INPUT (stride ${STRIDE:-copy})"
 ss-score --input "$SMOKE_IN" --out "$SMOKE_OUT" \
   --base-url "$BASE_URL" --model "$MODEL" --arms "$ARMS" \
   --replicate-frac 0 --workers 16
