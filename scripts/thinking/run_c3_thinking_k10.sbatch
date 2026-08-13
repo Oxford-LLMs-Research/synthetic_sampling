@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=ss-c3-inst
+#SBATCH --job-name=ss-c3-k10
 #SBATCH -p short
 #SBATCH --gres=gpu:h100:1
 #SBATCH --cpus-per-task=8
@@ -8,31 +8,30 @@
 #SBATCH --output=logs/%x-%j.out
 #SBATCH --error=logs/%x-%j.err
 
-# C3 Instruct sibling (RUN_CATALOGUE C3): fresh direct scores on
-# Qwen3-30B-A3B-Instruct-2507 over the same 734-pair substrate. Do NOT
-# reuse A4/A6 numbers (reuse rule). Keep LF-only.
-# Optional: MODEL, TAG, C3_LIMIT (>=40 for canary smoke), ARMS, REPLICATE_FRAC,
-# DTYPE, MAX_MODEL_LEN, PORT, VLLM_READY_TIMEOUT_SEC.
+# C3 Thinking K=10 native generations (calibration / aggregate shares).
+# Draw 1 is the existing seed-42 file (do NOT overwrite it). This job
+# loads vLLM once and writes draws 2-10 to separate jsonl files
+# (seed = 41+k, so k=2 -> 43, k=10 -> 51). Generate only: no assemble,
+# no hybrid label_num score. Resume is per-file by example_id.
+# Optional: MODEL, TAG, C3_LIMIT, DTYPE, MAX_MODEL_LEN, PORT,
+# VLLM_READY_TIMEOUT_SEC. Keep LF-only.
+#
+#   sbatch --export=ALL --job-name=c3-think-k10 scripts/thinking/run_c3_thinking_k10.sbatch
 
 set -euo pipefail
 
-MODEL="${MODEL:-Qwen/Qwen3-30B-A3B-Instruct-2507}"
+MODEL="${MODEL:-Qwen/Qwen3-30B-A3B-Thinking-2507}"
 TAG="${TAG:-$(echo "$MODEL" | tr '[:upper:]' '[:lower:]' | tr '/' '_')}"
 C3_LIMIT="${C3_LIMIT:-}"
 if [ -n "$C3_LIMIT" ]; then
   TAG="${TAG}_canary"
 fi
-# echo_plain rides as the paper-method / serving control, as everywhere.
-ARMS="${ARMS:-label_num,chat_label_num,echo_plain}"
-REPLICATE_FRAC="${REPLICATE_FRAC:-0.25}"
 DTYPE="${DTYPE:-bfloat16}"
 MAX_MODEL_LEN="${MAX_MODEL_LEN:-16384}"
 PORT="${PORT:-$(( 20000 + (${SLURM_JOB_ID:-$$} % 10000) ))}"
 BASE_URL="http://127.0.0.1:${PORT}/v1"
 
 REPO="${SLURM_SUBMIT_DIR:-$PWD}"
-# Ladder-set resolution: explicit env wins; else the ARC staging location
-# ($DATA/data/), else the local-workstation layout.
 if [ -z "${LADDER_SET:-}" ]; then
   if [ -n "${DATA:-}" ] && [ -f "$DATA/data/ladder_readout_set.jsonl" ]; then
     LADDER_SET="$DATA/data/ladder_readout_set.jsonl"
@@ -41,8 +40,8 @@ if [ -z "${LADDER_SET:-}" ]; then
   fi
 fi
 TASKS="$REPO/outputs/narrative/inputs/narrative_tasks.jsonl"
-INPUT="$REPO/outputs/thinking/inputs/c3_direct_set_${TAG}.jsonl"
-OUT="$REPO/outputs/thinking/results/c3_direct_results_${TAG}.jsonl"
+GENDIR="$REPO/outputs/thinking/generated"
+K1="$GENDIR/thinking_${TAG}.jsonl"
 
 if command -v module >/dev/null 2>&1; then
   module load Python/3.11.5-GCCcore-13.2.0
@@ -60,12 +59,20 @@ for f in "$LADDER_SET" "$TASKS"; do
     echo "FATAL missing input $f"; exit 1
   fi
 done
-mkdir -p "$(dirname "$INPUT")" "$(dirname "$OUT")" logs
+mkdir -p "$GENDIR" logs
 
 echo "RUNSTAMP repo=$(git -C "$REPO" rev-parse HEAD 2>/dev/null || echo NOT_RECORDED)"
 echo "RUNSTAMP job=${SLURM_JOB_ID:-local} node=$(hostname) model=$MODEL"
-echo "RUNSTAMP arms=$ARMS replicate=$REPLICATE_FRAC input=$INPUT out=$OUT"
-echo "RUNSTAMP c3 instruct: direct cells, fresh scores"
+echo "RUNSTAMP c3 thinking K=10 generate-only: draw1=$K1 (seed 42, not rewritten)"
+echo "RUNSTAMP draws 2-10 -> ${GENDIR}/thinking_${TAG}_kNN.jsonl seeds 43-51 max_tokens=8192"
+
+if [ -z "$C3_LIMIT" ]; then
+  if [ ! -f "$K1" ]; then
+    echo "FATAL draw-1 file missing: $K1"; exit 1
+  fi
+  n1=$(wc -l < "$K1")
+  echo "RUNSTAMP draw1_lines=$n1"
+fi
 
 if curl -sf "http://127.0.0.1:${PORT}/v1/models" >/dev/null 2>&1; then
   echo "FATAL port $PORT on $(hostname) is already serving; refusing to attach"
@@ -76,7 +83,7 @@ echo "Starting vLLM for $MODEL on port $PORT (dtype $DTYPE)"
 vllm serve "$MODEL" --host 127.0.0.1 --port "$PORT" \
   --served-model-name "$MODEL" --dtype "$DTYPE" \
   --max-model-len "$MAX_MODEL_LEN" --gpu-memory-utilization 0.92 \
-  > "$(dirname "$OUT")/vllm_serve_${SLURM_JOB_ID:-local}.log" 2>&1 &
+  > "$GENDIR/vllm_serve_${SLURM_JOB_ID:-local}.log" 2>&1 &
 VLLM_PID=$!
 trap 'kill $VLLM_PID 2>/dev/null || true' EXIT
 
@@ -92,40 +99,19 @@ while ! curl -sf "http://127.0.0.1:${PORT}/v1/models" 2>/dev/null | grep -qF "$M
   elapsed=$((elapsed + 5))
 done
 
-python "$REPO/scripts/thinking/make_c3_direct_set.py" \
-  --tasks "$TASKS" --ladder-set "$LADDER_SET" \
-  --out "$INPUT" \
-  ${C3_LIMIT:+--limit "$C3_LIMIT"}
+# k=2..10, seed=41+k (43..51). Per-file resume: a rerun skips finished draws.
+for k in $(seq 2 10); do
+  seed=$((41 + k))
+  kk=$(printf '%02d' "$k")
+  out="$GENDIR/thinking_${TAG}_k${kk}.jsonl"
+  echo "RUNSTAMP draw=$k seed=$seed out=$out"
+  python "$REPO/scripts/thinking/generate_thinking.py" \
+    --base-url "$BASE_URL" --model "$MODEL" \
+    --ladder-set "$LADDER_SET" --tasks "$TASKS" \
+    --out "$out" --seed "$seed" --trace 0 \
+    --chat-template-kwargs "" --max-tokens 8192 \
+    ${C3_LIMIT:+--limit "$C3_LIMIT"}
+  echo "draw $k done lines=$(wc -l < "$out")"
+done
 
-SMOKE_IN="$(dirname "$OUT")/smoke_in_${SLURM_JOB_ID:-local}.jsonl"
-SMOKE_OUT="$(dirname "$OUT")/smoke_${SLURM_JOB_ID:-local}.jsonl"
-if [ -n "$C3_LIMIT" ]; then
-  cp "$INPUT" "$SMOKE_IN"
-else
-  # 734-row C3 set: stride 15 -> ~49 rows. C2's stride 30 is correct
-  # for its 1,468-row file; copying it here undershoots MIN_ROWS=40
-  # and aborts after a full model load (jobs 8556542/8556543).
-  awk 'NR % 15 == 1' "$INPUT" > "$SMOKE_IN"
-fi
-n_smoke=$(wc -l < "$SMOKE_IN")
-if [ "$n_smoke" -lt 40 ]; then
-  echo "FATAL smoke_in has $n_smoke rows (need >=40); tighten the awk stride"
-  exit 1
-fi
-# Instruct-2507 is non-thinking; no chat_template_kwargs.
-ss-score --input "$SMOKE_IN" --out "$SMOKE_OUT" \
-  --base-url "$BASE_URL" --model "$MODEL" --arms "$ARMS" \
-  --replicate-frac 0 --workers 16
-ss-analyze smoke "$SMOKE_OUT" || { echo "SMOKE FAILED, aborting"; exit 1; }
-
-ss-score \
-  --input "$INPUT" \
-  --out "$OUT" \
-  --base-url "$BASE_URL" \
-  --model "$MODEL" \
-  --arms "$ARMS" \
-  --replicate-frac "$REPLICATE_FRAC" \
-  --workers 32
-
-ss-analyze coverage "$OUT" "$INPUT" || true
 echo "done"
