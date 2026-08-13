@@ -19,6 +19,8 @@ FOLDER = {
     "make_c3_set": "thinking",
     "make_c3_direct_set": "thinking",
     "generate_thinking": "thinking",
+    "make_a2_set": "feature_order",
+    "make_a3_set": "default_options",
 }
 
 
@@ -347,3 +349,112 @@ def test_make_reasoned_set_assembles_2x2(tmp_path):
     # Sidecar has a row per transcript with its cell.
     sidecar = (tmp_path / "c1_set_parse.csv").read_text(encoding="utf-8")
     assert "qa" in sidecar and "narrative" in sidecar
+
+
+def _ladder_row(eid, questions, options, truth, survey="wvs", target="Q1"):
+    return {
+        "example_id": eid, "survey": survey, "id": eid.split("_")[0],
+        "country": "1", "target_code": target,
+        "target_question": "How do you feel?", "questions": questions,
+        "option_sets": {"original": options}, "ground_truth": truth,
+        "ground_truth_index": options.index(truth),
+        "arm": "informative", "n_features": len(questions),
+    }
+
+
+def test_make_a2_set_order_cells(tmp_path):
+    import json
+
+    mod = load("make_a2_set")
+    qs = {f"Question {i}?": f"Answer {i}" for i in range(5)}
+    ladder = tmp_path / "ladder.jsonl"
+    rows = [
+        _ladder_row("r1_ladder_informative_k024", qs,
+                    ["Low", "High"], "Low"),
+        _ladder_row("r2_ladder_informative_k024", qs,
+                    ["Low", "High"], "High"),
+        # Wrong rung: must be ignored.
+        _ladder_row("r3_ladder_informative_k008", qs,
+                    ["Low", "High"], "Low"),
+        # Duplicate-option target: must be excluded.
+        _ladder_row("r4_ladder_informative_k024", qs,
+                    ["Same", "Same", "Other"], "Other", target="QDUP"),
+    ]
+    ladder.write_text(
+        "\n".join(json.dumps(r) for r in rows) + "\n", encoding="utf-8")
+
+    out = tmp_path / "a2.jsonl"
+    assert mod.main(["--ladder-set", str(ladder), "--out", str(out)]) == 0
+    got = [json.loads(l) for l in out.read_text(encoding="utf-8").splitlines()]
+
+    assert len(got) == 6  # 2 pairs x 3 cells; k008 and dup target dropped
+    assert {r["base_id"] for r in got} == {
+        "r1_ladder_informative_k024", "r2_ladder_informative_k024"}
+    # Cells adjacent per pair (canary LIMIT keeps whole triples).
+    assert [r["base_id"] for r in got[:3]] == [got[0]["base_id"]] * 3
+
+    by_cell = {r["example_id"].rsplit("_", 1)[1]: r for r in got[:3]}
+    src_items = list(qs.items())
+    assert list(by_cell["ordfirst"]["questions"].items()) == src_items
+    assert list(by_cell["ordlast"]["questions"].items()) == (
+        src_items[::-1])
+    shuf = list(by_cell["ordshuf"]["questions"].items())
+    assert shuf != src_items and shuf != src_items[::-1]
+    assert sorted(shuf) == sorted(src_items)
+    assert by_cell["ordfirst"]["arm_label"] == "informative_first"
+
+    # Determinism: a rebuild is byte-identical.
+    out2 = tmp_path / "a2_again.jsonl"
+    mod.main(["--ladder-set", str(ladder), "--out", str(out2)])
+    assert out.read_bytes() == out2.read_bytes()
+
+
+def test_make_a3_set_dk_cells(tmp_path):
+    import json
+
+    mod = load("make_a3_set")
+    qs = {"Q?": "A"}
+    ladder = tmp_path / "ladder.jsonl"
+    rows = [
+        _ladder_row("r1_ladder_informative_k024", qs,
+                    ["Low", "High", "Don't know"], "High"),
+        _ladder_row("r2_ladder_informative_k024", qs,
+                    ["Low", "High", "Don't know"], "Don't know"),
+        # No DK option: cells would be identical, must be excluded.
+        _ladder_row("r3_ladder_informative_k024", qs,
+                    ["Low", "High"], "Low", target="QNODK"),
+        # Duplicate-option target with DK: hygiene exclusion wins.
+        _ladder_row("r4_ladder_informative_k024", qs,
+                    ["Same", "Same", "Don't know"], "Same", target="QDUP"),
+    ]
+    ladder.write_text(
+        "\n".join(json.dumps(r) for r in rows) + "\n", encoding="utf-8")
+
+    out = tmp_path / "a3.jsonl"
+    assert mod.main(["--ladder-set", str(ladder), "--out", str(out)]) == 0
+    got = [json.loads(l) for l in out.read_text(encoding="utf-8").splitlines()]
+
+    assert len(got) == 4  # 2 pairs x 2 cells; QNODK and QDUP dropped
+    by_id = {r["example_id"]: r for r in got}
+
+    p1 = by_id["r1_ladder_informative_k024_dkpresent"]
+    a1 = by_id["r1_ladder_informative_k024_dkabsent"]
+    assert p1["option_sets"]["original"] == ["Low", "High", "Don't know"]
+    assert a1["option_sets"]["original"] == ["Low", "High"]
+    assert p1["ground_truth_index"] == 1 and a1["ground_truth_index"] == 1
+    assert p1["truth_is_dk"] is False
+
+    # DK-truth respondent: absent cell has no correct option.
+    a2 = by_id["r2_ladder_informative_k024_dkabsent"]
+    assert a2["truth_is_dk"] is True
+    assert a2["ground_truth_index"] is None
+    assert a2["option_sets"]["original"] == ["Low", "High"]
+
+    # Cells adjacent per pair (canary LIMIT keeps whole pairs).
+    assert got[0]["base_id"] == got[1]["base_id"]
+
+    meta = json.loads((tmp_path / "a3_dk_meta.json").read_text("utf-8"))
+    assert meta["n_pairs"] == 2 and meta["n_targets"] == 1
+    t = meta["targets"]["wvs|Q1"]
+    assert t["n"] == 2 and t["n_dk_truth"] == 1
+    assert t["human_dk_share"] == 0.5
