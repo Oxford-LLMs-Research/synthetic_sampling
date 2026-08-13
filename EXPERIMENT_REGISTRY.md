@@ -65,6 +65,8 @@ Rules that keep the entries fillable:
 | [A4-CHAT-TEMPLATE](#a4-chat-template--the-label-readout-through-the-tuned-format) | LANDED | 12 Aug 2026 | 3-model roster | Instrument validated, no contrast flips; small qa-positive template tax; Qwen3-32B narrative penalty resurfaces under chat |
 | [C2-THINKING](#c2-thinking--the-native-thinking-toggle) | LANDED | 12 Aug 2026 | Qwen3-32B | Native thinking hurts on the chat readout (-0.040, CI excl. 0); confidence inflation replicates with zero pathology |
 | [C3-THINKING-SIBLING](#c3-thinking-sibling--reasoning-as-training-at-fixed-base) | RUNNING | 12 Aug 2026 | Thinking-2507 vs Instruct-2507 | Reasoning-as-training at fixed base; jobs 8556542/8556543 |
+| [A2-FEATURE-ORDER](#a2-feature-order--feature-order-at-k24) | PLANNED | 13 Aug 2026 | 3-model roster | Does informative-feature position move the readout; harness @ 8777126 |
+| [A3-DEFAULT-OPTIONS](#a3-default-options--dk-options-in-the-numbered-list) | PLANNED | 13 Aug 2026 | 3-model roster | DK present vs absent; forced-last dropped — the latin square cancels position |
 | [EXPA-PARAPHRASE](#expa-paraphrase--format-stability-under-validated-paraphrase) | LANDED | 6 Aug 2026 | Qwen3-32B, Olmo-3.1-32B | Instability was mostly the scoring rule, not the model |
 | [LADDER-READOUT](#ladder-readout--feature-ladder-x-elicitation) | LANDED | 6–7 Aug 2026 | Qwen3-4B/32B, Olmo-3.1-32B | Accuracy saturates on the first informative feature |
 | [READOUT-GRID](#readout-grid--six-arm-readout-grid-on-olmo) | LANDED | 6 Aug 2026 | Olmo-3.1-32B | Six-arm elicitation sweep; `label_num_natural` fails on Olmo |
@@ -612,9 +614,83 @@ Rules that keep the entries fillable:
   no comparison beyond its matched sibling; canary + trace inspection
   before the full Thinking job (`C3_LIMIT=40`).
 
+### A2-FEATURE-ORDER — feature order at k=24
+
+- **Status:** PLANNED (harness @ 8777126; set built and verified locally,
+  awaiting staging + canary + submit)
+- **Rationale:** Does WHERE a feature sits in the profile change whether the
+  model uses it — untested under a clean readout (the January order test was
+  echo-based), and Phase 2's profile builder must fix an order convention.
+  The ladder's `questions` dict IS the informative ranking (prefix property
+  verified on all 1,489 complete pairs), so informative-first is the ladder
+  default; cells informative_first / informative_last / shuffled are paired
+  within pair in ONE serving on exactly B3's 734-pair k=24 substrate.
+- **Result:** PENDING. Pre-registered (13 Aug, `PAPER/docs/PAPER_STATE.md`):
+  order null — paired last-vs-first and shuffled-vs-first within +-0.02;
+  falsifier +-0.04 (order becomes a grid template convention, ladder
+  informative gate gets an ordering caveat); informative-last advantage
+  reads as recency-driven feature use.
+- **Ran:** not yet; canary first (`A2_LIMIT=30`, multiples of 3 keep whole
+  triples)
+- **Hardware:** planned ARC HTC `short`, 1x H100 per model
+- **Code:** `CODE/scripts/feature_order/{make_a2_set,verify_a2_set}.py`,
+  `submit_a2.sh` @ 8777126, over the generic
+  `CODE/scripts/cluster/run_score.sbatch`; read the run commit off RUNSTAMP
+  at submit
+- **Inputs:** `CODE/outputs/feature_order/inputs/a2_order_set.jsonl`
+  (734 pairs x 3 cells = 2,202 instances, 25 targets; pinned by
+  `verify_a2_set.py`, exit 0) + `a2_manifest.json`
+- **Outputs:** planned
+  `CODE/outputs/feature_order/results/a2_order_results_<tag>.jsonl`
+- **Verified by:** `verify_a2_set.py` (set, exit 0); numbers script written
+  at landing
+- **Roster:** Qwen3-32B, Olmo-3.1-32B, Qwen3-30B-A3B (as B3)
+- **Constraint:** arms `label_num,echo_plain`, 25% replicate; never split
+  the three cells across jobs; SHARD_COUNT stays unset.
+
+### A3-DEFAULT-OPTIONS — DK options in the numbered list
+
+- **Status:** PLANNED (harness @ 8777126; set built and verified locally,
+  awaiting staging + canary + submit)
+- **Rationale:** Whether "Don't know" / refusal options enter the numbered
+  list is a Phase 2 convention the distribution-first estimand depends on
+  (old echo picked DK 47% vs 1.5% human, instrument-driven). Design amended
+  from the catalogue: TWO cells (dk_present / dk_absent) — the latin-square
+  readout cancels absolute option position by construction, so the planned
+  forced-last cell would measure nothing it was meant to, and DK options
+  already sit at the tail of all 21 original lists. Non-substantive strings
+  frozen to {"Don't know", "Do not know", "Refusal"}; verifier sweeps a
+  broad DK regex so nothing else matches.
+- **Result:** PENDING. Pre-registered (13 Aug, `PAPER/docs/PAPER_STATE.md`):
+  predicted DK share (mass + argmax) vs matched human share (1.66% on these
+  rows); paired substantive stability within +-0.02, falsifier +-0.04;
+  decision rule — both pass: DK stays present; share fails alone: DK absent
+  + per-question correction; stability fails: convention-readout
+  interaction, decided by which cell tracks human marginals.
+- **Ran:** not yet; canary first (`A3_LIMIT=20`, even numbers keep whole
+  pairs)
+- **Hardware:** planned ARC HTC `short`, 1x H100 per model
+- **Code:** `CODE/scripts/default_options/{make_a3_set,verify_a3_set}.py`,
+  `submit_a3.sh` @ 8777126, over the generic
+  `CODE/scripts/cluster/run_score.sbatch`; read the run commit off RUNSTAMP
+  at submit
+- **Inputs:** `CODE/outputs/default_options/inputs/a3_dk_set.jsonl`
+  (784 pairs x 2 cells = 1,568 instances, 16 DK-carrying clean targets,
+  13 DK-truth respondents kept with null dk_absent truth index; pinned by
+  `verify_a3_set.py`, exit 0) + `a3_dk_meta.json` (per-target human DK
+  shares)
+- **Outputs:** planned
+  `CODE/outputs/default_options/results/a3_dk_results_<tag>.jsonl`
+- **Verified by:** `verify_a3_set.py` (set, exit 0); numbers script written
+  at landing
+- **Roster:** Qwen3-32B, Olmo-3.1-32B, Qwen3-30B-A3B (as B3)
+- **Constraint:** arms `label_num,echo_plain`, 25% replicate; never split
+  the two cells across jobs; SHARD_COUNT stays unset; the cells differ in
+  option COUNT by construction (that is the treatment).
+
 ## Not yet registered
 
-Catalogue entries A2–A5, B1, B2 and T0.2–T0.5 are decided but unrun; they
+Catalogue entries A5, B1, B2 and T0.2–T0.5 are decided but unrun; they
 enter this file when submitted. Historical pre-rebuild runs (`control_*`,
 `scaling_*`, `readout_mini`) exist in `WORK/outputs_recovered/` without STATUS
 files and are unregistered — their rationale and results need recovering from
