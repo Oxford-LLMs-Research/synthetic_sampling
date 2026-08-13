@@ -625,18 +625,20 @@ Rules that keep the entries fillable:
   verified on all 1,489 complete pairs), so informative-first is the ladder
   default; cells informative_first / informative_last / shuffled are paired
   within pair in ONE serving on exactly B3's 734-pair k=24 substrate.
-- **Result:** PENDING. Pre-registered (13 Aug, `PAPER/docs/PAPER_STATE.md`):
-  order null — paired last-vs-first and shuffled-vs-first within +-0.02;
-  falsifier +-0.04 (order becomes a grid template convention, ladder
-  informative gate gets an ordering caveat); informative-last advantage
-  reads as recency-driven feature use.
+- **Result:** PENDING. Pre-registered (13 Aug + same-day review addendum,
+  `PAPER/docs/PAPER_STATE.md`): accuracy deltas AND flip rates co-primary
+  (flips read against the replicate ceiling, B3's lesson) — order null
+  within +-0.02, falsifier +-0.04 (order becomes a grid template
+  convention, ladder informative gate gets an ordering caveat). A null
+  keeps the LADDER default (informative-first); no survey-order cell
+  exists, so nothing here licenses "natural order".
 - **Ran:** not yet; canary first (`A2_LIMIT=30`, multiples of 3 keep whole
   triples)
 - **Hardware:** planned ARC HTC `short`, 1x H100 per model
 - **Code:** `CODE/scripts/feature_order/{make_a2_set,verify_a2_set}.py`,
-  `submit_a2.sh` @ 8777126, over the generic
-  `CODE/scripts/cluster/run_score.sbatch`; read the run commit off RUNSTAMP
-  at submit
+  `submit_a2.sh` @ 8777126; review fixes (B3-identity pin, adaptive smoke
+  stride in the generic `run_score.sbatch`) @ c6f05ea; read the run
+  commit off RUNSTAMP at submit
 - **Inputs:** `CODE/outputs/feature_order/inputs/a2_order_set.jsonl`
   (734 pairs x 3 cells = 2,202 instances, 25 targets; pinned by
   `verify_a2_set.py`, exit 0) + `a2_manifest.json`
@@ -661,19 +663,22 @@ Rules that keep the entries fillable:
   already sit at the tail of all 21 original lists. Non-substantive strings
   frozen to {"Don't know", "Do not know", "Refusal"}; verifier sweeps a
   broad DK regex so nothing else matches.
-- **Result:** PENDING. Pre-registered (13 Aug, `PAPER/docs/PAPER_STATE.md`):
-  predicted DK share (mass + argmax) vs matched human share (1.66% on these
-  rows); paired substantive stability within +-0.02, falsifier +-0.04;
-  decision rule — both pass: DK stays present; share fails alone: DK absent
-  + per-question correction; stability fails: convention-readout
-  interaction, decided by which cell tracks human marginals.
+- **Result:** PENDING. Pre-registered (13 Aug, locks tightened same day
+  after review, `PAPER/docs/PAPER_STATE.md`): per-target argmax DK census —
+  a model passes if mean inflation <= 5pp AND at most 2/16 targets over
+  10pp; roster rule worst-case (any model fails -> Phase 2 convention is
+  DK absent + per-question correction); accuracy read ONLY as
+  substantive-argmax on substantive-truth rows, within +-0.02, falsifier
+  +-0.04. Raw cross-cell accuracy is non-comparable by construction.
 - **Ran:** not yet; canary first (`A3_LIMIT=20`, even numbers keep whole
   pairs)
 - **Hardware:** planned ARC HTC `short`, 1x H100 per model
-- **Code:** `CODE/scripts/default_options/{make_a3_set,verify_a3_set}.py`,
-  `submit_a3.sh` @ 8777126, over the generic
-  `CODE/scripts/cluster/run_score.sbatch`; read the run commit off RUNSTAMP
-  at submit
+- **Code:** `CODE/scripts/default_options/{make_a3_set,verify_a3_set,
+  analyze_a3}.py`, `submit_a3.sh` @ 8777126 + c6f05ea (review fixes:
+  analyze_a3 written to the locked estimand pre-landing; the generic
+  `run_score.sbatch` smoke stride made input-derived — the fixed 50 gave
+  A3 32 smoke rows, all dk_present, the C3-failure class); read the run
+  commit off RUNSTAMP at submit
 - **Inputs:** `CODE/outputs/default_options/inputs/a3_dk_set.jsonl`
   (784 pairs x 2 cells = 1,568 instances, 16 DK-carrying clean targets,
   13 DK-truth respondents kept with null dk_absent truth index; pinned by
