@@ -73,6 +73,7 @@ Rules that keep the entries fillable:
 | [READOUT-PMI](#readout-pmi--pmi--fluency-decomposition) | LANDED | 5 Aug 2026 | Qwen3-32B | Isolates echo's option-constant fluency term |
 | [READOUT-BATTERY](#readout-battery--baseline-readout-battery) | LANDED | 3–4 Aug 2026 | Qwen3-4B/32B, Olmo-3.1-32B | The substrate T0.1 and the roster comparisons run on |
 | [T0.1-CALIBRATION](#t01-calibration--label-distribution-calibration-reanalysis) | LANDED | 8 Aug 2026 | reanalysis, no GPU | Rank-faithful but overconfident; one temperature repairs it |
+| [XGB-CEILING](#xgb-ceiling--feature-ceiling-re-run-with-per-instance-dumps) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Model sits above the matched feature ceiling (+0.08); dissenter penalty is not LLM-specific |
 
 ---
 
@@ -423,6 +424,45 @@ Rules that keep the entries fillable:
   arms must score in one serving.
 
 ---
+
+### XGB-CEILING — feature-ceiling re-run with per-instance dumps
+
+- **Status:** LANDED
+- **Rationale:** T0.1's GroupKFold-on-country XGBoost discarded its
+  per-instance predictions, so the audit-M3 dissenter and entropy
+  quantities were not computable and the C-series falsifiers had no
+  same-substrate supervised anchor. Zero GPU: the identical estimator
+  (same hyperparameters, seed, cell construction, row order) re-fit
+  locally with the out-of-fold dumps kept; in-run consistency gates
+  reproduce T0.1's pinned per-target and per-rung tables before anything
+  new is read.
+- **Result:** On the C-series 734-pair substrate the same-features ceiling
+  estimate is norm 0.2764 (660 usable instances, 22 targets) and
+  Qwen3-32B's matched direct readout sits ABOVE it at 0.3560 (+0.0796) —
+  "the model fails to convert signal" now reads "the model sits at or
+  above the feature ceiling", with the standing small-cell caveat (XGB
+  fits on ~50-row cells, biased down). The dissenter penalty is not
+  LLM-specific: XGBoost scores 0.66/0.72 on modal respondents vs
+  0.17/0.16 on dissenters (readout/ladder-k24), entropy ratio 0.53–0.56.
+  C3's +0.04 falsifier now reads "broke the feature ceiling", no longer
+  just "beat the sibling".
+- **Ran:** 13 Aug 2026 (no GPU, local; deterministic seed 42)
+- **Hardware:** local CPU
+- **Code:** `CODE/scripts/xgb_ceiling/{run_xgb_ceiling,matched_anchor_read,
+  verify_xgb_ceiling_numbers}.py` (run @ 709a263)
+- **Inputs:** `WORK/outputs_recovered/{readout_set,ladder_readout_set}.jsonl`,
+  `CODE/outputs/narrative/inputs/narrative_tasks.jsonl` (anchor subset),
+  C2's Qwen3-32B direct scores (matched read; a supervised fit is not a
+  serving, no cross-serving comparison arises)
+- **Outputs:** `WORK/analysis/xgb_ceiling/` — per-instance dumps
+  (`xgb_{readout,ladder}_dump.jsonl`, 4,545 + 13,652 rows) + 6 CSVs;
+  regenerable by construction
+- **Verified by:** `verify_xgb_ceiling_numbers.py` (23 pins, exit 0) on top
+  of the in-run consistency gates
+- **Found in passing:** `WORK/analysis/calibration/calibration_summary.csv`
+  lost its xgboost row to a later `--skip-xgb` rewrite, so
+  `verify_t01_numbers.py` currently KeyErrors; regenerate via a full
+  no-skip T0.1 re-run (its other pinned rows are unaffected on disk).
 
 ## Planned
 
