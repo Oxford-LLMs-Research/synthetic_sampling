@@ -73,7 +73,8 @@ Rules that keep the entries fillable:
 | [READOUT-PMI](#readout-pmi--pmi--fluency-decomposition) | LANDED | 5 Aug 2026 | Qwen3-32B | Isolates echo's option-constant fluency term |
 | [READOUT-BATTERY](#readout-battery--baseline-readout-battery) | LANDED | 3–4 Aug 2026 | Qwen3-4B/32B, Olmo-3.1-32B | The substrate T0.1 and the roster comparisons run on |
 | [T0.1-CALIBRATION](#t01-calibration--label-distribution-calibration-reanalysis) | LANDED | 8 Aug 2026 | reanalysis, no GPU | Rank-faithful but overconfident; one temperature repairs it |
-| [XGB-CEILING](#xgb-ceiling--feature-ceiling-re-run-with-per-instance-dumps) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Model sits above the matched feature ceiling (+0.08); dissenter penalty is not LLM-specific |
+| [XGB-CEILING](#xgb-ceiling--feature-ceiling-re-run-with-per-instance-dumps) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Small-sample floor (demoted same day); per-instance dumps for M3/T0.4 |
+| [XGB-CEILING-FULL](#xgb-ceiling-full--the-properly-fit-same-features-ceiling) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Ceiling inverts: prompt-parity supervised 0.465 vs model 0.337; supervised wins on MODAL respondents |
 
 ---
 
@@ -467,6 +468,53 @@ Rules that keep the entries fillable:
   lost its xgboost row to a later `--skip-xgb` rewrite, so
   `verify_t01_numbers.py` currently KeyErrors; regenerate via a full
   no-skip T0.1 re-run (its other pinned rows are unaffected on disk).
+
+### XGB-CEILING-FULL — the properly-fit same-features ceiling
+
+- **Status:** LANDED
+- **Rationale:** XGB-CEILING's anchor was demoted to a floor the same day
+  it landed (its ~50-row cells starve XGBoost into a marginal predictor),
+  so this run fits the identical estimator per target on the FULL survey
+  microdata (2.4k–96k usable respondents) and evaluates out-of-fold on
+  the exact 734 anchor instances, after an end-to-end mapping gate (all
+  734 anchor ground truths reproduce from microdata via
+  text->code->label). Three regimes: grouped (GroupKFold-on-country over
+  the informative feature pool, ~86 columns), within (per-country
+  5-fold, same pool), and within_prompt24 (per-country, restricted to
+  that country's anchor top-24 — the features the PROMPT actually
+  carried; informative rank is per-country, and respondents have ~83 of
+  the pool's features non-missing, so the pool regimes see far more than
+  the prompt does).
+- **Result:** The ceiling framing INVERTS: a supervised reader of the
+  same prompt features reaches norm 0.4654 on the 734 anchor instances
+  (pool regimes 0.4911 grouped / 0.5369 within) vs the model's 0.3372 —
+  the model leaves ~0.13 normalized of learnable signal unconverted, and
+  T0.1's "argmax ceiling matches the XGBoost ceiling" was a
+  starved-baseline artifact on both sides of the comparison. The
+  dissenter penalty is shared but redistributed: at prompt parity XGB
+  scores 0.7449 modal / 0.3929 dissenter vs the LLM's 0.6487 / 0.3736 —
+  the LLM is near-supervised on dissenters and the supervised advantage
+  is concentrated on MODAL respondents. Standing caveat: XGB learns from
+  thousands of labelled same-survey respondents while the model is
+  zero-shot, so the gap measures unconverted LEARNABLE signal, not a
+  like-for-like contest.
+- **Ran:** 13 Aug 2026 (no GPU, local; deterministic seed 42)
+- **Hardware:** local CPU
+- **Code:** `CODE/scripts/xgb_ceiling/{run_xgb_full,matched_anchor_read,
+  verify_xgb_ceiling_numbers}.py` (script committed @ 46cbf55; M-fix and
+  prompt24 regime in the landing commit)
+- **Inputs:** `WORK/data/` survey microdata via `surveys.loaders`,
+  `WORK/outputs_recovered/ladder_readout_set.jsonl` (anchor definition),
+  `CODE/outputs/narrative/inputs/narrative_tasks.jsonl`, C2's Qwen3-32B
+  direct scores (LLM rows)
+- **Outputs:** `WORK/analysis/xgb_ceiling/xgb_full_*` (anchor dump +
+  3 CSVs) + `xgb_llm_dissenter_split.csv`; regenerable by construction
+- **Verified by:** `verify_xgb_ceiling_numbers.py` (48 pins, exit 0);
+  mapping hard-gate inside the run script
+- **Constraint:** grouped covers 704/734 (QLEB7 is single-country, no
+  country folds); C-series falsifiers now read against 0.4654 — a +0.04
+  sibling win in C3 would still sit ~0.08 below the prompt-parity
+  ceiling.
 
 ## Planned
 
