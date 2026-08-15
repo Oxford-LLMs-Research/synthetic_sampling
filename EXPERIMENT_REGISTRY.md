@@ -65,8 +65,8 @@ Rules that keep the entries fillable:
 | [A4-CHAT-TEMPLATE](#a4-chat-template--the-label-readout-through-the-tuned-format) | LANDED | 12 Aug 2026 | 3-model roster | Instrument validated, no contrast flips; small qa-positive template tax; Qwen3-32B narrative penalty resurfaces under chat |
 | [C2-THINKING](#c2-thinking--the-native-thinking-toggle) | LANDED | 12 Aug 2026 | Qwen3-32B | Native thinking hurts on the chat readout (-0.040, CI excl. 0); confidence inflation replicates with zero pathology |
 | [C3-THINKING-SIBLING](#c3-thinking-sibling--reasoning-as-training-at-fixed-base) | LANDED | 13 Aug 2026 | Thinking-2507 vs Instruct-2507 | Thinking sibling underperforms (-0.059, CI excl. 0) under native deployment; reasoning objection closed on all three axes |
-| [A2-FEATURE-ORDER](#a2-feature-order--feature-order-at-k24) | PLANNED | 13 Aug 2026 | 3-model roster | Does informative-feature position move the readout; harness @ 8777126 |
-| [A3-DEFAULT-OPTIONS](#a3-default-options--dk-options-in-the-numbered-list) | PLANNED | 13 Aug 2026 | 3-model roster | DK present vs absent; forced-last dropped — the latin square cancels position |
+| [A2-FEATURE-ORDER](#a2-feature-order--feature-order-at-k24) | LANDED | 14 Aug 2026 | 3-model roster | Order null on the primary arm — informative-first stays; order still flips 10–16% of predictions |
+| [A3-DEFAULT-OPTIONS](#a3-default-options--dk-options-in-the-numbered-list) | LANDED | 14 Aug 2026 | 3-model roster | No DK inflation on any model (census passes); substantive contrast null; DK/Refusal stay in Phase 2 |
 | [EXPA-PARAPHRASE](#expa-paraphrase--format-stability-under-validated-paraphrase) | LANDED | 6 Aug 2026 | Qwen3-32B, Olmo-3.1-32B | Instability was mostly the scoring rule, not the model |
 | [LADDER-READOUT](#ladder-readout--feature-ladder-x-elicitation) | LANDED | 6–7 Aug 2026 | Qwen3-4B/32B, Olmo-3.1-32B | Accuracy saturates on the first informative feature |
 | [READOUT-GRID](#readout-grid--six-arm-readout-grid-on-olmo) | LANDED | 6 Aug 2026 | Olmo-3.1-32B | Six-arm elicitation sweep; `label_num_natural` fails on Olmo |
@@ -75,6 +75,7 @@ Rules that keep the entries fillable:
 | [T0.1-CALIBRATION](#t01-calibration--label-distribution-calibration-reanalysis) | LANDED | 8 Aug 2026 | reanalysis, no GPU | Rank-faithful but overconfident; one temperature repairs it |
 | [XGB-CEILING](#xgb-ceiling--feature-ceiling-re-run-with-per-instance-dumps) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Small-sample floor (demoted same day); per-instance dumps for M3/T0.4 |
 | [XGB-CEILING-FULL](#xgb-ceiling-full--the-properly-fit-same-features-ceiling) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Ceiling inverts: prompt-parity supervised 0.465 vs model 0.337; supervised wins on MODAL respondents |
+| [MODAL-COMMITMENT](#modal-commitment--why-the-llm-loses-the-modal-respondents) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Not hedging: confident wrong commitments (max_p 0.80, modal mass 0.13); recalibration cannot rescue it |
 
 ---
 
@@ -286,7 +287,13 @@ Rules that keep the entries fillable:
 - **Inputs:** READOUT-BATTERY and LADDER-READOUT score files
 - **Outputs:** `WORK/analysis/calibration/calibration_summary.csv`,
   `temperature_scaling.csv`, `reliability_readout_*.csv`
-- **Verified by:** `WORK/analysis/calibration/verify_a6_numbers.py` (shared table)
+- **Verified by:** `WORK/analysis/calibration/verify_t01_numbers.py`
+  (112 checks, exit 0) and `verify_a6_numbers.py` (shared table)
+- **Hygiene note (13 Aug):** a later `--skip-xgb` rerun had rewritten
+  `calibration_summary.csv` without the xgboost row, breaking the verify
+  script; the full no-skip regeneration restored it — the diff vs the
+  broken file is exactly that one row, every other CSV byte-identical,
+  verify exit 0.
 
 ### A1-OLMO — A1 roster completion on Olmo-3.1-32B
 
@@ -726,10 +733,49 @@ Rules that keep the entries fillable:
   deployment estimand, not a bug, but every quoted delta carries the
   C2 anchor.
 
+### MODAL-COMMITMENT — why the LLM loses the modal respondents
+
+- **Status:** LANDED
+- **Rationale:** XGB-CEILING-FULL's supervised advantage concentrates on
+  modal respondents, whom a base-rate predictor gets right for free, so
+  the model's deficit must come from DEVIATING from the modal answer.
+  This zero-GPU reanalysis joins the XGB per-instance OOF dumps to C2's
+  toff `label_num` distributions on the identical 734 anchor instances
+  and asks whether the deviations are hedging (modal narrowly
+  out-ranked) or confident mis-commitment — different diagnoses with
+  different remedies.
+- **Result:** Not hedging — the opposite. The LLM deviates from the
+  modal answer at close to XGB's rate (pooled 0.455 vs 0.405
+  prompt-parity) but its deviations pay far worse (0.368 vs 0.481
+  correct) and 40% of them land on modal respondents where deviation is
+  wrong by construction; when it strays there it commits hard to the
+  wrong option (mean max_p 0.805 vs modal mass 0.133, margin 0.630)
+  even though the modal answer is its rank-2 option 77% of the time,
+  and its failure set overlaps XGB's only weakly (Jaccard 0.29;
+  XGB stays correct on 62% of the LLM's wrong-modal rows). Because
+  temperature preserves argmax and the modal mass is buried, no
+  recalibration rescues this: the modal deficit is genuine signal
+  mis-conversion, the per-instance face of T0.1's overconfidence
+  (mean max_p 0.805 vs XGB grouped 0.689).
+- **Ran:** 13 Aug 2026 (no GPU)
+- **Hardware:** local
+- **Code:** `CODE/scripts/xgb_ceiling/{modal_commitment,
+  verify_modal_commitment}.py`
+- **Inputs:** `WORK/analysis/xgb_ceiling/xgb_full_anchor_dump.jsonl`
+  (XGB-CEILING-FULL OOF dumps, 3 regimes),
+  `CODE/outputs/native_thinking/results/c2_label_results_qwen_qwen3-32b.jsonl`
+  (toff cell), B3 `narrative_tasks.jsonl` + ladder set for truth/anchor
+- **Outputs:**
+  `WORK/analysis/xgb_ceiling/modal_commitment_{summary,by_target,deviation_overlap}.csv`
+- **Verified by:** `verify_modal_commitment.py` (37 checks, exit 0;
+  re-pins the landed dissenter splits for consistency)
+- **Constraint:** supervised fits (no serving) vs one model serving — no
+  scores reused or compared across servings; modal defined per target
+  over the 734 anchor rows, ties broken as in `matched_anchor_read.py`.
+
 ### A2-FEATURE-ORDER — feature order at k=24
 
-- **Status:** PLANNED (harness @ 8777126; set built and verified locally,
-  awaiting staging + canary + submit)
+- **Status:** LANDED
 - **Rationale:** Does WHERE a feature sits in the profile change whether the
   model uses it — untested under a clean readout (the January order test was
   echo-based), and Phase 2's profile builder must fix an order convention.
@@ -737,17 +783,22 @@ Rules that keep the entries fillable:
   verified on all 1,489 complete pairs), so informative-first is the ladder
   default; cells informative_first / informative_last / shuffled are paired
   within pair in ONE serving on exactly B3's 734-pair k=24 substrate.
-- **Result:** PENDING. Pre-registered (13 Aug + same-day review addendum,
-  `PAPER/docs/PAPER_STATE.md`): accuracy deltas AND flip rates co-primary
-  (flips read against the replicate ceiling, B3's lesson) — order null
-  within +-0.02, falsifier +-0.04 (order becomes a grid template
-  convention, ladder informative gate gets an ordering caveat). A null
-  keeps the LADDER default (informative-first); no survey-order cell
-  exists, so nothing here licenses "natural order".
-- **Ran:** not yet. Canary job 8562167 (`A2_LIMIT=30`, multiples of 3 keep
-  whole triples) submitted 13 Aug; still queued — the cluster paused for
-  extreme heat, the job runs under the same id when it resumes
-- **Hardware:** planned ARC HTC `short`, 1x H100 per model
+- **Result:** Null on the primary arm for all three models: no label_num
+  contrast reaches the +-0.04 falsifier (largest point estimate is the
+  MoE's shuf-first +0.027, CI -0.001..+0.060 spanning zero; Qwen and Olmo
+  inside +-0.02), so informative-first stays the ladder/grid default and
+  no order cell enters the grid. Order still flips 10-16% of label_num
+  predictions against an exact 100% in-serving replicate ceiling (579
+  pairs) — B3's null-delta-hides-flips signature reproduced. One
+  secondary-arm caveat carried: Olmo echo_plain last-first -0.040
+  (CI -0.081..-0.003, excluding zero), not reproduced on its primary arm
+  (+0.015).
+- **Ran:** 14 Aug 2026 after the heat pause: canary 8562167 then full jobs
+  8562411 (Qwen3-32B, htc-g053), 8562412 (Olmo, htc-g054), 8562413 (MoE,
+  htc-g053); RUNSTAMP repo=98ecc6f, arms label_num,echo_plain, replicate
+  0.25; 2202/2202 instances per model, all arms 100% usable (Olmo ~1%
+  label miss, known pattern)
+- **Hardware:** ARC HTC `short`, 1x H100 per model
 - **Code:** `CODE/scripts/feature_order/{make_a2_set,verify_a2_set}.py`,
   `submit_a2.sh` @ 8777126; review fixes (B3-identity pin, adaptive smoke
   stride in the generic `run_score.sbatch`) @ c6f05ea; `analyze_a2.py`
@@ -757,38 +808,47 @@ Rules that keep the entries fillable:
 - **Inputs:** `CODE/outputs/feature_order/inputs/a2_order_set.jsonl`
   (734 pairs x 3 cells = 2,202 instances, 25 targets; pinned by
   `verify_a2_set.py`, exit 0) + `a2_manifest.json`
-- **Outputs:** planned
-  `CODE/outputs/feature_order/results/a2_order_results_<tag>.jsonl`
-- **Verified by:** `verify_a2_set.py` (set, exit 0); numbers script written
-  at landing
+- **Outputs:** `CODE/outputs/feature_order/results/a2_order_results_<tag>.jsonl`
+  (3 models), analysis `WORK/analysis/feature_order/a2_{levels,contrasts}_<tag>.csv`
+  via `analyze_a2.py`; results backed up to `WORK/outputs_recovered/a2_feature_order/`
+- **Verified by:** `verify_a2_set.py` (set, exit 0);
+  `verify_a2_numbers.py` (81 checks, exit 0); headline deltas/flips
+  independently recomputed from the raw JSONLs (fresh code, exact match)
 - **Roster:** Qwen3-32B, Olmo-3.1-32B, Qwen3-30B-A3B (as B3)
 - **Constraint:** arms `label_num,echo_plain`, 25% replicate; never split
   the three cells across jobs; SHARD_COUNT stays unset.
 
 ### A3-DEFAULT-OPTIONS — DK options in the numbered list
 
-- **Status:** PLANNED (harness @ 8777126; set built and verified locally,
-  awaiting staging + canary + submit)
-- **Rationale:** Whether "Don't know" / refusal options enter the numbered
-  list is a Phase 2 convention the distribution-first estimand depends on
-  (old echo picked DK 47% vs 1.5% human, instrument-driven). Design amended
-  from the catalogue: TWO cells (dk_present / dk_absent) — the latin-square
-  readout cancels absolute option position by construction, so the planned
-  forced-last cell would measure nothing it was meant to, and DK options
-  already sit at the tail of all 21 original lists. Non-substantive strings
-  frozen to {"Don't know", "Do not know", "Refusal"}; verifier sweeps a
-  broad DK regex so nothing else matches.
-- **Result:** PENDING. Pre-registered (13 Aug, locks tightened same day
-  after review, `PAPER/docs/PAPER_STATE.md`): per-target argmax DK census —
-  a model passes if mean inflation <= 5pp AND at most 2/16 targets over
-  10pp; roster rule worst-case (any model fails -> Phase 2 convention is
-  DK absent + per-question correction); accuracy read ONLY as
-  substantive-argmax on substantive-truth rows, within +-0.02, falsifier
-  +-0.04. Raw cross-cell accuracy is non-comparable by construction.
-- **Ran:** not yet. Canary job 8562168 (`A3_LIMIT=20`, even numbers keep
-  whole pairs) submitted 13 Aug; still queued — the cluster paused for
-  extreme heat, the job runs under the same id when it resumes
-- **Hardware:** planned ARC HTC `short`, 1x H100 per model
+- **Status:** LANDED
+- **Rationale:** Whether the model inflates "Don't know" / Refusal relative
+  to humans, and whether hiding those options moves substantive
+  predictions. They are substantively meaningful survey responses: Phase 2
+  keeps them in the numbered list (locked 15 Aug). The dk_absent cell is a
+  diagnostic, not a candidate template. Design amended from the catalogue:
+  TWO cells (dk_present / dk_absent) — the latin-square readout cancels
+  absolute option position, so the planned forced-last cell would measure
+  nothing it was meant to. Non-substantive strings frozen to {"Don't know",
+  "Do not know", "Refusal"}; verifier sweeps a broad DK regex so nothing
+  else matches.
+- **Result:** No DK inflation anywhere: every model passes the descriptive
+  census band on label_num with mean per-target inflation -0.2pp (Qwen),
+  -1.2pp (MoE), -1.4pp (Olmo) — slightly UNDER-predicting DK — and 0 of 16
+  targets over the 10pp cap; Refusal is never the argmax on any of the
+  four ESS dual-carriers for any model. The substantive contrast is null
+  on label_num for all three (+0.005/+0.007/+0.002, every CI inside
+  +-0.02; flips 5.8-10.1% against a 100% replicate ceiling), so hiding DK
+  does not move substantive predictions and DK/Refusal stay in Phase 2.
+  The echo_plain present-absent contrast is exactly 0 BY CONSTRUCTION
+  (echo prompts do not enumerate the option list; 784/784 pairs have
+  bit-identical substantive scores across cells) — only label_num informs
+  that contrast.
+- **Ran:** 14 Aug 2026 after the heat pause: canary 8562168 then full jobs
+  8562414 (Qwen3-32B, htc-g055), 8562415 (Olmo, htc-g054), 8562416 (MoE,
+  htc-g055); RUNSTAMP repo=98ecc6f, arms label_num,echo_plain, replicate
+  0.25; 1568/1568 instances per model, all arms 100% usable (Olmo ~1%
+  label miss, known pattern)
+- **Hardware:** ARC HTC `short`, 1x H100 per model
 - **Code:** `CODE/scripts/default_options/{make_a3_set,verify_a3_set,
   analyze_a3}.py`, `submit_a3.sh` @ 8777126 + c6f05ea (review fixes:
   analyze_a3 written to the locked estimand pre-landing; the generic
@@ -800,10 +860,14 @@ Rules that keep the entries fillable:
   13 DK-truth respondents kept with null dk_absent truth index; pinned by
   `verify_a3_set.py`, exit 0) + `a3_dk_meta.json` (per-target human DK
   shares)
-- **Outputs:** planned
-  `CODE/outputs/default_options/results/a3_dk_results_<tag>.jsonl`
-- **Verified by:** `verify_a3_set.py` (set, exit 0); numbers script written
-  at landing
+- **Outputs:** `CODE/outputs/default_options/results/a3_dk_results_<tag>.jsonl`
+  (3 models), analysis `WORK/analysis/default_options/a3_{levels,contrasts,
+  dk_census,dk_verdict,refusal_split}_<tag>.csv` via `analyze_a3.py`;
+  results backed up to `WORK/outputs_recovered/a3_default_options/`
+- **Verified by:** `verify_a3_set.py` (set, exit 0);
+  `verify_a3_numbers.py` (54 checks, exit 0); headline deltas/inflations
+  independently recomputed from the raw JSONLs (fresh code — exact match,
+  incl. reproducing the Olmo 760-pair miss-handling convention)
 - **Roster:** Qwen3-32B, Olmo-3.1-32B, Qwen3-30B-A3B (as B3)
 - **Constraint:** arms `label_num,echo_plain`, 25% replicate; never split
   the two cells across jobs; SHARD_COUNT stays unset; the cells differ in

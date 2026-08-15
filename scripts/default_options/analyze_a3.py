@@ -1,24 +1,26 @@
-"""A3 default-option analysis, to the 13 Aug pre-registration (as
-tightened by review the same day; locks in PAPER_STATE).
+"""A3 default-option analysis, to the 13 Aug pre-registration as
+amended 15 Aug (PAPER_STATE): Don't know and Refusal stay in Phase 2.
 
 Written BEFORE the jobs land, because this is the experiment most likely
 to be mis-read from a generic accuracy table: raw accuracy is NOT
 comparable across cells (dk_absent has fewer options, and the 13 DK-truth
 rows cannot be correct there). The locked estimands:
 
-- DK census (the instrument read), dk_present cell: per-target ARGMAX DK
-  rate (the full-option argmax lands on a DK option) vs the matched human
+- DK census (descriptive), dk_present cell: per-target ARGMAX DK rate
+  (the full-option argmax lands on a DK option) vs the matched human
   share from the set rows; DK softmax MASS reported descriptively only
   (raw readout mass is overconfident per T0.1; the criterion is argmax,
-  which is temperature-invariant). Pass rule per model: mean per-target
-  inflation (predicted - human) <= 5pp AND at most 2 of 16 targets over
-  10pp. Roster rule (applied across models, worst-case): any model fails
-  -> the Phase 2 convention is DK absent + per-question DK correction.
+  which is temperature-invariant). Inflation flag per model: mean
+  per-target inflation (predicted - human) <= 5pp AND at most 2 of 16
+  targets over 10pp. A fail is a model finding (over-prediction of a
+  real category). It does NOT drop Don't know / Refusal from Phase 2
+  (the 13 Aug worst-case switcher was retracted 15 Aug).
 - Substantive contrast (the stability read), substantive-truth rows only:
   dk_present scored by argmax over SUBSTANTIVE options (DK scores
   dropped; equivalent to renormalising) vs dk_absent argmax, paired on
   base_id, target-clustered bootstrap CI; within +-0.02 expected,
-  falsifier +-0.04. Flip rate read against the replicate ceiling.
+  falsifier +-0.04. Flip rate read against the replicate ceiling. The
+  dk_absent cell is a diagnostic, not a candidate template.
 - Refusal split: on targets carrying both "Don't know" and Refusal (the
   four clean ESS dual-carriers), the DK-argmax rate is reported per
   removed option, not just pooled.
@@ -51,7 +53,8 @@ OUTDIR = ROOT.parent / "analysis" / "default_options"
 ARMS = ("label_num", "echo_plain")
 CELLS = ("dk_present", "dk_absent")
 
-# Locked pass rule (PAPER_STATE 13 Aug addendum).
+# Descriptive inflation band (PAPER_STATE 13 Aug; convention-switcher
+# retracted 15 Aug). `passes` means "does not inflate", not "keep DK".
 MEAN_INFLATION_MAX = 0.05
 PER_TARGET_CAP = 0.10
 PER_TARGET_CAP_MAX_N = 2
