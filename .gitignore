@@ -123,6 +123,9 @@ configs/local.yaml
 *.dta
 *.sav
 
+# Allow csv files in this specific folder
+!tests/permutation_importance/*.csv
+
 # Analysis outputs (figures, numeric exports, scratch lists — regenerate from scripts)
 analysis/.cache/
 analysis/**/*.json
