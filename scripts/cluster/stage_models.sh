@@ -19,6 +19,10 @@ ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 TSV="$ROOT/scripts/cluster/roster_phase2.tsv"
 WAVE="${1:?usage: stage_models.sh <wave> [--dry-run | <hf_id>]}"
 ONLY="${2:-}"
+# Parallel shard downloads on the login node get SIGKILLed by its memory cap
+# (wave 1, 9 Sep: 8 workers died on the first 61GB model). Default low; raise
+# with HF_WORKERS=n only if a wave proves it survives.
+HF_WORKERS="${HF_WORKERS:-2}"
 
 : "${DATA:?DATA is unset; run on ARC (DATA=/data/polf-sula/nuff1496)}"
 export HF_HOME="${HF_HOME:-$DATA/hf_cache}"
@@ -46,7 +50,7 @@ tail -n +2 "$TSV" | while IFS=$'\t' read -r wave id role precision tp gb notes; 
   # GGUF and consolidated files are never served by vLLM.
   "${DL[@]}" "$id" \
     --exclude "original/*" --exclude "*.gguf" --exclude "consolidated*" \
-    --max-workers 8
+    --max-workers "$HF_WORKERS"
   # Record what landed: snapshot hash and size, for MODEL_CHECKPOINTS.md.
   snap_dir="$HF_HOME/hub/models--${id//\//--}/snapshots"
   if [ -d "$snap_dir" ]; then
