@@ -51,7 +51,7 @@ tail -n +2 "$TSV" | while IFS=$'\t' read -r wave id role precision tp gb notes; 
   snap_dir="$HF_HOME/hub/models--${id//\//--}/snapshots"
   if [ -d "$snap_dir" ]; then
     for s in "$snap_dir"/*; do
-      echo "STAGED id=$id snapshot=$(basename "$s") size=$(du -sh "$s" | cut -f1)"
+      echo "STAGED id=$id snapshot=$(basename "$s") size=$(du -shL "$s" | cut -f1)"
     done
   fi
 done
