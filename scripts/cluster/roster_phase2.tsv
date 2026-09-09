@@ -1,0 +1,32 @@
+wave	hf_id	role	precision	tp	est_gb	notes
+1	Qwen/Qwen3-4B	instruct	bf16	1	8	bridge; likely cached
+1	Qwen/Qwen3-4B-Base	base	bf16	1	8	pair of Qwen3-4B
+1	Qwen/Qwen3-32B	instruct	bf16	1	65	bridge; likely cached; no base exists
+1	Qwen/Qwen3-30B-A3B-Instruct-2507	instruct	bf16	1	61	certified 8 Aug; likely cached
+1	Qwen/Qwen3-30B-A3B-Base	base	bf16	1	61	pair of 30B-A3B
+1	allenai/Olmo-3.1-32B-Instruct-DPO	instruct	bf16	1	65	bridge; likely cached
+1	allenai/Olmo-3-1125-32B	base	bf16	1	65	pair of Olmo 3.1 32B DPO
+1	allenai/Olmo-3-7B-Instruct-DPO	instruct	bf16	1	15	fully open size ladder
+1	allenai/Olmo-3-1025-7B	base	bf16	1	15	pair of Olmo 3 7B DPO
+1	meta-llama/Llama-3.1-8B-Instruct	instruct	bf16	1	16	gated; needs HF_TOKEN; exclude original/
+1	meta-llama/Llama-3.1-8B	base	bf16	1	16	gated; exclude original/
+2	Qwen/Qwen3.5-27B	instruct	bf16	1	56	multimodal; text-only serving TO VERIFY; no base exists
+2	Qwen/Qwen3.5-35B-A3B	instruct	bf16	1	70	70GB served: g058 (96GB) or --max-model-len 4096
+2	Qwen/Qwen3.5-35B-A3B-Base	base	bf16	1	70	pair of Qwen3.5-35B-A3B
+2	nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16	instruct	bf16	1	62	--trust-remote-code --mamba-ssm-cache-dtype float32
+2	nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-Base-BF16	base	bf16	1	62	pair of Nemotron Nano
+2	google/gemma-4-31B-it	instruct	bf16	1	66	multimodal; text-only TO VERIFY
+2	google/gemma-4-31B	base	bf16	1	66	pair of gemma-4-31B-it
+2	google/gemma-4-26B-A4B-it	instruct	bf16	1	52	MoE half of the Gemma 4 pair
+2	google/gemma-4-26B-A4B	base	bf16	1	52	pair of gemma-4-26B-A4B-it
+2	openai/gpt-oss-120b	instruct	mxfp4	1	65	serve without --dtype bfloat16
+3	meta-llama/Llama-3.1-70B-Instruct	instruct	bf16	2	140	gated; TP2 on g058 or TP4 elsewhere; exclude original/
+3	meta-llama/Llama-3.1-70B	base	bf16	2	140	gated; pair of 70B-Instruct
+3	Qwen/Qwen3.5-122B-A10B-FP8	instruct	fp8	2	125	official FP8
+3	nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8	instruct	fp8	2	124	card recommends TP4; min 2x H100
+3	nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-Base-BF16	base	bf16->fp8	2	240	serve --quantization fp8 to match the instruct
+3	Qwen/Qwen3-235B-A22B-Instruct-2507-FP8	instruct	fp8	4	240	Qwen3 scale anchor; no base exists
+4	Qwen/Qwen3.5-397B-A17B-FP8	instruct	fp8	8	403	subsample; multimodal, text-only TO VERIFY
+4	sgl-project/DeepSeek-V4-Flash-FP8	instruct	fp8	8	291	subsample; FP8 repack of native FP4+FP8; TP4 on g058 possible
+4	deepseek-ai/DeepSeek-V4-Flash-Base	base	fp4+fp8	8	200	CONTINGENT on Hopper FP4 support in vLLM v0.29
+4	nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4	instruct	nvfp4	8	280	CONTINGENT on NVFP4 on Hopper; fallback BF16 repo at 1.1TB served --quantization fp8
