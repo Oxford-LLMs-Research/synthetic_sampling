@@ -76,7 +76,7 @@ Rules that keep the entries fillable:
 | [XGB-CEILING](#xgb-ceiling--feature-ceiling-re-run-with-per-instance-dumps) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Small-sample floor (demoted same day); per-instance dumps for M3/T0.4 |
 | [XGB-CEILING-FULL](#xgb-ceiling-full--the-properly-fit-same-features-ceiling) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Ceiling inverts: prompt-parity supervised 0.465 vs model 0.337; supervised wins on MODAL respondents |
 | [MODAL-COMMITMENT](#modal-commitment--why-the-llm-loses-the-modal-respondents) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Not hedging: confident wrong commitments (max_p 0.80, modal mass 0.13); recalibration cannot rescue it |
-| [CPU-BILLING-TEST](#cpu-billing-test--core-count-vs-throughput-calibration) | RUNNING | 11 Sep 2026 | Qwen3-32B | Harness calibration: A2 set rerun at 2 and 4 CPUs vs the 8-CPU August run |
+| [CPU-BILLING-TEST](#cpu-billing-test--core-count-vs-throughput-calibration) | RUNNING | 11 Sep 2026 | Qwen3-32B, Qwen3-4B | Harness calibration: A2 set rerun at 2 and 4 CPUs vs the 8-CPU August run |
 
 ---
 
@@ -883,8 +883,12 @@ Rules that keep the entries fillable:
   see whether the 8-CPU throughput (34.0 min scoring, job 8562411) holds.
   Calibration only: the scores are never used for any analysis.
 - **Result:** PENDING
-- **Ran:** 11 Sep 2026, jobs 8785011 (2 CPUs), 8785012 (4 CPUs)
-- **Hardware:** ARC HTC `short`, 1x H100, node NOT RECORDED until RUNSTAMP
+- **Ran:** 11 Sep 2026. First pair 8785011/8785012 cancelled unrun (12 h
+  wall, scheduler estimate 21 Sep). Resubmitted at 1h15 wall: H100 jobs
+  8785302 (2 CPUs) / 8785303 (4 CPUs) on Qwen3-32B; L40S jobs 8785304
+  (2 CPUs) / 8785305 (8 CPUs) on Qwen3-4B, same A2 input, within-GPU-type
+  comparison
+- **Hardware:** ARC HTC `short`, 1x H100 or 1x L40S; nodes from RUNSTAMP
 - **Code:** `CODE/scripts/cluster/run_score.sbatch` @ 49a4df8 or later,
   header CPU count overridden on the sbatch command line
 - **Inputs:** `CODE/outputs/feature_order/inputs/a2_order_set.jsonl` (2,202)
