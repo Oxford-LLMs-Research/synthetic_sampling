@@ -76,6 +76,7 @@ Rules that keep the entries fillable:
 | [XGB-CEILING](#xgb-ceiling--feature-ceiling-re-run-with-per-instance-dumps) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Small-sample floor (demoted same day); per-instance dumps for M3/T0.4 |
 | [XGB-CEILING-FULL](#xgb-ceiling-full--the-properly-fit-same-features-ceiling) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Ceiling inverts: prompt-parity supervised 0.465 vs model 0.337; supervised wins on MODAL respondents |
 | [MODAL-COMMITMENT](#modal-commitment--why-the-llm-loses-the-modal-respondents) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Not hedging: confident wrong commitments (max_p 0.80, modal mass 0.13); recalibration cannot rescue it |
+| [CPU-BILLING-TEST](#cpu-billing-test--core-count-vs-throughput-calibration) | RUNNING | 11 Sep 2026 | Qwen3-32B | Harness calibration: A2 set rerun at 2 and 4 CPUs vs the 8-CPU August run |
 
 ---
 
@@ -872,6 +873,25 @@ Rules that keep the entries fillable:
 - **Constraint:** arms `label_num,echo_plain`, 25% replicate; never split
   the two cells across jobs; SHARD_COUNT stays unset; the cells differ in
   option COUNT by construction (that is the treatment).
+
+### CPU-BILLING-TEST — core count vs throughput calibration
+
+- **Status:** RUNNING
+- **Rationale:** ARC bills `short` GPU jobs by reserved CPUs only
+  (`billing=<cpus>`, GPU weight zero), so the Phase 2 credit cost scales
+  with `--cpus-per-task`. Rerun the A2 set on Qwen3-32B at 2 and 4 CPUs to
+  see whether the 8-CPU throughput (34.0 min scoring, job 8562411) holds.
+  Calibration only: the scores are never used for any analysis.
+- **Result:** PENDING
+- **Ran:** 11 Sep 2026, jobs 8785011 (2 CPUs), 8785012 (4 CPUs)
+- **Hardware:** ARC HTC `short`, 1x H100, node NOT RECORDED until RUNSTAMP
+- **Code:** `CODE/scripts/cluster/run_score.sbatch` @ 49a4df8 or later,
+  header CPU count overridden on the sbatch command line
+- **Inputs:** `CODE/outputs/feature_order/inputs/a2_order_set.jsonl` (2,202)
+- **Outputs:** `CODE/outputs/feature_order/results/cputest_{2,4}cpu_a2_qwen_qwen3-32b.jsonl`
+  (calibration artifacts; delete after the timing is recorded)
+- **Verified by:** the `done:` timing line in `logs/cputest{2,4}-<job>.out`
+  against 34.0 min in `logs/a2-qwen3-32b-8562411.out`
 
 ## Not yet registered
 
