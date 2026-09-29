@@ -26,7 +26,7 @@ HF_WORKERS="${HF_WORKERS:-2}"
 
 : "${DATA:?DATA is unset; run on ARC (DATA=/data/polf-sula/nuff1496)}"
 export HF_HOME="${HF_HOME:-$DATA/hf_cache}"
-export HF_HUB_DISABLE_XET=1
+export HF_HUB_DISABLE_XET="${HF_HUB_DISABLE_XET:-1}"  # set 0 for repos with >50GB files (gpt-oss-120b); needs hf_xet
 unset HF_HUB_OFFLINE
 
 if command -v hf >/dev/null 2>&1; then
