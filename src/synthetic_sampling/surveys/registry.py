@@ -49,6 +49,8 @@ class SurveyConfig:
     # True = columns whose names differ only in letter case are one variable
     # and are coalesced at load time (see SurveyLoader._merge_case_variants).
     merge_case_variants: bool = False
+    # True = every file is Stata, all are concatenated, numeric codes kept.
+    stata_codes: bool = False
     multi_file: bool = False
     encoding: str = "utf-8"
     id_columns_to_combine: Optional[tuple] = None
@@ -128,11 +130,15 @@ SURVEY_REGISTRY: Dict[str, SurveyConfig] = {
         id_columns_to_combine=("country", "idnumber"),
         id_separator="_",
         metadata_path="pulled_metadata_asianbarometer.json",
-        file_patterns=("asian_barometer.csv", "*.csv", "*.dta", "*.sav"),
-        # The source is the combined nine-country CSV. The folder also
-        # holds the per-country .dta files (since 5 Sep 2026); preferring
-        # those loaded australia.dta alone, 339 columns instead of 636.
+        # The nine per-country Stata files, numeric codes kept (1 Oct 2026,
+        # as features_project since 5 Sep). The combined CSV in the same
+        # folder stores label TEXT whose spellings drift from the metadata
+        # ("Can’t choose", "Strongly Agree", truncated labels), so
+        # non-answers passed as answers; the codes agree with the pulled
+        # code -> label map.
+        file_patterns=("*.dta",),
         prefer_numeric=False,
+        stata_codes=True,
         # Six country files name items q1, q2, ...; three name them Q1, Q2,
         # ... The combined CSV carries both spellings as separate columns,
         # so the Q-cased metadata saw six countries about 80 percent empty.

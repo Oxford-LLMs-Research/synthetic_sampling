@@ -13,7 +13,7 @@ import warnings
 
 from .paths import DataPaths
 from .registry import SurveyConfig, SURVEY_REGISTRY, get_survey_config
-from .harmonise import apply_harmonisation
+from .harmonise import apply_harmonisation, clean_embedded_label
 from .file_io import find_data_files, load_file, load_multiple_files
 
 
@@ -125,7 +125,18 @@ class SurveyLoader:
         files = find_data_files(survey_dir, config.get_file_patterns(),
                                 prefer_numeric=config.prefer_numeric)
         
-        if config.multi_file:
+        if config.stata_codes:
+            # Numeric codes, not label text: pandas would otherwise turn every
+            # coded column into a categorical of its labels.
+            not_dta = [f.name for f in files if f.suffix.lower() != ".dta"]
+            if not_dta:
+                raise FileNotFoundError(
+                    f"{config.name} is read from Stata files with numeric "
+                    f"codes; {survey_dir} offered {not_dta}.")
+            df = load_multiple_files(files, encoding=config.encoding,
+                                     convert_categoricals=False)
+            df = df.drop(columns=["_source_file"], errors="ignore")
+        elif config.multi_file:
             df = load_multiple_files(files, encoding=config.encoding)
         else:
             df = load_file(files[0], encoding=config.encoding)
@@ -147,36 +158,20 @@ class SurveyLoader:
     
     def _fill_embedded_labels(self, config: SurveyConfig,
                               metadata: dict) -> dict:
-        """Give variables pulled WITHOUT a values map the value labels the
-        source file itself carries (SPSS / Stata files embed them).
+        """Label, from the source file's own value labels, what the pulled
+        metadata left without a label (SPSS / Stata files embed them).
 
-        A variable with no values map is treated as continuous downstream, so
-        its raw code is printed as the answer. Latinobarometer REG and CIUDAD
-        were pulled that way and showed "188009.0" for a region in 41 percent
-        of profiles (run-1 too); the .sav labels all 149 regions and 1,132
-        cities. Variables the file does not label stay as they are, and a
-        pulled values map is never touched. The input dict is not mutated.
+        Two cases. (1) A variable pulled with NO values map is treated as
+        continuous downstream, so its raw code is printed as the answer:
+        Latinobarometer REG and CIUDAD showed "188009.0" for a region in 41
+        percent of profiles (run-1 too); the .sav labels all 149 regions and
+        1,132 cities. (2) Under stata_codes (Asian Barometer) the data are
+        codes, and the pulled maps omit codes the files label ("Not yet
+        eligible to vote", "Not aware of Asean") or spell their keys
+        zero-padded ("01" for code 1); the keys are normalised and the
+        missing codes added. A label the metadata already gives is never
+        replaced. The input dict is not mutated.
         """
-        missing = {
-            var: section
-            for section, block in metadata.items() if isinstance(block, dict)
-            for var, meta in block.items()
-            if isinstance(meta, dict) and not meta.get("values")
-        }
-        if not missing:
-            return metadata
-        survey_dir = self.paths.raw_data_dir / config.folder_name
-        files = find_data_files(survey_dir, config.get_file_patterns(),
-                                prefer_numeric=config.prefer_numeric)
-        if not files or files[0].suffix.lower() not in (".sav", ".dta"):
-            return metadata
-        import pyreadstat
-        reader = (pyreadstat.read_sav if files[0].suffix.lower() == ".sav"
-                  else pyreadstat.read_dta)
-        _, file_meta = reader(str(files[0]), metadataonly=True)
-        embedded = {str(k).lower(): v
-                    for k, v in file_meta.variable_value_labels.items()}
-
         def code(c: Any) -> str:
             try:
                 f = float(c)
@@ -184,19 +179,56 @@ class SurveyLoader:
             except (TypeError, ValueError):
                 return str(c)
 
+        wanted = {
+            var: section
+            for section, block in metadata.items() if isinstance(block, dict)
+            for var, meta in block.items()
+            if isinstance(meta, dict)
+            and (config.stata_codes or not meta.get("values"))
+        }
+        if not wanted:
+            return metadata
+        survey_dir = self.paths.raw_data_dir / config.folder_name
+        files = [f for f in find_data_files(
+            survey_dir, config.get_file_patterns(),
+            prefer_numeric=config.prefer_numeric)
+            if f.suffix.lower() in (".sav", ".dta")]
+        if not files:
+            return metadata
+        import pyreadstat
+        embedded: Dict[str, Dict[str, str]] = {}
+        for path in (files if config.stata_codes else files[:1]):
+            reader = (pyreadstat.read_sav if path.suffix.lower() == ".sav"
+                      else pyreadstat.read_dta)
+            _, file_meta = reader(str(path), metadataonly=True)
+            for var, labels in file_meta.variable_value_labels.items():
+                slot = embedded.setdefault(str(var).lower(), {})
+                for c, label in labels.items():
+                    slot.setdefault(
+                        code(c), clean_embedded_label(config.survey_id, label))
+
         out = {s: (dict(b) if isinstance(b, dict) else b)
                for s, b in metadata.items()}
-        filled = 0
-        for var, section in missing.items():
+        filled = added = 0
+        for var, section in wanted.items():
             labels = embedded.get(str(var).lower())
-            if not labels:
-                continue
             meta = dict(out[section][var])
-            meta["values"] = {code(c): str(l).strip()
-                              for c, l in labels.items()}
+            values = meta.get("values")
+            if not values:
+                if not labels:
+                    continue
+                meta["values"] = dict(labels)
+                filled += 1
+            else:
+                merged = {code(k): v for k, v in values.items()}
+                for c, label in (labels or {}).items():
+                    if c not in merged:
+                        merged[c] = label
+                        added += 1
+                meta["values"] = merged
             out[section][var] = meta
-            filled += 1
-        self._log(f"  Filled {filled} values maps from the file's own labels")
+        self._log(f"  Embedded labels: {filled} values maps filled, "
+                  f"{added} codes added")
         return out
 
     def _merge_case_variants(self, df: pd.DataFrame) -> pd.DataFrame:

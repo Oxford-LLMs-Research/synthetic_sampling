@@ -126,6 +126,41 @@ LABEL_REWRITES: Dict[str, Dict[str, Dict[str, str]]] = {
         "The country isat a standstill": "The country is at a standstill"}},
 }
 
+# Whole values maps replaced, survey -> var -> map. Arab Barometer Q547: the
+# questionnaire (wave VIII, p. 45) numbers its answer legend 2-5 ("2.
+# Strongly favor ... 5. Strongly oppose") but its own response grid, and the
+# microdata, use 1-4. The pulled map followed the legend, so code 1 (44
+# percent of Q547_4, a run-1 target) had no label and codes 2-4 carried the
+# label of the next-stronger answer.
+_ARAB_Q547 = {"1": "Strongly favor", "2": "Somewhat favor",
+              "3": "Somewhat oppose", "4": "Strongly oppose",
+              "98": "Don't know", "99": "Decline to answer"}
+VALUES_REPLACE: Dict[str, Dict[str, Dict[str, str]]] = {
+    "arabbarometer": {v: _ARAB_Q547 for v in (
+        "Q547_1", "Q547_2", "Q547_3", "Q547_4",
+        "Q547_TUN2", "Q547_TUN3", "Q547_TUN4")},
+}
+
+# Cleaning of value labels taken from the source file (loaders.
+# _fill_embedded_labels), survey -> regexes stripped from the label start.
+# Latinobarometer REG / CIUDAD labels read "CL: XIV Region: Los Rios": an
+# ISO-style country prefix, and for Chile the region's official Roman
+# ordinal. Neither is how a respondent names where they live.
+EMBEDDED_LABEL_STRIP: Dict[str, Tuple["re.Pattern[str]", ...]] = {
+    "latinobarometer": (
+        re.compile(r"^[A-Z]{2}:\s*"),
+        re.compile(r"^[IVX]+ Region:\s*"),
+    ),
+}
+
+
+def clean_embedded_label(survey_id: str, label: str) -> str:
+    out = str(label).replace("\u2019", "'").strip()
+    for pattern in EMBEDDED_LABEL_STRIP.get(survey_id, ()):
+        out = pattern.sub("", out, count=1)
+    return out.strip()
+
+
 # Code-keyed label corrections, survey -> var -> {code: label}. Unlike
 # LABEL_REWRITES these replace the label of ONE code, for the case where the
 # wrong text is a valid label elsewhere in the same map. WVS B_COUNTRY 410 was
@@ -398,6 +433,7 @@ def apply_harmonisation(
     l_rw = LABEL_REWRITES.get(survey_id, {})
     l_add = LABEL_ADDITIONS.get(survey_id, {})
     l_code = LABEL_CODE_OVERRIDES.get(survey_id, {})
+    v_rep = VALUES_REPLACE.get(survey_id, {})
     other_specify = OTHER_SPECIFY_PATTERNS.get(survey_id)
 
     out: Dict[str, Any] = {}
@@ -423,6 +459,9 @@ def apply_harmonisation(
             if suffix and isinstance(question, str) and not question.rstrip(
                     ).endswith(suffix.strip()):
                 new_meta["question"] = question.rstrip() + suffix
+            replacement = v_rep.get(new_var) or v_rep.get(var)
+            if replacement:
+                new_meta["values"] = dict(replacement)
             values = new_meta.get("values")
             if isinstance(values, dict):
                 new_values = dict(values)

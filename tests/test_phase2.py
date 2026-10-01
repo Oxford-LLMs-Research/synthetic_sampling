@@ -56,7 +56,8 @@ def test_missing_patterns_match_whole_words_only():
     for label in ("NA", "N/A", "nan", "Not applicable", "Missing", "Refused",
                   "Refused to answer", "No answer", "Do not know / No answer",
                   "Not asked in this country", "Decline to answer",
-                  "Can't choose", "Do not understand"):
+                  "Can't choose", "Do not understand",
+                  "Don't understand the question"):
         assert gen._is_missing_value_label(label), label
 
 
@@ -184,8 +185,28 @@ def test_embedded_labels_fill_only_missing_values_maps(tmp_path, monkeypatch):
     loader = SurveyLoader(DataPaths.default_bundled(tmp_path, tmp_path),
                           verbose=False)
     out = loader._fill_embedded_labels(cfg, metadata)["demographics"]
-    assert out["REG"]["values"] == {"32001": "AR: Capital Federal",
-                                    "32002": "AR: Metropolitana"}
+    assert out["REG"]["values"] == {"32001": "Capital Federal",
+                                    "32002": "Metropolitana"}
     assert out["EDAD"].get("values") is None      # the file has no labels
     assert out["S7"]["values"] == {"1": "Asian"}  # pulled map untouched
     assert "values" not in metadata["demographics"]["REG"]  # input intact
+
+
+def test_latino_region_labels_lose_prefix_and_roman_ordinal():
+    from synthetic_sampling.surveys.harmonise import clean_embedded_label as c
+    assert c("latinobarometer", "CL: XIV Region: Los Rios") == "Los Rios"
+    assert c("latinobarometer", "CL: Region Metropolitana") == "Region Metropolitana"
+    assert c("latinobarometer", "MX: Circunscripcion II") == "Circunscripcion II"
+    assert c("latinobarometer", "VE: Trujillo-Pampanito II") == "Trujillo-Pampanito II"
+    assert c("wvs", "CL: XIV Region: Los Rios") == "CL: XIV Region: Los Rios"
+
+
+def test_arab_q547_codes_follow_the_response_grid():
+    from synthetic_sampling.profiles.utils import load_survey_metadata
+    meta = load_survey_metadata("arabbarometer")
+    for var in ("Q547_1", "Q547_4", "Q547_TUN2"):
+        values = next(b[var]["values"] for b in meta.values()
+                      if isinstance(b, dict) and var in b)
+        assert values["1"] == "Strongly favor"
+        assert values["4"] == "Strongly oppose"
+        assert "5" not in values

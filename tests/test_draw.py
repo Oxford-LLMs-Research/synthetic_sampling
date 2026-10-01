@@ -53,18 +53,21 @@ def test_duplicate_ids_and_missing_countries_leave_the_pool():
     assert ranks["respondent_id"].tolist() == ["y"]
 
 
-def test_asian_barometer_loads_the_combined_csv(tmp_path):
-    """Per-country .dta files in the folder must not shadow the combined CSV."""
+def test_asian_barometer_reads_the_stata_files(tmp_path):
+    """The per-country .dta files are the source; the combined CSV beside
+    them is ignored."""
     from synthetic_sampling.surveys.file_io import find_data_files
     from synthetic_sampling.surveys.registry import get_survey_config
 
-    (tmp_path / "asiabarom_combined_datasets.csv").write_text("a\n1\n")
+    (tmp_path / "asiabarom_combined_datasets.csv").write_text("a,b")
     (tmp_path / "australia.dta").write_bytes(b"")
+    (tmp_path / "korea.dta").write_bytes(b"")
     cfg = get_survey_config("asianbarometer")
+    assert cfg.stata_codes and cfg.merge_case_variants
     files = find_data_files(tmp_path, cfg.get_file_patterns(),
                             prefer_numeric=cfg.prefer_numeric)
-    assert [f.name for f in files] == ["asiabarom_combined_datasets.csv"]
-    assert get_survey_config("wvs").prefer_numeric is True
+    assert [f.name for f in files] == ["australia.dta", "korea.dta"]
+    assert get_survey_config("wvs").stata_codes is False
 
 
 def test_case_variant_columns_are_coalesced():

@@ -38,7 +38,8 @@ MISSING_VALUE_LABELS = [
 MISSING_VALUE_PATTERNS = [
     "missing", "refused", "no answer", "not asked",
     "not applicable", "decline to answer", "can't choose",
-    "do not understand", "not available", "no response",
+    "do not understand", "don't understand", "not available",
+    "no response",
     "nan", "na", "n/a",
 ]
 
