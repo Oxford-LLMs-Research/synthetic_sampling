@@ -121,7 +121,8 @@ class SurveyLoader:
         # Find matching files
         # Prefer numeric formats (.dta, .sav) over CSV to preserve numeric codes
         # CSV files often have pre-converted text labels which cause mapping issues
-        files = find_data_files(survey_dir, config.get_file_patterns(), prefer_numeric=True)
+        files = find_data_files(survey_dir, config.get_file_patterns(),
+                                prefer_numeric=config.prefer_numeric)
         
         if config.multi_file:
             df = load_multiple_files(files, encoding=config.encoding)
@@ -133,13 +134,47 @@ class SurveyLoader:
     def _preprocess(self, df: pd.DataFrame, config: SurveyConfig) -> pd.DataFrame:
         """Apply survey-specific preprocessing."""
         df = df.copy()
-        
+
+        if config.merge_case_variants:
+            df = self._merge_case_variants(df)
+
         # Construct composite ID if needed (e.g., Latinobarometer)
         if config.id_columns_to_combine:
             df = self._construct_composite_id(df, config)
         
         return df
     
+    def _merge_case_variants(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Coalesce columns whose names differ only in letter case.
+
+        The first spelling in column order keeps its position and, with every
+        other spelling, is filled from the others where it is empty; a row
+        never holds two different values (checked), so nothing is overwritten.
+        Each spelling stays addressable, so either casing in the metadata
+        resolves to the full column.
+        """
+        groups: Dict[str, List[str]] = {}
+        for col in df.columns:
+            groups.setdefault(str(col).lower(), []).append(col)
+        merged = 0
+        for cols in groups.values():
+            if len(cols) < 2:
+                continue
+            filled = df[cols[0]]
+            for other in cols[1:]:
+                clash = filled.notna() & df[other].notna() & (
+                    filled.astype(str) != df[other].astype(str))
+                if clash.any():
+                    raise ValueError(
+                        f"Case-variant columns {cols} disagree on "
+                        f"{int(clash.sum())} rows; refusing to merge.")
+                filled = filled.combine_first(df[other])
+            for col in cols:
+                df[col] = filled
+            merged += 1
+        self._log(f"  Merged {merged} case-variant column groups")
+        return df
+
     def _construct_composite_id(
         self,
         df: pd.DataFrame,

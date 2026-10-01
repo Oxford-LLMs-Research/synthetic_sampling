@@ -51,3 +51,36 @@ def test_duplicate_ids_and_missing_countries_leave_the_pool():
     ranks = nested_cell_ranks(["x", "x", "y", "z"], ["A", "A", "A", None],
                               "wvs", 42)
     assert ranks["respondent_id"].tolist() == ["y"]
+
+
+def test_asian_barometer_loads_the_combined_csv(tmp_path):
+    """Per-country .dta files in the folder must not shadow the combined CSV."""
+    from synthetic_sampling.surveys.file_io import find_data_files
+    from synthetic_sampling.surveys.registry import get_survey_config
+
+    (tmp_path / "asiabarom_combined_datasets.csv").write_text("a\n1\n")
+    (tmp_path / "australia.dta").write_bytes(b"")
+    cfg = get_survey_config("asianbarometer")
+    files = find_data_files(tmp_path, cfg.get_file_patterns(),
+                            prefer_numeric=cfg.prefer_numeric)
+    assert [f.name for f in files] == ["asiabarom_combined_datasets.csv"]
+    assert get_survey_config("wvs").prefer_numeric is True
+
+
+def test_case_variant_columns_are_coalesced():
+    """Asian Barometer: q1 (six country files) and Q1 (three) are one item."""
+    import pytest
+    from synthetic_sampling.surveys import DataPaths
+    from synthetic_sampling.surveys.loaders import SurveyLoader
+
+    loader = SurveyLoader(DataPaths.default_bundled(".", "./outputs"),
+                          verbose=False)
+    df = pd.DataFrame({"q1": ["Good", None, None], "Q1": [None, "Bad", None],
+                       "x": [1, 2, 3]})
+    out = loader._merge_case_variants(df.copy())
+    assert out["Q1"].tolist() == out["q1"].tolist() == ["Good", "Bad", None]
+    assert out["x"].tolist() == [1, 2, 3]
+
+    clash = pd.DataFrame({"q1": ["Good"], "Q1": ["Bad"]})
+    with pytest.raises(ValueError):
+        loader._merge_case_variants(clash)

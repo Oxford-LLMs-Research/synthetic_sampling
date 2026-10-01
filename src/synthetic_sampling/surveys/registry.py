@@ -44,6 +44,11 @@ class SurveyConfig:
     country_col: str
     metadata_path: str
     file_patterns: tuple = ("*.csv",)
+    # False = take file_patterns in order instead of preferring .dta/.sav.
+    prefer_numeric: bool = True
+    # True = columns whose names differ only in letter case are one variable
+    # and are coalesced at load time (see SurveyLoader._merge_case_variants).
+    merge_case_variants: bool = False
     multi_file: bool = False
     encoding: str = "utf-8"
     id_columns_to_combine: Optional[tuple] = None
@@ -124,6 +129,14 @@ SURVEY_REGISTRY: Dict[str, SurveyConfig] = {
         id_separator="_",
         metadata_path="pulled_metadata_asianbarometer.json",
         file_patterns=("asian_barometer.csv", "*.csv", "*.dta", "*.sav"),
+        # The source is the combined nine-country CSV. The folder also
+        # holds the per-country .dta files (since 5 Sep 2026); preferring
+        # those loaded australia.dta alone, 339 columns instead of 636.
+        prefer_numeric=False,
+        # Six country files name items q1, q2, ...; three name them Q1, Q2,
+        # ... The combined CSV carries both spellings as separate columns,
+        # so the Q-cased metadata saw six countries about 80 percent empty.
+        merge_case_variants=True,
         # No full-date column; 'year' is an integer, 'month' a month NAME
         # string ('February'). No day-of-month exists in the combined file.
         interview_year_col="year",
