@@ -21,6 +21,7 @@ import pandas as pd
 import numpy as np
 from typing import Optional, Union, Iterator
 import hashlib
+import re
 from copy import deepcopy
 
 from .dataclasses import (
@@ -417,10 +418,15 @@ class RespondentProfileGenerator:
         if label_str.lower() in ['nan', 'none', 'null', 'na', 'n/a']:
             return True
         
-        # Check pattern matches (case-insensitive)
+        # Check pattern matches (case-insensitive, whole words only). Until
+        # 1 Oct 2026 this was a bare substring test, so the pattern "na"
+        # removed every label containing those letters ("National
+        # government", "China", "Not at all emotionally attached") from
+        # option sets and profiles; run-1 carried that defect.
         label_lower = label_str.lower()
         for pattern in self.missing_value_patterns:
-            if pattern in label_lower:
+            if re.search(r'(?<![a-z])' + re.escape(pattern.lower())
+                         + r'(?![a-z])', label_lower):
                 return True
         
         return False
@@ -985,6 +991,69 @@ class RespondentProfileGenerator:
             always_included=profile.always_included.copy()
         )
     
+    def top_up_profile(
+        self,
+        profile: RespondentProfile,
+        k: int,
+        seed: int,
+        target_code: Optional[str] = None,
+    ) -> RespondentProfile:
+        """
+        Extend a profile to k features, as evenly across its sections as the
+        instrument permits.
+
+        Equal per-section quotas are capped by the smallest section in the
+        pool (4 to 6 features on four of the seven sources), so profiles
+        beyond 24 features cannot be built by expand_profile alone. This adds
+        one feature at a time, round-robin over the profile's own sections,
+        dropping a section once the respondent has nothing valid left in it.
+        Existing features are preserved (superset), per-target semantic
+        exclusions apply to every added feature, and the result is
+        deterministic given (profile, k, seed, target_code).
+
+        Never raises on shortage: the returned profile has fewer than k
+        features when the respondent's sections are exhausted, and the caller
+        decides what to do with a short profile.
+        """
+        if target_code is not None:
+            pool = self.get_available_pool_for_target(target_code)
+        else:
+            pool = self.get_available_pool()
+        respondent_data = self._get_respondent_data(profile.respondent_id)
+        chosen = set(profile.feature_codes)
+
+        rng = np.random.RandomState(seed % (2 ** 31))
+        queues = {}
+        for section in profile.sections_sampled:
+            candidates = [c for c in pool.get(section, []) if c not in chosen]
+            rng.shuffle(candidates)
+            queues[section] = candidates
+
+        features = dict(profile.features)
+        while len(features) < k:
+            progressed = False
+            for section in profile.sections_sampled:
+                if len(features) >= k:
+                    break
+                queue = queues[section]
+                while queue:
+                    code = queue.pop()
+                    if self._respondent_has_valid_value(code, respondent_data):
+                        features[code] = self._build_feature_info(
+                            code, respondent_data)
+                        progressed = True
+                        break
+            if not progressed:
+                break
+
+        return RespondentProfile(
+            respondent_id=profile.respondent_id,
+            features=features,
+            config=profile.config,
+            sections_sampled=list(profile.sections_sampled),
+            always_included=profile.always_included.copy()
+        )
+
     # -------------------------------------------------------------------------
     # Batch generation methods
     # -------------------------------------------------------------------------
