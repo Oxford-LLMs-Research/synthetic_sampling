@@ -84,3 +84,34 @@ def test_case_variant_columns_are_coalesced():
     clash = pd.DataFrame({"q1": ["Good"], "Q1": ["Bad"]})
     with pytest.raises(ValueError):
         loader._merge_case_variants(clash)
+
+
+def test_other_specify_variables_leave_the_metadata():
+    """Afrobarometer "...OTHER" verbatim appendages are not questions; ESS
+    *oth checkbox items are, and stay."""
+    from synthetic_sampling.profiles.utils import load_survey_metadata
+    from synthetic_sampling.surveys.harmonise import apply_harmonisation
+
+    def codes(meta):
+        return {v for b in meta.values() if isinstance(b, dict) for v in b}
+
+    import json
+    from pathlib import Path
+    from synthetic_sampling.surveys import paths as _p
+    meta_dir = Path(_p.__file__).parent / "metadata"
+
+    def pulled(name):
+        return json.loads((meta_dir / name).read_text(encoding="utf-8"))
+
+    raw = pulled("pulled_metadata_afrobarometer.json")
+    raw_other = {v for v in codes(raw) if v.upper().endswith("OTHER")}
+    assert "Q84AOTHER" in raw_other and len(raw_other) == 8
+    clean = codes(apply_harmonisation(raw, "afrobarometer"))
+    assert not {v for v in clean if v.upper().endswith("OTHER")}
+    assert "Q84A" in clean
+    assert len(codes(raw)) - len(clean) == 8
+
+    ess = pulled("pulled_metadata_ess10.json")
+    assert codes(load_survey_metadata("afrobarometer")) == clean
+    assert codes(apply_harmonisation(ess, "ess_wave_10")) >= {
+        v for v in codes(ess) if v in ("dscroth", "dngoth", "medtroth")}

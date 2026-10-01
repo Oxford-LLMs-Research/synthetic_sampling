@@ -26,6 +26,7 @@ The decisions, in code:
 
 from __future__ import annotations
 
+import re
 from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
@@ -153,6 +154,17 @@ VAR_RENAMES: Dict[str, Dict[str, str]] = {
     },
     # S17 holds YYYYMMDD birth dates; year is the first four digits.
     "latinobarometer": {"S17.C": "S17"},
+}
+
+# Other-specify variables ("Other (specify): ___") are response-coding
+# appendages of a base question, not questions: junk as targets and
+# skip-pattern leakage as features for their own base item. Survey-specific
+# on purpose: ESS *oth items (dscroth, dngoth, medtroth) are genuine checkbox
+# variables and must not match. Ported 1 Oct 2026 from features_project
+# (survey_features.surveys, 31 Aug), so both projects clean alike.
+OTHER_SPECIFY_PATTERNS: Dict[str, "re.Pattern[str]"] = {
+    "afrobarometer": re.compile(r".OTHER$"),
+    "asianbarometer": re.compile(r".other_?(clarify)?$", re.IGNORECASE),
 }
 
 # Decision 5: variables dropped from the usable set (no matching data column
@@ -353,6 +365,7 @@ def apply_harmonisation(
     l_rw = LABEL_REWRITES.get(survey_id, {})
     l_add = LABEL_ADDITIONS.get(survey_id, {})
     l_code = LABEL_CODE_OVERRIDES.get(survey_id, {})
+    other_specify = OTHER_SPECIFY_PATTERNS.get(survey_id)
 
     out: Dict[str, Any] = {}
     for section, block in metadata.items():
@@ -365,6 +378,8 @@ def apply_harmonisation(
                 new_block[var] = meta
                 continue
             if var in drops:
+                continue
+            if other_specify is not None and other_specify.search(str(var)):
                 continue
             new_var = renames.get(var, var)
             new_meta = dict(meta)
