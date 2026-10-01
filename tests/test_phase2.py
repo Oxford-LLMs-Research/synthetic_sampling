@@ -143,3 +143,49 @@ def test_wording_repairs_in_the_harmonised_view():
     ess = questions("ess_wave_11")
     assert ess["lnghom1"] != ess["lnghom2"]
     assert ess["anctrya1"] != ess["anctrya2"]
+
+
+def test_bare_code_guard():
+    labels = {"Yes", "No", "4"}
+    assert phase2.is_bare_code("188009.0", labels)
+    assert phase2.is_bare_code("94.0", labels)
+    assert phase2.is_bare_code("1", set())
+    assert not phase2.is_bare_code("4", labels)        # the label is the number
+    assert not phase2.is_bare_code("Yes", labels)
+    assert not phase2.is_bare_code("AR: Capital Federal", set())
+    assert phase2.label_set({"values": {"1": "Yes", 2: 4}}) == {"Yes", "4"}
+    assert phase2.label_set({"values": None}) == set()
+
+
+def test_embedded_labels_fill_only_missing_values_maps(tmp_path, monkeypatch):
+    """Latinobarometer REG / CIUDAD: pulled with no values map, labelled in
+    the .sav. A pulled map is never overwritten."""
+    import types
+    import pyreadstat
+    from synthetic_sampling.surveys import DataPaths
+    from synthetic_sampling.surveys.loaders import SurveyLoader
+    from synthetic_sampling.surveys.registry import get_survey_config
+
+    cfg = get_survey_config("latinobarometer")
+    folder = tmp_path / cfg.folder_name
+    folder.mkdir()
+    (folder / "x.sav").write_bytes(b"")
+    fake = types.SimpleNamespace(variable_value_labels={
+        "REG": {32001.0: "AR: Capital Federal ", 32002.0: "AR: Metropolitana"},
+        "S7": {1.0: "from the file"},
+    })
+    monkeypatch.setattr(pyreadstat, "read_sav",
+                        lambda *a, **k: (None, fake))
+    metadata = {"demographics": {
+        "REG": {"question": "Which region do you live in?"},
+        "EDAD": {"question": "Age?", "values": None},
+        "S7": {"question": "Ethnicity?", "values": {"1": "Asian"}},
+    }}
+    loader = SurveyLoader(DataPaths.default_bundled(tmp_path, tmp_path),
+                          verbose=False)
+    out = loader._fill_embedded_labels(cfg, metadata)["demographics"]
+    assert out["REG"]["values"] == {"32001": "AR: Capital Federal",
+                                    "32002": "AR: Metropolitana"}
+    assert out["EDAD"].get("values") is None      # the file has no labels
+    assert out["S7"]["values"] == {"1": "Asian"}  # pulled map untouched
+    assert "values" not in metadata["demographics"]["REG"]  # input intact

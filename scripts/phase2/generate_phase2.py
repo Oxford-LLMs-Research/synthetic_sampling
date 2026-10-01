@@ -132,6 +132,7 @@ def process_survey(survey_id: str, loader: SurveyLoader, floor: int,
     n_features = Counter()
     per_target = Counter()
     per_cell = defaultdict(set)
+    bare_vars = Counter()
     label_of = dict(zip(tranche["respondent_id"], tranche["country_label"]))
     rank_of = dict(zip(tranche["respondent_id"], tranche["rank"]))
 
@@ -155,7 +156,20 @@ def process_survey(survey_id: str, loader: SurveyLoader, floor: int,
                 if inst is None:
                     stats["target_missing"] += 1
                     continue
-                options = native(inst.options)
+                # No bare code is ever an answer or an option (the Phase 0
+                # rule for profile lines, applied to the target side).
+                t_labels = phase2.label_set(var_meta[target_code])
+                if phase2.is_bare_code(inst.answer, t_labels):
+                    stats["target_unlabeled_code"] += 1
+                    continue
+                options = [o for o in native(inst.options)
+                           if not phase2.is_bare_code(o, t_labels)]
+                bare = {c for c, info in profile.features.items()
+                        if phase2.is_bare_code(info["value_label"],
+                                        phase2.label_set(var_meta.get(c, {})))}
+                if bare:
+                    stats["bare_code_profiles"] += 1
+                    bare_vars.update(bare)
                 if inst.answer not in options:
                     stats["answer_not_in_options"] += 1
                     continue
@@ -206,6 +220,7 @@ def process_survey(survey_id: str, loader: SurveyLoader, floor: int,
         "respondents_drawn": int(len(tranche)), "cells": int(len(cells)),
         **stats,
         "short_profiles": short,
+        "bare_code_variables": dict(bare_vars.most_common()),
         "n_features_hist": {str(k): v for k, v in sorted(n_features.items())},
         "instances_per_target_min": min(per_target.values(), default=0),
         "targets_with_no_instances": sorted(set(targets) - set(per_target)),
@@ -220,6 +235,13 @@ def process_survey(survey_id: str, loader: SurveyLoader, floor: int,
           f"{stats['pairs']} pairs (target missing {stats['target_missing']}, "
           f"core failed {stats['core_failed']}, short of "
           f"{phase2.N_FEATURES}: {short})")
+    if bare_vars:
+        # Hard gate: the file is not usable, so it does not keep its name.
+        out_path.replace(out_path.with_suffix(".jsonl.REJECTED"))
+        raise SystemExit(
+            f"REJECTED {survey_id}: {stats['bare_code_profiles']} profiles "
+            f"print a raw code for {dict(bare_vars.most_common(10))}. Label "
+            f"the variable (harmonise / embedded labels) and rebuild.")
     return report
 
 

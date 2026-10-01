@@ -92,6 +92,7 @@ class SurveyLoader:
         
         # Load metadata
         metadata = apply_harmonisation(self._load_metadata(config), survey_id)
+        metadata = self._fill_embedded_labels(config, metadata)
         n_sections = len(metadata)
         n_vars = sum(len(v) for v in metadata.values() if isinstance(v, dict))
         self._log(f"  Metadata: {n_sections} sections, {n_vars} variables")
@@ -144,6 +145,60 @@ class SurveyLoader:
         
         return df
     
+    def _fill_embedded_labels(self, config: SurveyConfig,
+                              metadata: dict) -> dict:
+        """Give variables pulled WITHOUT a values map the value labels the
+        source file itself carries (SPSS / Stata files embed them).
+
+        A variable with no values map is treated as continuous downstream, so
+        its raw code is printed as the answer. Latinobarometer REG and CIUDAD
+        were pulled that way and showed "188009.0" for a region in 41 percent
+        of profiles (run-1 too); the .sav labels all 149 regions and 1,132
+        cities. Variables the file does not label stay as they are, and a
+        pulled values map is never touched. The input dict is not mutated.
+        """
+        missing = {
+            var: section
+            for section, block in metadata.items() if isinstance(block, dict)
+            for var, meta in block.items()
+            if isinstance(meta, dict) and not meta.get("values")
+        }
+        if not missing:
+            return metadata
+        survey_dir = self.paths.raw_data_dir / config.folder_name
+        files = find_data_files(survey_dir, config.get_file_patterns(),
+                                prefer_numeric=config.prefer_numeric)
+        if not files or files[0].suffix.lower() not in (".sav", ".dta"):
+            return metadata
+        import pyreadstat
+        reader = (pyreadstat.read_sav if files[0].suffix.lower() == ".sav"
+                  else pyreadstat.read_dta)
+        _, file_meta = reader(str(files[0]), metadataonly=True)
+        embedded = {str(k).lower(): v
+                    for k, v in file_meta.variable_value_labels.items()}
+
+        def code(c: Any) -> str:
+            try:
+                f = float(c)
+                return str(int(f)) if f.is_integer() else str(f)
+            except (TypeError, ValueError):
+                return str(c)
+
+        out = {s: (dict(b) if isinstance(b, dict) else b)
+               for s, b in metadata.items()}
+        filled = 0
+        for var, section in missing.items():
+            labels = embedded.get(str(var).lower())
+            if not labels:
+                continue
+            meta = dict(out[section][var])
+            meta["values"] = {code(c): str(l).strip()
+                              for c, l in labels.items()}
+            out[section][var] = meta
+            filled += 1
+        self._log(f"  Filled {filled} values maps from the file's own labels")
+        return out
+
     def _merge_case_variants(self, df: pd.DataFrame) -> pd.DataFrame:
         """Coalesce columns whose names differ only in letter case.
 

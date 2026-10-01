@@ -16,6 +16,7 @@ that patterns match whole words; "Don't know" stays a valid answer.
 from __future__ import annotations
 
 import hashlib
+import re
 from typing import Any, Optional
 
 from .dataclasses import RespondentProfile
@@ -84,3 +85,23 @@ def build_profile(gen, respondent_id: Any, target_code: str,
     core = build_core(gen, respondent_id, target_code, seed)
     return gen.top_up_profile(core, k=k, seed=seed + k,
                               target_code=target_code)
+
+
+BARE_NUMBER = re.compile(r"^-?\d+(\.\d+)?$")
+
+
+def label_set(meta: dict) -> set:
+    values = meta.get("values") if isinstance(meta, dict) else None
+    return ({str(v) for v in values.values()}
+            if isinstance(values, dict) else set())
+
+
+def is_bare_code(text: Any, labels: set) -> bool:
+    """A rendered answer that is a number and is not one of its variable's
+    labels: a raw code that found no label (Latinobarometer region
+    "188009.0", Afrobarometer "94.0"). Quantities whose labels are the
+    numbers themselves (household size "4") are labels and pass. The Phase 2
+    build skips such target answers, strips such options, and rejects the
+    whole file if one reaches a profile."""
+    text = str(text)
+    return bool(BARE_NUMBER.match(text)) and text not in labels
