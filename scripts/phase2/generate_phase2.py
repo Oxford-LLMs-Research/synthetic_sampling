@@ -34,6 +34,9 @@ WORK = REPO.parent
 sys.path.insert(0, str(REPO / "src"))
 
 from synthetic_sampling.profiles import phase2                          # noqa: E402
+from synthetic_sampling.profiles.country_specific import (              # noqa: E402
+    create_handler_for_survey)
+from synthetic_sampling.profiles.leakage import pool_exclusions         # noqa: E402
 from synthetic_sampling.profiles.generator import (                     # noqa: E402
     RespondentProfileGenerator)
 from synthetic_sampling.profiles.targets import detect_response_format  # noqa: E402
@@ -108,6 +111,16 @@ def process_survey(survey_id: str, loader: SurveyLoader, floor: int,
     # On the FULL data: country-specific option sets are read off every
     # respondent in a country, not off the drawn ones.
     gen.set_target_questions(targets)
+    # ESS country-sibling variables (edlv*, rlgdn*, rlgde*, prtvt*, prtcl*)
+    # leave the feature pool through the package's own handler, the rule
+    # DatasetBuilder applies; the cross-national variable stays.
+    if cfg.has_country_specific_vars():
+        siblings = pool_exclusions(create_handler_for_survey(metadata, cfg))
+        gen.add_exclusions(sorted(siblings - set(targets)))
+        print(f"  excluded {len(siblings)} country-sibling variables")
+    # Whatever same-wording pairs remain (two codings of one item, split
+    # ballots) never share a profile.
+    gen.unique_question_text = True
     # Respondent lookup scans the frame; keep only the drawn rows from here.
     drawn_ids = set(tranche["respondent_id"])
     gen.survey_data = df[df[cfg.respondent_id_col].isin(drawn_ids)]

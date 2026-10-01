@@ -89,9 +89,39 @@ QUESTION_REWRITES: Dict[str, Dict[str, str]] = {
     },
 }
 
+# 1 Oct 2026: WVS Q45 was pulled with Q44's wording (technology); its own
+# description, and a different answer distribution in the microdata, say it
+# is the "greater respect for authority" item of the same Q43-Q45 battery.
+# It is a run-1 target: run-1 asked the technology question and scored it
+# against the authority answers. Wording follows the pulled style of Q43/Q44.
+QUESTION_REWRITES["wvs"] = {
+    "Q45": ("If there were greater respect for authority in the future, "
+            "would you consider that a good thing, a bad thing, or "
+            "wouldn't you mind?"),
+}
+
+# Multi-response items: one question, several answer slots, pulled with one
+# wording for every slot. Instances key a profile by question text, so the
+# slots collapsed into one line; the suffix keeps each slot's answer.
+QUESTION_SUFFIXES: Dict[str, Dict[str, str]] = {
+    "afrobarometer": {
+        "Q45PT1": " (first response)",
+        "Q45PT2": " (second response)",
+        "Q45PT3": " (third response)",
+    },
+    "ess_wave_11": {
+        "lnghom1": " (first language mentioned)",
+        "lnghom2": " (second language mentioned)",
+        "anctrya1": " (first ancestry mentioned)",
+        "anctrya2": " (second ancestry mentioned)",
+    },
+}
+
 # Decision 4: exact label-text rewrites, per survey -> var -> {old: new}.
 LABEL_REWRITES: Dict[str, Dict[str, Dict[str, str]]] = {
     "wvs": {"Q48": {"None et all": "None at all"}},
+    "latinobarometer": {"P2ST": {
+        "The country isat a standstill": "The country is at a standstill"}},
 }
 
 # Code-keyed label corrections, survey -> var -> {code: label}. Unlike
@@ -362,6 +392,7 @@ def apply_harmonisation(
     drops = VAR_DROPS.get(survey_id, frozenset())
     renames = VAR_RENAMES.get(survey_id, {})
     q_rw = QUESTION_REWRITES.get(survey_id, {})
+    q_sfx = QUESTION_SUFFIXES.get(survey_id, {})
     l_rw = LABEL_REWRITES.get(survey_id, {})
     l_add = LABEL_ADDITIONS.get(survey_id, {})
     l_code = LABEL_CODE_OVERRIDES.get(survey_id, {})
@@ -385,6 +416,11 @@ def apply_harmonisation(
             new_meta = dict(meta)
             if new_var in q_rw or var in q_rw:
                 new_meta["question"] = q_rw.get(var, q_rw.get(new_var))
+            suffix = q_sfx.get(new_var) or q_sfx.get(var)
+            question = new_meta.get("question")
+            if suffix and isinstance(question, str) and not question.rstrip(
+                    ).endswith(suffix.strip()):
+                new_meta["question"] = question.rstrip() + suffix
             values = new_meta.get("values")
             if isinstance(values, dict):
                 new_values = dict(values)

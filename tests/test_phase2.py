@@ -107,3 +107,39 @@ def test_top_up_skips_missing_values_and_comes_back_short_when_exhausted():
     full = phase2.build_profile(gen, 0, "T", k=200)
     assert full.n_features == sum(SECTION_SIZES.values()) - len(missing)
     assert not set(missing) & set(full.feature_codes)
+
+
+def test_unique_question_text_keeps_one_of_each_wording():
+    df, metadata = _survey()
+    # Two codings of one item in section "a", as ESS edulvlb / eisced.
+    metadata["a"]["a0"]["question"] = metadata["a"]["a1"]["question"] = "Same?"
+    gen = RespondentProfileGenerator(
+        df, metadata, respondent_id_col="rid",
+        missing_value_labels=phase2.MISSING_VALUE_LABELS,
+        missing_value_patterns=phase2.MISSING_VALUE_PATTERNS)
+    gen.set_target_questions(["T"])
+    gen.unique_question_text = True
+    for rid in range(6):
+        profile = phase2.build_profile(gen, rid, "T", k=49)
+        texts = [f["question"] for f in profile.features.values()]
+        assert len(texts) == len(set(texts)) == 49   # 50 in the pool, one twin
+        assert len({"a0", "a1"} & set(profile.feature_codes)) == 1
+
+
+def test_wording_repairs_in_the_harmonised_view():
+    from synthetic_sampling.profiles.utils import load_survey_metadata
+
+    def questions(sid):
+        return {v: m["question"] for b in load_survey_metadata(sid).values()
+                if isinstance(b, dict) for v, m in b.items()
+                if isinstance(m, dict) and "question" in m}
+
+    wvs = questions("wvs")
+    assert "authority" in wvs["Q45"] and "technology" not in wvs["Q45"]
+    assert "technology" in wvs["Q44"]
+    afro = questions("afrobarometer")
+    assert len({afro["Q45PT1"], afro["Q45PT2"], afro["Q45PT3"]}) == 3
+    assert afro["Q45PT2"].endswith("(second response)")
+    ess = questions("ess_wave_11")
+    assert ess["lnghom1"] != ess["lnghom2"]
+    assert ess["anctrya1"] != ess["anctrya2"]

@@ -159,6 +159,11 @@ class RespondentProfileGenerator:
         
         # Build question text index for similarity computation
         self._code_to_question_text = self._build_question_text_index()
+        # True = a profile never holds two features with identical question
+        # text. Instances key the profile by question text, so two such
+        # features would collapse into one line. Off by default: landed
+        # experiments regenerate unchanged.
+        self.unique_question_text = False
         
         # Exclusion/inclusion sets
         self._excluded_features: set[str] = set()
@@ -491,6 +496,23 @@ class RespondentProfileGenerator:
     # Configuration methods
     # -------------------------------------------------------------------------
     
+    def _question_texts(self, feature_codes) -> set:
+        return {self._code_to_question_text.get(c, c) for c in feature_codes}
+
+    def _usable(self, feature_code: str, respondent_data: pd.Series,
+                taken: set) -> bool:
+        """Valid value and, under unique_question_text, a wording the
+        profile does not hold yet. Records the wording when it accepts."""
+        if not self._respondent_has_valid_value(feature_code, respondent_data):
+            return False
+        if not self.unique_question_text:
+            return True
+        text = self._code_to_question_text.get(feature_code, feature_code)
+        if text in taken:
+            return False
+        taken.add(text)
+        return True
+
     def set_exclusions(self, feature_codes: list[str]):
         """
         Set features to exclude from sampling (e.g., target questions).
@@ -783,6 +805,7 @@ class RespondentProfileGenerator:
         # This ensures fixed profile sizes regardless of missing values
         sampled_features = {}
         sections_with_insufficient_features = []
+        taken = self._question_texts(self._always_include)
         
         for section in selected_sections:
             section_features = pool[section]
@@ -795,7 +818,7 @@ class RespondentProfileGenerator:
             # until we have enough or exhaust the pool
             valid_sampled = []
             for feature_code in shuffled_section_features:
-                if self._respondent_has_valid_value(feature_code, respondent_data):
+                if self._usable(feature_code, respondent_data, taken):
                     valid_sampled.append(feature_code)
                     if len(valid_sampled) >= m_features_per_section:
                         break
@@ -922,6 +945,7 @@ class RespondentProfileGenerator:
         rng = np.random.RandomState(expansion_seed)
         
         new_features = deepcopy(profile.features)
+        taken = self._question_texts(profile.feature_codes)
         current_sections = set(profile.sections_sampled)
         
         # Add new sections if requested
@@ -966,7 +990,7 @@ class RespondentProfileGenerator:
             
             valid_sampled = []
             for feature_code in shuffled_pool:
-                if self._respondent_has_valid_value(feature_code, respondent_data):
+                if self._usable(feature_code, respondent_data, taken):
                     valid_sampled.append(feature_code)
                     if len(valid_sampled) >= n_to_sample:
                         break
@@ -1030,6 +1054,7 @@ class RespondentProfileGenerator:
             queues[section] = candidates
 
         features = dict(profile.features)
+        taken = self._question_texts(profile.feature_codes)
         while len(features) < k:
             progressed = False
             for section in profile.sections_sampled:
@@ -1038,7 +1063,7 @@ class RespondentProfileGenerator:
                 queue = queues[section]
                 while queue:
                     code = queue.pop()
-                    if self._respondent_has_valid_value(code, respondent_data):
+                    if self._usable(code, respondent_data, taken):
                         features[code] = self._build_feature_info(
                             code, respondent_data)
                         progressed = True
