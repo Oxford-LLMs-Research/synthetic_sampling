@@ -304,6 +304,23 @@ def test_phase0_harmonisation_decisions():
     assert apply_harmonisation(wvs, survey_id="wvs") == wvs
 
 
+def test_wvs_country_410_is_south_korea():
+    """WVS B_COUNTRY 410 was pulled as "Switzerland"; the microdata's
+    B_COUNTRY_ALPHA says KOR. The fix is code-keyed: 756 stays Switzerland."""
+    from synthetic_sampling.surveys.harmonise import apply_harmonisation
+    import json
+    from synthetic_sampling.surveys import paths as _p
+    raw_path = Path(_p.__file__).parent / "metadata" / "pulled_metadata_wvs.json"
+    raw = json.loads(raw_path.read_text(encoding="utf-8"))
+    assert raw["demographics"]["B_COUNTRY"]["values"]["410"] == "Switzerland"
+    vals = apply_harmonisation(raw, "wvs")["demographics"]["B_COUNTRY"]["values"]
+    assert vals["410"] == "South Korea"
+    assert vals["756"] == "Switzerland"
+    assert list(vals.values()).count("Switzerland") == 1
+    # pulled JSON is a derived view's input and stays untouched
+    assert raw["demographics"]["B_COUNTRY"]["values"]["410"] == "Switzerland"
+
+
 def test_generator_enforces_phase0_profile_rules():
     """The generator, not just the metadata, keeps non-answers out of
     profiles and duplicate labels out of option sets."""

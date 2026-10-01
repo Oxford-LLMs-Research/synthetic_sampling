@@ -93,6 +93,15 @@ LABEL_REWRITES: Dict[str, Dict[str, Dict[str, str]]] = {
     "wvs": {"Q48": {"None et all": "None at all"}},
 }
 
+# Code-keyed label corrections, survey -> var -> {code: label}. Unlike
+# LABEL_REWRITES these replace the label of ONE code, for the case where the
+# wrong text is a valid label elsewhere in the same map. WVS B_COUNTRY 410 was
+# pulled as "Switzerland" (756 is Switzerland); the microdata's own
+# B_COUNTRY_ALPHA pairs 410 with KOR on all 1,245 rows (verified 1 Oct 2026).
+LABEL_CODE_OVERRIDES: Dict[str, Dict[str, Dict[str, str]]] = {
+    "wvs": {"B_COUNTRY": {"410": "South Korea"}},
+}
+
 # Decision 3: verified hand labels added to values maps, survey -> var -> map.
 # WVS -4 = "Not asked" (WVS's own convention on its other variables); the 19
 # vars below carry -4 in the microdata (84,314 values) without a label.
@@ -335,14 +344,15 @@ def apply_harmonisation(
     """Return the harmonised (derived) view of a pulled metadata dict.
 
     Applies, for the given survey: variable drops and renames (decision 5),
-    question rewrites (decision 2), label rewrites (decision 4), and label
-    additions (decision 3). The input dict is not mutated.
+    question rewrites (decision 2), label rewrites (decision 4), code-keyed
+    label corrections, and label additions (decision 3). The input dict is not mutated.
     """
     drops = VAR_DROPS.get(survey_id, frozenset())
     renames = VAR_RENAMES.get(survey_id, {})
     q_rw = QUESTION_REWRITES.get(survey_id, {})
     l_rw = LABEL_REWRITES.get(survey_id, {})
     l_add = LABEL_ADDITIONS.get(survey_id, {})
+    l_code = LABEL_CODE_OVERRIDES.get(survey_id, {})
 
     out: Dict[str, Any] = {}
     for section, block in metadata.items():
@@ -368,6 +378,11 @@ def apply_harmonisation(
                     new_values = {
                         k: rw.get(str(v), v) for k, v in new_values.items()
                     }
+                code_rw = l_code.get(var) or l_code.get(new_var)
+                if code_rw:
+                    new_values.update(
+                        {c: lab for c, lab in code_rw.items()
+                         if c in new_values})
                 add = l_add.get(var) or l_add.get(new_var)
                 if add:
                     for code, label in add.items():
