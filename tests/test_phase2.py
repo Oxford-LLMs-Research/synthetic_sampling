@@ -185,19 +185,20 @@ def test_embedded_labels_fill_only_missing_values_maps(tmp_path, monkeypatch):
     loader = SurveyLoader(DataPaths.default_bundled(tmp_path, tmp_path),
                           verbose=False)
     out = loader._fill_embedded_labels(cfg, metadata)["demographics"]
-    assert out["REG"]["values"] == {"32001": "Capital Federal",
-                                    "32002": "Metropolitana"}
+    assert out["REG"]["values"] == {"32001": "Capital Federal, Argentina",
+                                    "32002": "Metropolitana, Argentina"}
     assert out["EDAD"].get("values") is None      # the file has no labels
     assert out["S7"]["values"] == {"1": "Asian"}  # pulled map untouched
     assert "values" not in metadata["demographics"]["REG"]  # input intact
 
 
-def test_latino_region_labels_lose_prefix_and_roman_ordinal():
+def test_latino_region_labels_name_the_country_and_drop_the_ordinal():
     from synthetic_sampling.surveys.harmonise import clean_embedded_label as c
-    assert c("latinobarometer", "CL: XIV Region: Los Rios") == "Los Rios"
-    assert c("latinobarometer", "CL: Region Metropolitana") == "Region Metropolitana"
-    assert c("latinobarometer", "MX: Circunscripcion II") == "Circunscripcion II"
-    assert c("latinobarometer", "VE: Trujillo-Pampanito II") == "Trujillo-Pampanito II"
+    assert c("latinobarometer", "CL: XIV Region: Los Rios") == "Los Rios, Chile"
+    assert c("latinobarometer", "CL: Region Metropolitana") == "Region Metropolitana, Chile"
+    assert c("latinobarometer", "MX: Circunscripcion II") == "Circunscripcion II, Mexico"
+    assert c("latinobarometer", "VE: Trujillo-Pampanito II") == "Trujillo-Pampanito II, Venezuela"
+    assert c("latinobarometer", "DO: Resto del pais") == "Resto del pais, Rep. Dominicana"
     assert c("wvs", "CL: XIV Region: Los Rios") == "CL: XIV Region: Los Rios"
 
 

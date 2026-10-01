@@ -142,23 +142,29 @@ VALUES_REPLACE: Dict[str, Dict[str, Dict[str, str]]] = {
 }
 
 # Cleaning of value labels taken from the source file (loaders.
-# _fill_embedded_labels), survey -> regexes stripped from the label start.
-# Latinobarometer REG / CIUDAD labels read "CL: XIV Region: Los Rios": an
-# ISO-style country prefix, and for Chile the region's official Roman
-# ordinal. Neither is how a respondent names where they live.
-EMBEDDED_LABEL_STRIP: Dict[str, Tuple["re.Pattern[str]", ...]] = {
-    "latinobarometer": (
-        re.compile(r"^[A-Z]{2}:\s*"),
-        re.compile(r"^[IVX]+ Region:\s*"),
-    ),
+# _fill_embedded_labels). Latinobarometer REG / CIUDAD labels read
+# "CL: XIV Region: Los Rios": a two-letter country prefix and, for Chile, the
+# region's official Roman ordinal. The ordinal goes; the country stays, as
+# the name the survey's own country variable (IDENPA) uses, after the place:
+# "Los Rios, Chile". Without it "Central" or "Resto del pais" name nowhere.
+_LATINO_PREFIX_COUNTRY = {
+    "AR": "Argentina", "BO": "Bolivia", "BR": "Brasil", "CL": "Chile",
+    "CO": "Colombia", "CR": "Costa Rica", "DO": "Rep. Dominicana",
+    "EC": "Ecuador", "SV": "El Salvador", "GT": "Guatemala",
+    "HO": "Honduras", "MX": "Mexico", "PA": "Panama", "PY": "Paraguay",
+    "PE": "Peru", "UY": "Uruguay", "VE": "Venezuela",
 }
+_LATINO_LABEL = re.compile(r"^([A-Z]{2}):\s*(?:[IVX]+ Region:\s*)?(.+)$")
 
 
 def clean_embedded_label(survey_id: str, label: str) -> str:
-    out = str(label).replace("\u2019", "'").strip()
-    for pattern in EMBEDDED_LABEL_STRIP.get(survey_id, ()):
-        out = pattern.sub("", out, count=1)
-    return out.strip()
+    out = str(label).replace("’", "'").strip()
+    if survey_id == "latinobarometer":
+        match = _LATINO_LABEL.match(out)
+        if match and match.group(1) in _LATINO_PREFIX_COUNTRY:
+            return (f"{match.group(2).strip()}, "
+                    f"{_LATINO_PREFIX_COUNTRY[match.group(1)]}")
+    return out
 
 
 # Code-keyed label corrections, survey -> var -> {code: label}. Unlike
