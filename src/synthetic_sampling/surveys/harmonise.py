@@ -93,7 +93,9 @@ QUESTION_REWRITES: Dict[str, Dict[str, str]] = {
 # description, and a different answer distribution in the microdata, say it
 # is the "greater respect for authority" item of the same Q43-Q45 battery.
 # It is a run-1 target: run-1 asked the technology question and scored it
-# against the authority answers. Wording follows the pulled style of Q43/Q44.
+# against the authority answers. Confirmed against the WVS-7 master
+# questionnaire, p. 5: "Q45 Greater respect for authority" in the Q43-Q45
+# battery. Wording follows the pulled style of Q43/Q44.
 QUESTION_REWRITES["wvs"] = {
     "Q45": ("If there were greater respect for authority in the future, "
             "would you consider that a good thing, a bad thing, or "
