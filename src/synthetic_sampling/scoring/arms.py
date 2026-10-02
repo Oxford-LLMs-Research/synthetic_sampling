@@ -82,9 +82,9 @@ def _label_logprobs(session, url, headers, model, prompt, labels,
 # MAX_ROTATIONS options: the full cyclic square, one request per option, as
 # before. Above it: MAX_ROTATIONS evenly spaced shifts, so every option is
 # still read from MAX_ROTATIONS different positions spread over the list.
-# On the Phase 2 floor-50 build this leaves 97.9 percent of instances on the
-# full square and costs 98.6 percent of the uncapped requests; a 36-option
-# item costs 8 requests instead of 36.
+# On the Phase 2 floor-50 build this leaves 97.7 percent of instances on the
+# full square and costs 98.2 percent of the uncapped requests; a 37-option
+# item costs 8 requests instead of 37.
 MAX_ROTATIONS = 8
 
 
