@@ -92,7 +92,7 @@ class SurveyLoader:
         
         # Load metadata
         metadata = apply_harmonisation(self._load_metadata(config), survey_id)
-        metadata = self._fill_embedded_labels(config, metadata)
+        metadata = self._fill_embedded_labels(config, metadata, df)
         n_sections = len(metadata)
         n_vars = sum(len(v) for v in metadata.values() if isinstance(v, dict))
         self._log(f"  Metadata: {n_sections} sections, {n_vars} variables")
@@ -156,8 +156,8 @@ class SurveyLoader:
         
         return df
     
-    def _fill_embedded_labels(self, config: SurveyConfig,
-                              metadata: dict) -> dict:
+    def _fill_embedded_labels(self, config: SurveyConfig, metadata: dict,
+                              df: Optional[pd.DataFrame] = None) -> dict:
         """Label, from the source file's own value labels, what the pulled
         metadata left without a label (SPSS / Stata files embed them).
 
@@ -169,8 +169,12 @@ class SurveyLoader:
         codes, and the pulled maps omit codes the files label ("Not yet
         eligible to vote", "Not aware of Asean") or spell their keys
         zero-padded ("01" for code 1); the keys are normalised and the
-        missing codes added. A label the metadata already gives is never
-        replaced. The input dict is not mutated.
+        missing codes added, but only codes some respondent actually gave:
+        the files also label codes no one uses (five Vietnamese
+        organisations on the organisation items, "Others, specify"), and an
+        unused code would otherwise appear as an answer option. A label the
+        metadata already gives is never replaced. The input dict is not
+        mutated.
         """
         def code(c: Any) -> str:
             try:
@@ -221,8 +225,11 @@ class SurveyLoader:
                 filled += 1
             else:
                 merged = {code(k): v for k, v in values.items()}
+                observed = None
+                if df is not None and var in df.columns:
+                    observed = {code(x) for x in df[var].dropna().unique()}
                 for c, label in (labels or {}).items():
-                    if c not in merged:
+                    if c not in merged and (observed is None or c in observed):
                         merged[c] = label
                         added += 1
                 meta["values"] = merged
