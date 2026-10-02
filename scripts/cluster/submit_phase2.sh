@@ -1,0 +1,101 @@
+#!/bin/bash
+# Submit Phase 2 scoring jobs from the roster, one job per (serving, shard).
+#
+#   INPUT=$DATA/phase2/instances_r0-50.jsonl WAVE=1 ./scripts/cluster/submit_phase2.sh
+#   INPUT=... ONLY=Qwen/Qwen3-32B SHARDS=4 ./scripts/cluster/submit_phase2.sh
+#   INPUT=... WAVE=3 DRY_RUN=1 ./scripts/cluster/submit_phase2.sh      # print, submit nothing
+#
+# Env: INPUT (required), WAVE (1-4) and/or ONLY (hf id), SHARDS (default 1),
+# ARMS, REPLICATE_FRAC, TAG (results subfolder, default grid_r0-50),
+# TIME (default 12:00:00), DRY_RUN=1, plus anything run_score.sbatch reads.
+#
+# Per serving it sets, from roster_phase2.tsv and the table below:
+#   --gres=gpu:h100:<tp>  --cpus-per-task=<2 x tp>  --mem=<by tp>
+#   TP, DTYPE, EXTRA_VLLM_ARGS
+# Every submit needs a CODE/EXPERIMENT_REGISTRY.md entry (status RUNNING) in
+# the same sitting; the job ids this prints are what the entry records.
+# Keep this file LF-only.
+
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+ROSTER="$ROOT/scripts/cluster/roster_phase2.tsv"
+INPUT="${INPUT:?set INPUT (the instance file on the cluster)}"
+WAVE="${WAVE:-}"
+ONLY="${ONLY:-}"
+SHARDS="${SHARDS:-1}"
+TAG="${TAG:-grid_r0-50}"
+TIME="${TIME:-12:00:00}"
+DRY_RUN="${DRY_RUN:-}"
+# Phase 2 spec: label_num on the full draw plus the two PMI premises;
+# echo_plain runs separately on the stratified serving-control subsample.
+ARMS="${ARMS:-label_num,echo_qonly,echo_ctxfree}"
+REPLICATE_FRAC="${REPLICATE_FRAC:-0.1}"
+RESULTS="${RESULTS:-${DATA:?set DATA}/outputs/phase2/results}"
+
+if [ -z "$WAVE" ] && [ -z "$ONLY" ]; then
+  echo "set WAVE (1-4) and/or ONLY (hf id)"; exit 1
+fi
+if [ -z "$DRY_RUN" ] && [ ! -f "$INPUT" ]; then
+  echo "INPUT not found: $INPUT"; exit 1
+fi
+mkdir -p "$ROOT/logs"
+
+# Host memory by tensor-parallel size (ARC_BIG_MODEL_ENVELOPE.md: generous
+# for big loads, 400G for TP8).
+mem_for_tp() {
+  case "$1" in
+    1) echo 96G ;; 2) echo 192G ;; 4) echo 300G ;; 8) echo 400G ;;
+    *) echo "unsupported tp $1" >&2; exit 1 ;;
+  esac
+}
+
+n=0
+while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
+  [ "$wave" = "wave" ] && continue
+  [ -z "${hf_id:-}" ] && continue
+  [ -n "$WAVE" ] && [ "$wave" != "$WAVE" ] && continue
+  [ -n "$ONLY" ] && [ "$hf_id" != "$ONLY" ] && continue
+
+  # --dtype only for bf16 checkpoints; quantized ones carry their own.
+  dtype=none
+  extra=""
+  case "$precision" in
+    bf16) dtype=bfloat16 ;;
+    "bf16->fp8") dtype=bfloat16; extra="--quantization fp8" ;;
+  esac
+  case "$hf_id" in
+    nvidia/NVIDIA-Nemotron-3-*)
+      extra="$extra --trust-remote-code --mamba-ssm-cache-dtype float32" ;;
+  esac
+  extra="${extra# }"
+
+  slug="$(echo "$hf_id" | tr '/' '_' | tr '[:upper:]' '[:lower:]')"
+  outdir="$RESULTS/$TAG/$slug"
+  for (( i = 0; i < SHARDS; i++ )); do
+    out="$outdir/${slug}_shard${i}of${SHARDS}.jsonl"
+    # Variables travel in the environment with --export=ALL, never inside
+    # --export=: Slurm splits that list on commas, and ARMS contains commas.
+    cmd=(env "MODEL=${hf_id}" "INPUT=${INPUT}" "OUT=${out}" "ARMS=${ARMS}"
+         "REPLICATE_FRAC=${REPLICATE_FRAC}" "TP=${tp}" "DTYPE=${dtype}"
+         "EXTRA_VLLM_ARGS=${extra}" "SHARD_INDEX=${i}" "SHARD_COUNT=${SHARDS}"
+         sbatch --job-name="p2-${slug:0:24}"
+         --gres="gpu:h100:${tp}" --cpus-per-task="$(( 2 * tp ))"
+         --mem="$(mem_for_tp "$tp")" --time="$TIME" --export=ALL
+         "$ROOT/scripts/cluster/run_score.sbatch")
+    if [ -n "$DRY_RUN" ]; then
+      printf 'DRY  wave=%s tp=%s %s shard %d/%d\n     %s\n' \
+        "$wave" "$tp" "$hf_id" "$i" "$SHARDS" "${cmd[*]}"
+    else
+      mkdir -p "$outdir"
+      job="$("${cmd[@]}")"
+      echo "SUBMITTED wave=$wave tp=$tp model=$hf_id shard=$i/$SHARDS -> $job"
+    fi
+    n=$(( n + 1 ))
+  done
+done < "$ROSTER"
+
+if [ "$n" -eq 0 ]; then
+  echo "no roster row matched WAVE='$WAVE' ONLY='$ONLY'"; exit 1
+fi
+echo "$n job(s) $([ -n "$DRY_RUN" ] && echo 'listed (dry run)' || echo submitted). Add or update the registry entry now."
