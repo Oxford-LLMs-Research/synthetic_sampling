@@ -224,3 +224,26 @@ def test_embedded_near_duplicate_label_maps_to_the_pulled_one():
         ["Unemployment", "Nothing or no problems",
          clean_embedded_label("asianbarometer", "No problem")]) == [
         "Unemployment", "Nothing or no problems"]
+
+
+def test_prompt_text_has_no_layout_or_footnote_markers():
+    import re
+    from synthetic_sampling.profiles.utils import load_survey_metadata
+    from synthetic_sampling.surveys.harmonise import apply_harmonisation, tidy_text
+
+    assert tidy_text("closest to your view? \n Statement 1:  A") == (
+        "closest to your view? Statement 1: A")
+    assert tidy_text("No second ancestry*", label=True) == "No second ancestry"
+    assert tidy_text("5 * 2") == "5 * 2"
+    odd = re.compile(r"\s{2,}|[\n\t]|^\s|\s$")
+    for sid in ("afrobarometer", "wvs", "ess_wave_10", "ess_wave_11"):
+        meta = load_survey_metadata(sid)
+        for block in meta.values():
+            if not isinstance(block, dict):
+                continue
+            for var in block.values():
+                assert not odd.search(var.get("question") or "x")
+                values = var.get("values")
+                for lab in (values.values() if isinstance(values, dict) else ()):
+                    assert not odd.search(str(lab)) and not str(lab).endswith("*")
+        assert apply_harmonisation(meta, survey_id=sid) == meta   # idempotent

@@ -165,7 +165,7 @@ _LATINO_LABEL = re.compile(r"^([A-Z]{2}):\s*(?:[IVX]+ Region:\s*)?(.+)$")
 
 
 def clean_embedded_label(survey_id: str, label: str) -> str:
-    out = str(label).replace("’", "'").strip()
+    out = tidy_text(str(label).replace("’", "'"), label=True)
     out = EMBEDDED_LABEL_REWRITES.get(survey_id, {}).get(out, out)
     if survey_id == "latinobarometer":
         match = _LATINO_LABEL.match(out)
@@ -430,6 +430,17 @@ def attach_interview_date_field(
     return str(val)
 
 
+def tidy_text(text: str, label: bool = False) -> str:
+    """Prompt-facing text carries no layout: runs of whitespace (the line
+    break before "Statement 1" on Afrobarometer's paired-statement items,
+    doubled spaces in WVS questions) become one space, and a label loses a
+    trailing footnote marker (ESS "No second language mentioned*")."""
+    out = " ".join(str(text).split())
+    if label:
+        out = out.rstrip("*").rstrip()
+    return out
+
+
 def apply_harmonisation(
     metadata: Dict[str, Any],
     survey_id: str = "",
@@ -493,7 +504,11 @@ def apply_harmonisation(
                 if add:
                     for code, label in add.items():
                         new_values.setdefault(code, label)
-                new_meta["values"] = new_values
+                new_meta["values"] = {
+                    k: tidy_text(v, label=True) if isinstance(v, str) else v
+                    for k, v in new_values.items()}
+            if isinstance(new_meta.get("question"), str):
+                new_meta["question"] = tidy_text(new_meta["question"])
             new_block[new_var] = new_meta
         out[section] = new_block
     return out
