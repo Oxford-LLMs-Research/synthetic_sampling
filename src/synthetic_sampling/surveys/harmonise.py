@@ -154,11 +154,19 @@ _LATINO_PREFIX_COUNTRY = {
     "HO": "Honduras", "MX": "Mexico", "PA": "Panama", "PY": "Paraguay",
     "PE": "Peru", "UY": "Uruguay", "VE": "Venezuela",
 }
+# Embedded labels that restate a label the pulled map already has, survey ->
+# {embedded: pulled}. Asian Barometer Q97: Korea and Taiwan code "no
+# problem" as 990 ("No problem"), the other files as 0 ("Nothing or no
+# problems"); one answer, so one option.
+EMBEDDED_LABEL_REWRITES: Dict[str, Dict[str, str]] = {
+    "asianbarometer": {"No problem": "Nothing or no problems"},
+}
 _LATINO_LABEL = re.compile(r"^([A-Z]{2}):\s*(?:[IVX]+ Region:\s*)?(.+)$")
 
 
 def clean_embedded_label(survey_id: str, label: str) -> str:
     out = str(label).replace("’", "'").strip()
+    out = EMBEDDED_LABEL_REWRITES.get(survey_id, {}).get(out, out)
     if survey_id == "latinobarometer":
         match = _LATINO_LABEL.match(out)
         if match and match.group(1) in _LATINO_PREFIX_COUNTRY:

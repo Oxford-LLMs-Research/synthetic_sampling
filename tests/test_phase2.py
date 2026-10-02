@@ -212,3 +212,15 @@ def test_arab_q547_codes_follow_the_response_grid():
         assert values["1"] == "Strongly favor"
         assert values["4"] == "Strongly oppose"
         assert "5" not in values
+
+
+def test_embedded_near_duplicate_label_maps_to_the_pulled_one():
+    from synthetic_sampling.surveys.harmonise import (
+        clean_embedded_label, dedupe_option_labels)
+    assert clean_embedded_label("asianbarometer", "No problem") == (
+        "Nothing or no problems")
+    assert clean_embedded_label("wvs", "No problem") == "No problem"
+    assert dedupe_option_labels(
+        ["Unemployment", "Nothing or no problems",
+         clean_embedded_label("asianbarometer", "No problem")]) == [
+        "Unemployment", "Nothing or no problems"]
