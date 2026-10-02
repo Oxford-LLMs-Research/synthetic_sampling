@@ -27,8 +27,9 @@ SHARDS="${SHARDS:-1}"
 TAG="${TAG:-grid_r0-50}"
 TIME="${TIME:-12:00:00}"
 DRY_RUN="${DRY_RUN:-}"
-# Phase 2 spec: label_num on the full draw plus the two PMI premises;
-# echo_plain runs separately on the stratified serving-control subsample.
+# Phase 2 arms: label_num plus the two PMI premises. echo_plain is not part
+# of this run (decided 2 Oct 2026); each serving's echo reading comes from
+# its Phase 1 readout battery.
 ARMS="${ARMS:-label_num,echo_qonly,echo_ctxfree}"
 REPLICATE_FRAC="${REPLICATE_FRAC:-0.1}"
 RESULTS="${RESULTS:-${DATA:?set DATA}/outputs/phase2/results}"
