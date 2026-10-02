@@ -51,13 +51,14 @@ def test_missing_patterns_match_whole_words_only():
     for label in ("National government", "China", "Ghana", "Ordinary citizens",
                   "Not at all emotionally attached", "Inactive member",
                   "The country is in decline",
-                  "I can't remember whether I voted", "Don't know"):
+                  "I can't remember whether I voted", "Don't know",
+                  "Not sure"):
         assert not gen._is_missing_value_label(label), label
     for label in ("NA", "N/A", "nan", "Not applicable", "Missing", "Refused",
                   "Refused to answer", "No answer", "Do not know / No answer",
                   "Not asked in this country", "Decline to answer",
                   "Can't choose", "Do not understand",
-                  "Don't understand the question"):
+                  "Don't understand the question", "Prefer not to say"):
         assert gen._is_missing_value_label(label), label
 
 

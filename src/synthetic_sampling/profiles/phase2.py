@@ -40,7 +40,7 @@ MISSING_VALUE_PATTERNS = [
     "not applicable", "decline to answer", "can't choose",
     "do not understand", "don't understand", "not available",
     "no response",
-    "not sure", "prefer not to say",
+    "prefer not to say",
     "nan", "na", "n/a",
 ]
 

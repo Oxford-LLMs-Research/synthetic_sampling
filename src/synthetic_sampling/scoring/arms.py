@@ -78,12 +78,29 @@ def _label_logprobs(session, url, headers, model, prompt, labels,
     return {}
 
 
+# Rotation cap for the Latin-square readout (decided 2 Oct 2026). Up to
+# MAX_ROTATIONS options: the full cyclic square, one request per option, as
+# before. Above it: MAX_ROTATIONS evenly spaced shifts, so every option is
+# still read from MAX_ROTATIONS different positions spread over the list.
+# On the Phase 2 floor-50 build this leaves 97.9 percent of instances on the
+# full square and costs 98.6 percent of the uncapped requests; a 36-option
+# item costs 8 requests instead of 36.
+MAX_ROTATIONS = 8
+
+
+def rotation_shifts(m: int, cap: int = MAX_ROTATIONS) -> list:
+    """Cyclic shifts scored for an m-option item."""
+    if m <= cap:
+        return list(range(m))
+    return [(i * m) // cap for i in range(cap)]
+
+
 def score_labels(session, url, headers, model, inst, options, arm) -> dict:
     """Latin-square (or natural-order) digit readout."""
     m = len(options)
     labels = [str(i + 1) for i in range(m)]
     totals = {o: [] for o in options}
-    shifts = (0,) if arm == "label_num_natural" else range(m)
+    shifts = (0,) if arm == "label_num_natural" else rotation_shifts(m)
     for shift in shifts:
         shown = [options[(i + shift) % m] for i in range(m)]
         prompt = build_prompt(inst, shown, arm)
@@ -130,7 +147,7 @@ def score_labels_chat(session, url, headers, model, inst, options,
     m = len(options)
     labels = [str(i + 1) for i in range(m)]
     totals = {o: [] for o in options}
-    for shift in range(m):
+    for shift in rotation_shifts(m):
         shown = [options[(i + shift) % m] for i in range(m)]
         messages = build_chat_messages(inst, shown, "chat_label_num")
         top = _label_logprobs_chat(

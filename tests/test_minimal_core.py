@@ -549,3 +549,23 @@ def test_chat_label_arm_scores_first_token_and_forwards_kwargs():
         assert payload["temperature"] == 0
         assert payload["logprobs"] is True and payload["top_logprobs"] == 20
         assert payload["messages"][0]["role"] == "user"
+
+
+def test_rotation_cap_keeps_small_items_on_the_full_square():
+    """2 Oct 2026: at most 8 rotations per item; the full cyclic square up to
+    8 options, 8 evenly spaced shifts above it."""
+    from synthetic_sampling.scoring.arms import MAX_ROTATIONS, rotation_shifts
+
+    assert MAX_ROTATIONS == 8
+    for m in range(1, 9):
+        assert rotation_shifts(m) == list(range(m))
+    for m in (9, 10, 11, 21, 22, 36):
+        shifts = rotation_shifts(m)
+        assert len(shifts) == len(set(shifts)) == 8
+        assert shifts[0] == 0 and max(shifts) < m
+        gaps = [b - a for a, b in zip(shifts, shifts[1:] + [m])]
+        assert max(gaps) - min(gaps) <= 1          # evenly spread
+        # every option is read from 8 different slots
+        for option in range(m):
+            assert len({(option - s) % m for s in shifts}) == 8
+    assert rotation_shifts(36) == [0, 4, 9, 13, 18, 22, 27, 31]
