@@ -4,7 +4,9 @@ The readout matches the first generated token against the option numbers.
 A tokenizer that writes "12" as "1" + "2" makes option 12 unreadable and
 credits its mass to option 1. This prints, for every roster model, the
 highest option number that is a single token after the prompt's "Answer: "
-tail. CPU only; reads tokenizers from the local HF cache.
+tail. CPU only; reads tokenizer.json from the local HF cache with the
+`tokenizers` library, not `transformers`: importing torch fails under the
+ARC login node's memory limit.
 
     HF_HOME=$DATA/hf_cache python scripts/phase2/check_label_tokens.py
     ... check_label_tokens.py --models Qwen/Qwen3-4B --max-label 37
@@ -18,13 +20,14 @@ from pathlib import Path
 
 TAIL = ("Instructions: Reply with only the option number. No reasoning. "
         "No explanation. No extra text.\n\nAnswer: ")
+LOCAL = True
 ROSTER = Path(__file__).resolve().parents[1] / "cluster" / "roster_phase2.tsv"
 
 
 def continuation(tok, label: str) -> list[int]:
     """Token ids the label adds after the prompt tail."""
-    base = tok(TAIL, add_special_tokens=False)["input_ids"]
-    full = tok(TAIL + label, add_special_tokens=False)["input_ids"]
+    base = tok.encode(TAIL, add_special_tokens=False).ids
+    full = tok.encode(TAIL + label, add_special_tokens=False).ids
     k = 0
     while k < min(len(base), len(full)) and base[k] == full[k]:
         k += 1
@@ -32,10 +35,11 @@ def continuation(tok, label: str) -> list[int]:
 
 
 def check(model: str, max_label: int) -> str:
-    from transformers import AutoTokenizer
+    from huggingface_hub import hf_hub_download
+    from tokenizers import Tokenizer
 
-    tok = AutoTokenizer.from_pretrained(
-        model, local_files_only=True, trust_remote_code=True)
+    tok = Tokenizer.from_file(
+        hf_hub_download(model, "tokenizer.json", local_files_only=LOCAL))
     split = {}
     for n in range(1, max_label + 1):
         ids = continuation(tok, str(n))
@@ -52,7 +56,11 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--models", nargs="*")
     ap.add_argument("--max-label", type=int, default=37)
+    ap.add_argument("--download", action="store_true",
+                    help="fetch tokenizer.json if it is not in the cache")
     args = ap.parse_args()
+    global LOCAL
+    LOCAL = not args.download
     models = args.models
     if not models:
         with open(ROSTER, encoding="utf-8") as fh:
