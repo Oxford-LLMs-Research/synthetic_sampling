@@ -83,12 +83,15 @@ echo "RUNSTAMP job=${SLURM_JOB_ID:-local} node=$(hostname) model=$MODEL"
 echo "RUNSTAMP arms=$ARMS replicate=$REPLICATE_FRAC input=$INPUT out=$OUT"
 echo "RUNSTAMP venv=$VENV vllm=$(python -c 'import vllm; print(vllm.__version__)' 2>/dev/null || echo NOT_RECORDED)"
 echo "RUNSTAMP tp=$TP dtype=$DTYPE max_model_len=$MAX_MODEL_LEN extra_vllm_args=[${EXTRA_VLLM_ARGS}] shard=${SHARD_INDEX:-all}/${SHARD_COUNT:-1}"
-echo "RUNSTAMP cpus=${SLURM_CPUS_PER_TASK:-NOT_RECORDED} gpus=${SLURM_GPUS_ON_NODE:-NOT_RECORDED}"
+# ARC does not set SLURM_GPUS_ON_NODE (job 8962265 logged it empty), so the
+# GPU count is read from what the job can actually see.
+N_GPUS="${SLURM_GPUS_ON_NODE:-$(nvidia-smi -L 2>/dev/null | grep -c '^GPU ' || true)}"
+echo "RUNSTAMP cpus=${SLURM_CPUS_PER_TASK:-NOT_RECORDED} gpus=${N_GPUS:-NOT_RECORDED}"
 
 # The allocation must hold the GPUs the serving will ask for: vLLM with a
 # tensor-parallel size above the visible GPU count dies only after loading.
-if [ -n "${SLURM_GPUS_ON_NODE:-}" ] && [ "${SLURM_GPUS_ON_NODE}" -lt "$TP" ]; then
-  echo "FATAL TP=$TP but the allocation has ${SLURM_GPUS_ON_NODE} GPU(s); submit with --gres=gpu:h100:$TP"
+if [ "${N_GPUS:-0}" -gt 0 ] && [ "$N_GPUS" -lt "$TP" ]; then
+  echo "FATAL TP=$TP but the allocation has $N_GPUS GPU(s); submit with --gres=gpu:h100:$TP"
   exit 1
 fi
 
