@@ -14,7 +14,7 @@
 # Keep this file LF-only (never Path.write_text on Windows).
 # Required env: MODEL, INPUT, OUT. Optional: ARMS, REPLICATE_FRAC, DTYPE,
 # MAX_MODEL_LEN, LIMIT, SHARD_INDEX, SHARD_COUNT, PORT, VLLM_READY_TIMEOUT_SEC,
-# VENV, TP, EXTRA_VLLM_ARGS, GPU_MEM_UTIL.
+# VENV, TP, EXTRA_VLLM_ARGS, GPU_MEM_UTIL, WORKERS.
 #
 # Resources are set at submit time, not here: the header is the single-GPU
 # default (2 CPUs per GPU; the 30 Sep CPU test found throughput does not
@@ -37,6 +37,10 @@ TP="${TP:-1}"
 # "--trust-remote-code --mamba-ssm-cache-dtype float32").
 EXTRA_VLLM_ARGS="${EXTRA_VLLM_ARGS:-}"
 GPU_MEM_UTIL="${GPU_MEM_UTIL:-0.92}"
+# Client concurrency. A 32B bf16 model leaves a small KV cache on one H100;
+# at 32 workers the rotations of one instance no longer find their shared
+# prefix cached (job 8997212: prefix cache hit rate 2 percent, 1.09 inst/s).
+WORKERS="${WORKERS:-32}"
 MAX_MODEL_LEN="${MAX_MODEL_LEN:-16384}"
 # Per-job port. A fixed default collides: HTC nodes host several single-GPU
 # jobs, and two jobs sharing a port means the second one's `vllm serve` cannot
@@ -86,6 +90,7 @@ echo "RUNSTAMP tp=$TP dtype=$DTYPE max_model_len=$MAX_MODEL_LEN extra_vllm_args=
 # ARC does not set SLURM_GPUS_ON_NODE (job 8962265 logged it empty), so the
 # GPU count is read from what the job can actually see.
 N_GPUS="${SLURM_GPUS_ON_NODE:-$(nvidia-smi -L 2>/dev/null | grep -c '^GPU ' || true)}"
+echo "RUNSTAMP workers=$WORKERS gpu_mem_util=$GPU_MEM_UTIL"
 echo "RUNSTAMP cpus=${SLURM_CPUS_PER_TASK:-NOT_RECORDED} gpus=${N_GPUS:-NOT_RECORDED}"
 
 # The allocation must hold the GPUs the serving will ask for: vLLM with a
@@ -183,6 +188,7 @@ ss-score \
   --model "$MODEL" \
   --arms "$ARMS" \
   --replicate-frac "$REPLICATE_FRAC" \
+  --workers "$WORKERS" \
   ${LIMIT:+--limit "$LIMIT"} \
   ${SHARD_INDEX:+--shard-index "$SHARD_INDEX"} \
   ${SHARD_COUNT:+--shard-count "$SHARD_COUNT"}
