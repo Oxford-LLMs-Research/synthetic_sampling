@@ -11,7 +11,7 @@
 #
 # Per serving it sets, from roster_phase2.tsv and the table below:
 #   --gres=gpu:h100:<tp>  --cpus-per-task=<2 x tp>  --mem=<by tp>
-#   TP, DTYPE, EXTRA_VLLM_ARGS
+#   TP, DTYPE, EXTRA_VLLM_ARGS, WORKERS, GPU_MEM_UTIL
 # Every submit needs a CODE/EXPERIMENT_REGISTRY.md entry (status RUNNING) in
 # the same sitting; the job ids this prints are what the entry records.
 # Keep this file LF-only.
@@ -71,6 +71,19 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
   esac
   extra="${extra# }"
 
+  # Client concurrency by memory headroom. Weights above 60 percent of the
+  # allocation's GPU memory leave a KV cache too small for 32 workers: the
+  # rotations of one instance stop finding their shared profile cached
+  # (Qwen3-32B, 5-6 Oct: 32 workers at 0.92 gave a 2 percent prefix hit rate
+  # and 1.09 inst/s; 8 workers at 0.92 and 16 at 0.95 both gave 77 percent,
+  # the later-submitted job 6.6 inst/s).
+  # WORKERS / GPU_MEM_UTIL in the environment override both.
+  if [ $(( est_gb * 10 )) -gt $(( 480 * tp )) ]; then
+    workers="${WORKERS:-16}"; mem_util="${GPU_MEM_UTIL:-0.95}"
+  else
+    workers="${WORKERS:-32}"; mem_util="${GPU_MEM_UTIL:-0.92}"
+  fi
+
   slug="$(echo "$hf_id" | tr '/' '_' | tr '[:upper:]' '[:lower:]')"
   outdir="$RESULTS/$TAG/$slug"
   for (( i = 0; i < SHARDS; i++ )); do
@@ -79,7 +92,8 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
     # --export=: Slurm splits that list on commas, and ARMS contains commas.
     cmd=(env "MODEL=${hf_id}" "INPUT=${INPUT}" "OUT=${out}" "ARMS=${ARMS}"
          "REPLICATE_FRAC=${REPLICATE_FRAC}" "TP=${tp}" "DTYPE=${dtype}"
-         "EXTRA_VLLM_ARGS=${extra}" "SHARD_INDEX=${i}" "SHARD_COUNT=${SHARDS}"
+         "EXTRA_VLLM_ARGS=${extra}" "WORKERS=${workers}"
+         "GPU_MEM_UTIL=${mem_util}" "SHARD_INDEX=${i}" "SHARD_COUNT=${SHARDS}"
          sbatch --job-name="p2-${slug:0:24}"
          --gres="gpu:h100:${tp}" --cpus-per-task="$(( 2 * tp ))"
          --mem="$(mem_for_tp "$tp")" --time="$TIME" --export=ALL
