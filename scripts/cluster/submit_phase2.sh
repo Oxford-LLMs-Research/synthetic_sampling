@@ -75,8 +75,8 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
   # allocation's GPU memory leave a KV cache too small for 32 workers: the
   # rotations of one instance stop finding their shared profile cached
   # (Qwen3-32B, 5-6 Oct: 32 workers at 0.92 gave a 2 percent prefix hit rate
-  # and 1.09 inst/s; 8 workers at 0.92 and 16 at 0.95 both gave 77 percent,
-  # the later-submitted job 6.6 inst/s).
+  # and 1.09 inst/s; 8 workers at 0.92 gave 77 percent and 5.3 inst/s; 16
+  # workers at 0.95 gave 77 percent and 6.7 inst/s).
   # WORKERS / GPU_MEM_UTIL in the environment override both.
   if [ $(( est_gb * 10 )) -gt $(( 480 * tp )) ]; then
     workers="${WORKERS:-16}"; mem_util="${GPU_MEM_UTIL:-0.95}"
