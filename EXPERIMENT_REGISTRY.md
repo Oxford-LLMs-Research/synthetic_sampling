@@ -77,6 +77,7 @@ Rules that keep the entries fillable:
 | [XGB-CEILING-FULL](#xgb-ceiling-full--the-properly-fit-same-features-ceiling) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Ceiling inverts: prompt-parity supervised 0.465 vs model 0.337; supervised wins on MODAL respondents |
 | [MODAL-COMMITMENT](#modal-commitment--why-the-llm-loses-the-modal-respondents) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Not hedging: confident wrong commitments (max_p 0.80, modal mass 0.13); recalibration cannot rescue it |
 | [CPU-BILLING-TEST](#cpu-billing-test--core-count-vs-throughput-calibration) | LANDED | 11 Sep 2026 | Qwen3-32B, Qwen3-4B | Harness calibration: A2 set rerun at 2 and 4 CPUs vs the 8-CPU August run |
+| [PHASE2-GRID-W1](#phase2-grid-w1--phase-2-main-grid-wave-1) | RUNNING | 6 Oct 2026 | 11 wave-1 servings | Second main run under `label_num`: floor-50 draw, 258 targets with under 10 options |
 
 ---
 
@@ -903,6 +904,42 @@ Rules that keep the entries fillable:
 - **Verified by:** the `done:` timing line in `logs/cputest{2,4}-<job>.out` and
   `logs/l40test{2,8}-<job>.out`
   against 34.0 min in `logs/a2-qwen3-32b-8562411.out`
+
+### PHASE2-GRID-W1 — Phase 2 main grid, wave 1
+
+- **Status:** RUNNING
+- **Rationale:** Repeat the run-1 analysis with the certified `label_num`
+  readout on freshly drawn, cleaned instances (floor 50 per source-country
+  cell, 36 features). Wave 1 is the 11 single-GPU servings of the roster's
+  first tier; the 8 targets with 10 or more options are held back because
+  two-digit option numbers are two tokens on most of the roster.
+- **Result:** PENDING
+- **Ran:** submitted 6 Oct 2026, jobs 9004663-9004684 (22 jobs: 11 servings
+  x 2 shards, in roster order). Preceding harness checks, not part of the
+  grid: smoke 8962265 (Qwen3-4B, 1,000 instances, 2 Oct), rate test 8997212
+  (Qwen3-32B, 32 workers, TIMEOUT at 2,250 of 3,000, 5 Oct), and two rate
+  tests on 6 Oct (8 workers at 0.92; 16 workers at 0.95; job ids NOT
+  RECORDED)
+- **Hardware:** ARC HTC `short`, 1x H100 and 2 CPUs per job; nodes NOT
+  RECORDED until the RUNSTAMP lines are read
+- **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
+  `CODE/scripts/cluster/run_score.sbatch` @ NOT RECORDED (read from the
+  RUNSTAMP `repo=` line; the remote was at a3e758f at submit)
+- **Inputs:** `CODE/outputs/phase2/inputs/instances_r0-50_short.jsonl`
+  (307,427 instances, sha256 da1b93dc...6848), split from
+  `instances_r0-50.jsonl` (built @ 075006e) by
+  `CODE/scripts/phase2/split_long_lists.py`
+- **Outputs:** `$DATA/outputs/phase2/results/grid_r0-50/<serving>/<serving>_shard{0,1}of2.jsonl`
+  on ARC (not backed up; pull to `WORK/outputs_recovered/` when landed)
+- **Verified by:** PENDING
+- **Roster:** `CODE/scripts/cluster/roster_phase2.tsv` wave 1: Qwen3-4B,
+  Qwen3-4B-Base, Qwen3-32B, Qwen3-30B-A3B-Instruct-2507, Qwen3-30B-A3B-Base,
+  Olmo-3.1-32B-Instruct-DPO, Olmo-3-1125-32B, Olmo-3-7B-Instruct-DPO,
+  Olmo-3-1025-7B, Llama-3.1-8B-Instruct, Llama-3.1-8B
+- **Constraint:** arms `label_num,echo_qonly,echo_ctxfree`, 10% replicate,
+  no `echo_plain`; 16 workers and GPU memory 0.95 on the 30B-class
+  servings, 32 and 0.92 on the rest; design and decisions in
+  `PAPER/docs/PAPER_STATE.md` "2 Oct 2026".
 
 ## Not yet registered
 
