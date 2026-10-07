@@ -8,6 +8,7 @@
 #   INPUT=... ONLY=google/gemma-4-31B SHARDS=3 ONLY_SHARD=2 ./scripts/...   # one shard
 #
 # Env: INPUT (required), WAVE (1-4) and/or ONLY (hf id), SHARDS (default 1),
+# EXTRA_APPEND (serve flags added after the per-model ones, for tests),
 # ONLY_SHARD (resubmit a single shard index; never resubmit a shard whose
 # job is still running, two jobs would append to one output file),
 # ARMS, REPLICATE_FRAC, TAG (results subfolder, default grid_r0-50),
@@ -87,7 +88,8 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
   case "$hf_id" in
     nvidia/NVIDIA-Nemotron-3-*|Qwen/Qwen3.5-*) extra="$extra --max-num-seqs 32" ;;
   esac
-  extra="${extra# }"
+  extra="$extra ${EXTRA_APPEND:-}"
+  extra="${extra# }"; extra="${extra% }"
 
   # Client concurrency by memory headroom. Weights above 60 percent of the
   # allocation's GPU memory leave a KV cache too small for 32 workers: the
