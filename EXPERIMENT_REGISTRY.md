@@ -968,10 +968,13 @@ Rules that keep the entries fillable:
   with a 4096-token window and `--max-num-seqs 32` on the hybrid families:
   9013026-28 Nemotron-3-Nano instruct shards 0-2, 9013029-30 Nemotron-3-Nano
   Base shards 0-1, 9013031-32 gemma-4-31B shards 0 and 2, 9013054-56
-  gemma-4-31B-it shards 0-2. Qwen3.5 is held:
-  it crashes in FlashAttention 3 (`_vllm_fa3_C.fwd`); test jobs 9013033
-  (version 4) and 9013034 (version 2) on Qwen3.5-27B, 300 instances each,
-  outputs under `fa4_test/` and `fa2_test/`
+  gemma-4-31B-it shards 0-2. Qwen3.5 crashes in FlashAttention 3
+  (`_vllm_fa3_C.fwd`); test jobs 9013033 (version 4) and 9013034 (version
+  2) on Qwen3.5-27B, 300 instances each under `fa4_test/` and `fa2_test/`,
+  both COMPLETED with 297 of 300 identical predictions. Qwen3.5 resubmitted
+  on version 4: 9013737-39 Qwen3.5-27B, 9013740-42 Qwen3.5-35B-A3B,
+  9013743-45 Qwen3.5-35B-A3B-Base (flag passed through `EXTRA_APPEND` at
+  6aba571; 9013684-92 were submitted without it and cancelled unrun)
 - **Hardware:** ARC HTC `short`, 1x H100 and 2 CPUs per job; nodes NOT
   RECORDED until the jobs start
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
