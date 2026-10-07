@@ -32,6 +32,12 @@ DRY_RUN="${DRY_RUN:-}"
 # its Phase 1 readout battery.
 ARMS="${ARMS:-label_num,echo_qonly,echo_ctxfree}"
 REPLICATE_FRAC="${REPLICATE_FRAC:-0.1}"
+# Context window served. The longest label_num prompt in the grid input is
+# about 1,520 tokens (measured on the Qwen, Gemma and Nemotron tokenizers,
+# 7 Oct 2026). vLLM refuses to start unless one request of this length fits
+# the KV cache, and at 16384 gemma-4-31B did not fit on every node (job
+# 9012474: 13.76 GiB needed, 12.53 available).
+MAX_MODEL_LEN="${MAX_MODEL_LEN:-4096}"
 RESULTS="${RESULTS:-${DATA:?set DATA}/outputs/phase2/results}"
 
 if [ -z "$WAVE" ] && [ -z "$ONLY" ]; then
@@ -67,7 +73,10 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
   esac
   case "$hf_id" in
     nvidia/NVIDIA-Nemotron-3-*)
-      extra="$extra --trust-remote-code --mamba-ssm-cache-dtype float32" ;;
+      # --max-num-seqs: the default 1024 exceeds the Mamba cache blocks one
+      # H100 can hold (983; jobs 9012463-67), and the client sends at most
+      # WORKERS requests at once.
+      extra="$extra --trust-remote-code --mamba-ssm-cache-dtype float32 --max-num-seqs 64" ;;
   esac
   extra="${extra# }"
 
@@ -93,7 +102,7 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
     cmd=(env "MODEL=${hf_id}" "INPUT=${INPUT}" "OUT=${out}" "ARMS=${ARMS}"
          "REPLICATE_FRAC=${REPLICATE_FRAC}" "TP=${tp}" "DTYPE=${dtype}"
          "EXTRA_VLLM_ARGS=${extra}" "WORKERS=${workers}"
-         "GPU_MEM_UTIL=${mem_util}" "SHARD_INDEX=${i}" "SHARD_COUNT=${SHARDS}"
+         "GPU_MEM_UTIL=${mem_util}" "MAX_MODEL_LEN=${MAX_MODEL_LEN}" "SHARD_INDEX=${i}" "SHARD_COUNT=${SHARDS}"
          sbatch --job-name="p2-${slug:0:24}"
          --gres="gpu:h100:${tp}" --cpus-per-task="$(( 2 * tp ))"
          --mem="$(mem_for_tp "$tp")" --time="$TIME" --export=ALL
