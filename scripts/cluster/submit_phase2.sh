@@ -88,6 +88,13 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
   case "$hf_id" in
     nvidia/NVIDIA-Nemotron-3-*|Qwen/Qwen3.5-*) extra="$extra --max-num-seqs 32" ;;
   esac
+  # Qwen3.5 (qwen3_next) crashes in FlashAttention 3, the H100 default
+  # (jobs 9012454-59: _vllm_fa3_C.fwd, aten::new_empty). Versions 4 and 2
+  # both load and pass the smoke gate (jobs 9013033, 9013034); 4 is what
+  # vLLM itself moves to on this GPU when 3 cannot serve a model (Gemma 4).
+  case "$hf_id" in
+    Qwen/Qwen3.5-*) extra="$extra --attention-config.flash_attn_version=4" ;;
+  esac
   extra="$extra ${EXTRA_APPEND:-}"
   extra="${extra# }"; extra="${extra% }"
 
