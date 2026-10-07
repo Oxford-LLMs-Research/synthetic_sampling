@@ -962,11 +962,13 @@ Rules that keep the entries fillable:
   the two Nemotron-3-Nano-30B-A3B servings (names truncated alike;
   instruct then base in roster order), 69-71 gemma-4-31B-it, 72-74
   gemma-4-31B, 75-77 gemma-4-26B-A4B-it, 78-80 gemma-4-26B-A4B, 81-83
-  gpt-oss-120b. Sixteen FAILED at load, nothing scored: all nine Qwen3.5
-  jobs (54-62), Nemotron 63-67, gemma-4-31B 72 and 74. Resubmitted 7 Oct
+  gpt-oss-120b. Nineteen FAILED at load, nothing scored: all nine Qwen3.5
+  jobs (54-62), Nemotron 63-67, gemma-4-31B-it 69-71, gemma-4-31B 72 and
+  74. Resubmitted 7 Oct
   with a 4096-token window and `--max-num-seqs 32` on the hybrid families:
   9013026-28 Nemotron-3-Nano instruct shards 0-2, 9013029-30 Nemotron-3-Nano
-  Base shards 0-1, 9013031-32 gemma-4-31B shards 0 and 2. Qwen3.5 is held:
+  Base shards 0-1, 9013031-32 gemma-4-31B shards 0 and 2, 9013054-56
+  gemma-4-31B-it shards 0-2. Qwen3.5 is held:
   it crashes in FlashAttention 3 (`_vllm_fa3_C.fwd`); test jobs 9013033
   (version 4) and 9013034 (version 2) on Qwen3.5-27B, 300 instances each,
   outputs under `fa4_test/` and `fa2_test/`
