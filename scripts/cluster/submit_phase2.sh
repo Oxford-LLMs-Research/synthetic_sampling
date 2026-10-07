@@ -5,7 +5,11 @@
 #   INPUT=... ONLY=Qwen/Qwen3-32B SHARDS=4 ./scripts/cluster/submit_phase2.sh
 #   INPUT=... WAVE=3 DRY_RUN=1 ./scripts/cluster/submit_phase2.sh      # print, submit nothing
 #
+#   INPUT=... ONLY=google/gemma-4-31B SHARDS=3 ONLY_SHARD=2 ./scripts/...   # one shard
+#
 # Env: INPUT (required), WAVE (1-4) and/or ONLY (hf id), SHARDS (default 1),
+# ONLY_SHARD (resubmit a single shard index; never resubmit a shard whose
+# job is still running, two jobs would append to one output file),
 # ARMS, REPLICATE_FRAC, TAG (results subfolder, default grid_r0-50),
 # TIME (default 12:00:00), DRY_RUN=1, plus anything run_score.sbatch reads.
 #
@@ -27,6 +31,7 @@ SHARDS="${SHARDS:-1}"
 TAG="${TAG:-grid_r0-50}"
 TIME="${TIME:-12:00:00}"
 DRY_RUN="${DRY_RUN:-}"
+ONLY_SHARD="${ONLY_SHARD:-}"
 # Phase 2 arms: label_num plus the two PMI premises. echo_plain is not part
 # of this run (decided 2 Oct 2026); each serving's echo reading comes from
 # its Phase 1 readout battery.
@@ -73,10 +78,14 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
   esac
   case "$hf_id" in
     nvidia/NVIDIA-Nemotron-3-*)
-      # --max-num-seqs: the default 1024 exceeds the Mamba cache blocks one
-      # H100 can hold (983; jobs 9012463-67), and the client sends at most
-      # WORKERS requests at once.
-      extra="$extra --trust-remote-code --mamba-ssm-cache-dtype float32 --max-num-seqs 64" ;;
+      extra="$extra --trust-remote-code --mamba-ssm-cache-dtype float32" ;;
+  esac
+  # Hybrid families hold one state-cache block per sequence, and vLLM's
+  # default of 1024 sequences exceeds what fits beside the weights (983 on
+  # Nemotron-3-Nano, 58 on Qwen3.5-35B-A3B-Base; jobs 9012460-67). The
+  # client sends at most WORKERS (16) requests at once.
+  case "$hf_id" in
+    nvidia/NVIDIA-Nemotron-3-*|Qwen/Qwen3.5-*) extra="$extra --max-num-seqs 32" ;;
   esac
   extra="${extra# }"
 
@@ -96,6 +105,7 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
   slug="$(echo "$hf_id" | tr '/' '_' | tr '[:upper:]' '[:lower:]')"
   outdir="$RESULTS/$TAG/$slug"
   for (( i = 0; i < SHARDS; i++ )); do
+    [ -n "$ONLY_SHARD" ] && [ "$i" != "$ONLY_SHARD" ] && continue
     out="$outdir/${slug}_shard${i}of${SHARDS}.jsonl"
     # Variables travel in the environment with --export=ALL, never inside
     # --export=: Slurm splits that list on commas, and ARMS contains commas.
