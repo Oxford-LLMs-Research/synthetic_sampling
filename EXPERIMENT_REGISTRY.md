@@ -77,7 +77,7 @@ Rules that keep the entries fillable:
 | [XGB-CEILING-FULL](#xgb-ceiling-full--the-properly-fit-same-features-ceiling) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Ceiling inverts: prompt-parity supervised 0.465 vs model 0.337; supervised wins on MODAL respondents |
 | [MODAL-COMMITMENT](#modal-commitment--why-the-llm-loses-the-modal-respondents) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Not hedging: confident wrong commitments (max_p 0.80, modal mass 0.13); recalibration cannot rescue it |
 | [CPU-BILLING-TEST](#cpu-billing-test--core-count-vs-throughput-calibration) | LANDED | 11 Sep 2026 | Qwen3-32B, Qwen3-4B | Harness calibration: A2 set rerun at 2 and 4 CPUs vs the 8-CPU August run |
-| [PHASE2-GRID-W1](#phase2-grid-w1--phase-2-main-grid-wave-1) | RUNNING | 6 Oct 2026 | 11 wave-1 servings | Second main run under `label_num`: floor-50 draw, 258 targets with under 10 options |
+| [PHASE2-GRID-W1](#phase2-grid-w1--phase-2-main-grid-wave-1) | LANDED | 6-7 Oct 2026 | 11 wave-1 servings | Second main run under `label_num`: scoring complete on all 11 servings, analysis pending |
 
 ---
 
@@ -907,31 +907,37 @@ Rules that keep the entries fillable:
 
 ### PHASE2-GRID-W1 — Phase 2 main grid, wave 1
 
-- **Status:** RUNNING
+- **Status:** LANDED (scoring complete; analysis PENDING)
 - **Rationale:** Repeat the run-1 analysis with the certified `label_num`
   readout on freshly drawn, cleaned instances (floor 50 per source-country
   cell, 36 features). Wave 1 is the 11 single-GPU servings of the roster's
   first tier; the 8 targets with 10 or more options are held back because
   two-digit option numbers are two tokens on most of the roster.
-- **Result:** PENDING
-- **Ran:** submitted 6 Oct 2026, jobs 9004663-9004684 (22 jobs: 11 servings
-  x 2 shards, in roster order). Preceding harness checks, not part of the
+- **Result:** Scoring only so far: all 22 jobs COMPLETED, every serving
+  holds 307,427 rows (153,424 + 154,003) and every job's coverage verdict
+  is "all arms above 90%". No accuracy or agreement number has been
+  computed yet. Cost 93.5 GPU-hours; dense 32B shards took 6.2 to 6.9 h on
+  htc-g059 and 10.0 to 11.4 h on htc-g053/054/055.
+- **Ran:** 6-7 Oct 2026, jobs 9004663-9004684 (22 jobs: 11 servings x 2
+  shards, in roster order). Preceding harness checks, not part of the
   grid: smoke 8962265 (Qwen3-4B, 1,000 instances, 2 Oct), rate test 8997212
-  (Qwen3-32B, 32 workers, TIMEOUT at 2,250 of 3,000, 5 Oct), and two rate
-  tests on 6 Oct (8 workers at 0.92; 16 workers at 0.95; job ids NOT
-  RECORDED)
-- **Hardware:** ARC HTC `short`, 1x H100 and 2 CPUs per job; nodes NOT
-  RECORDED until the RUNSTAMP lines are read
+  (Qwen3-32B, 32 workers, TIMEOUT at 2,250 of 3,000, 5 Oct), and rate
+  tests 9003078 and 9003079 on 6 Oct (8 workers at 0.92 and 16 workers at
+  0.95; which id carries which setting is on each log's RUNSTAMP workers
+  line)
+- **Hardware:** ARC HTC `short`, 1x H100 and 2 CPUs per job; nodes
+  htc-g053, g054, g055, g058, g059 (from sacct)
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
-  `CODE/scripts/cluster/run_score.sbatch` @ NOT RECORDED (read from the
-  RUNSTAMP `repo=` line; the remote was at a3e758f at submit)
+  `CODE/scripts/cluster/run_score.sbatch` @ a3e758f (RUNSTAMP `repo=` line
+  of all 22 jobs)
 - **Inputs:** `CODE/outputs/phase2/inputs/instances_r0-50_short.jsonl`
   (307,427 instances, sha256 da1b93dc...6848), split from
   `instances_r0-50.jsonl` (built @ 075006e) by
   `CODE/scripts/phase2/split_long_lists.py`
 - **Outputs:** `$DATA/outputs/phase2/results/grid_r0-50/<serving>/<serving>_shard{0,1}of2.jsonl`
   on ARC (not backed up; pull to `WORK/outputs_recovered/` when landed)
-- **Verified by:** PENDING
+- **Verified by:** row counts by `wc -l` on ARC and the `done:` / `VERDICT`
+  lines of `logs/p2-*-90046{63..84}.out`; number verification PENDING
 - **Roster:** `CODE/scripts/cluster/roster_phase2.tsv` wave 1: Qwen3-4B,
   Qwen3-4B-Base, Qwen3-32B, Qwen3-30B-A3B-Instruct-2507, Qwen3-30B-A3B-Base,
   Olmo-3.1-32B-Instruct-DPO, Olmo-3-1125-32B, Olmo-3-7B-Instruct-DPO,
