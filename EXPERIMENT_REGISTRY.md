@@ -78,6 +78,7 @@ Rules that keep the entries fillable:
 | [MODAL-COMMITMENT](#modal-commitment--why-the-llm-loses-the-modal-respondents) | LANDED | 13 Aug 2026 | reanalysis, no GPU | Not hedging: confident wrong commitments (max_p 0.80, modal mass 0.13); recalibration cannot rescue it |
 | [CPU-BILLING-TEST](#cpu-billing-test--core-count-vs-throughput-calibration) | LANDED | 11 Sep 2026 | Qwen3-32B, Qwen3-4B | Harness calibration: A2 set rerun at 2 and 4 CPUs vs the 8-CPU August run |
 | [PHASE2-GRID-W1](#phase2-grid-w1--phase-2-main-grid-wave-1) | LANDED | 6-7 Oct 2026 | 11 wave-1 servings | Second main run under `label_num`: scoring complete on all 11 servings, analysis pending |
+| [PHASE2-GRID-W2](#phase2-grid-w2--phase-2-main-grid-wave-2) | RUNNING | 7 Oct 2026 | 10 wave-2 servings | Same grid input on the 2026-generation single-GPU servings |
 
 ---
 
@@ -946,6 +947,36 @@ Rules that keep the entries fillable:
   no `echo_plain`; 16 workers and GPU memory 0.95 on the 30B-class
   servings, 32 and 0.92 on the rest; design and decisions in
   `PAPER/docs/PAPER_STATE.md` "2 Oct 2026".
+
+### PHASE2-GRID-W2 — Phase 2 main grid, wave 2
+
+- **Status:** RUNNING
+- **Rationale:** Extend PHASE2-GRID-W1 to the roster's second tier, the
+  2026-generation single-GPU servings, on the identical instance file and
+  arms. These families have only been load-checked on the pinned stack, so
+  each job's smoke gate is their first readout test.
+- **Result:** PENDING
+- **Ran:** submitted 7 Oct 2026, jobs 9012454-9012483 (30 jobs: 10 servings
+  x 3 shards; all PENDING when recorded). By job name: 9012454-56
+  Qwen3.5-27B, 57-59 Qwen3.5-35B-A3B, 60-62 Qwen3.5-35B-A3B-Base, 63-68
+  the two Nemotron-3-Nano-30B-A3B servings (names truncated alike;
+  instruct then base in roster order), 69-71 gemma-4-31B-it, 72-74
+  gemma-4-31B, 75-77 gemma-4-26B-A4B-it, 78-80 gemma-4-26B-A4B, 81-83
+  gpt-oss-120b
+- **Hardware:** ARC HTC `short`, 1x H100 and 2 CPUs per job; nodes NOT
+  RECORDED until the jobs start
+- **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
+  `CODE/scripts/cluster/run_score.sbatch` @ NOT RECORDED (read from the
+  RUNSTAMP `repo=` line)
+- **Inputs:** `CODE/outputs/phase2/inputs/instances_r0-50_short.jsonl`
+  (307,427 instances, sha256 da1b93dc...6848), as PHASE2-GRID-W1
+- **Outputs:** `$DATA/outputs/phase2/results/grid_r0-50/<serving>/<serving>_shard{0,1,2}of3.jsonl`
+  on ARC (not backed up; pull to `WORK/outputs_recovered/` when landed)
+- **Verified by:** PENDING
+- **Constraint:** arms, replicate and worker settings as PHASE2-GRID-W1;
+  three shards because a dense 32B shard of two ran 11 h 46 min of the
+  12 h wall in wave 1; Nemotron serves with `--trust-remote-code
+  --mamba-ssm-cache-dtype float32`, gpt-oss without `--dtype`.
 
 ## Not yet registered
 
