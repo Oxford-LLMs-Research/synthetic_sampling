@@ -916,7 +916,7 @@ Rules that keep the entries fillable:
 - **Result:** Scoring only so far: all 22 jobs COMPLETED, every serving
   holds 307,427 rows (153,424 + 154,003) and every job's coverage verdict
   is "all arms above 90%". No accuracy or agreement number has been
-  computed yet. Cost 93.5 GPU-hours; dense 32B shards took 6.2 to 6.9 h on
+  computed yet. Cost 93.5 GPU-hours; dense 32B shards scored in 6.2 to 6.6 h on
   htc-g059 and 10.0 to 11.4 h on htc-g053/054/055.
 - **Ran:** 6-7 Oct 2026, jobs 9004663-9004684 (22 jobs: 11 servings x 2
   shards, in roster order). Preceding harness checks, not part of the
