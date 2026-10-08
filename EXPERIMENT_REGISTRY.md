@@ -1010,8 +1010,14 @@ Rules that keep the entries fillable:
 - **Ran:** test job 9017817 submitted 8 Oct 2026 (Qwen3.5-122B-A10B-FP8,
   TP 2, `LIMIT=300`, 2 h wall, output under `tp2_test/`), COMPLETED in
   39 min: load 26 min, 2.62 inst/s at 16 workers, KV cache 27.36 GiB
-  (583,680 tokens), prefix cache hit rate 0.0 percent, coverage 324/324;
-  wave not submitted
+  (583,680 tokens), prefix cache hit rate 0.0 percent, coverage 324/324
+  (attention block size 2,096 tokens under mamba cache mode `align`,
+  against 784 on single-GPU Qwen3.5-27B). Further 300-instance tests
+  submitted 8 Oct, ids matched to models by job name and submit order:
+  9018124 Qwen3.5-122B with `--mamba-cache-mode all` (`tp2_all_test/`);
+  under `tp_test/` 9018125 Llama-3.1-70B-Instruct, 9018126 Nemotron-3-Super
+  FP8, 9018127 Nemotron-3-Super Base, 9018129 Qwen3-235B (TP 4); wave not
+  submitted
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ 62ccca5 (test job RUNSTAMP)
