@@ -997,6 +997,30 @@ Rules that keep the entries fillable:
   12 h wall in wave 1; Nemotron serves with `--trust-remote-code
   --mamba-ssm-cache-dtype float32`, gpt-oss without `--dtype`.
 
+### PHASE2-GRID-W3 — Phase 2 main grid, wave 3
+
+- **Status:** PLANNED
+- **Rationale:** Extend the grid to the six servings that need two or four
+  GPUs (Llama-3.1-70B pair, Qwen3.5-122B-A10B-FP8, Nemotron-3-Super-120B
+  pair, Qwen3-235B-A22B-Instruct-FP8). No job in this project has served
+  with tensor parallelism, so a 300-instance two-GPU test runs first.
+- **Result:** PENDING
+- **Ran:** test job 9017817 submitted 8 Oct 2026 (Qwen3.5-122B-A10B-FP8,
+  TP 2, `LIMIT=300`, 2 h wall, output under `tp2_test/`); wave not
+  submitted
+- **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test; node NOT
+  RECORDED
+- **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
+  `CODE/scripts/cluster/run_score.sbatch` @ NOT RECORDED (read from the
+  RUNSTAMP `repo=` line)
+- **Inputs:** `CODE/outputs/phase2/inputs/instances_r0-50_short.jsonl`
+  (307,427 instances, sha256 da1b93dc...6848), as PHASE2-GRID-W1
+- **Outputs:** test: `$DATA/outputs/phase2/results/tp2_test/qwen_qwen3.5-122b-a10b-fp8/`
+  on ARC
+- **Verified by:** PENDING
+- **Constraint:** arms and replicate as PHASE2-GRID-W1; shard counts and
+  worker settings to be set from the test.
+
 ## Not yet registered
 
 Catalogue entries A5, B1, B2 and T0.2–T0.5 are decided but unrun; they
