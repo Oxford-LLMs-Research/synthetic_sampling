@@ -979,7 +979,9 @@ Rules that keep the entries fillable:
   CUDA out of memory, resubmitted 8 Oct as 9017522 with
   `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`. 9013054-56 TIMEOUT
   at 12 h with 78,800 / 39,300 / 77,750 rows written (prefix cache hit
-  rate 0.5 percent); resubmit PENDING
+  rate 0.5 percent, KV cache 12.53 GiB against 25.74 GiB on the base
+  runs that finished); resubmitted 8 Oct as 9017524-26 with `WORKERS=4`
+  (shard order by job id assumed from submit order)
 - **Hardware:** ARC HTC `short`, 1x H100 and 2 CPUs per job; nodes NOT
   RECORDED until the jobs start
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
