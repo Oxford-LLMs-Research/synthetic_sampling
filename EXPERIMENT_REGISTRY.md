@@ -977,7 +977,9 @@ Rules that keep the entries fillable:
   6aba571; 9013684-92 were submitted without it and cancelled unrun).
   9013745 (Qwen3.5-35B-A3B-Base shard 2, htc-g060) FAILED at load with
   CUDA out of memory, resubmitted 8 Oct as 9017522 with
-  `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`. 9013054-56 TIMEOUT
+  `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`; 9017522 FAILED the
+  same way on htc-g054 (1008 MiB needed, 662 MiB free), resubmitted as
+  9018111 with `--max-num-seqs 16` added. 9013054-56 TIMEOUT
   at 12 h with 78,800 / 39,300 / 77,750 rows written (prefix cache hit
   rate 0.5 percent, KV cache 12.53 GiB against 25.74 GiB on the base
   runs that finished); resubmitted 8 Oct as 9017524-26 with `WORKERS=4`
