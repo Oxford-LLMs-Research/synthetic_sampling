@@ -1023,7 +1023,10 @@ Rules that keep the entries fillable:
   (`tp_noar_test/`), FAILED the same way; 9018126 COMPLETED on htc-g055.
   Grid jobs, submitted 8 Oct with `EXCLUDE=htc-g059,htc-g060`: 9018237-42
   Qwen3.5-122B-A10B-FP8 shards 0-5 of 6; the other five servings not
-  submitted
+  submitted. 9018237 (shard 0, htc-g055): worker crashed at load (`Triton
+  Error [CUDA]: an illegal memory access`), server hung 122 min, cancelled,
+  nothing scored; resubmitted as 9018444. 9018445 repeats the
+  `--mamba-cache-mode all` test off htc-g059/g060 (`tp2_all_test/`)
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ 62ccca5 (test job RUNSTAMP)
