@@ -50,6 +50,13 @@ REPLICATE_FRAC="${REPLICATE_FRAC:-0.1}"
 # 9012474: 13.76 GiB needed, 12.53 available).
 MAX_MODEL_LEN="${MAX_MODEL_LEN:-4096}"
 RESULTS="${RESULTS:-${DATA:?set DATA}/outputs/phase2/results}"
+# vLLM 0.29 switches tensor-parallel groups to FlashInfer's all-reduce, which
+# compiles itself at startup and needs nvcc. htc-g059 has none, so every
+# multi-GPU load there died (jobs 9018124, 9018125, 9018129, 9018199); with
+# the opt-out the same model loads and scores on that node (job 9018490).
+# Set for every job so a serving does not depend on the node it lands on;
+# it has no effect on a single GPU.
+ALLREDUCE_FLASHINFER="${VLLM_ALLREDUCE_USE_FLASHINFER:-0}"
 
 if [ -z "$WAVE" ] && [ -z "$ONLY" ]; then
   echo "set WAVE (1-4) and/or ONLY (hf id)"; exit 1
@@ -127,6 +134,7 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
          "REPLICATE_FRAC=${REPLICATE_FRAC}" "TP=${tp}" "DTYPE=${dtype}"
          "EXTRA_VLLM_ARGS=${extra}" "WORKERS=${workers}"
          "GPU_MEM_UTIL=${mem_util}" "MAX_MODEL_LEN=${MAX_MODEL_LEN}" "SHARD_INDEX=${i}" "SHARD_COUNT=${SHARDS}"
+         "VLLM_ALLREDUCE_USE_FLASHINFER=${ALLREDUCE_FLASHINFER}"
          sbatch --job-name="p2-${slug:0:24}"
          --gres="gpu:h100:${tp}" --cpus-per-task="$(( 2 * tp ))"
          --mem="$(mem_for_tp "$tp")" --time="$TIME" --export=ALL)

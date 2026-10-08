@@ -1038,7 +1038,10 @@ Rules that keep the entries fillable:
   unrun; Qwen3.5-122B shards 0, 3, 4, 5 resubmitted as 9018483-86 with
   `EXCLUDE=htc-g055,htc-g059,htc-g060` (default cache mode). 9018490
   Llama-3.1-70B-Instruct test with `VLLM_ALLREDUCE_USE_FLASHINFER=0` and
-  `NODELIST=htc-g059` (`tp_nofi_test/`)
+  `NODELIST=htc-g059` (`tp_nofi_test/`), COMPLETED in 15 min, so the
+  opt-out is what lets a multi-GPU serving load on that node. 9018459
+  COMPLETED on htc-g058: 3.06 inst/s at 16 workers, KV cache 124,032
+  tokens, prefix cache hit rate 78.2 percent
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ 62ccca5 (test job RUNSTAMP)

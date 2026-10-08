@@ -91,6 +91,7 @@ echo "RUNSTAMP tp=$TP dtype=$DTYPE max_model_len=$MAX_MODEL_LEN extra_vllm_args=
 # GPU count is read from what the job can actually see.
 N_GPUS="${SLURM_GPUS_ON_NODE:-$(nvidia-smi -L 2>/dev/null | grep -c '^GPU ' || true)}"
 echo "RUNSTAMP workers=$WORKERS gpu_mem_util=$GPU_MEM_UTIL"
+echo "RUNSTAMP allreduce_flashinfer=${VLLM_ALLREDUCE_USE_FLASHINFER:-default}"
 echo "RUNSTAMP cpus=${SLURM_CPUS_PER_TASK:-NOT_RECORDED} gpus=${N_GPUS:-NOT_RECORDED}"
 
 # The allocation must hold the GPUs the serving will ask for: vLLM with a
