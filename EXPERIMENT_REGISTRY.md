@@ -1006,13 +1006,13 @@ Rules that keep the entries fillable:
   with tensor parallelism, so a 300-instance two-GPU test runs first.
 - **Result:** PENDING
 - **Ran:** test job 9017817 submitted 8 Oct 2026 (Qwen3.5-122B-A10B-FP8,
-  TP 2, `LIMIT=300`, 2 h wall, output under `tp2_test/`); wave not
-  submitted
-- **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test; node NOT
-  RECORDED
+  TP 2, `LIMIT=300`, 2 h wall, output under `tp2_test/`), COMPLETED in
+  39 min: load 26 min, 2.62 inst/s at 16 workers, KV cache 27.36 GiB
+  (583,680 tokens), prefix cache hit rate 0.0 percent, coverage 324/324;
+  wave not submitted
+- **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
-  `CODE/scripts/cluster/run_score.sbatch` @ NOT RECORDED (read from the
-  RUNSTAMP `repo=` line)
+  `CODE/scripts/cluster/run_score.sbatch` @ 62ccca5 (test job RUNSTAMP)
 - **Inputs:** `CODE/outputs/phase2/inputs/instances_r0-50_short.jsonl`
   (307,427 instances, sha256 da1b93dc...6848), as PHASE2-GRID-W1
 - **Outputs:** test: `$DATA/outputs/phase2/results/tp2_test/qwen_qwen3.5-122b-a10b-fp8/`
