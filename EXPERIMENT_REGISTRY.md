@@ -974,7 +974,12 @@ Rules that keep the entries fillable:
   both COMPLETED with 297 of 300 identical predictions. Qwen3.5 resubmitted
   on version 4: 9013737-39 Qwen3.5-27B, 9013740-42 Qwen3.5-35B-A3B,
   9013743-45 Qwen3.5-35B-A3B-Base (flag passed through `EXTRA_APPEND` at
-  6aba571; 9013684-92 were submitted without it and cancelled unrun)
+  6aba571; 9013684-92 were submitted without it and cancelled unrun).
+  9013745 (Qwen3.5-35B-A3B-Base shard 2, htc-g060) FAILED at load with
+  CUDA out of memory, resubmitted 8 Oct as 9017522 with
+  `PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True`. 9013054-56 TIMEOUT
+  at 12 h with 78,800 / 39,300 / 77,750 rows written (prefix cache hit
+  rate 0.5 percent); resubmit PENDING
 - **Hardware:** ARC HTC `short`, 1x H100 and 2 CPUs per job; nodes NOT
   RECORDED until the jobs start
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
