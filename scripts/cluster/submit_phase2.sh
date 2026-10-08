@@ -9,6 +9,8 @@
 #
 # Env: INPUT (required), WAVE (1-4) and/or ONLY (hf id), SHARDS (default 1),
 # EXTRA_APPEND (serve flags added after the per-model ones, for tests),
+# NODELIST (pin the job to a node, e.g. htc-g058 for a model that only fits
+# its 96 GB cards, or a named node for a test),
 # ONLY_SHARD (resubmit a single shard index; never resubmit a shard whose
 # job is still running, two jobs would append to one output file),
 # ARMS, REPLICATE_FRAC, TAG (results subfolder, default grid_r0-50),
@@ -33,6 +35,7 @@ TAG="${TAG:-grid_r0-50}"
 TIME="${TIME:-12:00:00}"
 DRY_RUN="${DRY_RUN:-}"
 ONLY_SHARD="${ONLY_SHARD:-}"
+NODELIST="${NODELIST:-}"
 # Phase 2 arms: label_num plus the two PMI premises. echo_plain is not part
 # of this run (decided 2 Oct 2026); each serving's echo reading comes from
 # its Phase 1 readout battery.
@@ -124,8 +127,9 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
          "GPU_MEM_UTIL=${mem_util}" "MAX_MODEL_LEN=${MAX_MODEL_LEN}" "SHARD_INDEX=${i}" "SHARD_COUNT=${SHARDS}"
          sbatch --job-name="p2-${slug:0:24}"
          --gres="gpu:h100:${tp}" --cpus-per-task="$(( 2 * tp ))"
-         --mem="$(mem_for_tp "$tp")" --time="$TIME" --export=ALL
-         "$ROOT/scripts/cluster/run_score.sbatch")
+         --mem="$(mem_for_tp "$tp")" --time="$TIME" --export=ALL)
+    [ -n "$NODELIST" ] && cmd+=(--nodelist="$NODELIST")
+    cmd+=("$ROOT/scripts/cluster/run_score.sbatch")
     if [ -n "$DRY_RUN" ]; then
       printf 'DRY  wave=%s tp=%s %s shard %d/%d\n     %s\n' \
         "$wave" "$tp" "$hf_id" "$i" "$SHARDS" "${cmd[*]}"
