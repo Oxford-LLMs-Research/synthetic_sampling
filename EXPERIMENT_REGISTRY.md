@@ -1034,7 +1034,9 @@ Rules that keep the entries fillable:
   on htc-g055 with the same Triton CUDA error as 9018237 (second
   Qwen3.5-122B crash on that node); before the crash it logged the same
   2,096-token attention block under mode `all`, so the mode does not
-  restore prefix reuse
+  restore prefix reuse. Held jobs 9018241, 9018242, 9018444 cancelled
+  unrun; Qwen3.5-122B shards 0, 3, 4, 5 resubmitted as 9018483-86 with
+  `EXCLUDE=htc-g055,htc-g059,htc-g060` (default cache mode)
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ 62ccca5 (test job RUNSTAMP)
