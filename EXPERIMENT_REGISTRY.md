@@ -1001,7 +1001,7 @@ Rules that keep the entries fillable:
 
 ### PHASE2-GRID-W3 — Phase 2 main grid, wave 3
 
-- **Status:** PLANNED
+- **Status:** RUNNING
 - **Rationale:** Extend the grid to the six servings that need two or four
   GPUs (Llama-3.1-70B pair, Qwen3.5-122B-A10B-FP8, Nemotron-3-Super-120B
   pair, Qwen3-235B-A22B-Instruct-FP8). No job in this project has served
@@ -1020,17 +1020,22 @@ Rules that keep the entries fillable:
   and 9018125 FAILED at load on htc-g059 (flashinfer all-reduce JIT build,
   `Could not find nvcc`). 9018199 Llama-3.1-70B-Instruct with
   `--disable-custom-all-reduce`, submitted with `NODELIST=htc-g059`
-  (`tp_noar_test/`); wave not submitted
+  (`tp_noar_test/`), FAILED the same way; 9018126 COMPLETED on htc-g055.
+  Grid jobs, submitted 8 Oct with `EXCLUDE=htc-g059,htc-g060`: 9018237-42
+  Qwen3.5-122B-A10B-FP8 shards 0-5 of 6; the other five servings not
+  submitted
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ 62ccca5 (test job RUNSTAMP)
 - **Inputs:** `CODE/outputs/phase2/inputs/instances_r0-50_short.jsonl`
   (307,427 instances, sha256 da1b93dc...6848), as PHASE2-GRID-W1
-- **Outputs:** test: `$DATA/outputs/phase2/results/tp2_test/qwen_qwen3.5-122b-a10b-fp8/`
-  on ARC
+- **Outputs:** `$DATA/outputs/phase2/results/grid_r0-50/<serving>/<serving>_shard{i}of6.jsonl`;
+  tests under `tp2_test/`, `tp2_all_test/`, `tp_test/`, `tp_noar_test/`, all on
+  ARC
 - **Verified by:** PENDING
-- **Constraint:** arms and replicate as PHASE2-GRID-W1; shard counts and
-  worker settings to be set from the test.
+- **Constraint:** arms and replicate as PHASE2-GRID-W1; multi-GPU servings
+  kept off htc-g059 and htc-g060, where they fail at load; six shards for
+  Qwen3.5-122B from the 2.62 inst/s test rate.
 
 ## Not yet registered
 
