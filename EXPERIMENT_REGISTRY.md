@@ -1026,7 +1026,11 @@ Rules that keep the entries fillable:
   submitted. 9018237 (shard 0, htc-g055): worker crashed at load (`Triton
   Error [CUDA]: an illegal memory access`), server hung 122 min, cancelled,
   nothing scored; resubmitted as 9018444. 9018445 repeats the
-  `--mamba-cache-mode all` test off htc-g059/g060 (`tp2_all_test/`)
+  `--mamba-cache-mode all` test off htc-g059/g060 (`tp2_all_test/`).
+  9018240 (shard 3) cancelled 2 min into load and 9018241, 9018242,
+  9018444 held, pending the cache-mode result. Tests resubmitted off
+  htc-g059/g060 under `tp_test/` (ids by job name): 9018459
+  Llama-3.1-70B-Instruct, 9018460 Qwen3-235B
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ 62ccca5 (test job RUNSTAMP)
