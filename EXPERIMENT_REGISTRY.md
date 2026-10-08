@@ -1016,8 +1016,11 @@ Rules that keep the entries fillable:
   submitted 8 Oct, ids matched to models by job name and submit order:
   9018124 Qwen3.5-122B with `--mamba-cache-mode all` (`tp2_all_test/`);
   under `tp_test/` 9018125 Llama-3.1-70B-Instruct, 9018126 Nemotron-3-Super
-  FP8, 9018127 Nemotron-3-Super Base, 9018129 Qwen3-235B (TP 4); wave not
-  submitted
+  FP8, 9018127 Nemotron-3-Super Base, 9018129 Qwen3-235B (TP 4). 9018124
+  and 9018125 FAILED at load on htc-g059 (flashinfer all-reduce JIT build,
+  `Could not find nvcc`). 9018199 Llama-3.1-70B-Instruct with
+  `--disable-custom-all-reduce`, submitted with `NODELIST=htc-g059`
+  (`tp_noar_test/`); wave not submitted
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ 62ccca5 (test job RUNSTAMP)
