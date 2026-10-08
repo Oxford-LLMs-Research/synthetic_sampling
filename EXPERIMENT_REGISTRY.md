@@ -1041,7 +1041,11 @@ Rules that keep the entries fillable:
   `NODELIST=htc-g059` (`tp_nofi_test/`), COMPLETED in 15 min, so the
   opt-out is what lets a multi-GPU serving load on that node. 9018459
   COMPLETED on htc-g058: 3.06 inst/s at 16 workers, KV cache 124,032
-  tokens, prefix cache hit rate 78.2 percent
+  tokens, prefix cache hit rate 78.2 percent; 9018459 against 9018490
+  agree on 295 of 300 predictions (mean absolute score difference 0.021).
+  Submitted 8 Oct at 6d36b6d with `VLLM_ALLREDUCE_USE_FLASHINFER=0` and no
+  node exclusion: 9018543-48 Llama-3.1-70B-Instruct shards 0-5 of 6,
+  9018549-54 Llama-3.1-70B shards 0-5 of 6
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ 62ccca5 (test job RUNSTAMP)
@@ -1051,9 +1055,11 @@ Rules that keep the entries fillable:
   tests under `tp2_test/`, `tp2_all_test/`, `tp_test/`, `tp_noar_test/`, all on
   ARC
 - **Verified by:** PENDING
-- **Constraint:** arms and replicate as PHASE2-GRID-W1; multi-GPU servings
-  kept off htc-g059 and htc-g060, where they fail at load; six shards for
-  Qwen3.5-122B from the 2.62 inst/s test rate.
+- **Constraint:** arms and replicate as PHASE2-GRID-W1; Qwen3.5-122B ran
+  with vLLM's default all-reduce and off htc-g059/g060, where that default
+  fails at load, the Llama-3.1-70B pair with
+  `VLLM_ALLREDUCE_USE_FLASHINFER=0` on any node; six shards per serving
+  from the test rates (2.62 and 3.06 inst/s).
 
 ## Not yet registered
 
