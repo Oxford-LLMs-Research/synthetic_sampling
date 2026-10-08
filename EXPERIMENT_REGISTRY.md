@@ -1030,7 +1030,11 @@ Rules that keep the entries fillable:
   9018240 (shard 3) cancelled 2 min into load and 9018241, 9018242,
   9018444 held, pending the cache-mode result. Tests resubmitted off
   htc-g059/g060 under `tp_test/` (ids by job name): 9018459
-  Llama-3.1-70B-Instruct, 9018460 Qwen3-235B
+  Llama-3.1-70B-Instruct, 9018460 Qwen3-235B. 9018445 FAILED at 29 min
+  on htc-g055 with the same Triton CUDA error as 9018237 (second
+  Qwen3.5-122B crash on that node); before the crash it logged the same
+  2,096-token attention block under mode `all`, so the mode does not
+  restore prefix reuse
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ 62ccca5 (test job RUNSTAMP)
