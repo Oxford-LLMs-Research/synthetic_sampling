@@ -132,8 +132,9 @@ vllm serve "$MODEL" --host 127.0.0.1 --port "$PORT" \
 VLLM_PID=$!
 trap 'kill $VLLM_PID 2>/dev/null || true' EXIT
 
-# Wait until ready, or until vLLM dies. Slurm --time is the real backstop.
-# Optional VLLM_READY_TIMEOUT_SEC caps the wait (unset = no curl timeout).
+# Wait until ready, or until vLLM dies or stalls. VLLM_READY_TIMEOUT_SEC
+# caps the wait (default 2 h; the slowest load seen is about 1 h, Nemotron
+# Super Base converting to FP8, job 9018127).
 # Ready means "serving OUR model", not "something answers": a bare 200 is what
 # let 8511397 attach to a neighbour.
 elapsed=0
@@ -143,8 +144,18 @@ while ! curl -sf "http://127.0.0.1:${PORT}/v1/models" 2>/dev/null | grep -qF "$M
     tail -40 "$(dirname "$OUT")/vllm_serve_${SLURM_JOB_ID:-local}.log" || true
     exit 1
   fi
-  if [ -n "${VLLM_READY_TIMEOUT_SEC:-}" ] && [ "$elapsed" -ge "$VLLM_READY_TIMEOUT_SEC" ]; then
-    echo "vLLM never came up within ${VLLM_READY_TIMEOUT_SEC}s"; exit 1
+  # A worker can crash while the server process stays up and waits on it:
+  # job 9018237 hit a Triton CUDA error at load and then held two GPUs
+  # idle for over 2 h. A worker error during startup is fatal.
+  if grep -q 'ERROR .*\[multiproc_executor.py' \
+      "$(dirname "$OUT")/vllm_serve_${SLURM_JOB_ID:-local}.log" 2>/dev/null; then
+    echo "vLLM worker error during startup; its last error lines:"
+    grep 'ERROR .*\[multiproc_executor.py' \
+      "$(dirname "$OUT")/vllm_serve_${SLURM_JOB_ID:-local}.log" | tail -5 || true
+    exit 1
+  fi
+  if [ "$elapsed" -ge "${VLLM_READY_TIMEOUT_SEC:-7200}" ]; then
+    echo "vLLM never came up within ${VLLM_READY_TIMEOUT_SEC:-7200}s"; exit 1
   fi
   sleep 5
   elapsed=$((elapsed + 5))
