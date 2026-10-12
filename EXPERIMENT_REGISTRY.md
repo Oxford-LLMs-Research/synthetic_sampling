@@ -1068,7 +1068,11 @@ Rules that keep the entries fillable:
   with 9018126 on 0.29.0; COMPLETED on htc-g060 at 5.12 inst/s against
   1.78 on htc-g055, prefix cache hit rate still 0.0 percent and block
   still 8,320 tokens, so node and version are confounded. 9060124 is the
-  control: same model on 0.29.0 with `NODELIST=htc-g060` (`tp_g060_test/`). vLLM 0.31.0 built beside the
+  control: same model on 0.29.0 with `NODELIST=htc-g060` (`tp_g060_test/`),
+  COMPLETED at 1.61 inst/s, so the version and not the node gives the
+  speed. Predictions on the 300 instances: 0.29 against 0.31, both on
+  htc-g060, 284 identical (mean absolute score difference 0.096); 0.29 on
+  htc-g060 against 0.29 on htc-g055, 285 identical (0.087). vLLM 0.31.0 built beside the
   pinned stack at `$DATA/vllm-031` (job 9018491, torch 2.13.0+cu130) for a
   prefix-reuse test on the Nemotron-3-Super pair, not used for any score
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
