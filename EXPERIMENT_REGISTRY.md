@@ -1051,7 +1051,10 @@ Rules that keep the entries fillable:
   root cause not yet read), resubmitted as 9059411. Test 9018460
   (Qwen3-235B, TP 4) COMPLETED on htc-g053: 2.83 inst/s at 16 workers, KV
   cache 321,600 tokens, prefix cache hit rate 78.1 percent. Submitted
-  12 Oct: 9059675-79 Qwen3-235B shards 0-4 of 5 with `WORKERS=32`. vLLM 0.31.0 built beside the
+  12 Oct: 9059675-79 Qwen3-235B shards 0-4 of 5 with `WORKERS=32`.
+  9059781: Nemotron-3-Super FP8, 300 instances on the vLLM 0.31.0 venv
+  with `--enable-mamba-shared-prefix-checkpoint` (`v031_test/`), to compare
+  with 9018126 on 0.29.0. vLLM 0.31.0 built beside the
   pinned stack at `$DATA/vllm-031` (job 9018491, torch 2.13.0+cu130) for a
   prefix-reuse test on the Nemotron-3-Super pair, not used for any score
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
