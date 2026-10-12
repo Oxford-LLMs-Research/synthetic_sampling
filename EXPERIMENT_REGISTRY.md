@@ -993,13 +993,15 @@ Rules that keep the entries fillable:
 - **Hardware:** ARC HTC `short`, 1x H100 and 2 CPUs per job; nodes
   htc-g053, g054, g055, g058, g059, g060 (from sacct)
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
-  `CODE/scripts/cluster/run_score.sbatch` @ NOT RECORDED (read from the
-  RUNSTAMP `repo=` line)
+  `CODE/scripts/cluster/run_score.sbatch` @ a3e758f (jobs 9012454-81),
+  6aba571 (9012482-83 and the resubmits through 9017526), 62ccca5
+  (9018111), from the RUNSTAMP `repo=` lines, which give the checkout at
+  job start; no scoring code changed between these commits
 - **Inputs:** `CODE/outputs/phase2/inputs/instances_r0-50_short.jsonl`
   (307,427 instances, sha256 da1b93dc...6848), as PHASE2-GRID-W1
 - **Outputs:** `$DATA/outputs/phase2/results/grid_r0-50/<serving>/<serving>_shard{0,1,2}of3.jsonl`
   on ARC; backed up 12 Oct to `WORK/outputs_recovered/phase2_grid_r0-50/`
-  (README, `SHA256SUMS.json`; Slurm logs of this wave still only on ARC)
+  (README, `SHA256SUMS.json`, Slurm logs under `logs/`)
 - **Verified by:** row counts by `wc -l` on ARC; all 30 score files match
   the ARC checksums after the copy (`grid_r0-50_sha256.txt`); number
   verification PENDING
