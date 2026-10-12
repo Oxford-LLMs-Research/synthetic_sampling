@@ -950,12 +950,17 @@ Rules that keep the entries fillable:
 
 ### PHASE2-GRID-W2 — Phase 2 main grid, wave 2
 
-- **Status:** RUNNING
+- **Status:** LANDED (scoring complete; analysis PENDING)
 - **Rationale:** Extend PHASE2-GRID-W1 to the roster's second tier, the
   2026-generation single-GPU servings, on the identical instance file and
   arms. These families have only been load-checked on the pinned stack, so
   each job's smoke gate is their first readout test.
-- **Result:** PENDING
+- **Result:** All ten servings scored 307,427 rows with zero error rows;
+  first-look `label_num` accuracy 41.4 percent (gpt-oss-120b) to 48.1
+  percent (Qwen3.5-27B), below the 49.8 percent in-file modal baseline.
+  Caveat: gpt-oss-120b replicate agreement is 92.2 percent against 98.7 or
+  more elsewhere, cause not examined; details in `PAPER/docs/PAPER_STATE.md`
+  "12 Oct 2026".
 - **Ran:** submitted 7 Oct 2026, jobs 9012454-9012483 (30 jobs: 10 servings
   x 3 shards; all PENDING when recorded). By job name: 9012454-56
   Qwen3.5-27B, 57-59 Qwen3.5-35B-A3B, 60-62 Qwen3.5-35B-A3B-Base, 63-68
