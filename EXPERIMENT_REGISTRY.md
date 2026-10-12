@@ -1045,7 +1045,13 @@ Rules that keep the entries fillable:
   agree on 295 of 300 predictions (mean absolute score difference 0.021).
   Submitted 8 Oct at 6d36b6d with `VLLM_ALLREDUCE_USE_FLASHINFER=0` and no
   node exclusion: 9018543-48 Llama-3.1-70B-Instruct shards 0-5 of 6,
-  9018549-54 Llama-3.1-70B shards 0-5 of 6
+  9018549-54 Llama-3.1-70B shards 0-5 of 6. On 12 Oct Qwen3.5-122B and
+  Llama-3.1-70B are at 307,427 rows; Llama-3.1-70B-Instruct at 256,398,
+  missing shard 2 (9018545 FAILED at 33 min on htc-g054, `EngineDeadError`,
+  root cause not yet read), resubmitted as 9059411. Test 9018460
+  (Qwen3-235B, TP 4) COMPLETED on htc-g053. vLLM 0.31.0 built beside the
+  pinned stack at `$DATA/vllm-031` (job 9018491, torch 2.13.0+cu130) for a
+  prefix-reuse test on the Nemotron-3-Super pair, not used for any score
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ 62ccca5 (test job RUNSTAMP)
