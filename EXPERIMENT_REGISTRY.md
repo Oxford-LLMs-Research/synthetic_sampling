@@ -1054,7 +1054,10 @@ Rules that keep the entries fillable:
   12 Oct: 9059675-79 Qwen3-235B shards 0-4 of 5 with `WORKERS=32`.
   9059781: Nemotron-3-Super FP8, 300 instances on the vLLM 0.31.0 venv
   with `--enable-mamba-shared-prefix-checkpoint` (`v031_test/`), to compare
-  with 9018126 on 0.29.0. vLLM 0.31.0 built beside the
+  with 9018126 on 0.29.0; COMPLETED on htc-g060 at 5.12 inst/s against
+  1.78 on htc-g055, prefix cache hit rate still 0.0 percent and block
+  still 8,320 tokens, so node and version are confounded. 9060124 is the
+  control: same model on 0.29.0 with `NODELIST=htc-g060` (`tp_g060_test/`). vLLM 0.31.0 built beside the
   pinned stack at `$DATA/vllm-031` (job 9018491, torch 2.13.0+cu130) for a
   prefix-reuse test on the Nemotron-3-Super pair, not used for any score
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
