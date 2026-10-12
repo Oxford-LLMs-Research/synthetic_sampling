@@ -936,7 +936,7 @@ Rules that keep the entries fillable:
   `instances_r0-50.jsonl` (built @ 075006e) by
   `CODE/scripts/phase2/split_long_lists.py`
 - **Outputs:** `$DATA/outputs/phase2/results/grid_r0-50/<serving>/<serving>_shard{0,1}of2.jsonl`
-  on ARC (not backed up; pull to `WORK/outputs_recovered/` when landed)
+  on ARC; backed up 7 Oct to `WORK/outputs_recovered/phase2_grid_r0-50/`
 - **Verified by:** row counts by `wc -l` on ARC and the `done:` / `VERDICT`
   lines of `logs/p2-*-90046{63..84}.out`; number verification PENDING
 - **Roster:** `CODE/scripts/cluster/roster_phase2.tsv` wave 1: Qwen3-4B,
@@ -983,17 +983,21 @@ Rules that keep the entries fillable:
   at 12 h with 78,800 / 39,300 / 77,750 rows written (prefix cache hit
   rate 0.5 percent, KV cache 12.53 GiB against 25.74 GiB on the base
   runs that finished); resubmitted 8 Oct as 9017524-26 with `WORKERS=4`
-  (shards 0-2 in id order)
-- **Hardware:** ARC HTC `short`, 1x H100 and 2 CPUs per job; nodes NOT
-  RECORDED until the jobs start
+  (shards 0-2 in id order), all three COMPLETED. All ten servings at
+  307,427 rows on 12 Oct
+- **Hardware:** ARC HTC `short`, 1x H100 and 2 CPUs per job; nodes
+  htc-g053, g054, g055, g058, g059, g060 (from sacct)
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ NOT RECORDED (read from the
   RUNSTAMP `repo=` line)
 - **Inputs:** `CODE/outputs/phase2/inputs/instances_r0-50_short.jsonl`
   (307,427 instances, sha256 da1b93dc...6848), as PHASE2-GRID-W1
 - **Outputs:** `$DATA/outputs/phase2/results/grid_r0-50/<serving>/<serving>_shard{0,1,2}of3.jsonl`
-  on ARC (not backed up; pull to `WORK/outputs_recovered/` when landed)
-- **Verified by:** PENDING
+  on ARC; backed up 12 Oct to `WORK/outputs_recovered/phase2_grid_r0-50/`
+  (README, `SHA256SUMS.json`; Slurm logs of this wave still only on ARC)
+- **Verified by:** row counts by `wc -l` on ARC; all 30 score files match
+  the ARC checksums after the copy (`grid_r0-50_sha256.txt`); number
+  verification PENDING
 - **Constraint:** arms, replicate and worker settings as PHASE2-GRID-W1;
   three shards because a dense 32B shard of two ran 11 h 46 min of the
   12 h wall in wave 1; Nemotron serves with `--trust-remote-code
