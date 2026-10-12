@@ -1072,7 +1072,11 @@ Rules that keep the entries fillable:
   COMPLETED at 1.61 inst/s, so the version and not the node gives the
   speed. Predictions on the 300 instances: 0.29 against 0.31, both on
   htc-g060, 284 identical (mean absolute score difference 0.096); 0.29 on
-  htc-g060 against 0.29 on htc-g055, 285 identical (0.087). vLLM 0.31.0 built beside the
+  htc-g060 against 0.29 on htc-g055, 285 identical (0.087). On that
+  evidence the Nemotron-3-Super pair runs on vLLM 0.31.0 with
+  `--enable-mamba-shared-prefix-checkpoint` (user decision, 12 Oct), an
+  exception to the one-version rule: 9060258-61 Nemotron-3-Super FP8
+  shards 0-3 of 4, 9060262-65 Nemotron-3-Super Base shards 0-3 of 4. vLLM 0.31.0 built beside the
   pinned stack at `$DATA/vllm-031` (job 9018491, torch 2.13.0+cu130) for a
   prefix-reuse test on the Nemotron-3-Super pair, not used for any score
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
@@ -1088,7 +1092,9 @@ Rules that keep the entries fillable:
   with vLLM's default all-reduce and off htc-g059/g060, where that default
   fails at load, the Llama-3.1-70B pair with
   `VLLM_ALLREDUCE_USE_FLASHINFER=0` on any node; six shards per serving
-  from the test rates (2.62 and 3.06 inst/s).
+  from the test rates (2.62 and 3.06 inst/s). Qwen3-235B: five shards, 32
+  workers. Nemotron-3-Super pair: venv `$DATA/vllm-031` (vLLM 0.31.0), four
+  shards; every other serving in the grid is on 0.29.0.
 
 ## Not yet registered
 
