@@ -1081,7 +1081,12 @@ Rules that keep the entries fillable:
   evidence the Nemotron-3-Super pair runs on vLLM 0.31.0 with
   `--enable-mamba-shared-prefix-checkpoint` (user decision, 12 Oct), an
   exception to the one-version rule: 9060258-61 Nemotron-3-Super FP8
-  shards 0-3 of 4, 9060262-65 Nemotron-3-Super Base shards 0-3 of 4. vLLM 0.31.0 built beside the
+  shards 0-3 of 4, 9060262-65 Nemotron-3-Super Base shards 0-3 of 4.
+  13 Oct: the 0.31 source describes that flag as taking effect only with
+  EAGLE, which is not used here, so the speed-up is attributed to the
+  version, not the flag. 9066321: Nemotron-3-Super FP8, 300 instances on
+  0.31 with `--prefix-match-unit 32` and without the checkpoint flag
+  (`v031_pmu_test/`), to test whether prefix reuse works inside a block. vLLM 0.31.0 built beside the
   pinned stack at `$DATA/vllm-031` (job 9018491, torch 2.13.0+cu130) for a
   prefix-reuse test on the Nemotron-3-Super pair, not used for any score
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
