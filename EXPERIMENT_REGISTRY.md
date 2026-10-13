@@ -1059,7 +1059,12 @@ Rules that keep the entries fillable:
   9018549-54 Llama-3.1-70B shards 0-5 of 6. On 12 Oct Qwen3.5-122B and
   Llama-3.1-70B are at 307,427 rows; Llama-3.1-70B-Instruct at 256,398,
   missing shard 2 (9018545 FAILED at 33 min on htc-g054, `EngineDeadError`,
-  root cause not yet read), resubmitted as 9059411. Test 9018460
+  root cause not yet read), resubmitted as 9059411, COMPLETED on htc-g058
+  (5 h 15 min). Found 13 Oct: shard 4 (9018547, htc-g054, COMPLETED) holds
+  3,848 error rows (`ConnectionError`, connection refused) between file
+  lines 47,552 and 51,404; the server died and the scorer exited 0. No other
+  score file on ARC has an error row. The serving is NOT complete until
+  those rows are rescored. Test 9018460
   (Qwen3-235B, TP 4) COMPLETED on htc-g053: 2.83 inst/s at 16 workers, KV
   cache 321,600 tokens, prefix cache hit rate 78.1 percent. Submitted
   12 Oct: 9059675-79 Qwen3-235B shards 0-4 of 5 with `WORKERS=32`.

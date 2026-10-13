@@ -14,6 +14,9 @@ from .arms import DEFAULT_ARMS, REPLICATE, score_arm
 from .client import make_session
 
 
+MAX_ERROR_RUN = 100
+
+
 def _load_done(out_path: Path) -> set[str]:
     done: set[str] = set()
     if not out_path.exists():
@@ -128,13 +131,27 @@ def run_scoring(
                 out["results"][f"{set_name}|{arm}"] = rec
         return out
 
-    t0, n = time.time(), 0
+    # Job 9018547 lost its server at row 47,552 and wrote 3,848 error rows
+    # before exiting 0. A run of errors this long means the server is gone.
+    t0, n, n_err, err_run = time.time(), 0, 0, 0
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "a", encoding="utf-8") as fh, \
             ThreadPoolExecutor(max_workers=workers) as pool:
         for rec in pool.map(work, insts):
             fh.write(json.dumps(rec, ensure_ascii=False) + "\n")
             n += 1
+            if any("error" in r for r in rec["results"].values()):
+                n_err += 1
+                err_run += 1
+            else:
+                err_run = 0
+            if err_run >= MAX_ERROR_RUN:
+                fh.flush()
+                pool.shutdown(wait=False, cancel_futures=True)
+                raise RuntimeError(
+                    f"{err_run} consecutive instances errored after {n} "
+                    f"written; server presumed dead. Error rows count as "
+                    f"scored on resume: strip them from {out_path} first.")
             if n % 50 == 0:
                 fh.flush()
                 rate = n / max(time.time() - t0, 1e-9)
@@ -142,6 +159,10 @@ def run_scoring(
                       f"eta {(len(insts) - n) / max(rate, 1e-9) / 60:.0f} min",
                       flush=True)
     print(f"done: {n} instances in {(time.time() - t0) / 60:.1f} min")
+    if n_err:
+        raise RuntimeError(
+            f"{n_err} of {n} instances have an error row in {out_path}; "
+            f"strip them before resuming.")
     return n
 
 
