@@ -1067,7 +1067,11 @@ Rules that keep the entries fillable:
   those rows are rescored. 14 Oct: the 3,848 rows moved to
   `..._shard4of6.jsonl.error_rows` by `strip_error_rows.py` (47,556 kept);
   shard 4 resubmitted as 9084318 at a9157dd, `EXCLUDE=htc-g054`, 2 h
-  limit, resuming. Test 9018460
+  limit, resuming; COMPLETED on htc-g059 in 33 min (3,848 instances in
+  11.9 min). Llama-3.1-70B-Instruct now 307,427 rows, no error rows.
+  Nemotron-3-Super FP8 shard 1 (9060259) TIMEOUT at 12 h on htc-g054,
+  76,800 of 76,932 rows (1.86 inst/s); resumed as 9088300 (same venv and
+  flag, 2 h limit). Test 9018460
   (Qwen3-235B, TP 4) COMPLETED on htc-g053: 2.83 inst/s at 16 workers, KV
   cache 321,600 tokens, prefix cache hit rate 78.1 percent. Submitted
   12 Oct: 9059675-79 Qwen3-235B shards 0-4 of 5 with `WORKERS=32`.
