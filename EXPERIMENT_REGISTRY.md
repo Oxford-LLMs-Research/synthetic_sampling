@@ -1064,7 +1064,10 @@ Rules that keep the entries fillable:
   3,848 error rows (`ConnectionError`, connection refused) between file
   lines 47,552 and 51,404; the server died and the scorer exited 0. No other
   score file on ARC has an error row. The serving is NOT complete until
-  those rows are rescored. Test 9018460
+  those rows are rescored. 14 Oct: the 3,848 rows moved to
+  `..._shard4of6.jsonl.error_rows` by `strip_error_rows.py` (47,556 kept);
+  shard 4 resubmitted as 9084318 at a9157dd, `EXCLUDE=htc-g054`, 2 h
+  limit, resuming. Test 9018460
   (Qwen3-235B, TP 4) COMPLETED on htc-g053: 2.83 inst/s at 16 workers, KV
   cache 321,600 tokens, prefix cache hit rate 78.1 percent. Submitted
   12 Oct: 9059675-79 Qwen3-235B shards 0-4 of 5 with `WORKERS=32`.
