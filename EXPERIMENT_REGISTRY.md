@@ -1115,6 +1115,36 @@ Rules that keep the entries fillable:
   workers. Nemotron-3-Super pair: venv `$DATA/vllm-031` (vLLM 0.31.0), four
   shards; every other serving in the grid is on 0.29.0.
 
+### PHASE2-GRID-W4 — Phase 2 main grid, wave 4
+
+- **Status:** RUNNING
+- **Rationale:** Extend the grid to the four servings that need a whole
+  8-GPU node (htc-g059/g060 only). A first slice per serving gives a rate
+  and usable scores before more node-hours are committed.
+- **Result:** PENDING
+- **Ran:** submitted 14 Oct 2026, one job per serving, shard 0 of 8 (about
+  38,400 instances): 9084360 DeepSeek-V4-Flash-FP8 (`sgl-project`),
+  9084361 DeepSeek-V4-Flash-Base, 9084362 Qwen3.5-397B-A17B-FP8 with
+  `--enable-mamba-shared-prefix-checkpoint`, 9084363
+  Nemotron-3-Ultra-550B-A55B-NVFP4 with the same flag. All on vLLM 0.31.0
+  without a 0.29 comparison (user decision, 14 Oct). Shards 1-7 not
+  submitted; whether to run them is decided on the shard-0 rates.
+- **Hardware:** ARC HTC `short`, 8x H100, 16 CPUs, 400G, 12 h limit
+- **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
+  `CODE/scripts/cluster/run_score.sbatch` @ NOT RECORDED (read from
+  RUNSTAMP when the jobs start)
+- **Inputs:** `CODE/outputs/phase2/inputs/instances_r0-50_short.jsonl`, as
+  PHASE2-GRID-W1
+- **Outputs:** `$DATA/outputs/phase2/results/grid_r0-50/<serving>/<serving>_shard0of8.jsonl`
+  on ARC
+- **Verified by:** PENDING
+- **Constraint:** arms and replicate as PHASE2-GRID-W1; venv
+  `$DATA/vllm-031`, `VLLM_ALLREDUCE_USE_FLASHINFER=0`. Login-node checks
+  14 Oct: all four fully downloaded (380, 275, 276, 330 GB); all three
+  architectures in the 0.31 registry; DeepSeek-V4-Flash-Base config is
+  fp8 (e4m3), not the FP4 the roster note expected; Nemotron Ultra is
+  mixed FP8/NVFP4 with an FP8 cache, and NVFP4 on H100 is untested.
+
 ## Not yet registered
 
 Catalogue entries A5, B1, B2 and T0.2–T0.5 are decided but unrun; they
