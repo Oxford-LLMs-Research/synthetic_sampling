@@ -1083,10 +1083,16 @@ Rules that keep the entries fillable:
   exception to the one-version rule: 9060258-61 Nemotron-3-Super FP8
   shards 0-3 of 4, 9060262-65 Nemotron-3-Super Base shards 0-3 of 4.
   13 Oct: the 0.31 source describes that flag as taking effect only with
-  EAGLE, which is not used here, so the speed-up is attributed to the
-  version, not the flag. 9066321: Nemotron-3-Super FP8, 300 instances on
-  0.31 with `--prefix-match-unit 32` and without the checkpoint flag
-  (`v031_pmu_test/`), to test whether prefix reuse works inside a block. vLLM 0.31.0 built beside the
+  EAGLE, which is not used here. 9066321: Nemotron-3-Super FP8, 300
+  instances on 0.31 with `--prefix-match-unit 32` and without the
+  checkpoint flag (`v031_pmu_test/`), COMPLETED on htc-g060 in 22 min:
+  1.69 inst/s against 5.12 for 9059781 on the same node, prefix cache hit
+  rate about 7 percent (0.0 before), 291 of 300 predictions equal to
+  9059781 (mean absolute score difference 0.042). Two settings changed at
+  once, so what made 9059781 fast (the checkpoint flag despite its
+  description, or something else) is unresolved; the version alone is not
+  shown to be the cause. FP8 shard 1 (9060259, with the flag) runs at
+  1.96 inst/s on htc-g054, close to 0.29's 1.78 on htc-g055. vLLM 0.31.0 built beside the
   pinned stack at `$DATA/vllm-031` (job 9018491, torch 2.13.0+cu130) for a
   prefix-reuse test on the Nemotron-3-Super pair, not used for any score
 - **Hardware:** ARC HTC `short`, 2x H100 and 4 CPUs for the test, htc-g058
