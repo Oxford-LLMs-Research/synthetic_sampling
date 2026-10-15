@@ -1078,7 +1078,8 @@ Rules that keep the entries fillable:
   htc-g053, 9060259+9088300), backed up and verified against ARC checksums
   (`nemotron_super_fp8_sha256.txt`). Base: shard 0 (9060262) COMPLETED on
   htc-g058; shard 1 (9060263) FAILED at load on htc-g053 at 9a1c665 (CUDA
-  illegal memory access, caught by the startup guard at 49 min); shard 2
+  illegal memory access, caught by the startup guard at 49 min),
+  resubmitted unchanged as 9115444; shard 2
   (9060264, htc-g053) at 1.77 inst/s will time out; shard 3 pending.
   Test 9018460
   (Qwen3-235B, TP 4) COMPLETED on htc-g053: 2.83 inst/s at 16 workers, KV
