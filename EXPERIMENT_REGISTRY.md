@@ -1080,7 +1080,10 @@ Rules that keep the entries fillable:
   htc-g058; shard 1 (9060263) FAILED at load on htc-g053 at 9a1c665 (CUDA
   illegal memory access, caught by the startup guard at 49 min),
   resubmitted unchanged as 9115444; shard 2
-  (9060264, htc-g053) at 1.77 inst/s will time out; shard 3 pending.
+  (9060264, htc-g053) FAILED at 11 h 35 min, `EngineDeadError` (root
+  cause not read); the scorer aborted after 108 error rows, which were
+  moved to `..._shard2of4.jsonl.error_rows` (65,839 kept); resumed as
+  9116860 (4 h limit). Shard 3 pending.
   Test 9018460
   (Qwen3-235B, TP 4) COMPLETED on htc-g053: 2.83 inst/s at 16 workers, KV
   cache 321,600 tokens, prefix cache hit rate 78.1 percent. Submitted
