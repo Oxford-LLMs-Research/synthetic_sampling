@@ -1073,7 +1073,14 @@ Rules that keep the entries fillable:
   files verified against ARC checksums (`llama70b_instruct_sha256.txt`).
   Nemotron-3-Super FP8 shard 1 (9060259) TIMEOUT at 12 h on htc-g054,
   76,800 of 76,932 rows (1.86 inst/s); resumed as 9088300 (same venv and
-  flag, 2 h limit). Test 9018460
+  flag, 2 h limit), COMPLETED. 15 Oct: Nemotron-3-Super FP8 complete at
+  307,427 rows, no error rows (9060258 htc-g053, 9060260 htc-g058, 9060261
+  htc-g053, 9060259+9088300), backed up and verified against ARC checksums
+  (`nemotron_super_fp8_sha256.txt`). Base: shard 0 (9060262) COMPLETED on
+  htc-g058; shard 1 (9060263) FAILED at load on htc-g053 at 9a1c665 (CUDA
+  illegal memory access, caught by the startup guard at 49 min); shard 2
+  (9060264, htc-g053) at 1.77 inst/s will time out; shard 3 pending.
+  Test 9018460
   (Qwen3-235B, TP 4) COMPLETED on htc-g053: 2.83 inst/s at 16 workers, KV
   cache 321,600 tokens, prefix cache hit rate 78.1 percent. Submitted
   12 Oct: 9059675-79 Qwen3-235B shards 0-4 of 5 with `WORKERS=32`.
