@@ -1086,7 +1086,9 @@ Rules that keep the entries fillable:
   moved to `..._shard2of4.jsonl.error_rows` (65,839 kept); resumed as
   9116860 (4 h limit), COMPLETED on htc-g053, shard 2 at 76,961. 16 Oct:
   shard 3 (9060265) TIMEOUT on htc-g055 at 65,800 rows, no error rows,
-  resumed as 9119599 (4 h limit); shard 1 (9115444) running on htc-g054.
+  resumed as 9119599 (4 h limit); shard 1 (9115444, htc-g054) ended at
+  the 12 h limit at 68,700 rows, no error rows, resumed as 9120887 (4 h
+  limit).
   Qwen3-235B shards 0-2 (9059675-77) COMPLETED on htc-g058 in about
   3 h 50 min each, no error rows; shard 3 (9059678) running, shard 4
   pending.
