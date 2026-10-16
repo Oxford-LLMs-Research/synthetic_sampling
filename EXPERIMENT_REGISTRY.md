@@ -1089,7 +1089,8 @@ Rules that keep the entries fillable:
   resumed as 9119599 (4 h limit); shard 1 (9115444, htc-g054) ended at
   the 12 h limit at 68,700 rows, no error rows, resumed as 9120887 (4 h
   limit). 9119599 (htc-g055) and 9120887 (htc-g058) COMPLETED:
-  Nemotron-3-Super base complete at 307,427 rows, no error rows.
+  Nemotron-3-Super base complete at 307,427 rows, no error rows; backed
+  up 16 Oct, verified against `nemotron_super_base_sha256.txt`.
   Qwen3-235B shard 3 (9059678) COMPLETED on htc-g058; 246,274 rows in
   shards 0-3, shard 4 (9059679) pending.
   Qwen3-235B shards 0-2 (9059675-77) COMPLETED on htc-g058 in about
