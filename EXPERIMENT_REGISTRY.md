@@ -1167,7 +1167,8 @@ Rules that keep the entries fillable:
   whose config declares `"expert_dtype": "fp8"`. 9084361 cancelled
   19 Oct on a wrong reading that the base would fail the same way.
   Resubmitted 19 Oct: 9137027 DeepSeek-V4-Flash-FP8 with
-  `--hf-overrides {"expert_dtype":"fp8"}`. Caveat: the instruct side of
+  `--hf-overrides {"expert_dtype":"fp8"}`; 9137030
+  DeepSeek-V4-Flash-Base unchanged. Caveat: the instruct side of
   this pair is a third-party FP8 conversion served with a config
   override; the base is DeepSeek's own FP8 release.
 - **Hardware:** ARC HTC `short`, 8x H100, 16 CPUs, 400G, 12 h limit
