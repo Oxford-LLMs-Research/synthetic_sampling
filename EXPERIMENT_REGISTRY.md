@@ -1092,7 +1092,9 @@ Rules that keep the entries fillable:
   Nemotron-3-Super base complete at 307,427 rows, no error rows; backed
   up 16 Oct, verified against `nemotron_super_base_sha256.txt`.
   Qwen3-235B shard 3 (9059678) COMPLETED on htc-g058; 246,274 rows in
-  shards 0-3, shard 4 (9059679) pending.
+  shards 0-3, shard 4 (9059679) pending. 19 Oct: 9059679 COMPLETED on
+  htc-g058; Qwen3-235B complete at 307,427 rows, no error rows. All six
+  wave-3 servings complete.
   Qwen3-235B shards 0-2 (9059675-77) COMPLETED on htc-g058 in about
   3 h 50 min each, no error rows; shard 3 (9059678) running, shard 4
   pending.
@@ -1158,6 +1160,16 @@ Rules that keep the entries fillable:
   Nemotron-3-Ultra-550B-A55B-NVFP4 with the same flag. All on vLLM 0.31.0
   without a 0.29 comparison (user decision, 14 Oct). Shards 1-7 not
   submitted; whether to run them is decided on the shard-0 rates.
+  18 Oct: 9084360 FAILED at load on htc-g059 after 10 min (expert weight
+  shape 4096 against 2048 expected): the sgl-project config has no
+  `expert_dtype`, which vLLM 0.31 defaults to "fp4", while its experts
+  are FP8 `[2048, 4096]`, the same layout as DeepSeek-V4-Flash-Base,
+  whose config declares `"expert_dtype": "fp8"`. 9084361 cancelled
+  19 Oct on a wrong reading that the base would fail the same way.
+  Resubmitted 19 Oct: 9137027 DeepSeek-V4-Flash-FP8 with
+  `--hf-overrides {"expert_dtype":"fp8"}`. Caveat: the instruct side of
+  this pair is a third-party FP8 conversion served with a config
+  override; the base is DeepSeek's own FP8 release.
 - **Hardware:** ARC HTC `short`, 8x H100, 16 CPUs, 400G, 12 h limit
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ NOT RECORDED (read from
