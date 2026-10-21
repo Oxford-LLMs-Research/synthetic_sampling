@@ -1168,7 +1168,11 @@ Rules that keep the entries fillable:
   19 Oct on a wrong reading that the base would fail the same way.
   Resubmitted 19 Oct: 9137027 DeepSeek-V4-Flash-FP8 with
   `--hf-overrides {"expert_dtype":"fp8"}`; 9137030
-  DeepSeek-V4-Flash-Base unchanged. Caveat: the instruct side of
+  DeepSeek-V4-Flash-Base unchanged. 21 Oct, user decision: the 8-GPU
+  nodes stay part-occupied, so 9137027 was cancelled and the instruct
+  serving resubmitted as 9141639 at TP 4 on htc-g058 (4x96 GB,
+  `TP_OVERRIDE=4 NODELIST=htc-g058`, 2a1314f), same override; the base
+  stays at TP 8. Caveat: the instruct side of
   this pair is a third-party FP8 conversion served with a config
   override; the base is DeepSeek's own FP8 release.
 - **Hardware:** ARC HTC `short`, 8x H100, 16 CPUs, 400G, 12 h limit
