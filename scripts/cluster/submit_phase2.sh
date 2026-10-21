@@ -11,7 +11,7 @@
 # EXTRA_APPEND (serve flags added after the per-model ones, for tests),
 # NODELIST (pin the job to a node, e.g. htc-g058 for a model that only fits
 # its 96 GB cards, or a named node for a test),
-# EXCLUDE (comma-separated nodes the job must not use),
+# EXCLUDE (comma-separated nodes the job must not use), TP_OVERRIDE,
 # ONLY_SHARD (resubmit a single shard index; never resubmit a shard whose
 # job is still running, two jobs would append to one output file),
 # ARMS, REPLICATE_FRAC, TAG (results subfolder, default grid_r0-50),
@@ -81,6 +81,9 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
   [ -z "${hf_id:-}" ] && continue
   [ -n "$WAVE" ] && [ "$wave" != "$WAVE" ] && continue
   [ -n "$ONLY" ] && [ "$hf_id" != "$ONLY" ] && continue
+  # TP_OVERRIDE: serve on fewer GPUs than the roster says, e.g. TP4 on
+  # htc-g058's 96 GB cards while the 8-GPU nodes are full (with NODELIST).
+  tp="${TP_OVERRIDE:-$tp}"
 
   # --dtype only for bf16 checkpoints; quantized ones carry their own.
   dtype=none
