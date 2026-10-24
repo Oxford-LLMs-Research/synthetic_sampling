@@ -1175,6 +1175,19 @@ Rules that keep the entries fillable:
   stays at TP 8. Caveat: the instruct side of
   this pair is a third-party FP8 conversion served with a config
   override; the base is DeepSeek's own FP8 release.
+  24 Oct outcomes: 9084363 Nemotron-3-Ultra-550B-A55B-NVFP4 shard 0
+  COMPLETED in 11:24:06 (all arms 100% usable, 42,054 rows per arm), so
+  NVFP4 serves on H100 under vLLM 0.31; at 1/8 of the input per shard the
+  remaining shards sit just under the 12 h wall. Three FAILED at startup
+  with one signature, an abort inside DeepGEMM's JIT runtime
+  (`deep_jit::LazyInit<Runtime<CUDA>>` via
+  `deep_gemm::layout::transform_sf_into_required_layout`): 9084362
+  Qwen3.5-397B-A17B-FP8 after 31 min, 9137030 DeepSeek-V4-Flash-Base after
+  34 min, 9141639 DeepSeek-V4-Flash-FP8 (TP 4) after 1:10. 9141639 got
+  past the 18 Oct shape error, so the `expert_dtype` override fixed the
+  load. Root cause PENDING the head of each `vllm_serve_<job>.log`; the
+  prior is the FlashInfer case above (a JIT that needs nvcc, absent on
+  the nodes).
 - **Hardware:** ARC HTC `short`, 8x H100, 16 CPUs, 400G, 12 h limit
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ NOT RECORDED (read from
