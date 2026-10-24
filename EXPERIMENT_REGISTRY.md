@@ -1191,7 +1191,8 @@ Rules that keep the entries fillable:
   CUDA_HOME on the nodes; the FlashInfer/nvcc case of wave 1 in another
   library. Fix: per-serving `CUDA_MODULE` in `run_score.sbatch` /
   `submit_phase2.sh` sets CUDA_HOME (and nvcc on PATH) from an ARC CUDA
-  module for these three servings only, stamped in RUNSTAMP; Nemotron
+  module (`CUDA/13.0.2`, matching torch 2.13.0+cu130) for these three
+  servings only, stamped in RUNSTAMP; Nemotron
   Ultra keeps its shard-0 stack.
 - **Hardware:** ARC HTC `short`, 8x H100, 16 CPUs, 400G, 12 h limit
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,

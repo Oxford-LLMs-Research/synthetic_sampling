@@ -117,7 +117,7 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
   cuda_module=""
   case "$hf_id" in
     Qwen/Qwen3.5-397B-A17B-FP8|deepseek-ai/DeepSeek-V4-Flash-Base|sgl-project/DeepSeek-V4-Flash-FP8)
-      cuda_module="${CUDA_MODULE:-CUDA/12.8.0}" ;;
+      cuda_module="${CUDA_MODULE:-CUDA/13.0.2}" ;;  # matches torch 2.13.0+cu130 in vllm-031
   esac
   extra="$extra ${EXTRA_APPEND:-}"
   extra="${extra# }"; extra="${extra% }"
