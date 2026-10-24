@@ -14,7 +14,7 @@
 # Keep this file LF-only (never Path.write_text on Windows).
 # Required env: MODEL, INPUT, OUT. Optional: ARMS, REPLICATE_FRAC, DTYPE,
 # MAX_MODEL_LEN, LIMIT, SHARD_INDEX, SHARD_COUNT, PORT, VLLM_READY_TIMEOUT_SEC,
-# VENV, TP, EXTRA_VLLM_ARGS, GPU_MEM_UTIL, WORKERS.
+# VENV, TP, EXTRA_VLLM_ARGS, GPU_MEM_UTIL, WORKERS, CUDA_MODULE.
 #
 # Resources are set at submit time, not here: the header is the single-GPU
 # default (2 CPUs per GPU; the 30 Sep CPU test found throughput does not
@@ -76,6 +76,24 @@ export HF_HUB_DISABLE_XET=1
 export HF_HUB_OFFLINE=1
 export VLLM_USE_FLASHINFER_SAMPLER=0
 
+# CUDA toolkit for kernels that compile at startup. DeepGEMM, vLLM's FP8
+# block-scaled GEMM on H100, asserts that CUDA_HOME exists, and the GPU nodes
+# set none (24 Oct 2026, jobs 9084362, 9137030, 9141639: "not
+# home_path.empty() and std::filesystem::exists(home_path)"). Opt-in per
+# serving through CUDA_MODULE, so servings already scored keep their stack.
+# Only CUDA_HOME and the compiler's bin/ are taken from the module: loading it
+# would put its libraries on LD_LIBRARY_PATH ahead of the ones torch ships.
+CUDA_MODULE="${CUDA_MODULE:-}"
+if [ -n "$CUDA_MODULE" ]; then
+  CUDA_HOME="$(module load "$CUDA_MODULE" >/dev/null 2>&1 && echo "${EBROOTCUDA:-}")" || true
+  if [ -z "$CUDA_HOME" ] || [ ! -x "$CUDA_HOME/bin/nvcc" ]; then
+    echo "FATAL CUDA_MODULE=$CUDA_MODULE gave no usable CUDA_HOME (got '${CUDA_HOME}')"
+    exit 1
+  fi
+  export CUDA_HOME
+  export PATH="$CUDA_HOME/bin:$PATH"
+fi
+
 mkdir -p "$(dirname "$OUT")" logs
 
 # Stamp the run into the job log. EXPERIMENT_REGISTRY.md needs the commit, the
@@ -92,6 +110,7 @@ echo "RUNSTAMP tp=$TP dtype=$DTYPE max_model_len=$MAX_MODEL_LEN extra_vllm_args=
 N_GPUS="${SLURM_GPUS_ON_NODE:-$(nvidia-smi -L 2>/dev/null | grep -c '^GPU ' || true)}"
 echo "RUNSTAMP workers=$WORKERS gpu_mem_util=$GPU_MEM_UTIL"
 echo "RUNSTAMP allreduce_flashinfer=${VLLM_ALLREDUCE_USE_FLASHINFER:-default}"
+echo "RUNSTAMP cuda_module=${CUDA_MODULE:-none} cuda_home=${CUDA_HOME:-unset}"
 echo "RUNSTAMP cpus=${SLURM_CPUS_PER_TASK:-NOT_RECORDED} gpus=${N_GPUS:-NOT_RECORDED}"
 
 # The allocation must hold the GPUs the serving will ask for: vLLM with a

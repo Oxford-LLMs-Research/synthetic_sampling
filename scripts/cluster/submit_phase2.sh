@@ -110,6 +110,15 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
   case "$hf_id" in
     Qwen/Qwen3.5-*) extra="$extra --attention-config.flash_attn_version=4" ;;
   esac
+  # Block-scaled FP8 servings run DeepGEMM, which needs a CUDA toolkit at
+  # startup (run_score.sbatch, CUDA_MODULE). Per serving, never global, so
+  # every shard of a serving shares one stack and shards already scored
+  # (Nemotron Ultra shard 0, 9084363) are not joined by differently built ones.
+  cuda_module=""
+  case "$hf_id" in
+    Qwen/Qwen3.5-397B-A17B-FP8|deepseek-ai/DeepSeek-V4-Flash-Base|sgl-project/DeepSeek-V4-Flash-FP8)
+      cuda_module="${CUDA_MODULE:-CUDA/12.8.0}" ;;
+  esac
   extra="$extra ${EXTRA_APPEND:-}"
   extra="${extra# }"; extra="${extra% }"
 
@@ -138,6 +147,7 @@ while IFS=$'\t' read -r wave hf_id role precision tp est_gb notes; do
          "EXTRA_VLLM_ARGS=${extra}" "WORKERS=${workers}"
          "GPU_MEM_UTIL=${mem_util}" "MAX_MODEL_LEN=${MAX_MODEL_LEN}" "SHARD_INDEX=${i}" "SHARD_COUNT=${SHARDS}"
          "VLLM_ALLREDUCE_USE_FLASHINFER=${ALLREDUCE_FLASHINFER}"
+         "CUDA_MODULE=${cuda_module}"
          sbatch --job-name="p2-${slug:0:24}"
          --gres="gpu:h100:${tp}" --cpus-per-task="$(( 2 * tp ))"
          --mem="$(mem_for_tp "$tp")" --time="$TIME" --export=ALL)

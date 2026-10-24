@@ -1185,9 +1185,14 @@ Rules that keep the entries fillable:
   Qwen3.5-397B-A17B-FP8 after 31 min, 9137030 DeepSeek-V4-Flash-Base after
   34 min, 9141639 DeepSeek-V4-Flash-FP8 (TP 4) after 1:10. 9141639 got
   past the 18 Oct shape error, so the `expert_dtype` override fixed the
-  load. Root cause PENDING the head of each `vllm_serve_<job>.log`; the
-  prior is the FlashInfer case above (a JIT that needs nvcc, absent on
-  the nodes).
+  load. Root cause (serve logs, same line in all three): DeepGEMM was
+  selected for the FP8 block-scaled linears and its JIT runtime asserts
+  `not home_path.empty() and std::filesystem::exists(home_path)`, i.e. no
+  CUDA_HOME on the nodes; the FlashInfer/nvcc case of wave 1 in another
+  library. Fix: per-serving `CUDA_MODULE` in `run_score.sbatch` /
+  `submit_phase2.sh` sets CUDA_HOME (and nvcc on PATH) from an ARC CUDA
+  module for these three servings only, stamped in RUNSTAMP; Nemotron
+  Ultra keeps its shard-0 stack.
 - **Hardware:** ARC HTC `short`, 8x H100, 16 CPUs, 400G, 12 h limit
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ NOT RECORDED (read from
