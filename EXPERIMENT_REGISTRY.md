@@ -1213,8 +1213,7 @@ Rules that keep the entries fillable:
 
 ### PHASE2-GRID-CLAIMS — review-driven claim checks on the grid
 
-- **Status:** LANDED (the stratified XGBoost regime is still running and
-  enters this entry when it lands)
+- **Status:** LANDED
 - **Rationale:** The AAAI-27 reviews of 24 Oct 2026 attack four things: the
   dissenter penalty as a mechanism, the readout-dependence of the entropy
   result, the pooled margin's use of the target cell, and the XGBoost
@@ -1232,10 +1231,11 @@ Rules that keep the entries fillable:
   tallies are under-dispersed on 26 of 27 servings while tempered
   distributions are over-dispersed on all, and synthetic cell shares stay 1.4
   to 2.4 times farther from the truth than the leave-one-country-out margin
-  under every reading. Same-sample XGBoost (GroupKFold on country) sits at the
-  modal baseline (0.347); the LLMs trail it only on modal respondents and beat
-  it on dissenters, and only XGBoost's averaged predictions beat the margin
-  (narrative: `PAPER/docs/PAPER_STATE.md`, 25 Oct 2026).
+  under every reading. Same-sample XGBoost sits at the modal baseline (0.347
+  with GroupKFold on country, 0.363 with run 1's within-country folds); the
+  LLMs trail it only on modal respondents and beat it on dissenters in both
+  regimes, and only XGBoost's averaged predictions beat the margin (narrative:
+  `PAPER/docs/PAPER_STATE.md`, 25 Oct 2026).
 - **Ran:** 25 Oct 2026 (no GPU)
 - **Hardware:** local CPU (i9-10900K, 20 threads)
 - **Code:** `CODE/scripts/phase2/{grid_claims,xgb_grid_baseline,
@@ -1249,13 +1249,14 @@ Rules that keep the entries fillable:
 - **Outputs:** `WORK/analysis/phase2/grid_claims/{by_serving,by_group,
   by_cell,consensus_bins,xgb_gap,cells}.csv`, `stats/<serving>.npz` (per-cell
   sufficient statistics), `gates.txt`; XGBoost out-of-fold dumps
-  `CODE/outputs/phase2/results/xgb_grid_r0-50/xgb_groupkfold/` (regenerable:
-  seed 42, run 1's fixed hyperparameters; 251 of 263 groups, the 12
-  single-country groups skipped)
+  `CODE/outputs/phase2/results/xgb_grid_r0-50/xgb_{groupkfold,stratified}/`
+  (regenerable: seed 42, run 1's fixed hyperparameters; GroupKFold fits 251 of
+  263 groups, skipping the 12 single-country groups; stratified fits 262,
+  skipping one under run 1's 20-row rule)
 - **Verified by:** the gates in `grid_claims.py` (accuracy reproduces the first
   look; every instance scored once; every prediction is its argmax; all
   passed); `verify_grid_claims.py` (fresh code, seven headline values on
-  Qwen3-32B, gpt-oss-120b and xgb_groupkfold, tolerance 1e-9, exit 0);
+  Qwen3-32B, gpt-oss-120b and both XGBoost regimes, tolerance 1e-9, exit 0);
   `tests/test_grid_claims.py` (N1 exact on its own family, N0 against a
   brute-force permutation, leave-one-out mode, the margin identity, the
   marginal sampler)
