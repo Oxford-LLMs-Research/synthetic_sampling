@@ -1199,8 +1199,9 @@ Rules that keep the entries fillable:
   9177416 DeepSeek-V4-Flash-Base, 9177417 DeepSeek-V4-Flash-FP8 (pending
   on Priority, not on the 8-GPU nodes, so presumably the TP 4 htc-g058
   setup). 25 Oct, user decision: Nemotron Ultra is to be completed, not
-  kept as a 1/8 subsample (shard 0 holds 38,203 rows); shards 1-7 to be
-  submitted with shard 0's settings.
+  kept as a 1/8 subsample (shard 0 holds 38,203 rows). Shards 1-7
+  submitted 25 Oct at 51d8e26 with shard 0's settings (scoring code
+  unchanged since 2a1314f; no CUDA module for this serving): 9186050-56.
 - **Hardware:** ARC HTC `short`, 8x H100, 16 CPUs, 400G, 12 h limit
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ NOT RECORDED (read from
