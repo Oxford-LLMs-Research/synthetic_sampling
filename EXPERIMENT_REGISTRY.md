@@ -1194,7 +1194,13 @@ Rules that keep the entries fillable:
   `submit_phase2.sh` sets CUDA_HOME (and nvcc on PATH) from an ARC CUDA
   module (`CUDA/13.0.2`, matching torch 2.13.0+cu130) for these three
   servings only, stamped in RUNSTAMP; Nemotron
-  Ultra keeps its shard-0 stack.
+  Ultra keeps its shard-0 stack. Resubmitted by 25 Oct (submit commands
+  NOT RECORDED; read settings from RUNSTAMP): 9177415 Qwen3.5-397B-A17B-FP8,
+  9177416 DeepSeek-V4-Flash-Base, 9177417 DeepSeek-V4-Flash-FP8 (pending
+  on Priority, not on the 8-GPU nodes, so presumably the TP 4 htc-g058
+  setup). 25 Oct, user decision: Nemotron Ultra is to be completed, not
+  kept as a 1/8 subsample (shard 0 holds 38,203 rows); shards 1-7 to be
+  submitted with shard 0's settings.
 - **Hardware:** ARC HTC `short`, 8x H100, 16 CPUs, 400G, 12 h limit
 - **Code:** `CODE/scripts/cluster/submit_phase2.sh`,
   `CODE/scripts/cluster/run_score.sbatch` @ NOT RECORDED (read from
