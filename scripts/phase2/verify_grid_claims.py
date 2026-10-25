@@ -110,13 +110,14 @@ def main() -> None:
                 continue
             tvs.append(0.5 * (y - q).abs().sum())
             loos.append(0.5 * (rest / rest.sum() - q).abs().sum())
-    got["tv_tally_mean"] = float(np.mean(tvs))
-    got["tv_loo_mean"] = float(np.mean(loos))
+    got["tv_tally_mean"] = float(np.mean(tvs)) if tvs else float("nan")
+    got["tv_loo_mean"] = float(np.mean(loos)) if loos else float("nan")
 
     bad = 0
     for k, v in got.items():
         r = float(ref[k])
-        ok = abs(v - r) <= TOL
+        # a single shard has no cell with n >= 30, so both sides are NaN there
+        ok = (np.isnan(v) and np.isnan(r)) or abs(v - r) <= TOL
         bad += not ok
         print(f"{'ok ' if ok else 'BAD'} {k:16s} independent {v:.9f}  grid_claims {r:.9f}")
     print(f"{name}: {len(got) - bad}/{len(got)} match")

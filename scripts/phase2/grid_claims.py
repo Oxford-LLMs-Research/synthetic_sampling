@@ -11,6 +11,13 @@ the 1-3 model batteries (aaai_reviews/ASSESSMENT_2026-10-24.md). Each root holds
 serving folders of `*_shard*of*.jsonl`; XGBoost out-of-fold dumps from
 `xgb_grid_baseline.py` are read as servings.
 
+A partial serving (one shard of a wave-4 model) is analysed with `--restrict-to
+<serving>`. Every serving, XGBoost included, is then read on exactly the
+instances that serving scored. Shards are drawn by example_id hash, so a shard is
+a spread subset of every survey, question and country. The first-look gate is
+skipped in this mode. A single shard leaves about 6 respondents per country
+cell, so the margin and country-split analyses report NaN there.
+
 One streaming pass per serving builds per-cell sufficient statistics, a cell
 being survey x target x option set x country: confusion counts of truth against
 the argmax, and summed predicted distributions, raw (softmax of the stored
@@ -77,14 +84,20 @@ _CELL_GROUP: np.ndarray = np.zeros(0)
 # ---------------------------------------------------------------- instances
 
 
-def load_instances(path: str):
-    """Cells, groups and the example_id -> cell map, from the grid input."""
+def load_instances(path: str, keep: set | None = None):
+    """Cells, groups and the example_id -> cell map, from the grid input.
+
+    With `keep`, only those example_ids enter, so every serving read through
+    the map is restricted to the same instances.
+    """
     group_ix, cell_ix = {}, {}
     groups, cells, meta = [], [], {}
     truth = collections.Counter()
     with open(path, encoding="utf-8") as fh:
         for line in fh:
             d = json.loads(line)
+            if keep is not None and d["example_id"] not in keep:
+                continue
             gk = (d["survey"], d["target_code"], tuple(d["options"]))
             if gk not in group_ix:
                 group_ix[gk] = len(groups)
@@ -126,6 +139,19 @@ def _nll(log_t: float, s: np.ndarray, t: np.ndarray) -> float:
     lse = np.log(np.exp(z).sum(axis=1))
     lp = z[np.arange(len(t)), t] - lse
     return float(-np.maximum(lp, LOGP_FLOOR).mean())
+
+
+def serving_ids(folder: str) -> set:
+    """example_ids a serving scored without error, the --restrict-to set."""
+    ids = set()
+    for path in sorted(glob.glob(os.path.join(folder, "*_shard*of*.jsonl"))):
+        with open(path, "rb") as fh:
+            for line in fh:
+                r = json.loads(line)
+                rec = next((r["results"][a] for a in ARMS if a in r["results"]), None)
+                if rec is not None and "error" not in rec:
+                    ids.add(r["example_id"])
+    return ids
 
 
 def read_serving(folder: str) -> dict:
@@ -483,7 +509,10 @@ def summarise(res: dict, groups: list, cells: list, cell_truth: np.ndarray,
         tally = conf[c].sum(axis=0)[:M] / n_c
         mrows.append({**rec, "tv_tally": tv(tally, q), "tv_soft": tv(soft1[c, :M] / n_c, q),
                       "tv_softT": tv(softt[c, :M] / n_c, q)})
-    mdf = pd.DataFrame(mrows)
+    # named columns keep the summary well-defined (NaN) when no cell is large
+    # enough, as on a single shard
+    mdf = pd.DataFrame(mrows, columns=["cell", "group", "country", "n", "tv_pooled", "tv_loo",
+                                       "tv_loo_tally", "tv_tally", "tv_soft", "tv_softT"])
     loo = mdf["tv_loo"].notna()
     summary["margin_cells"] = len(mdf)
     summary["margin_cells_loo"] = int(loo.sum())
@@ -576,14 +605,10 @@ def main() -> None:
     ap.add_argument("--first-look", default="")
     ap.add_argument("--workers", type=int, default=6)
     ap.add_argument("--only", default="", help="comma-separated serving names (smoke)")
+    ap.add_argument("--restrict-to", default="",
+                    help="serving name: analyse every serving on the instances it scored "
+                         "(a partial serving, e.g. one shard of a wave-4 model)")
     args = ap.parse_args()
-
-    t0 = time.time()
-    groups, cells, meta, cell_truth = load_instances(args.instances)
-    group_options = [gk[2] for gk in groups]
-    cell_group = np.array([c[0] for c in cells])
-    print(f"{len(meta)} instances, {len(groups)} groups, {len(cells)} cells "
-          f"({time.time() - t0:.0f}s)", flush=True)
 
     folders = []
     for root in args.roots:
@@ -591,9 +616,23 @@ def main() -> None:
             if glob.glob(os.path.join(f, "*_shard*of*.jsonl")):
                 folders.append(f)
     if args.only:
-        keep = set(args.only.split(","))
-        folders = [f for f in folders if os.path.basename(f.rstrip("/\\")) in keep]
+        names = set(args.only.split(","))
+        folders = [f for f in folders if os.path.basename(f.rstrip("/\\")) in names]
     print(f"{len(folders)} servings", flush=True)
+
+    t0 = time.time()
+    keep = None
+    if args.restrict_to:
+        hit = [f for f in folders if os.path.basename(f.rstrip("/\\")) == args.restrict_to]
+        if len(hit) != 1:
+            raise SystemExit(f"--restrict-to {args.restrict_to}: {len(hit)} matching folders")
+        keep = serving_ids(hit[0])
+        print(f"restricted to the {len(keep)} instances {args.restrict_to} scored", flush=True)
+    groups, cells, meta, cell_truth = load_instances(args.instances, keep)
+    group_options = [gk[2] for gk in groups]
+    cell_group = np.array([c[0] for c in cells])
+    print(f"{len(meta)} instances, {len(groups)} groups, {len(cells)} cells "
+          f"({time.time() - t0:.0f}s)", flush=True)
 
     questions = sorted({(gk[0], gk[1]) for gk in groups})
     q_ix = {q: i for i, q in enumerate(questions)}
@@ -601,7 +640,7 @@ def main() -> None:
     control = margin_control(cell_truth, cells, groups)
 
     os.makedirs(os.path.join(args.out, "stats"), exist_ok=True)
-    summaries, gdfs, mdfs, bins, problems = [], {}, [], [], []
+    summaries, gdfs, mdfs, bins, problems = [], {}, {}, [], []
     with Pool(args.workers, initializer=_init,
               initargs=(meta, group_options, cell_group)) as pool:
         for res in pool.imap_unordered(read_serving, folders):
@@ -622,22 +661,27 @@ def main() -> None:
             s, gdf, mdf, b = summarise(res, groups, cells, cell_truth, qm, control)
             summaries.append(s)
             gdfs[name] = gdf
-            mdfs.append(mdf)
+            mdfs[name] = mdf
             bins.extend(b)
             print(f"{name:52s} acc {s['acc']:.4f} norm {s['norm']:.4f} pen {s['pen_obs']:+.3f} "
                   f"(N0 {s['pen_n0']:+.3f}, N1 {s['pen_n1']:+.3f}) er {s['er_hard']:.2f}/"
                   f"{s['er_soft']:.2f}/{s['er_softT']:.2f} tv {s['tv_tally_mean']:.3f} "
                   f"loo {s['tv_loo_mean']:.3f} [{time.time() - t0:.0f}s]", flush=True)
 
-    if args.first_look:
+    # the first look covers every instance, so it gates the unrestricted run only
+    if args.first_look and keep is None:
         problems += check_first_look(summaries, args.first_look)
 
+    # servings finish in any order; sort so reruns are byte-comparable
     summaries.sort(key=lambda s: (s["serving"].startswith("xgb_"), -s["norm"]))
     write_csv(summaries, os.path.join(args.out, "by_serving.csv"))
+    names = sorted(gdfs)
+    gdfs = {k: gdfs[k] for k in names}
     pd.concat(gdfs.values()).to_csv(os.path.join(args.out, "by_group.csv"), index=False,
                                     float_format="%.10f")
-    pd.concat(mdfs).to_csv(os.path.join(args.out, "by_cell.csv"), index=False,
-                           float_format="%.10f")
+    pd.concat([mdfs[k] for k in names]).to_csv(os.path.join(args.out, "by_cell.csv"),
+                                               index=False, float_format="%.10f")
+    bins.sort(key=lambda b: (b["serving"], b["bin_lo"]))
     write_csv(bins, os.path.join(args.out, "consensus_bins.csv"))
     write_csv(compare_xgb(gdfs, qm), os.path.join(args.out, "xgb_gap.csv"))
     pd.DataFrame([{"cell": c, "group": g, "survey": groups[g][0],

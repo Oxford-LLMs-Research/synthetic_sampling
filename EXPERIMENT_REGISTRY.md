@@ -1225,7 +1225,9 @@ Rules that keep the entries fillable:
   `PAPER/aaai_reviews/ASSESSMENT_2026-10-24.md`, section 9).
 - **Result:** On 27 servings no model clears the modal baseline (normalized
   0.234 to 0.331 against 0.354; only Nemotron-3-Super FP8's interval reaches
-  it). The dissenter penalty (0.25 to 0.45) is smaller in every serving than
+  it); Nemotron-3-Ultra-550B, landed so far on one shard of eight and compared
+  on the same 38,203 instances, ranks fifth of 28 (0.325) and shows every
+  pattern below. The dissenter penalty (0.25 to 0.45) is smaller in every serving than
   its own output distribution yields with no person information, so it comes
   from concentrated output, and sampling does not lift dissenters; hard
   tallies are under-dispersed on 26 of 27 servings while tempered
@@ -1245,18 +1247,25 @@ Rules that keep the entries fillable:
   (307,427 instances, 258 targets, 263 option-set groups);
   `WORK/outputs_recovered/phase2_grid_r0-50/` (27 servings, every
   `<serving>_shard*of*.jsonl`); `WORK/analysis/phase2/first_look_grid_16oct.csv`
-  (accuracy gate)
+  (accuracy gate). Wave 4: Nemotron-3-Ultra-550B-A55B-NVFP4 shard 0 of 8 (job
+  9084363 on htc-g060, RUNSTAMP repo 2a1314f, vLLM 0.31.0, TP 8, 38,203
+  instances), pulled as `WORK/outputs_recovered/phase2_grid_r0-50/
+  w4_nemotron_ultra_9084363.tar.gz` (sha256 89439fd0...db8005) and extracted to
+  `CODE/outputs/phase2/results/grid_r0-50_w4/`
 - **Outputs:** `WORK/analysis/phase2/grid_claims/{by_serving,by_group,
   by_cell,consensus_bins,xgb_gap,cells}.csv`, `stats/<serving>.npz` (per-cell
   sufficient statistics), `gates.txt`; XGBoost out-of-fold dumps
   `CODE/outputs/phase2/results/xgb_grid_r0-50/xgb_{groupkfold,stratified}/`
   (regenerable: seed 42, run 1's fixed hyperparameters; GroupKFold fits 251 of
   263 groups, skipping the 12 single-country groups; stratified fits 262,
-  skipping one under run 1's 20-row rule)
+  skipping one under run 1's 20-row rule); the Ultra comparison, every serving
+  restricted to its shard by `--restrict-to`, in
+  `WORK/analysis/phase2/grid_claims_ultra_shard0/`
 - **Verified by:** the gates in `grid_claims.py` (accuracy reproduces the first
   look; every instance scored once; every prediction is its argmax; all
   passed); `verify_grid_claims.py` (fresh code, seven headline values on
-  Qwen3-32B, gpt-oss-120b and both XGBoost regimes, tolerance 1e-9, exit 0);
+  Qwen3-32B, gpt-oss-120b, both XGBoost regimes and the Ultra shard, tolerance
+  1e-9, exit 0);
   `tests/test_grid_claims.py` (N1 exact on its own family, N0 against a
   brute-force permutation, leave-one-out mode, the margin identity, the
   marginal sampler)
@@ -1265,7 +1274,11 @@ Rules that keep the entries fillable:
   ceiling. Qwen3-235B landed after the 16 Oct first look and has no accuracy
   gate. The N1 null collapses to N0 wherever a serving never emits an answer
   respondents gave (29 to 178 of 263 groups), so the lift over N0 is the
-  primary contrast.
+  primary contrast. On one shard a country cell holds about 6 respondents, so
+  the Ultra comparison has no margin or country-split numbers. Its in-sample
+  modal baseline is optimistic: 0.368 against 0.339 leave-one-out, where the
+  full grid has 0.354 and 0.351. Ultra re-enters the full run only once all
+  eight shards land.
 
 ## Not yet registered
 
