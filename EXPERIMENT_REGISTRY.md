@@ -79,6 +79,7 @@ Rules that keep the entries fillable:
 | [CPU-BILLING-TEST](#cpu-billing-test--core-count-vs-throughput-calibration) | LANDED | 11 Sep 2026 | Qwen3-32B, Qwen3-4B | Harness calibration: A2 set rerun at 2 and 4 CPUs vs the 8-CPU August run |
 | [PHASE2-GRID-W1](#phase2-grid-w1--phase-2-main-grid-wave-1) | LANDED | 6-7 Oct 2026 | 11 wave-1 servings | Second main run under `label_num`: scoring complete on all 11 servings, analysis pending |
 | [PHASE2-GRID-W2](#phase2-grid-w2--phase-2-main-grid-wave-2) | RUNNING | 7 Oct 2026 | 10 wave-2 servings | Same grid input on the 2026-generation single-GPU servings |
+| [PHASE2-GRID-CLAIMS](#phase2-grid-claims--review-driven-claim-checks-on-the-grid) | LANDED | 25 Oct 2026 | 27 servings + XGBoost, no GPU | Dissenter penalty is output concentration, not a mechanism; aggregation failure is LLM-specific |
 
 ---
 
@@ -1209,6 +1210,61 @@ Rules that keep the entries fillable:
   architectures in the 0.31 registry; DeepSeek-V4-Flash-Base config is
   fp8 (e4m3), not the FP4 the roster note expected; Nemotron Ultra is
   mixed FP8/NVFP4 with an FP8 cache, and NVFP4 on H100 is untested.
+
+### PHASE2-GRID-CLAIMS — review-driven claim checks on the grid
+
+- **Status:** LANDED (the stratified XGBoost regime is still running and
+  enters this entry when it lands)
+- **Rationale:** The AAAI-27 reviews of 24 Oct 2026 attack four things: the
+  dissenter penalty as a mechanism, the readout-dependence of the entropy
+  result, the pooled margin's use of the target cell, and the XGBoost
+  comparison. Every post-submission check of those had run on one to three
+  models. This CPU-only analysis puts them on the landed grid servings, adding
+  two nulls for the dissenter split, sampled-panel and tempered readings, a
+  leave-one-country-out margin with a tallied control, and XGBoost on the
+  grid's own 36 features with out-of-fold predictions kept (assessment:
+  `PAPER/aaai_reviews/ASSESSMENT_2026-10-24.md`, section 9).
+- **Result:** On 27 servings no model clears the modal baseline (normalized
+  0.234 to 0.331 against 0.354; only Nemotron-3-Super FP8's interval reaches
+  it). The dissenter penalty (0.25 to 0.45) is smaller in every serving than
+  its own output distribution yields with no person information, so it comes
+  from concentrated output, and sampling does not lift dissenters; hard
+  tallies are under-dispersed on 26 of 27 servings while tempered
+  distributions are over-dispersed on all, and synthetic cell shares stay 1.4
+  to 2.4 times farther from the truth than the leave-one-country-out margin
+  under every reading. Same-sample XGBoost (GroupKFold on country) sits at the
+  modal baseline (0.347); the LLMs trail it only on modal respondents and beat
+  it on dissenters, and only XGBoost's averaged predictions beat the margin
+  (narrative: `PAPER/docs/PAPER_STATE.md`, 25 Oct 2026).
+- **Ran:** 25 Oct 2026 (no GPU)
+- **Hardware:** local CPU (i9-10900K, 20 threads)
+- **Code:** `CODE/scripts/phase2/{grid_claims,xgb_grid_baseline,
+  verify_grid_claims}.py`, `CODE/tests/test_grid_claims.py`; run from the
+  working tree and committed together with this entry
+- **Inputs:** `CODE/outputs/phase2/inputs/instances_r0-50_short.jsonl`
+  (307,427 instances, 258 targets, 263 option-set groups);
+  `WORK/outputs_recovered/phase2_grid_r0-50/` (27 servings, every
+  `<serving>_shard*of*.jsonl`); `WORK/analysis/phase2/first_look_grid_16oct.csv`
+  (accuracy gate)
+- **Outputs:** `WORK/analysis/phase2/grid_claims/{by_serving,by_group,
+  by_cell,consensus_bins,xgb_gap,cells}.csv`, `stats/<serving>.npz` (per-cell
+  sufficient statistics), `gates.txt`; XGBoost out-of-fold dumps
+  `CODE/outputs/phase2/results/xgb_grid_r0-50/xgb_groupkfold/` (regenerable:
+  seed 42, run 1's fixed hyperparameters; 251 of 263 groups, the 12
+  single-country groups skipped)
+- **Verified by:** the gates in `grid_claims.py` (accuracy reproduces the first
+  look; every instance scored once; every prediction is its argmax; all
+  passed); `verify_grid_claims.py` (fresh code, seven headline values on
+  Qwen3-32B, gpt-oss-120b and xgb_groupkfold, tolerance 1e-9, exit 0);
+  `tests/test_grid_claims.py` (N1 exact on its own family, N0 against a
+  brute-force permutation, leave-one-out mode, the margin identity, the
+  marginal sampler)
+- **Constraint:** XGBoost trains on the grid's own respondents only (floor 50
+  per country), so it is a same-sample floor on the supervised ceiling, not the
+  ceiling. Qwen3-235B landed after the 16 Oct first look and has no accuracy
+  gate. The N1 null collapses to N0 wherever a serving never emits an answer
+  respondents gave (29 to 178 of 263 groups), so the lift over N0 is the
+  primary contrast.
 
 ## Not yet registered
 
